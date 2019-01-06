@@ -29,7 +29,7 @@ This file is part of Liberal Crime Squad.                                       
 // Note: this file is encoded in the PC-8 / Code Page 437 / OEM-US character set
 // (The same character set used by Liberal Crime Squad when it is running)
 // Certain special characters won't display correctly unless your text editor is
-// set to use that character set, such as this e with an accent: �
+// set to use that character set, such as this e with an accent: é
 
 // In Windows Notepad with the Terminal font, OEM/DOS encoding it should work fine.
 // You can set this in Notepad by going to Format->Font and choosing the Terminal font,
@@ -86,27 +86,27 @@ void mode_title()
 
       move(7,10);
 
-      addstr("Liberals Indoctrinated: ");
+      addstr("教化したリベラル: ");
       addstr(stat_recruits);
 
       move(8,10);
-      addstr("Liberals Martyred: ");
+      addstr("倒れたリベラル: ");
       addstr(stat_dead);
 
       move(9,10);
-      addstr("Conservatives Killed: ");
+      addstr("殺害した保守派: ");
       addstr(stat_kills);
 
       move(7,47);
-      addstr("Funds Taxed: ");
+      addstr("収入: ");
       addstr(ledger.total_income);
 
       move(8,47);
-      addstr("Funds Spent: ");
+      addstr("支出: ");
       addstr(ledger.total_expense);
 
       move(9,47);
-      addstr("Conservatives Kidnapped: ");
+      addstr("捕らえた保守派: ");
       addstr(stat_kidnappings);
    }
    else switch(LCSrandom(32))
@@ -121,7 +121,7 @@ void mode_title()
       strcpy(str,"shall we transgress them at once? ... I say, break the law.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Henry David Thoreau");
+      strcpy(str,"ﾄﾄ Henry David Thoreau");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -135,7 +135,7 @@ void mode_title()
       strcpy(str,"has a moral responsibility to disobey unjust laws.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Martin Luther King, Jr.");
+      strcpy(str,"ﾄﾄ Martin Luther King, Jr.");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -149,7 +149,7 @@ void mode_title()
       strcpy(str,"departure from democracy; it is absolutely essential to it.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Howard Zinn");
+      strcpy(str,"ﾄﾄ Howard Zinn");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -163,7 +163,7 @@ void mode_title()
       strcpy(str,"not physically in an active rebellion, then it's spiritual death.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Chris Hedges");
+      strcpy(str,"ﾄﾄ Chris Hedges");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -177,7 +177,7 @@ void mode_title()
       strcpy(str,"with evil is as much a duty as cooperation with good.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Mahatma Gandhi");
+      strcpy(str,"ﾄﾄ Mahatma Gandhi");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -191,7 +191,7 @@ void mode_title()
       strcpy(str,"Well, sometimes that is a good tactic, sometimes not.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Noam Chomsky");
+      strcpy(str,"ﾄﾄ Noam Chomsky");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -205,7 +205,7 @@ void mode_title()
       strcpy(str,"harm our country and our people, and neither do we.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� George W. Bush");
+      strcpy(str,"ﾄﾄ George W. Bush");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -219,21 +219,21 @@ void mode_title()
       strcpy(str,"million, it is a statistic.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Josef Stalin");
+      strcpy(str,"ﾄﾄ Josef Stalin");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
    case 8:
-      strcpy(str,"\"There's an old saying in Tennessee �� I know it's in Texas,");
+      strcpy(str,"\"There's an old saying in Tennessee ﾄﾄ I know it's in Texas,");
       move(6,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"probably in Tennessee �� that says, fool me once, shame on");
+      strcpy(str,"probably in Tennessee ﾄﾄ that says, fool me once, shame on");
       move(7,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� shame on you. Fool me �� you can't get fooled again.\"");
+      strcpy(str,"ﾄﾄ shame on you. Fool me ﾄﾄ you can't get fooled again.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� George W. Bush");
+      strcpy(str,"ﾄﾄ George W. Bush");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -247,7 +247,7 @@ void mode_title()
       strcpy(str,"conspiring against my husband since the day he announced for President.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Hillary Clinton");
+      strcpy(str,"ﾄﾄ Hillary Clinton");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -261,7 +261,7 @@ void mode_title()
       strcpy(str,"don't have a strategy yet.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Barack Obama");
+      strcpy(str,"ﾄﾄ Barack Obama");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -275,7 +275,7 @@ void mode_title()
       strcpy(str,"'em are even dumber than THAT.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� J.R. \"Bob\" Dobbs");
+      strcpy(str,"ﾄﾄ J.R. \"Bob\" Dobbs");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -286,10 +286,10 @@ void mode_title()
       strcpy(str,"trend toward more freedom and");
       move(7,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"democracy �� but that could change.\"");
+      strcpy(str,"democracy ﾄﾄ but that could change.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Dan Quayle");
+      strcpy(str,"ﾄﾄ Dan Quayle");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -303,7 +303,7 @@ void mode_title()
       strcpy(str,"and his top officers.  We carpet-bombed German cities; we killed civilians.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Ann Coulter");
+      strcpy(str,"ﾄﾄ Ann Coulter");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -317,7 +317,7 @@ void mode_title()
       strcpy(str,"Shirkers will be shot, regardless of past service.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Leon Trotsky");
+      strcpy(str,"ﾄﾄ Leon Trotsky");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -331,7 +331,7 @@ void mode_title()
       strcpy(str,"Bring me Fegelein!  Fegelein!  Fegelein!\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Adolf Hitler");
+      strcpy(str,"ﾄﾄ Adolf Hitler");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -345,7 +345,7 @@ void mode_title()
       strcpy(str,"Russia forever.  We begin bombing in five minutes.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Ronald Reagan");
+      strcpy(str,"ﾄﾄ Ronald Reagan");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -359,7 +359,7 @@ void mode_title()
       strcpy(str,"then, they get bitter, they cling to guns or religion...\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Barack Obama");
+      strcpy(str,"ﾄﾄ Barack Obama");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -373,7 +373,7 @@ void mode_title()
       strcpy(str,"There's no such thing as a nonviolent revolution.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Malcolm X");
+      strcpy(str,"ﾄﾄ Malcolm X");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -387,7 +387,7 @@ void mode_title()
       strcpy(str,"politics with bloodshed.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Chairman Mao");
+      strcpy(str,"ﾄﾄ Chairman Mao");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -401,7 +401,7 @@ void mode_title()
       strcpy(str,"daughter against her mother, a daughter-in-law against her mother-in-law...\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Jesus Christ");
+      strcpy(str,"ﾄﾄ Jesus Christ");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -415,7 +415,7 @@ void mode_title()
       strcpy(str,"the blood of patriots and tyrants.  It is its natural manure.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Thomas Jefferson");
+      strcpy(str,"ﾄﾄ Thomas Jefferson");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -429,7 +429,7 @@ void mode_title()
       strcpy(str,"is far safer to be feared than loved, if you cannot be both.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Niccolo Machiavelli");
+      strcpy(str,"ﾄﾄ Niccolo Machiavelli");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -443,7 +443,7 @@ void mode_title()
       strcpy(str,"have a tremendous impact on history.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Dan Quayle");
+      strcpy(str,"ﾄﾄ Dan Quayle");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -457,7 +457,7 @@ void mode_title()
       strcpy(str,"you need not fear the results of a hundred battles.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Sun Tzu");
+      strcpy(str,"ﾄﾄ Sun Tzu");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -471,7 +471,7 @@ void mode_title()
       strcpy(str,"I'm not sure about the former.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Albert Einstein");
+      strcpy(str,"ﾄﾄ Albert Einstein");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -479,13 +479,13 @@ void mode_title()
       strcpy(str,"\"As Putin rears his head and comes into the airspace of");
       move(6,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"the United States of America, where �� where do they");
+      strcpy(str,"the United States of America, where ﾄﾄ where do they");
       move(7,39-((len(str)-1)>>1));
       addstr(str);
       strcpy(str,"go?  It's Alaska.  It's just right over the border.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Sarah Palin");
+      strcpy(str,"ﾄﾄ Sarah Palin");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -499,7 +499,7 @@ void mode_title()
       strcpy(str,"If anything is certain, it is that I myself am not a Marxist.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Karl Marx");
+      strcpy(str,"ﾄﾄ Karl Marx");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -507,13 +507,13 @@ void mode_title()
       strcpy(str,"\"If ignorant of the almighty Time Cube Creation Truth, you");
       move(6,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"deserve to be killed.  Killing you is not immoral �� but");
+      strcpy(str,"deserve to be killed.  Killing you is not immoral ﾄﾄ but");
       move(7,39-((len(str)-1)>>1));
       addstr(str);
       strcpy(str,"justified to save life on Earth for future generations.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Gene Ray");
+      strcpy(str,"ﾄﾄ Gene Ray");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -527,7 +527,7 @@ void mode_title()
       strcpy(str,"Frankenstein earphone radio slavery for the Communist gangster government.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Francis E. Dec");
+      strcpy(str,"ﾄﾄ Francis E. Dec");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -541,7 +541,7 @@ void mode_title()
       strcpy(str,"group thinks they can do it.  Their number is negligible and they are stupid.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Dwight D. Eisenhower");
+      strcpy(str,"ﾄﾄ Dwight D. Eisenhower");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -555,7 +555,7 @@ void mode_title()
       strcpy(str,"and that way let them kill as many as possible.\"");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"�� Harry S. Truman");
+      strcpy(str,"ﾄﾄ Harry S. Truman");
       move(9,39-((len(str)-1)>>1));
       addstr(str);
       break;
@@ -582,10 +582,10 @@ void mode_title()
    strcpy(str,"http://lcs.wikidot.com/");
    move(18,39-((len(str)-1)>>1));
    addstr(str);
-   strcpy(str,"Press ESC now to quit.  Quitting later causes your progress to be saved.");
+   strcpy(str,"ESCキー: 終了する。終了すると自動的に保存される");
    move(20,39-((len(str)-1)>>1));
    addstr(str);
-   strcpy(str,"Press any other key to pursue your Liberal Agenda!");
+   strcpy(str,"その他のキー: リベラルアジェンダを追求する!");
    move(22,39-((len(str)-1)>>1));
    addstr(str);
    move(24,79);
@@ -595,8 +595,8 @@ void mode_title()
    do
    {
       if(c=='m') music.enableIf(!music.isEnabled());
-      if(music.isEnabled()) strcpy(str,"Press M to turn off the Music.");
-      else strcpy(str,"Press M to turn on some Music.");
+      if(music.isEnabled()) strcpy(str,"Mキー: 音楽を止める");
+      else strcpy(str,"Mキー: 音楽を鳴らす");
       move(21,39-((len(str)-1)>>1));
       addstr(str);
       if(c==ESC) end_game();

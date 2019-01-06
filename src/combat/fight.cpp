@@ -256,12 +256,12 @@ void enemyattack()
    static const char *escape_running[] =
    {
       " makes a break for it!",
-      " escapes crying!",
-      " runs away!",
-      " gets out of there!",
-      " runs hollering!",
+      "は悲鳴を上げて逃げ出した!",
+      "は逃げ出した!",
+      "は走り去った!",
+      "は大声を上げて逃げた!",
       " bolts out of there!",
-      " runs away screaming!",
+      "は叫び声を上げ走り去った!",
    };
 
 
@@ -567,36 +567,44 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
    bool sneak_attack=false;
 
    strcpy(str,a.name);
-   strcat(str," ");
-   if(mistake) strcat(str,"MISTAKENLY ");
+   strcat(str,"は");
+   if(mistake) strcat(str,"誤って");
+
+   strcat(str,t.name);
+
+   if(a.is_armed() && !attack_used->thrown)
+   {
+      strcat(str,"に");
+      strcat(str,a.get_weapon().get_name(1));
+   }
    if(!a.is_armed())
    {
       if(!a.animalgloss) //Move into WEAPON_NONE -XML
       {
          if(!LCSrandom(a.get_skill(SKILL_HANDTOHAND)+1))
-            strcat(str,"punches");
+            strcat(str,"に体当たりした");
          else if(!LCSrandom(a.get_skill(SKILL_HANDTOHAND)))
-            strcat(str,"swings at");
+            strcat(str,"を殴った");
          else if(!LCSrandom(a.get_skill(SKILL_HANDTOHAND)-1))
-            strcat(str,"grapples with");
+            strcat(str,"を掴んだ");
          else if(!LCSrandom(a.get_skill(SKILL_HANDTOHAND)-2))
-            strcat(str,"kicks");
+            strcat(str,"を蹴った");
          else if(!LCSrandom(a.get_skill(SKILL_HANDTOHAND)-3))
-            strcat(str,"strikes at");
+            strcat(str,"を打った");
          else if(!LCSrandom(a.get_skill(SKILL_HANDTOHAND)-4))
-            strcat(str,"jump kicks");
-         else strcat(str,"gracefully strikes at");
+            strcat(str,"に跳び蹴りをした");
+         else strcat(str,"を舞うように打った");
       }
       else
       {
          if(a.specialattack==ATTACK_CANNON)
          {
-            strcat(str,"fires a 120mm shell at");
+            strcat(str,"に120mm砲弾を発射した");
             melee=false;
          }
-         else if(a.specialattack==ATTACK_FLAME) strcat(str,"breathes fire at");
-         else if(a.specialattack==ATTACK_SUCK) strcat(str,"stabs");
-         else strcat(str,"bites");
+         else if(a.specialattack==ATTACK_FLAME) strcat(str,"に火を吹いた");
+         else if(a.specialattack==ATTACK_SUCK) strcat(str,"を突き刺した");
+         else strcat(str,"に噛み付いた");
       }
    }
    else
@@ -606,7 +614,7 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
          if(t.cantbluff<1 && sitealarm<1)
          {
             sneak_attack = true;
-            strcat(str,"sneaks up on");
+            strcat(str,"に密かに近づいた");
             if(sitealarmtimer>10 || sitealarmtimer<0) sitealarmtimer=10;
             t.cantbluff = 2;
          }
@@ -619,18 +627,10 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
       }
    }
 
-   strcat(str," ");
-   strcat(str,t.name);
    move(16,1);
    addstr(str, gamelog);
 
    strcpy(str,"");
-
-   if(a.is_armed() && !attack_used->thrown)
-   {
-      strcat(str," with a ");
-      strcat(str,a.get_weapon().get_name(1));
-   }
    strcat(str,"!");
    addstr(str, gamelog);
    gamelog.newline();
@@ -639,7 +639,10 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
 
    if(goodguyattack) set_color(COLOR_GREEN,COLOR_BLACK,1);
    else set_color(COLOR_RED,COLOR_BLACK,1);
+   /*
    strcpy(str, a.heshe(true)); // capitalize=true. Shorten the string so it doesn't spill over as much; we already said attacker's name on the previous line anyways.
+   */
+   strcpy(str, "");
 
    int bonus=0; // Accuracy bonus or penalty that does NOT affect damage or counterattack chance
 
@@ -789,10 +792,8 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
    //HIT!
    if(aroll+bonus>droll)
    {
-      if(sneak_attack) strcat(str, " stabs ");
-      else strcat(str," hits ");
       strcat(str,t.name);
-      strcat(str, "'s ");
+      strcat(str, "の");
       int w;
       bool canhit=false;
 
@@ -845,57 +846,58 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
       if(t.animalgloss==ANIMALGLOSS_TANK)
          switch(w)
          {
-         case BODYPART_HEAD:strcat(str,"turret"); break;
-         case BODYPART_BODY:strcat(str,"front"); break;
-         case BODYPART_ARM_RIGHT:strcat(str,"right side"); break;
-         case BODYPART_ARM_LEFT:strcat(str,"left side"); break;
-         case BODYPART_LEG_RIGHT:strcat(str,"right tread"); break;
-         case BODYPART_LEG_LEFT:strcat(str,"left tread"); break;
+         case BODYPART_HEAD:strcat(str,"砲塔"); break;
+         case BODYPART_BODY:strcat(str,"前面"); break;
+         case BODYPART_ARM_RIGHT:strcat(str,"右側面"); break;
+         case BODYPART_ARM_LEFT:strcat(str,"左側面"); break;
+         case BODYPART_LEG_RIGHT:strcat(str,"右キャタピラ"); break;
+         case BODYPART_LEG_LEFT:strcat(str,"左キャタピラ"); break;
          }
       else if(t.animalgloss==ANIMALGLOSS_ANIMAL) // FIXME: What about Six-legged Pigs?
          switch(w)
          {
-         case BODYPART_HEAD:strcat(str,"head"); break;
-         case BODYPART_BODY:strcat(str,"body"); break;
-         case BODYPART_ARM_RIGHT:strcat(str,"right front leg"); break;
-         case BODYPART_ARM_LEFT:strcat(str,"left front leg"); break;
-         case BODYPART_LEG_RIGHT:strcat(str,"right rear leg"); break;
-         case BODYPART_LEG_LEFT:strcat(str,"left rear leg"); break;
+         case BODYPART_HEAD:strcat(str,"頭"); break;
+         case BODYPART_BODY:strcat(str,"胴体"); break;
+         case BODYPART_ARM_RIGHT:strcat(str,"右前足"); break;
+         case BODYPART_ARM_LEFT:strcat(str,"左前足"); break;
+         case BODYPART_LEG_RIGHT:strcat(str,"右後ろ足"); break;
+         case BODYPART_LEG_LEFT:strcat(str,"左後ろ足"); break;
          }
       else
          switch(w)
          {
-         case BODYPART_HEAD:strcat(str,"head"); break;
-         case BODYPART_BODY:strcat(str,"body"); break;
-         case BODYPART_ARM_RIGHT:strcat(str,"right arm"); break;
-         case BODYPART_ARM_LEFT:strcat(str,"left arm"); break;
-         case BODYPART_LEG_RIGHT:strcat(str,"right leg"); break;
-         case BODYPART_LEG_LEFT:strcat(str,"left leg");break;
+         case BODYPART_HEAD:strcat(str,"頭"); break;
+         case BODYPART_BODY:strcat(str,"胴体"); break;
+         case BODYPART_ARM_RIGHT:strcat(str,"右腕"); break;
+         case BODYPART_ARM_LEFT:strcat(str,"左腕"); break;
+         case BODYPART_LEG_RIGHT:strcat(str,"右足"); break;
+         case BODYPART_LEG_LEFT:strcat(str,"左足");break;
          }
+      strcat(str, "に");
 
       // show multiple hits
       if(bursthits>1 && a.is_armed()) // Only show if not melee
       {
-         strcat(str,", ");
          if(!a.is_armed()) //Move into WEAPON_NONE? -XML
-            strcat(str,"striking");
+            strcat(str,"強烈に");
          else strcat(str,attack_used->hit_description);
 
          switch(bursthits)
          {
          case 1: break;
-         case 2: strcat(str," twice"); break;
-         case 3: strcat(str," three times"); break;
-         case 4: strcat(str," four times"); break;
-         case 5: strcat(str," five times"); break;
-         default: strcat(str," "+tostring(bursthits)+" times"); break;
+         case 2: strcat(str,"2回"); break;
+         case 3: strcat(str,"3回"); break;
+         case 4: strcat(str,"4回"); break;
+         case 5: strcat(str,"5回"); break;
+         default: strcat(str,tostring(bursthits)+"回"); break;
          }
       }
       else if(attack_used->always_describe_hit)
       {
-         strcat(str,", ");
          strcat(str,attack_used->hit_description);
       }
+      if(sneak_attack) strcat(str, "突き刺した");
+      else strcat(str,"命中した");
 
       char damtype=0;
       int damamount=0;
@@ -1012,7 +1014,9 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
       // Report vehicle protection effect
       if (mode==GAMEMODE_CHASECAR && vehicle != NULL && extraarmor > 0)
       {
-         strcat(str, " through ");
+         strcat(str, "。攻撃は");
+         strcat(str, vehicle->shortname()+"の");
+         strcat(str, vehicle->getpartname(vehicleHitLocation));
          // Could the vehicle have bounced that round on its own?
          if (damamount==0)
          {
@@ -1021,12 +1025,17 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
             
             if (cardmg < 2) //fudge factor of 1 armor level due to randomness
             {
-               strcpy(str, "The attack bounces off ");
+               strcpy(str, "で遮られている。");
+            }
+            else
+            {
+               strcpy(str, "を貫通している。");
             }
          }
-         
-         strcat(str,"the "+vehicle->shortname()+"'s ");
-         strcat(str, vehicle->getpartname(vehicleHitLocation));
+         else
+         {
+            strcpy(str, "を貫通している。");
+         }
       }
       
       // Temporary debug output for the damage roll
@@ -1069,12 +1078,12 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
 
                   move(16,1);
                   addstr(target->name, gamelog);
+                  addstr("が", gamelog);
                   if(!t.alive) addstr(" misguidedly", gamelog);
                   else addstr(" heroically", gamelog);
-                  addstr(" shields ", gamelog);
                   addstr(t.name, gamelog);
-                  if(!t.alive) addstr("'s corpse", gamelog);
-                  addstr("!", gamelog);
+                  if(!t.alive) addstr("の遺体", gamelog);
+                  addstr("をかばっている! ", gamelog);
                   gamelog.newline();
 
                   addjuice(*target,10,1000);//Instant juice!! Way to take the bullet!!
@@ -1257,11 +1266,11 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                         {
                            move(16,1);
                            addstr(target->name, gamelog);
-                           if(damtype & WOUND_SHOT)addstr("'s face is blasted off!", gamelog);
-                           else if(damtype & WOUND_BURNED)addstr("'s face is burned away!", gamelog);
-                           else if(damtype & WOUND_TORN)addstr("'s face is torn off!", gamelog);
-                           else if(damtype & WOUND_CUT)addstr("'s face is cut away!", gamelog);
-                           else addstr("'s face is removed!", gamelog);
+                           if(damtype & WOUND_SHOT)addstr("の顔が吹き飛ばされた!", gamelog);
+                           else if(damtype & WOUND_BURNED)addstr("の顔が焼き払われた!", gamelog);
+                           else if(damtype & WOUND_TORN)addstr("の顔が引き裂かれた!", gamelog);
+                           else if(damtype & WOUND_CUT)addstr("の顔が切り刻まれた!", gamelog);
+                           else addstr("の顔がえぐり取られた!", gamelog);
                            gamelog.newline();
 
                            getkey();
@@ -1282,30 +1291,30 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                            move(16,1);
                            if(teethminus>1)
                            {
-                              if(teethminus==target->special[SPECIALWOUND_TEETH])
-                                 addstr("All ", gamelog);
-                              addstr(teethminus, gamelog);
-                              addstr(" of ", gamelog);
                               addstr(target->name, gamelog);
-                              addstr("'s teeth are ", gamelog);
+                              addstr("の", gamelog);
+                              addstr(teethminus, gamelog);
+                              addstr("本の歯", gamelog);
+                              if(teethminus==target->special[SPECIALWOUND_TEETH])
+                                 addstr("全て", gamelog);
+                              addstr("が", gamelog);
                            }
                            else if(target->special[SPECIALWOUND_TEETH]>1)
                            {
-                              addstr("One of ", gamelog);
                               addstr(target->name, gamelog);
-                              addstr("'s teeth is ", gamelog);
+                              addstr("の歯が1本", gamelog);
                            }
                            else
                            {
                               addstr(target->name, gamelog);
-                              addstr("'s last tooth is ", gamelog);
+                              addstr("の最後の歯が", gamelog);
                            }
 
-                           if(damtype & WOUND_SHOT)addstr("shot out!", gamelog);
-                           else if(damtype & WOUND_BURNED)addstr("burned away!", gamelog);
-                           else if(damtype & WOUND_TORN)addstr("gouged out!", gamelog);
-                           else if(damtype & WOUND_CUT)addstr("cut out!", gamelog);
-                           else addstr("knocked out!", gamelog);
+                           if(damtype & WOUND_SHOT)addstr("撃たれて吹き飛んだ!", gamelog);
+                           else if(damtype & WOUND_BURNED)addstr("焼け落ちた!", gamelog);
+                           else if(damtype & WOUND_TORN)addstr("えぐり取られた!", gamelog);
+                           else if(damtype & WOUND_CUT)addstr("切り落とされた!", gamelog);
+                           else addstr("抜け落ちた!", gamelog);
                            gamelog.newline();
 
                            getkey();
@@ -1318,11 +1327,11 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                         {
                            move(16,1);
                            addstr(target->name, gamelog);
-                           if(damtype & WOUND_SHOT)addstr("'s right eye is blasted out!", gamelog);
-                           else if(damtype & WOUND_BURNED)addstr("'s right eye is burned away!", gamelog);
-                           else if(damtype & WOUND_TORN)addstr("'s right eye is torn out!", gamelog);
-                           else if(damtype & WOUND_CUT)addstr("'s right eye is poked out!", gamelog);
-                           else addstr("'s right eye is removed!", gamelog);
+                           if(damtype & WOUND_SHOT)addstr("の右目が吹き飛んだ!", gamelog);
+                           else if(damtype & WOUND_BURNED)addstr("の右目が焼け落ちた!", gamelog);
+                           else if(damtype & WOUND_TORN)addstr("の右目がちぎれ飛んだ!", gamelog);
+                           else if(damtype & WOUND_CUT)addstr("の右目が切り刻まれた!", gamelog);
+                           else addstr("の右目が飛び出した!", gamelog);
                            gamelog.newline();
 
                            getkey();
@@ -1336,11 +1345,11 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                         {
                            move(16,1);
                            addstr(target->name, gamelog);
-                           if(damtype & WOUND_SHOT)addstr("'s left eye is blasted out!", gamelog);
-                           else if(damtype & WOUND_BURNED)addstr("'s left eye is burned away!", gamelog);
-                           else if(damtype & WOUND_TORN)addstr("'s left eye is torn out!", gamelog);
-                           else if(damtype & WOUND_CUT)addstr("'s left eye is poked out!", gamelog);
-                           else addstr("'s left eye is removed!", gamelog);
+                           if(damtype & WOUND_SHOT)addstr("の左目が吹き飛んだ!", gamelog);
+                           else if(damtype & WOUND_BURNED)addstr("の左目が焼け落ちた!", gamelog);
+                           else if(damtype & WOUND_TORN)addstr("の左目がちぎれ飛んだ!", gamelog);
+                           else if(damtype & WOUND_CUT)addstr("の左目が切り刻まれた!", gamelog);
+                           else addstr("の左目が飛び出した!", gamelog);
                            gamelog.newline();
 
                            getkey();
@@ -1354,11 +1363,11 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                         {
                            move(16,1);
                            addstr(target->name, gamelog);
-                           if(damtype & WOUND_SHOT)addstr("'s tongue is blasted off!", gamelog);
-                           else if(damtype & WOUND_BURNED)addstr("'s tongue is burned away!", gamelog);
-                           else if(damtype & WOUND_TORN)addstr("'s tongue is torn out!", gamelog);
-                           else if(damtype & WOUND_CUT)addstr("'s tongue is cut off!", gamelog);
-                           else addstr("'s tongue is removed!", gamelog);
+                           if(damtype & WOUND_SHOT)addstr("の舌が吹き飛んだ!", gamelog);
+                           else if(damtype & WOUND_BURNED)addstr("の舌が焼け落ちた!", gamelog);
+                           else if(damtype & WOUND_TORN)addstr("の舌がちぎれ飛んだ!", gamelog);
+                           else if(damtype & WOUND_CUT)addstr("の舌が切り落とされた!", gamelog);
+                           else addstr("の舌が引きちぎられた!", gamelog);
                            gamelog.newline();
 
                            getkey();
@@ -1372,11 +1381,11 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                         {
                            move(16,1);
                            addstr(target->name, gamelog);
-                           if(damtype & WOUND_SHOT)addstr("'s nose is blasted off!", gamelog);
-                           else if(damtype & WOUND_BURNED)addstr("'s nose is burned away!", gamelog);
-                           else if(damtype & WOUND_TORN)addstr("'s nose is torn off!", gamelog);
-                           else if(damtype & WOUND_CUT)addstr("'s nose is cut off!", gamelog);
-                           else addstr("'s nose is removed!", gamelog);
+                           if(damtype & WOUND_SHOT)addstr("の鼻が吹き飛んだ!", gamelog);
+                           else if(damtype & WOUND_BURNED)addstr("の鼻が焼け落ちた!", gamelog);
+                           else if(damtype & WOUND_TORN)addstr("の鼻がちぎれ飛んだ!", gamelog);
+                           else if(damtype & WOUND_CUT)addstr("の鼻が切り落とされた!", gamelog);
+                           else addstr("の鼻がえぐり取られた!", gamelog);
                            gamelog.newline();
 
                            getkey();
@@ -1390,8 +1399,8 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                         {
                            move(16,1);
                            addstr(target->name, gamelog);
-                           if(damtype & WOUND_SHOT)addstr("'s neck bones are shattered!", gamelog);
-                           else addstr("'s neck is broken!", gamelog);
+                           if(damtype & WOUND_SHOT)addstr("の首の骨が砕けた!", gamelog);
+                           else addstr("の首の骨が折れた!", gamelog);
                            gamelog.newline();
 
                            getkey();
@@ -1416,8 +1425,8 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                      {
                         move(16,1);
                         addstr(target->name, gamelog);
-                        if(damtype & WOUND_SHOT) addstr("'s upper spine is shattered!", gamelog);
-                        else addstr("'s upper spine is broken!", gamelog);
+                        if(damtype & WOUND_SHOT) addstr("の上部脊椎か砕けた!", gamelog);
+                        else addstr("の上部脊椎が折れた!", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1431,8 +1440,8 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                      {
                         move(16,1);
                         addstr(target->name, gamelog);
-                        if(damtype & WOUND_SHOT)addstr("'s lower spine is shattered!", gamelog);
-                        else addstr("'s lower spine is broken!", gamelog);
+                        if(damtype & WOUND_SHOT)addstr("の下部脊椎が砕けた!", gamelog);
+                        else addstr("の下部脊椎が折れた!", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1446,9 +1455,9 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                      {
                         move(16,1);
                         addstr(target->name, gamelog);
-                        if(damtype & WOUND_SHOT)addstr("'s right lung is blasted!", gamelog);
-                        else if(damtype & WOUND_TORN)addstr("'s right lung is torn!", gamelog);
-                        else addstr("'s right lung is punctured!", gamelog);
+                        if(damtype & WOUND_SHOT)addstr("の右肺を貫通した!", gamelog);
+                        else if(damtype & WOUND_TORN)addstr("の右肺が引き裂かれた!", gamelog);
+                        else addstr("の右肺が破裂した!", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1462,9 +1471,9 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                      {
                         move(16,1);
                         addstr(target->name, gamelog);
-                        if(damtype & WOUND_SHOT)addstr("'s left lung is blasted!", gamelog);
-                        else if(damtype & WOUND_TORN)addstr("'s left lung is torn!", gamelog);
-                        else addstr("'s left lung is punctured!", gamelog);
+                        if(damtype & WOUND_SHOT)addstr("の右肺を貫通した!", gamelog);
+                        else if(damtype & WOUND_TORN)addstr("の左肺が引き裂かれた!", gamelog);
+                        else addstr("の左肺が破裂した!", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1478,9 +1487,9 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                      {
                         move(16,1);
                         addstr(target->name, gamelog);
-                        if(damtype & WOUND_SHOT)addstr("'s heart is blasted!", gamelog);
-                        else if(damtype & WOUND_TORN)addstr("'s heart is torn!", gamelog);
-                        else addstr("'s heart is punctured!", gamelog);
+                        if(damtype & WOUND_SHOT)addstr("の右肺を貫通した!", gamelog);
+                        else if(damtype & WOUND_TORN)addstr("の心臓が引き裂かれた!", gamelog);
+                        else addstr("の心臓が破裂した!", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1494,9 +1503,9 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                      {
                         move(16,1);
                         addstr(target->name, gamelog);
-                        if(damtype & WOUND_SHOT)addstr("'s liver is blasted!", gamelog);
-                        else if(damtype & WOUND_TORN)addstr("'s liver is torn!", gamelog);
-                        else addstr("'s liver is punctured!", gamelog);
+                        if(damtype & WOUND_SHOT)addstr("の右肺を貫通した!", gamelog);
+                        else if(damtype & WOUND_TORN)addstr("の肝臓が引き裂かれた!", gamelog);
+                        else addstr("の肝臓が破裂した!", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1510,9 +1519,9 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                      {
                         move(16,1);
                         addstr(target->name, gamelog);
-                        if(damtype & WOUND_SHOT)addstr("'s stomach is blasted!", gamelog);
-                        else if(damtype & WOUND_TORN)addstr("'s stomach is torn!", gamelog);
-                        else addstr("'s stomach is punctured!", gamelog);
+                        if(damtype & WOUND_SHOT)addstr("の胃を貫通した!", gamelog);
+                        else if(damtype & WOUND_TORN)addstr("の胃が引き裂かれた!", gamelog);
+                        else addstr("の胃が破裂した!", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1526,9 +1535,9 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                      {
                         move(16,1);
                         addstr(target->name, gamelog);
-                        if(damtype & WOUND_SHOT)addstr("'s right kidney is blasted!", gamelog);
-                        else if(damtype & WOUND_TORN)addstr("'s right kidney is torn!", gamelog);
-                        else addstr("'s right kidney is punctured!", gamelog);
+                        if(damtype & WOUND_SHOT)addstr("の右腎臓を貫通した!", gamelog);
+                        else if(damtype & WOUND_TORN)addstr("の右腎臓が引き裂かれた!", gamelog);
+                        else addstr("の右腎臓が破裂した!", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1542,9 +1551,9 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                      {
                         move(16,1);
                         addstr(target->name, gamelog);
-                        if(damtype & WOUND_SHOT)addstr("'s left kidney is blasted!", gamelog);
-                        else if(damtype & WOUND_TORN)addstr("'s left kidney is torn!", gamelog);
-                        else addstr("'s left kidney is punctured!", gamelog);
+                        if(damtype & WOUND_SHOT)addstr("の左腎臓を貫通した!", gamelog);
+                        else if(damtype & WOUND_TORN)addstr("の左腎臓が引き裂かれた!", gamelog);
+                        else addstr("の左腎臓が破裂した!", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1558,9 +1567,9 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                      {
                         move(16,1);
                         addstr(target->name, gamelog);
-                        if(damtype & WOUND_SHOT)addstr("'s spleen is blasted!", gamelog);
-                        else if(damtype & WOUND_TORN)addstr("'s spleen is torn!", gamelog);
-                        else addstr("'s spleen is punctured!", gamelog);
+                        if(damtype & WOUND_SHOT)addstr("の脾臓を貫通した!", gamelog);
+                        else if(damtype & WOUND_TORN)addstr("の脾臓が引き裂かれた!", gamelog);
+                        else addstr("の脾臓が破裂した!", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1578,27 +1587,27 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                         move(16,1);
                         if(ribminus>1)
                         {
-                           if(ribminus==target->special[SPECIALWOUND_RIBS])
-                              addstr("All ", gamelog);
-                           addstr(ribminus, gamelog);
-                           addstr(" of ", gamelog);
                            addstr(target->name, gamelog);
-                           addstr("'s ribs are ", gamelog);
+                           addstr("の", gamelog);
+                           addstr(ribminus, gamelog);
+                           addstr("本の肋骨", gamelog);
+                           if(ribminus==target->special[SPECIALWOUND_RIBS])
+                              addstr("全て", gamelog);
+                           addstr("が", gamelog);
                         }
                         else if(target->special[SPECIALWOUND_RIBS]>1)
                         {
-                           addstr("One of ", gamelog);
                            addstr(target->name, gamelog);
-                           addstr("'s rib is ", gamelog);
+                           addstr("の肋骨が1本", gamelog);
                         }
                         else
                         {
                            addstr(target->name, gamelog);
-                           addstr("'s last unbroken rib is ", gamelog);
+                           addstr("の最後の肋骨が", gamelog);
                         }
 
-                        if(damtype & WOUND_SHOT)addstr("shot apart!", gamelog);
-                        else addstr("broken!", gamelog);
+                        if(damtype & WOUND_SHOT)addstr("打ち抜かれた!", gamelog);
+                        else addstr("折れた!", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1618,7 +1627,7 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
       else
       {
          set_color(COLOR_YELLOW,COLOR_BLACK,1);
-         strcat(str," to no effect.");
+         strcat(str,"効かなかった。");
          move(17,1);
          addstr(str, gamelog);
          gamelog.newline();
@@ -2398,13 +2407,12 @@ char incapacitated(Creature &a,char noncombat,char &printed)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(16,1);
-            addstr("The ", gamelog);
             addstr(a.name, gamelog);
             switch(LCSrandom(3))
             {
-            case 0: addstr(" smokes...", gamelog); break;
-            case 1: addstr(" smolders.", gamelog); break;
-            case 2: addstr(" burns...", gamelog); break;
+            case 0: addstr("は煙を上げた…", gamelog); break;
+            case 1: addstr("はくすぶっている…", gamelog); break;
+            case 2: addstr("は燃え上がった…", gamelog); break;
             }
 
             gamelog.newline();
@@ -2428,14 +2436,13 @@ char incapacitated(Creature &a,char noncombat,char &printed)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(16,1);
-            addstr("The ", gamelog);
             addstr(a.name);
             switch(LCSrandom(3))
             {
-            case 0: addstr(" yelps in pain...", gamelog); break;
-            case 1: if(law[LAW_FREESPEECH]==-2) addstr(" [makes a stinky].", gamelog);
-                    else addstr(" soils the floor.", gamelog); break;
-            case 2: addstr(" yowls pitifully...", gamelog); break;
+            case 0: addstr("は苦しみ鳴いている…", gamelog); break;
+            case 1: if(law[LAW_FREESPEECH]==-2) addstr("は床を[ピー]した。", gamelog);
+                    else addstr("は床を台無しにした。", gamelog); break;
+            case 2: addstr("痛々しく吠えた…", gamelog); break;
             }
 
             gamelog.newline();
@@ -2460,22 +2467,22 @@ char incapacitated(Creature &a,char noncombat,char &printed)
          addstr(a.name);
          switch(LCSrandom(54))
          {
-         case 0: addstr(" desperately cries out to Jesus."); break;
-         case 1: if(law[LAW_FREESPEECH]==-2) addstr(" [makes a stinky].");
-                 else addstr(" soils the floor."); break;
-         case 2: addstr(" whimpers in a corner."); break;
-         case 3: addstr(" begins to weep."); break;
-         case 4: addstr(" vomits."); break;
-         case 5: addstr(" chortles..."); break;
-         case 6: addstr(" screams in pain."); break;
-         case 7: addstr(" asks for mother."); break;
-         case 8: addstr(" prays softly..."); break;
-         case 9: addstr(" clutches at the wounds."); break;
-         case 10: addstr(" reaches out and moans."); break;
-         case 11: addstr(" hollers in pain."); break;
-         case 12: addstr(" groans in agony."); break;
-         case 13: addstr(" begins hyperventilating."); break;
-         case 14: addstr(" shouts a prayer."); break;
+         case 0: addstr("はイエスの名を叫んだ。"); break;
+         case 1: if(law[LAW_FREESPEECH]==-2) addstr("は床を[ピー]した。");
+                 else addstr("は床を台無しにした。"); break;
+         case 2: addstr("はうめき声を上げている。"); break;
+         case 3: addstr("は泣き出した。"); break;
+         case 4: addstr("は嘔吐した。"); break;
+         case 5: addstr("は笑い出した…"); break;
+         case 6: addstr("は痛みで叫び声を上げた。"); break;
+         case 7: addstr("は母の名を叫んだ。"); break;
+         case 8: addstr("は静かに祈った…"); break;
+         case 9: addstr("は傷口を押さえている。"); break;
+         case 10: addstr("は手を伸ばしうめき声を上げた。"); break;
+         case 11: addstr("は痛みででうずくまっている。"); break;
+         case 12: addstr("は苦しそうにうめき声を上げた。"); break;
+         case 13: addstr("は激しく息をし始めた。"); break;
+         case 14: addstr("は叫び祈った。"); break;
          case 15: addstr(" coughs up blood."); break;
          case 16: if(mode!=GAMEMODE_CHASECAR) addstr(" stumbles against a wall.");
                   else addstr(" leans against the door."); break;
@@ -2619,37 +2626,37 @@ void adddeathmessage(Creature &cr)
       switch(LCSrandom(4))
       {
       case 0:
-         strcat(str," reaches once where there ");
+         strcat(str,"はかつて頭のあった場所に手を伸ばし、そして");
          addstr(str, gamelog);
          move(17,1);
          if(mode!=GAMEMODE_CHASECAR)
-            addstr("is no head, and falls.", gamelog);
-         else addstr("is no head, and slumps over.", gamelog);
+            addstr("倒れた。", gamelog);
+         else addstr("前のめりになった。", gamelog);
          break;
       case 1:
          if(mode!=GAMEMODE_CHASECAR)
-            strcat(str," stands headless for a ");
-         else strcat(str," sits headless for a ");
+            strcat(str,"は頭が無いまましばらく立っていたが、");
+         else strcat(str,"は頭が無いまましばらく座っていたが、");
          addstr(str, gamelog);
          move(17,1);
-         addstr("moment then crumples over.", gamelog);
+         addstr("ついに崩れ落ちた。", gamelog);
          break;
       case 2:
-         strcat(str," squirts ");
-         if(law[LAW_FREESPEECH]==-2)strcat(str,"[red water]");
-         else strcat(str,"blood");
-         strcat(str," out of the ");
+         strcat(str,"は首から大量の");
+         if(law[LAW_FREESPEECH]==-2)strcat(str,"[赤い液体]");
+         else strcat(str,"血");
+         strcat(str,"を吹き上げ、");
          addstr(str, gamelog);
          move(17,1);
          if(mode!=GAMEMODE_CHASECAR)
-            addstr("neck and runs down the hall.", gamelog);
-         else addstr("neck and falls to the side.", gamelog);
+            addstr("床に倒れた。", gamelog);
+         else addstr("壁にもたれかかった。", gamelog);
          break;
       case 3:
-         strcat(str," sucks a last breath through ");
+         strcat(str,"は首の穴で最期の息をし、");
          addstr(str, gamelog);
          move(17,1);
-         addstr("the neck hole, then is quiet.", gamelog);
+         addstr("そして静かになった。", gamelog);
          break;
       }
    }
@@ -2659,8 +2666,8 @@ void adddeathmessage(Creature &cr)
       strcpy(str,cr.name);
       switch(LCSrandom(2))
       {
-      case 0:strcat(str," breaks into pieces."); break;
-      case 1:strcat(str," falls apart and is dead."); break;
+      case 0:strcat(str,"はバラバラになって死んだ。"); break;
+      case 1:strcat(str,"は肉体を吹き飛ばされ死んだ。"); break;
       }
       addstr(str, gamelog);
    }
@@ -2670,69 +2677,69 @@ void adddeathmessage(Creature &cr)
       switch(LCSrandom(11))
       {
       case 0:
-         strcat(str," cries out one last time ");
+         strcat(str,"は断末魔の叫びを上げ");
          addstr(str, gamelog);
          move(17,1);
-         addstr("then is quiet.", gamelog);
+         addstr("息絶えた。", gamelog);
          break;
       case 1:
-         strcat(str," gasps a last breath and ");
+         strcat(str,"は呼吸が弱々しくなり、そして");
          addstr(str, gamelog);
          move(17,1);
-         if(law[LAW_FREESPEECH]==-2)addstr("[makes a mess].", gamelog);
-         else addstr("soils the floor.", gamelog);
+         if(law[LAW_FREESPEECH]==-2)addstr("床を[ピー]した。", gamelog);
+         else addstr("床を台無しにした。soils the floor.", gamelog);
          break;
       case 2:
-         strcat(str," murmurs quietly, breathing softly. ");
+         strcat(str,"は何かをつぶやき、");
          addstr(str, gamelog);
          move(17,1);
-         addstr("Then all is silent.", gamelog);
+         addstr("そして息絶えた。", gamelog);
          break;
       case 3:
-         strcat(str," shouts \"FATHER!  Why have you ");
+         strcat(str,"は叫んだ。「父よ! なぜ私を見捨てたのですか?」");
          addstr(str, gamelog);
          move(17,1);
-         addstr("forsaken me?\" and dies in a heap.", gamelog);
+         addstr("そして倒れ死んだ。", gamelog);
          break;
       case 4:
-         strcat(str," cries silently for mother, ");
+         strcat(str,"は母を思い静かに泣いた。");
          addstr(str, gamelog);
          move(17,1);
-         addstr("breathing slowly, then not at all.", gamelog);
+         addstr("息が弱々しくなり、そして最期を迎えた。", gamelog);
          break;
       case 5:
-         strcat(str," breathes heavily, coughing up ");
+         strcat(str,"は息を切らせ、");
          addstr(str, gamelog);
          move(17,1);
-         addstr("blood...  then is quiet.", gamelog);
+         addstr("血を吐き… そして静かになった。", gamelog);
          break;
       case 6:
-         strcat(str," silently drifts away, and ");
+         strcat(str,"の意識が遠くなり、");
          addstr(str, gamelog);
          move(17,1);
-         addstr("is gone.", gamelog);
+         addstr("そしてこの世を去った。", gamelog);
          break;
       case 7:
-         strcat(str," sweats profusely, murmurs ");
+         strcat(str,"は汗を流しながらつぶやいた。");
          addstr(str, gamelog);
          move(17,1);
-         if(law[LAW_FREESPEECH]==-2)addstr("something [good] about Jesus, and dies.", gamelog);
-         else addstr("something about Jesus, and dies.", gamelog);
+         if(law[LAW_FREESPEECH]==-2)addstr("イエスのように[すばらしく]生き、そして死する…", gamelog);
+         else addstr("イエスのように生き、そして死する…", gamelog);
          break;
       case 8:
-         strcat(str," whines loudly, voice crackling, ");
+         strcat(str,"は大声で泣き叫んだ。");
          addstr(str, gamelog);
          move(17,1);
-         addstr("then curls into a ball, unmoving.", gamelog);
+         addstr("そして、うずくまり動かなくなった。", gamelog);
          break;
       case 9:
-         strcat(str," shivers silently, whispering ");
+         strcat(str,"は震えながら静かに祈りをささげた。");
          addstr(str, gamelog);
          move(17,1);
-         addstr("a prayer, then all is still.", gamelog);
+         addstr("そしてそのまま息絶えた。", gamelog);
          break;
       case 10:
-         strcat(str," speaks these final words: ");
+         strcat(str,"は最期の言葉を言った: ");
          addstr(str, gamelog);
          move(17,1);
          switch(cr.align)
@@ -2741,9 +2748,9 @@ void adddeathmessage(Creature &cr)
          case ALIGN_ELITELIBERAL:
             addstr(slogan, gamelog); break;
          case ALIGN_MODERATE:
-            addstr("\"A plague on both your houses...\"", gamelog); break;
+            addstr("\"どっちもくたばってしまえ…\"", gamelog); break;
          default:
-            addstr("\"Better dead than liberal...\"", gamelog); break;
+            addstr("\"リベラルに屈するよりも死を選ぶ…\"", gamelog); break;
          }
          break;
       }

@@ -9,3 +9,5 @@ midi
 ogg
 dev
 workspaces
+*.o
+crimesquad.exe

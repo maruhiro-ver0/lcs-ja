@@ -43,13 +43,13 @@ void setup_newgame()
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(4,6);
-      addstr("New Game of Liberal Crime Squad: Advanced Gameplay Options");
+      addstr("リベラル・クライム・スコードの新規開始: 上級ルールの選択");
       move(7,0);
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       if(classicmode)
          addstr("[X]");
       else addstr("[ ]");
-      addstr(" A - Classic Mode: No Conservative Crime Squad.");
+      addstr(" A - クラシックモード: コンサバ・クライム・スコードは出現しない");
       move(9,0);
       if(!classicmode)
          set_color(COLOR_WHITE,COLOR_BLACK,0);
@@ -57,35 +57,35 @@ void setup_newgame()
       if(strongccs)
          addstr("[X]");
       else addstr("[ ]");
-      addstr(" B - We Didn't Start The Fire: The CCS starts active and extremely strong.");
+      addstr(" B - 心に火を灯せ: CSSは初めから活動的で強力");
       move(11,0);
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       if(nightmarelaws)
          addstr("[X]");
       else addstr("[ ]");
-      addstr(" C - Nightmare Mode: Liberalism is forgotten. Is it too late to fight back?");
+      addstr(" C - ナイトメアモード: リベラル主義は忘れられた。もう遅すぎるのか?");
       move(13,0);
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       if(multipleCityMode)
          addstr("[X]");
       else addstr("[ ]");
-      addstr(" D - National LCS: Advanced play across multiple cities.");
+      addstr(" D - 全米LCS: 複数の都市に渡る上級プレー");
       move(15,0);
       if(nocourtpurge)
          addstr("[X]");
       else addstr("[ ]");
-      addstr(" E - Marathon Mode: Prevent Liberals from amending the Constitution.");
+      addstr(" E - マラソンモード: リベラルの合衆国憲法改正を阻止する");
       #ifdef ALLOWSTALIN
       move(17,0);
       if(stalinmode)
          addstr("[X]");
       else addstr("[ ]");
-      addstr(" F - Stalinist Mode: Enable Stalinist Comrade Squad (not fully implemented).");
+      addstr(" F - スターリンモード: スターリン・コムラド・スコードを有効にする (未完成)");
       move(21,4);
       #else // ALLOWSTALIN
       move(19,4);
       #endif // ALLOWSTALIN
-      addstr("Press any other key to continue...");
+      addstr("何かキーを押すと続く…");
 
       int c=getkey();
 
@@ -176,13 +176,13 @@ void setup_newgame()
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(4,6);
-      addstr("New Game of Liberal Crime Squad: Your Agenda");
+      addstr("リベラル・クライム・スコードの新規開始: あなたのアジェンダ");
       move(7,0);
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       if(wincondition==WINCONDITION_ELITE)
          addstr("[X]");
       else addstr("[ ]");
-      addstr(" A - No Compromise Classic - I will make all our laws Elite Liberal!");
+      addstr(" A - 完全主義(クラシック) - 全ての法をエリートリベラルに!");
       move(9,0);
       if(!classicmode)
          set_color(COLOR_WHITE,COLOR_BLACK,0);
@@ -190,10 +190,10 @@ void setup_newgame()
       if(wincondition==WINCONDITION_EASY)
          addstr("[X]");
       else addstr("[ ]");
-      addstr(" B - Democrat Mode - Most laws must be Elite Liberal, some can be Liberal.");
+      addstr(" B - 民主党モード - 多くの法をエリートリベラルに、一部はリベラルに");
       move(13,4);
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      addstr("Press any other key to continue...");
+      addstr("何かキーを押すと続く…");
 
       int c=getkey();
 
@@ -215,28 +215,28 @@ void setup_newgame()
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(4,6);
-      addstr("New Game of Liberal Crime Squad: Field Learning");
+      addstr("リベラル・クライム・スコードの新規開始: 学びの場");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(5,6);
-      addstr("(affects Security, Stealth, Disguise, & Driving)");
+      addstr("(セキュリティ、隠密、変装、そして運転に影響する)");
       move(8,0);
       if(fieldskillrate==FIELDSKILLRATE_FAST)
          addstr("[X]");
       else addstr("[ ]");
-      addstr(" A - Fast skills - Grinding is Conservative!");
+      addstr(" A - 高速 - 詰め込み教育は保守的だ!");
       move(10,0);
       if(fieldskillrate==FIELDSKILLRATE_CLASSIC)
          addstr("[X]");
       else addstr("[ ]");
-      addstr(" B - Classic - Excellence requires practice.");
+      addstr(" B - クラシック - 上達には実践が必要");
       move(12,0);
       if(fieldskillrate==FIELDSKILLRATE_HARD)
          addstr("[X]");
       else addstr("[ ]");
-      addstr(" C - Hard Mode - Learn from the best, or face arrest!");
+      addstr(" C - ハードモード - 学び取るか、逮捕されるか!");
       move(16,4);
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      addstr("Press any other key to continue...");
+      addstr("何かキーを押すと続く…");
 
       int c=getkey();
 
@@ -336,76 +336,76 @@ void makecharacter()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(4,6);
-      addstr("The Founder of the Liberal Crime Squad");
+      addstr("リベラル・クライム・スコードの設立者");
 
       move(7,2);
-      addstr("FIRST NAME: ");
+      addstr("ファーストネーム: ");
       addstr(first[(int)gender]);
       move(7,30);
       set_color(COLOR_BLACK,COLOR_BLACK,1);
-      addstr(" (Press A to have your parents reconsider)");
+      addstr(" (Aを押すと両親が考え直す)");
 
       move(9,2);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      addstr("LAST NAME: ");
+      addstr("ラストネーム: ");
       addstr(last);
       move(9,30);
       set_color(COLOR_BLACK,COLOR_BLACK,1);
-      addstr(" (Press B to be born to a different family)");
+      addstr(" (Bを押すと別の家族に生まれる)");
 
       move(11,2);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      addstr("SEX: ");
+      addstr("性別: ");
       if(newcr->gender_conservative == GENDER_MALE)
       {
          set_color(COLOR_CYAN,COLOR_BLACK,1);
-         addstr("Male");
+         addstr("男性");
       }
       else if(newcr->gender_conservative == GENDER_FEMALE)
       {
          set_color(COLOR_MAGENTA,COLOR_BLACK,1);
-         addstr("Female");
+         addstr("女性");
       }
       else
       {
          set_color(COLOR_YELLOW,COLOR_BLACK,1);
-         addstr("It's Complicated");
+         addstr("不明");
       }
       move(11,30);
       set_color(COLOR_BLACK,COLOR_BLACK,1);
-      addstr(" (Press C to change your sex at birth)");
+      addstr(" (Cを押すと生まれたときの性別が変わる)");
 
       move(13,2);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      addstr("HISTORY: ");
+      addstr("経歴: ");
       if(choices)
       {
          set_color(COLOR_GREEN,COLOR_BLACK,1);
-         addstr("Let Me Choose");
+         addstr("選択する");
       }
       else
       {
          set_color(COLOR_RED,COLOR_BLACK,1);
-         addstr("Let Fate Decide");
+         addstr("運命は変えられない");
       }
       move(13,30);
       set_color(COLOR_BLACK,COLOR_BLACK,1);
-      addstr(" (Press D to toggle childhood)");
+      addstr(" (Dを押すと子供時代を切り替える)");
 
       if(!multipleCityMode)
       {
          move(15,2);
          set_color(COLOR_WHITE,COLOR_BLACK,1);
-         addstr("CITY: ");
+         addstr("都市: ");
          addstr(lcityname);
          move(15,30);
          set_color(COLOR_BLACK,COLOR_BLACK,1);
-         addstr(" (Press E to relocate)");
+         addstr(" (Eを押すと場所が代わる)");
       }
 
       move(19-multipleCityMode*2,4);
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      addstr("Press any other key when ready to begin...");
+      addstr("準備が整ったらその他のキーを押すこと…");
 
       int c=getkey();
 
@@ -487,31 +487,31 @@ void makecharacter()
 */
 
          case 0:
-            move(2,0);addstr("The day I was born in 1984...");
+            move(2,0);addstr("1984年、私は生まれた。この年は…");
 
             move(5,0);
             if(choices || selection == 0)
-               addstr("A - the Polish priest Popieluszko was kidnapped by government agents.");
+               addstr("A - ポーランドのポピールスズコ神父が政府に拉致された年だ。");
             //ATTRIBUTE_AGILITY 2
             // Oct. 19, 1984
             move(7,0);
             if(choices || selection == 1)
-               addstr("B - was the 3rd anniversary of the assassination attempt on Ronald Reagan.");
+               addstr("B - ロナルド・レーガン大統領暗殺未遂から3年目の年だ。");
             //ATTRIBUTE_STRENGTH 2
             // Mar. 3, 1984
             move(9,0);
             if(choices || selection == 2)
-               addstr("C - the Macintosh was introduced.");
+               addstr("C - マッキントッシュが発表された年だ。");
             //ATTRIBUTE_INTELLIGENCE 2
             // Jan. 24, 1984
             move(11,0);
             if(choices || selection == 3)
-               addstr("D - the Nobel Peace Prize went to Desmond Tutu for opposition to apartheid.");
+               addstr("D - アパルトヘイトに反対したデズモンド・ツツがノーベル平和賞を受賞した年だ。");
             //ATTRIBUTE_HEART 2
             // Oct. 16, 1984
             move(13,0);
             if(choices || selection == 4)
-               addstr("E - the Sandanista Front won the elections in Nicaragua.");
+               addstr("E - ニカラグアのサンディニスタ民族解放戦線が選挙で勝利した年だ。");
             //ATTRIBUTE_CHARISMA 2
             // Sept. 4, 1984
                         //move(14,0);
@@ -521,31 +521,31 @@ void makecharacter()
                         //March 30, 1984
 
             move(17,0);
-            addstr("The doctor said I was ");
+            addstr("医者は私は");
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             if(newcr->gender_conservative == GENDER_MALE)
-               addstr("a boy");
+               addstr("男の子");
             else if(newcr->gender_conservative == GENDER_FEMALE)
-               addstr("a girl");
+               addstr("女の子");
             else
-               addstr("an intersex baby");
+               addstr("インターセクシャル");
             set_color(COLOR_WHITE,COLOR_BLACK,0);
-            addstr(".");
+            addstr("だと言った。");
 
             move(19,0);
-            addstr("My parents ");
+            addstr("両親は");
             if(newcr->gender_conservative == GENDER_NEUTRAL)
             {
-               addstr("insisted otherwise.");
+               addstr("それを認めなかった。");
                move(20,0);
-               addstr("They ");
+               addstr("彼らは");
             }
 
-            addstr("named me ");
+            addstr("私を");
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(newcr->propername);
             set_color(COLOR_WHITE,COLOR_BLACK,0);
-            addstr(".");
+            addstr("と名づけた。");
 
             break;
 
@@ -557,30 +557,30 @@ void makecharacter()
                 // XXX: Something I forgot.
 
          case 1:
-            move(2,0);addstr("When I was bad...");
+            move(2,0);addstr("幼いとき、私は…");
             move(5,0);
             if(choices || selection == 0)
-               addstr("A - my parents grounded me and hid my toys, but I knew where they put them."); // Toy box
+               addstr("A - 両親から厳しくされ、おもちゃも隠された。だが、どこにあるのか私にはわかっていた。"); // Toy box
             //SKILL_SECURITY 1
             //ATTRIBUTE_AGILITY 1
             move(7,0);
             if(choices || selection == 1)
-               addstr("B - my father beat me.  I learned to take a punch earlier than most.");
+               addstr("B - 父によくぶたれた。私は何よりも早くげんこつを覚えた。");
             //SKILL_HANDTOHAND 1
             //ATTRIBUTE_HEALTH 1
             move(9,0);
             if(choices || selection == 2)
-               addstr("C - I was sent to my room, where I studied quietly by myself, alone.");
+               addstr("C - 部屋を与えられた。静かに勉強できるように。一人でだ。");
             //SKILL_WRITING 1
             //ATTRIBUTE_INTELLIGENCE 1
             move(11,0);
             if(choices || selection == 3)
-               addstr("D - my parents argued with each other about me, but I was never punished.");
+               addstr("D - 両親は私のことでよく言い争っていた。だが、暴力を振るわれることはなかった。");
             //SKILL_PERSUASION 1
             //ATTRIBUTE_HEART 1
             move(13,0);
             if(choices || selection == 4)
-               addstr("E - my father lectured me endlessly, trying to make me think like him.");
+               addstr("E - 父に厳しく教育された。彼が考えるような人間になるために。");
             //SKILL_PSYCHOLOGY 1
             //ATTRIBUTE_CHARISMA 1
 
@@ -603,96 +603,96 @@ void makecharacter()
             }*/
             break;
          case 2:
-            move(2,0);addstr("In elementary school...");
+            move(2,0);addstr("小学校に入学すると私は…");
             move(5,0);
             if(choices || selection == 0)
-               addstr("A - I was mischievous, and always up to something.");
+               addstr("A - イタズラばかりしていて、いつも何か企んでいた。");
             //SKILL_DISGUISE 1
             //ATTRIBUTE_AGILITY 1
             move(7,0);
             if(choices || selection == 1)
-               addstr("B - I had a lot of repressed anger.  I hurt animals.");
+               addstr("B - ずっと怒りを抑えていた。その代わりとして動物をいじめていた。");
             //SKILL_PSYCHOLOGY 1
             //ATTRIBUTE_STRENGTH 1
             //ATTRIBUTE_AGILITY 1
             //ATTRIBUTE_HEART -1 <--- !
             move(9,0);
             if(choices || selection == 2)
-               addstr("C - I was at the head of the class, and I worked very hard.");
+               addstr("C - クラスで一番だった。いつも懸命に勉強していた。");
             //ATTRIBUTE_INTELLIGENCE 1
             //SKILL_WRITING 1
             move(11,0);
             if(choices || selection == 3)
-               addstr("D - I was unruly and often fought with the other children.");
+               addstr("D - 自分を抑えることができずケンカばかりしていた。");
             //SKILL_HANDTOHAND 1
             //ATTRIBUTE_STRENGTH 1
             move(13,0);
             if(choices || selection == 4)
-               addstr("E - I was the class clown.  I even had some friends.");
+               addstr("E - クラスの人気者で友達もたくさんいた。");
             //SKILL_PERSUASION 1
             //ATTRIBUTE_CHARISMA 1
             break;
          case 3:
-            move(2,0);addstr("When I turned 10...");
+            move(2,0);addstr("私が10のとき…");
             move(5,0);
             if(choices || selection == 0)
-               addstr("A - my parents divorced.  Whenever I talked, they argued, so I stayed quiet.");
+               addstr("A - 両親が離婚した。私が何か言うと話すと両親はいつも言い争った。私は黙るしかなかった。");
             //SKILL_STEALTH 1
             move(7,0);
             if(choices || selection == 1)
-               addstr("B - my parents divorced.  Violently.");
+               addstr("B - 両親が離婚した。暴力が原因で。");
             //SKILL_HANDTOHAND 1
             move(9,0);
             if(choices || selection == 2)
-               addstr("C - my parents divorced.  Acrimoniously.  I once tripped over the paperwork!");
+               addstr("C - 両親が離婚した。険悪な雰囲気だった。書類を投げつけられたこともある!");
             //SKILL_LAW 1
             move(11,0);
             if(choices || selection == 3)
-               addstr("D - my parents divorced.  Mom slept with the divorce lawyer.");
+               addstr("D - 両親が離婚した。母が弁護士と寝たのだ。");
             //SKILL_SEDUCTION 1
             move(13,0);
             if(choices || selection == 4)
-               addstr("E - my parents divorced.  It still hurts to read my old diary.");
+               addstr("E - 両親が離婚した。日記を読むと今でも心が痛む。");
             //SKILL_WRITING 1
             break;
          case 4:
-            move(2,0);addstr("In junior high school...");
+            move(2,0);addstr("中学に入ると私は…");
             move(5,0);
             if(choices || selection == 0)
-               addstr("A - I was into chemistry.  I wanted to know what made the world tick.");
+               addstr("A - 科学部に入った。私はこの世界の仕組みを知りたかった。");
             //SKILL_SCIENCE 2
             //ATTRIBUTE_INTELLIGENCE 2
             move(7,0);
             if(choices || selection == 1)
-               addstr("B - I played guitar in a grunge band.  We sucked, but so did life.");
+               addstr("B - グランジ・バンドでギターをやった。だが、ひどいものだった。");
             //SKILL_MUSIC 2
             //ATTRIBUTE_CHARISMA 2
             move(9,0);
             if(choices || selection == 2)
-               addstr("C - I drew things, a lot.  I was drawing a world better than this.");
+               addstr("C - たくさん絵を描いた。この世界をよりすばらしく描きたかったのだ。");
             //SKILL_ART 2
             //ATTRIBUTE_HEART 2
             move(11,0);
             if(choices || selection == 3)
-               addstr("D - I played violent video games at home.  I was a total outcast.");
+               addstr("D - 家で残酷なビデオゲームばかりしていた。完全に引きこもりだった。");
             //SKILL_COMPUTERS 2
             //ATTRIBUTE_AGILITY 2
             move(13,0);
             if(choices || selection == 4)
-               addstr("E - I was obsessed with swords, and started lifting weights.");
+               addstr("E - 剣術に取り付かれ筋力トレーニングを始めた。");
             //SKILL_SWORD 2
             //ATTRIBUTE_STRENGTH 2
             break;
          case 5:
-            move(2,0);addstr("Things were getting really bad...");
+            move(2,0);addstr("何もかもが悪くなり始めた…");
             move(5,0);
             if(choices || selection == 0)
-               addstr("A - when I stole my first car.  I got a few blocks before I totaled it.");
+               addstr("A - 初めて車を盗んだ。数ブロック走らせて事故を起こした。");
             //SKILL_DRIVING 1
             //SKILL_SECURITY 1
             move(7,0);
             if(choices || selection == 1)
-               addstr("B - and I went to live with my dad.  He had been in Nam and he still drank.");
+               addstr("B - 父と暮らすようになった。彼はベトナム帰りの飲んだくれだ。");
             //SKILL_SHOTGUN 1
             //SKILL_RIFLE 1
             //SKILL_PSYCHOLOGY 1

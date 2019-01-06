@@ -14,8 +14,8 @@
     -->
 
     <cliptype idname="CLIP_38">
-        <name>.38 Speedloader</name>
-        <name_future>.38 Slug Mag</name_future>
+        <name>.38スピードローダー</name>
+        <name_future>.38エア弾</name_future>
         <ammo>6</ammo>
         <fencevalue>2</fencevalue>
     </cliptype>
@@ -56,8 +56,8 @@
     </cliptype>
 
     <cliptype idname="CLIP_ASSAULT">
-        <name>Aslt/Rifle Mag</name>
-        <name_future>Rifle Powerpack</name_future>
+        <name>小銃弾</name>
+        <name_future>ライフルパワーパック</name_future>
         <ammo>30</ammo>
         <fencevalue>8</fencevalue>
     </cliptype>

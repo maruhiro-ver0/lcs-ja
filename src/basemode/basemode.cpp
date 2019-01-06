@@ -29,8 +29,7 @@ This file is part of Liberal Crime Squad.                                       
 // Note: this file is encoded in the PC-8 / Code Page 437 / OEM-US character set
 // (The same character set used by Liberal Crime Squad when it is running)
 // Certain special characters won't display correctly unless your text editor is
-// set to use that character set, such as this e with an accent: ‚
-
+// set to use that character set, such as this e with an accent: Ã©
 // In Windows Notepad with the Terminal font, OEM/DOS encoding it should work fine.
 // You can set this in Notepad by going to Format->Font and choosing the Terminal font,
 // then choosing OEM/DOS in the Script dropdown box.
@@ -166,15 +165,15 @@ bool show_disbanding_screen(int& oldforcemonth)
       set_color(COLOR_GREEN,COLOR_BLACK,1);
       mvaddstr(17,68,"Libertarian");
       set_color(COLOR_RED,COLOR_BLACK,1);
-      mvaddstr(18,0,"\x11ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ");
+      mvaddstr(18,0,"\x11ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„");
       set_color(COLOR_MAGENTA,COLOR_BLACK,1);
-      mvaddstr(18,16,"ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ");
+      mvaddstr(18,16,"ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„");
       set_color(COLOR_YELLOW,COLOR_BLACK,1);
-      mvaddstr(18,32,"ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ");
+      mvaddstr(18,32,"ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„");
       set_color(COLOR_CYAN,COLOR_BLACK,1);
-      mvaddstr(18,48,"ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ");
+      mvaddstr(18,48,"ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„");
       set_color(COLOR_GREEN,COLOR_BLACK,1);
-      mvaddstr(18,64,"ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ\x10");
+      mvaddstr(18,64,"ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„\x10");
       set_alignment_color(align,true);
       mvaddchar(18,stalin,'O');
    }
@@ -194,15 +193,15 @@ bool show_disbanding_screen(int& oldforcemonth)
    set_color(COLOR_RED,COLOR_BLACK,1);
    mvaddstr(21,67,"Conservative");
    set_color(COLOR_GREEN,COLOR_BLACK,1);
-   mvaddstr(22,0,"\x11ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ");
+   mvaddstr(22,0,"\x11ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„");
    set_color(COLOR_CYAN,COLOR_BLACK,1);
-   mvaddstr(22,16,"ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ");
+   mvaddstr(22,16,"ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„");
    set_color(COLOR_YELLOW,COLOR_BLACK,1);
-   mvaddstr(22,32,"ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ");
+   mvaddstr(22,32,"ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„");
    set_color(COLOR_MAGENTA,COLOR_BLACK,1);
-   mvaddstr(22,48,"ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ");
+   mvaddstr(22,48,"ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„");
    set_color(COLOR_RED,COLOR_BLACK,1);
-   mvaddstr(22,64,"ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ\x10");
+   mvaddstr(22,64,"ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„\x10");
    set_alignment_color(align,true);
    mvaddchar(22,mood,'O');
 
@@ -359,15 +358,15 @@ void mode_base()
             if(underattack)
             {
                set_color(COLOR_RED,COLOR_BLACK,1);
-               mvaddstr(8,1,"Under Attack");
+               mvaddstr(8,1,"æ”»æ’ƒä¸­");
             }
             else
             {
                set_color(COLOR_YELLOW,COLOR_BLACK,1);
-               mvaddstr(8,1,"Under Siege");
+               mvaddstr(8,1,"åŒ…å›²ä¸­");
                int stock=1;
                if(loc)stock=loc->compound_stores;
-               if(!stock)addstr(" (No Food)");
+               if(!stock)addstr(" (é£Ÿæ–™ãªã—)");
             }
          }
 
@@ -391,22 +390,22 @@ void mode_base()
          }
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
-         mvaddstr(18,10,"ÄÄÄ ACTIVISM ÄÄÄ");
-         mvaddstr(18,51,"ÄÄÄ PLANNING ÄÄÄ");
+         mvaddstr(18,10,"----- æ´»å‹• -----");
+         mvaddstr(18,51,"----- è¨ˆç”» -----");
 
          if(partysize&&!underattack) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
-         mvaddstr(19,40,"E - Equip Squad");
+         mvaddstr(19,40,"E - éƒ¨éšŠã®è£…å‚™");
          if(len(vehicle)&&partysize) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
-         mvaddstr(19,60,"V - Vehicles");
+         mvaddstr(19,60,"V - è‡ªå‹•è»Š");
          if(len(pool)) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
-         mvaddstr(20,40,"R - Review Assets and Form Squads");
+         mvaddstr(20,40,"R - é…ç½®ã®ç¢ºèªã¨éƒ¨éšŠã®ç·¨æˆ");
 
          if(partysize>1) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
-         if(partysize&&!sieged) mvaddstr(8,30,"O - Reorder");
+         if(partysize&&!sieged) mvaddstr(8,30,"O - é †åº");
 
          if(activesquad&&!sieged) // don't cover up info about siege with irrelevant squad name of a squad that will be disbanded during the siege anyway
          {
@@ -416,14 +415,14 @@ void mode_base()
          }
          if(len(squad)>1||(!activesquad&&len(squad))) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
-         mvaddstr(8,43,"TAB - Next Squad");
+         mvaddstr(8,43,"TAB - æ¬¡ã®éƒ¨éšŠ");
 
          if(safenumber>0) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
-         mvaddstr(8,62,"Z - Next Location");
+         mvaddstr(8,62,"Z - æ¬¡ã®å ´æ‰€");
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
-         mvaddstr(21,40,"L - The Status of the Liberal Agenda");
+         mvaddstr(21,40,"L - ãƒªãƒ™ãƒ©ãƒ«ã‚¢ã‚¸ã‚§ãƒ³ãƒ€ã®çŠ¶æ³");
 
          set_color(COLOR_BLACK,COLOR_BLACK,1);
          for(int p=0;p<len(pool);p++) if(pool[p]->is_active_liberal())
@@ -436,7 +435,7 @@ void mode_base()
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             break;
          }
-         mvaddstr(21,1,"A - Activate Liberals");
+         mvaddstr(21,1,"A - ãƒªãƒ™ãƒ©ãƒ«æ´»å‹•");
 
          set_color(COLOR_BLACK,COLOR_BLACK,1);
          for(int p=0;p<len(pool);p++)
@@ -445,7 +444,7 @@ void mode_base()
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                break;
             }
-         mvaddstr(21,25,"B - Sleepers");
+         mvaddstr(21,25,"B - æ½œä¼è€…");
 
          if(partysize)
          {
@@ -453,7 +452,7 @@ void mode_base()
             else set_color(COLOR_BLACK,COLOR_BLACK,1);
          }
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
-         mvaddstr(20,1,"C - Cancel this Squad's Departure");
+         mvaddstr(20,1,"C - å‡ºæ’ƒã‚’å–ã‚Šã‚„ã‚ã‚‹");
 
          if(sieged)
          {
@@ -470,16 +469,16 @@ void mode_base()
                   }
                }
             }
-            mvaddstr(19,1,"F - Escape/Engage");
+            mvaddstr(19,1,"F - è„±å‡º/æˆ¦é—˜");
 
             set_color(COLOR_WHITE,COLOR_BLACK,0);
-            mvaddstr(19,23,"G - Give Up");
+            mvaddstr(19,23,"G - æŠ•é™ã™ã‚‹");
          }
          else
          {
             if(partysize) set_color(COLOR_WHITE,COLOR_BLACK,0);
             else set_color(COLOR_BLACK,COLOR_BLACK,1);
-            mvaddstr(19,1,"F - Go forth to stop EVIL");
+            mvaddstr(19,1,"F - æ‚ªã‚’é˜»æ­¢ã™ã‚‹ãŸã‚ã«å‡ºæ’ƒã™ã‚‹");
          }
 
          //if(partysize>0&&(party_status==-1||partysize>1))set_color(COLOR_WHITE,COLOR_BLACK,0);
@@ -490,31 +489,31 @@ void mode_base()
          //mvaddstr(18,40,"0 - Show the squad's Liberal status");
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
-         mvaddstr(23,40,"X - Live to fight EVIL another day");
+         mvaddstr(23,40,"X - æ˜æ—¥æˆ¦ã†ãŸã‚ã«ç”Ÿãã‚‹");
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          if(cannotwait) mvaddstr(23,1,"Cannot Wait until Siege Resolved");
          else
          {
-            if(sieged) mvaddstr(23,1,"W - Wait out the siege");
-            else mvaddstr(23,1,"W - Wait a day");
-            if(day==monthday()) addstr(" (next month)");
+            if(sieged) mvaddstr(23,1,"W - åŒ…å›²ã«è€ãˆã‚‹");
+            else mvaddstr(23,1,"W - ä¸€æ—¥ã‚’éã”ã™");
+            if(day==monthday()) addstr(" (æœˆæ›¿ã‚ã‚Š)");
          }
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
-         mvaddstr(22,40,"S - FREE SPEECH: the Liberal Slogan");
+         mvaddstr(22,40,"S - è¨€è«–ã®è‡ªç”±: ãƒªãƒ™ãƒ©ãƒ«ã‚¹ãƒ­ãƒ¼ã‚¬ãƒ³");
          if(haveflag)
          {
             if(sieged) set_color(COLOR_GREEN,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
-            mvaddstr(22,1,"P - PROTEST: burn the flag");
+            mvaddstr(22,1,"P - æŠ—è­°: å›½æ——ã‚’ç„¼ãæ‰•ã†");
          }
          else
          {
             if(ledger.get_funds()>=20&&!sieged&&(selectedsiege!=-1||activesquad!=NULL))
                set_color(COLOR_WHITE,COLOR_BLACK,0);
             else set_color(COLOR_BLACK,COLOR_BLACK,1);
-            mvaddstr(22,1,"P - PATRIOTISM: fly a flag here ($20)");
+            mvaddstr(22,1,"P - æ„›å›½å¿ƒ: å›½æ——ã‚’æ²ã’ã‚‹ ($20)");
          }
 
          set_color(COLOR_WHITE,COLOR_BLACK,1);

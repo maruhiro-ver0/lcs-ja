@@ -29,7 +29,7 @@ the bottom of includes.h in the top src folder.
 // Note: this file is encoded in the PC-8 / Code Page 437 / OEM-US character set
 // (The same character set used by Liberal Crime Squad when it is running)
 // Certain special characters won't display correctly unless your text editor is
-// set to use that character set, such as this e with an accent: ‚
+// set to use that character set, such as this e with an accent: Ã©
 
 // In Windows Notepad with the Terminal font, OEM/DOS encoding it should work fine.
 // You can set this in Notepad by going to Format->Font and choosing the Terminal font,
@@ -246,30 +246,31 @@ void locheader()
    else set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(0,0);
 
+   addstr(year);
+   addstr("å¹´ ");
+   addstr(getmonth(month,true));
+   addstr(" ");
+   addstr(day);
+   addstr("æ—¥ ");
+
    if(activesquad!=NULL && activesquad->squad[0]->location!=-1)
    {
       addstr(location[activesquad->squad[0]->location]->getname(false, true));
-      addstr(", ");
+      addstr(" ");
    }
    else
    {
       if(selectedsiege==-1)
       {
          addstr("No Squad Selected");
-         addstr(", ");
+         addstr(" ");
       }
       else
       {
          addstr(location[selectedsiege]->getname(false, true));
-         addstr(", ");
+         addstr(" ");
       }
    }
-
-   addstr(getmonth(month,true));
-   addstr(" ");
-   addstr(day);
-   addstr(", ");
-   addstr(year);
 
    if(activesquad==NULL && selectedsiege==-1)
    {
@@ -340,7 +341,7 @@ void printparty()
       char str[200];
 
       move(1,0);
-      addstr("#ÄCODE NAMEÄÄÄÄÄÄÄÄÄÄÄÄSKILLÄÄÄWEAPONÄÄÄÄÄÄÄÄÄARMORÄÄÄÄÄÄÄÄÄÄHEALTHÄÄÄTRANSPORTÄ"); // 80 characters
+      addstr("#ã‚³ãƒ¼ãƒ‰ãƒãƒ¼ãƒ ----------ã‚¹ã‚­ãƒ«--æ­¦å™¨-----------é˜²å…·-----------å¥åº·-----ç§»å‹•æ‰‹æ®µ--"); // 80 characters
 
       for(int p=0;p<6;p++)
       {
@@ -475,9 +476,9 @@ void printparty()
                   (party[p]->wound[BODYPART_LEG_RIGHT] & WOUND_CLEANOFF))legok--;
                if((party[p]->wound[BODYPART_LEG_LEFT] & WOUND_NASTYOFF)||
                   (party[p]->wound[BODYPART_LEG_LEFT] & WOUND_CLEANOFF))legok--;
-               if(party[p]->flag & CREATUREFLAG_WHEELCHAIR)strcpy(str,"Wheelchair");
-               else if(legok>=1)strcpy(str,"On Foot");
-               else strcpy(str,"On \"Foot\"");
+               if(party[p]->flag & CREATUREFLAG_WHEELCHAIR)strcpy(str,"è»Šæ¤…å­");
+               else if(legok>=1)strcpy(str,"å¾’æ­©");
+               else strcpy(str,"æ­©è¡Œä¸èƒ½");
             }
             addstr(str);
          }
@@ -614,14 +615,12 @@ void printlocation(long loc)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             mvaddstr(6,50,days);
-            addstr(" Day");
-            if(days!=1)addchar('s');
-            addstr(" of Food Left");
+            addstr("æ—¥åˆ†ã®é£Ÿæ–™");
          }
          else if(days==0)
          {
             set_color(COLOR_RED,COLOR_BLACK,0);
-            mvaddstr(6,50,"Not Enough Food");
+            mvaddstr(6,50,"ååˆ†ãªé£Ÿæ–™ãŒãªã„");
          }
       }
       set_color(COLOR_WHITE,COLOR_BLACK,0);
@@ -665,35 +664,35 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
       }
    }
 
-   mvaddstr(2,0,"Hrt:    ");
+   mvaddstr(2,0,"ç²¾ç¥:   ");
    if(knowledge>0)
       addstr(cr->get_attribute(ATTRIBUTE_HEART,true));
    else addstr("?");
-   mvaddstr(3,0,"Int:    ");
+   mvaddstr(3,0,"çŸ¥è­˜:   ");
    if(knowledge>0)
       addstr(cr->get_attribute(ATTRIBUTE_INTELLIGENCE,true));
    else addstr("?");
-   mvaddstr(4,0,"Wis:    ");
+   mvaddstr(4,0,"æ•™é¤Š:   ");
    if(knowledge>0)
       addstr(cr->get_attribute(ATTRIBUTE_WISDOM,true));
    else addstr("?");
-   mvaddstr(5,0,"Hlth:   ");
+   mvaddstr(5,0,"ä½“åŠ›:   ");
    if(knowledge>1)
       addstr(cr->get_attribute(ATTRIBUTE_HEALTH,true));
    else addstr("?");
-   mvaddstr(2,11,"Agi:    ");
+   mvaddstr(2,11,"æ•æ·æ€§: ");
    if(knowledge>1)
       addstr(cr->get_attribute(ATTRIBUTE_AGILITY,true));
    else addstr("?");
-   mvaddstr(3,11,"Str:    ");
+   mvaddstr(3,11,"è…•åŠ›:   ");
    if(knowledge>1)
       addstr(cr->get_attribute(ATTRIBUTE_STRENGTH,true));
    else addstr("?");
-   mvaddstr(4,11,"Char:   ");
+   mvaddstr(4,11,"é­…åŠ›:   ");
    if(knowledge>0)
       addstr(cr->get_attribute(ATTRIBUTE_CHARISMA,true));
    else addstr("?");
-   mvaddstr(5,11,"Trans: ");
+   mvaddstr(5,11,"ç§»å‹•:   ");
    long v=-1;
    if(showcarprefs==1)v=id_getcar(cr->pref_carid);
    else v=id_getcar(cr->carid);
@@ -712,9 +711,9 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
          (cr->wound[BODYPART_LEG_RIGHT] & WOUND_CLEANOFF))legok--;
       if((cr->wound[BODYPART_LEG_LEFT] & WOUND_NASTYOFF)||
          (cr->wound[BODYPART_LEG_LEFT] & WOUND_CLEANOFF))legok--;
-      if(cr->flag & CREATUREFLAG_WHEELCHAIR)strcpy(str,"Wheelchair");
-      else if(legok>=1)strcpy(str,"On Foot");
-      else strcpy(str,"On \"Foot\"");
+      if(cr->flag & CREATUREFLAG_WHEELCHAIR)strcpy(str,"è»Šæ¤…å­");
+      else if(legok>=1)strcpy(str,"å¾’æ­©");
+      else strcpy(str,"æ­©è¡Œä¸èƒ½");
    }
    addstr(str);
    move(6,0);
@@ -726,7 +725,7 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
       case 1:set_color(COLOR_YELLOW,COLOR_BLACK,1);break;
       case 2:set_color(COLOR_RED,COLOR_BLACK,1);break;
    }
-   addstr("Weapon: ");
+   addstr("æ­¦å™¨:   ");
    addstr(cr->get_weapon_string(1));
 
 
@@ -763,7 +762,7 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
          if(cr->get_armor().get_stealth_value() > 1)
             set_color(COLOR_BLACK,COLOR_BLACK,1);
    }
-   addstr("Clothes: ");
+   addstr("æœè£…:   ");
    addstr(cr->get_armor_string(false));
 
    set_color(COLOR_WHITE,COLOR_BLACK,0);
@@ -817,7 +816,7 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(2,31);
-            addstr("Top Skills:");
+            addstr("ç‰¹æŠ€:");
          }
       }
 
@@ -840,17 +839,17 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
          move(2+w,49);
          switch(w)
          {
-         case BODYPART_HEAD:addstr("Head:");break;
-         case BODYPART_BODY:addstr("Body:");break;
-         case BODYPART_ARM_RIGHT:addstr("Right Arm:");break;
-         case BODYPART_ARM_LEFT:addstr("Left Arm:");break;
-         case BODYPART_LEG_RIGHT:addstr("Right Leg:");break;
-         case BODYPART_LEG_LEFT:addstr("Left Leg:");break;
+         case BODYPART_HEAD:addstr("é ­:");break;
+         case BODYPART_BODY:addstr("èƒ´:");break;
+         case BODYPART_ARM_RIGHT:addstr("å³è…•:");break;
+         case BODYPART_ARM_LEFT:addstr("å·¦è…•:");break;
+         case BODYPART_LEG_RIGHT:addstr("å³è¶³:");break;
+         case BODYPART_LEG_LEFT:addstr("å·¦è¶³:");break;
          }
 
          move(2+w,61);
-         if(cr->wound[w] & WOUND_NASTYOFF)addstr("Ripped off");
-         else if(cr->wound[w] & WOUND_CLEANOFF)addstr("Clean sever");
+         if(cr->wound[w] & WOUND_NASTYOFF)addstr("æå£Š");
+         else if(cr->wound[w] & WOUND_CLEANOFF)addstr("åˆ‡é™¤");
          else
          {
             int sum=0;
@@ -865,15 +864,15 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
             {
                set_color(COLOR_GREEN,COLOR_BLACK,1);
                if(cr->animalgloss==ANIMALGLOSS_ANIMAL)
-                  addstr("Animal");
-               else addstr("Liberal");
+                  addstr("å‹•ç‰©");
+               else addstr("ãƒªãƒ™ãƒ©ãƒ«");
             }
 
-            if(cr->wound[w] & WOUND_SHOT){addstr("Sht");sum--;if(sum>0)addstr(",");}
-            if(cr->wound[w] & WOUND_BRUISED){addstr("Brs");sum--;if(sum>0)addstr(",");}
-            if(cr->wound[w] & WOUND_CUT){addstr("Cut");sum--;if(sum>0)addstr(",");}
-            if(cr->wound[w] & WOUND_TORN){addstr("Trn");sum--;if(sum>0)addstr(",");}
-            if(cr->wound[w] & WOUND_BURNED){addstr("Brn");sum--;if(sum>0)addstr(",");}
+            if(cr->wound[w] & WOUND_SHOT){addstr("æ’ƒ ");sum--;if(sum>0)addstr(",");}
+            if(cr->wound[w] & WOUND_BRUISED){addstr("æ‰“ ");sum--;if(sum>0)addstr(",");}
+            if(cr->wound[w] & WOUND_CUT){addstr("åˆ‡ ");sum--;if(sum>0)addstr(",");}
+            if(cr->wound[w] & WOUND_TORN){addstr("è£‚ ");sum--;if(sum>0)addstr(",");}
+            if(cr->wound[w] & WOUND_BURNED){addstr("ç« ");sum--;if(sum>0)addstr(",");}
          }
       }
       set_color(COLOR_WHITE,COLOR_BLACK,0);
@@ -895,19 +894,19 @@ void fullstatus(int p)
 
       set_color(COLOR_GREEN,COLOR_BLACK,1);
       move(0,0);
-      addstr("Profile of a Liberal");
+      addstr("ãƒªãƒ™ãƒ©ãƒ«ã®ãƒ—ãƒ­ãƒ•ã‚£ãƒ¼ãƒ«");
 
       if(page==0) printliberalstats(*activesquad->squad[p]);
       else if(page==1) printliberalskills(*activesquad->squad[p]);
       else if(page==2) printliberalcrimes(*activesquad->squad[p]);
 
       move(23,0);
-      addstr("N - Change Code Name      G - Fix Gender Label");
+      addstr("N - ã‚³ãƒ¼ãƒ‰ãƒãƒ¼ãƒ å¤‰æ›´      G - æ€§åˆ¥ã®ãƒ©ãƒ™ãƒ«ã‚’å¤‰æ›´");
       if(activesquad->squad[1]!=NULL)
-         addstr("    LEFT/RIGHT - Other Liberals");
+         addstr("    â†/â†’ - ä»–ã®ãƒªãƒ™ãƒ©ãƒ«ã‚’è¦‹ã‚‹");
       move(24,0);
-      addstr("Press any other key to continue the Struggle");
-      addstr("    UP/DOWN  - More Info");
+      addstr("ä½•ã‹ã‚­ãƒ¼ã‚’æŠ¼ã™ã¨é—˜äº‰ã‚’ç¶šã‘ã‚‹");
+      addstr("                        â†‘/â†“ - è©³ç´°");
 
       int c=getkey();
 
@@ -930,7 +929,7 @@ void fullstatus(int p)
       else if(c=='n')
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
-         mvaddstr(23,0,"What is the new code name?                                                      "); // 80 characters
+         mvaddstr(23,0,"æ–°ã—ã„ã‚³ãƒ¼ãƒ‰ãƒãƒ¼ãƒ ã¯ä½•ã‹?                                                       "); // 80 characters
          mvaddstr(24,0,"                                                                                "); // 80 spaces
 
          enter_name(24,0,activesquad->squad[p]->name,CREATURE_NAMELEN,activesquad->squad[p]->propername);
@@ -1019,7 +1018,7 @@ void printliberalstats(Creature &cr)
 
    // Add name
    move(2,0);
-   addstr("Name: ");
+   addstr("æ°å: ");
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    addstr(cr.name);
    set_color(COLOR_WHITE,COLOR_BLACK,0);
@@ -1030,7 +1029,7 @@ void printliberalstats(Creature &cr)
       addstr(cr.propername);
       addstr(")");
    }
-   addstr(", ");
+   addstr("ã€");
    addstr(gettitle(cr));
    addstr(" (");
    addstr(cr.get_type_name());
@@ -1038,24 +1037,23 @@ void printliberalstats(Creature &cr)
    move(3,0);
 
    // Add birthdate
-   addstr("Born ");
-   addstr(getmonth(cr.birthday_month));
-   addstr(" ");
-   addstr(cr.birthday_day);
-   addstr(", ");
    if(cr.birthday_month < month ||
       (cr.birthday_month == month && cr.birthday_day <= day))
       addstr(year-cr.age);
    else addstr(year-1-cr.age);
+   addstr("å¹´");
+   addstr(getmonth(cr.birthday_month));
+   addstr(cr.birthday_day);
+   addstr("æ—¥ç”Ÿã¾ã‚Œ");
    // Add age
-   addstr(" (Age ");
+   addstr(" (");
    addstr(cr.age);
    // Assess their gender in an Elite Liberal way
    if(cr.gender_liberal == GENDER_MALE)
-      addstr(", Male");
+      addstr("æ­³ã€ç”·æ€§");
    else if(cr.gender_liberal == GENDER_FEMALE)
-      addstr(", Female");
-   else addstr(", Genderqueer");
+      addstr("æ­³ã€å¥³æ€§");
+   else addstr("æ­³ã€ã‚¯ã‚£ã‚¢");
    // DON'T Note if there's some conflict with Conservative society's perceptions
    //if(cr.gender_liberal != cr.gender_conservative && cr.gender_liberal != GENDER_NEUTRAL)
    //   addstr("*");
@@ -1066,12 +1064,12 @@ void printliberalstats(Creature &cr)
    set_color(COLOR_WHITE,COLOR_BLACK,0);
 
    // Add juice
-   move(10,16);
-   addstr("Juice: ");
+   move(10,12);
+   addstr("ã‚¸ãƒ¥ãƒ¼ã‚¹: ");
    addstr(cr.juice);
    if(cr.juice<1000)
    {
-      move(11,16);addstr("Next:  ");
+      move(11,12);addstr("æ¬¡:       ");
       if(cr.juice<0)addstr("0");
       else if(cr.juice<10)addstr("10");
       else if(cr.juice<50)addstr("50");
@@ -1081,19 +1079,19 @@ void printliberalstats(Creature &cr)
       else addstr("1000");
    }
    // Add attributes
-   move(5,0);addstr("Heart: ");
+   move(5,0);addstr("ç²¾ç¥:   ");
    addstr(cr.get_attribute(ATTRIBUTE_HEART,true));
-   move(6,0);addstr("Intelligence: ");
+   move(6,0);addstr("çŸ¥è­˜:   ");
    addstr(cr.get_attribute(ATTRIBUTE_INTELLIGENCE,true));
-   move(7,0);addstr("Wisdom: ");
+   move(7,0);addstr("æ•™é¤Š:   ");
    addstr(cr.get_attribute(ATTRIBUTE_WISDOM,true));
-   move(8,0);addstr("Health: ");
+   move(8,0);addstr("ä½“åŠ›:   ");
    addstr(cr.get_attribute(ATTRIBUTE_HEALTH,true));
-   move(9,0);addstr("Agility: ");
+   move(9,0);addstr("æ•æ·æ€§: ");
    addstr(cr.get_attribute(ATTRIBUTE_AGILITY,true));
-   move(10,0);addstr("Strength: ");
+   move(10,0);addstr("è…•åŠ›:   ");
    addstr(cr.get_attribute(ATTRIBUTE_STRENGTH,true));
-   move(11,0);addstr("Charisma: ");
+   move(11,0);addstr("é­…åŠ›:   ");
    addstr(cr.get_attribute(ATTRIBUTE_CHARISMA,true));
 
    // Add highest skills
@@ -1104,9 +1102,9 @@ void printliberalstats(Creature &cr)
    char printed=1;
 
    move(5,28);
-   addstr("SKILL");
+   addstr("ã‚¹ã‚­ãƒ«");
    move(5,43);
-   addstr("NOW   MAX");
+   addstr("ç¾åœ¨  æœ€å¤§");
    for(int skills_shown=0;skills_shown<skills_max&&printed;skills_shown++)
    {
       printed=0;
@@ -1165,18 +1163,18 @@ void printliberalstats(Creature &cr)
 
    // Add weapon
    move(13,0);
-   addstr("Weapon: ");
+   addstr("æ­¦å™¨:   ");
    addstr(cr.get_weapon_string(0));
 
    // Add clothing
    move(14,0);
-   addstr("Clothes: ");
+   addstr("æœè£…:   ");
    addstr(cr.get_armor_string(true));
 
 
    // Add vehicle
    move(15,0);
-   addstr("Car: ");
+   addstr("è‡ªå‹•è»Š: ");
    long v=-1;
    if(showcarprefs==1)v=id_getcar(cr.pref_carid);
    else v=id_getcar(cr.carid);
@@ -1250,17 +1248,17 @@ void printliberalstats(Creature &cr)
       move(5+w,55);
       switch(w)
       {
-      case BODYPART_HEAD:addstr("Head:");break;
-      case BODYPART_BODY:addstr("Body:");break;
-      case BODYPART_ARM_RIGHT:addstr("Right Arm:");break;
-      case BODYPART_ARM_LEFT:addstr("Left Arm:");break;
-      case BODYPART_LEG_RIGHT:addstr("Right Leg:");break;
-      case BODYPART_LEG_LEFT:addstr("Left Leg:");break;
+      case BODYPART_HEAD:addstr("é ­:");break;
+      case BODYPART_BODY:addstr("èƒ´:");break;
+      case BODYPART_ARM_RIGHT:addstr("å³è…•:");break;
+      case BODYPART_ARM_LEFT:addstr("å·¦è…•:");break;
+      case BODYPART_LEG_RIGHT:addstr("å³è¶³:");break;
+      case BODYPART_LEG_LEFT:addstr("å·¦è¶³:");break;
       }
 
       move(5+w,66);
-      if(cr.wound[w] & WOUND_NASTYOFF)addstr("Ripped off");
-      else if(cr.wound[w] & WOUND_CLEANOFF)addstr("Severed");
+      if(cr.wound[w] & WOUND_NASTYOFF)addstr("æå£Š");
+      else if(cr.wound[w] & WOUND_CLEANOFF)addstr("åˆ‡æ–­");
       else
       {
          int sum=0;
@@ -1275,15 +1273,15 @@ void printliberalstats(Creature &cr)
          {
             set_color(COLOR_GREEN,COLOR_BLACK,1);
             if(cr.animalgloss==ANIMALGLOSS_ANIMAL)
-               addstr("Animal");
-            else addstr("Liberal");
+               addstr("å‹•ç‰©");
+            else addstr("ãƒªãƒ™ãƒ©ãƒ«");
          }
 
-         if(cr.wound[w] & WOUND_SHOT){addstr("Shot");sum--;if(sum>0)addstr(",");}
-         if(cr.wound[w] & WOUND_BRUISED){addstr("Bruised");sum--;if(sum>0)addstr(",");}
-         if(cr.wound[w] & WOUND_CUT){addstr("Cut");sum--;if(sum>0)addstr(",");}
-         if(cr.wound[w] & WOUND_TORN){addstr("Torn");sum--;if(sum>0)addstr(",");}
-         if(cr.wound[w] & WOUND_BURNED){addstr("Burned");sum--;if(sum>0)addstr(",");}
+         if(cr.wound[w] & WOUND_SHOT){addstr("è¢«å¼¾");sum--;if(sum>0)addstr("ã€");}
+         if(cr.wound[w] & WOUND_BRUISED){addstr("æ‰“æ’²");sum--;if(sum>0)addstr("ã€");}
+         if(cr.wound[w] & WOUND_CUT){addstr("åˆ‡å‚·");sum--;if(sum>0)addstr("ã€");}
+         if(cr.wound[w] & WOUND_TORN){addstr("è£‚å‚·");sum--;if(sum>0)addstr("ã€");}
+         if(cr.wound[w] & WOUND_BURNED){addstr("ç«å‚·");sum--;if(sum>0)addstr("ã€");}
       }
    }
    set_color(COLOR_WHITE,COLOR_BLACK,0);
@@ -1296,91 +1294,91 @@ void printliberalstats(Creature &cr)
    if(cr.special[SPECIALWOUND_HEART]!=1)
    {
       move(y++,x);
-      addstr("Heart Punctured");
+      addstr("å¿ƒè‡“ç ´è£‚");
    }
    if(cr.special[SPECIALWOUND_RIGHTLUNG]!=1)
    {
       move(y++,x);
-      addstr("R. Lung Collapsed");
+      addstr("å³è‚ºæå£Š");
    }
    if(cr.special[SPECIALWOUND_LEFTLUNG]!=1)
    {
       move(y++,x);
-      addstr("L. Lung Collapsed");
+      addstr("å·¦è‚ºæå£Š");
    }
    if(cr.special[SPECIALWOUND_NECK]!=1)
    {
       move(y++,x);
-      addstr("Broken Neck");
+      addstr("é¦–ã®éª¨æŠ˜");
    }
    if(cr.special[SPECIALWOUND_UPPERSPINE]!=1)
    {
       move(y++,x);
-      addstr("Broken Up Spine");
+      addstr("ä¸Šéƒ¨è„Šæ¤éª¨æŠ˜");
    }
    if(cr.special[SPECIALWOUND_LOWERSPINE]!=1)
    {
       move(y++,x);
-      addstr("Broken Lw Spine");
+      addstr("ä¸‹éƒ¨è„Šæ¤éª¨æŠ˜");
    }
    if(cr.special[SPECIALWOUND_RIGHTEYE]!=1)
    {
       move(y++,x);
-      addstr("No Right Eye");
+      addstr("å³ç›®ã‚’æ¬ æ");
    }
    if(cr.special[SPECIALWOUND_LEFTEYE]!=1)
    {
       move(y++,x);
-      addstr("No Left Eye");
+      addstr("å·¦ç›®ã‚’æ¬ æ");
    }
    if(cr.special[SPECIALWOUND_NOSE]!=1)
    {
       move(y++,x);
-      addstr("No Nose");
+      addstr("é¼»ã‚’æ¬ æ");
    }
    if(cr.special[SPECIALWOUND_TONGUE]!=1)
    {
       move(y++,x);
-      addstr("No Tongue");
+      addstr("èˆŒã‚’æ¬ æ");
    }
    if(cr.special[SPECIALWOUND_TEETH]!=TOOTHNUM)
    {
       move(y++,x);
-      if(cr.special[SPECIALWOUND_TEETH]==0)addstr("No Teeth");
-      else if(cr.special[SPECIALWOUND_TEETH]==TOOTHNUM-1)addstr("Missing a Tooth");
-      else if(cr.special[SPECIALWOUND_TEETH]<TOOTHNUM)addstr("Missing Teeth");
+      if(cr.special[SPECIALWOUND_TEETH]==0)addstr("å…¨æ­¯ã‚’æ¬ æ");
+      else if(cr.special[SPECIALWOUND_TEETH]==TOOTHNUM-1)addstr("æ­¯ã‚’1æœ¬æ¬ æ");
+      else if(cr.special[SPECIALWOUND_TEETH]<TOOTHNUM)addstr("æ­¯ã‚’æ¬ æ");
    }
    if(cr.special[SPECIALWOUND_LIVER]!=1)
    {
       move(y++,x);
-      addstr("Liver Damaged");
+      addstr("è‚è‡“ã‚’æå‚·");
    }
    if(cr.special[SPECIALWOUND_RIGHTKIDNEY]!=1)
    {
       move(y++,x);
-      addstr("R. Kidney Damaged");
+      addstr("å³è…è‡“ã‚’æå‚·");
    }
    if(cr.special[SPECIALWOUND_LEFTKIDNEY]!=1)
    {
       move(y++,x);
-      addstr("L. Kidney Damaged");
+      addstr("å·¦è…è‡“ã‚’æå‚·");
    }
    if(cr.special[SPECIALWOUND_STOMACH]!=1)
    {
       move(y++,x);
-      addstr("Stomach Injured");
+      addstr("èƒƒã‚’æå‚·");
    }
    if(cr.special[SPECIALWOUND_SPLEEN]!=1)
    {
       move(y++,x);
-      addstr("Busted Spleen");
+      addstr("è„¾è‡“ç ´è£‚");
    }
    if(cr.special[SPECIALWOUND_RIBS]!=RIBNUM)
    {
       move(y++,x);
-      if(cr.special[SPECIALWOUND_RIBS]==0)addstr("All Ribs Broken");
-      else if(cr.special[SPECIALWOUND_RIBS]==RIBNUM-1)addstr("Broken Rib");
-      else if(cr.special[SPECIALWOUND_RIBS]<RIBNUM)addstr("Broken Ribs");
+      if(cr.special[SPECIALWOUND_RIBS]==0)addstr("å…¨è‚‹éª¨ã‚’éª¨æŠ˜");
+      else if(cr.special[SPECIALWOUND_RIBS]==RIBNUM-1)addstr("è‚‹éª¨ã‚’1æœ¬éª¨æŠ˜");
+      else if(cr.special[SPECIALWOUND_RIBS]<RIBNUM)addstr("è‚‹éª¨ã‚’éª¨æŠ˜");
    }
 
    set_color(COLOR_WHITE,COLOR_BLACK,0);
@@ -1454,9 +1452,9 @@ void makedelimiter(int y,int x)
 {
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    if(mode==GAMEMODE_SITE&&y==8&&x==0&&mapshowing) // special case: there is a map on the right in site mode
-      mvaddstr(y,x,"ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂ"); // 80 characters
+      mvaddstr(y,x,"-----------------------------------------------------+-------------------------+"); // 80 characters
    else // normal delimiter
-      mvaddstr(y,x,"ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"); // 80 characters
+      mvaddstr(y,x,"--------------------------------------------------------------------------------"); // 80 characters
 }
 
 /* prints a character's health description (One Leg, Liberal, NearDETH...) */

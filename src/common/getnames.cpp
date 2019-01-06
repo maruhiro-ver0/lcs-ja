@@ -29,7 +29,7 @@ the bottom of includes.h in the top src folder.
 // Note: this file is encoded in the PC-8 / Code Page 437 / OEM-US character set
 // (The same character set used by Liberal Crime Squad when it is running)
 // Certain special characters won't display correctly unless your text editor is
-// set to use that character set, such as this e with an accent: �
+// set to use that character set, such as this e with an accent: é
 
 // In Windows Notepad with the Terminal font, OEM/DOS encoding it should work fine.
 // You can set this in Notepad by going to Format->Font and choosing the Terminal font,
@@ -74,63 +74,63 @@ std::string getactivity(activityst &act)
          else return str+"a bug";
       }
    case ACTIVITY_RECRUITING:
-      return "Recruiting";
+      return "勧誘活動";
    case ACTIVITY_REPAIR_ARMOR:
-      return "Repairing Clothing";
+      return "服の修繕";
    case ACTIVITY_WHEELCHAIR:
-      return "Procuring a Wheelchair";
+      return "車椅子の調達";
    case ACTIVITY_STEALCARS:
-      return "Stealing a Car";
+      return "自動車泥棒";
    case ACTIVITY_POLLS:
-      return "Gathering Opinion Info";
+      return "世論調査";
    case ACTIVITY_MAKE_ARMOR:
-      return "Making "+armortype[act.arg]->get_shortname();
+      return armortype[act.arg]->get_shortname()+"の作成";
    case ACTIVITY_TROUBLE:
-      return "Causing Trouble";
+      return "攪乱";
    case ACTIVITY_PROSTITUTION:
-      return "Prostituting";
+      return "売春";
    case ACTIVITY_COMMUNITYSERVICE:
-      return "Volunteering";
+      return "社会奉仕";
    case ACTIVITY_GRAFFITI:
-      return "Making Graffiti";
+      return "落書き";
    case ACTIVITY_CCFRAUD:
-      return "Credit Card Fraud";
+      return "カード番号の不正取得";
    case ACTIVITY_DOS_RACKET:
-      return "Extorting Websites";
+      return "ウェブサイトへのゆすり";
    case ACTIVITY_DOS_ATTACKS:
-      return "Attacking Websites";
+      return "ウェブサイトへの攻撃";
    case ACTIVITY_HACKING:
-      return "Hacking Networks";
+      return "ネットワークのハッキング";
    case ACTIVITY_SELL_TSHIRTS:
-      return "Selling T-Shirts";
+      return "Tシャツの販売";
    case ACTIVITY_SELL_ART:
-      return "Selling Art";
+      return "アートの販売";
    case ACTIVITY_TEACH_POLITICS:
-      return "Teaching Politics";
+      return "政治の教育";
    case ACTIVITY_TEACH_FIGHTING:
-      return "Teaching Fighting";
+      return "戦闘の教育";
    case ACTIVITY_TEACH_COVERT:
-      return "Teaching Covert Ops";
+      return "秘密工作の教育";
    case ACTIVITY_SELL_MUSIC:
-      return "Selling Music";
+      return "音楽の販売";
    case ACTIVITY_BURY:
-      return "Disposing of Bodies";
+      return "遺体の遺棄";
    case ACTIVITY_DONATIONS:
-      return "Soliciting Donations";
+      return "募金の呼びかけ";
    case ACTIVITY_SELL_DRUGS:
-      return "Selling Brownies";
+      return "ケーキの販売";
    case ACTIVITY_VISIT:
-      return "Going to "+location[act.arg]->getname(!location[act.arg]->is_city());
+      return location[act.arg]->getname(!location[act.arg]->is_city())+"への訪問";
    case ACTIVITY_HEAL:
-      return "Tending to Injuries";
+      return "怪我の治療";
    case ACTIVITY_NONE:
-      return "Laying Low";
+      return "何もしない";
    case ACTIVITY_WRITE_LETTERS:
-      return "Writing letters";
+      return "新聞に投書";
    case ACTIVITY_WRITE_GUARDIAN:
-      return "Writing news";
+      return "記事を書く";
    case ACTIVITY_CLINIC:
-      return "Going to Free CLINIC";
+      return "無料診療所へ行く";
    case ACTIVITY_STUDY_DEBATING:
    case ACTIVITY_STUDY_MARTIAL_ARTS:
    case ACTIVITY_STUDY_DRIVING:
@@ -147,25 +147,25 @@ std::string getactivity(activityst &act)
    case ACTIVITY_STUDY_TEACHING:
    case ACTIVITY_STUDY_WRITING:
    case ACTIVITY_STUDY_LOCKSMITHING:
-      return "Attending Classes";
+      return "授業に出席";
    case ACTIVITY_SLEEPER_LIBERAL:
-      return "Promoting Liberalism";
+      return "リベラル主義の宣伝";
    case ACTIVITY_SLEEPER_CONSERVATIVE:
-      return "Spouting Conservatism";
+      return "保守派との討論";
    case ACTIVITY_SLEEPER_SPY:
-      return "Snooping Around";
+      return "スパイ活動";
    case ACTIVITY_SLEEPER_RECRUIT:
-      return "Recruiting Sleepers";
+      return "スパイの調達";
    case ACTIVITY_SLEEPER_JOINLCS:
-      return "Quitting Job";
+      return "活動を止める";
    case ACTIVITY_SLEEPER_SCANDAL:
-      return "Creating a Scandal";
+      return "スキャンダルを起こす";
    case ACTIVITY_SLEEPER_EMBEZZLE:
-      return "Embezzling Funds";
+      return "資金の横領";
    case ACTIVITY_SLEEPER_STEAL:
-      return "Stealing Equipment";
+      return "備品を盗む";
    default:
-      return "Reporting Bugs to the Dev Team";
+      return "開発チームにバグを報告する";
    }
 }
 
@@ -175,11 +175,11 @@ std::string gettitle(Creature &cr)
    {
       if(cr.juice<=-50)
       {
-         if(law[LAW_FREESPEECH]==-2) return "[Darn] Worthless";
-         else return "Damn Worthless";
+         if(law[LAW_FREESPEECH]==-2) return "社会の××";
+         else return "社会のゴミ";
       }
-      else if(cr.juice<=-10) return "Conservative Dregs";
-      else if(cr.juice<0) return "Conservative Punk";
+      else if(cr.juice<=-10) return "保守の落伍者";
+      else if(cr.juice<0) return "保守のゴロツキ";
       else if(cr.juice<10) return "Mindless Conservative";
       else if(cr.juice<50) return "Wrong-Thinker";
       else if(cr.juice<100)
@@ -200,12 +200,12 @@ std::string gettitle(Creature &cr)
    {
       if(cr.juice<=-50)
       {
-         if(law[LAW_FREESPEECH]==-2) return "[Darn] Worthless";
-         else return "Damn Worthless";
+         if(law[LAW_FREESPEECH]==-2) return "社会の××";
+         else return "社会のゴミ";
       }
-      else if(cr.juice<=-10) return "Society's Dregs";
-      else if(cr.juice<0) return "Non-Liberal Punk";
-      else if(cr.juice<10) return "Non-Liberal";
+      else if(cr.juice<=-10) return "落伍者";
+      else if(cr.juice<0) return "非リベラルのゴロツキ";
+      else if(cr.juice<10) return "非リベラル";
       else if(cr.juice<50) return "Hard Working";
       else if(cr.juice<100) return "Respected";
       else if(cr.juice<200) return "Upstanding Citizen";
@@ -217,13 +217,13 @@ std::string gettitle(Creature &cr)
    {
       if(cr.juice<=-50)
       {
-         if(law[LAW_FREESPEECH]==-2) return "[Darn] Worthless";
-         else return "Damn Worthless";
+         if(law[LAW_FREESPEECH]==-2) return "社会の××";
+         else return "社会のゴミ";
       }
-      else if(cr.juice<=-10) return "Society's Dregs";
-      else if(cr.juice<0) return "Punk";
-      else if(cr.juice<10) return "Civilian";
-      else if(cr.juice<50) return "Activist";
+      else if(cr.juice<=-10) return "落伍者";
+      else if(cr.juice<0) return "ゴロツキ";
+      else if(cr.juice<10) return "市民";
+      else if(cr.juice<50) return "活動家";
       else if(cr.juice<100) return "Socialist Threat";
       else if(cr.juice<200) return "Revolutionary";
       else if(cr.juice<500) return "Urban Commando";
@@ -377,7 +377,7 @@ std::string cityname()
       "Baltimore, MD", "Baltimore, MD", "Baltimore, MD", "Baltimore, MD",
       "Barnstable, MA",
       "Baton Rouge, LA", "Baton Rouge, LA",
-      "Bayam�n, PR", "Bayam�n, PR", // city in Puerto Rico
+      "Bayam｢n, PR", "Bayam｢n, PR", // city in Puerto Rico
       "Bellevue, WA",
       "Bellingham, WA",
       "Beaumont, TX",
@@ -553,7 +553,7 @@ std::string cityname()
       "Madison, WI", "Madison, WI",
       "Manchester, NH",
       "Manhattan, NY", "Manhattan, NY",
-      "Mayag�ez, PR", // city in Puerto Rico
+      "Mayag‘z, PR", // city in Puerto Rico
       "McAllen, TX",
       "McKinney, TX",
       "Medford, OR",
@@ -759,39 +759,39 @@ std::string getlawflag(int type)
 {
    switch(type)
    {
-   case LAWFLAG_TREASON:return "Treason";
-   case LAWFLAG_TERRORISM:return "Terrorism";
-   case LAWFLAG_MURDER:return "Murder";
-   case LAWFLAG_KIDNAPPING:return "Kidnapping";
-   case LAWFLAG_BANKROBBERY:return "Bank robbery";
-   case LAWFLAG_ARSON:return "Arson";
-   case LAWFLAG_BURNFLAG:return(law[LAW_FLAGBURNING]==-2?"Flag Murder":"Flag burning");
-   case LAWFLAG_SPEECH:return "Harmful speech";
-   case LAWFLAG_BROWNIES:return "Drug dealing";
-   case LAWFLAG_ESCAPED:return "Escaping prison";
-   case LAWFLAG_HELPESCAPE:return "Releasing prisoners";
-   case LAWFLAG_JURY:return "Jury tampering";
+   case LAWFLAG_TREASON:return "国家反逆罪";
+   case LAWFLAG_TERRORISM:return "テロ";
+   case LAWFLAG_MURDER:return "一級殺人";
+   case LAWFLAG_KIDNAPPING:return "誘拐";
+   case LAWFLAG_BANKROBBERY:return "銀行強盗";
+   case LAWFLAG_ARSON:return "放火";
+   case LAWFLAG_BURNFLAG:return(law[LAW_FLAGBURNING]==-2?"国旗不敬":"国旗焼却");
+   case LAWFLAG_SPEECH:return "有害な言論";
+   case LAWFLAG_BROWNIES:return "違法薬物取引";
+   case LAWFLAG_ESCAPED:return "脱獄";
+   case LAWFLAG_HELPESCAPE:return "逃走援助";
+   case LAWFLAG_JURY:return "陪審員買収";
    case LAWFLAG_RACKETEERING:return "Racketeering";
    case LAWFLAG_EXTORTION:return "Extortion";
-   case LAWFLAG_ARMEDASSAULT:return "Armed assault";
-   case LAWFLAG_ASSAULT:return "Assault";
-   case LAWFLAG_CARTHEFT:return "Grand theft auto";
-   case LAWFLAG_CCFRAUD:return "Credit card fraud";
-   case LAWFLAG_THEFT:return "Theft";
-   case LAWFLAG_PROSTITUTION:return "Prostitution";
-   case LAWFLAG_HIREILLEGAL:return(law[LAW_IMMIGRATION]<1?"Hiring illegal aliens":"Hiring undocumented workers");
-   //case LAWFLAG_GUNUSE:return "Firing illegal weapons";
-   //case LAWFLAG_GUNCARRY:return "Carrying illegal weapons";
-   case LAWFLAG_COMMERCE:return "Electronic sabotage";
-   case LAWFLAG_INFORMATION:return "Hacking";
-   case LAWFLAG_BURIAL:return "Unlawful burial";
-   case LAWFLAG_BREAKING:return "Breaking and entering";
-   case LAWFLAG_VANDALISM:return "Vandalism";
-   case LAWFLAG_RESIST:return "Resisting arrest";
-   case LAWFLAG_DISTURBANCE:return "Disturbing the peace";
-   case LAWFLAG_PUBLICNUDITY:return "Public nudity";
+   case LAWFLAG_ARMEDASSAULT:return "傷害罪";
+   case LAWFLAG_ASSAULT:return "暴行罪";
+   case LAWFLAG_CARTHEFT:return "自動車窃盗";
+   case LAWFLAG_CCFRAUD:return "カード番号窃盗";
+   case LAWFLAG_THEFT:return "窃盗";
+   case LAWFLAG_PROSTITUTION:return "売春";
+   case LAWFLAG_HIREILLEGAL:return(law[LAW_IMMIGRATION]<1?"不法移民雇用":"不法雇用");
+   //case LAWFLAG_GUNUSE:return "違法な武器の使用";
+   //case LAWFLAG_GUNCARRY:return "違法な武器の運搬";
+   case LAWFLAG_COMMERCE:return "通商妨害";
+   case LAWFLAG_INFORMATION:return "ハッキング";
+   case LAWFLAG_BURIAL:return "違法な遺体処理";
+   case LAWFLAG_BREAKING:return "不法侵入";
+   case LAWFLAG_VANDALISM:return "破壊行為";
+   case LAWFLAG_RESIST:return "逮捕に抵抗した罪";
+   case LAWFLAG_DISTURBANCE:return "治安妨害";
+   case LAWFLAG_PUBLICNUDITY:return "公然猥褻";
    case LAWFLAG_LOITERING:return "Loitering";
-   default:return "Finding bugs";
+   default:return "バグ";
    }
 }
 
@@ -800,19 +800,19 @@ std::string getmonth(int month, bool shortname)
 {
    switch(month)
    {
-   case  1:return (shortname?"Jan.":"January");
-   case  2:return (shortname?"Feb.":"February");
-   case  3:return (shortname?"Mar.":"March");
-   case  4:return (shortname?"Apr.":"April");
-   case  5:return "May";
-   case  6:return "June";
-   case  7:return "July";
-   case  8:return (shortname?"Aug.":"August");
-   case  9:return (shortname?"Sep.":"September");
-   case 10:return (shortname?"Oct.":"October");
-   case 11:return (shortname?"Nov.":"November");
-   case 12:return (shortname?"Dec.":"December");
-   default:return (shortname?"Bug.":"Bugtober");
+   case  1:return (shortname?"1月":"1月");
+   case  2:return (shortname?"2月":"2月");
+   case  3:return (shortname?"3月":"3月");
+   case  4:return (shortname?"4月":"4月");
+   case  5:return "5月";
+   case  6:return "6月";
+   case  7:return "7月";
+   case  8:return (shortname?"8月":"8月");
+   case  9:return (shortname?"9月":"9月");
+   case 10:return (shortname?"10月":"10月");
+   case 11:return (shortname?"11月":"11月");
+   case 12:return (shortname?"12月":"12月");
+   default:return (shortname?"バグ":"バグ月");
    }
 }
 
@@ -820,12 +820,12 @@ std::string getalign(signed char alignment,bool capitalize)
 {
    switch(alignment)
    {
-   case ALIGN_ARCHCONSERVATIVE: return "Arch-Conservative";
-   case ALIGN_CONSERVATIVE: return "Conservative";
-   case ALIGN_MODERATE: return (capitalize?"Moderate":"moderate");
-   case ALIGN_LIBERAL: return "Liberal";
-   case ALIGN_ELITELIBERAL: return "Elite Liberal";
-   case ALIGN_STALINIST: return "Stalinist";
-   default: return "Buggy";
+   case ALIGN_ARCHCONSERVATIVE: return "保守強硬";
+   case ALIGN_CONSERVATIVE: return "保守";
+   case ALIGN_MODERATE: return (capitalize?"穏健":"穏健");
+   case ALIGN_LIBERAL: return "リベラル";
+   case ALIGN_ELITELIBERAL: return "エリートリベラル";
+   case ALIGN_STALINIST: return "スターリン主義";
+   default: return "バグ";
    }
 }

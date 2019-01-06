@@ -109,37 +109,37 @@ std::string Skill::get_name(int skill_type)
 {
    switch(skill_type)
    {
-   case SKILL_HANDTOHAND:     return "Martial Arts";
-   case SKILL_KNIFE:          return "Knife";
-   case SKILL_SWORD:          return "Sword";
-   case SKILL_THROWING:       return "Throwing";
-   case SKILL_CLUB:           return "Club";
-   case SKILL_AXE:            return "Axe";
-   case SKILL_PISTOL:         return "Pistol";
-   case SKILL_RIFLE:          return "Rifle";
-   case SKILL_HEAVYWEAPONS:   return "Heavy Weapons";
-   case SKILL_SHOTGUN:        return "Shotgun";
-   case SKILL_SMG:            return "SMG";
-   case SKILL_PERSUASION:     return "Persuasion";
-   case SKILL_PSYCHOLOGY:     return "Psychology";
-   case SKILL_SECURITY:       return "Security";
-   case SKILL_DISGUISE:       return "Disguise";
-   case SKILL_COMPUTERS:      return "Computers";
-   case SKILL_LAW:            return "Law";
-   case SKILL_TAILORING:      return "Tailoring";
-   case SKILL_DRIVING:        return "Driving";
-   case SKILL_WRITING:        return "Writing";
-   case SKILL_MUSIC:          return "Music";
-   case SKILL_ART:            return "Art";
-   case SKILL_RELIGION:       return "Religion";
-   case SKILL_SCIENCE:        return "Science";
-   case SKILL_BUSINESS:       return "Business";
-   case SKILL_STEALTH:        return "Stealth";
-   case SKILL_TEACHING:       return "Teaching";
-   case SKILL_STREETSENSE:    return "Street Sense";
-   case SKILL_SEDUCTION:      return "Seduction";
-   case SKILL_FIRSTAID:       return "First Aid";
-   case SKILL_DODGE:          return "Dodge";
+   case SKILL_HANDTOHAND:     return "格闘技";
+   case SKILL_KNIFE:          return "ナイフ";
+   case SKILL_SWORD:          return "剣";
+   case SKILL_THROWING:       return "投擲";
+   case SKILL_CLUB:           return "棍棒";
+   case SKILL_AXE:            return "斧";
+   case SKILL_PISTOL:         return "拳銃";
+   case SKILL_RIFLE:          return "ライフル";
+   case SKILL_HEAVYWEAPONS:   return "重火器";
+   case SKILL_SHOTGUN:        return "ショットガン";
+   case SKILL_SMG:            return "サブマシンガン";
+   case SKILL_PERSUASION:     return "説得";
+   case SKILL_PSYCHOLOGY:     return "心理学";
+   case SKILL_SECURITY:       return "セキュリティ";
+   case SKILL_DISGUISE:       return "変装";
+   case SKILL_COMPUTERS:      return "コンピュータ";
+   case SKILL_LAW:            return "法律";
+   case SKILL_TAILORING:      return "裁縫";
+   case SKILL_DRIVING:        return "運転";
+   case SKILL_WRITING:        return "文筆";
+   case SKILL_MUSIC:          return "音楽";
+   case SKILL_ART:            return "芸術";
+   case SKILL_RELIGION:       return "信仰";
+   case SKILL_SCIENCE:        return "科学";
+   case SKILL_BUSINESS:       return "ビジネス";
+   case SKILL_STEALTH:        return "隠密";
+   case SKILL_TEACHING:       return "教育";
+   case SKILL_STREETSENSE:    return "ストリートセンス";
+   case SKILL_SEDUCTION:      return "誘惑";
+   case SKILL_FIRSTAID:       return "応急手当";
+   case SKILL_DODGE:          return "防御";
    }
    return "Error Skill Name";
 }
@@ -177,13 +177,13 @@ std::string Attribute::get_name(int attribute_type)
 {
    switch(attribute_type)
    {
-   case ATTRIBUTE_STRENGTH:      return "STR";
-   case ATTRIBUTE_AGILITY:       return "AGI";
-   case ATTRIBUTE_WISDOM:        return "WIS";
-   case ATTRIBUTE_INTELLIGENCE:  return "INT";
-   case ATTRIBUTE_HEART:         return "HRT";
-   case ATTRIBUTE_HEALTH:        return "HLTH";
-   case ATTRIBUTE_CHARISMA:      return "CHA";
+   case ATTRIBUTE_STRENGTH:      return "腕";
+   case ATTRIBUTE_AGILITY:       return "敏";
+   case ATTRIBUTE_WISDOM:        return "教";
+   case ATTRIBUTE_INTELLIGENCE:  return "知";
+   case ATTRIBUTE_HEART:         return "精";
+   case ATTRIBUTE_HEALTH:        return "体";
+   case ATTRIBUTE_CHARISMA:      return "魅";
    }
    return "Error Attribute Name";
 }

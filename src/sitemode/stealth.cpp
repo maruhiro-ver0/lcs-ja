@@ -428,12 +428,12 @@ void disguisecheck(int timer)
       {
          if(weapon&&encounter[n].type!=CREATURE_GUARDDOG)
          {
-            addstr(" sees the Squad's Liberal Weapons ", gamelog);
+            addstr("は部隊のリベラルな武器を見ると", gamelog);
             move(17,1);
             if(encounter[n].align==ALIGN_CONSERVATIVE)
-               addstr("and lets forth a piercing Conservative alarm cry!", gamelog);
+               addstr("大声で保守派の仲間に知らせた!", gamelog);
             else
-               addstr("and shouts for help!", gamelog);
+               addstr("大声で助けを呼んだ!", gamelog);
 
             for(int i=0;i<6;i++)
             {
@@ -447,18 +447,18 @@ void disguisecheck(int timer)
          }
          else
          {
-            addstr(" looks at the Squad with Intolerance ", gamelog);
+            addstr("はあなたの部隊を見破り", gamelog);
             move(17,1);
             if(encounter[n].align==ALIGN_CONSERVATIVE)
             {
                if(encounter[n].type==CREATURE_GUARDDOG)
-                  addstr("and launches into angry Conservative barking!", gamelog);
+                  addstr("大声で鳴いて保守派に知らせた!", gamelog);
                else
-                  addstr("and lets forth a piercing Conservative alarm cry!", gamelog);
+                  addstr("大声で保守派の仲間に知らせた!", gamelog);
 
             }
             else
-               addstr("and shouts for help!", gamelog);
+               addstr("大声で助けを呼んだ!", gamelog);
          }
 
          gamelog.newline();

@@ -1,7 +1,7 @@
 // Note: this file is encoded in the PC-8 / Code Page 437 / OEM-US character set
 // (The same character set used by Liberal Crime Squad when it is running)
 // Certain special characters won't display correctly unless your text editor is
-// set to use that character set, such as this e with an accent: 
+// set to use that character set, such as this e with an accent: รฉ
 
 // In Windows Notepad with the Terminal font, OEM/DOS encoding it should work fine.
 // You can set this in Notepad by going to Format->Font and choosing the Terminal font,
@@ -84,11 +84,11 @@ bool liberalagenda(signed char won)
       {
 
          move(1,0);
-         addstr("ษอออออออออออออออออปฤฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤฤฟ");
+         addstr("๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝป๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝฟ");
          move(2,0);
-         addstr("บ GENERAL SUMMARY บ ISSUES A ณ ISSUES B ณ");
+         addstr("๏ฝบ GENERAL SUMMARY ๏ฝบ ISSUES A ๏ฝณ ISSUES B ๏ฝณ");
          move(3,0);
-         addstr("ผ                 ศออออออออออฯออออออออออฯอออออออออออออออออออออออออออออออออออออออ");
+         addstr("๏ฝผ                 ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ");
 
          signed char align=exec[EXEC_PRESIDENT];
          set_alignment_color(align,true);
@@ -243,7 +243,7 @@ bool liberalagenda(signed char won)
             else if(won==1&&wincondition==WINCONDITION_ELITE)
                set_alignment_color(ALIGN_ELITELIBERAL,true);
             else set_color(COLOR_BLACK,COLOR_BLACK,1);
-            mvaddstr(14+l/3,l%3*26,"\x11ฤฤฤฤฤ\x10");
+            mvaddstr(14+l/3,l%3*26,"\x11๏พ๏พ๏พ๏พ๏พ\x10");
             if(won==-1||won==-2)
                set_alignment_color(ALIGN_ARCHCONSERVATIVE,true);
             else set_alignment_color(law[l],true);
@@ -259,20 +259,20 @@ bool liberalagenda(signed char won)
          if(page==PAGE_ISSUES_A)
          {
             move(1,0);
-            addstr("ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤษออออออออออปฤฤฤฤฤฤฤฤฤฤฟ");
+            addstr("๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝป๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝฟ");
             move(2,0);
-            addstr("ณ GENERAL SUMMARY บ ISSUES A บ ISSUES B ณ");
+            addstr("๏ฝณ GENERAL SUMMARY ๏ฝบ ISSUES A ๏ฝบ ISSUES B ๏ฝณ");
             move(3,0);
-            addstr("ฯอออออออออออออออออผ          ศออออออออออฯอออออออออออออออออออออออออออออออออออออออ");
+            addstr("๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝผ          ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ");
          }
          else
          {
             move(1,0);
-            addstr("ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤฤษออออออออออป");
+            addstr("๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝป");
             move(2,0);
-            addstr("ณ GENERAL SUMMARY ณ ISSUES A บ ISSUES B บ");
+            addstr("๏ฝณ GENERAL SUMMARY ๏ฝณ ISSUES A ๏ฝบ ISSUES B ๏ฝบ");
             move(3,0);
-            addstr("ฯอออออออออออออออออฯออออออออออผ          ศอออออออออออออออออออออออออออออออออออออออ");
+            addstr("๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝผ          ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ");
          }
 
          int y=4,startinglaw=0;

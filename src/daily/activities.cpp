@@ -29,7 +29,7 @@ This file is part of Liberal Crime Squad.                                       
 // Note: this file is encoded in the PC-8 / Code Page 437 / OEM-US character set
 // (The same character set used by Liberal Crime Squad when it is running)
 // Certain special characters won't display correctly unless your text editor is
-// set to use that character set, such as this e with an accent: ‚
+// set to use that character set, such as this e with an accent: Ã©
 
 // In Windows Notepad with the Terminal font, OEM/DOS encoding it should work fine.
 // You can set this in Notepad by going to Format->Font and choosing the Terminal font,
@@ -699,7 +699,7 @@ void survey(Creature *cr)
    move(6,0);
    addstr("Additional notable findings:");
    move(7,0);
-   addstr("XX% Issue ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Public Interest");
+   addstr("XX% Issue ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ Public Interest");
 
    //Footer
    set_color(COLOR_WHITE,COLOR_BLACK,0);
@@ -3003,7 +3003,7 @@ bool carselect(Creature &cr,short &cartype)
       addstr(" try to find and steal today?");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(1,0);
-      addstr("ÄÄÄÄTYPEÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄDIFFICULTY TO FIND UNATTENDEDÄÄ");
+      addstr("ï¾„ï¾„ï¾„ï¾„TYPEï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„DIFFICULTY TO FIND UNATTENDEDï¾„ï¾„");
 
       int y=2,difficulty;
       for(int p=page*19;p<len(cart)&&p<page*19+19;p++)

@@ -16,168 +16,168 @@
     -->
 
     <loottype idname="LOOT_CHEAPJEWELERY">
-        <name>Cheap Jewelery</name>
+        <name>安っぽい宝石</name>
         <fencevalue>50</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_DIRTYSOCK">
-        <name>Dirty Sock</name>
+        <name>汚い靴下</name>
         <fencevalue>1</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_FAMILYPHOTO">
-        <name>Family Photos</name>
+        <name>家族写真</name>
         <fencevalue>1</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_FINECLOTH">
-        <name>Fine Cloth</name>
+        <name>上等な服</name>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>20</fencevalue>
         <cloth>true</cloth>
     </loottype>
 
     <loottype idname="LOOT_EXPENSIVEJEWELERY">
-        <name>Fine Jewelery</name>
+        <name>高価な宝石</name>
         <fencevalue>500</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_TRINKET">
-        <name>Kitschy Trinket</name>
+        <name>品のないアクセサリー</name>
         <fencevalue>5</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_LABEQUIPMENT">
-        <name>Lab Equipment</name>
+        <name>研究所の備品</name>
         <fencevalue>50</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_COMPUTER">
-        <name>Laptop</name>
+        <name>ラップトップPC</name>
         <fencevalue>200</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_KIDART">
-        <name>Macaroni Art</name>
+        <name>マカロニアート</name>
         <fencevalue>1</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_MICROPHONE">
-        <name>Microphone</name>
+        <name>携帯電話</name>
         <fencevalue>20</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_SILVERWARE">
-        <name>Silverware</name>
+        <name>銀製食器</name>
         <fencevalue>20</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_CELLPHONE">
-        <name>Smartphone</name>
+        <name>スマートフォン</name>
         <fencevalue>20</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_PDA">
-        <name>Tablet</name>
+        <name>タブレット</name>
         <fencevalue>50</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_WATCH">
-        <name>Watch</name>
+        <name>腕時計</name>
         <fencevalue>20</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_CHEMICAL">
-        <name>Weird Chemical</name>
+        <name>奇妙な化学薬品</name>
         <fencevalue>20</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_AMRADIOFILES">
-        <name>AM Radio Memos</name>
+        <name>AMラジオ原稿</name>
         <stackable>true</stackable>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>250</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_CABLENEWSFILES">
-        <name>Cable News Memos</name>
+        <name>ケーブルニュース原稿</name>
         <stackable>true</stackable>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>250</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_CCS_BACKERLIST">
-        <name>CCS Backer List</name>
+        <name>CCS支援者リスト</name>
         <stackable>true</stackable>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>2000</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_CEOLOVELETTERS">
-        <name>CEO Love Letters</name>
+        <name>CEOのラブレター</name>
         <stackable>true</stackable>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>250</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_CEOPHOTOS">
-        <name>CEO Photos</name>
+        <name>CEOの写真</name>
         <stackable>true</stackable>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>1000</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_CEOTAXPAPERS">
-        <name>CEO Tax Papers</name>
+        <name>CEOの納税告知書</name>
         <stackable>true</stackable>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>1000</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_INTHQDISK">
-        <name>Intel. HQ Data Disk</name>
+        <name>Intel本社のデータディスク</name>
         <stackable>true</stackable>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>1500</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_JUDGEFILES">
-        <name>Judge Corrupt. Evidence</name>
+        <name>裁判官買収の証拠資料</name>
         <stackable>true</stackable>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>1000</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_POLICERECORDS">
-        <name>Police Records</name>
+        <name>逮捕歴</name>
         <stackable>true</stackable>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>750</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_PRISONFILES">
-        <name>Prison Records</name>
+        <name>服役歴</name>
         <stackable>true</stackable>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>750</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_RESEARCHFILES">
-        <name>Research Papers</name>
+        <name>研究論文</name>
         <stackable>true</stackable>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>750</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_CORPFILES">
-        <name>Secret Corporate Files</name>
+        <name>企業秘密ファイル</name>
         <stackable>true</stackable>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>1000</fencevalue>
     </loottype>
 
     <loottype idname="LOOT_SECRETDOCUMENTS">
-        <name>Secret Documents</name>
+        <name>機密文書</name>
         <stackable>true</stackable>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>1500</fencevalue>

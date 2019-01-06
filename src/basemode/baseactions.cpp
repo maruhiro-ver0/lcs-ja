@@ -335,7 +335,7 @@ void stopevil()
             addstr(" (Current Location)");
          } else if(this_location->area != squad_location->area && !havecar) {
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
-            addstr(" (Need Car)");
+            addstr(" (要自動車)");
          } else if(this_location->type == SITE_TRAVEL) {
             if(ledger.get_funds() < ticketprice)
                set_color(COLOR_RED,COLOR_BLACK,1);
@@ -384,7 +384,7 @@ void stopevil()
          addstr(" - Travel to a Different City");
          if(!havecar) {
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
-            addstr(" (Need Car)");
+            addstr(" (要自動車)");
          } else {
             if(ledger.get_funds() < ticketprice)
                set_color(COLOR_RED,COLOR_BLACK,1);

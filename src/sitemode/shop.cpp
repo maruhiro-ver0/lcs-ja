@@ -1,7 +1,7 @@
 // Note: this file is encoded in the PC-8 / Code Page 437 / OEM-US character set
 // (The same character set used by Liberal Crime Squad when it is running)
 // Certain special characters won't display correctly unless your text editor is
-// set to use that character set, such as this e with an accent: ‚
+// set to use that character set, such as this e with an accent: Ã©
 
 // In Windows Notepad with the Terminal font, OEM/DOS encoding it should work fine.
 // You can set this in Notepad by going to Format->Font and choosing the Terminal font,
@@ -291,7 +291,7 @@ void Shop::browse_fullscreen(squadst& customers, int& buyer) const
       addstr(customers.squad[buyer]->name);
       addstr(" buy?");
       move(1,0);
-      addstr("ÄÄÄÄPRODUCT NAMEÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄPRICEÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ");
+      addstr("ï¾„ï¾„ï¾„ï¾„PRODUCT NAMEï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„PRICEï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„");
 
       //Write wares and prices
       for(int p=page*19,y=2;p<len(available_options)&&p<page*19+19;p++,y++)
@@ -660,7 +660,7 @@ void Shop::maskselect(Creature &buyer) const
       addstr(" buy?");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(1,0);
-      addstr("ÄÄÄÄPRODUCT NAMEÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄDESCRIPTIONÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ");
+      addstr("ï¾„ï¾„ï¾„ï¾„PRODUCT NAMEï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„DESCRIPTIONï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„");
 
       for(int p=page*19,y=2;p<len(masktype)&&p<page*19+19;p++,y++)
       {

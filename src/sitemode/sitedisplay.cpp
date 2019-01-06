@@ -29,7 +29,7 @@ This file is part of Liberal Crime Squad.                                       
 // Note: this file is encoded in the PC-8 / Code Page 437 / OEM-US character set
 // (The same character set used by Liberal Crime Squad when it is running)
 // Certain special characters won't display correctly unless your text editor is
-// set to use that character set, such as this e with an accent: ‚
+// set to use that character set, such as this e with an accent: Ã©
 
 // In Windows Notepad with the Terminal font, OEM/DOS encoding it should work fine.
 // You can set this in Notepad by going to Format->Font and choosing the Terminal font,
@@ -97,10 +97,10 @@ void printsitemap(int x,int y,int z)
 
    // Build the frame
    set_color(COLOR_WHITE,COLOR_BLACK,0);
-   mvaddstr(8,53,"ÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂ"); // 27 characters - top of map
-   mvaddstr(24,53,"ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ"); // 27 characters - bottom of map
+   mvaddstr(8,53,"ï¾‚ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾‚"); // 27 characters - top of map
+   mvaddstr(24,53,"ï¾€ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾™"); // 27 characters - bottom of map
    for(yscreen=9;yscreen<24;yscreen++)
-      mvaddstr(yscreen,53,"³                         ³"); // 27 characters - the map itself
+      mvaddstr(yscreen,53,"ï½³                         ï½³"); // 27 characters - the map itself
 
    // Do a preliminary Line of Sight iteration for better Line of Sight detection
    for(xsite=x-2;xsite<x+3;xsite++)
@@ -393,14 +393,14 @@ void printwall(int x, int y, int z, int px, int py)
 
             // Draw face
             if(dir==WALL_RIGHT||dir==WALL_LEFT)
-               for(int i=0;i<3;i++) mvaddstr(y++,x,"º");
-            else for(int i=0;i<5;i++) mvaddstr(y,x++,"Í");
+               for(int i=0;i<3;i++) mvaddstr(y++,x,"ï½º");
+            else for(int i=0;i<5;i++) mvaddstr(y,x++,"ï¾");
 
             // Corners are possible if walls nearby are blown away, although this is rare
-            if((dir==WALL_LEFT&&visible[WALL_UP])||(dir==WALL_UP&&visible[WALL_LEFT])) mvaddstr(py,px,"É");
-            if((dir==WALL_RIGHT&&visible[WALL_UP])||(dir==WALL_UP&&visible[WALL_RIGHT])) mvaddstr(py,px+4,"»");
-            if((dir==WALL_LEFT&&visible[WALL_DOWN])||(dir==WALL_DOWN&&visible[WALL_LEFT])) mvaddstr(py+2,px,"È");
-            if((dir==WALL_RIGHT&&visible[WALL_DOWN])||(dir==WALL_DOWN&&visible[WALL_RIGHT])) mvaddstr(py+2,px+4,"¼");
+            if((dir==WALL_LEFT&&visible[WALL_UP])||(dir==WALL_UP&&visible[WALL_LEFT])) mvaddstr(py,px,"ï¾‰");
+            if((dir==WALL_RIGHT&&visible[WALL_UP])||(dir==WALL_UP&&visible[WALL_RIGHT])) mvaddstr(py,px+4,"ï½»");
+            if((dir==WALL_LEFT&&visible[WALL_DOWN])||(dir==WALL_DOWN&&visible[WALL_LEFT])) mvaddstr(py+2,px,"ï¾ˆ");
+            if((dir==WALL_RIGHT&&visible[WALL_DOWN])||(dir==WALL_DOWN&&visible[WALL_RIGHT])) mvaddstr(py+2,px+4,"ï½¼");
          }
       }
    }
@@ -693,7 +693,7 @@ void clearmaparea(bool lower,bool upper)
    {
       if(!upper&&y<15)continue;
       if(!lower&&y>=15)continue;
-      if(y==8) mvaddstr(y,53,"ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ");  // 27 characters
+      if(y==8) mvaddstr(y,53,"ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„");  // 27 characters
       else mvaddstr(y,53,"                           ");  // 27 spaces
    }
 }

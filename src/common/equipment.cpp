@@ -29,7 +29,7 @@ This file is part of Liberal Crime Squad.                                       
 // Note: this file is encoded in the PC-8 / Code Page 437 / OEM-US character set
 // (The same character set used by Liberal Crime Squad when it is running)
 // Certain special characters won't display correctly unless your text editor is
-// set to use that character set, such as this e with an accent: �
+// set to use that character set, such as this e with an accent: é
 
 // In Windows Notepad with the Terminal font, OEM/DOS encoding it should work fine.
 // You can set this in Notepad by going to Format->Font and choosing the Terminal font,
@@ -69,7 +69,7 @@ long prompt_amount(long min, long max)
 
    move(8,15);
    set_color(COLOR_WHITE,COLOR_BLACK,1);
-   addstr("     How many?          ");
+   addstr("       いくつ?          ");
 
    char str[100];
    enter_name(8,30,str,100,toCstring(max));
@@ -98,7 +98,7 @@ void equip(vector<Item *> &loot,int loc)
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
-      addstr("Equip the Squad");
+      addstr("部隊に装備する");
 
       printparty();
 
@@ -147,32 +147,34 @@ void equip(vector<Item *> &loot,int loc)
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(19,1);
-      addstr("Press a letter to equip a Liberal item");
+      addstr("アルファベットキーでリベラル装備を選択する");
       move(20,1);
-      addstr("Press a number to drop that Squad member's Conservative weapon");
+      addstr("数字キーでメンバーの保守的武器を外す");
       move(21,1);
-      addstr("S - Liberally Strip a Squad member");
+      addstr("S - メンバーをリベラルに脱がせる");
       move(22,1);
-      addstr("Cursors - Increase or decrease ammo allocation");
+      addstr("カーソルキー - 弾丸を増減する");
 
       if(loc!=-1)
       {
          if(len(location[loc]->loot)) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(23,1);
-         addstr("Y - Get things from ");
+         addstr("Y - ");
          addstr(location[loc]->getname(true));
+         addstr("から物を持ってくる");
 
          if(len(loot)) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(23,40);
-         addstr("Z - Stash things at ");
+         addstr("Z - ");
          addstr(location[loc]->getname(true));
+         addstr("に物を隠す");
       }
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(24,1);
-      addstr("Enter - Done");
+      addstr("Enter - 完了");
 
       int c=getkey();
 
@@ -189,7 +191,7 @@ void equip(vector<Item *> &loot,int loc)
                   &&!loot[slot]->is_armor()
                   &&!loot[slot]->is_clip())
             {
-               errmsg="You can't equip that.";
+               errmsg="それは装備できない。";
                continue;
             }
          }
@@ -210,10 +212,10 @@ void equip(vector<Item *> &loot,int loc)
             move(8,20);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             if(increaseammo)
-               addstr("Choose a Liberal squad member to receive a clip.");
+               addstr("武器を受け取るメンバーを選択する。");
             else if(decreaseammo)
-               addstr("Choose a Liberal squad member to drop a clip.");
-            else addstr("Choose a Liberal squad member to receive it.");
+               addstr("武器を外すメンバーを選択する。");
+            else addstr("武器を受け取るメンバーを選択する。");
 
             c=getkey();
          }
@@ -523,7 +525,7 @@ void equipmentbaseassign()
       move(0,0);
       addstr("Moving Equipment");
       move(1,0);
-      addstr("����ITEM�����������������CURRENT LOCATION���������������������������������������");
+      addstr("ﾄﾄﾄﾄITEMﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄCURRENT LOCATIONﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ");
       move(1,51);
       addstr("NEW LOCATION");
 

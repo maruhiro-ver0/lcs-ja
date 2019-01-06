@@ -114,8 +114,8 @@
     -->
 
     <weapontype idname="WEAPON_NONE">
-        <name>None</name>
-        <shortname>None</shortname>
+        <name>なし</name>
+        <shortname>なし</shortname>
         <suspicious>false</suspicious>
         <can_threaten_hostages>false</can_threaten_hostages>
         <protects_against_kidnapping>false</protects_against_kidnapping>
@@ -139,10 +139,10 @@
     </weapontype>
 
     <weapontype idname="WEAPON_REVOLVER_38">
-        <name>.38 Revolver</name>
-        <name_future>.38 Slug Pistol</name_future>
-        <shortname>.38 Rev</shortname>
-        <shortname_future>.38 Slug</shortname_future>
+        <name>.38 リボルバー</name>
+        <name_future>.38 エアガン</name_future>
+        <shortname>.38ﾘﾎﾞﾙﾊﾞｰ</shortname>
+        <shortname_future>.38ｴｱｶﾞﾝ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <legality>1</legality>
@@ -151,7 +151,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>shoots at</attack_description>
+            <attack_description>を発砲した</attack_description>
             <skill>PISTOL</skill>
             <ammotype>CLIP_38</ammotype>
             <random_damage>141</random_damage>
@@ -165,7 +165,7 @@
             <priority>2</priority>
             <strength_min>2</strength_min>
             <strength_max>6</strength_max>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <skill>CLUB</skill>
             <random_damage>6</random_damage>
             <fixed_damage>5</fixed_damage>
@@ -174,10 +174,10 @@
     </weapontype>
 
     <weapontype idname="WEAPON_REVOLVER_44">
-        <name>.44 Magnum</name>
-        <name_future>.44 Heavy Slug Pistol</name_future>
-        <shortname>.44 Mag</shortname>
-        <shortname_future>.44 Slug</shortname_future>
+        <name>.44 マグナム</name>
+        <name_future>.44 エアガン</name_future>
+        <shortname>.44ﾏｸﾞﾅﾑ</shortname>
+        <shortname_future>.44ｴｱｶﾞﾝ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <legality>-1</legality>
@@ -186,7 +186,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>shoots at</attack_description>
+            <attack_description>を発砲した</attack_description>
             <skill>PISTOL</skill>
             <ammotype>CLIP_44</ammotype>
             <random_damage>276</random_damage>
@@ -198,7 +198,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <skill>CLUB</skill>
             <strength_min>2</strength_min>
             <strength_max>6</strength_max>
@@ -209,10 +209,10 @@
     </weapontype>
 
     <weapontype idname="WEAPON_SEMIPISTOL_45">
-        <name>.45 Semiauto</name>
-        <name_future>.45 Laser Pistol</name_future>
-        <shortname>.45 Semi.</shortname>
-        <shortname_future>.45 Las.</shortname_future>
+        <name>.45 セミオート</name>
+        <name_future>.45 レーザーピストル</name_future>
+        <shortname>.45ｾﾐｵｰﾄ</shortname>
+        <shortname_future>.45ﾚｰｻﾞｰ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <legality>0</legality>
@@ -221,7 +221,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>shoots at</attack_description>
+            <attack_description>を発砲した</attack_description>
             <skill>PISTOL</skill>
             <ammotype>CLIP_45</ammotype>
             <random_damage>181</random_damage>
@@ -233,7 +233,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <skill>CLUB</skill>
             <strength_min>2</strength_min>
             <strength_max>6</strength_max>
@@ -244,10 +244,10 @@
     </weapontype>
 
     <weapontype idname="WEAPON_SEMIPISTOL_9MM">
-        <name>9mm Semiauto</name>
-        <name_future>9mm Laser Pistol</name_future>
-        <shortname>9mm Semi.</shortname>
-        <shortname_future>9mm Las.</shortname_future>
+        <name>9mm セミオート</name>
+        <name_future>9mm レーザーピストル</name_future>
+        <shortname>9mmｾﾐｵｰﾄ</shortname>
+        <shortname_future>9mmﾚｰｻﾞｰ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <legality>0</legality>
@@ -256,7 +256,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>shoots at</attack_description>
+            <attack_description>を発砲した</attack_description>
             <skill>PISTOL</skill>
             <ammotype>CLIP_9</ammotype>
             <random_damage>181</random_damage>
@@ -268,7 +268,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <skill>CLUB</skill>
             <strength_min>2</strength_min>
             <strength_max>6</strength_max>
@@ -279,8 +279,8 @@
     </weapontype>
 
     <weapontype idname="WEAPON_SHOTGUN_AA12">
-        <name>AA-12 Auto Shotgun</name>
-        <name_future>Z-12 Chain Burstgun</name_future>
+        <name>AA-12 オートショットガン</name>
+        <name_future>Z-12 チェーンブラストガン</name_future>
         <shortname>AA-12</shortname>
         <shortname_future>Z-12</shortname_future>
         <can_take_hostages>true</can_take_hostages>
@@ -292,7 +292,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>shoots at</attack_description>
+            <attack_description>を発砲した</attack_description>
             <skill>SHOTGUN</skill>
             <ammotype>CLIP_BUCKSHOT</ammotype>
             <random_damage>201</random_damage>
@@ -308,7 +308,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <skill>CLUB</skill>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
@@ -320,9 +320,9 @@
 
     <weapontype idname="WEAPON_AUTORIFLE_AK47">
         <name>AK-47</name>
-        <name_future>P74 War Laser</name_future>
+        <name_future>P74 ウォーレーザー</name_future>
         <shortname>AK-47</shortname>
-        <shortname_future>P74 War</shortname_future>
+        <shortname_future>P74ｳｫｰ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <legality>-2</legality>
@@ -332,7 +332,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>shoots at</attack_description>
+            <attack_description>を発砲した</attack_description>
             <skill>RIFLE</skill>
             <ammotype>CLIP_ASSAULT</ammotype>
             <random_damage>251</random_damage>
@@ -351,7 +351,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <skill>CLUB</skill>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
@@ -363,9 +363,9 @@
 
     <weapontype idname="WEAPON_SEMIRIFLE_AR15">
         <name>AR-15</name>
-        <name_future>X15 Personal Laser</name_future>
+        <name_future>X15 携帯レーザー</name_future>
         <shortname>AR-15</shortname>
-        <shortname_future>X15 Semi</shortname_future>
+        <shortname_future>X15ｾﾐ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <legality>-1</legality>
@@ -375,7 +375,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>shoots at</attack_description>
+            <attack_description>を発砲した</attack_description>
             <skill>RIFLE</skill>
             <ammotype>CLIP_ASSAULT</ammotype>
             <random_damage>251</random_damage>
@@ -388,7 +388,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <skill>CLUB</skill>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
@@ -399,10 +399,10 @@
     </weapontype>
 
     <weapontype idname="WEAPON_DESERT_EAGLE">
-        <name>Desert Eagle</name>
-        <name_future>Desert Eagle</name_future>
-        <shortname>Deagle</shortname>
-        <shortname_future>Deagle</shortname_future>
+        <name>デザートイーグル</name>
+        <name_future>デザートイーグル</name_future>
+        <shortname>D･ｲｰｸﾞﾙ</shortname>
+        <shortname_future>D･ｲｰｸﾞﾙ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <legality>-1</legality>
@@ -411,7 +411,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>shoots at</attack_description>
+            <attack_description>を発砲した</attack_description>
             <skill>PISTOL</skill>
             <ammotype>CLIP_50AE</ammotype>
             <random_damage>301</random_damage>
@@ -424,7 +424,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <skill>CLUB</skill>
             <strength_min>3</strength_min>
             <strength_max>8</strength_max>
@@ -435,10 +435,10 @@
     </weapontype>
 
     <weapontype idname="WEAPON_FLAMETHROWER">
-        <name>M2 Flamethrower</name>
-        <name_future>Plasma Gun</name_future>
+        <name>M2 火炎放射器</name>
+        <name_future>プラズマガン</name_future>
         <shortname>M2A1-7</shortname>
-        <shortname_future>Plasmagun</shortname_future>
+        <shortname_future>ﾌﾟﾗｽﾞﾏｶﾞﾝ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <legality>-3</legality>
@@ -448,7 +448,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>streams fire at</attack_description>
+            <attack_description>で炎を放った</attack_description>
             <skill>HEAVYWEAPONS</skill>
             <ammotype>CLIP_GASOLINE</ammotype>
             <random_damage>201</random_damage>
@@ -464,7 +464,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <skill>CLUB</skill>
             <strength_min>12</strength_min>
             <strength_max>18</strength_max>
@@ -475,10 +475,10 @@
     </weapontype>
 
     <weapontype idname="WEAPON_CARBINE_M4">
-        <name>M4 Carbine</name>
-        <name_future>J4 Laser Carbine</name_future>
+        <name>M4 カービン銃</name>
+        <name_future>J4 レーザーカービン</name_future>
         <shortname>M4</shortname>
-        <shortname_future>J4 Laser</shortname_future>
+        <shortname_future>J4ﾚｰｻﾞｰ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <legality>-2</legality>
@@ -488,7 +488,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>shoots at</attack_description>
+            <attack_description>を発砲した</attack_description>
             <skill>RIFLE</skill>
             <ammotype>CLIP_ASSAULT</ammotype>
             <random_damage>221</random_damage>
@@ -508,7 +508,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <skill>CLUB</skill>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
@@ -520,9 +520,9 @@
 
     <weapontype idname="WEAPON_AUTORIFLE_M16">
         <name>M16</name>
-        <name_future>X15 Military Laser</name_future>
+        <name_future>X15 ミリタリーレーザー</name_future>
         <shortname>M16</shortname>
-        <shortname_future>X15 Full</shortname_future>
+        <shortname_future>X15ﾌﾙ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <legality>-2</legality>
@@ -532,7 +532,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>shoots at</attack_description>
+            <attack_description>を発砲した</attack_description>
             <skill>RIFLE</skill>
             <ammotype>CLIP_ASSAULT</ammotype>
             <random_damage>251</random_damage>
@@ -551,7 +551,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <skill>CLUB</skill>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
@@ -562,10 +562,10 @@
     </weapontype>
 
     <weapontype idname="WEAPON_M249_MACHINEGUN">
-        <name>M249 Machine Gun</name>
-        <name_future>C249 Chaingun</name_future>
+        <name>M249 マシンガン</name>
+        <name_future>C249 チェーンガン</name_future>
         <shortname>M249</shortname>
-        <shortname_future>Chaingun</shortname_future>
+        <shortname_future>ﾁｪｰﾝｶﾞﾝ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <legality>-2</legality>
@@ -575,7 +575,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>shoots at</attack_description>
+            <attack_description>を発砲した</attack_description>
             <skill>HEAVYWEAPONS</skill>
             <ammotype>CLIP_DRUM</ammotype>
             <random_damage>301</random_damage>
@@ -596,7 +596,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <skill>CLUB</skill>
             <strength_min>8</strength_min>
             <strength_max>14</strength_max>
@@ -607,10 +607,10 @@
     </weapontype>
 
     <weapontype idname="WEAPON_MOLOTOV">
-        <name>Molotov Bomb</name>
-        <name_future>Molotov Bomb</name_future>
-        <shortname>Molotov</shortname>
-        <shortname_future>Molotov</shortname_future>
+        <name>モロトフカクテル</name>
+        <name_future>モロトフカクテル</name_future>
+        <shortname>火炎瓶</shortname>
+        <shortname_future>火炎瓶</shortname_future>
         <threatening>true</threatening>
         <fencevalue>0</fencevalue>
         <size>15</size>
@@ -618,8 +618,8 @@
             <priority>1</priority>
             <ranged>true</ranged>
             <thrown>true</thrown>
-            <attack_description>hurls a molotov at</attack_description>
-            <hit_description>exploding</hit_description>
+            <attack_description>を投げつけた</attack_description>
+            <hit_description>爆発して</hit_description>
             <always_describe_hit>true</always_describe_hit>
             <hit_punctuation>!</hit_punctuation>
             <skill>THROWING</skill>
@@ -637,10 +637,10 @@
     </weapontype>
 
     <weapontype idname="WEAPON_SMG_MP5">
-        <name>MP5 SMG</name>
-        <name_future>Beijing Prince SMG</name_future>
+        <name>MP5 サブマシンガン</name>
+        <name_future>北京プリンス サブマシンガン</name_future>
         <shortname>MP5</shortname>
-        <shortname_future>Prince SMG</shortname_future>
+        <shortname_future>北京ﾌﾟﾘﾝｽ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <legality>-2</legality>
@@ -649,7 +649,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>shoots at</attack_description>
+            <attack_description>を発砲した</attack_description>
             <skill>SMG</skill>
             <ammotype>CLIP_SMG</ammotype>
             <random_damage>181</random_damage>
@@ -664,7 +664,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <skill>CLUB</skill>
             <strength_min>5</strength_min>
             <strength_max>10</strength_max>
@@ -675,10 +675,10 @@
     </weapontype>
 
     <weapontype idname="WEAPON_SHOTGUN_PUMP">
-        <name>Shotgun</name>
-        <name_future>Plasma Burstgun</name_future>
-        <shortname>Shotgun</shortname>
-        <shortname_future>Burstgun</shortname_future>
+        <name>ショットガン</name>
+        <name_future>プラズマショットガン</name_future>
+        <shortname>ｼｮｯﾄｶﾞﾝ</shortname>
+        <shortname_future>ﾌﾟﾗｽﾞﾏｶﾞﾝ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <legality>2</legality> <!-- Should always be legal. -->
@@ -688,7 +688,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>shoots at</attack_description>
+            <attack_description>を発砲した</attack_description>
             <skill>SHOTGUN</skill>
             <ammotype>CLIP_BUCKSHOT</ammotype>
             <random_damage>201</random_damage>
@@ -702,7 +702,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <skill>CLUB</skill>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
@@ -713,10 +713,10 @@
     </weapontype>
 
     <weapontype idname="WEAPON_AXE">
-        <name>Axe</name>
-        <name_future>Laser Axe</name_future>
-        <shortname>Axe</shortname>
-        <shortname_future>Laser Axe</shortname_future>
+        <name>斧</name>
+        <name_future>レーザーアクス</name_future>
+        <shortname>斧</shortname>
+        <shortname_future>レーザーアクス</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <fencevalue>0</fencevalue>
@@ -724,7 +724,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>chops at</attack_description>
+            <attack_description>で切りかかった</attack_description>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
             <skill>AXE</skill>
@@ -739,15 +739,17 @@
     </weapontype>
 
     <weapontype idname="WEAPON_BASEBALLBAT">
-        <name>Baseball Bat</name>
-        <name_future>Spaceball Bat</name_future>
+        <name>野球のバット</name>
+        <name_future>スペースボールのバット</name_future>
+        <shortname>バット</shortname>
+        <shortname_future>スペースバット</shortname_future>
         <threatening>true</threatening>
         <fencevalue>20</fencevalue>
         <bashstrengthmod>150</bashstrengthmod>
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <ranged>false</ranged>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
@@ -759,17 +761,17 @@
     </weapontype>
 
     <weapontype idname="WEAPON_CHAIN">
-        <name>Chain</name>
-        <name_future>Industrial Cyber-Arm</name_future>
-        <shortname>Chain</shortname>
-        <shortname_future>CyberArm</shortname_future>
+        <name>チェーン</name>
+        <name_future>ロボットアーム</name_future>
+        <shortname>チェーン</shortname>
+        <shortname_future>ロボットアーム</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <fencevalue>10</fencevalue>
         <suspicious>false</suspicious>
         <size>5</size>
         <attack>
             <priority>1</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <strength_min>1</strength_min>
             <strength_max>6</strength_max>
             <skill>CLUB</skill>
@@ -780,16 +782,18 @@
     </weapontype>
 
     <weapontype idname="WEAPON_COMBATKNIFE"> 
-        <name>Combat Knife</name>
-        <name_future>Vibro-Knife</name_future>
+        <name>コンバットナイフ</name>
+        <name_future>超音波ナイフ</name_future>
+        <shortname>ｺﾝﾊﾞｯﾄﾅｲﾌ</shortname>
+        <shortname_future>超音波ナイフ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <fencevalue>20</fencevalue>
         <bashstrengthmod>105</bashstrengthmod>
         <size>4</size>
         <attack>
-            <attack_description>lunges at</attack_description>
-            <hit_description>slashing</hit_description>
+            <attack_description>で切りかかった</attack_description>
+            <hit_description>刃が</hit_description>
             <skill>KNIFE</skill>
             <strentgh_min>1</strentgh_min>
             <strength_max>6</strength_max>
@@ -805,16 +809,16 @@
     </weapontype>
 
     <weapontype idname="WEAPON_CROSS">
-        <name>Silver Cross</name>
-        <name_future>Silver Cross</name_future>
-        <shortname>Cross</shortname>
-        <shortname_future>Cross</shortname_future>
+        <name>銀の十字架</name>
+        <name_future>銀の十字架</name_future>
+        <shortname>十字架</shortname>
+        <shortname_future>十字架</shortname_future>
         <fencevalue>100</fencevalue>
         <suspicious>false</suspicious>
         <size>5</size>
         <attack>
             <priority>1</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <strength_min>1</strength_min>
             <strength_max>4</strength_max>
             <skill>CLUB</skill>
@@ -825,9 +829,9 @@
     </weapontype>
 
     <weapontype idname="WEAPON_CROWBAR">
-        <name>Crowbar</name>
-        <name_future>Forcefield Prybar</name_future>
-        <shortname_future>Prybar</shortname_future>
+        <name>バール</name>
+        <name_future>フォースフィールド プライバー</name_future>
+        <shortname_future>プライバー</shortname_future>
         <threatening>true</threatening>
         <fencevalue>10</fencevalue>
         <bashstrengthmod>200</bashstrengthmod>
@@ -835,7 +839,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <strength_min>4</strength_min>
             <strength_max>8</strength_max>
             <skill>CLUB</skill>
@@ -847,15 +851,15 @@
     </weapontype>
 
     <weapontype idname="WEAPON_DAGGER">
-        <name>Dagger</name>
-        <name_future>Beam Dagger</name_future>
+        <name>ダガー</name>
+        <name_future>ビームダガー</name_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <fencevalue>10</fencevalue>
         <size>5</size>
         <attack>
-            <attack_description>lunges at</attack_description>
-            <hit_description>stabbing</hit_description>
+            <attack_description>で切りかかった</attack_description>
+            <hit_description>刃が</hit_description>
             <strength_min>1</strength_min>
             <strength_max>5</strength_max>
             <skill>KNIFE</skill>
@@ -872,14 +876,14 @@
     </weapontype>
 
     <weapontype idname="WEAPON_DAISHO">
-        <name>Daisho</name>
-        <name_sub_1>Katana</name_sub_1>
-        <name_sub_2>Wakizashi</name_sub_2>
-        <name_future>Twin Swords of Liberalism</name_future>
-        <name_future_sub_1>Retribution Sword</name_future_sub_1>
-        <name_future_sub_2>Justice Blade</name_future_sub_2>
-        <shortname>Daisho</shortname>
-        <shortname_future>Twin Sword</shortname_future>
+        <name>日本刀</name>
+        <name_sub_1>本差</name_sub_1>
+        <name_sub_2>脇差</name_sub_2>
+        <name_future>リベラルツインソード</name_future>
+        <name_future_sub_1>リトリビューションソード</name_future_sub_1>
+        <name_future_sub_2>ジャスティスブレイド</name_future_sub_2>
+        <shortname>日本刀</shortname>
+        <shortname_future>ツインソード</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <fencevalue>100</fencevalue>
@@ -887,7 +891,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で切りかかった</attack_description>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
             <skill>SWORD</skill>
@@ -902,17 +906,17 @@
     </weapontype>
 
     <weapontype idname="WEAPON_GAVEL">
-        <name>Gavel</name>
-        <name_future>Laser Gavel</name_future>
-        <shortname>Gavel</shortname>
-        <shortname_future>Gavel</shortname_future>
+        <name>金槌</name>
+        <name_future>レーザーハンマー</name_future>
+        <shortname>金槌</shortname>
+        <shortname_future>ハンマー</shortname_future>
         <fencevalue>20</fencevalue>
         <suspicious>false</suspicious>
         <protects_against_kidnapping>false</protects_against_kidnapping>
         <size>5</size>
         <attack>
             <priority>1</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <strength_min>1</strength_min>
             <strength_max>4</strength_max>
             <skill>CLUB</skill>
@@ -923,10 +927,10 @@
     </weapontype>
 
     <weapontype idname="WEAPON_GUITAR">
-        <name>Guitar</name>
-        <name_future>Cyber-Keytar</name_future>
-        <shortname>Guitar</shortname>
-        <shortname_future>Keytar</shortname_future>
+        <name>ギター</name>
+        <name_future>サイバーキーボード</name_future>
+        <shortname>ギター</shortname>
+        <shortname_future>キーボード</shortname_future>
         <musical_attack>true</musical_attack>
         <instrument>true</instrument>
         <fencevalue>100</fencevalue>
@@ -935,7 +939,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <strength_min>4</strength_min>
             <strength_max>8</strength_max>
             <skill>CLUB</skill>
@@ -946,17 +950,17 @@
     </weapontype>
 
     <weapontype idname="WEAPON_HAMMER">
-        <name>Dwarven Hammer</name>
-        <name_future>Dwarven Hammer</name_future>
-        <shortname>Hammer</shortname>
-        <shortname_future>Hammer</shortname_future>
+        <name>ドワーフハンマー</name>
+        <name_future>ドワーフハンマー</name_future>
+        <shortname>ハンマー</shortname>
+        <shortname_future>ハンマー</shortname_future>
         <threatening>true</threatening>
         <fencevalue>100</fencevalue>
         <bashstrengthmod>150</bashstrengthmod>
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <strength_min>8</strength_min>
             <strength_max>18</strength_max>
             <skill>CLUB</skill>
@@ -968,17 +972,17 @@
     </weapontype>
 
     <weapontype idname="WEAPON_MAUL">
-        <name>Maul of Anrin</name>
-        <name_future>Maul of Anrin</name_future>
-        <shortname>Maul</shortname>
-        <shortname_future>Maul</shortname_future>
+        <name>アンリンのモール</name>
+        <name_future>アンリンのモール</name_future>
+        <shortname>モール</shortname>
+        <shortname_future>モール</shortname_future>
         <threatening>true</threatening>
         <fencevalue>100</fencevalue>
         <bashstrengthmod>150</bashstrengthmod>
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <strength_min>8</strength_min>
             <strength_max>18</strength_max>
             <skill>CLUB</skill>
@@ -989,10 +993,10 @@
     </weapontype>
 
     <weapontype idname="WEAPON_NIGHTSTICK">
-        <name>Nightstick</name>
-        <name_future>Electro-Shock Stick</name_future>
-        <shortname>Nightstick</shortname>
-        <shortname_future>Shock Stick</shortname_future>
+        <name>警棒</name>
+        <name_future>電撃スティック</name_future>
+        <shortname>警棒</shortname>
+        <shortname_future>電撃スティック</shortname_future>
         <threatening>true</threatening>
         <fencevalue>20</fencevalue>
         <bashstrengthmod>125</bashstrengthmod>
@@ -1000,7 +1004,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <strength_min>4</strength_min>
             <strength_max>8</strength_max>
             <skill>CLUB</skill>
@@ -1011,17 +1015,17 @@
     </weapontype>
 
     <weapontype idname="WEAPON_PITCHFORK">
-        <name>Pitchfork</name>
-        <name_future>Space Pitchfork</name_future>
-        <shortname>Pitchfork</shortname>
-        <shortname_future>Pitchfork</shortname_future>
+        <name>三又</name>
+        <name_future>スペースピッチフォーク</name_future>
+        <shortname>三又</shortname>
+        <shortname_future>ピッチフォーク</shortname_future>
         <threatening>true</threatening>
         <fencevalue>20</fencevalue>
         <bashstrengthmod>125</bashstrengthmod>
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>stabs at</attack_description>
+            <attack_description>を突き刺した</attack_description>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
             <skill>SWORD</skill>
@@ -1035,15 +1039,16 @@
     </weapontype>
 
     <weapontype idname="WEAPON_SHANK">
-        <name>Shank</name>
-        <name_future>Cyber Shank</name_future>
-        <shortname_future>Shank</shortname_future>
+        <name>シャンクナイフ</name>
+        <name_future>サイバーシャンク</name_future>
+        <name>シャンクナイフ</name>
+        <shortname_future>シャンク</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <fencevalue>5</fencevalue>
         <size>5</size>
         <attack>
             <attack_description>lunges at</attack_description>
-            <hit_description>stabbing</hit_description>
+            <hit_description>刃が</hit_description>
             <strength_min>1</strength_min>
             <strength_max>4</strength_max>
             <skill>KNIFE</skill>
@@ -1060,17 +1065,17 @@
     </weapontype>
 
     <weapontype idname="WEAPON_SPRAYCAN">
-        <name>Spraypaint</name>
-        <name_future>Holo-Paint</name_future>
-        <shortname>Spraypaint</shortname>
-        <shortname_future>Holopaint</shortname_future>
+        <name>スプレー缶</name>
+        <name_future>ホログラムペイント</name_future>
+        <shortname>スプレー缶</shortname>
+        <shortname_future>ホロペイント</shortname_future>
         <graffiti>true</graffiti>
         <fencevalue>2</fencevalue>
         <suspicious>false</suspicious>
         <size>5</size>
         <attack>
             <priority>1</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <strength_min>1</strength_min>
             <strength_max>4</strength_max>
             <skill>CLUB</skill>
@@ -1081,17 +1086,17 @@
     </weapontype>
 
     <weapontype idname="WEAPON_STAFF">
-        <name>Wizard's Staff</name>
-        <name_future>Wizard's Staff</name_future>
-        <shortname>Staff</shortname>
-        <shortname_future>Staff</shortname_future>
+        <name>魔術師の杖</name>
+        <name_future>魔術師の杖</name_future>
+        <shortname>杖</shortname>
+        <shortname_future>杖</shortname_future>
         <threatening>true</threatening>
         <fencevalue>100</fencevalue>
         <bashstrengthmod>125</bashstrengthmod>
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
             <skill>CLUB</skill>
@@ -1102,10 +1107,10 @@
     </weapontype>
 
     <weapontype idname="WEAPON_SWORD">
-        <name>Sword of Morfiegor</name>
-        <name_future>Light Sword</name_future>
-        <shortname>Sword</shortname>
-        <shortname_future>Light Sword</shortname_future>
+        <name>モルフィゴアの剣</name>
+        <name_future>ライトソード</name_future>
+        <shortname>剣</shortname>
+        <shortname_future>ライトソード</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <threatening>true</threatening>
         <fencevalue>100</fencevalue>
@@ -1113,7 +1118,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>slashes at</attack_description>
+            <attack_description>切りつけた</attack_description>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
             <skill>SWORD</skill>
@@ -1128,16 +1133,16 @@
     </weapontype>
 
     <weapontype idname="WEAPON_SYRINGE">
-        <name>Syringe</name>
-        <name_future>Medical Injector</name_future>
-        <shortname_future>Injector</shortname_future>
+        <name>注射器</name>
+        <name_future>医療用注入器</name_future>
+        <shortname_future>注射器</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <fencevalue>10</fencevalue>
         <suspicious>false</suspicious>
         <size>5</size>
         <attack>
             <priority>1</priority>
-            <attack_description>pokes at</attack_description>
+            <attack_description>で突き刺した</attack_description>
             <strength_min>1</strength_min>
             <strength_max>2</strength_max>
             <skill>KNIFE</skill>
@@ -1149,16 +1154,16 @@
     </weapontype>
 
     <weapontype idname="WEAPON_TORCH">
-        <name>Torch</name>
-        <name_future>Burning Flare</name_future>
-        <shortname>Torch</shortname>
-        <shortname_future>Flare</shortname_future>
+        <name>松明</name>
+        <name_future>燃え上がる炎</name_future>
+        <shortname>松明</shortname>
+        <shortname_future>炎</shortname_future>
         <threatening>true</threatening>
         <fencevalue>2</fencevalue>
         <size>15</size> <!-- You can't conceal a burning torch under your clothes. -->        
         <attack>
             <priority>1</priority>
-            <attack_description>swings at</attack_description>
+            <attack_description>で殴りかかった</attack_description>
             <strength_min>1</strength_min>
             <strength_max>1</strength_max>
             <skill>CLUB</skill>

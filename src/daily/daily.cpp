@@ -80,11 +80,11 @@ void advanceday(char &clearformess,char canseethings)
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
                   addstr(squad[sq]->squad[p]->name, gamelog);
-                  addstr(" acted with ", gamelog);
-                  addstr(squad[sq]->name, gamelog);
-                  addstr(" instead of ", gamelog);
+                  addstr("は");
                   addstr(getactivity(squad[sq]->squad[p]->activity), gamelog);
-                  addstr(".", gamelog);
+                  addstr("の代わりに");
+                  addstr(squad[sq]->name, gamelog);
+                  addstr("と共に行動する。", gamelog);
                   gamelog.newline();
 
                   getkey();

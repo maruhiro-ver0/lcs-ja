@@ -1,7 +1,7 @@
 // Note: this file is encoded in the PC-8 / Code Page 437 / OEM-US character set
 // (The same character set used by Liberal Crime Squad when it is running)
 // Certain special characters won't display correctly unless your text editor is
-// set to use that character set, such as this e with an accent: 
+// set to use that character set, such as this e with an accent: รฉ
 
 // In Windows Notepad with the Terminal font, OEM/DOS encoding it should work fine.
 // You can set this in Notepad by going to Format->Font and choosing the Terminal font,
@@ -229,7 +229,7 @@ void constructeventstory(char *story,short view,char positive)
             case 0: strcat(story,"Let's not forget the convict is colored.  You know how their kind are"); break;
             case 1:
                strcat(story,"The convict is always referred to by three names.  ");
-               strcat(story,"Assassin, serial killer, either way ฤฤ guilty.  ");
+               strcat(story,"Assassin, serial killer, either way ๏พ๏พ guilty.  ");
                strcat(story,"End of story");
                break;
             case 2: strcat(story,"The family wants closure.  We don't have time for another trial"); break;
@@ -248,7 +248,7 @@ void constructeventstory(char *story,short view,char positive)
             strcat(story,"Washington, DC - The FBI might be keeping tabs on you.  ");
             strcat(story,"This newspaper yesterday received a collection of files from a source in the Federal Bureau of Investigations.  ");
             strcat(story,"The files contain information on which people have been attending demonstrations, organizing ");
-            strcat(story,"unions, working for liberal organizations ฤฤ even ");
+            strcat(story,"unions, working for liberal organizations ๏พ๏พ even ");
             switch(LCSrandom(2))
             {
             case 0:strcat(story,"buying music with 'Explicit Lyrics' labels."); break;
@@ -650,7 +650,7 @@ void constructeventstory(char *story,short view,char positive)
             strcat(story,"_.&r");
             strcat(story,"   Take this excerpt, \"");//TODO: Add more excerpts, more variety.
             strcat(story,"The steel bars grated forward in their rails, ");
-            strcat(story,"coming to a halt with a deafening clang that said it all ฤฤ ");
+            strcat(story,"coming to a halt with a deafening clang that said it all ๏พ๏พ ");
             strcat(story,"I was trapped with them now.  There were three, looking me over ");
             strcat(story,"with dark glares of bare lust, as football players might stare at a stupefied, drunken, helpless teenager.  ");
             strcat(story,"My shank's under the mattress.  Better to be brave and fight or chicken out and let them take it?  ");
@@ -1726,15 +1726,15 @@ void run_television_news_stories()
 
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(19,13);
-                  addstr("ษออออออออออออออออออออออออออออออออออออออออออออออออออออป");
+                  addstr("๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝป");
                   move(20,13);
-                  addstr("บ     The  police  have  beaten  a  black  man  in   บ");
+                  addstr("๏ฝบ     The  police  have  beaten  a  black  man  in   ๏ฝบ");
                   move(21,13);
-                  addstr("บ   Los Angeles again.  This time, the incident is   บ");
+                  addstr("๏ฝบ   Los Angeles again.  This time, the incident is   ๏ฝบ");
                   move(22,13);
-                  addstr("บ   taped by  a passerby  and saturates  the news.   บ");
+                  addstr("๏ฝบ   taped by  a passerby  and saturates  the news.   ๏ฝบ");
                   move(23,13);
-                  addstr("ศออออออออออออออออออออออออออออออออออออออออออออออออออออผ");
+                  addstr("๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝผ");
 
                   getkey();
 
@@ -1798,15 +1798,15 @@ void run_television_news_stories()
 
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(19,13);
-                  addstr("ษออออออออออออออออออออออออออออออออออออออออออออออออออออป");
+                  addstr("๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝป");
                   move(20,13);
-                  addstr("บ     A  Cable  News  anchor  accidentally  let  a   บ");
+                  addstr("๏ฝบ     A  Cable  News  anchor  accidentally  let  a   ๏ฝบ");
                   move(21,13);
-                  addstr("บ   bright Liberal guest  finish a sentence.  Many   บ");
+                  addstr("๏ฝบ   bright Liberal guest  finish a sentence.  Many   ๏ฝบ");
                   move(22,13);
-                  addstr("บ   viewers  across  the  nation  were  listening.   บ");
+                  addstr("๏ฝบ   viewers  across  the  nation  were  listening.   ๏ฝบ");
                   move(23,13);
-                  addstr("ศออออออออออออออออออออออออออออออออออออออออออออออออออออผ");
+                  addstr("๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝผ");
 
                   getkey();
 
@@ -1826,15 +1826,15 @@ void run_television_news_stories()
 
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(19,13);
-                  addstr("ษออออออออออออออออออออออออออออออออออออออออออออออออออออป");
+                  addstr("๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝป");
                   move(20,13);
-                  addstr("บ     A new show glamorizing the lives of the rich   บ");
+                  addstr("๏ฝบ     A new show glamorizing the lives of the rich   ๏ฝบ");
                   move(21,13);
-                  addstr("บ   begins airing  this week.  With the nationwide   บ");
+                  addstr("๏ฝบ   begins airing  this week.  With the nationwide   ๏ฝบ");
                   move(22,13);
-                  addstr("บ   advertising  blitz, it's bound  to be popular.   บ");
+                  addstr("๏ฝบ   advertising  blitz, it's bound  to be popular.   ๏ฝบ");
                   move(23,13);
-                  addstr("ศออออออออออออออออออออออออออออออออออออออออออออออออออออผ");
+                  addstr("๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝผ");
 
                   getkey();
 
@@ -1847,15 +1847,15 @@ void run_television_news_stories()
 
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(19,13);
-                  addstr("ษออออออออออออออออออออออออออออออออออออออออออออออออออออป");
+                  addstr("๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝป");
                   move(20,13);
-                  addstr("บ     A major Cable News channel has hired a slick   บ");
+                  addstr("๏ฝบ     A major Cable News channel has hired a slick   ๏ฝบ");
                   move(21,13);
-                  addstr("บ   new anchor for  one of its news shows.  Guided   บ");
+                  addstr("๏ฝบ   new anchor for  one of its news shows.  Guided   ๏ฝบ");
                   move(22,13);
-                  addstr("บ   by impressive  advertising, America  tunes in.   บ");
+                  addstr("๏ฝบ   by impressive  advertising, America  tunes in.   ๏ฝบ");
                   move(23,13);
-                  addstr("ศออออออออออออออออออออออออออออออออออออออออออออออออออออผ");
+                  addstr("๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝผ");
 
                   getkey();
 
@@ -1870,15 +1870,15 @@ void run_television_news_stories()
 
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(19,13);
-                  addstr("ษออออออออออออออออออออออออออออออออออออออออออออออออออออป");
+                  addstr("๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝป");
                   move(20,13);
-                  addstr("บ     A  failed partial  birth abortion  goes on a   บ");
+                  addstr("๏ฝบ     A  failed partial  birth abortion  goes on a   ๏ฝบ");
                   move(21,13);
-                  addstr("บ   popular  afternoon  talk  show.    The  studio   บ");
+                  addstr("๏ฝบ   popular  afternoon  talk  show.    The  studio   ๏ฝบ");
                   move(22,13);
-                  addstr("บ   audience and viewers nationwide feel its pain.   บ");
+                  addstr("๏ฝบ   audience and viewers nationwide feel its pain.   ๏ฝบ");
                   move(23,13);
-                  addstr("ศออออออออออออออออออออออออออออออออออออออออออออออออออออผ");
+                  addstr("๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏พ๏ฝผ");
 
                   getkey();
 

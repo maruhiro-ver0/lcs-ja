@@ -1,22 +1,24 @@
-(Note this document is a parody of the original Oubliette 2.5 Manual from 1983)
+(このドキュメントは元となったゲームOubliette 2.5(1983年)のパロディーである。)
 
-Liberal Crime Squad
-A Liberal Adventure
+リベラル・クライム・スコード
+リベラル・アドベンチャー
 
-To some a dream come true, to others an offensive piece of crap.
+ある者には夢の実現、またある者には不快なゴミ。
 
-Author: Tarn Adams of Bay 12 Games
+作者: Tarn Adams (Bay 12 Games)
 v3.9 Copyright (c) 2002-4, Tarn Adams
 
-v3.10-4.00 revisions by Jonathan Stickles, Chris Johnson, and other fans of Liberal Crime Squad in the Open Source Community. We hope you enjoy our changes.
+v3.10-4.00 Jonathan Stickles、Chris Johnson、そしてオープンソースコミュニティ
+のリベラル・クライム・スコードファンによるリビジョン。我々のアレンジを楽しんで
+もらえることを願っている。
 
-Visit the Curses forum at the Bay 12 Games website to discuss and contribute to LCS:
+LCSの議論と参加はBay 12 GamesウェブページのCurses forumまで:
 http://www.bay12games.com/cgi-local/ultimatebb.cgi?ubb=forum&f=3
 
-See also our underutilized sourceforge page:
+あまり利用されていないsourceforgeのページも参考にして欲しい:
 https://sourceforge.net/projects/lcsgame/
 
-DISCLAIMER
+免責条項
 
 Tarn Adams and Bay 12 Games make no representations or warranties with respect to
 the contents hereof and disclaim any implied warranties of merchantability or fitness
@@ -25,84 +27,136 @@ any time without prior notification.
 
 www.bay12games.com
 
-If you are missing the curses DLL, get it at www.bay12games.com/curses.
+もしcurses DLLがない場合は、 www.bay12games.com/curses で入手できる。
 
-TABLE OF CONTENTS
+目次
 
-The Legend of the Liberal Crime Squad . . . . . . . . . . . . . . . . . .  2
-Loading Liberal Crime Squad . . . . . . . . . . . . . . . . . . . . . . .  3
-Introduction to Liberal Crime Squad . . . . . . . . . . . . . . . . . . .  3
-Character Creation  . . . . . . . . . . . . . . . . . . . . . . . . . . .  4
-Liberal Information . . . . . . . . . . . . . . . . . . . . . . . . . . .  5
-Equipment . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
-Main Options  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
-Site Options  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
-
-----------------------------------------------------------------
-The Legend of the Liberal Crime Squad
-----------------------------------------------------------------
-
-(This section is adapted from the Wikipedia article on the Symbionese Liberation Army, and serves as background for the 'inspiration' for LCS. If it's too serious for you, just skip it -- we don't take the game seriously, either, so no worries.)
-
-On Febuary 4, 1974, the Symbionese Liberation Army, an American self-styled urban gurrilla warfare group kidnapped 19-year-old media heiress Patricia Hearst as she and her 26-year-old boyfriend, Steven Weed, sat relaxing in their Berkeley, California home.
-
-Their goal was to negotiate the release of two of their members, Joseph Remiro and Russell Little, who were just convicted and given life sentences for assassinating a popular school superintendant over his support for what they considered to be a "facist" plan to introduce identification cards. This proved impossible to negotiate, and the F.B.I. searched unsuccessfully for the S.L.A. as they took refuge in "safehouses" and the kidnapping captured regional, then world attention.
-
-What was so spectacular about this kidnapping was not so much the prominence of the victim, but her response. The S.L.A. released taped recordings of Hearst reading their demands, and with each tape they released, she voiced increasing support for her captors. Eventually, she firmly renounced her former life and family, and declared that when the S.L.A. offered her the choice of going free or joining them, she chose to join them. She would even take a new name: Tania.
-
-On April 15, 1974, S.L.A. members burst into a branch of The Hibernia Bank at 1450 Noriega Street in San Francisco. Security camera footage of pictured Patricia Hearst, Tania, holding a rifle and yelling commands. Two civilians were shot, and the S.L.A. made off with over $10,000.
-
-Unable to recruit any would-be revolutionaries in the Bay Area, the S.L.A. moved to Los Angeles in hopes of finding more supporters, but the move was sloppy, and the group resorted to commandeering housing and supplies from the people of Los Angeles, thus alienating the people they relied upon for secrecy and protection. Imprisoned S.L.A. member Russell Little declared that they had lost sight of their goals, and were entering a confrontation with the police rather than engaging in a dialogue with the people.
-
-On 16 May 1974, S.L.A. codenames Teko and Yolanda entered Mel's Sporting Goods Store in Inglewood, California, to shop for supplies for their safehouse. While Yolanda made the purchases, Teko on a whim tried to shoplift, and was caught by a security guard. Following a brief confrontation, codename Tania, on lookout from across the street, opened fire on the store's sign, forcing everyone inside to take cover, and allowing the other members to escape.
-
-Police tracked them to their safehouse, and they were forced to abandon it and commandeer a new one from unwilling occupants in the dead of the night, storming a home with massive amounts of guns and ammunition in tow. The next day, a woman called the police to tell them that people with guns were staying at her daughter's house. That afternoon, more than 400 L.A.P.D. officers, along with the F.B.I., California Highway Patrol, and Los Angeles Fire Department surrounded the neighborhood. After a two-hour gun battle between S.W.A.T. teams outside and the S.L.A. inside, the house caught fire and all six S.L.A. members inside were killed. Tania, Teko, and Yolanda were in hiding elsewhere, and were not among the dead.
-
-The manhunt for Patricia Hearst and the remainder of the S.L.A. continued, and after over a year of continued movement and additional S.L.A. actions, she was captured. She claimed to have been drugged and brainwashed, and identified the remainder of the S.L.A. members. She was convicted for her part in the bank raid, and the S.L.A. dissolved.
-
-The revolution failed.
-
-But that was then...
+リベラル・クライム・スコードの伝説  . . . . . . . . . . . . . . . . . . .  2
+リベラル・クライム・スコードのロード方法  . . . . . . . . . . . . . . . .  3
+リベラル・クライム・スコードの概要  . . . . . . . . . . . . . . . . . . .  3
+キャラクターの作成  . . . . . . . . . . . . . . . . . . . . . . . . . . .  4
+リベラルの情報  . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  5
+装備  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+主なコマンド  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+その他のコマンド  . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
 
 ----------------------------------------------------------------
-Loading Liberal Crime Squad
+リベラル・クライム・スコードの伝説
 ----------------------------------------------------------------
 
-1. Turn on the power to your monitor and IBM-PC.
+(この章はWikipediaのシンバイオニーズ解放軍の記事を元にしている。そして、これは
+LCSの「インスピレーション」の背景でもある。あなたにとって深刻すぎるならば読み
+飛ばして欲しい -- 我々はこのゲームを本気とは受け取っていないので心配する必要は
+ない。)
 
-2. Insert the Liberal Crime Squad disk into Drive A (!!!!!!!!)
+1974年2月4日、アメリカの自称都市ゲリラ戦闘集団 シンバイオニーズ解放軍
+(Symbionese Liberation Army, S.L.A)は、カリフォルニア州バークレーの自宅にいた
+19歳の大富豪の娘パトリシア・ハーストと26歳の婚約者スティーブン・ウィードを誘拐
+した。
 
-3. The disk drive will activate and you will be prompted to enter the date and time, pressing the carriage return after each.  Wow, that's some old school shit.
+その目的は、彼らが「ファシスト的」と考えていた身分証明カードの導入を支持してい
+た著名な教育委員会委員長の殺害で終身刑を言い渡された2人のメンバー、ジョゼフ・
+レミロとラッセル・リトルの解放だった。この要求は受け入れられるものではなかっ
+た。だが、F.B.I.はS.L.A.の「アジト」と誘拐された2人を見つけることができなかっ
+た。まもなくこの事件は世界の注目を集めることになる。
 
-4. At the A> prompt, type LCS and press the carriage return.
+この誘拐事件で注目されたのは、被害者の華々しさではなく彼女の行動のためだった。
+S.L.Aはハーストが読み上げる彼らの要求を録音したテープを公開した。そのテープで
+彼女は自分を誘拐した者たちへの支持を表明した。最終的には彼女はこれまでの人生と
+家族を捨て、S.L.A.が自由の身になるか自分たちに加わるかを選択させたとき、彼らに
+加わることを選んだことを宣言した。彼女には新しい名前、タニアが与えられた。
 
-5. The game starts with a listing of the current game statistics, unless it is your first time.  Press the carriage return to begin Liberal Crime Squad.
+1974年4月15日、S.L.A.のメンバーはサンフランシスコ 1450 ノリエガ・ストリートの
+ハイバーニア銀行の支店を襲撃した。セキュリティカメラの映像には、ライフル銃を持
+ちどなり声を上げて命令するパトリシア・ハースト、タニアの姿があった。2人の市民
+が撃たれ、S.L.A.は10,000ドルを奪い去った。
+
+ベイエリアで革命志願者を補充できなくなるとS.L.A.は新たな支持者を求めロサンゼル
+スへと移った。だが、移動は無計画で、ロサンゼルスではグループは住居からの盗みと
+人々からの強奪に頼った。その結果、人々を避け秘密裏に行動することとなった。収監
+中のS.L.A.のメンバー ラッセル・リトルは、彼らは目標を失い、人々との対話ではな
+く警察との闘争に突入してしまったとの意見を表明した。
+
+1974年5月16日、S.L.A.のコードネーム テコとヨランダはカリフォルニア州イングルウ
+ッドのスポーツ用品店メルに入った。アジトのために物を購入するためだった。ヨラン
+ダが買い物をしているあいだ、テコはなにげなくショップのエレベーターに乗ろうとし
+たところをガードマンに捕らえられた。少しの言い争いの直後、通りの向かい側で警戒
+していたコードネーム タニアが店の看板に向かって発砲した。店の客は全員逃げ、メ
+ンバーは脱出することができた。
+
+警察は彼らをアジトまで追った。彼らはアジトを放棄したが、真夜中に大量の銃と爆薬
+を持って新たな拠点を家主から奪い取った。次の日、警察は女性から銃を持った者たち
+が娘の家に押し入ったとの通報を受けた。午後には400人以上のロサンゼルス市警察、
+F.B.I、カリフォルニア・ハイウェイ・パトロール、ロサンゼルス市消防隊が周囲を封
+鎖した。S.W.A.T.との2時間の銃撃戦の後、火災が発生し6人のS.L.A.のメンバーは全員
+死亡した。タニア、テコ、そしてヨランダは別の場所に隠れていて生き延びた。
+
+パトリシア・ハーストとS.L.A.の残存メンバーの捜索は続いた。そして1年以上の逃亡
+とさらなるS.L.A.の行動の後、彼女は捕えられた。彼女は薬物と洗脳によるものだと主
+張した。そして残りのS.L.A.のメンバーも特定された。彼女は銀行強盗に加担した罪で
+有罪判決を受け、S.L.A.は崩壊した。
+
+革命は失敗に終わったのである。
+
+しかし、今度は...
 
 ----------------------------------------------------------------
-Introduction to Liberal Crime Squad
+リベラル・クライム・スコードのロード方法
 ----------------------------------------------------------------
 
-Welcome to Liberal Crime Squad!  The Conservatives have taken the Executive, Legislative, and Judicial branches of government. Over time, the Liberal laws of this nation will erode and turn the country into a BACKWOODS YET CORPORATE NIGHTMARE.  To prevent this from happening, the Liberal Crime Squad was established. The mood of the country is shifting, and we need to turn things around. Go out on the streets and indoctrinate Conservative automatons. That is, let them see their True Liberal Nature. Then arm them and send them forth to Stop Evil.  Eventually the public will fall behind us, and we will put more Elite Liberals in government.
+1. モニタとIBM-PCの電源を入れる。
 
-Read below for the technical details.  A working knowledge of the game is essential to FURTHER YOUR LIBERAL AGENDA.
+2. リベラル・クライム・スコードのディスクをAドライブ(!!!!!!!!)に挿入する。
+
+3. ディスクが読み込まれ、日付と時刻の入力プロンプトが表示されるのでリターンキ
+   ーを押す。ああ、あの頃と同じだ。
+
+4. A>プロンプトが表示されるので、LCSと入力してリターンキーを押す。
+
+5. ゲームが始まると最初でなければゲームの得点の一覧が表示される。リターンキー
+   を押すとリベラル・クライム・スコードが始まる。
 
 ----------------------------------------------------------------
-Character Creation
+リベラル・クライム・スコードの概要
 ----------------------------------------------------------------
 
-After the title screen, you will create the founder of the Liberal Crime Squad by answering a series of questions.  Just be honest, or cynically answer according to what best suits your style of play. The initial Liberal that you control will have skills and equipment related to your responses. If you really want to cheat, with this or anything else, you can pull up your web browser and search for the LCS wiki for detailed information about how these choices affect your starting character.
+ようこそリベラル・クライム・スコードへ! 今、保守主義が司法、立法、行政の三権を
+支配している。このままではリベラルな法は失われ、この国は悪夢のような時代に突入
+するだろう。それを阻止するためにリベラル・クライム・スコードは設立された。この
+国の世論は傾きつつある。我々はその向きを変えなければならない。街に出て保守派の
+操り人形を教化せよ。それが彼らに真の自由主義国家を見せることとなるのだ。そして
+彼らを武装させ、悪を阻止する戦いへと送り込め。最終的には大衆は我々の側に付き、
+より多くのエリート・リベラルを政府に送り込むこととなるだろう。
+
+詳細は以下の章を読むこと。このゲームの知識があなたのリベラル・アジェンダの根本
+となるだろう。
 
 ----------------------------------------------------------------
-Liberal Information
+キャラクターの作成
 ----------------------------------------------------------------
 
-Once you've named the founder, you'll notice a short synopsis of the Squad members' equipment at the top of the screen.  The first skill number is the sum of the Liberal's skills, and the second number is the Liberal's skill with the current weapon.
+タイトル画面の後、いくつかの質問に答えてリベラル・クライム・スコードの設立者を
+作成する。正直に答えても、プレースタイルに合わせてウソをついてもよい。あなたの
+回答で初期装備と能力が決まる。もしこの質問でチートしたいならば、ウェブブラウザ
+を起動してLCS wikiを検索すると選択がキャラクターに与える影響の詳細がわかるだろ
+う。
 
-***NOTE***: If a gun is loaded, the number in parentheses after it is the number of rounds left.  If it is empty, the number in parentheses is darker, and it counts the number of clips remaining.
+----------------------------------------------------------------
+リベラルの情報
+----------------------------------------------------------------
 
-Press a number to view that Squad member.  For instance, if you press '1', you'll see that statistics of the first member. Press '0' to view the Squad synopsis again.  If you press the same number twice you'll see a full display of that Squad member's statistics.
+設立者の名前を決めると、画面の上の方にあるスコードのメンバーの状態の概要に気が
+つくだろう。SKILLの最初の数字はスキルの合計で、次の数字は現在の武器のスキルで
+ある。
 
-Back on the smaller statistics screen, you had a display like:
+***メモ***: 銃に装填するとカッコの中に残りの弾数が表示される。空になるとカッコ
+の中の数字が暗く表示される。表示されている数字の残りの弾倉の数である。
+
+番号を押すとスコードのメンバーを表示する。例えば'1'を押すと最初のメンバーの状
+態を見ることができる。'0'を押すと概要に戻る。同じ番号を2度押すとメンバーの詳細
+を画面全体に表示する。
+
+小さな情報画面に戻ると、以下の様に表示されている:
 
 --Green Warrior--------------------------------Liberal----
 Hrt:   1   Agi:   2           Top Skills:
@@ -113,415 +167,364 @@ Weapon: .22 Revolver (5/3)    Knife: 1
 Armor: Trenchcoat             Club: 1
 ----------------------------------------------------------
 
-This shows your attributes, skills and equipment. If you are wounded, you will also see your wounds.  Dead Liberals cannot be "resurrected", as that is a Conservative notion.
+ここにはあなたの能力、スキル、そして装備が表示されている。もし負傷したならば、
+ケガの状態も表示される。死んでしまったリベラルは「復活」できない。それは保守派
+の考えである。
 
-If you have a gun, the first number is the number of rounds in the gun, and the second is the number of clips.  A squad member may carry up to nine clips for a single weapon.
+銃を装備しているならば、最初の数字は銃の弾数で、次の数字は弾倉の数である。メン
+バーは1つの銃に対して最大9個の弾倉を持つことができる。
 
-We now go over the statistics one by one:
+それでは項目を1つずつ説明しよう:
 
-Attributes:
+能力:
 
-Heart:  This is how much feeling you bring to back up your Liberalism.
-	MAIN USES:  Converting people to Liberalism.
-	SKILLS: Music, art.
+Heart(心): どれだけリベラル主義を取り戻したいかを表している。
+	主な使い方: 人々をリベラリズムに転向させる。
+	スキル: 音楽、芸術
 
-Intelligence:  This is how smart you are.
-	MAIN USES:  Pick locks, hack computers, science, law, first aid, writing and winning arguments.
-	SKILLS: Science, law, survival, first aid, security, interrogation, cooking, computers, garment making, writing, street sense.
+Intelligence(知能): 頭のよさを表している。
+	主な使い方: 開錠、ハッキング、科学、法律、応急手当、文筆、討論に勝つ。
+	スキル: 科学、法律、サバイバル、応急手当、セキュリティ、尋問、料理、
+	        コンピュータ、裁縫、文筆、ストリートセンス
 
-Wisdom:  This is how much you've been polluted by Conservative thinking.
-	MAIN USES:  Determines how easy it is to be converted to conservatism.
-	SKILLS: Religion, business.
+Wisdom(知恵): どれだけ保守主義に犯されているかを表している。
+	主な使い方: 保守主義への転向しやすい。
+	スキル: 信仰心、ビジネス
 
-Health:  This is how robust your character is.
-	MAIN USES:  Resist Battle Damage.
-	SKILLS: None.
+Health(体力): どれだけ丈夫かを表している。
+	主な使い方: 戦闘のダメージに耐える。
+	スキル: なし
 
-Agility:  This is how quick your character is.
-	MAIN USES:  Influences attack and kidnapping success, as well as driving.
-	SKILLS: Knife, sword, pistol, rifle, SMG, shotgun, driving, improvised weapons, sleight of hand, stealth.
+Agility(敏捷性): どれだけ素早いかを表している。
+	主な使い方: 攻撃と誘拐を成功させる、うまく運転する。
+	スキル: ナイフ、剣、拳銃、ライフル、サブマシンガン、ショットガン、
+	        運転、即席武器、手技、隠密
 
-Strength:  This is how muscular your character is.
-	MAIN USES:  Influences melee damage and door bashing.
-	SKILLS: Hand to hand, club.
+Strength(腕力): どれだけ筋力があるかを表している。
+	主な使い方: 格闘戦のダメージを増す、ドアを破壊する。
+	スキル: 素手、棍棒
 
-Charisma:  This is how you look and come across to others.
-	MAIN USES:  Converting people to Liberalism, winning arguments, and disguise.
-	SKILLS: Persuasion, disguise, gangsterism, teaching, seduction.
+Charisma(カリスマ): どれだけ人々に注目され影響を与えられるかを表している。
+	主な使い方: 人々をリベラリズムに転向させる、討論に勝つ、変装する。
+	スキル: 説得、変装、ギャング行為、教育、誘惑
 
-Each attribute is associated with a number of skills, and determines the maximum amount of skill that you may develop in that area. Obviously, it is advantageous to have high attributes if you wish to have high skills.
+それぞれの能力がいくつものスキルと関連している。そして、その範囲でどれだけスキ
+ルを高められるかが決まる。もちろん高いスキルのためには高い能力が必要となる。
 
-Unlike other computer games that say specious statements like "all of the attributes are equally important", you'll find a balance that is right for your Liberal Agenda.  All of the attributes are used throughout the game, even Charisma.
+他のコンピュータゲームとは異なり、「全ての能力は等しく重要である」はうわべだけ
+ではない。リベラル・アジェンダのためにはバランスが必要だ。全ての能力が、カリス
+マでさえも、このゲームでは重要である。
 
-Skills:
+スキル:
 
-Weapon Skills:
-Hand to Hand:	Unarmed
-Knife:		Knife, Shank
-Sword:		Sword, Daisho
-Club:		Club, Maul, Crowbar, Staff
-Improvised:	Syringe, Gavel, Empty Guns
-Pistol:		All Pistols
-Rifle:		AR-15, AK-47, M16, M4
-SMG:		MP5
-Shotgun:	Pump Shotgun
+武器のスキル:
+Hand to Hand(素手):	武器を持っていない
+Knife(ナイフ):		ナイフ、シャンク
+Sword(剣):		剣、刀
+Club(棍棒):		棍棒、斧、バール、棒
+Improvised(即席武器):	ニードル、ハンマー、弾のない銃
+Pistol(拳銃):		全ての拳銃
+Rifle(ライフル):	AR-15, AK-47, M16, M4
+SMG(サブマシンガン):	MP5
+Shotgun(ショットガン):	ポンプショットガン
 
-Other Skills:
-Persuasion:	The ability to convince others that you are right.
-Interrogation:	The ability to manipulate Conservatives when they are tied up.
-Writing:	The ability to communicate effectively in writing.
-Leadership:	The ability to recieve more followers and greater loyalty from other Liberals.
-Teaching:	The ability to pass skills on to other Liberals.
-Art:		The ability to create powerful visual art.
-Music:		The ability to create powerful music.
-Garment Making:	The ability to make better clothing.
-Cooking:	The ability to make good food and feed Liberals more cheaply.
-First Aid:	The ability to effectively tend to Conservative injuries.
-Survival:	Instinct and ability to survive and cope even in dire situations.
-Street Sense:	Instinct and ability to avoid trouble in urban areas.
-Seduction:	The ability to seduce and keep lovers.
-Sleight of Hand:The ability to take and handle objects without being noticed.
-Stealth:	The ability to move unnoticed while obviously Liberal.
-Disguise:	The ability to blend in and act like Conservative filth. Dress the part.
-Security:	The ability to pick locks and hotwire cars.
-Computers:	The ability to use and exploit computer systems effectively.
-Driving:	The ability to handle a car in dangerous situations.
-Law:		Knowledge of courtroom procedure and criminal law.
-Religion:	Knowledge of religious doctrine and advanced theology.
-Business:	Knowledge of business practices and economic theory.
-Science:	Knowledge of scientific disciplines and technical matters.
-Gangsterism:	Knowledge of street gangs and their practices.
-Tactics:	Knowledge of military squad-based tactics.
+その他のスキル:
+Persuasion(説得):	他者を説得するスキル。
+Interrogation(尋問):	捕らえた保守派を支配するスキル。
+Writing(文筆):		書くことで意思を伝えるスキル。
+Leadership(リーダーシップ):	支持者を集め、他のリベラル派の心を掴むスキル。
+Teaching(教育):		他のリベラル派にスキルを伝えるスキル。
+Art(芸術):		視覚的に強力なアートを作り出すスキル。
+Music(音楽):		強力な音楽を作り出すスキル。
+Garment Making(裁縫):	よい服を作り出すスキル。
+Cooking(料理):		よい食事を作り出し、より安くリベラル派の空腹を満たすスキル。
+First Aid(応急手当):	保守派による負傷に対応するスキル。
+Survival(サバイバル):	絶望的な状態に対処し生き延びる直感とスキル。
+Street Sense(ストリートセンス):	都市部でのトラブルを避ける直感とスキル。
+Seduction(誘惑):	愛人を誘惑し引き止めるスキル。
+Sleight of Hand(手技):	他者に気づかれずに物を扱うスキル。
+Stealth(隠密):		他人に気づかれずに自由に行動するスキル。
+Disguise(変装):		保守派のように振る舞い溶け込むスキル。
+Security(セキュリティ):	錠前を外す、鍵を使わずに自動車のエンジンをかけるスキル。
+Computers(コンピュータ):	コンピュータを使う、システムをハックするスキル。
+Driving(運転):		危険な状況で車を運転するスキル。
+Law(法律):		法廷と刑法に関する知識。
+Religion(信仰心):	教義と神学に関する知識。
+Business(ビジネス):	商慣行と経済学に関する知識。
+Science(科学):		科学と技術に関する知識。
+Gangsterism(ギャング行為):	ストリートギャングとその行動に関する知識。
+Tactics(戦術):		集団での戦いに関する知識。
 
-Juice:
-In the full status screen, you can see how much "juice" a Liberal has. Juice is Liberal Street Credibility and having higher juice influences your attributes, since that Liberal is inflamed by the powers of Liberal Justice. Most Liberals are unable to get anyone to follow them without gaining a significant amount of juice first. Juice can be made negative by performing non-liberal actions or just generally messing up.
-
-----------------------------------------------------------------
-Equipment
-----------------------------------------------------------------
-
-Guns.  Melee weapons.  Clothes.  Masks.  Sorry, the Oubliette
-Manual had this.  There isn't much to say yet.
-
-----------------------------------------------------------------
-Main Options
-----------------------------------------------------------------
-
-***NOTE***:  You can always press "ENTER" to leave interface
-screens.
-
-F - Go forth to stop EVIL
-	Select this option to take your Squad into battle
-	against Conservatives in an effort to influence public
-	opinion, or to change safe houses.
-	More on this in the next section.
-
-	***NOTE***: Once you tell a squad to go somewhere, do
-	not expect to go there immediately.  You must 'W'ait
-	a day for actions to take place.  All "stop EVIL" actions
-	will occur in succession, though not necessarily in the
-	order you assigned them.
-
-E - Equipment
-	Go here to equip your Squad.
-
-	***NOTE***:  The equipment at your base does not come with
-	your Squad when it attack conservative sites.  Make
-	sure you have the weapons, armor, and clips with your
-	Squad members before they leave.  On the other hand,
-	make sure you store objects that you don't want to bring with
-	you at the base.
-
-V - Vehicles
-	Assign vehicles to your Liberals.  If you do not designate
-	a driver, then best driver among the passengers will be used.
-
-R - Review and reorganize Liberals
-	Here you can view all of your Liberals, as well as
-	form and disband Squads.  You can also change where Squadless
-	Liberals are based at and promote Liberals in you
-	organization.
-
-	***NOTE***:  If a Liberal is martyred or arrested, you will
-	lose the organization under that Liberal.  However, if a
-	Liberal is arrested and rats you out, the rat's contact
-	will be endanger of a racketeering charge.  Liberals with
-	low juice and heart rat more often, so you won't want them
-	too high up in the LCS.
-
-A - Activate the Uninvolved
-	Here you can assign individual Liberals various actions to
-	further your Liberal agenda.
-
-C - Cancel this Squad's Departure
-	This cancels a "stop EVIL" action.
-
-X - Live to fight EVIL another day.
-	Press this key to save and quit.
-
-W - Wait a day
-	This passes one day, and you will see everything happened,
-	as well as control your squads at sites.
-
-	When you pass time, things can happen.  If you have a
-	newspaper, it will be published at the end of the month.
-	Congress might vote on a bill, the Supreme Court might hand
-	down a decision, or there could be elections.  Read a book
-	on the structure of American government if this is confusing:)
-
-	The important thing to know is that the government influences
-	the Laws, and making all of the Laws extremely Liberal is the goal
-	of the game.
-
-0 - Show the squad's Liberal status
-	See previous.
-
-# - Check the status of a squad Liberal
-	See previous.
-
-O - Change the squad's Liberal order
-	This has no effect on anything.  It is simply for Aesthetics
-	and conformance with the Oubliette model.
-
-TAB - Next Squad
-	If you have created more than one squad, you can switch between them.
-
-Z - Next Location
-	Swap between your safe houses.  You can view police sieges and
-	invest in infrastructure.
-
-L - The Status of the Liberal Agenda
-	Here you will see the state of the government
-	and the current laws on many important issues.  In order for your
-	Liberal Agenda to triumph,  you must make all of the laws Elite
-	Liberal (Green).  However, in order to prevent this state from being
-	Conservatively ephemeral, both Houses of Congress, the Supreme Court,
-	and the Executive Branch, must also be Elite Liberal.  Once you have
-	achieved this Purely Elite Liberal state, you will be victorious.
-	
-	***NOTE***: You can disband the LCS from this screen.  If you think you've
-	gotten the country very close to Elite Liberal status, and you're sick
-	of waiting, you can disband and wait.  This is an irreversible option,
-	so be careful.  It is advisable to have sleepers in place to counteract
-	any unforeseen events that could occur.
-
-P - PATRIOTISM: Buy a flag ($20)
-	Show your American Spirit by buying a flag and flying it
-	atop the selected location.
-
-S - FREE SPEECH: the Liberal Slogan
-	Note that if you win the game, your slogan will be immortalized.
-	If you don't pick one, your high score entry will be
-	"We need a slogan!".  That's lame.  Choose a slogan.
-
-***NOTE***: Under the 'A'ctivate options, you can go on-line and check
-public opinion.  Public opinion	is the most important factor in elections,
-so you'll need to work on Liberalizing the masses if you hope to change
-the laws.
-
-***NOTE***:  AM Radio and Cable News, being Fundamentally Conservative,
-will influence public opinion negatively.  If your surveys
-tell you that people are tuning into these Conservative Information
-Sources, know that over the months public opinion will Degenerate
-with respect to your most important Liberal Causes.
-
-***NOTE***:  Your newspaper is a great way to influence public opinion.
-However, if your Liberal Crime Squad is unpopular (as it is in the
-beginning of the game), your Newspaper can have a detrimental effect.
-It is therefore important to perform Liberal Acts (with 'A'ctivate)
-in the beginning that simply build your appeal to the masses.
-
-***NOTE***:  You will encounter certain very salacious items
-when your squad is on Site.  You can bring these back and
-publish them in your Newspaper to greatly influence opinion
-and your own credibility.  Publication of your paper occurs at
-the end of the month.  You need to safeguard these items until then.
-
-***NOTE***:  You can make purchases by "stopping EVIL" at pawn shops
-and other stores.  You won't actually attack these locations.  Also
-note that any gun that you purchase at a pawn shop is a
-Liberal means to an end, and are therefore not subject to
-the Righteous Premise of Reasonable Gun Control which
-governs the Liberal Mind.
-
-***NOTE***:  If you feel unsafe committing acts of felony
-civil disobedience in the face of Conservative Power, you can
-build a compound to stop the police from raiding, leading to
-a prolonged siege instead.  You may invest in the compound
-to make it more effective against Conservative Invaders.
-Use the 'Z' option to view and invest in your safe houses.
-
-***Note***:  Non-police opponents are not subject to the
-same restrictions as the police force and will not siege
-the compound, but immediately attack instead.  However, fighting off
-these Conservative automatons will not escalate the situation
-in the same way as fighting off the police does.  Eliminating
-enough of any attacking group will cause them to flee.
-
-***Note***:  If you are under siege, you will have the option
-to wait, escape, or give up.  Escaping leads you directly to a
-confrontation with the police much like the normal raiding screen.
-If you give up to the police, your righteous-yet-lawbreaking Liberals
-will be hauled off to face Conservative Justice.  This can lead to
-prison terms or even the Death Penalty.  If you give up to any other
-group, besides the police, your Squad will be terminated.  You can
-wait out a siege as long as you have food.  The police will attempt
-to degrade your capabilities during this time, but there is a chance
-for you to get some positive publicity, which could be quite useful.
+Juice(ジュース):
+フルスクリーンのステータス画面にはリベラルにどれだけの「ジュース」があるかが表
+示されている。ジュースはリベラルの評価を表しており、ジュースが高くなるとリベラ
+ルの力が燃え上がりあなたの能力も高まる。ほとんどのリベラル派は相当な量のジュー
+スがなければ支持されることはない。ジュースは反リベラル的行為や様々な失敗で減少
+する。
 
 ----------------------------------------------------------------
-Site Options
+装備
 ----------------------------------------------------------------
 
-By raiding Conservative sites, you can gain Funds and Juice,
-as well as influence public opinion.
+銃、格闘用武器、衣服、マスク。
+Oublietteのマニュアルに掲載されているので詳しい説明は省略する。
 
-When you enter a site, you'll see a map of your immediate surroundings
-on the lower right.  If your Squad exits the site, you'll go
-back to your safe house.  But you aren't a Conservative Chicken Hawk,
-supporting conflict but refusing to serve yourself.  So you'll want
-to go through the door.
+----------------------------------------------------------------
+主なコマンド
+----------------------------------------------------------------
 
-***NOTE***: Once your Squad enters a site, notice that each member's Armor
-becomes green, yellow or red.  This lets you know if you have an
-appropriate disguise.
+***メモ***: ENTERキーを押すと戻ることができる。
 
-We'll get to the specific instructions in a moment.  First, an overview:
-As you move around the site, things will happen.  If you find people,
-they will be shown on your map as "ENCNTER" (for "Encounter").  The
-specific people in the Encounter will be shown at the bottom of the screen.
-Red names are Conservatives, white names are moderates, and Green names
-are Liberals.  Conservatives that see through your disguise will become
-suspicious, and eventually raise an alarm.  The alarm can also be raised
-by performing Liberal activities in front of Conservatives.  These
-activities might also alienate the masses.  Performing blatantly criminal
-acts will even alienate the Liberals at a site, as they are not yet
-completely in touch with your Grandiose Liberal Plan.
+F - 悪を阻止するために出撃する
+	世論を帰るための保守派との戦いに向かう。またはアジトを変える。
 
-You will also encounter "GOODS" (things to steal), "LOOT!" (things that
-people have dropped in combat), "DOOR" (a door to pass through), and "EXIT"
-(a way out).  There are also other special places that will have various
-names (you can see what they are in a caption below the site map when you
-are on top of them).  These special places depend on the type of site
-and can be interacted with using the 'U'se key.
+	***メモ***: スコードを出撃させても、すぐに目的地にたどり着くわけではな
+	い。実際に実行するには「W:1日待つ」必要がある。全ての「悪を阻止する」
+	行動は連続して発生するが、指示した順番とは限らない。
 
-Crimes that you commit at a site will help the media build up a
-sensational image around you, and this will help bolster public opinion.
-However, if you alienate a site, the spin on the story will be negative,
-and opinion will shift against you.  You must search online
-once you get back to see how the battle for public opinion was affected.
+E - 装備する
+	スコードに装備させる。
 
-Once the Conservative alarm has been raised, all of the Conservatives
-will begin to attack your Squad.  You may fight back, but be careful.
-Attacking a Conservative in the presence of a moderate will alienate
-the masses.  You will also sometimes miss when attacking, and hit
-a moderate or Liberal by mistake.  If the mistaken target survives,
-or if there are other moderates or Liberals to see the mistake,
-you will alienate even the Liberals at the site.
+	***メモ***: 保守派を攻撃している最中に基地にあるものを装備することはで
+	きない。出撃する前に武器、鎧、弾倉をメンバーに装備させること。また、持
+	って行きたくないものは基地に置いていくこと。
 
-***NOTE***:  Certain Arch-Conservative opponents will not attack in
-the traditional sense, but will instead engage your Squad members in
-debate.  At this point, having a Squad member with a high wisdom
-can be fatal.
+V - 自動車を割り当てる
+	メンバーに自動車を割り当てる。運転手を決めていない場合は、最も運転が上
+	手な者が運転する。
 
-If your Squad is eliminated, you will be taken back to the main screen,
-unless another Squad is also acting that day.
+R - 表示とメンバーの再編成を行う
+	全てのメンバーの表示や、スコードの結成と解散を行う。スコードに属してい
+	ないメンバーの居場所の変更や、組織での昇格も行える。
 
-Now on to the specific actions.  We will discuss crimes and alienation
-when relevant:
+	***メモ***: もしメンバーが死亡や逮捕されると、その配下の組織は失われ
+	る。しかし、逮捕されたメンバーがあなたを裏切ると、その裏切り者にゆすら
+	れる危険がある。心とジュースの低いメンバーは裏切る可能性が高い。そのよ
+	うな者にはLCSでの地位を与えるべきではない。
 
-***NOTE***:  If x's cover a square, it is restricted.  Disguise
-restrictions are tighter in these areas.
+A - 活動する
+	それぞれのメンバーにリベラル・アジェンダを推進のための活動を割り当て
+	る。
 
-W,A,D,X - Move
-	Use these keys to move around the site.  They cannot be used in combat.
-	Open doors by moving into them.
+C - スコードの出撃を取りやめる
+	「悪を阻止する」行動を取り消す。
 
-G - Get Loot
-	Use this to pick up "LOOT!" and "GOODS".  You can fence these items later.
-	When you take "GOODS", you are stealing.  Stealing in the presence
-	of a moderate or Liberal will alienate everyone.
+X - 他の日に悪と戦うために生きる
+	このキーを押すと保存して終了する。
 
-M - Map
-	This lets you see a map of the site.  It will be uncovered as you discover it.
-	The little Green face is your Squad.  $ denote "GOODS".  ! denote Special Places.
+W - 1日待つ
+	1日を経過させる。これは起こること見るだけでなく、それぞれのスコードを
+	操作することもある。
 
-E - Equip
-	Go here to equip your squad.  You can use "LOOT!" that
-	has been dropped by Conservative automatons once you 'G'et it.
+	時間が過ぎると、様々なことが発生する。新聞を取っていれば、月の終わりに
+	それがわかる。連邦議会では法案が採決され、最高裁判所では判決が下され
+	る。選挙が行われることもある。よく分からないならばアメリカの政治に関す
+	る書籍を読んで欲しい :)
 
-L - Reload
-	If you have a firearm and a clip, this will reload it.  Loading takes time
-	in battle, so remember to do this after a fight if your gun is empty.
-	You can reload a gun that is neither empty nor full, but you will use an
-	entire clip in doing so.
+	重要なのは、政治が法に与える影響を知ることである。あらゆる法を極めてリ
+	ベラルなものにすることがこのゲームの目標である。
 
-O - Change the squad's Liberal order
-	See previous.
+0 - スコードのリベラルな状態を見る
+	前項を読むこと。
 
-U - Use
-	This allows you to use the Special Places at the sites.  If there
-	are other people around, use your uncommon LIBERAL sense.  For instance,
-	if you destroy machinery in a sweat shop, the workers won't care, since
-	they are eager to escape bondage.  However, if you destroy machinery in
-	a polluting factory in front of the Union workers, they will be alienated,
-	as it will be difficult for them to reconcile a threat to their livelihoods
-	with your Liberal Agenda even though they might otherwise support you.
-	If you destroy the machinery when they are not around,
-	then only the Conservatives at the site will become suspicious.
+# - スコードのリベラルな状態を見る
+	前項を読むこと。
 
-# - Check the status of a squad Liberal
-	See previous.
+O - スコードのリベラル順を変更する
+	これには特別な効果はない。見た目と、Oublietteに合わせるだけのために存
+	在する。
 
-V - Evade
-	Use this option to move during combat.
+TAB - 次のスコードに切り替える
+	複数のスコードがある場合に切り替える。
 
-0 - Show the squad's Liberal status
-	See previous.
+Z - 次の場所に切り替える
+	アジトを変える。警官の包囲を見ることや、包囲に備えることもできる。
 
-K - Kidnap
-	You can try to snatch any person who is not well-armed.  Each Squad
-	member can hold one hostage.  Being seen with a hostage will alienate
-	everyone, so you must be careful.  If you escape with a hostage,
-	you may bring them through Indoctrination procedures.  Hostages
-	also will block half of the Conservative attacks, so snatching a
-	Conservative worker in combat might prove advantageous.  You can only
-	kidnap Conservatives.  Escaping a site with a high-profile Conservative
-	has a huge impact on public opinion.  However, if you alienated the site
-	during the kidnapping, the impact will be negative.
+L - リベラル・アジェンダの状態を表示する
+	ここでは政治の状況と現在議論されている重要な法案を見ることができる。あ
+	なたのリベラル・アジェンダが勝利するためには、全ての法をエリート・リベ
+	ラル(緑色)なものにしなければならない。だが、保守派を駆逐するためには、
+	上下両院、最高裁判所、行政もリベラル・エリートであらねばならない。この
+	純粋にエリート・リベラルな状態に到達できれば、あなたの勝利である。
 
-	***NOTE***:  Kidnapping a high-profile Conservative and then Indoctrinating it
-	has massive benefits.  Recruiting such Conservatives as Sleepers
-	can influence public opinion.
+	***メモ***: この画面からLCSを解散することができる。もしあなたがこの国
+	が十分にエリート・リベラルな状態に達したと考え、待つのにはうんざりなら
+	ば、解散してもよい。この選択は取り消せないので注意すること。予期しない
+	事態を避けるためによく考えた方がよい。
 
-	***NOTE***:  Holding a hostage lowers your attack accuracy.
+P - 愛国主義: 国旗を買う ($20)
+	アメリカの精神を示すため、国旗を買って選んだ場所に掲げる。
 
-	***NOTE***:  Once you bring a hostage back, you must assign Liberals
-	to watch over it or it might escape.  You may also assign Liberals
-	to Indoctrinate it.  You do not have to do both.
+S - 言論の自由: リベラルのスローガンを決める
+	もしこのゲームに勝利できれば、あなたのスローガンは永遠のものになる。も
+	しそれを掲げなければ、あなたのスコア順位には「スローガンが必要だ!」と
+	表示される。それは馬鹿げている。きちんとスローガンを考えるべきだ。
 
-F - Fight!
-	Use this button to attack Conservatives.  As previously stated, this
-	will alienate moderates.  There is also a chance that you will hit
-	the wrong target, in which case you will alienate everyone.
+***メモ***: Aを選択するとオンラインで世論をチェックできる。世論は選挙に最も大
+きな影響を与える。もし法を変えたいならば、人々をリベラル化するように働きかけな
+ければならない。
 
-	***NOTE***:  If you are out of bullets and have a clip, but you are
-	in combat, just press 'F'.  The Squad member will reload automatically.
-	If you have no clips, you will strike with the weapon.
+***メモ***: 根本的に保守的なAMラジオとケーブルニュースは世論にマイナスの影響を
+与える。もし調査で人々がこの保守的な情報源に傾いていることがわかったならば、数
+ヶ月でリベラル主義が後退するだろう。
 
-T - Talk
-	Violence isn't always the answer.  Sometimes seduction and lying
-	can do the same thing, or even occasionally debating on the issues.
-	Most people won't be interested in discussion, unless it involves
-	romance, although certain degenerate and idle types, that is,
-	those with Unrealized Potential, will listen to your exposition
-	of the Liberal Agenda.
+***メモ***: 新聞は世論に影響を与える強力な手段である。だが、リベラル・クライム
+・スコードの評価は低く(ゲーム開始時は)、新聞は悪い影響を与えることもある。した
+がって、最初は単純にリベラルな活動(Aコマンド)で大衆にアピールするのが重要だ。
 
-	***NOTE***:  You can also use the 'T'alk command to try bluff
-	your way out of a confrontational situation.  This only can be
-	done if a combat is not underway.  It really pays to have a good
-	disguise at this point.
+***メモ***: スコードが現地で猥褻なものに遭遇することがある。それを持ち帰り、新
+聞で公表すれば、あなたの意見と信頼に大きな影響を与えられる。記事の公開は月末に
+行われる。それまで安全に守る必要がある。
 
-R - Release oppressed
-	Certain oppressed classes of people can be released from bondage.
-	They will immediately join the Squad if there is room.
+***メモ***: 質屋などの店に対して「悪を阻止する」こともできる。実際にそこを攻撃
+するのではない。また、銃を質屋で手に入れるのは手段であって、銃規制の主張とは別
+であることに注意すること。
+
+***メモ***: もしあなたが保守の権力に立ち向かい、市民的不服従を貫くのが危険だと
+思うならば、警察に包囲される前に壁を建てて侵入を防ぐことができる。保守派の侵入
+を防ぐ効果を増すために壁に投資してもよい。Zコマンドでアジトの状態を見て投資で
+きる。
+
+***メモ***: 警察ではない敵は包囲せずにすぐ攻撃する。だが、これらの保守派の操り
+人形を撃退しても、警察のときのように状況がエスカレートすることはない。十分な打
+撃を与えると、攻撃してきた集団は逃げ出すだろう。
+
+***メモ***: もし包囲されたならば、あなたには待つ、脱出する、そして降伏する選択
+肢がある。脱出を選択すると、すぐに通常の戦闘画面と同じように警察と対決する。降
+伏すると、あなたの高潔だが未だ違法なリベラル主義は保守主義の正義と対決するため
+に逮捕されるだろう。これは禁固刑や死刑のペナルティもありうる。警察以外の集団に
+降伏すると、あなたのスコードは解散させられる。食料がある限り耐えることもでき
+る。警察はあなたを弱らせようとするが、その間に宣伝をすることができる点で有益で
+ある。
+
+----------------------------------------------------------------
+その他のコマンド
+----------------------------------------------------------------
+
+保守側と戦うと、世論に影響を与えるだけでなく、資金とジュースを増すことができ
+る。
+
+区域に入ると、あなたの周辺の地図が右下に表示される。区域から出るとアジトに戻る
+ことができる。だが、あなたは保守の軟弱者とは違い、戦いを恐れず決して屈服するこ
+とはない。あなたは扉を通って中に入りたいはずだ。
+
+***メモ***: 一度区域に入ると、メンバーのアーマーが緑、黄、または赤色になってい
+ることに気づくだろう。これは変装できているかを表している。
+
+まず大まかに説明すると、あなたが区域の中を移動すると様々なことが起こる。もし人
+がいれば、地図上に"ENCNTER"(遭遇)と表示される。その人物の詳細は画面の下の方に
+表示される。名前が赤色ならば保守派、白ならば穏健派、そして緑ならばリベラル派で
+ある。保守派が変装を見破るとあなたを疑い出し、警告が発せられる。警告は保守派の
+前でリベラル的行為を行った場合にも発せられる。これらの行為は人々からの支持を失
+う。明らかな犯罪行為を行うと、区域内のリベラル派の支持も失う。彼らはあなたの壮
+大なリベラル計画を知らないのだ。
+
+あなたは"GOODS"(盗める物)、"LOOT!"(戦闘の後に残された物)、"DOOR"(通り抜けられ
+る扉)、そして"EXIT"(出口)にも遭遇する。その他にも特別な場所には様々な名前のも
+のがある(その場所にいると地図の下に説明が表示される)。特別な場所は区域によって
+異なり、'U'キーで操作できる。
+
+犯罪的行為はセンセーショナルなイメージをメディアを通じて作り出す手助けになり、
+それが世論を動かすことになる。しかし、その区域内の人々からの支持を失うと、逆に
+マイナスとなり世論は敵対的になる。戦いが世論にどのような影響を与えたかを知るた
+めには、戻った後にオンラインで調べる必要がある。
+
+一度保守派が警告を発すると、全ての保守派があなたのスコードを攻撃してくる。撃退
+することもできるが、気をつけなければならない。穏健派の前で保守派を攻撃すること
+は人々の支持を失うことになる。また、攻撃を外して穏健派やリベラル派に当ててしま
+うこともある。もし誤って攻撃した相手が生き残ったならば、または誤って攻撃するの
+を他の穏健派やリベラル派が見たならば、その区域内のリベラル派からも支持を失うだ
+ろう。
+
+***メモ***: 保守強硬派の一部は、スコードのメンバーを武力で攻撃する代わりに議論
+を仕掛けてくる。このとき、知恵(Wisdom)の高いメンバーには致命的になりうる。
+
+スコードが全滅すると、別のスコードが同じ日に活動していない限り、メイン画面に戻
+る。
+
+ここからはそれぞれの行動に移る。犯罪的行為と支持の関連も説明する。
+
+***メモ***: xのあるマスは立ち入り禁止区域である。そのエリアでは変装が厳しく制
+限されている。
+
+W,A,D,X - 移動する
+	区域の周りを移動する。これらのキーは戦闘では使わない。扉はその方向に移
+	動すると開く。
+
+G - 略奪する
+	このキーを使うと"LOOT!"や"GOODS"を取る。これらの盗品は後で売ることがで
+	きる。"GOODS"を取ると、それは盗んだことになる。リベラル派や穏健派の前
+	で物を盗むと、あらゆる者からの支持を失う。
+
+M - 地図を見る
+	これで区域の地図が示される。探索すると地図に書き込まれていく。
+	小さな緑色の顔マークがあなたのスコードである。
+	$は"GOODS"、!は特別な場所を表している。
+
+E - 装備する
+	ここでスコードに装備させる。
+	あなたがしとめた保守の操り人形から"LOOT!"した物も使うことができる。
+
+L - 装填する
+	銃器と弾倉を持っていれば装填することができる。戦闘中に装填すると時間を
+	消費する。よって、戦って銃が空になったならば忘れずに装填すること。銃が
+	空でも満杯でも装填できるが、装填すると弾倉の全て使うことになる。
+
+O - スコードのリベラル順を変更する
+	前項を読むこと。
+
+U - 使う
+	区域の特別な場所を使う。もし近くに人がいるならば、あなたのリベラルな常
+	識に従うこと。例えば、労働搾取工場で機械を破壊すれば、労働者はそれにか
+	まわず逃げ出そうとするだろう。しかし、労働組合員の前で汚染された工場の
+	機械を破壊すれば、生活基盤を失うため、たとえ彼らがあなたのリベラルアジ
+	ェンダに賛同していても彼らからの支持を失うだろう。
+
+# - スコードのリベラルな状態を見る
+	前項を読むこと。
+
+V - 逃げる
+	戦闘中に移動する。
+
+0 - スコードのリベラルな状態を見る
+	前項を読むこと。
+
+K - 誘拐する
+	重武装していない相手ならば誰でも誘拐しようとすることができる。スコード
+	のメンバー1人につき1人を拘束できる。誘拐を見られるとあらゆる人物からの
+	支持を失う。よって慎重にならなければならない。誘拐に成功すると、彼らの
+	教化を試みることができる。拘束された者は保守派の攻撃の盾となるため、戦
+	闘中に保守派の労働者を捕らえると有利に働くかもしれない。誘拐できるのは
+	保守派の人物のみである。地位の高い保守派を誘拐して区域から脱出すると世
+	論に大きなインパクトを与えることができる。しかし、誘拐の最中に区域の人
+	々からの支持を失うと、インパクトはマイナスに働く。
+
+	***メモ***: 地位の高い保守派を誘拐し教化することには大きなメリットがあ
+	る。スパイとしての保守派は世論に大きな影響を与える。
+
+	***メモ***: 拘束した人物を連れていると攻撃の命中率が下がる。
+
+	***メモ***: 拘束した人物を連れて帰ると、見張りのためにリベラルを割り当
+	てる必要がある。強化のためのリベラルを割り当てることもできる。両方を行
+	う必要はない。
+
+F - 戦う!
+	保守派を攻撃する。前に述べたように、これは穏健派からの支持を失う。誤っ
+	て別の者に当たることもある。その場合はあらゆる者からの支持を失う。
+
+	***メモ***: 戦闘中に、弾が空だが弾倉がある場合、すぐに'F'を押すこと。
+	スコードのメンバーは自動的に弾を装填する。弾倉がなければ直接武器で攻撃
+	する。
+
+T - 話す
+	暴力は常に答えになるわけではない。勧誘と嘘は同じこともあり、時として議
+	論もそうである。多くの者はロマンスでもない限り議論に興味を示さないが、
+	真に堕落した怠惰な者、つまり力を秘めた者はあなたのリベラルアジェンダに
+	耳を貸すだろう。
+
+	***メモ***: Tコマンドは戦いを避けるためにも使える。それは戦闘中でない
+	場合のみ可能である。この場合はうまく嘘をつかなければならない。
+
+R - 人々を解放する
+	抑圧された人々を解放する。空いていれば彼らはすぐにスコードのメンバーに
+	加わる。

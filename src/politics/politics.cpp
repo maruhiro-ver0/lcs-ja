@@ -263,7 +263,7 @@ void elections(char clearformess,char canseethings)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(8+stalinmode*2,0);
-            addstr("Press any key to watch the election unfold.");
+            addstr("キーを押すと投票結果を表示する。");
 
             getkey();
          }
@@ -1400,7 +1400,7 @@ void congress(char clearformess,char canseethings)
       else makedelimiter();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
-      addstr("Congress is acting on legislation!");
+      addstr("法案採決のための審議が始まった!");
 
       getkey();
    }
@@ -1413,7 +1413,7 @@ void congress(char clearformess,char canseethings)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
       move(0,0);
-      addstr("Legislative Agenda ");
+      addstr("立法議案 ");
       addstr(year);
    }
 
@@ -1504,20 +1504,20 @@ void congress(char clearformess,char canseethings)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(c*3+2,0);
-         addstr("Joint Resolution ");
+         addstr("両院合同決議 ");
          addstr(year);
          addchar('-');
          addstr(c+1);
 
          move(c*3+3,0);
-         addstr("To ");
+         addstr("   ");
          if(billdir[c]==1)set_color(COLOR_GREEN,COLOR_BLACK,1);
          else set_color(COLOR_RED,COLOR_BLACK,1);
          switch(bill[c])
          {
             case LAW_ABORTION:
-               if(billdir[c]==1) addstr("Strengthen Reproductive Freedom"); // was "Strengthen Abortion Rights"
-               else addstr("Protect the Unborn Child");
+               if(billdir[c]==1) addstr("出産の自由の推進"); // was "Strengthen Abortion Rights"
+               else addstr("胎児の保護");
                break;
             case LAW_ANIMALRESEARCH:
                if(billdir[c]==1) addstr("Limit Animal Cruelty");
@@ -1564,16 +1564,16 @@ void congress(char clearformess,char canseethings)
                else addstr("Cut Job-Killing Taxes"); // was "Stimulate Economic Growth"
                break;
             case LAW_FLAGBURNING:
-               if(billdir[c]==1) addstr("Limit Prohibitions on Flag Burning");
-               else addstr("Protect the Symbol of Our Nation");
+               if(billdir[c]==1) addstr("国旗の焼却禁止の制限");
+               else addstr("我が国のシンボルの尊重");
                break;
             case LAW_GUNCONTROL:
                if(billdir[c]==1) addstr("Prevent Mass Shootings"); // was "Prevent Gun Violence"
                else addstr("Protect our Second Amendment Rights"); // was "Assert our Second Amendment Rights"
                break;
             case LAW_WOMEN:
-               if(billdir[c]==1) addstr("Promote Gender Equality"); // was "Expand Women's Rights"
-               else addstr("Preserve Traditional Gender Roles");
+               if(billdir[c]==1) addstr("男女平等の推進"); // was "Expand Women's Rights"
+               else addstr("伝統的な性別役割の維持");
                break;
             case LAW_CIVILRIGHTS:
                if(billdir[c]==1) addstr("Promote Racial Equality"); // was "Expand Civil Rights"
@@ -1617,15 +1617,15 @@ void congress(char clearformess,char canseethings)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(23,0);
-      addstr("Press any key to watch the votes unfold.");
+      addstr("キーを押すと投票結果を表示する。");
 
       getkey();
 
       move(0,62);
-      addstr("House");
+      addstr("下院");
 
       move(0,70);
-      addstr("Senate");
+      addstr("上院");
    }
 
    for(c=0;c<cnum;c++)
@@ -1654,14 +1654,14 @@ void congress(char clearformess,char canseethings)
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(c*3+2,62);
             addstr(yesvotes_h);
-            addstr(" Yea");
+            addstr(" 賛成");
 
             if(l==HOUSENUM-1&&!yeswin_h) set_color(COLOR_WHITE,COLOR_BLACK,1);
             else if(l==HOUSENUM-1) set_color(COLOR_BLACK,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(c*3+3,62);
             addstr(l+1-yesvotes_h);
-            addstr(" Nay");
+            addstr(" 反対");
          }
 
          if(l%4==0&&s<SENATENUM)
@@ -1750,11 +1750,12 @@ void congress(char clearformess,char canseethings)
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(23,0);
          addstr("Press any key to watch the President.                   ");
+         addstr("キーを押すと大統領を表示する。                          ");
 
          getkey();
 
          move(0,35);
-         addstr("President");
+         addstr("大統領");
 
          pause_ms(500);
       }
@@ -1816,7 +1817,7 @@ void congress(char clearformess,char canseethings)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(23,0);
-         addstr("Press any key to reflect on what has happened.    ");
+         addstr("キーを押すとこの月に起こったことを表示する。    ");
 
          getkey();
       }

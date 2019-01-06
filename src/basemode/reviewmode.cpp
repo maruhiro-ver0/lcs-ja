@@ -29,8 +29,7 @@ the bottom of includes.h in the top src folder.
 // Note: this file is encoded in the PC-8 / Code Page 437 / OEM-US character set
 // (The same character set used by Liberal Crime Squad when it is running)
 // Certain special characters won't display correctly unless your text editor is
-// set to use that character set, such as this e with an accent: ‚
-
+// set to use that character set, such as this e with an accent: Ã©
 // In Windows Notepad with the Terminal font, OEM/DOS encoding it should work fine.
 // You can set this in Notepad by going to Format->Font and choosing the Terminal font,
 // then choosing OEM/DOS in the Script dropdown box.
@@ -73,8 +72,8 @@ void review()
       erase();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      mvaddstr(0,0,"Review your Liberals and Assemble Squads");
-      mvaddstr(1,0,"ÄÄÄÄSQUAD NAMEÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄLOCATIONÄÄÄÄÄÄÄÄÄÄÄÄACTIVITYÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"); // 80 characters
+      mvaddstr(0,0,"ãƒªãƒ™ãƒ©ãƒ«ã®ç¢ºèªã¨éƒ¨éšŠã®ç·¨æˆã‚’è¡Œã†");
+      mvaddstr(1,0,"----éƒ¨éšŠå---------------------ä½ç½®----------------æ´»å‹•-------------------------"); // 80 characters
 
       int n[8]={0,0,0,0,0,0,0,0},y=2;
       for(int p=0;p<len(pool);p++)
@@ -138,42 +137,42 @@ void review()
          else if(p==len(squad))
          {
             set_color(COLOR_GREEN,COLOR_BLACK,1);
-            mvaddstr(y,0,"1 - Active Liberals ("+tostring(n[0])+')');
+            mvaddstr(y,0,"1 - ãƒªãƒ™ãƒ©ãƒ«æ´»å‹•ä¸­ ("+tostring(n[0])+')');
          }
          else if(p==len(squad)+1)
          {
             set_color(COLOR_RED,COLOR_BLACK,1);
-            mvaddstr(y,0,"2 - Hostages ("+tostring(n[1])+')');
+            mvaddstr(y,0,"2 - äººè³ª ("+tostring(n[1])+')');
          }
          else if(p==len(squad)+2)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            mvaddstr(y,0,"3 - Hospital ("+tostring(n[2])+')');
+            mvaddstr(y,0,"3 - å…¥é™¢ä¸­ ("+tostring(n[2])+')');
          }
          else if(p==len(squad)+3)
          {
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
-            mvaddstr(y,0,"4 - Justice System ("+tostring(n[3])+')');
+            mvaddstr(y,0,"4 - æ‹˜æŸä¸­ ("+tostring(n[3])+')');
          }
          else if(p==len(squad)+4)
          {
             set_color(COLOR_MAGENTA,COLOR_BLACK,1);
-            mvaddstr(y,0,"5 - Sleepers ("+tostring(n[4])+')');
+            mvaddstr(y,0,"5 - æ½œä¼ä¸­ ("+tostring(n[4])+')');
          }
          else if(p==len(squad)+5)
          {
             set_color(COLOR_BLACK,COLOR_BLACK,1);
-            mvaddstr(y,0,"6 - The Dead ("+tostring(n[5])+')');
+            mvaddstr(y,0,"6 - æ­»äº¡ ("+tostring(n[5])+')');
          }
          else if(p==len(squad)+6)
          {
             set_color(COLOR_BLUE,COLOR_BLACK,1);
-            mvaddstr(y,0,"7 - Away ("+tostring(n[6])+')');
+            mvaddstr(y,0,"7 - é€ƒäº¡ ("+tostring(n[6])+')');
          }
          else if(p==len(squad)+7)
          {
             set_color(COLOR_CYAN,COLOR_BLACK,1);
-            mvaddstr(y,0,"8 - Review and Move Equipment ("+tostring(n[7])+')');
+            mvaddstr(y,0,"8 - è£…å‚™ã®ç¢ºèªã¨ç§»å‹• ("+tostring(n[7])+')');
          }
       }
 
@@ -306,7 +305,7 @@ void review_mode(short mode)
          break;
       }
       move(1,0);
-      addstr("ÄÄÄÄCODE NAMEÄÄÄÄÄÄÄÄÄÄÄÄSKILLÄÄÄHEALTHÄÄÄLOCATIONÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"); // 80 characters
+      addstr("----ã‚³ãƒ¼ãƒ‰ãƒãƒ¼ãƒ ---------ã‚¹ã‚­ãƒ«--å¥åº·-----ä½ç½®----------------------------------"); // 80 characters
 
       move(1,57);
       switch(mode)
@@ -434,7 +433,7 @@ void review_mode(short mode)
                else
                {
                   set_color(COLOR_BLACK,COLOR_BLACK,1);
-                  addstr("ÄÄÄÄÄÄÄ"); // 7 characters
+                  addstr("ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„"); // 7 characters
                }
                break;
             }
@@ -515,12 +514,12 @@ void review_mode(short mode)
                if(temppool[p]->align!=1)
                {
                   set_color(COLOR_RED,COLOR_BLACK,1);
-                  addstr("Profile of an Automaton");
+                  addstr("æ“ã‚Šäººå½¢ã®ãƒ—ãƒ­ãƒ•ã‚£ãƒ¼ãƒ«");
                }
                else
                {
                   set_color(COLOR_GREEN,COLOR_BLACK,1);
-                  addstr("Profile of a Liberal");
+                  addstr("ãƒªãƒ™ãƒ©ãƒ«ã®ãƒ—ãƒ­ãƒ•ã‚£ãƒ¼ãƒ«");
                }
 
                if(page==0) printliberalstats(*temppool[p]);
@@ -533,20 +532,20 @@ void review_mode(short mode)
                if(temppool[p]->is_active_liberal() &&
                   temppool[p]->hireid !=-1)  // If alive and not own boss? (suicide?)
                {
-                  addstr("R - Remove member");
+                  addstr("R - ãƒ¡ãƒ³ãƒãƒ¼ã‚’é™¤éšŠ");
                   int boss = getpoolcreature(temppool[p]->hireid);
                   if(pool[boss]->location==temppool[p]->location)
-                     addstr("         K - Kill member");
+                     addstr("        K - ãƒ¡ãƒ³ãƒãƒ¼ã‚’æ¶ˆã—å»ã‚‹");
                }
 
                move(23,0);
 
-               if(temppool[p]->align!=1) addstr("Press N to change this Automaton's Code Name");
-               else addstr("N - Change Code Name      G - Fix Gender Label");
-               if(len(temppool)>1) addstr("    LEFT/RIGHT - View Others");
+               if(temppool[p]->align!=1) addstr("Nã‚­ãƒ¼ã§æ“ã‚Šäººå½¢ã®ã‚³ãƒ¼ãƒ‰ãƒãƒ¼ãƒ ã‚’å¤‰ãˆã‚‰ã‚Œã‚‹");
+               else addstr("N - ã‚³ãƒ¼ãƒ‰ãƒãƒ¼ãƒ å¤‰æ›´      G - æ€§åˆ¥ã®ãƒ©ãƒ™ãƒ«ã‚’å¤‰æ›´");
+               if(len(temppool)>1) addstr("    â†/â†’ - ä»–ã®ãƒ¡ãƒ³ãƒãƒ¼ã‚’è¦‹ã‚‹");
                move(24,0);
-               addstr("Press any other key to continue the Struggle");
-               addstr("    UP/DOWN  - More Info");
+               addstr("ä½•ã‹ã‚­ãƒ¼ã‚’æŠ¼ã™ã¨é—˜äº‰ã‚’ç¶šã‘ã‚‹");
+               addstr("                        â†‘/â†“ - è©³ç´°");
 
                int c=getkey();
 
@@ -889,7 +888,7 @@ void assemblesquad(squadst *cursquad)
       }
 
       move(1,0);
-      addstr("ÄÄÄÄCODE NAMEÄÄÄÄÄÄÄÄÄÄÄÄSKILLÄÄÄHEALTHÄÄÄÄÄÄÄÄÄÄÄPROFESSIONÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"); // 80 characters
+      addstr("ï¾„ï¾„ï¾„ï¾„CODE NAMEï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„SKILLï¾„ï¾„ï¾„HEALTHï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„PROFESSIONï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„"); // 80 characters
 
       int y=2;
       for(p=page*19;p<len(temppool)&&p<page*19+19;p++)
@@ -1128,7 +1127,7 @@ void assemblesquad(squadst *cursquad)
          move(24,0);
          addstr("                                                                                "); // 80 spaces
 
-         enter_name(24,0,cursquad->name,SQUAD_NAMELEN,"The Liberal Crime Squad");
+         enter_name(24,0,cursquad->name,SQUAD_NAMELEN,"ãƒªãƒ™ãƒ©ãƒ«ã‚¯ãƒ©ã‚¤ãƒ ã‚¹ã‚³ãƒ¼ãƒ‰");
 
          squad.push_back(cursquad);
       }
@@ -1181,7 +1180,7 @@ void squadlessbaseassign()
       move(0,0);
       addstr("New Bases for Squadless Liberals");
       move(1,0);
-      addstr("ÄÄÄÄCODE NAMEÄÄÄÄÄÄÄÄÄÄÄÄCURRENT BASEÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"); // 80 characters
+      addstr("ï¾„ï¾„ï¾„ï¾„CODE NAMEï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„CURRENT BASEï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„"); // 80 characters
       move(1,51);
       addstr("NEW BASE");
 
@@ -1369,7 +1368,7 @@ void promoteliberals()
       move(0,0);
       addstr("Promote the Elite Liberals");
       move(1,0);
-      addstr("ÄÄÄÄCODE NAMEÄÄÄÄÄÄÄÄÄÄÄÄÄÄCURRENT CONTACTÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ"); // 80 characters
+      addstr("ï¾„ï¾„ï¾„ï¾„CODE NAMEï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„CURRENT CONTACTï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„ï¾„"); // 80 characters
       move(1,54);
       addstr("CONTACT AFTER PROMOTION");
 

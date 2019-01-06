@@ -122,7 +122,7 @@ value if it should be constant.
 Elements marked as hardcoded may have their values overridden by the game.
 -->
     <creaturetype idname="CREATURE_BOUNCER">
-        <type_name>Club Security</type_name>
+        <type_name>クラブのガードマン</type_name>
         <!-- <encounter_name> Hardcoded -->
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_CHEAPSUIT</armor>
@@ -142,7 +142,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_SECURITYGUARD">
-        <type_name>Security Guard</type_name>
+        <type_name>警備員</type_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_SECURITYUNIFORM</armor>
         <age>MATURE</age>
@@ -160,7 +160,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_SCIENTIST_LABTECH">
-        <type_name>Lab Tech</type_name>
+        <type_name>検査技師</type_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_LABCOAT</armor>
         <age>MATURE</age>
@@ -177,7 +177,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_SCIENTIST_EMINENT">
-        <type_name>Eminent Scientist</type_name>
+        <type_name>著名な科学者</type_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_LABCOAT</armor>
         <age>MIDDLEAGED</age>
@@ -197,7 +197,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_POLITICIAN">
-        <type_name>Politician</type_name>
+        <type_name>政治家</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_EXPENSIVESUIT</armor>
         <age>MIDDLEAGED</age>
@@ -216,7 +216,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_CORPORATE_MANAGER">
-        <type_name>Corporate Manager</type_name>
+        <type_name>企業経営者</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CHEAPSUIT</armor>
         <age>MATURE</age>
@@ -235,7 +235,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_CORPORATE_CEO">
-        <type_name>Corporate CEO</type_name>
+        <type_name>最高経営責任者</type_name>
         <!-- <encounter_name> Hardcoded -->
         <weapon>WEAPON_DESERT_EAGLE</weapon>
         <armor>ARMOR_EXPENSIVESUIT</armor>
@@ -258,7 +258,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_WORKER_SERVANT">
-        <type_name>Servant</type_name><!-- Hardcoded to Slave for C+ labor and corporate laws. -->
+        <type_name>使用人</type_name><!-- Hardcoded to Slave for C+ labor and corporate laws. -->
         <armor>ARMOR_SERVANTUNIFORM</armor>
         <age>MATURE</age>
         <alignment>LIBERAL</alignment>
@@ -266,14 +266,14 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_WORKER_JANITOR">
-        <type_name>Janitor</type_name><!-- Hardcoded to Custodian for L+ labor law. -->
+        <type_name>管理人</type_name><!-- Hardcoded to Custodian for L+ labor law. -->
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
     </creaturetype>
 
     <creaturetype idname="CREATURE_WORKER_SWEATSHOP">
-        <type_name>Sweatshop Worker</type_name><!-- Hardcoded to Migrant Worker for L+ labor and immigration laws. -->
+        <type_name>強制労働者</type_name><!-- Hardcoded to Migrant Worker for L+ labor and immigration laws. -->
         <armor>ARMOR_NONE</armor>
         <age>MATURE</age>
         <alignment>LIBERAL</alignment>
@@ -284,8 +284,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_WORKER_FACTORY_NONUNION">
-        <type_name>Factory Worker</type_name>
-        <encounter_name>Nonunion Worker</encounter_name>
+        <type_name>工場労働者</type_name>
+        <encounter_name>非労働組合員</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_WORKCLOTHES</armor>
         <armor>ARMOR_HARDHAT</armor>
@@ -298,8 +298,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_WORKER_FACTORY_CHILD">
-        <type_name>Child Worker</type_name>
-        <encounter_name>Child Worker</encounter_name>
+        <type_name>児童労働者</type_name>
+        <encounter_name>児童労働者</encounter_name>
         <weapon>WEAPON_CHAIN</weapon>
         <armor>ARMOR_WORKCLOTHES</armor>
         <age>CHILD</age>
@@ -311,7 +311,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_WORKER_SECRETARY">
-        <type_name>Secretary</type_name>
+        <type_name>秘書</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -324,8 +324,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_WORKER_FACTORY_UNION">
-        <type_name>Factory Worker</type_name>
-        <encounter_name>Union Worker</encounter_name>
+        <type_name>工場労働者</type_name>
+        <encounter_name>労働組合員</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_WORKCLOTHES</armor>
         <armor>ARMOR_HARDHAT</armor>
@@ -339,8 +339,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_LANDLORD">
-        <type_name>Landlord</type_name>
-        <encounter_name>Landlord</encounter_name>
+        <type_name>地主</type_name>
+        <encounter_name>地主</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -357,16 +357,16 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_BANK_TELLER">
-        <type_name>Bank Teller</type_name>
-        <encounter_name>Bank Teller</encounter_name>
+        <type_name>銀行窓口係</type_name>
+        <encounter_name>銀行窓口係</encounter_name>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
         <alignment>MODERATE</alignment>
     </creaturetype>
 
     <creaturetype idname="CREATURE_BANK_MANAGER">
-        <type_name>Bank Manager</type_name>
-        <encounter_name>Bank Manager</encounter_name>
+        <type_name>銀行家</type_name>
+        <encounter_name>銀行家</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -382,7 +382,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_TEENAGER">
-        <type_name>Teenager</type_name>
+        <type_name>10代の若者</type_name>
         <armor>ARMOR_CLOTHES</armor>
         <age>TEENAGER</age>
     </creaturetype>
@@ -390,7 +390,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     <creaturetype idname="CREATURE_COP">
         <!-- A Police Officer can either be a normal Officer or a Negotiator.
              They have some hardcoded differences. -->
-        <type_name>Police Officer</type_name>
+        <type_name>警察官</type_name>
         <!-- <encounter_name> Hardcoded -->
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_POLICEARMOR</armor>
@@ -413,7 +413,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_SWAT">
-        <type_name>SWAT Officer</type_name>
+        <type_name>SWAT隊員</type_name>
         <weapon>
             <type>WEAPON_SMG_MP5</type>
             <number_clips>6</number_clips>
@@ -443,7 +443,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_DEATHSQUAD">
-        <type_name>DethSquad Officer</type_name>
+        <type_name>死の部隊隊員</type_name>
         <weapon>
             <type>WEAPON_AUTORIFLE_M16</type>
             <number_clips>7</number_clips>
@@ -471,7 +471,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_FIREFIGHTER">
-        <type_name>Firefighter</type_name><!-- Hardcoded to Fireman if free speech law is arch conservative. -->
+        <type_name>消防士</type_name><!-- Hardcoded to Fireman if free speech law is arch conservative. -->
         <!-- <encounter_name> Hardcoded -->
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_OVERALLS</armor>
@@ -490,8 +490,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_EDUCATOR">
-        <type_name>Educator</type_name>
-        <encounter_name>Educator</encounter_name>
+        <type_name>教員</type_name>
+        <encounter_name>教員</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_LABCOAT</armor>
         <age>MATURE</age>
@@ -514,7 +514,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_GANGUNIT">
-        <type_name>Police Gang Unit</type_name>
+        <type_name>ギャング対策部警官</type_name>
         <weapon>WEAPON_SMG_MP5</weapon>
         <weapon>WEAPON_SHOTGUN_PUMP</weapon>
         <weapon>WEAPON_SEMIPISTOL_9MM</weapon>
@@ -541,8 +541,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_JUDGE_LIBERAL">
-        <type_name>Liberal Judge</type_name>
-        <encounter_name>Liberal Judge</encounter_name>
+        <type_name>リベラル派裁判官</type_name>
+        <encounter_name>リベラル派裁判官</encounter_name>
         <weapon>WEAPON_GAVEL</weapon>
         <weapon>WEAPON_NONE</weapon>
         <armor>ARMOR_BLACKROBE</armor>
@@ -560,8 +560,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_JUDGE_CONSERVATIVE">
-        <type_name>Hangin' Judge</type_name>
-        <encounter_name>Hangin' Judge</encounter_name>
+        <type_name>強硬派裁判官</type_name>
+        <encounter_name>強硬派裁判官</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_BLACKROBE</armor>
         <age>MIDDLEAGED</age>
@@ -582,8 +582,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_AGENT">
-        <type_name>Agent</type_name>
-        <encounter_name>Agent</encounter_name>
+        <type_name>スパイ</type_name>
+        <encounter_name>スパイ</encounter_name>
         <weapon>WEAPON_REVOLVER_44</weapon>
         <weapon>WEAPON_SEMIPISTOL_9MM</weapon>
         <weapon>WEAPON_AUTORIFLE_M16</weapon>
@@ -618,8 +618,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_SECRET_SERVICE">
-        <type_name>Secret Service</type_name>
-        <encounter_name>Secret Service</encounter_name>
+        <type_name>シークレットサービス</type_name>
+        <encounter_name>シークレットサービス</encounter_name>
         <weapon>WEAPON_SEMIPISTOL_9MM</weapon>
         <weapon>WEAPON_AUTORIFLE_M16</weapon>
         <weapon>WEAPON_SMG_MP5</weapon>
@@ -647,8 +647,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_RADIOPERSONALITY">
-        <type_name>Radio Personality</type_name>
-        <encounter_name>Radio Personality</encounter_name>
+        <type_name>ラジオパーソナリティ</type_name>
+        <encounter_name>ラジオパーソナリティ</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_EXPENSIVESUIT</armor>
         <age>MATURE</age>
@@ -666,8 +666,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_NEWSANCHOR">
-        <type_name>Cable News Anchor</type_name>
-        <encounter_name>Cable News Anchor</encounter_name>
+        <type_name>ケーブルニュースキャスター</type_name>
+        <encounter_name>ケーブルニュースキャスター</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_EXPENSIVESUIT</armor>
         <age>MATURE</age>
@@ -682,7 +682,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_GENETIC">
-        <type_name>Genetic Monster</type_name>
+        <type_name>人造モンスター</type_name>
         <!--<encounter_name> Hardcoded -->
         <armor>ARMOR_NONE</armor>
         <age>DOGYEARS</age>
@@ -699,8 +699,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_GUARDDOG">
-        <type_name>Canine Hero</type_name>
-        <encounter_name>Guard Dog</encounter_name>
+        <type_name>犬のヒーロー</type_name>
+        <encounter_name>番犬</encounter_name>
         <armor>ARMOR_NONE</armor>
         <age>DOGYEARS</age>
         <alignment>CONSERVATIVE</alignment>
@@ -717,8 +717,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     <creaturetype idname="CREATURE_PRISONER">
         <!-- The prisoner type is not actually encountered in the game. Instead
              Prisoners are other creature types dressed up as prisoners. -->
-        <type_name>Prisoner</type_name>
-        <encounter_name>Prisoner</encounter_name>
+        <type_name>囚人</type_name>
+        <encounter_name>囚人</encounter_name>
         <weapon>WEAPON_SHANK</weapon>
         <weapon>WEAPON_NONE</weapon>
         <armor>ARMOR_PRISONER</armor>
@@ -733,8 +733,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_JUROR">
-        <type_name>Juror</type_name>
-        <encounter_name>Angry Juror</encounter_name>
+        <type_name>陪審員</type_name>
+        <encounter_name>怒れる陪審員</encounter_name>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
         <alignment>CONSERVATIVE</alignment>
@@ -742,8 +742,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_LAWYER">
-        <type_name>Lawyer</type_name>
-        <encounter_name>Lawyer</encounter_name>
+        <type_name>弁護士</type_name>
+        <encounter_name>弁護士</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_CHEAPSUIT</armor>
         <age>GRADUATE</age>
@@ -759,8 +759,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_SEWERWORKER">
-        <type_name>Sewer Worker</type_name>
-        <encounter_name>Sewer Worker</encounter_name>
+        <type_name>下水道作業員</type_name>
+        <encounter_name>下水道作業員</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_WORKCLOTHES</armor>
         <armor>ARMOR_HARDHAT</armor>
@@ -770,8 +770,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_COLLEGESTUDENT">
-        <type_name>College Student</type_name>
-        <encounter_name>College Student</encounter_name>
+        <type_name>大学生</type_name>
+        <encounter_name>大学生</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>18-23</age>
@@ -786,8 +786,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_MUSICIAN">
-        <type_name>Musician</type_name>
-        <encounter_name>Musician</encounter_name>
+        <type_name>音楽家</type_name>
+        <encounter_name>音楽家</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -799,8 +799,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_MATHEMATICIAN">
-        <type_name>Mathematician</type_name>
-        <encounter_name>Mathematician</encounter_name>
+        <type_name>数学者</type_name>
+        <encounter_name>数学者</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -815,8 +815,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_TEACHER">
-        <type_name>Teacher</type_name>
-        <encounter_name>Teacher</encounter_name>
+        <type_name>教師</type_name>
+        <encounter_name>教師</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -828,8 +828,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_HSDROPOUT">
-        <type_name>Highschool Dropout</type_name>
-        <encounter_name>Highschool Dropout</encounter_name>
+        <type_name>高校中退者</type_name>
+        <encounter_name>高校中退者</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>TEENAGER</age>
@@ -837,8 +837,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_BUM">
-        <type_name>Transient</type_name>
-        <encounter_name>Transient</encounter_name>
+        <type_name>期間労働者</type_name>
+        <encounter_name>期間労働者</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -847,8 +847,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_GANGMEMBER">
-        <type_name>Gang Member</type_name>
-        <encounter_name>Gang Member</encounter_name>
+        <type_name>ギャング</type_name>
+        <encounter_name>ギャング</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_CLOTHES</armor>
         <armor>ARMOR_LEATHER</armor>
@@ -866,8 +866,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_CRACKHEAD">
-        <type_name>Crackhead</type_name>
-        <encounter_name>Crackhead</encounter_name>
+        <type_name>薬物依存者</type_name>
+        <encounter_name>薬物依存者</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_CLOTHES</armor>
         <age>YOUNGADULT</age>
@@ -882,8 +882,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_PRIEST">
-        <type_name>Priest</type_name>
-        <encounter_name>Priest</encounter_name>
+        <type_name>聖職者</type_name>
+        <encounter_name>聖職者</encounter_name>
         <armor>ARMOR_BLACKSUIT</armor>
         <age>MATURE</age>
         <gender>MALE BIAS</gender>
@@ -894,8 +894,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_ENGINEER">
-        <type_name>Engineer</type_name>
-        <encounter_name>Engineer</encounter_name>
+        <type_name>技術者</type_name>
+        <encounter_name>技術者</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -908,8 +908,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_FASTFOODWORKER">
-        <type_name>Fast Food Worker</type_name>
-        <encounter_name>Fast Food Worker</encounter_name>
+        <type_name>ファーストフード店員</type_name>
+        <encounter_name>ファーストフード店員</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <!-- <age> Hardcoded -->
@@ -917,8 +917,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_BAKER">
-        <type_name>Baker</type_name>
-        <encounter_name>Baker</encounter_name>
+        <type_name>パン職人</type_name>
+        <encounter_name>パン職人</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -926,8 +926,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
     
     <creaturetype idname="CREATURE_BARISTA">
-        <type_name>Barista</type_name>
-        <encounter_name>Barista</encounter_name>
+        <type_name>バリスタ</type_name>
+        <encounter_name>バリスタ</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>YOUNGADULT</age>
@@ -935,8 +935,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_BARTENDER">
-        <type_name>Bartender</type_name>
-        <encounter_name>Bartender</encounter_name>
+        <type_name>バーテンダー</type_name>
+        <encounter_name>バーテンダー</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -945,8 +945,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
   
     <creaturetype idname="CREATURE_TELEMARKETER">
-        <type_name>Telemarketer</type_name>
-        <encounter_name>Telemarketer</encounter_name>
+        <type_name>電話勧誘販売員</type_name>
+        <encounter_name>電話勧誘販売員</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>YOUNGADULT</age>
@@ -957,7 +957,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_CARSALESMAN">
-        <type_name>Car Salesperson</type_name><!-- Hardcoded to Car Salesman for C+ women's rights law. -->
+        <type_name>自動車販売員</type_name><!-- Hardcoded to Car Salesman for C+ women's rights law. -->
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CHEAPSUIT</armor>
         <age>MATURE</age>
@@ -970,8 +970,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_OFFICEWORKER">
-        <type_name>Office Worker</type_name>
-        <encounter_name>Office Worker</encounter_name>
+        <type_name>サラリーマン</type_name>
+        <encounter_name>サラリーマン</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -982,8 +982,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_FOOTBALLCOACH">
-        <type_name>Football Coach</type_name>
-        <encounter_name>Football Coach</encounter_name>
+        <type_name>フットボールコーチ</type_name>
+        <encounter_name>フットボールコーチ</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MIDDLEAGED</age>
@@ -997,8 +997,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_PROSTITUTE">
-        <type_name>Prostitute</type_name>
-        <encounter_name>Prostitute</encounter_name>
+        <type_name>売春婦</type_name>
+        <encounter_name>売春婦</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CHEAPDRESS</armor>
         <armor>ARMOR_CLOTHES</armor>
@@ -1015,8 +1015,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_MAILMAN">
-        <type_name>Mail Carrier</type_name>
-        <encounter_name>Mail Carrier</encounter_name>
+        <type_name>郵便配達員</type_name>
+        <encounter_name>郵便配達員</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_WORKCLOTHES</armor>
         <age>MATURE</age>
@@ -1024,8 +1024,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_GARBAGEMAN">
-        <type_name>Garbage Collector</type_name>
-        <encounter_name>Garbage Collector</encounter_name>
+        <type_name>清掃員</type_name>
+        <encounter_name>清掃員</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_WORKCLOTHES</armor>
         <age>MATURE</age>
@@ -1037,8 +1037,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_PLUMBER">
-        <type_name>Plumber</type_name>
-        <encounter_name>Plumber</encounter_name>
+        <type_name>配管工</type_name>
+        <encounter_name>配管工</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_WORKCLOTHES</armor>
         <age>MATURE</age>
@@ -1047,8 +1047,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_CHEF">
-        <type_name>Chef</type_name>
-        <encounter_name>Chef</encounter_name>
+        <type_name>シェフ</type_name>
+        <encounter_name>シェフ</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_WORKCLOTHES</armor>
         <age>MATURE</age>
@@ -1057,8 +1057,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_CONSTRUCTIONWORKER">
-        <type_name>Construction Worker</type_name>
-        <encounter_name>Construction Worker</encounter_name>
+        <type_name>建設作業員</type_name>
+        <encounter_name>建設作業員</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_HARDHAT</armor>
         <age>MATURE</age>
@@ -1074,8 +1074,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_AMATEURMAGICIAN">
-        <type_name>Amateur Magician</type_name>
-        <encounter_name>Amateur Magician</encounter_name>
+        <type_name>アマチュア音楽家</type_name>
+        <encounter_name>アマチュア音楽家</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -1083,8 +1083,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_TANK">
-        <type_name>M1 Abrams Tank</type_name>
-        <encounter_name>M1 Abrams Tank</encounter_name>
+        <type_name>M1エイブラムス戦車</type_name>
+        <encounter_name>M1エイブラムス戦車</encounter_name>
         <!-- <weapon> Hardcoded -->
         <!--<armor>ARMOR_NONE</armor> Hardcoded -->
         <age>TEENAGER</age>
@@ -1097,7 +1097,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_MERC">
-        <type_name>Elite Security</type_name>
+        <type_name>エリート警備員</type_name>
         <encounter_name>Elite Security</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_CIVILLIANARMOR</armor>
@@ -1125,7 +1125,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_HICK">
-        <type_name>Redneck</type_name>
+        <type_name>田舎者</type_name>
         <!-- <encounter_name> Hardcoded -->
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_OVERALLS</armor>
@@ -1137,8 +1137,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_SOLDIER">
-        <type_name>Soldier</type_name>
-        <encounter_name>Soldier</encounter_name>
+        <type_name>兵士</type_name>
+        <encounter_name>兵士</encounter_name>
         <weapon>
             <type>WEAPON_AUTORIFLE_M16</type>
             <number_clips>7</number_clips>
@@ -1166,8 +1166,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_VETERAN">
-        <type_name>Veteran</type_name>
-        <encounter_name>Army Veteran</encounter_name>
+        <type_name>退役軍人</type_name>
+        <encounter_name>陸軍退役軍人</encounter_name>
         <weapon>WEAPON_COMBATKNIFE</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MIDDLEAGED</age>
@@ -1189,8 +1189,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_HARDENED_VETERAN">
-        <type_name>Hardened Veteran</type_name>
-        <encounter_name>Hardened Veteran</encounter_name>
+        <type_name>古参兵</type_name>
+        <encounter_name>古参兵</encounter_name>
         <weapon>
             <type>WEAPON_AUTORIFLE_M16</type>
             <number_clips>7</number_clips>
@@ -1218,8 +1218,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_PRISONGUARD">
-        <type_name>Prison Guard</type_name>
-        <encounter_name>Prison Guard</encounter_name>
+        <type_name>看守</type_name>
+        <encounter_name>看守</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_PRISONGUARD</armor>
         <age>MATURE</age>
@@ -1241,8 +1241,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_HIPPIE">
-        <type_name>Hippie</type_name>
-        <encounter_name>Hippie</encounter_name>
+        <type_name>ヒッピー</type_name>
+        <encounter_name>ヒッピー</encounter_name>
         <armor>ARMOR_CLOTHES</armor>
         <age>18-57</age>
         <alignment>LIBERAL</alignment>
@@ -1260,7 +1260,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_CRITIC_ART">
-        <type_name>Art Critic</type_name>
+        <type_name>美術評論家</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CHEAPSUIT</armor>
         <age>MATURE</age>
@@ -1273,7 +1273,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_CRITIC_MUSIC">
-        <type_name>Music Critic</type_name>
+        <type_name>音楽評論家</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CHEAPSUIT</armor>
         <age>MATURE</age>
@@ -1286,8 +1286,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_SOCIALITE">
-        <type_name>Socialite</type_name>
-        <encounter_name>Socialite</encounter_name>
+        <type_name>社交界の名士</type_name>
+        <encounter_name>社交界の名士</encounter_name>
         <weapon>CIVILIAN</weapon>
         <!-- <armor> Hardcoded -->
         <age>MATURE</age>
@@ -1300,8 +1300,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_PROGRAMMER">
-        <type_name>Programmer</type_name>
-        <encounter_name>Programmer</encounter_name>
+        <type_name>プログラマ</type_name>
+        <encounter_name>プログラマ</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -1316,14 +1316,14 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_RETIREE">
-        <type_name>Retiree</type_name>
+        <type_name>退職者</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>SENIOR</age>
     </creaturetype>
 
     <creaturetype idname="CREATURE_PAINTER">
-        <type_name>Painter</type_name>
+        <type_name>画家</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -1333,7 +1333,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_SCULPTOR">
-        <type_name>Sculptor</type_name>
+        <type_name>彫刻家</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -1343,7 +1343,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_AUTHOR">
-        <type_name>Author</type_name>
+        <type_name>作家</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CHEAPSUIT</armor>
         <age>MATURE</age>
@@ -1355,7 +1355,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_JOURNALIST">
-        <type_name>Journalist</type_name>
+        <type_name>ジャーナリスト</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CHEAPSUIT</armor>
         <age>MATURE</age>
@@ -1368,7 +1368,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_DANCER">
-        <type_name>Dancer</type_name>
+        <type_name>ダンサー</type_name>
         <armor>ARMOR_CLOTHES</armor>
         <age>YOUNGADULT</age>
         <attributes>
@@ -1383,7 +1383,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_PHOTOGRAPHER">
-        <type_name>Photographer</type_name>
+        <type_name>写真家</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -1393,7 +1393,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_CAMERAMAN">
-        <type_name>Cameraman</type_name>
+        <type_name>撮影技師</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -1403,7 +1403,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_HAIRSTYLIST">
-        <type_name>Hairstylist</type_name>
+        <type_name>美容師</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -1414,7 +1414,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_FASHIONDESIGNER">
-        <type_name>Fashion Designer</type_name>
+        <type_name>ファッションデザイナー</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -1426,14 +1426,14 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_CLERK">
-        <type_name>Clerk</type_name>
+        <type_name>店員</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
     </creaturetype>
 
     <creaturetype idname="CREATURE_THIEF">
-        <type_name>Professional Thief</type_name>
+        <type_name>プロの泥棒</type_name>
         <!-- <encounter_name> Hardcoded -->
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_BLACKCLOTHES</armor>
@@ -1446,7 +1446,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_ACTOR">
-        <type_name>Actor</type_name>
+        <type_name>俳優</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -1462,7 +1462,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_YOGAINSTRUCTOR">
-        <type_name>Yoga Instructor</type_name>
+        <type_name>ヨガインストラクター</type_name>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
         <attributes>
@@ -1477,7 +1477,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_MARTIALARTIST">
-        <type_name>Black Belt</type_name>
+        <type_name>柔道家</type_name>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
         <attributes>
@@ -1493,7 +1493,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_ATHLETE">
-        <type_name>Athlete</type_name>
+        <type_name>スポーツ選手</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>YOUNGADULT</age>
@@ -1506,8 +1506,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_BIKER">
-        <type_name>Biker</type_name>
-        <encounter_name>Biker</encounter_name>
+        <type_name>バイカー</type_name>
+        <encounter_name>バイカー</encounter_name>
         <weapon>CIVILIAN</weapon>
         <weapon>WEAPON_CHAIN</weapon>
         <armor>ARMOR_LEATHER</armor>
@@ -1521,8 +1521,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_TRUCKER">
-        <type_name>Trucker</type_name>
-        <encounter_name>Truck Driver</encounter_name>
+        <type_name>トラック運転手</type_name>
+        <encounter_name>トラック運転手</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -1534,8 +1534,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_TAXIDRIVER">
-        <type_name>Taxi Driver</type_name>
-        <encounter_name>Taxi Driver</encounter_name>
+        <type_name>タクシー運転手</type_name>
+        <encounter_name>タクシー運転手</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -1547,7 +1547,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_NUN">
-        <type_name>Nun</type_name>
+        <type_name>修道女</type_name>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
         <gender>FEMALE</gender>
@@ -1557,7 +1557,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_MUTANT">
-        <type_name>Mutant</type_name>
+        <type_name>ミュータント</type_name>
         <encounter_name>Mutant</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_CLOTHES</armor>
@@ -1577,8 +1577,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_DOCTOR">
-        <type_name>Doctor</type_name>
-        <encounter_name>Doctor</encounter_name>
+        <type_name>医者</type_name>
+        <encounter_name>医者</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_LABCOAT</armor>
         <age>GRADUATE</age>
@@ -1592,8 +1592,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_NURSE">
-        <type_name>Nurse</type_name>
-        <encounter_name>Nurse</encounter_name>
+        <type_name>看護師</type_name>
+        <encounter_name>看護師</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_LABCOAT</armor>
         <age>GRADUATE</age>
@@ -1604,7 +1604,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_CCS_VIGILANTE">
-        <type_name>Vigilante</type_name>
+        <type_name>自警団員</type_name>
         <!-- <encounter_name> Hardcoded -->
         <!-- <weapon> Hardcoded -->
         <!-- <armor> Hardcoded -->
@@ -1635,7 +1635,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_CCS_ARCHCONSERVATIVE">
-        <type_name>CCS Officer</type_name>
+        <type_name>CCS隊員</type_name>
         <!-- <encounter_name> Hardcoded -->
         <weapon>
             <type>WEAPON_SHOTGUN_AA12</type>
@@ -1672,12 +1672,12 @@ Elements marked as hardcoded may have their values overridden by the game.
 
     <creaturetype idname="CREATURE_POLITICALACTIVIST">
         <!-- Can't be encountered. -->
-        <type_name>Political Activist</type_name>
+        <type_name>政治活動家</type_name>
         <armor>ARMOR_CLOTHES</armor>
     </creaturetype>
 
     <creaturetype idname="CREATURE_CCS_MOLOTOV">
-        <type_name>Arsonist</type_name>
+        <type_name>放火隊員</type_name>
         <!-- <encounter_name> Hardcoded -->
         <weapon>
             <type>WEAPON_MOLOTOV</type>
@@ -1709,7 +1709,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_CCS_SNIPER">
-        <type_name>Sniper</type_name>
+        <type_name>狙撃兵</type_name>
         <!-- <encounter_name> Hardcoded -->
         <weapon>
             <type>WEAPON_SEMIRIFLE_AR15</type>
@@ -1741,8 +1741,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_PSYCHOLOGIST">
-        <type_name>Psychologist</type_name>
-        <encounter_name>Psychologist</encounter_name>
+        <type_name>心理学者</type_name>
+        <encounter_name>心理学者</encounter_name>
         <!-- <weapon> Hardcoded -->
         <!-- <armor> Hardcoded -->
         <age>GRADUATE</age>
@@ -1757,7 +1757,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_LOCKSMITH">
-        <type_name>Locksmith</type_name>
+        <type_name>錠前師</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_WORKCLOTHES</armor>
         <age>MATURE</age>
@@ -1767,7 +1767,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_MILITARYPOLICE">
-        <type_name>Military Police</type_name>
+        <type_name>憲兵</type_name>
         <weapon>
             <type>WEAPON_CARBINE_M4</type>
             <number_clips>7</number_clips>
@@ -1805,7 +1805,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_SEAL">
-        <type_name>Navy SEAL</type_name>
+        <type_name>海軍特殊部隊員</type_name>
         <weapon>WEAPON_CARBINE_M4</weapon>
         <armor>ARMOR_SEALSUIT</armor>
         <age>MATURE</age>
@@ -1829,7 +1829,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_MILITARYOFFICER">
-        <type_name>Military Officer</type_name>
+        <type_name>武官</type_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_MILITARY</armor>
         <age>MIDDLEAGED</age>

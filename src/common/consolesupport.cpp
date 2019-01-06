@@ -295,19 +295,25 @@ void init_console()
 {
    #ifdef WIN32
    // This has to be set to Code Page 437 in Windows regardless of Unicode, that's just how PDCurses works on Windows, even the UTF-8 version of PDCurses
-   SetConsoleOutputCP(437); // use Code Page 437 (US English code page for DOS) for output, regardless of anything else
-   SetConsoleCP(437); // use Code Page 437 (US English code page for DOS) for input, regardless of anything else
-   setlocale(LC_ALL,"English_United States.437");
+   //SetConsoleOutputCP(437); // use Code Page 437 (US English code page for DOS) for output, regardless of anything else
+   //SetConsoleCP(437); // use Code Page 437 (US English code page for DOS) for input, regardless of anything else
+   //setlocale(LC_ALL,"English_United States.437");
+   SetConsoleOutputCP(932);
+   SetConsoleCP(932);
+   setlocale(LC_ALL,"ja_JP.932");
    _setmbcp(_MB_CP_LOCALE); // use same code page as multibyte code page
    #else // WIN32
    #ifdef CH_USE_UNICODE
-   setlocale(LC_ALL,"en_US.UTF-8"); // POSIX-compliant OSes DO support UTF-8/Unicode for setlocale, unlike Windows
+   //setlocale(LC_ALL,"en_US.UTF-8"); // POSIX-compliant OSes DO support UTF-8/Unicode for setlocale, unlike Windows
+   setlocale(LC_ALL,"ja_JP.UTF-8");
    #endif
    #ifdef CH_USE_CP437
-   setlocale(LC_ALL,"en_US.CP437");
+   //setlocale(LC_ALL,"en_US.CP437");
+   setlocale(LC_ALL,"ja_JP.932");
    #endif
    #ifdef CH_USE_ASCII_HACK
-   setlocale(LC_ALL,"en_US.CP437");
+   //setlocale(LC_ALL,"en_US.CP437");
+   setlocale(LC_ALL,"ja_JP.932");
    #endif
    #endif // WIN32
    #ifdef CH_USE_UNICODE

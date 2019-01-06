@@ -29,7 +29,7 @@ This file is part of Liberal Crime Squad.                                       
 // Note: this file is encoded in the PC-8 / Code Page 437 / OEM-US character set
 // (The same character set used by Liberal Crime Squad when it is running)
 // Certain special characters won't display correctly unless your text editor is
-// set to use that character set, such as this e with an accent: �
+// set to use that character set, such as this e with an accent: é
 
 // In Windows Notepad with the Terminal font, OEM/DOS encoding it should work fine.
 // You can set this in Notepad by going to Format->Font and choosing the Terminal font,
@@ -1472,11 +1472,11 @@ void giveup()
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(1,1);
       if(location[loc]->siege.siegetype==SIEGE_POLICE && location[loc]->siege.escalationstate == 0)
-         addstr("The police", gamelog);
+         addstr("警察は", gamelog);
       else if(location[loc]->siege.siegetype==SIEGE_POLICE && location[loc]->siege.escalationstate >= 1)
-         addstr("The soldiers", gamelog);
-      else addstr("The firemen", gamelog);
-      addstr(" confiscate everything, including Squad weapons.", gamelog);
+         addstr("兵士は", gamelog);
+      else addstr("消防は", gamelog);
+      addstr("部隊の武器を含む全てを差し押さえた。", gamelog);
       gamelog.newline();
 
       int kcount=0,pcount=0,icount=0,p;
@@ -1549,7 +1549,7 @@ void giveup()
       {
          move(5,1);
          addstr(pcount, gamelog);
-         addstr(" Liberals are taken to the police station.", gamelog);
+         addstr("人のリベラルが警察署に連行された。", gamelog);
          gamelog.newline();
       }
       if(ledger.get_funds()>0)
@@ -1557,7 +1557,7 @@ void giveup()
          if(ledger.get_funds()<=2000 || location[loc]->siege.siegetype==SIEGE_FIREMEN)
          {
             move(8,1);
-            addstr("Fortunately, your funds remain intact.", gamelog);
+            addstr("幸いなことに、資金は無事だった。", gamelog);
             gamelog.newline();
          }
          else
@@ -2264,7 +2264,7 @@ void conquertext()
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(3,16);
-      addstr("The Conservative automatons have been driven back �� for ", gamelog);
+      addstr("The Conservative automatons have been driven back ﾄﾄ for ", gamelog);
       move(4,11);
       addstr("the time being.  While they are regrouping, you might consider ", gamelog);
       move(5,11);
@@ -2399,14 +2399,14 @@ void statebrokenlaws(int loc)
 
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(1,1);
-   if(location[loc]->siege.underattack) addstr("You hear shouts:", gamelog);
-   else addstr("You hear a blaring voice on a loudspeaker:", gamelog);
+   if(location[loc]->siege.underattack) addstr("叫び声が聞こえる:", gamelog);
+   else addstr("メガホンの怒鳴り声が聞こえる:", gamelog);
    gamelog.newline();
 
    move(3,1);
    if(location[loc]->siege.escalationstate>=2&&publicmood(-1)<20)
-      addstr("In the name of God, your campaign of terror ends here!", gamelog);
-   else addstr("Surrender yourselves!", gamelog);
+      addstr("神の御名において、お前たちのたくらみもここまでだ!", gamelog);
+   else addstr("お前たちは包囲されている!", gamelog);
    gamelog.newline();
 
    move(4,1);
@@ -2414,118 +2414,117 @@ void statebrokenlaws(int loc)
    //KIDNAP VICTIM
    if(kidnapped)
    {
-      addstr("Release ", gamelog);
       addstr(kname, gamelog);
-      if(kidnapped>1) addstr(" and the others", gamelog);
-      addstr(" unharmed!", gamelog);
+      if(kidnapped>1) addstr("、その他", gamelog);
+      addstr("を解放しろ!", gamelog);
    }
    //TREASON
    else if(breakercount[LAWFLAG_TREASON])
-      addstr("You are wanted for treason", gamelog);
+      addstr("国家反逆罪", gamelog);
    //TERRORISM
    else if(breakercount[LAWFLAG_TERRORISM])
-      addstr("You are wanted for terrorism", gamelog);
+      addstr("テロ", gamelog);
    //MURDERER
    else if(breakercount[LAWFLAG_MURDER])
-      addstr("You are wanted for first degree murder", gamelog);
+      addstr("一級殺人", gamelog);
    //KIDNAPPER
    else if(breakercount[LAWFLAG_KIDNAPPING])
-      addstr("You are wanted for kidnapping", gamelog);
+      addstr("誘拐", gamelog);
    //BANK ROBBER
    else if(breakercount[LAWFLAG_BANKROBBERY])
-      addstr("You are wanted for bank robbery", gamelog);
+      addstr("銀行強盗", gamelog);
    //ARSONIST
    else if(breakercount[LAWFLAG_ARSON])
-      addstr("You are wanted for arson", gamelog);
+      addstr("放火", gamelog);
    //BURN FLAG
    else if(breakercount[LAWFLAG_BURNFLAG])
    {
-      if(law[LAW_FLAGBURNING]==-2)addstr("You are wanted for Flag Murder", gamelog);
-      else if(law[LAW_FLAGBURNING]==-1)addstr("You are wanted for felony flag burning", gamelog);
-      else addstr("You are wanted for flag burning", gamelog);
+      if(law[LAW_FLAGBURNING]==-2)addstr("国旗不敬罪", gamelog);
+      else if(law[LAW_FLAGBURNING]==-1)addstr("国旗焼却罪", gamelog);
+      else addstr("国旗焼却", gamelog);
    }
    //SPEECH
    else if(breakercount[LAWFLAG_SPEECH])
-      addstr("You are wanted for sedition", gamelog);
+      addstr("扇動罪", gamelog);
    //BROWNIES
    else if(breakercount[LAWFLAG_BROWNIES])
-      addstr("You are wanted for sale and distribution of a controlled substance", gamelog);
+      addstr("規制薬物の売買", gamelog);
    //ESCAPED
    else if(breakercount[LAWFLAG_ESCAPED])
-      addstr("You are wanted for escaping prison", gamelog);
+      addstr("脱獄", gamelog);
    //HELP ESCAPED
    else if(breakercount[LAWFLAG_HELPESCAPE])
-      addstr("You are wanted for aiding a prison escape", gamelog);
+      addstr("脱獄を手助けした罪", gamelog);
    //JURY
    else if(breakercount[LAWFLAG_JURY])
-      addstr("You are wanted for jury tampering", gamelog);
+      addstr("陪審員の買収", gamelog);
    //RACKETEERING
    else if(breakercount[LAWFLAG_RACKETEERING])
-      addstr("You are wanted for racketeering", gamelog);
+      addstr("racketeering", gamelog);
    //EXTORTION
    else if(breakercount[LAWFLAG_EXTORTION])
-      addstr("You are wanted for extortion", gamelog);
+      addstr("extortion", gamelog);
    //ASSAULT
    else if(breakercount[LAWFLAG_ARMEDASSAULT])
-      addstr("You are wanted for assault with a deadly weapon", gamelog);
+      addstr("傷害罪", gamelog);
    //ASSAULT
    else if(breakercount[LAWFLAG_ASSAULT])
-      addstr("You are wanted for misdemeanor assault", gamelog);
+      addstr("暴行罪", gamelog);
    //CAR THEFT
    else if(breakercount[LAWFLAG_CARTHEFT])
-      addstr("You are wanted for grand theft auto", gamelog);
+      addstr("自動車窃盗", gamelog);
    //CC FRAUD
    else if(breakercount[LAWFLAG_CCFRAUD])
-      addstr("You are wanted for credit card fraud", gamelog);
+      addstr("カード番号窃盗", gamelog);
    //THIEF
    else if(breakercount[LAWFLAG_THEFT])
-      addstr("You are wanted for petty larceny", gamelog);
+      addstr("窃盗", gamelog);
    //PROSTITUTION
    else if(breakercount[LAWFLAG_PROSTITUTION])
-      addstr("You are wanted for prostitution", gamelog);
+      addstr("売春", gamelog);
    //HIRE ILLEGAL
    else if(breakercount[LAWFLAG_HIREILLEGAL])
-      addstr((law[LAW_IMMIGRATION]<1?"You are wanted for hiring an illegal alien":"You are wanted for hiring an undocumented worker"), gamelog);
+      addstr((law[LAW_IMMIGRATION]<1?"不法移民雇用":"不法雇用"), gamelog);
    //GUN USE
    /*else if(breakercount[LAWFLAG_GUNUSE])
-      addstr("You are wanted for firing an illegal weapon", gamelog);
+      addstr("違法な武器の使用", gamelog);
    //GUN CARRY
    else if(breakercount[LAWFLAG_GUNCARRY])
-      addstr("You are wanted for possession of an illegal weapon", gamelog);*/
+      addstr("違法な武器の運搬", gamelog);*/
    //COMMERCE
    else if(breakercount[LAWFLAG_COMMERCE])
-      addstr("You are wanted for interference with interstate commerce", gamelog);
+      addstr("通商妨害", gamelog);
    //INFORMATION
    else if(breakercount[LAWFLAG_INFORMATION])
-      addstr("You are wanted for unlawful access of an information system", gamelog);
+      addstr("情報システムへの違法アクセス", gamelog);
    //UNLAWFUL BURIAL
    else if(breakercount[LAWFLAG_BURIAL])
-      addstr("You are wanted for unlawful burial", gamelog);
+      addstr("違法な遺体処理", gamelog);
    //BREAKING
    else if(breakercount[LAWFLAG_BREAKING])
-      addstr("You are wanted for breaking and entering", gamelog);
+      addstr("不法侵入", gamelog);
    //VANDALISM
    else if(breakercount[LAWFLAG_VANDALISM])
-      addstr("You are wanted for vandalism", gamelog);
+      addstr("器物損壊", gamelog);
    //RESIST
    else if(breakercount[LAWFLAG_RESIST])
-      addstr("You are wanted for resisting arrest", gamelog);
+      addstr("逮捕に抵抗した罪", gamelog);
    //DISTURBANCE
    else if(breakercount[LAWFLAG_DISTURBANCE])
-      addstr("You are wanted for disturbing the peace", gamelog);
+      addstr("治安妨害", gamelog);
    //PUBLIC NUDITY
    else if(breakercount[LAWFLAG_PUBLICNUDITY])
-      addstr("You are wanted for indecent exposure", gamelog);
+      addstr("公然猥褻", gamelog);
    //LOITERING
    else if(breakercount[LAWFLAG_LOITERING])
-      addstr("You are wanted for loitering", gamelog);
+      addstr("loitering", gamelog);
    //THEY WERE LOOKING FOR SOMEONE ELSE
-   else addstr("You are wanted for harboring a fugitive from justice", gamelog);
+   else addstr("正義に背く行為", gamelog);
 
    if(!kidnapped)
    {
-      if(typenum>1) addstr(" and other crimes", gamelog);
-      addstr(".", gamelog);
+      if(typenum>1) addstr("、その他の罪", gamelog);
+      addstr("の容疑がある。", gamelog);
    }
    gamelog.nextMessage();
 
@@ -2544,7 +2543,6 @@ void statebrokenlaws(Creature & cr)
    if(!criminal&&!kidnapped) return;
 
    set_color(COLOR_YELLOW,COLOR_BLACK,1);
-   addstr("WANTED FOR ");
 
    //KIDNAP VICTIM
    if(kidnapped)
@@ -2557,7 +2555,7 @@ void statebrokenlaws(Creature & cr)
       addstr("TERRORISM");
    //MURDERER
    else if(breakercount[LAWFLAG_MURDER])
-      addstr("MURDER");
+      addstr("殺人");
    //KIDNAPPER
    else if(breakercount[LAWFLAG_KIDNAPPING])
       addstr("KIDNAPPING");
@@ -2645,4 +2643,5 @@ void statebrokenlaws(Creature & cr)
    //LOITERING
    else if(breakercount[LAWFLAG_LOITERING])
       addstr("LOITERING");
+   addstr("で手配中");
 }
