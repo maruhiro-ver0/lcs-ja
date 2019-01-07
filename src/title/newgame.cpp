@@ -687,7 +687,7 @@ void makecharacter()
             move(2,0);addstr("何もかもが悪くなり始めた…");
             move(5,0);
             if(choices || selection == 0)
-               addstr("A - 初めて車を盗んだ。数ブロック走らせて事故を起こした。");
+               addstr("A - 初めて車を盗んだ。そして数ブロック走らせて事故を起こした。");
             //SKILL_DRIVING 1
             //SKILL_SECURITY 1
             move(7,0);
@@ -698,29 +698,29 @@ void makecharacter()
             //SKILL_PSYCHOLOGY 1
             move(9,0);
             if(choices || selection == 2)
-               addstr("C - and I went completely goth.  I had no friends and made costumes by myself.");
+               addstr("C - そして完全にゴスになった。友人もなく、一人で服を作っていた。");
             //SKILL_TAILORING 2
             move(11,0);
             if(choices || selection == 3)
-               addstr("D - when I was sent to religious counseling, just stressing me out more.");
+               addstr("D - そのとき宗教的なカウンセリングを受けたが、ストレスが増すだけだった。");
             //SKILL_RELIGION 1
             //SKILL_PSYCHOLOGY 1
             move(13,0);
             if(choices || selection == 4)
-               addstr("E - and I tried being a teacher's assistant.  It just made me a target.");
+               addstr("E - そこで私は教師のアシスタントになとうとした。だが、目を付けられるだけだった。");
             //SKILL_TEACHING 2
             break;
          case 6:
-            move(2,0);addstr("Well, I knew it had reached a crescendo when...");
+            move(2,0);addstr("ああ、あのときが最悪だった…");
             move(5,0);
             if(choices || selection == 0)
-               addstr("A - I stole a cop car when I was only 14.  I went to juvie for 6 months.");
+               addstr("A - 14のときパトカーを盗んだ。それで少年院に6ヶ月間入った。");
             //SKILL_DRIVING 1
             //SKILL_SECURITY 1
             //ATTRIBUTE_INTELLIGENCE 1
             move(7,0);
             if(choices || selection == 1)
-               addstr("B - my step mom shot her ex-husband, my dad, with a shotgun.  She got off.");//XXX: Sounds... Sexual...
+               addstr("B - 前の母が元夫である父をショットガンで撃ったのだ。");//XXX: Sounds... Sexual...
             //SKILL_SHOTGUN 2
             //ATTRIBUTE_AGILITY 1
             move(9,0);
@@ -730,13 +730,13 @@ void makecharacter()
             //SKILL_HANDTOHAND 2
             move(11,0);
             if(choices || selection == 3)
-               addstr("D - I got caught making out, and now I needed to be 'cured' of homosexuality.");
+               addstr("D - 付き合っているのがバレた。私は同性愛を「治す」必要があるのだろう。");
             //SKILL_SEDUCTION 1
             //SKILL_RELIGION 1
             //ATTRIBUTE_HEART 1
             move(13,0);
             if(choices || selection == 4)
-               addstr("E - I resorted to controlling people.  Had my own clique of outcasts.");
+               addstr("E - 私は他人を支配しようとした。私は自分自身のはみ出しもののグループを作った。");
             //SKILL_PERSUASION 2
             //ATTRIBUTE_CHARISMA 1
             break;
