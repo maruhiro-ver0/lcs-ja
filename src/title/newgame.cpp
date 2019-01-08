@@ -467,7 +467,7 @@ void makecharacter()
       erase();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
-      addstr("Insight into a Revolution:  My Traumatic Childhood");
+      addstr("革命の内側: 悲しみの子供時代");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
 
       //A - Thief
@@ -707,7 +707,7 @@ void makecharacter()
             //SKILL_PSYCHOLOGY 1
             move(13,0);
             if(choices || selection == 4)
-               addstr("E - そこで私は教師のアシスタントになとうとした。だが、目を付けられるだけだった。");
+               addstr("E - そこで私は教師のアシスタントになろうとした。だが、逆に目を付けられただけだった。");
             //SKILL_TEACHING 2
             break;
          case 6:
@@ -730,7 +730,7 @@ void makecharacter()
             //SKILL_HANDTOHAND 2
             move(11,0);
             if(choices || selection == 3)
-               addstr("D - 付き合っているのがバレた。私は同性愛を「治す」必要があるのだろう。");
+               addstr("D - 付き合っているのがバレた。私は同性愛を「治す」必要があった。");
             //SKILL_SEDUCTION 1
             //SKILL_RELIGION 1
             //ATTRIBUTE_HEART 1
@@ -741,59 +741,59 @@ void makecharacter()
             //ATTRIBUTE_CHARISMA 1
             break;
          case 7:
-            move(2,0);addstr("I was only 15 when I ran away, and...");
+            move(2,0);addstr("家を飛び出したとき、私はまだ15だった。そして…");
             move(5,0);
             if(choices || selection == 0)
-               addstr("A - I started robbing houses:  rich people only.  I was fed up with their crap.");
+               addstr("A - 盗みに入るようになった。金持ちの家だけだ。連中のガラクタにはもう飽き飽きだ。");
             //SKILL_SECURITY 1
             //SKILL_STEALTH 1
             //ATTRIBUTE_AGILITY 1
             move(7,0);
             if(choices || selection == 1)
-               addstr("B - I hung out with thugs and beat the shit out of people.");
+               addstr("B - ギャングと町をうろつき暴力に明け暮れていた。");
             //ATTRIBUTE_STRENGTH 1
             //SKILL_HANDTOHAND 2
             move(9,0);
             if(choices || selection == 2)
-               addstr("C - I got a horrible job working fast food, smiling as people fed the man.");
+               addstr("C - ファーストフード店の劣悪な環境で働いた。微笑みながら人にエサをやるようだった。");
             //ATTRIBUTE_CHARISMA 1
             //SKILL_BUSINESS 2
             move(11,0);
             if(choices || selection == 3)
-               addstr("D - I let people pay me for sex.  I needed the money to survive.");
+               addstr("D - 体を売っていた。生きるためには金が必要だ。");
             //ATTRIBUTE_HEART -1
             //ATTRIBUTE_CHARISMA 2
             //SKILL_SEDUCTION 2
             move(13,0);
             if(choices || selection == 4)
-               addstr("E - I volunteered for a left-wing candidate. It wasn't *real*, though, you know?");
+               addstr("E - 左翼団体に志願した。だが本当は違った。わかるだろう?");
             //ATTRIBUTE_INTELLIGENCE 1
             //SKILL_LAW 1
             //SKILL_PERSUASION 1
             break;
          case 8:
-            move(2,0);addstr("Life went on.  On my 18th birthday...");
+            move(2,0);addstr("人生は続く。18の誕生日に私は…");
             move(5,0);
             if(choices || selection == 0)
-               addstr("A - I got my hands on a sports car. The owner must have been pissed.");
+               addstr("A - スポーツカーを手に入れた。持ち主は怒っているだろう。");
             move(7,0);
             if(choices || selection == 1)
-               addstr("B - I bought myself an assault rifle.");
+               addstr("B - 自分のためにアサルトライフルを買った。");
             move(9,0);
             if(choices || selection == 2)
-               addstr("C - I celebrated.  I'd saved a thousand bucks!");
+               addstr("C - ただ祝った。何千ドルも無駄にせずにすんだ!");
             move(11,0);
             if(choices || selection == 3)
-               addstr("D - I went to a party and met a cool law student.  We've been dating since.");//XXX: No Seduction?
+               addstr("D - パーティーでクールな法学部生と出会った。それ以来つきあっている。");//XXX: No Seduction?
             move(13,0);
             if(choices || selection == 4)
-               addstr("E - I managed to acquire secret maps of several major buildings downtown.");
+               addstr("E - 苦労していくつかの主要都市の秘密の地図を手に入れた。");
             break;
          case 9:
-            move(2,0);addstr("For the past few years, I've been...");
+            move(2,0);addstr("そして幾年かが過ぎ、今では…");
             move(5,0);
             if(choices || selection == 0)
-               addstr("A - stealing from Corporations.  I know they're still keeping more secrets.");
+               addstr("A - 企業に盗みに入っている。私はまだまだ秘密を知っている。");
             //ATTRIBUTE_INTELLIGENCE 2
             //ATTRIBUTE_AGILITY 2
             //SKILL_SECURITY 2
@@ -802,7 +802,7 @@ void makecharacter()
             // +$500 (one month rent)
             move(7,0);
             if(choices || selection == 1)
-               addstr("B - a violent criminal.  Nothing can change me, or stand in my way.");
+               addstr("B - 暴力犯だ。誰も私を変えることも止めることもできない。");
             //SKILL_RIFLE 2
             //SKILL_PISTOL 2
             //SKILL_STREETSENSE 2
@@ -813,7 +813,7 @@ void makecharacter()
             // +A crew (four gang members with knives and pistols)
             move(9,0);
             if(choices || selection == 2)
-               addstr("C - taking college courses.  I can see how much the country needs help.");
+               addstr("C - 大学に通っている。私にはこの国には助けが必要だとわかっている。");
             //SKILL_SCIENCE 2
             //SKILL_COMPUTERS 2
             //SKILL_WRITING 2
@@ -825,7 +825,7 @@ void makecharacter()
             // +$200 (one month rent)
             move(11,0);
             if(choices || selection == 3)
-               addstr("D - surviving alone, just like anyone.  But we can't go on like this.");
+               addstr("D - 一人で生きている。他の人と同じように。だが、もう耐えられない。");
             //SKILL_FIRSTAID 2
             //SKILL_STREETSENSE 2
             //ATTRIBUTE_INTELLIGENCE 1
@@ -835,7 +835,7 @@ void makecharacter()
             // +1 all stats (except Wisdom)
             move(13,0);
             if(choices || selection == 4)
-               addstr("E - writing my manifesto and refining my image.  I'm ready to lead.");
+               addstr("E - 宣言書を書き、構想を練っている。私は導く準備ができている。");
             //ATTRIBUTE_CHARISMA 2
             //ATTRIBUTE_INTELLIGENCE 2
             //SKILL_LAW 1
@@ -845,10 +845,10 @@ void makecharacter()
             // +$100 (one month rent)
             // +50 juice
             move(17,0);
-            addstr("I live in ");
+            addstr("私は");
             if(!multipleCityMode) addstr(lcityname);
             else addstr("Seattle, WA");
-            addstr(", and it's about to experience real change.");
+            addstr("にいる。そして変革の時は来た。");
             break;
       }
 
@@ -1204,61 +1204,51 @@ void makecharacter()
 
    erase();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
-   move(2,2);
-   addstr("A NEW CONSERVATIVE ERA", gamelog);
+   move(4,2);
+   addstr("新たな保守の時代", gamelog);
    gamelog.newline();
 
    set_color(COLOR_WHITE,COLOR_BLACK,0);
-   move(4,2);
-   addstr("The Year is ", gamelog);
-   addstr(year, gamelog);
-   addstr(".", gamelog);
    move(6,2);
+   addstr(year, gamelog);
+   addstr("年", gamelog);
+   move(8,2);
    gamelog.newline();
-   addstr("Conservative President ", gamelog);
+   addstr("保守派の大統領", gamelog);
    char president[80];
    generate_name(president,GENDER_WHITEMALEPATRIARCH);
    addstr(president, gamelog);
-   addstr(" ends his second term with approval", gamelog);
-   move(7,2);
+   addstr("は70%台後半の支持率の内に2期目を終え、", gamelog);
+   move(9,2);
    gamelog.newline();
-   addstr("ratings in the high 70s, and is succeeded by hardcore Arch-Conservative", gamelog);
-   move(8,2);
-   gamelog.newline();
+   addstr("その意思を保守強硬派の", gamelog);
    addstr(execname[EXEC_PRESIDENT], gamelog);
-   addstr(".", gamelog);
+   addstr("に引き継いだ。", gamelog);
    gamelog.nextMessage();
 
-   move(10,2);
-   addstr("With Conservatives sweeping into power in the House of Representatives", gamelog);
    move(11,2);
-   gamelog.newline();
-   addstr("and Senate, and a Conservative majority in the Supreme Court of the", gamelog);
+   addstr("保守派が大勝した上下両院、保守派が多数を占める合衆国最高裁判所、", gamelog);
    move(12,2);
    gamelog.newline();
-   addstr("United States, commentators are hailing it as the beginning of a new", gamelog);
-   move(13,2);
-   gamelog.newline();
-   addstr("Conservative era.", gamelog);
+   addstr("そしてマスコミは新たな保守の時代の始まりを歓迎した。", gamelog);
    gamelog.nextMessage();
 
-   move(15,2);
+   move(14,2);
    set_color(COLOR_RED,COLOR_BLACK,1);
-   addstr("President ", gamelog);
    addstr(execname[EXEC_PRESIDENT], gamelog);
-   addstr(" has asked the new Congress to move quickly", gamelog);
-   move(16,2);
+   addstr("大統領は自身の過激な保守強硬的政策をただちに", gamelog);
+   move(15,2);
    gamelog.newline();
-   addstr("to rubber stamp his radical Arch-Conservative agenda. ", gamelog);
+   addstr("実行するよう議会に迫った。", gamelog);
    set_color(COLOR_WHITE,COLOR_BLACK,0);
-   addstr("The left seems", gamelog);
+   addstr("左派には自由主義の正気と正義の危機に", gamelog);
    gamelog.newline();
-   move(17,2);
-   addstr("powerless to stop this imminent trampling of Liberal Sanity and Justice.", gamelog);
+   move(16,2);
+   addstr("立ち向かう力は残されていなかった。", gamelog);
    gamelog.nextMessage();
 
-   move(19,2);
-   addstr("In this dark time, the Liberal Crime Squad is born...", gamelog);
+   move(18,2);
+   addstr("この暗黒の時代に、リベラル・クライム・スコードが動き出す…", gamelog);
    gamelog.nextMessage();
 
    getkey();
@@ -1266,10 +1256,10 @@ void makecharacter()
    erase();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
-   addstr("What is your name to the People?");
+   addstr("あなたは人々からどのように呼ばれるか?");
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(1,0);
-   addstr("Press enter to be known by your real name instead.");
+   addstr("本当の名前の代わりの名前を入力してください。");
 
    enter_name(2,0,newcr->name,CREATURE_NAMELEN,newcr->propername);
 
@@ -1281,7 +1271,7 @@ void makecharacter()
    newsq->id=0;cursquadid++;
    newsq->squad[0]=newcr;
    newcr->squadid=0;
-   strcpy(newsq->name,"The Liberal Crime Squad");
+   strcpy(newsq->name,"リベラルクライムスコード");
    for(int l=0;l<len(location);l++)
    {
       if(location[l]->type==base)
