@@ -1726,15 +1726,15 @@ void run_television_news_stories()
 
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(19,13);
-                  addstr("ﾉﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍｻ");
+                  addstr("+----------------------------------------------------+");
                   move(20,13);
-                  addstr("ｺ     The  police  have  beaten  a  black  man  in   ｺ");
+                  addstr("|     The  police  have  beaten  a  black  man  in   |");
                   move(21,13);
-                  addstr("ｺ   Los Angeles again.  This time, the incident is   ｺ");
+                  addstr("|   Los Angeles again.  This time, the incident is   |");
                   move(22,13);
-                  addstr("ｺ   taped by  a passerby  and saturates  the news.   ｺ");
+                  addstr("|   taped by  a passerby  and saturates  the news.   |");
                   move(23,13);
-                  addstr("ﾈﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍｼ");
+                  addstr("+----------------------------------------------------+");
 
                   getkey();
 
@@ -1798,15 +1798,15 @@ void run_television_news_stories()
 
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(19,13);
-                  addstr("ﾉﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍｻ");
+                  addstr("+----------------------------------------------------+");
                   move(20,13);
-                  addstr("ｺ     A  Cable  News  anchor  accidentally  let  a   ｺ");
+                  addstr("|     A  Cable  News  anchor  accidentally  let  a   |");
                   move(21,13);
-                  addstr("ｺ   bright Liberal guest  finish a sentence.  Many   ｺ");
+                  addstr("|   bright Liberal guest  finish a sentence.  Many   |");
                   move(22,13);
-                  addstr("ｺ   viewers  across  the  nation  were  listening.   ｺ");
+                  addstr("|   viewers  across  the  nation  were  listening.   |");
                   move(23,13);
-                  addstr("ﾈﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍｼ");
+                  addstr("+----------------------------------------------------+");
 
                   getkey();
 
@@ -1826,15 +1826,15 @@ void run_television_news_stories()
 
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(19,13);
-                  addstr("ﾉﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍｻ");
+                  addstr("+----------------------------------------------------+");
                   move(20,13);
-                  addstr("ｺ     A new show glamorizing the lives of the rich   ｺ");
+                  addstr("|     A new show glamorizing the lives of the rich   |");
                   move(21,13);
-                  addstr("ｺ   begins airing  this week.  With the nationwide   ｺ");
+                  addstr("|   begins airing  this week.  With the nationwide   |");
                   move(22,13);
-                  addstr("ｺ   advertising  blitz, it's bound  to be popular.   ｺ");
+                  addstr("|   advertising  blitz, it's bound  to be popular.   |");
                   move(23,13);
-                  addstr("ﾈﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍｼ");
+                  addstr("+----------------------------------------------------+");
 
                   getkey();
 
@@ -1847,15 +1847,15 @@ void run_television_news_stories()
 
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(19,13);
-                  addstr("ﾉﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍｻ");
+                  addstr("+----------------------------------------------------+");
                   move(20,13);
-                  addstr("ｺ     A major Cable News channel has hired a slick   ｺ");
+                  addstr("|     A major Cable News channel has hired a slick   |");
                   move(21,13);
-                  addstr("ｺ   new anchor for  one of its news shows.  Guided   ｺ");
+                  addstr("|   new anchor for  one of its news shows.  Guided   |");
                   move(22,13);
-                  addstr("ｺ   by impressive  advertising, America  tunes in.   ｺ");
+                  addstr("|   by impressive  advertising, America  tunes in.   |");
                   move(23,13);
-                  addstr("ﾈﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍｼ");
+                  addstr("+----------------------------------------------------+");
 
                   getkey();
 
@@ -1870,15 +1870,15 @@ void run_television_news_stories()
 
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(19,13);
-                  addstr("ﾉﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍｻ");
+                  addstr("+----------------------------------------------------+");
                   move(20,13);
-                  addstr("ｺ     A  failed partial  birth abortion  goes on a   ｺ");
+                  addstr("|     A  failed partial  birth abortion  goes on a   |");
                   move(21,13);
-                  addstr("ｺ   popular  afternoon  talk  show.    The  studio   ｺ");
+                  addstr("|   popular  afternoon  talk  show.    The  studio   |");
                   move(22,13);
-                  addstr("ｺ   audience and viewers nationwide feel its pain.   ｺ");
+                  addstr("|   audience and viewers nationwide feel its pain.   |");
                   move(23,13);
-                  addstr("ﾈﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍｼ");
+                  addstr("+----------------------------------------------------+");
 
                   getkey();
 

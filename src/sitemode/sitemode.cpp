@@ -359,52 +359,52 @@ void mode_site()
          if(!enemy||!sitealarm)set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(9,1);
-         addstr("W,A,D,X - Move");
+         addstr("W,A,D,X - 移動");
          if(partysize>1)set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(11,1);
-         addstr("O - Change the squad's Liberal order");
+         addstr("O - 部隊のリベラルの順序を変える");
          if(partysize>0&&(party_status==-1||partysize>1))set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(12,1);
-         addstr("# - Check the status of a squad Liberal");
+         addstr("# - 部隊のリベラルの状態を確認する");
          if(party_status!=-1)set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(13,1);
-         addstr("0 - Show the squad's Liberal status");
+         addstr("0 - 部隊のリベラルの状態を表示する");
 
          if(len(groundloot)||(levelmap[locx][locy][locz].flag&SITEBLOCK_LOOT))
             set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(9,17);
-         addstr("G - Get Loot");
+         addstr("G - 略奪する");
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(10,17);
-         addstr("N - Options");
+         addstr("N - オプション");
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(9,32);
-         addstr("M - Map");
+         addstr("M - 地図");
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(10,32);
-         addstr("S - Wait");
+         addstr("S - 待つ");
 
          if(!enemy||!sitealarm) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(10,42);
-         addstr("L - Reload");
+         addstr("L - 装填");
 
          if(enemy) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(13,42);
-         addstr("K - Kidnap");
+         addstr("K - 誘拐");
 
          if(talkers) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(14,17);
-         addstr("T - Talk");
+         addstr("T - 話す");
 
          bool graffiti=0;
          if(levelmap[locx][locy][locz].special!=-1&&
@@ -433,8 +433,8 @@ void mode_site()
          }
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(11,42);
-         if(graffiti)addstr("U - Graffiti");
-         else addstr("U - Use");
+         if(graffiti)addstr("U - ラクガキ");
+         else addstr("U - 使う");
 
          move(12,42);
          if(enemy&&sitealarm)
@@ -453,24 +453,24 @@ void mode_site()
                }
             }
             if(!evade)
-               addstr("V - Sneak");
+               addstr("V - 隠れる");
             else
-               addstr("V - Run");
+               addstr("V - 逃げる");
          }
          else
          {
             set_color(COLOR_BLACK,COLOR_BLACK,1);
-            addstr("V - Evade");
+            addstr("V - 逃れる");
          }
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(9,42);
-         addstr("E - Equip");
+         addstr("E - 装備");
 
          if(enemy)set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(14,1);
-         addstr("F - Fight!");
+         addstr("F - 戦う!");
 
          if(!location[cursite]->siege.siege)
          {
@@ -478,14 +478,14 @@ void mode_site()
             {
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                move(14,32);
-               addstr("R - Release oppressed");
+               addstr("R - 解放する");
             }
             else
             {
                if(hostages) set_color(COLOR_WHITE,COLOR_BLACK,0);
                else set_color(COLOR_BLACK,COLOR_BLACK,1);
                move(14,32);
-               addstr("R - Release hostage");
+               addstr("R - 捕虜を解放する");
             }
          }
          else
@@ -493,7 +493,7 @@ void mode_site()
             if(libnum>6)set_color(COLOR_WHITE,COLOR_BLACK,0);
             else set_color(COLOR_BLACK,COLOR_BLACK,1);
             move(14,32);
-            addstr("R - Reorganize");
+            addstr("R - 再編成");
          }
       }
       else
@@ -521,7 +521,7 @@ void mode_site()
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(9,1);
-         addstr("C - Reflect on your Conservative ineptitude");
+         addstr("C - 保守的愚かさを反省する");
       }
 
       //PRINT SITE MAP
@@ -772,13 +772,13 @@ void mode_site()
 
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(9,1);
-                  addstr("Which Liberal will speak?");
+                  addstr("どのリベラルが話すか?");
                   move(9,50);
-                  addstr("Issues");
+                  addstr("議論");
                   move(9,60);
-                  addstr("Dating");
+                  addstr("デート");
                   move(9,70);
-                  addstr("Bluff");
+                  addstr("嘘");
 
                   int y=11;
                   for(int p=0;p<6;p++)
@@ -830,7 +830,7 @@ void mode_site()
 
                         set_color(COLOR_WHITE,COLOR_BLACK,1);
                         move(9,1);
-                        addstr("To whom?");
+                        addstr("誰と?");
 
                         int x=1,y=11;
                         for(int t=0;t<ENCMAX;t++)
@@ -899,7 +899,7 @@ void mode_site()
                                        set_color(COLOR_WHITE,COLOR_BLACK,1);
                                        move(9,1);
                                        addstr(encounter[tk].name);
-                                       addstr(" won't talk to you.");
+                                       addstr("は話せない。");
 
                                        getkey();
                                     }
@@ -911,7 +911,7 @@ void mode_site()
 
                                        set_color(COLOR_WHITE,COLOR_BLACK,1);
                                        move(9,1);
-                                       addstr("You have to deal with the enemies first.");
+                                       addstr("まず敵をどうにかしなければならない。");
 
                                        getkey();
                                     }
@@ -1170,10 +1170,10 @@ void mode_site()
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
-               addstr("You free ", gamelog);
-               if(followers>1)addstr("some Oppressed Liberals", gamelog);
-               else addstr("an Oppressed Liberal", gamelog);
-               addstr(" from the Conservatives.", gamelog);
+               addstr("保守派から", gamelog);
+               if(followers>1)addstr("リベラルたち", gamelog);
+               else addstr("リベラル", gamelog);
+               addstr("を解放した。", gamelog);
                gamelog.newline();
 
                if(actgot<followers)

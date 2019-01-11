@@ -319,47 +319,47 @@ char talkToGeneric(Creature &a, Creature &tk)
 
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(11,1);
-   addstr("A - Strike up a conversation about politics");
-   if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr(" while naked");
-   addstr(".");
+   addstr("A - ");
+   if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr("全裸で");
+   addstr("政治の話をする");
    move(12,1);
    if(tk.can_date(a))set_color(COLOR_WHITE,COLOR_BLACK,0);
    else set_color(COLOR_BLACK,COLOR_BLACK,1);
-   addstr("B - Drop a pickup line");
-   if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr(" while naked");
-   addstr(".");
+   addstr("B - ");
+   if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr("全裸で");
+   addstr("口説く");
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(13,1);
-   addstr("C - On second thought, don't say anything");
-   if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr(" while naked");
-   addstr(".");
+   addstr("C - ");
+   if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr("全裸で");
+   addstr("よく考えると何も話すことがない");
    if(tk.type==CREATURE_LANDLORD&&location[cursite]->renting==-1)
    {
       move(14,1);
-      addstr("D - Rent a room");
-      if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr(" while naked");
-      addstr(".");
+      addstr("D - ");
+      if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr("全裸で");
+      addstr("部屋を借りる");
    }
    else if(tk.type==CREATURE_LANDLORD&&location[cursite]->renting>0)
    {
       move(14,1);
-      addstr("D - Stop renting a room");
-      if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr(" while naked");
-      addstr(".");
+      addstr("D - ");
+      if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr("全裸で");
+      addstr("部屋を借りるのをやめる");
    }
    else if(tk.type==CREATURE_GANGMEMBER||tk.type==CREATURE_MERC)
    {
       move(14,1);
-      addstr("D - Buy weapons");
-      if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr(" while naked");
-      addstr(".");
+      addstr("D - ");
+      if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr("全裸で");
+      addstr("武器を買う");
    }
    else if(tk.type==CREATURE_BANK_TELLER)
    {
       move(14,1);
-      addstr("D - Rob the bank");
-      if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr(" while naked");
-      addstr(".");
+      addstr("D - ");
+      if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr("全裸で");
+      addstr("銀行を襲う");
    }
 
    while(true)

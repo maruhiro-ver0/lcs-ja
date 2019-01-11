@@ -97,10 +97,10 @@ void printsitemap(int x,int y,int z)
 
    // Build the frame
    set_color(COLOR_WHITE,COLOR_BLACK,0);
-   mvaddstr(8,53,"ﾂﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾂ"); // 27 characters - top of map
-   mvaddstr(24,53,"ﾀﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾙ"); // 27 characters - bottom of map
+   mvaddstr(8,53,"---------------------------"); // 27 characters - top of map
+   mvaddstr(24,53,"|                         |"); // 27 characters - bottom of map
    for(yscreen=9;yscreen<24;yscreen++)
-      mvaddstr(yscreen,53,"ｳ                         ｳ"); // 27 characters - the map itself
+      mvaddstr(yscreen,53,"|                         |"); // 27 characters - the map itself
 
    // Do a preliminary Line of Sight iteration for better Line of Sight detection
    for(xsite=x-2;xsite<x+3;xsite++)
@@ -693,7 +693,7 @@ void clearmaparea(bool lower,bool upper)
    {
       if(!upper&&y<15)continue;
       if(!lower&&y>=15)continue;
-      if(y==8) mvaddstr(y,53,"ﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ");  // 27 characters
+      if(y==8) mvaddstr(y,53,"---------------------------");  // 27 characters
       else mvaddstr(y,53,"                           ");  // 27 spaces
    }
 }

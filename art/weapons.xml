@@ -139,8 +139,8 @@
     </weapontype>
 
     <weapontype idname="WEAPON_REVOLVER_38">
-        <name>.38 リボルバー</name>
-        <name_future>.38 エアガン</name_future>
+        <name>.38リボルバー</name>
+        <name_future>.38エアガン</name_future>
         <shortname>.38ﾘﾎﾞﾙﾊﾞｰ</shortname>
         <shortname_future>.38ｴｱｶﾞﾝ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
@@ -174,8 +174,8 @@
     </weapontype>
 
     <weapontype idname="WEAPON_REVOLVER_44">
-        <name>.44 マグナム</name>
-        <name_future>.44 エアガン</name_future>
+        <name>.44マグナム</name>
+        <name_future>.44エアガン</name_future>
         <shortname>.44ﾏｸﾞﾅﾑ</shortname>
         <shortname_future>.44ｴｱｶﾞﾝ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
@@ -209,8 +209,8 @@
     </weapontype>
 
     <weapontype idname="WEAPON_SEMIPISTOL_45">
-        <name>.45 セミオート</name>
-        <name_future>.45 レーザーピストル</name_future>
+        <name>.45セミオート</name>
+        <name_future>.45レーザーピストル</name_future>
         <shortname>.45ｾﾐｵｰﾄ</shortname>
         <shortname_future>.45ﾚｰｻﾞｰ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
@@ -244,8 +244,8 @@
     </weapontype>
 
     <weapontype idname="WEAPON_SEMIPISTOL_9MM">
-        <name>9mm セミオート</name>
-        <name_future>9mm レーザーピストル</name_future>
+        <name>9mmセミオート</name>
+        <name_future>9mmレーザーピストル</name_future>
         <shortname>9mmｾﾐｵｰﾄ</shortname>
         <shortname_future>9mmﾚｰｻﾞｰ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
@@ -279,8 +279,8 @@
     </weapontype>
 
     <weapontype idname="WEAPON_SHOTGUN_AA12">
-        <name>AA-12 オートショットガン</name>
-        <name_future>Z-12 チェーンブラストガン</name_future>
+        <name>AA-12オートショットガン</name>
+        <name_future>Z-12チェーンブラストガン</name_future>
         <shortname>AA-12</shortname>
         <shortname_future>Z-12</shortname_future>
         <can_take_hostages>true</can_take_hostages>
@@ -320,7 +320,7 @@
 
     <weapontype idname="WEAPON_AUTORIFLE_AK47">
         <name>AK-47</name>
-        <name_future>P74 ウォーレーザー</name_future>
+        <name_future>P74ウォーレーザー</name_future>
         <shortname>AK-47</shortname>
         <shortname_future>P74ｳｫｰ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
@@ -435,7 +435,7 @@
     </weapontype>
 
     <weapontype idname="WEAPON_FLAMETHROWER">
-        <name>M2 火炎放射器</name>
+        <name>M2火炎放射器</name>
         <name_future>プラズマガン</name_future>
         <shortname>M2A1-7</shortname>
         <shortname_future>ﾌﾟﾗｽﾞﾏｶﾞﾝ</shortname_future>
@@ -475,8 +475,8 @@
     </weapontype>
 
     <weapontype idname="WEAPON_CARBINE_M4">
-        <name>M4 カービン銃</name>
-        <name_future>J4 レーザーカービン</name_future>
+        <name>M4カービン銃</name>
+        <name_future>J4レーザーカービン</name_future>
         <shortname>M4</shortname>
         <shortname_future>J4ﾚｰｻﾞｰ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
@@ -520,7 +520,7 @@
 
     <weapontype idname="WEAPON_AUTORIFLE_M16">
         <name>M16</name>
-        <name_future>X15 ミリタリーレーザー</name_future>
+        <name_future>X15ミリタリーレーザー</name_future>
         <shortname>M16</shortname>
         <shortname_future>X15ﾌﾙ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
@@ -562,8 +562,8 @@
     </weapontype>
 
     <weapontype idname="WEAPON_M249_MACHINEGUN">
-        <name>M249 マシンガン</name>
-        <name_future>C249 チェーンガン</name_future>
+        <name>M249マシンガン</name>
+        <name_future>C249チェーンガン</name_future>
         <shortname>M249</shortname>
         <shortname_future>ﾁｪｰﾝｶﾞﾝ</shortname_future>
         <can_take_hostages>true</can_take_hostages>
@@ -637,7 +637,7 @@
     </weapontype>
 
     <weapontype idname="WEAPON_SMG_MP5">
-        <name>MP5 サブマシンガン</name>
+        <name>MP5サブマシンガン</name>
         <name_future>北京プリンス サブマシンガン</name_future>
         <shortname>MP5</shortname>
         <shortname_future>北京ﾌﾟﾘﾝｽ</shortname_future>

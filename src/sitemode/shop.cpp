@@ -151,7 +151,7 @@ void Shop::browse_halfscreen(squadst& customers, int& buyer) const
       printparty();
 
       move(8,45);
-      addstr("Buyer: ");
+      addstr("買う者: ");
       addstr(customers.squad[buyer]->name);
 
       //Write wares and prices
@@ -213,7 +213,7 @@ void Shop::browse_halfscreen(squadst& customers, int& buyer) const
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(y++,1);
-      addstr("E - Look over Equipment");
+      addstr("E - 装備を見る");
 
       if(allow_selling_)
       {
@@ -221,24 +221,24 @@ void Shop::browse_halfscreen(squadst& customers, int& buyer) const
          if(len(location[customers.squad[0]->base]->loot))
             set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
-         addstr("S - Sell something");
+         addstr("S - 売る");
       }
 
       if(party_status!=-1) set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(++y,1);
-      addstr("0 - Show the squad's Liberal status");
+      addstr("0 - 部隊のリベラルの状態を表示する");
 
       if(partysize>0&&(party_status==-1||partysize>1))
          set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(y++,40);
-      addstr("# - Check the status of a squad Liberal");
+      addstr("# - 部隊のリベラルの状態を確認する");
 
       if(partysize>=2) set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(y,1);
-      addstr("B - Choose a buyer");
+      addstr("B - 買う者を選ぶ");
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(y,40);
@@ -287,11 +287,10 @@ void Shop::browse_fullscreen(squadst& customers, int& buyer) const
       erase();
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
-      addstr("What will ");
       addstr(customers.squad[buyer]->name);
-      addstr(" buy?");
+      addstr("は何を買うか?");
       move(1,0);
-      addstr("ﾄﾄﾄﾄPRODUCT NAMEﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄPRICEﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ");
+      addstr("----商品-------------------------------値段-------------------------------------");
 
       //Write wares and prices
       for(int p=page*19,y=2;p<len(available_options)&&p<page*19+19;p++,y++)
@@ -345,7 +344,7 @@ void Shop::sell_loot(squadst& customers) const
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(10,1);
-      addstr("E - Look over Equipment");
+      addstr("E - 装備を見る");
 
       if(len(location[customers.squad[0]->base]->loot))
          set_color(COLOR_WHITE,COLOR_BLACK,0);

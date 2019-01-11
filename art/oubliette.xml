@@ -38,7 +38,7 @@
     <exit>Leave</exit>
     
     <department>
-        <entry>Purchase Halloween Costumes</entry>
+        <entry>ハロウィンの衣装を買う</entry>
         <letter>c</letter>
         <fullscreen>false</fullscreen>
         <sell_masks>true</sell_masks>
@@ -47,70 +47,70 @@
             <class>ARMOR</class>
             <type>ARMOR_TRENCHCOAT</type>
             <letter>t</letter>
-            <description>Buy a Trench Coat</description>
+            <description>トレンチコートを買う</description>
             <price>70</price>
         </item>
         <item>
             <class>ARMOR</class>
             <type>ARMOR_WORKCLOTHES</type>
             <letter>w</letter>
-            <description>Buy Work Clothes</description>
+            <description>作業着を買う</description>
             <price>50</price>
         </item>
         <item>
             <class>ARMOR</class>
             <type>ARMOR_LABCOAT</type>
             <letter>l</letter>
-            <description>Buy a Lab Coat</description>
+            <description>白衣を買う</description>
             <price>200</price>
         </item>
         <item>
             <class>ARMOR</class>
             <type>ARMOR_BLACKROBE</type>
             <letter>r</letter>
-            <description>Buy a Black Judge's Robe</description>
+            <description>黒いローブを買う</description>
             <price>200</price>
         </item>
         <item>
             <class>ARMOR</class>
             <type>ARMOR_CLOWNSUIT</type>
             <letter>c</letter>
-            <description>Buy a Clown Suit</description>
+            <description>ピエロの衣装を買う</description>
             <price>200</price>
         </item>
         <item>
             <class>ARMOR</class>
             <type>ARMOR_BONDAGEGEAR</type>
             <letter>g</letter>
-            <description>Buy Bondage Gear</description>
+            <description>ボンデージを買う</description>
             <price>350</price>
         </item>
         <item>
             <class>ARMOR</class>
             <type>ARMOR_TOGA</type>
             <letter>o</letter>
-            <description>Buy a Toga</description>
+            <description>トーガを買う</description>
             <price>90</price>
         </item>
         <item>
             <class>ARMOR</class>
             <type>ARMOR_ELEPHANTSUIT</type>
             <letter>p</letter>
-            <description>Buy an Elephant Suit</description>
+            <description>象のきぐるみを買う</description>
             <price>1000</price>
         </item>
         <item>
             <class>ARMOR</class>
             <type>ARMOR_DONKEYSUIT</type>
             <letter>d</letter>
-            <description>Buy a Donkey Suit</description>
+            <description>ロバのきぐるみを買う</description>
             <price>1000</price>
         </item>
         <!-- +Masks! -->
     </department>
     
     <department>
-        <entry>Purchase Medieval Gear</entry>
+        <entry>中世の武具を買う</entry>
         <letter>m</letter>
         <fullscreen>false</fullscreen>
         <exit>Done</exit>
@@ -118,63 +118,63 @@
             <class>WEAPON</class>
             <type>WEAPON_DAGGER</type>
             <letter>k</letter>
-            <description>Buy a Dagger</description>
+            <description>ダガーを買う</description>
             <price>20</price>
         </item>
         <item>
             <class>WEAPON</class>
             <type>WEAPON_SWORD</type>
             <letter>s</letter>
-            <description>Buy the Sword of Morfiegor</description>
+            <description>モルフィゴアの剣を買う</description>
             <price>250</price>
         </item>
         <item>
             <class>WEAPON</class>
             <type>WEAPON_DAISHO</type>
             <letter>a</letter>
-            <description>Buy a Katana and Wakizashi</description>
+            <description>刀と脇差を買う</description>
             <price>250</price>
         </item>
         <item>
             <class>WEAPON</class>
             <type>WEAPON_HAMMER</type>
             <letter>h</letter>
-            <description>Buy a Dwarven Hammer</description>
+            <description>ドワーフハンマーを買う</description>
             <price>250</price>
         </item>
         <item>
             <class>WEAPON</class>
             <type>WEAPON_MAUL</type>
             <letter>m</letter>
-            <description>Buy the Maul of Anrin</description>
+            <description>アンリンのモールを買う</description>
             <price>250</price>
         </item>
         <item>
             <class>WEAPON</class>
             <type>WEAPON_CROSS</type>
             <letter>c</letter>
-            <description>Buy a Silver Cross</description>
+            <description>銀の十字架を買う</description>
             <price>250</price>
         </item>
         <item>
             <class>WEAPON</class>
             <type>WEAPON_STAFF</type>
             <letter>w</letter>
-            <description>Buy a Wizard's Staff</description>
+            <description>魔術師の杖を買う</description>
             <price>250</price>
         </item>
         <item>
             <class>ARMOR</class>
             <type>ARMOR_LEATHER</type>
             <letter>L</letter>
-            <description>Buy Leather Armor</description>
+            <description>皮鎧を買う</description>
             <price>800</price>
         </item>
         <item>
             <class>ARMOR</class>
             <type>ARMOR_MITHRIL</type>
             <letter>!</letter> <!-- Not a letter! -->
-            <description>Buy Mithril Mail</description>
+            <description>ミスリルメイルを買う</description>
             <price>1000</price>
         </item>
     </department>
