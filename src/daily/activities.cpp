@@ -1201,8 +1201,8 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
 
       if(DIFFICULTY_HEROIC<=hack_skill+len(truehack)-1)
       {
-         if(len(truehack)>1) strcpy(msg,"Your Hackers have ");
-         else { strcpy(msg,truehack[0]->name); strcat(msg," has "); }
+         if(len(truehack)>1) strcpy(msg,"あなたのハッカー集団は");
+         else { strcpy(msg,truehack[0]->name); strcat(msg,"は"); }
 
          int trackdif=0,juiceval=0;
          int short crime=0;
@@ -1211,7 +1211,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
          {
             case 0:
             {
-               strcat(msg,"pilfered files from a Corporate server.");
+               strcat(msg,"企業のサーバからファイルを盗み取った。");
 
                Item *it=new Loot(*loottype[getloottype("LOOT_CORPFILES")]);
                location[hack[0]->location]->loot.push_back(it);
@@ -1222,7 +1222,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
                break;
             }
             case 1: // *JDS* Penetrated government networks; don't get any loot, but do scare the info community
-               strcat(msg,"caused a scare by breaking into a CIA network.");
+               strcat(msg,"CIAネットワークに侵入して恐怖を与えた。");
 
                trackdif=DIFFICULTY_IMPOSSIBLE;
                crime=LAWFLAG_INFORMATION;
@@ -1230,7 +1230,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
                change_public_opinion(VIEW_INTELLIGENCE,10,0,75);
                break;
             case 2:
-               strcat(msg,"sabotaged a genetics research company's network.");
+               strcat(msg,"遺伝子調査会社のネットワークを妨害した。");
 
                trackdif=DIFFICULTY_SUPERHEROIC;
                crime=LAWFLAG_INFORMATION;
@@ -1239,7 +1239,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
                break;
             case 3:
             {
-               strcat(msg,"intercepted internal media emails.");
+               strcat(msg,"マスメディアの電子メールを傍受した。");
 
                Item *it;
                if(LCSrandom(2))it=new Loot(*loottype[getloottype("LOOT_CABLENEWSFILES")]);
@@ -1252,7 +1252,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
                break;
             }
             case 4:
-               strcat(msg,"broke into military networks leaving LCS slogans.");
+               strcat(msg,"軍用ネットワークに侵入しLCSのスローガンを書き残した。");
 
                trackdif=DIFFICULTY_IMPOSSIBLE;
                crime=LAWFLAG_INFORMATION;
@@ -1261,7 +1261,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
                break;
             case 5:
             {
-               strcat(msg,"uncovered information on dangerous research.");
+               strcat(msg,"問題のある研究の情報を明らかにした。");
 
                Item *it=new Loot(*loottype[getloottype("LOOT_RESEARCHFILES")]);
                location[hack[0]->location]->loot.push_back(it);
@@ -1273,7 +1273,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
             }
             case 6:
             {
-               strcat(msg,"discovered evidence of judicial corruption.");
+               strcat(msg,"司法の汚職の証拠を発見した。");
 
                Item *it=new Loot(*loottype[getloottype("LOOT_JUDGEFILES")]);
                location[hack[0]->location]->loot.push_back(it);
@@ -1285,7 +1285,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
             }
             case 7:
             {
-               strcat(msg,"subverted a Conservative family forum.");
+               strcat(msg,"保守的家族のフォーラムを攻撃した。");
 
                trackdif=DIFFICULTY_SUPERHEROIC;
                crime=LAWFLAG_INFORMATION;
@@ -1296,7 +1296,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
             }
             case 8:
             {
-               strcat(msg,"spread videos of racist police brutality.");
+               strcat(msg,"人種差別的な警官が暴行する動画を拡散した。");
 
                trackdif=DIFFICULTY_SUPERHEROIC;
                crime=LAWFLAG_INFORMATION;
@@ -1307,7 +1307,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
             }
             case 9:
             {
-               strcat(msg,"published emails revealing CEO tax evasion.");
+               strcat(msg,"CEOの税金逃れを暴露する電子メールを送った。");
                //Scambaiting, except you're baiting a CEO
 
                trackdif=DIFFICULTY_SUPERHEROIC;
@@ -1319,7 +1319,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
             }
             case 10:
             {
-               strcat(msg,"revealed huge political bias in INS processes.");
+               strcat(msg,"移民帰化局の政治的偏りを暴露した。");
 
                trackdif=DIFFICULTY_SUPERHEROIC;
                crime=LAWFLAG_INFORMATION;
@@ -1346,26 +1346,26 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
          // Maybe do a switch on issue here to specify which website it was, but I don't feel like
          // doing that right now
 
-         if(len(truehack)>1) strcpy(msg,"Your hackers have ");
-         else { strcpy(msg,truehack[0]->name); strcat(msg," has "); }
+         if(len(truehack)>1) strcpy(msg,"あなたのハッカー集団は");
+         else { strcpy(msg,truehack[0]->name); strcat(msg,"は"); }
 
-         switch(LCSrandom(4))
-         {
-         case 0: strcat(msg,"defaced");crime=LAWFLAG_INFORMATION; break;
-         case 1: strcat(msg,"knocked out");crime=LAWFLAG_COMMERCE; break;
-         case 2: strcat(msg,"threatened");crime=LAWFLAG_SPEECH; break;
-         case 3: strcat(msg,"hacked");crime=LAWFLAG_INFORMATION; break;
-         }
-         strcat(msg," a ");
          switch(LCSrandom(5))
          {
-         case 0: strcat(msg,"corporate website"); break;
-         case 1: strcat(msg,"Conservative forum");break;
-         case 2: strcat(msg,"Conservative blog"); break;
-         case 3: strcat(msg,"news website"); break;
-         case 4: strcat(msg,"government website"); break;
+         case 0: strcat(msg,"企業のウェブサイト"); break;
+         case 1: strcat(msg,"保守派のフォーラム");break;
+         case 2: strcat(msg,"保守派のブログ"); break;
+         case 3: strcat(msg,"ニュースサイト"); break;
+         case 4: strcat(msg,"政府のウェブサイト"); break;
          }
-         strcat(msg,".");
+         strcat(msg,"を");
+         switch(LCSrandom(4))
+         {
+         case 0: strcat(msg,"改ざんした。");crime=LAWFLAG_INFORMATION; break;
+         case 1: strcat(msg,"停止させた。");crime=LAWFLAG_COMMERCE; break;
+         case 2: strcat(msg,"脅迫した。");crime=LAWFLAG_SPEECH; break;
+         case 3: strcat(msg,"ハックした。");crime=LAWFLAG_INFORMATION; break;
+         }
+         strcat(msg,"。");
 
          change_public_opinion(issue,1);
 

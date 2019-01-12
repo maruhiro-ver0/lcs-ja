@@ -365,8 +365,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_BANK_MANAGER">
-        <type_name>銀行家</type_name>
-        <encounter_name>銀行家</encounter_name>
+        <type_name>銀行員</type_name>
+        <encounter_name>銀行員</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>

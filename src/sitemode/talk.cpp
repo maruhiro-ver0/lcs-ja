@@ -299,7 +299,7 @@ char talkToGeneric(Creature &a, Creature &tk)
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(9,1);
    addstr(a.name);
-   addstr(" talks to ");
+   addstr("が");
    switch(tk.align)
    {
    case ALIGN_CONSERVATIVE:
@@ -315,7 +315,7 @@ char talkToGeneric(Creature &a, Creature &tk)
    addstr(tk.name);
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    add_age(tk);
-   addstr(":");
+   addstr("に話しかける:");
 
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(11,1);
@@ -773,11 +773,11 @@ char wannaHearSomethingDisturbing(Creature &a, Creature &tk)
    clearcommandarea();clearmessagearea();clearmaparea();
 
    set_color(COLOR_WHITE,COLOR_BLACK,1);
-   move(9,1);addstr(a.name, gamelog);addstr(" says, ", gamelog);
+   move(9,1);addstr(a.name, gamelog);addstr("は言った。", gamelog);
 
    set_color(COLOR_GREEN,COLOR_BLACK,1);
    move(10,1);
-   addstr("\"Do you want to hear something disturbing?\"", gamelog);
+   addstr("「ちょっといいですか? 」", gamelog);
    gamelog.newline();
 
    getkey();
@@ -795,9 +795,9 @@ char wannaHearSomethingDisturbing(Creature &a, Creature &tk)
 
       switch(tk.type)
       {
-      case CREATURE_TANK: addstr(" rumbles disinterestedly.", gamelog); break;
-      case CREATURE_GUARDDOG: addstr(" barks.", gamelog); break;
-      default: addstr(" doesn't understand.", gamelog); break;
+      case CREATURE_TANK: addstr("はただ音を立てている。", gamelog); break;
+      case CREATURE_GUARDDOG: addstr("は吠えた。", gamelog); break;
+      default: addstr("はわからないようだ。", gamelog); break;
       }
       gamelog.newline();
 
@@ -805,13 +805,13 @@ char wannaHearSomethingDisturbing(Creature &a, Creature &tk)
 
       return 1;
    }
-   else if(strcmp(tk.name,"Prisoner")!=0 && interested)
+   else if(strcmp(tk.name,"囚人")!=0 && interested)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      move(12,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+      move(12,1);addstr(tk.name, gamelog);addstr("は応えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(13,1);
-      addstr("\"What?\"", gamelog);
+      addstr("「何か? 」", gamelog);
       gamelog.newline();
 
       getkey();
@@ -824,15 +824,15 @@ char wannaHearSomethingDisturbing(Creature &a, Creature &tk)
       move(12,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(13,1);
-      if(strcmp(tk.name,"Prisoner")==0)
+      if(strcmp(tk.name,"囚人")==0)
       {
          if(tk.align==ALIGN_LIBERAL)
-            addstr("\"Now's not the time!\"", gamelog);
-         else addstr("\"Leave me alone.\"", gamelog);
+            addstr("「今はダメだ! 」", gamelog);
+         else addstr("「ほっといてくれ。」", gamelog);
       }
-      else addstr("\"No.\"", gamelog);
+      else addstr("「いいえ。」", gamelog);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      addstr(" <turns away>", gamelog);
+      addstr(" <立ち去った>", gamelog);
       gamelog.newline();
 
       getkey();
@@ -846,7 +846,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
    int y=12;
    clearcommandarea();clearmessagearea();clearmaparea();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
-   move(9,1);addstr(a.name, gamelog);addstr(" says, ", gamelog);
+   move(9,1);addstr(a.name, gamelog);addstr("は言った。", gamelog);
    set_color(COLOR_GREEN,COLOR_BLACK,1);
    move(10,1);
    int line;
@@ -1099,7 +1099,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       addstr(" and ", gamelog);
       addstr(tk.name, gamelog);
       addstr(" make plans for tonight", gamelog);
-      if(strcmp(tk.name,"Prisoner")==0)
+      if(strcmp(tk.name,"囚人")==0)
       {
          addstr(", and ", gamelog);
          move(y++,1);
@@ -1335,7 +1335,7 @@ char talkAboutIssues(Creature &a, Creature &tk)
 
    clearcommandarea();clearmessagearea();clearmaparea();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
-   move(9,1);addstr(a.name, gamelog);addstr(" says, ", gamelog);
+   move(9,1);addstr(a.name, gamelog);addstr("は言った。", gamelog);
    set_color(COLOR_GREEN,COLOR_BLACK,1);
    int y=10;
    move(y++,1);
@@ -1513,7 +1513,7 @@ char talkAboutIssues(Creature &a, Creature &tk)
    succeeded = a.skill_check(SKILL_PERSUASION,difficulty);
 
    // Prisoners never accept to join you, you must liberate them instead
-   if(succeeded && strcmp(tk.name,"Prisoner")!=0)
+   if(succeeded && strcmp(tk.name,"囚人")!=0)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move((++y)++,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);

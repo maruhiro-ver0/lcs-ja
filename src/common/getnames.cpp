@@ -100,7 +100,7 @@ std::string getactivity(activityst &act)
    case ACTIVITY_DOS_ATTACKS:
       return "ウェブサイトへの攻撃";
    case ACTIVITY_HACKING:
-      return "ネットワークのハッキング";
+      return "ハッキング";
    case ACTIVITY_SELL_TSHIRTS:
       return "Tシャツの販売";
    case ACTIVITY_SELL_ART:
@@ -175,11 +175,11 @@ std::string gettitle(Creature &cr)
    {
       if(cr.juice<=-50)
       {
-         if(law[LAW_FREESPEECH]==-2) return "社会の××";
+         if(law[LAW_FREESPEECH]==-2) return "社会の[ピー]";
          else return "社会のゴミ";
       }
       else if(cr.juice<=-10) return "保守の落伍者";
-      else if(cr.juice<0) return "保守のゴロツキ";
+      else if(cr.juice<0) return "保守の厄介者";
       else if(cr.juice<10) return "Mindless Conservative";
       else if(cr.juice<50) return "Wrong-Thinker";
       else if(cr.juice<100)
@@ -200,11 +200,11 @@ std::string gettitle(Creature &cr)
    {
       if(cr.juice<=-50)
       {
-         if(law[LAW_FREESPEECH]==-2) return "社会の××";
+         if(law[LAW_FREESPEECH]==-2) return "社会の[ピー]";
          else return "社会のゴミ";
       }
       else if(cr.juice<=-10) return "落伍者";
-      else if(cr.juice<0) return "非リベラルのゴロツキ";
+      else if(cr.juice<0) return "非リベラルの厄介者";
       else if(cr.juice<10) return "非リベラル";
       else if(cr.juice<50) return "Hard Working";
       else if(cr.juice<100) return "Respected";
@@ -217,15 +217,15 @@ std::string gettitle(Creature &cr)
    {
       if(cr.juice<=-50)
       {
-         if(law[LAW_FREESPEECH]==-2) return "社会の××";
+         if(law[LAW_FREESPEECH]==-2) return "社会の[ピー]";
          else return "社会のゴミ";
       }
       else if(cr.juice<=-10) return "落伍者";
-      else if(cr.juice<0) return "ゴロツキ";
+      else if(cr.juice<0) return "厄介者";
       else if(cr.juice<10) return "市民";
       else if(cr.juice<50) return "活動家";
-      else if(cr.juice<100) return "Socialist Threat";
-      else if(cr.juice<200) return "Revolutionary";
+      else if(cr.juice<100) return "社会の危険因子";
+      else if(cr.juice<200) return "革命家";
       else if(cr.juice<500) return "Urban Commando";
       else if(cr.juice<1000) return "Liberal Guardian";
       else return "Elite Liberal";
@@ -782,7 +782,7 @@ std::string getlawflag(int type)
    case LAWFLAG_HIREILLEGAL:return(law[LAW_IMMIGRATION]<1?"不法移民雇用":"不法雇用");
    //case LAWFLAG_GUNUSE:return "違法な武器の使用";
    //case LAWFLAG_GUNCARRY:return "違法な武器の運搬";
-   case LAWFLAG_COMMERCE:return "通商妨害";
+   case LAWFLAG_COMMERCE:return "業務妨害";
    case LAWFLAG_INFORMATION:return "ハッキング";
    case LAWFLAG_BURIAL:return "違法な遺体処理";
    case LAWFLAG_BREAKING:return "不法侵入";

@@ -497,7 +497,7 @@ void printlocation(long loc)
       if(!location[loc]->siege.underattack)
       {
          set_color(COLOR_YELLOW,COLOR_BLACK,1);
-         mvaddstr(2,1,"The police have surrounded this location.");
+         mvaddstr(2,1,"ここは警官隊に包囲されている。");
       }
       else
       {
@@ -522,7 +522,7 @@ void printlocation(long loc)
    else
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      mvaddstr(2,1,"You are not under siege...  yet.");
+      mvaddstr(2,1,"包囲されていない… 今は。");
    }
 
    if(location[loc]->can_be_upgraded())

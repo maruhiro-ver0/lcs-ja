@@ -60,30 +60,30 @@ void add_age(Creature& person)
    else
    {
       if(person.age<30)
-         addstr("20s");
+         addstr("20代");
       else if(person.age<40)
-         addstr("30s");
+         addstr("30代");
       else if(person.age<50)
-         addstr("40s");
+         addstr("40代");
       else if(person.age<60)
-         addstr("50s");
+         addstr("50代");
       else if(person.age<70)
-         addstr("60s");
+         addstr("60代");
       else if(person.age<80)
-         addstr("70s");
+         addstr("70代");
       else if(person.age<90)
-         addstr("80s");
+         addstr("80代");
       else
-         addstr("Very Old");
+         addstr("かなりの高齢");
    }
 
    // Assess their gender Liberally but allow ambiguity since you don't know them well enough yet
    if(person.gender_liberal == GENDER_MALE)
-      addstr(", Male");
+      addstr("、男性");
    else if(person.gender_liberal == GENDER_FEMALE)
-      addstr(", Female");
+      addstr("、女性");
    else
-      addstr(", Ambiguous");
+      addstr("、性別不明");
 
    // Note if there's some conflict with Conservative society's perceptions
    if(person.gender_liberal != person.gender_conservative && person.gender_liberal != GENDER_NEUTRAL)

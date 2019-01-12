@@ -1400,7 +1400,7 @@ void congress(char clearformess,char canseethings)
       else makedelimiter();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
-      addstr("法案採決のための審議が始まった!");
+      addstr("法案採決の審議が始まった!");
 
       getkey();
    }
@@ -1654,14 +1654,14 @@ void congress(char clearformess,char canseethings)
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(c*3+2,62);
             addstr(yesvotes_h);
-            addstr(" 賛成");
+            addstr("賛成");
 
             if(l==HOUSENUM-1&&!yeswin_h) set_color(COLOR_WHITE,COLOR_BLACK,1);
             else if(l==HOUSENUM-1) set_color(COLOR_BLACK,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(c*3+3,62);
             addstr(l+1-yesvotes_h);
-            addstr(" 反対");
+            addstr("反対");
          }
 
          if(l%4==0&&s<SENATENUM)
@@ -1710,7 +1710,7 @@ void congress(char clearformess,char canseethings)
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(c*3+2,70);
             addstr(yesvotes_s);
-            addstr(" Yea");
+            addstr("賛成");
 
             if(l==HOUSENUM-1&&yesvotes_s==SENATEMAJORITY-1&&yeswin_s)
             {
@@ -1724,7 +1724,7 @@ void congress(char clearformess,char canseethings)
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(c*3+3,70);
             addstr(s-yesvotes_s);
-            addstr(" Nay");
+            addstr("反対");
 
             if(l==HOUSENUM-1&&yesvotes_s==SENATEMAJORITY-1&&!yeswin_s)
             {
@@ -1749,13 +1749,12 @@ void congress(char clearformess,char canseethings)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(23,0);
-         addstr("Press any key to watch the President.                   ");
-         addstr("キーを押すと大統領を表示する。                          ");
+         addstr("キーを押すと大統領署名を表示する。                      ");
 
          getkey();
 
          move(0,35);
-         addstr("大統領");
+         addstr("大統領署名");
 
          pause_ms(500);
       }
@@ -1817,7 +1816,7 @@ void congress(char clearformess,char canseethings)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(23,0);
-         addstr("キーを押すとこの月に起こったことを表示する。    ");
+         addstr("キーを押すとこの月に起こったことを表示する。      ");
 
          getkey();
       }

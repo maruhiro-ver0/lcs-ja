@@ -275,9 +275,9 @@ void siegecheck(char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                move(8,1);
-               addstr("The police have surrounded the ", gamelog);
+               addstr("警官隊が", gamelog);
                addstr(location[l]->getname(), gamelog);
-               addstr("!", gamelog);
+               addstr("を包囲している!", gamelog);
                gamelog.newline();
                location[l]->siege.underattack=0;
 
@@ -944,7 +944,7 @@ void siegeturn(char clearformess)
          if(!location[l]->siege.underattack)
          {
             // Seperate logging message.
-            gamelog.record("A day passes while under siege...");
+            gamelog.record("包囲されながら日が過ぎた…");
             gamelog.newline();
 
             //EAT
@@ -957,7 +957,7 @@ void siegeturn(char clearformess)
                else makedelimiter();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
-               addstr("Your Liberals are starving!", gamelog);
+               addstr("飢え死にしそうだ!", gamelog);
                gamelog.newline();
 
                getkey();
@@ -984,7 +984,7 @@ void siegeturn(char clearformess)
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
                   addstr(pool[p]->name , gamelog);
-                  addstr(" has starved to death.", gamelog);
+                  addstr("は飢えて死んだ。", gamelog);
                   gamelog.newline();
 
                   getkey();
@@ -1537,12 +1537,12 @@ void giveup()
          addstr(pname, gamelog);
          if(strcmp(pname,pcname))
          {
-            addstr(", aka ", gamelog);
+            addstr("、別名", gamelog);
             addstr(pcname, gamelog);
-            addstr(",", gamelog);
+            addstr("、", gamelog);
          }
          move(6,1);
-         addstr("is taken to the police station.", gamelog);
+         addstr("は警察署に連行された。", gamelog);
          gamelog.newline();
       }
       if(pcount>1)
@@ -1566,7 +1566,7 @@ void giveup()
             int confiscated = LCSrandom(LCSrandom(ledger.get_funds()-2000)+1)+1000;
             if(ledger.get_funds()-confiscated > 50000)
                confiscated += ledger.get_funds() - 30000 - LCSrandom(20000) - confiscated;
-            addstr_fl(gamelog,"Law enforcement has confiscated $%d in LCS funds.",confiscated);
+            addstr_fl(gamelog,"司法はLCSの資金 $%d を差し押さえた。",confiscated);
             gamelog.newline();
             ledger.subtract_funds(confiscated,EXPENSE_CONFISCATED);
          }
@@ -2618,10 +2618,10 @@ void statebrokenlaws(Creature & cr)
       addstr("CARRYING ILLEGAL WEAPONS");*/
    //COMMERCE
    else if(breakercount[LAWFLAG_COMMERCE])
-      addstr("ELECTRONIC SABOTAGE");
+      addstr("業務妨害");
    //INFORMATION
    else if(breakercount[LAWFLAG_INFORMATION])
-      addstr("HACKING");
+      addstr("ハッキング");
    //UNLAWFUL BURIAL
    else if(breakercount[LAWFLAG_BURIAL])
       addstr("UNLAWFUL BURIAL");
