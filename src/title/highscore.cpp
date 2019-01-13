@@ -47,7 +47,7 @@ void viewhighscores(int musicoverride)
 
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
-   addstr("The Liberal ELITE");
+   addstr("リベラル・エリート");
 
    int y=2;
    for(s=0;s<SCORENUM;s++)
@@ -63,108 +63,108 @@ void viewhighscores(int musicoverride)
          else if(yourscore==s)set_color(COLOR_RED,COLOR_BLACK,0);
          else set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(y+1,0);
+         addstr(score[s].year);
+         addstr("年");
+         addstr(getmonth(score[s].month));
+         addstr(" ");
          switch(score[s].endtype)
          {
             case END_WON:
-               addstr("The Liberal Crime Squad liberalized the country in ");
+               addstr("リベラル・クライム・スコードはこの国をリベラル化した。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_VICTORY);
                break;
             case END_POLICE:
-               addstr("The Liberal Crime Squad was brought to justice in ");
+               addstr("リベラル・クライム・スコードは法の裁きにかけられた。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_CIA:
-               addstr("The Liberal Crime Squad was blotted out in ");
+               addstr("リベラル・クライム・スコードは抹消された。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_HICKS:
-               addstr("The Liberal Crime Squad was mobbed in ");
+               addstr("リベラル・クライム・スコードは暴徒よって破壊された。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_CORP:
-               addstr("The Liberal Crime Squad was downsized in ");
+               addstr("リベラル・クライム・スコードはリストラされた。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_DEAD:
-               addstr("The Liberal Crime Squad was KIA in ");
+               addstr("リベラル・クライム・スコードは志半ばに倒れた。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_REAGAN:
-               addstr("The country was Reaganified in ");
+               addstr("リベラル・クライム・スコードはレーガン化した。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_REAGANIFIED);
                break;
             case END_PRISON:
-               addstr("The Liberal Crime Squad died in prison in ");
+               addstr("リベラル・クライム・スコードは獄死した。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_EXECUTED:
-               addstr("The Liberal Crime Squad was executed in ");
+               addstr("リベラル・クライム・スコードは処刑された。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_DATING:
-               addstr("The Liberal Crime Squad was on vacation in ");
+               addstr("リベラル・クライム・スコードは最後の余暇を楽しんだ。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_HIDING:
-               addstr("The Liberal Crime Squad was in permanent hiding in ");
+               addstr("リベラル・クライム・スコードは永遠に隠れた。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_DISBANDLOSS:
-               addstr("The Liberal Crime Squad was hunted down in ");
+               addstr("リベラル・クライム・スコードは消滅した。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_DISPERSED:
-               addstr("The Liberal Crime Squad was scattered in ");
+               addstr("リベラル・クライム・スコードは解散した。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_CCS:
-               addstr("The Liberal Crime Squad was out-Crime Squadded in ");
+               addstr("リベラル・クライム・スコードは犯罪集団に倒された。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_FIREMEN:
-               addstr("The Liberal Crime Squad was burned in ");
+               addstr("リベラル・クライム・スコードは燃やされた。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_STALIN:
-               addstr("The country was Stalinized in ");
+               addstr("リベラル・クライム・スコードはスターリン化した。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_STALINIZED);
                break;
          }
-         addstr(getmonth(score[s].month));
-         addstr(" ");
-         addstr(score[s].year);
-         addstr(". ");
 
          move(y+2,0);
-         addstr("Recruits: ");
+         addstr("教化: ");
          addstr(score[s].stat_recruits);
 
          move(y+3,0);
-         addstr("Martyrs: ");
+         addstr("死亡: ");
          addstr(score[s].stat_dead);
 
          move(y+2,20);
-         addstr("Kills: ");
+         addstr("殺害: ");
          addstr(score[s].stat_kills);
 
          move(y+3,20);
-         addstr("Kidnappings: ");
+         addstr("誘拐: ");
          addstr(score[s].stat_kidnappings);
 
          move(y+2,40);
-         addstr("$ Taxed: ");
+         addstr("$ 収入: ");
          addstr(score[s].stat_funds);
 
          move(y+3,40);
-         addstr("$ Spent: ");
+         addstr("$ 支出: ");
          addstr(score[s].stat_spent);
 
          move(y+2,60);
-         addstr("Flags Bought: ");
+         addstr("国旗購入: ");
          addstr(score[s].stat_buys);
 
          move(y+3,60);
-         addstr("Flags Burned: ");
+         addstr("国旗焼却: ");
          addstr(score[s].stat_burns);
 
          y+=4;
@@ -175,38 +175,38 @@ void viewhighscores(int musicoverride)
 
    //UNIVERSAL STATS
    move(22,0);
-   addstr("Universal Liberal Statistics:");
+   addstr("全世界リベラル統計:");
 
    move(23,0);
-   addstr("Recruits: ");
+   addstr("教化: ");
    addstr(ustat_recruits);
 
    move(24,0);
-   addstr("Martyrs: ");
+   addstr("死亡: ");
    addstr(ustat_dead);
 
    move(23,20);
-   addstr("Kills: ");
+   addstr("殺害: ");
    addstr(ustat_kills);
 
    move(24,20);
-   addstr("Kidnappings: ");
+   addstr("誘拐: ");
    addstr(ustat_kidnappings);
 
    move(23,40);
-   addstr("$ Taxed: ");
+   addstr("$ 収入: ");
    addstr(ustat_funds);
 
    move(24,40);
-   addstr("$ Spent: ");
+   addstr("$ 支出: ");
    addstr(ustat_spent);
 
    move(23,60);
-   addstr("Flags Bought: ");
+   addstr("国旗購入: ");
    addstr(ustat_buys);
 
    move(24,60);
-   addstr("Flags Burned: ");
+   addstr("国旗焼却: ");
    addstr(ustat_burns);
 
    getkey();

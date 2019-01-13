@@ -339,8 +339,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_LANDLORD">
-        <type_name>地主</type_name>
-        <encounter_name>地主</encounter_name>
+        <type_name>大家</type_name>
+        <encounter_name>大家</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>

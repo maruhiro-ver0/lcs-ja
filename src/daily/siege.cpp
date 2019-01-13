@@ -1566,7 +1566,7 @@ void giveup()
             int confiscated = LCSrandom(LCSrandom(ledger.get_funds()-2000)+1)+1000;
             if(ledger.get_funds()-confiscated > 50000)
                confiscated += ledger.get_funds() - 30000 - LCSrandom(20000) - confiscated;
-            addstr_fl(gamelog,"司法はLCSの資金 $%d を差し押さえた。",confiscated);
+            addstr_fl(gamelog,"LCSの資金 $%d が差し押さえられた。",confiscated);
             gamelog.newline();
             ledger.subtract_funds(confiscated,EXPENSE_CONFISCATED);
          }

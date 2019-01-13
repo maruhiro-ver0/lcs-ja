@@ -397,10 +397,10 @@ char heyIWantToCancelMyRoom(Creature &a, Creature &tk)
    set_color(COLOR_WHITE, COLOR_BLACK, 1);
    move(9, 1);
    addstr(a.name, gamelog);
-   addstr(" says, ", gamelog);
+   addstr("は言った。", gamelog);
    set_color(COLOR_GREEN, COLOR_BLACK, 1);
    move(10, 1);
-   addstr("\"I'd like cancel my room.\"", gamelog);
+   addstr("「部屋を借りるのを止めたい。」", gamelog);
    gamelog.newline();
 
    getkey();
@@ -410,10 +410,10 @@ char heyIWantToCancelMyRoom(Creature &a, Creature &tk)
       set_color(COLOR_WHITE, COLOR_BLACK, 1);
       move(12, 1);
       addstr(tk.name, gamelog);
-      addstr(" responds, ", gamelog);
+      addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN, COLOR_BLACK, 1);
       move(13, 1);
-      addstr("\"Put some clothes on before I call the cops.\"", gamelog);
+      addstr("「警察を呼ばれる前に服を着なさい。」", gamelog);
       gamelog.newline();
 
       getkey();
@@ -424,10 +424,10 @@ char heyIWantToCancelMyRoom(Creature &a, Creature &tk)
    set_color(COLOR_WHITE, COLOR_BLACK, 1);
    move(12, 1);
    addstr(tk.name, gamelog);
-   addstr(" responds, ", gamelog);
+   addstr("は答えた。", gamelog);
    set_color(COLOR_CYAN, COLOR_BLACK, 1);
    move(13, 1);
-   addstr("\"Alright. Please clear out your room.\"", gamelog);
+   addstr("「わかりました。部屋を片付けておいてください。」", gamelog);
    gamelog.newline();
 
    getkey();
@@ -461,10 +461,10 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
 {
    clearcommandarea();clearmessagearea();clearmaparea();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
-   move(9,1);addstr(a.name, gamelog);addstr(" says, ", gamelog);
+   move(9,1);addstr(a.name, gamelog);addstr("は言った。", gamelog);
    set_color(COLOR_GREEN,COLOR_BLACK,1);
    move(10,1);
-   addstr("\"I'd like to rent a room.\"", gamelog);
+   addstr("「部屋を借りたい。」", gamelog);
    gamelog.newline();
 
    getkey();
@@ -472,10 +472,10 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
    if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      move(12,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+      move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(13,1);
-      addstr("\"Put some clothes on before I call the cops.\"", gamelog);
+      addstr("「警察を呼ばれる前に服を着なさい。」", gamelog);
       gamelog.newline();
 
       getkey();
@@ -777,7 +777,7 @@ char wannaHearSomethingDisturbing(Creature &a, Creature &tk)
 
    set_color(COLOR_GREEN,COLOR_BLACK,1);
    move(10,1);
-   addstr("「ちょっといいですか? 」", gamelog);
+   addstr("「ちょっといいですか。」", gamelog);
    gamelog.newline();
 
    getkey();
@@ -808,7 +808,7 @@ char wannaHearSomethingDisturbing(Creature &a, Creature &tk)
    else if(strcmp(tk.name,"囚人")!=0 && interested)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      move(12,1);addstr(tk.name, gamelog);addstr("は応えた。", gamelog);
+      move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(13,1);
       addstr("「何か? 」", gamelog);

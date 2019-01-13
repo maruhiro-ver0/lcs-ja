@@ -640,7 +640,7 @@ void makecharacter()
             //SKILL_STEALTH 1
             move(7,0);
             if(choices || selection == 1)
-               addstr("B - 両親が離婚した。暴力が原因で。");
+               addstr("B - 両親が離婚した。暴力が原因だった。");
             //SKILL_HANDTOHAND 1
             move(9,0);
             if(choices || selection == 2)
@@ -1271,7 +1271,7 @@ void makecharacter()
    newsq->id=0;cursquadid++;
    newsq->squad[0]=newcr;
    newcr->squadid=0;
-   strcpy(newsq->name,"リベラルクライムスコード");
+   strcpy(newsq->name,"リベラル・クライム・スコード");
    for(int l=0;l<len(location);l++)
    {
       if(location[l]->type==base)

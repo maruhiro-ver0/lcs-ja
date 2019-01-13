@@ -315,38 +315,38 @@ void initlocation(Location &loc)
 
    switch(loc.type)
    {
-   case SITE_CITY_SEATTLE: loc.rename("Seattle", "SEA"); break;
-   case SITE_CITY_LOS_ANGELES: loc.rename("Los Angeles", "LA"); break;
-   case SITE_CITY_NEW_YORK: loc.rename("New York", "NYC"); break;
-   case SITE_CITY_CHICAGO: loc.rename("Chicago", "CHI"); break;
-   case SITE_CITY_DETROIT: loc.rename("Detroit", "DET"); break;
-   case SITE_CITY_ATLANTA: loc.rename("Atlanta", "ATL"); break;
-   case SITE_CITY_MIAMI: loc.rename("Miami", "MI"); break;
-   case SITE_CITY_WASHINGTON_DC: loc.rename("Washington, DC", "DC"); break;
-   case SITE_DOWNTOWN: loc.rename("Downtown", "Downtown"); break;
-   case SITE_UDISTRICT: loc.rename("University District", "U-District"); break;
-   case SITE_COMMERCIAL: loc.rename("Shopping", "Shopping"); break;
-   case SITE_INDUSTRIAL: loc.rename("Industrial District", "I-District"); break;
-   case SITE_OUTOFTOWN: loc.rename("City Outskirts", "Outskirts"); break;
-   case SITE_TRAVEL: loc.rename("Travel", "Travel"); break;
+   case SITE_CITY_SEATTLE: loc.rename("シアトル", "SEA"); break;
+   case SITE_CITY_LOS_ANGELES: loc.rename("ロサンゼルス", "LA"); break;
+   case SITE_CITY_NEW_YORK: loc.rename("ニューヨーク", "NYC"); break;
+   case SITE_CITY_CHICAGO: loc.rename("シカゴ", "CHI"); break;
+   case SITE_CITY_DETROIT: loc.rename("デトロイト", "DET"); break;
+   case SITE_CITY_ATLANTA: loc.rename("アトランタ", "ATL"); break;
+   case SITE_CITY_MIAMI: loc.rename("マイアミ", "MI"); break;
+   case SITE_CITY_WASHINGTON_DC: loc.rename("ワシントンDC", "DC"); break;
+   case SITE_DOWNTOWN: loc.rename("都心部", "都心部"); break;
+   case SITE_UDISTRICT: loc.rename("大学周辺", "大学周辺"); break;
+   case SITE_COMMERCIAL: loc.rename("ショッピング", "ショッピング"); break;
+   case SITE_INDUSTRIAL: loc.rename("工業地区", "工業地区"); break;
+   case SITE_OUTOFTOWN: loc.rename("都市の外れ", "都市の外れ"); break;
+   case SITE_TRAVEL: loc.rename("旅行", "旅行"); break;
    case SITE_GOVERNMENT_POLICESTATION:
       if(law[LAW_POLICEBEHAVIOR]==-2&&law[LAW_DEATHPENALTY]==-2) {
-         loc.rename("Death Squad HQ", "Death Squad HQ");
+         loc.rename("死の部隊の司令部", "死の部隊司令部");
       } else {
-         loc.rename("Police Station", "Police Station");
+         loc.rename("警察署", "警察署");
       } break;
    case SITE_GOVERNMENT_COURTHOUSE:
       if(law[LAW_DEATHPENALTY]==-2) {
-         loc.rename("Halls of Ultimate Judgment", "Judge Hall");
+         loc.rename("最後の審判の館", "審判の館");
       } else {
-         loc.rename("Courthouse", "Courthouse");
+         loc.rename("裁判所", "裁判所");
       } break;
    case SITE_GOVERNMENT_FIRESTATION:
       if(law[LAW_FREESPEECH]==-2) {
-         loc.rename("Fireman HQ", "Fireman HQ");
+         loc.rename("消防隊司令部", "消防隊司令部");
          loc.hidden = false;
       } else {
-         loc.rename("Fire Station", "Fire Station");
+         loc.rename("消防署", "消防署");
          loc.hidden = true;
       } break;
    case SITE_GOVERNMENT_PRISON:
@@ -354,124 +354,123 @@ void initlocation(Location &loc)
       {
          switch(LCSrandom(5))
          {
-            case 0:strcpy(loc.name,"Happy");break;
-            case 1:strcpy(loc.name,"Cheery");break;
-            case 2:strcpy(loc.name,"Quiet");break;
-            case 3:strcpy(loc.name,"Green");break;
-            case 4:strcpy(loc.name,"Nectar");break;
+            case 0:strcpy(loc.name,"幸福の");break;
+            case 1:strcpy(loc.name,"陽気な");break;
+            case 2:strcpy(loc.name,"静寂の");break;
+            case 3:strcpy(loc.name,"緑の");break;
+            case 4:strcpy(loc.name,"花蜜の");break;
          }
-         strcat(loc.name," ");
          switch(LCSrandom(5))
          {
-            case 0:strcat(loc.name,"Valley");break;
-            case 1:strcat(loc.name,"Meadow");break;
-            case 2:strcat(loc.name,"Hills");break;
-            case 3:strcat(loc.name,"Glade");break;
-            case 4:strcat(loc.name,"Forest");break;
+            case 0:strcat(loc.name,"谷");break;
+            case 1:strcat(loc.name,"草原");break;
+            case 2:strcat(loc.name,"丘");break;
+            case 3:strcat(loc.name,"林");break;
+            case 4:strcat(loc.name,"森");break;
          }
-         strcat(loc.name," Forced Labor Camp");
-         strcpy(loc.shortname,"Joycamp");
+         strcat(loc.name," 強制労働キャンプ");
+         strcpy(loc.shortname,"楽しいキャンプ");
       }
       else
       {
          lastname(loc.name,true);
-         strcat(loc.name," Prison");
-         strcpy(loc.shortname,"Prison");
+         strcat(loc.name,"収容所");
+         strcpy(loc.shortname,"収容所");
       }
       break;
    case SITE_INDUSTRY_NUCLEAR:
       if(law[LAW_NUCLEARPOWER]==2) {
-         loc.rename("Nuclear Waste Center", "NWaste Center");
+         loc.rename("核汚染発電所", "核汚染");
       } else {
-         loc.rename("Nuclear Power Plant", "NPower Plant");
+         loc.rename("原子力発電所", "原発");
       } break;
    case SITE_GOVERNMENT_INTELLIGENCEHQ:
       if(law[LAW_PRIVACY]==-2 && law[LAW_POLICEBEHAVIOR]==-2) {
-         loc.rename("Ministry of Love", "Miniluv");
+         loc.rename("愛情省", "愛情省");
       } else {
-         loc.rename("Intelligence HQ", "Int. HQ");
+         loc.rename("中央情報局", "中央情報局");
       } break;
    case SITE_GOVERNMENT_ARMYBASE:
       if(law[LAW_MILITARY]==-2) {
-         loc.rename("Ministry of Peace", "Minipax");
+         loc.rename("平和省", "平和省");
       } else {
          lastname(loc.name,true);
-         strcat(loc.name," Army Base");
-         strcpy(loc.shortname,"Army Base");
+         strcat(loc.name,"陸軍基地");
+         strcpy(loc.shortname,"基地");
       } break;
    case SITE_GOVERNMENT_WHITE_HOUSE:
-      loc.rename("White House", "White House");
+      loc.rename("ホワイトハウス", "ホワイトハウス");
       break;
    case SITE_CORPORATE_HEADQUARTERS:
-      loc.rename("Corporate HQ","Corp. HQ");
+      loc.rename("企業本社","本社");
       break;
    case SITE_BUSINESS_BANK:
-      loc.rename("American Bank Corp", "Bank");
+      loc.rename("アメリカ・バンク", "銀行");
       break;
    case SITE_BUSINESS_PAWNSHOP:
       lastname(loc.name,true);
       if(law[LAW_GUNCONTROL]==ALIGN_ELITELIBERAL)
-         strcat(loc.name,"'s Pawnshop");
+         strcat(loc.name,"質店");
       else
-         strcat(loc.name," Pawn & Gun");
-      strcpy(loc.shortname,"Pawnshop");
+         strcat(loc.name,"質と銃");
+      strcpy(loc.shortname,"質店");
       break;
    case SITE_CORPORATE_HOUSE:
       if(law[LAW_CORPORATE]==-2&&law[LAW_TAX]==-2)
-         loc.rename("CEO Castle", "CEO Castle");
+         loc.rename("CEOの城", "CEOの城");
       else
-         loc.rename("CEO Residence", "CEO House");
+         loc.rename("CEOの邸宅", "CEOの邸宅");
       break;
    case SITE_RESIDENTIAL_SHELTER:
-      loc.rename("Homeless Shelter", "Shelter");
+      loc.rename("ホームレス・シェルター", "シェルター");
       break;
    case SITE_INDUSTRY_WAREHOUSE:
       do {
-         strcpy(loc.name,"Abandoned ");
+         strcpy(loc.name,"閉鎖された");
          /*lastname(loc.name,true);
          strcat(loc.name," ");*/
 
          switch(LCSrandom(10))
          {
          case 0:
-            strcat(loc.name,"Meat Plant");
-            strcpy(loc.shortname,"Meat Plant");
+            strcat(loc.name,"食肉工場");
+            strcpy(loc.shortname,"食肉工場");
             break;
          case 1:
-            strcat(loc.name,"Warehouse");
-            strcpy(loc.shortname,"Warehouse");
+            strcat(loc.name,"倉庫");
+            strcpy(loc.shortname,"倉庫");
             break;
          case 2:
-            strcat(loc.name,"Paper Mill");
-            strcpy(loc.shortname,"Paper Mill");
+            strcat(loc.name,"製紙工場");
+            strcpy(loc.shortname,"製紙工場");
             break;
          case 3:
-            strcat(loc.name,"Cement Factory");
-            strcpy(loc.shortname,"Cement");
+            strcat(loc.name,"セメント工場");
+            strcpy(loc.shortname,"セメント工場");
             break;
          case 4:
-            strcat(loc.name,"Fertilizer Plant");
-            strcpy(loc.shortname,"Fertilizer");
+            strcat(loc.name,"肥料工場");
+            strcpy(loc.shortname,"肥料工場");
             break;
          case 5:
-            strcat(loc.name,"Drill Factory");
-            strcpy(loc.shortname,"Drill");
+            strcat(loc.name,"工作機械工場");
+            strcpy(loc.shortname,"機械工場");
             break;
          case 6:
-            strcat(loc.name,"Steel Plant");
-            strcpy(loc.shortname,"Steel");
+            strcat(loc.name,"製鉄所");
+            strcpy(loc.shortname,"製鉄所");
             break;
          case 7:
-            strcat(loc.name,"Packing Plant");
-            strcpy(loc.shortname,"Packing");
+            strcat(loc.name,"パック工場");
+            strcpy(loc.shortname,"パック工場");
             break;
          case 8:
-            strcat(loc.name,"Toy Factory");
-            strcpy(loc.shortname,"Toy");
+            strcat(loc.name,"おもちゃ工場");
+            strcpy(loc.shortname,"おもちゃ工場");
             break;
          case 9:
-            strcat(loc.name,"Building Site");
-            strcpy(loc.shortname,"Building");
+            strcat(loc.name,"ビル");
+            strcpy(loc.shortname,"ビル");
             break;
          }
       } while(loc.duplicatelocation());
@@ -480,42 +479,42 @@ void initlocation(Location &loc)
       switch(LCSrandom(5))
       {
       case 0:
-         loc.rename("Aluminum Factory", "Alum Fact");
+         loc.rename("アルミ工場", "アルミ工場");
          break;
       case 1:
-         loc.rename("Plastic Factory", "Plast Fact");
+         loc.rename("プラスチック工場", "プラ工場");
          break;
       case 2:
-         loc.rename("Oil Refinery", "Refinery");
+         loc.rename("石油精製所", "石油所");
          break;
       case 3:
-         loc.rename("Auto Plant", "Auto Plant");
+         loc.rename("自動車工場", "車工場");
          break;
       case 4:
-         loc.rename("Chemical Factory", "Chem Fact");
+         loc.rename("化学工場", "化学工場");
          break;
       }
       break;
    case SITE_MEDIA_CABLENEWS:
-      loc.rename("Cable News Station", "News Station");
+      loc.rename("ケーブルニュース局", "ニュース局");
       break;
    case SITE_MEDIA_AMRADIO:
-      loc.rename("AM Radio Station", "Radio Station");
+      loc.rename("AMラジオ局", "ラジオ局");
       break;
    case SITE_RESIDENTIAL_APARTMENT_UPSCALE:
       do {
          lastname(loc.name,true);
          strcpy(loc.shortname,loc.name);
-         strcat(loc.name," Condominiums");
-         strcat(loc.shortname," Condos");
+         strcat(loc.name,"マンション");
+         strcat(loc.shortname,"マンション");
       } while(loc.duplicatelocation());
       break;
    case SITE_RESIDENTIAL_APARTMENT:
       do {
          lastname(loc.name,true);
          strcpy(loc.shortname,loc.name);
-         strcat(loc.name," Apartments");
-         strcat(loc.shortname," Apts");
+         strcat(loc.name,"アパート");
+         strcat(loc.shortname,"アパート");
       } while(loc.duplicatelocation());
       break;
    case SITE_RESIDENTIAL_TENEMENT:
@@ -523,74 +522,74 @@ void initlocation(Location &loc)
          do {
             lastname(loc.name,true);
          } while(len(loc.name)>7);
-         strcat(loc.name," St. Housing Projects");
-         strcpy(loc.shortname, "Projects");
+         strcat(loc.name,"通り団地");
+         strcpy(loc.shortname, "団地");
       } while(loc.duplicatelocation());
       break;
    case SITE_HOSPITAL_UNIVERSITY:
-      loc.rename("The University Hospital", "U Hospital");
+      loc.rename("大学病院", "大学病院");
       break;
    case SITE_HOSPITAL_CLINIC:
-      loc.rename("The Free Clinic", "Clinic");
+      loc.rename("無料診療所", "診療所");
       break;
    case SITE_LABORATORY_GENETIC:
       lastname(loc.name,true);
-      strcat(loc.name," Genetics");
-      strcpy(loc.shortname,"Genetics Lab");
+      strcat(loc.name,"遺伝子研究所");
+      strcpy(loc.shortname,"遺伝子研究所");
       break;
    case SITE_LABORATORY_COSMETICS:
       lastname(loc.name,true);
-      strcat(loc.name," Cosmetics");
-      strcpy(loc.shortname,"Cosmetics Lab");
+      strcat(loc.name,"化粧品");
+      strcpy(loc.shortname,"化粧品研究所");
       break;
    case SITE_BUSINESS_CARDEALERSHIP:
       generate_name(loc.name,GENDER_WHITEMALEPATRIARCH);
-      strcat(loc.name,"'s Used Cars");
-      strcpy(loc.shortname,"Used Cars");
+      strcat(loc.name,"中古車");
+      strcpy(loc.shortname,"中古車");
       break;
    case SITE_BUSINESS_DEPTSTORE:
       lastname(loc.name,true);
-      strcat(loc.name,"'s Department Store");
-      strcpy(loc.shortname,"Dept. Store");
+      strcat(loc.name,"デパート");
+      strcpy(loc.shortname,"デパート");
       break;
    case SITE_BUSINESS_HALLOWEEN:
       loc.rename("The Oubliette", "Oubliette");
       break;
    case SITE_INDUSTRY_SWEATSHOP:
       lastname(loc.name,true);
-      strcat(loc.name," Garment Makers");
-      strcpy(loc.shortname,"Sweatshop");
+      strcat(loc.name,"縫製工場");
+      strcpy(loc.shortname,"強制労働工場");
       break;
    case SITE_BUSINESS_CRACKHOUSE:
       do {
          lastname(loc.name,true);
-         strcat(loc.name," St. ");
+         strcat(loc.name,"通り");
          if(law[LAW_DRUGS]==2)
          {
             switch(LCSrandom(4))
             {
             case 0:
-               strcat(loc.name,"Recreational Drugs Center");
-               strcpy(loc.shortname,"Drugs Center");
+               strcat(loc.name,"癒しの薬局");
+               strcpy(loc.shortname,"薬局");
                break;
             case 1:
-               strcat(loc.name,"Coffee House");
-               strcpy(loc.shortname,"Coffee House");
+               strcat(loc.name,"コーヒーハウス");
+               strcpy(loc.shortname,"コーヒーハウス");
                break;
             case 2:
-               strcat(loc.name,"Cannabis Lounge");
-               strcpy(loc.shortname,"Cannabis Lounge");
+               strcat(loc.name,"マリファナ・ラウンジ");
+               strcpy(loc.shortname,"ラウンジ");
                break;
             case 3:
-               strcat(loc.name,"Marijuana Dispensary");
-               strcpy(loc.shortname,"Dispensary");
+               strcat(loc.name,"大麻調剤所");
+               strcpy(loc.shortname,"調剤所");
                break;
             }
          }
          else
          {
-            strcat(loc.name,"Crack House");
-            strcpy(loc.shortname,"Crack House");
+            strcat(loc.name,"コカイン窟");
+            strcpy(loc.shortname,"コカイン窟");
          }
       } while(loc.duplicatelocation());
       break;
@@ -598,23 +597,23 @@ void initlocation(Location &loc)
       strcpy(loc.name,"");
       switch(LCSrandom(5))
       {
-         case 0:strcat(loc.name,"Natural");break;
-         case 1:strcat(loc.name,"Harmonious");break;
-         case 2:strcat(loc.name,"Restful");break;
-         case 3:strcat(loc.name,"Healthy");break;
-         case 4:strcat(loc.name,"New You");break;
+         case 0:strcat(loc.name,"ナチュラル");break;
+         case 1:strcat(loc.name,"ハーモニー");break;
+         case 2:strcat(loc.name,"レスト");break;
+         case 3:strcat(loc.name,"ヘルシー");break;
+         case 4:strcat(loc.name,"ニュー・ユー");break;
       }
-      strcat(loc.name," ");
+      strcat(loc.name,"・");
       switch(LCSrandom(5))
       {
-         case 0:strcat(loc.name,"Diet");break;
-         case 1:strcat(loc.name,"Methods");break;
-         case 2:strcat(loc.name,"Plan");break;
-         case 3:strcat(loc.name,"Orange");break;
-         case 4:strcat(loc.name,"Carrot");break;
+         case 0:strcat(loc.name,"ダイエット");break;
+         case 1:strcat(loc.name,"メソッド");break;
+         case 2:strcat(loc.name,"プラン");break;
+         case 3:strcat(loc.name,"オレンジ");break;
+         case 4:strcat(loc.name,"キャロット");break;
       }
-      strcat(loc.name," Juice Bar");
-      strcpy(loc.shortname,"Juice Bar");
+      strcat(loc.name,"・ジュースバー");
+      strcpy(loc.shortname,"ジュースバー");
       break;
    case SITE_BUSINESS_VEGANCOOP:
       strcpy(loc.name,"");
