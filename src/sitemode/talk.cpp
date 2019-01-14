@@ -492,7 +492,7 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
    }
 
    set_color(COLOR_WHITE,COLOR_BLACK,1);
-   move(12,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+   move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
    set_color(COLOR_CYAN,COLOR_BLACK,1);
    move(13,1);
    addstr("\"It'll be $", gamelog);
@@ -540,7 +540,7 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
          getkey();
 
          set_color(COLOR_WHITE,COLOR_BLACK,1);
-         move(12,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+         move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
          set_color(COLOR_CYAN,COLOR_BLACK,1);
          move(13,1);
          addstr("\"Rent is due by the third of every month.", gamelog);
@@ -572,7 +572,7 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
          getkey();
 
          set_color(COLOR_WHITE,COLOR_BLACK,1);
-         move(12,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+         move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
          set_color(COLOR_CYAN,COLOR_BLACK,1);
          move(13,1);
          addstr("\"Not my problem...\"", gamelog);
@@ -630,7 +630,7 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
          if(roll < difficulty - 1)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            move(12,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+            move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
             set_color(COLOR_CYAN,COLOR_BLACK,1);
             move(13,1);
             addstr("\"I think you'd better leave.\"", gamelog);
@@ -646,7 +646,7 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
          else
          {
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            move(12,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+            move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
             set_color(COLOR_CYAN,COLOR_BLACK,1);
             move(13,1);
             addstr("\"Jesus... it's yours...\"", gamelog);
@@ -694,7 +694,7 @@ char heyINeedAGun(Creature &a, Creature &tk)
    if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      move(12,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+      move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(13,1);
       addstr("\"Jesus...\"", gamelog);
@@ -711,7 +711,7 @@ char heyINeedAGun(Creature &a, Creature &tk)
       a.get_armor().get_itemtypename() == "ARMOR_DEATHSQUADUNIFORM"))
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      move(12,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+      move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(13,1);
       addstr("\"I don't sell guns, officer.\"", gamelog);
@@ -724,7 +724,7 @@ char heyINeedAGun(Creature &a, Creature &tk)
    if(sitealarm!=0)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      move(12,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+      move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(13,1);
       addstr("\"We can talk when things are calm.\"", gamelog);
@@ -744,7 +744,7 @@ char heyINeedAGun(Creature &a, Creature &tk)
    case SITE_RESIDENTIAL_BOMBSHELTER:
    case SITE_RESIDENTIAL_SHELTER:
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      move(12,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+      move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(13,1);
       addstr("\"What exactly do you need?\"", gamelog);
@@ -756,7 +756,7 @@ char heyINeedAGun(Creature &a, Creature &tk)
       return 1;
    default:
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      move(12,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+      move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(13,1);
       addstr("\"Uhhh... not a good place for this.\"", gamelog);
@@ -821,7 +821,7 @@ char wannaHearSomethingDisturbing(Creature &a, Creature &tk)
    else
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      move(12,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+      move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(13,1);
       if(strcmp(tk.name,"囚人")==0)
@@ -1007,7 +1007,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       && tk.type==CREATURE_PROSTITUTE)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      move(y++,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+      move(y++,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_RED,COLOR_BLACK,1);
       move(y++,1);
 
@@ -1021,7 +1021,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
    else if(succeeded)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      move(y++,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+      move(y++,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(y++,1);
 
@@ -1145,7 +1145,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
    else
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      move(y++,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+      move(y++,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_RED,COLOR_BLACK,1);
       move(y++,1);
       if(tk.type == CREATURE_CORPORATE_CEO)
@@ -1516,7 +1516,7 @@ char talkAboutIssues(Creature &a, Creature &tk)
    if(succeeded && strcmp(tk.name,"囚人")!=0)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      move((++y)++,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+      move((++y)++,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(y++,1);
       if(tk.type==CREATURE_MUTANT&&tk.get_attribute(ATTRIBUTE_INTELLIGENCE,true)<3)
@@ -1576,7 +1576,7 @@ char talkAboutIssues(Creature &a, Creature &tk)
    else
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      move((++y)++,1);addstr(tk.name, gamelog);addstr(" responds, ", gamelog);
+      move((++y)++,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       if(tk.type==CREATURE_MUTANT&&
          tk.get_attribute(ATTRIBUTE_INTELLIGENCE,true)<3)

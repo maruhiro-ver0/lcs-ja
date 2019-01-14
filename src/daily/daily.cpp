@@ -365,9 +365,9 @@ void advanceday(char &clearformess,char canseethings)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(8,1);
             addstr(squad[sq]->name, gamelog);
-            addstr(" has arrived at ", gamelog);
+            addstr("は", gamelog);
             addstr(location[squad[sq]->activity.arg]->getname(), gamelog);
-            addstr(".", gamelog);
+            addstr("に到着した。", gamelog);
             gamelog.nextMessage();
 
             getkey();
