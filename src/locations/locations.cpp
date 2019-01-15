@@ -131,7 +131,7 @@ string Location::city_description()
    case SITE_CITY_CHICAGO: return "マフィアの本拠地";
    case SITE_CITY_DETROIT: return "アメリカの殺人事件のトップ";
    case SITE_CITY_ATLANTA: return "南部の誇り";
-   case SITE_CITY_MIAMI: return "熱帯の楽園";
+   case SITE_CITY_MIAMI: return "常夏の楽園";
    default: return "";
    }
 }

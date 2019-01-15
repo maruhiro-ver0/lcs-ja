@@ -56,14 +56,14 @@ bool liberalagenda(signed char won)
       {
          set_color(COLOR_GREEN,COLOR_BLACK,1);
          move(0,0);
-         addstr("The Triumph of the Liberal Agenda");
+         addstr("リベラル・アジェンダの勝利");
          music.play(MUSIC_VICTORY);
       }
       else if(won==-1||won==-2)
       {
          set_color(COLOR_RED,COLOR_BLACK,1);
          move(0,0);
-         addstr("The Abject Failure of the Liberal Agenda");
+         addstr("リベラル・アジェンダの敗北");
          if(won==-1) music.play(MUSIC_REAGANIFIED);
          if(won==-2) music.play(MUSIC_STALINIZED);
       }
@@ -71,7 +71,7 @@ bool liberalagenda(signed char won)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(0,0);
-         addstr("The Status of the Liberal Agenda");
+         addstr("リベラル・アジェンダの状況");
          music.play(MUSIC_LIBERALAGENDA);
       }
 
@@ -84,22 +84,22 @@ bool liberalagenda(signed char won)
       {
 
          move(1,0);
-         addstr("ﾉﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍｻﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾂﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄｿ");
+         addstr("+-----------------+----------+----------+");
          move(2,0);
-         addstr("ｺ GENERAL SUMMARY ｺ ISSUES A ｳ ISSUES B ｳ");
+         addstr("|       概要      |  論点 A  |  論点 B  |");
          move(3,0);
-         addstr("ｼ                 ﾈﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾏﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾏﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍ");
+         addstr("+                 +----------+----------+---------------------------------------");
 
          signed char align=exec[EXEC_PRESIDENT];
          set_alignment_color(align,true);
          move(5,0);
-         if(won==-1) addstr("King: ");
-         else if(won==-2) addstr("General Secretary: ");
+         if(won==-1) addstr("王: ");
+         else if(won==-2) addstr("書記長: ");
          else
          {
-            addstr("President ");
-            if(execterm==1)addstr("(1st Term):");
-            else addstr("(2nd Term):");
+            addstr("大統領 ");
+            if(execterm==1)addstr("(1期目):");
+            else addstr("(2期目):");
          }
          if(won==-2) move(5,30);
          else move(5,25);
@@ -108,9 +108,9 @@ bool liberalagenda(signed char won)
          align=exec[EXEC_VP];
          set_alignment_color(align,true);
          move(6,0);
-         if(won==-1) addstr("Minister of Love: ");
-         else if(won==-2) addstr("Premier: ");
-         else addstr("Vice President: ");
+         if(won==-1) addstr("愛情大臣: ");
+         else if(won==-2) addstr("首相: ");
+         else addstr("副大統領: ");
          if(won==-2) move(6,30);
          else move(6,25);
          addstr(execname[EXEC_VP]);
@@ -118,9 +118,9 @@ bool liberalagenda(signed char won)
          align=exec[EXEC_STATE];
          set_alignment_color(align,true);
          move(7,0);
-         if(won==-1) addstr("Minister of Peace: ");
-         else if(won==-2) addstr("Foreign Affairs Commissar: ");
-         else addstr("Secretary of State: ");
+         if(won==-1) addstr("平和大臣: ");
+         else if(won==-2) addstr("外務委員長: ");
+         else addstr("国務長官: ");
          if(won==-2) move(7,30);
          else move(7,25);
          addstr(execname[EXEC_STATE]);
@@ -128,9 +128,9 @@ bool liberalagenda(signed char won)
          align=exec[EXEC_ATTORNEY];
          set_alignment_color(align,true);
          move(8,0);
-         if(won==-1) addstr("Minister of Truth: ");
-         else if(won==-2) addstr("Internal Affairs Commissar: ");
-         else addstr("Attorney General: ");
+         if(won==-1) addstr("真理大臣: ");
+         else if(won==-2) addstr("内務委員長: ");
+         else addstr("司法長官: ");
          if(won==-2) move(8,30);
          else move(8,25);
          addstr(execname[EXEC_ATTORNEY]);
@@ -139,13 +139,13 @@ bool liberalagenda(signed char won)
          {
             set_color(COLOR_RED,COLOR_BLACK,1);
             move(10,0);
-            addstr("The Congress consists of CEOs and televangelists.");
+            addstr("CEO・テレビ宣教師議会");
          }
          else if(won==-2)
          {
             set_color(COLOR_RED,COLOR_BLACK,1);
             move(10,0);
-            addstr("The Congress consists of Stalinist Party loyalists.");
+            addstr("スターリン党議会");
          }
          else
          {
@@ -158,13 +158,13 @@ bool liberalagenda(signed char won)
             else if(housemake[3]+housemake[4]>=HOUSEMAJORITY) align=ALIGN_LIBERAL; // Liberals plus Elite Liberals have a majority
             else align=ALIGN_MODERATE; // nobody has a majority
             set_alignment_color(align,true);
-            mvaddstr(10,0,"House: ");
-            if(stalinmode) addstr(tostring(housemake[5])+"Sta, ");
-            addstr(tostring(housemake[4])+"Lib+, ");
-            addstr(tostring(housemake[3])+"Lib, ");
-            addstr(tostring(housemake[2])+"Mod, ");
-            addstr(tostring(housemake[1])+"Cons, ");
-            addstr(tostring(housemake[0])+"Cons+");
+            mvaddstr(10,0,"下院: ");
+            if(stalinmode) addstr("ｽﾀ"+tostring(housemake[5])+", ");
+            addstr("ﾘﾍﾞﾗﾙ+"+tostring(housemake[4])+", ");
+            addstr("ﾘﾍﾞﾗﾙ"+tostring(housemake[3])+", ");
+            addstr("穏健"+tostring(housemake[2])+", ");
+            addstr("保守"+tostring(housemake[1])+", ");
+            addstr("保守+"+tostring(housemake[0]));
 
             int senatemake[6]={0,0,0,0,0,0};
             for(int s=0;s<SENATENUM;s++) senatemake[senate[s]+2]++;
@@ -177,13 +177,13 @@ bool liberalagenda(signed char won)
             else align=ALIGN_MODERATE; // nobody has a majority
             set_alignment_color(align,true);
             senatemake[exec[EXEC_VP]+2]--; // Vice President isn't actually a Senator though
-            mvaddstr(11,0,"Senate: ");
-            if(stalinmode) addstr(tostring(senatemake[5])+"Sta, ");
-            addstr(tostring(senatemake[4])+"Lib+, ");
-            addstr(tostring(senatemake[3])+"Lib, ");
-            addstr(tostring(senatemake[2])+"Mod, ");
-            addstr(tostring(senatemake[1])+"Cons, ");
-            addstr(tostring(senatemake[0])+"Cons+");
+            mvaddstr(11,0,"上院: ");
+            if(stalinmode) addstr("ｽﾀ"+tostring(senatemake[5])+", ");
+            addstr("ﾘﾍﾞﾗﾙ+"+tostring(senatemake[4])+", ");
+            addstr("ﾘﾍﾞﾗﾙ"+tostring(senatemake[3])+", ");
+            addstr("穏健"+tostring(senatemake[2])+", ");
+            addstr("保守"+tostring(senatemake[1])+", ");
+            addstr("保守+"+tostring(senatemake[0]));
          }
 
          if(won==-1||won==-2) set_color(COLOR_RED,COLOR_BLACK,1);
@@ -201,19 +201,11 @@ bool liberalagenda(signed char won)
             set_alignment_color(align,true);
          }
 
-         mvaddchar(5,56,'S');
-         mvaddchar(6,56,'U');
-         mvaddchar(7,56,'P');
-         mvaddchar(8,56,'R');
-         mvaddchar(9,56,'E');
-         mvaddchar(10,56,'M');
-         mvaddchar(11,56,'E');
-
-         mvaddchar(6,58,'C');
-         mvaddchar(7,58,'O');
-         mvaddchar(8,58,'U');
-         mvaddchar(9,58,'R');
-         mvaddchar(10,58,'T');
+         mvaddstr(6,54, "　 最");
+         mvaddstr(7,54, "裁 高");
+         mvaddstr(8,54, "判 裁");
+         mvaddstr(9,54, "官 判");
+         mvaddstr(10,54, "　 所");
 
          if(won==-1)
          {
@@ -243,7 +235,7 @@ bool liberalagenda(signed char won)
             else if(won==1&&wincondition==WINCONDITION_ELITE)
                set_alignment_color(ALIGN_ELITELIBERAL,true);
             else set_color(COLOR_BLACK,COLOR_BLACK,1);
-            mvaddstr(14+l/3,l%3*26,"\x11ﾄﾄﾄﾄﾄ\x10");
+            mvaddstr(14+l/3,l%3*26,"|-----|");
             if(won==-1||won==-2)
                set_alignment_color(ALIGN_ARCHCONSERVATIVE,true);
             else set_alignment_color(law[l],true);
@@ -259,20 +251,20 @@ bool liberalagenda(signed char won)
          if(page==PAGE_ISSUES_A)
          {
             move(1,0);
-            addstr("ﾚﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾉﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍｻﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄｿ");
+            addstr("+-----------------+----------+----------+");
             move(2,0);
-            addstr("ｳ GENERAL SUMMARY ｺ ISSUES A ｺ ISSUES B ｳ");
+            addstr("|       概要      |  論点 A  |  論点 B  |");
             move(3,0);
-            addstr("ﾏﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍｼ          ﾈﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾏﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍ");
+            addstr("+-----------------+          +----------+---------------------------------------");
          }
          else
          {
             move(1,0);
-            addstr("ﾚﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾂﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾉﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍｻ");
+            addstr("+-----------------+----------+----------+");
             move(2,0);
-            addstr("ｳ GENERAL SUMMARY ｳ ISSUES A ｺ ISSUES B ｺ");
+            addstr("|       概要      |  論点 A  |  論点 B  |");
             move(3,0);
-            addstr("ﾏﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾏﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍｼ          ﾈﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍﾍ");
+            addstr("+-----------------+----------+          +---------------------------------------");
          }
 
          int y=4,startinglaw=0;

@@ -310,29 +310,29 @@ std::string getlaw(int l)
 {
    switch(l)
    {
-   case LAW_ABORTION:return "Abortion Rights";
-   case LAW_ANIMALRESEARCH:return "Animal Rights"; // a.k.a. "Animal Research"
-   case LAW_POLICEBEHAVIOR:return "Police Regulation"; // a.k.a. "Police Behavior"
-   case LAW_PRIVACY:return "Privacy Rights"; // a.k.a. "Privacy"
-   case LAW_DEATHPENALTY:return "Death Penalty"; // a.k.a. "Capital Punishment"
-   case LAW_NUCLEARPOWER:return "Nuclear Power";
-   case LAW_POLLUTION:return "Pollution";
-   case LAW_LABOR:return "Labor Laws"; // a.k.a. "Workers' Rights"
-   case LAW_GAY:return "Gay Rights"; // a.k.a. "Homosexual Rights"
-   case LAW_CORPORATE:return "Corporate Law"; // a.k.a. "Corporate Ethics"
-   case LAW_FREESPEECH:return "Free Speech"; // a.k.a. "Freedom of Speech"
-   case LAW_FLAGBURNING:return "Flag Burning";
-   case LAW_GUNCONTROL:return "Gun Control";
-   case LAW_TAX:return "Tax Structure"; // a.k.a. "Tax Law"
-   case LAW_WOMEN:return "Women's Rights";
-   case LAW_CIVILRIGHTS:return "Civil Rights";
-   case LAW_DRUGS:return "Drug Laws"; // a.k.a. "Drug Law"
-   case LAW_IMMIGRATION:return "Immigration";
-   case LAW_ELECTIONS:return "Election Reform";
-   case LAW_MILITARY:return "Military Spending";
-   case LAW_PRISONS:return "Prison Regulation";
-   case LAW_TORTURE:return "Human Rights";
-   default:return "Software Bugs";
+   case LAW_ABORTION:return "中絶の権利";
+   case LAW_ANIMALRESEARCH:return "動物の権利"; // a.k.a. "Animal Research"
+   case LAW_POLICEBEHAVIOR:return "警察権の規制"; // a.k.a. "Police Behavior"
+   case LAW_PRIVACY:return "プライバシー権"; // a.k.a. "Privacy"
+   case LAW_DEATHPENALTY:return "死刑制度"; // a.k.a. "Capital Punishment"
+   case LAW_NUCLEARPOWER:return "原子力政策";
+   case LAW_POLLUTION:return "公害";
+   case LAW_LABOR:return "労働法"; // a.k.a. "Workers' Rights"
+   case LAW_GAY:return "同性愛者の権利"; // a.k.a. "Homosexual Rights"
+   case LAW_CORPORATE:return "会社法"; // a.k.a. "Corporate Ethics"
+   case LAW_FREESPEECH:return "言論の自由"; // a.k.a. "Freedom of Speech"
+   case LAW_FLAGBURNING:return "国旗焼却";
+   case LAW_GUNCONTROL:return "銃規制";
+   case LAW_TAX:return "税制度"; // a.k.a. "Tax Law"
+   case LAW_WOMEN:return "女性の権利";
+   case LAW_CIVILRIGHTS:return "市民の権利";
+   case LAW_DRUGS:return "薬物規制"; // a.k.a. "Drug Law"
+   case LAW_IMMIGRATION:return "移民政策";
+   case LAW_ELECTIONS:return "選挙改革";
+   case LAW_MILITARY:return "軍事支出";
+   case LAW_PRISONS:return "受刑者の権利";
+   case LAW_TORTURE:return "人権";
+   default:return "バグ";
    }
 }
 
