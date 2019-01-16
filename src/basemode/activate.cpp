@@ -176,7 +176,7 @@ void listclasses(Creature *cr)
 {
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(10,40);
-   addstr("1日あたり$60かかる。何を学ぶ?");
+   addstr("1日あたり$60かかる。何を学ぶか?");
    if(classlist==0)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,cr->activity.type==ACTIVITY_STUDY_DEBATING);
@@ -445,7 +445,7 @@ void activate(Creature *cr)
 
       if(havedead)set_color(COLOR_WHITE,COLOR_BLACK,state=='z');
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
-      mvaddstr(19,1,"Z - 遺体を遺棄する");
+      mvaddstr(19,1,"Z - 遺体を処理する");
 
       siegest *siege=NULL;
       if(selectedsiege!=-1) siege=&location[selectedsiege]->siege;

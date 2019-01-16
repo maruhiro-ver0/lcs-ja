@@ -315,24 +315,24 @@ void stopevil()
          bool show_safehouse_info=false;
          if(this_location == squad_location) {
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" (Current Location)");
+            addstr(" (現在地)");
             show_safehouse_info=true;
          } else if(this_location->renting >= 0) {
             set_color(COLOR_GREEN,COLOR_BLACK,1);
-            addstr(" (Safe House)");
+            addstr(" (アジト)");
             show_safehouse_info=true;
          } else if(this_location->renting == RENTING_CCS) {
             set_color(COLOR_RED,COLOR_BLACK,1);
-            addstr(" (Enemy Safe House)");
+            addstr(" (空のアジト)");
          } else if(this_location->closed) {
             set_color(COLOR_RED,COLOR_BLACK,1);
-            addstr(" (Closed Down)");
+            addstr(" (閉鎖)");
          } else if(this_location->highsecurity) {
             set_color(COLOR_MAGENTA,COLOR_BLACK,1);
-            addstr(" (High Security)");
+            addstr(" (高セキュリティ)");
          } else if(multipleCityMode && this_location->type == squad_location->city) {
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" (Current Location)");
+            addstr(" (現在地)");
          } else if(this_location->area != squad_location->area && !havecar) {
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
             addstr(" (要自動車)");
@@ -345,7 +345,7 @@ void stopevil()
          }
          if(this_location->siege.siege > 0) {
             set_color(COLOR_RED,COLOR_BLACK,0);
-            addstr(" (Under Siege)");
+            addstr(" (包囲中)");
          }
 
          if(show_safehouse_info)
@@ -381,7 +381,7 @@ void stopevil()
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          mvaddchar(y+1,0,y-10+'A');
-         addstr(" - Travel to a Different City");
+         addstr(" - 別の都市へ行く");
          if(!havecar) {
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
             addstr(" (要自動車)");

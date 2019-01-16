@@ -860,8 +860,8 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
          case BODYPART_BODY:strcat(str,"胴体"); break;
          case BODYPART_ARM_RIGHT:strcat(str,"右前足"); break;
          case BODYPART_ARM_LEFT:strcat(str,"左前足"); break;
-         case BODYPART_LEG_RIGHT:strcat(str,"右後ろ足"); break;
-         case BODYPART_LEG_LEFT:strcat(str,"左後ろ足"); break;
+         case BODYPART_LEG_RIGHT:strcat(str,"右後足"); break;
+         case BODYPART_LEG_LEFT:strcat(str,"左後足"); break;
          }
       else
          switch(w)
@@ -1079,11 +1079,11 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                   move(16,1);
                   addstr(target->name, gamelog);
                   addstr("が", gamelog);
-                  if(!t.alive) addstr(" misguidedly", gamelog);
-                  else addstr(" heroically", gamelog);
+                  if(!t.alive) addstr("悲しくも", gamelog);
+                  else addstr("勇敢にも", gamelog);
                   addstr(t.name, gamelog);
                   if(!t.alive) addstr("の遺体", gamelog);
-                  addstr("をかばっている! ", gamelog);
+                  addstr("をかばった! ", gamelog);
                   gamelog.newline();
 
                   addjuice(*target,10,1000);//Instant juice!! Way to take the bullet!!
@@ -1487,7 +1487,7 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                      {
                         move(16,1);
                         addstr(target->name, gamelog);
-                        if(damtype & WOUND_SHOT)addstr("の右肺を貫通した!", gamelog);
+                        if(damtype & WOUND_SHOT)addstr("の心臓を貫通した!", gamelog);
                         else if(damtype & WOUND_TORN)addstr("の心臓が引き裂かれた!", gamelog);
                         else addstr("の心臓が破裂した!", gamelog);
                         gamelog.newline();
@@ -1503,7 +1503,7 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                      {
                         move(16,1);
                         addstr(target->name, gamelog);
-                        if(damtype & WOUND_SHOT)addstr("の右肺を貫通した!", gamelog);
+                        if(damtype & WOUND_SHOT)addstr("の肝臓を貫通した!", gamelog);
                         else if(damtype & WOUND_TORN)addstr("の肝臓が引き裂かれた!", gamelog);
                         else addstr("の肝臓が破裂した!", gamelog);
                         gamelog.newline();
@@ -2696,7 +2696,7 @@ void adddeathmessage(Creature &cr)
          addstr("そして息絶えた。", gamelog);
          break;
       case 3:
-         strcat(str,"は叫んだ。「父よ! なぜ私を見捨てたのですか?」");
+         strcat(str,"は叫んだ。「父よ! なぜ私を見捨てたのですか? 」");
          addstr(str, gamelog);
          move(17,1);
          addstr("そして倒れ死んだ。", gamelog);

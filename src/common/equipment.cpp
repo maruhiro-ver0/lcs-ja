@@ -236,12 +236,12 @@ void equip(vector<Item *> &loot,int loc)
                   }
                   else if(!squaddie->get_weapon().uses_ammo())
                   {
-                     errmsg="No ammo to drop!";
+                     errmsg="弾丸がない!";
                      continue;
                   }
                   else
                   {
-                     errmsg="No spare clips!";
+                     errmsg="代わりの弾倉がない!";
                      continue;
                   }
                   consolidateloot(loot);
@@ -251,7 +251,7 @@ void equip(vector<Item *> &loot,int loc)
                {
                   if(!squaddie->get_weapon().uses_ammo())
                   {
-                     errmsg="No ammo required!";
+                     errmsg="弾丸は必要ない!";
                      continue;
                   }
                   slot=-1;
@@ -274,7 +274,7 @@ void equip(vector<Item *> &loot,int loc)
                   }
                   if(slot==-1)
                   {
-                     errmsg="No ammo available!";
+                     errmsg="使える弾丸がない!";
                      continue;
                   }
                }
@@ -309,11 +309,11 @@ void equip(vector<Item *> &loot,int loc)
                   int space=9-squaddie->count_clips();
 
                   if(!squaddie->get_weapon().uses_ammo())
-                  {  errmsg="Can't carry ammo without a gun."; continue; }
+                  {  errmsg="銃なしでは弾丸を持てない。"; continue; }
                   else if(!squaddie->get_weapon().acceptable_ammo(*loot[slot]))
-                  {  errmsg="That ammo doesn't fit."; continue; }
+                  {  errmsg="その弾丸は合わない。"; continue; }
                   else if(space<1)
-                  {  errmsg="Can't carry any more ammo."; continue; }
+                  {  errmsg="これ以上弾丸を持てない。"; continue; }
                   else
                   {
                      int amount=1;
@@ -347,7 +347,7 @@ void equip(vector<Item *> &loot,int loc)
          {
             move(8,20);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr("Choose a Liberal squad member to strip down.");
+            addstr("脱がせるリベラルメンバーを選ぶ。");
 
             c=getkey();
          }
@@ -450,9 +450,9 @@ void moveloot(vector<Item *> &dest,vector<Item *> &source)
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(23,1);
-      addstr("Press a letter to select an item.");
+      addstr("アルファベットキーで物を選ぶ。");
       move(24,1);
-      addstr("Enter - Done");
+      addstr("Enter - 完了");
 
       int c=getkey();
 
@@ -523,11 +523,11 @@ void equipmentbaseassign()
       printfunds();
 
       move(0,0);
-      addstr("Moving Equipment");
+      addstr("装備を移す");
       move(1,0);
-      addstr("ﾄﾄﾄﾄITEMﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄCURRENT LOCATIONﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ");
+      addstr("----装備-----------------現在の場所---------------------------------------------");
       move(1,51);
-      addstr("NEW LOCATION");
+      addstr("新しい場所");
 
       int y=2;
       for(p=page_loot*19;p<len(temploot)&&p<page_loot*19+19;p++,y++)
@@ -552,16 +552,16 @@ void equipmentbaseassign()
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(22,0);
-      addstr("Press a Letter to assign a base.  Press a Number to select a base.");
+      addstr("アルファベットキーで場所を割り当てる。数字キーで場所を選択する。");
       move(23,0);
-      if(sortbytype) addstr("T to sort by location.");
-      else addstr("T to sort by type.");
-      addstr("  Shift and a Number will move ALL items!");
+      if(sortbytype) addstr("Tキーで場所順に並び替える。");
+      else addstr("Tキーで種類順に並び替える。");
+      addstr("  Shiftキーと数字で全て移動する!");
 
       move(24,0); // location for either viewing other base pages or loot pages
       if(len(temploc)>9)
       {
-         addstr(",. to view other base pages.");
+         addstr(",.キーで別のページを表示する。");
          move(24,34); // we have base pages, so different location for viewing other loot pages
       }
       if(len(temploot)>19)
