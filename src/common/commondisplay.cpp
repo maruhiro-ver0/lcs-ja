@@ -341,7 +341,7 @@ void printparty()
       char str[200];
 
       move(1,0);
-      addstr("#コードネーム----------スキル--武器-----------防具-----------健康-----移動手段--"); // 80 characters
+      addstr("#-コードネーム---------スキル--武器-----------防具-----------健康-----移動手段--"); // 80 characters
 
       for(int p=0;p<6;p++)
       {
@@ -1484,152 +1484,152 @@ void printhealthstat(Creature &g,int y,int x,char smll)
    if(!g.alive)
    {
       set_color(COLOR_BLACK,COLOR_BLACK,1);
-      addstr("Deceased");
+      addstr("死亡");
    }
    else if(g.blood<=20)
    {
-      if(smll)addstr("NearDETH");
-      else addstr("Near Death");
+      if(smll)addstr("瀕死");
+      else addstr("瀕死");
    }
    else if(g.blood<=50)
    {
-      if(smll)addstr("BadWound");
-      else addstr("Badly Wounded");
+      if(smll)addstr("重傷");
+      else addstr("重傷");
    }
    else if(g.blood<=75)
    {
-      addstr("Wounded");
+      addstr("負傷");
    }
    else if(g.blood<100)
    {
-      if(smll)addstr("LtWound");
-      else addstr("Lightly Wounded");
+      if(smll)addstr("軽傷");
+      else addstr("軽傷");
    }
    else if(g.special[SPECIALWOUND_NECK]==2)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      if(smll)addstr("NckBroke");
-      else addstr("Neck Broken");
+      if(smll)addstr("首骨折");
+      else addstr("首骨折");
    }
    else if(g.special[SPECIALWOUND_UPPERSPINE]==2)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      if(smll)addstr("Quadpleg");
-      else addstr("Quadraplegic");
+      if(smll)addstr("四肢麻痺");
+      else addstr("四肢麻痺");
    }
    else if(g.special[SPECIALWOUND_LOWERSPINE]==2)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      if(smll)addstr("Parapleg");
-      else addstr("Paraplegic");
+      if(smll)addstr("対麻痺");
+      else addstr("対麻痺");
    }
    else if(g.special[SPECIALWOUND_RIGHTEYE]==0&&
       g.special[SPECIALWOUND_LEFTEYE]==0&&
       g.special[SPECIALWOUND_NOSE]==0)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      if(smll)addstr("FaceGone");
-      else addstr("Face Gone");
+      if(smll)addstr("顔面喪失");
+      else addstr("顔面喪失");
    }
    else if(legok==0&&armok==0)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      addstr("No Limbs");
+      addstr("手足喪失");
    }
    else if((legok==1&&armok==0)||(armok==1&&legok==0))
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      addstr("One Limb");
+      addstr("片足");
    }
    else if(legok==2&&armok==0)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      addstr("No Arms");
+      addstr("両腕喪失");
    }
    else if(legok==0&&armok==2)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      addstr("No Legs");
+      addstr("両足喪失");
    }
    else if(legok==1&&armok==1)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      if(smll)addstr("1Arm1Leg");
-      else addstr("One Arm, One Leg");
+      if(smll)addstr("片腕片足");
+      else addstr("片腕片足");
    }
    else if(armok==1)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      addstr("One Arm");
+      addstr("片腕");
    }
    else if(legok==1)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      addstr("One Leg");
+      addstr("片足");
    }
    else if(g.special[SPECIALWOUND_RIGHTEYE]==0&&
       g.special[SPECIALWOUND_LEFTEYE]==0)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      addstr("Blind");
+      addstr("全盲");
    }
    else if((g.special[SPECIALWOUND_RIGHTEYE]==0||
       g.special[SPECIALWOUND_LEFTEYE]==0)&&
       g.special[SPECIALWOUND_NOSE]==0)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      if(smll)addstr("FaceMutl");
-      else addstr("Face Mutilated");
+      if(smll)addstr("顔面損傷");
+      else addstr("顔面損傷");
    }
    else if(g.special[SPECIALWOUND_NOSE]==0)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      if(smll)addstr("NoseGone");
-      else addstr("Missing Nose");
+      if(smll)addstr("鼻喪失");
+      else addstr("鼻喪失");
    }
    else if(g.special[SPECIALWOUND_RIGHTEYE]==0||
       g.special[SPECIALWOUND_LEFTEYE]==0)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      if(smll)addstr("One Eye");
-      else addstr("Missing Eye");
+      if(smll)addstr("片目");
+      else addstr("片目");
    }
    else if(g.special[SPECIALWOUND_TONGUE]==0)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      if(smll)addstr("NoTongue");
-      else addstr("No Tongue");
+      if(smll)addstr("舌喪失");
+      else addstr("舌喪失");
    }
    else if(g.special[SPECIALWOUND_TEETH]==0)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      addstr("No Teeth");
+      addstr("全歯喪失");
    }
    else if(g.special[SPECIALWOUND_TEETH]<TOOTHNUM)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      if(smll)addstr("MisTeeth");
-      else addstr("Missing Teeth");
+      if(smll)addstr("歯喪失");
+      else addstr("歯喪失");
    }
    else
    {
       if(g.align==-1)
       {
          set_color(COLOR_RED,COLOR_BLACK,1);
-         if(smll)addstr("Consrvtv");
-         else addstr("Conservative");
+         if(smll)addstr("保守");
+         else addstr("保守派");
       }
       else if(g.align==0)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,1);
-         addstr("Moderate");
+         addstr("穏健派");
       }
       else
       {
          set_color(COLOR_GREEN,COLOR_BLACK,1);
          if(g.animalgloss==ANIMALGLOSS_ANIMAL)
-            addstr("Animal");
-         else addstr("Liberal");
+            addstr("動物");
+         else addstr("リベラル");
       }
    }
 }
@@ -1677,30 +1677,30 @@ void printfunds(int y, int offsetx, const char* prefix)
 void addnextpagestr()
 {
    if(interface_pgup=='[')
-      addstr("] - Next");
+      addstr("] - 後");
    else if(interface_pgup=='.')
-      addstr(": - Next");
-   else addstr("PGDN - Next");
+      addstr(": - 後");
+   else addstr("PGDN - 後");
 }
 
 /* prints a short blurb showing how to page back */
 void addprevpagestr()
 {
    if(interface_pgup=='[')
-      addstr("[ - Previous");
+      addstr("[ - 前");
    else if(interface_pgup=='.')
-      addstr("; - Previous");
-   else addstr("PGUP - Previous");
+      addstr("; - 前");
+   else addstr("PGUP - 前");
 }
 
 /* prints a long blurb showing how to page forward and back */
 void addpagestr()
 {
    if(interface_pgup=='[')
-      addstr("[] to view other Liberal pages.");
+      addstr("[]で別のリベラルページを表示する。");
    else if(interface_pgup=='.')
-      addstr("; and : to view other Liberal pages.");
-   else addstr("PGUP/PGDN to view other Liberal pages.");
+      addstr(";:で別のリベラルページを表示する。");
+   else addstr("PGUP/PGDNで別のリベラルページを表示する。");
 }
 
 static char sbuf[81]; // used by addstr_f(), mvaddstr_f(), addstr_fl(), and mvaddstr_fl()

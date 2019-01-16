@@ -159,7 +159,7 @@ bool liberalagenda(signed char won)
             else align=ALIGN_MODERATE; // nobody has a majority
             set_alignment_color(align,true);
             mvaddstr(10,0,"下院: ");
-            if(stalinmode) addstr("ｽﾀ"+tostring(housemake[5])+", ");
+            if(stalinmode) addstr("ｽﾀｰﾘﾝ"+tostring(housemake[5])+", ");
             addstr("ﾘﾍﾞﾗﾙ+"+tostring(housemake[4])+", ");
             addstr("ﾘﾍﾞﾗﾙ"+tostring(housemake[3])+", ");
             addstr("穏健"+tostring(housemake[2])+", ");
@@ -178,7 +178,7 @@ bool liberalagenda(signed char won)
             set_alignment_color(align,true);
             senatemake[exec[EXEC_VP]+2]--; // Vice President isn't actually a Senator though
             mvaddstr(11,0,"上院: ");
-            if(stalinmode) addstr("ｽﾀ"+tostring(senatemake[5])+", ");
+            if(stalinmode) addstr("ｽﾀｰﾘﾝ"+tostring(senatemake[5])+", ");
             addstr("ﾘﾍﾞﾗﾙ+"+tostring(senatemake[4])+", ");
             addstr("ﾘﾍﾞﾗﾙ"+tostring(senatemake[3])+", ");
             addstr("穏健"+tostring(senatemake[2])+", ");
@@ -201,23 +201,26 @@ bool liberalagenda(signed char won)
             set_alignment_color(align,true);
          }
 
-         mvaddstr(6,54, "　 最");
-         mvaddstr(7,54, "裁 高");
-         mvaddstr(8,54, "判 裁");
-         mvaddstr(9,54, "官 判");
-         mvaddstr(10,54, "　 所");
+         mvaddstr(4,57, "最");
+         mvaddstr(5,57, "高");
+         mvaddstr(6,57, "裁");
+         mvaddstr(7,57, "判");
+         mvaddstr(8,57, "所");
+         mvaddstr(10,57, "裁");
+         mvaddstr(11,57, "判");
+         mvaddstr(12,57, "官");
 
          if(won==-1)
          {
-            mvaddstr(7,65,   "Replaced");
-            mvaddstr(8,63, "By Corporate");
-            mvaddstr(9,62,"Ethics Officers");
+            mvaddstr(7,62,"企業倫理委員会");
+            mvaddstr(8,62,"      に");
+            mvaddstr(9,62,"置き換えられた");
          }
          else if(won==-2)
          {
-            mvaddstr(7,63, "Replaced By");
-            mvaddstr(8,62,"Stalinist Show");
-            mvaddstr(9,63, "Trial Judges");
+            mvaddstr(7,62, "スターリン主義者");
+            mvaddstr(8,62, "による公開裁判に");
+            mvaddstr(9,62, "置き換えられた");
          }
          else
          {
@@ -571,41 +574,41 @@ bool liberalagenda(signed char won)
          if(stalinmode)
          {
             set_color(COLOR_RED,COLOR_BLACK,1);
-            addstr("Stalinist  ");
+            addstr("スターリン主義  ");
          }
          set_color(COLOR_GREEN,COLOR_BLACK,1);
-         addstr("Elite Liberal  ");
+         addstr("エリート・リベラル  ");
          if(!stalinmode)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             addstr("-  ");
          }
          set_color(COLOR_CYAN,COLOR_BLACK,1);
-         addstr("Liberal  ");
+         addstr("リベラル  ");
          if(!stalinmode)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             addstr("-  ");
          }
          set_color(COLOR_YELLOW,COLOR_BLACK,1);
-         addstr("moderate  ");
+         addstr("穏健  ");
          if(!stalinmode)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             addstr("-  ");
          }
          set_color(COLOR_MAGENTA,COLOR_BLACK,1);
-         addstr("Conservative  ");
+         addstr("保守  ");
          if(!stalinmode)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             addstr("-  ");
          }
          set_color(COLOR_RED,COLOR_BLACK,1);
-         addstr("Arch-Conservative");
+         addstr("保守強硬");
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          //mvaddstr(23,0,"Once these are Green, the country will have achieved Elite Liberal status.");
-         mvaddstr(24,0,"Press D to disband and wait. Use cursors for other pages. Any other key to exit.");
+         mvaddstr(24,0,"D - 解散して時を待つ     ←/→ - 別のページを見る     その他のキー - 戻る");
 
          int c=getkey();
 

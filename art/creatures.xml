@@ -122,7 +122,7 @@ value if it should be constant.
 Elements marked as hardcoded may have their values overridden by the game.
 -->
     <creaturetype idname="CREATURE_BOUNCER">
-        <type_name>クラブのガードマン</type_name>
+        <type_name>ｸﾗﾌﾞのｶﾞｰﾄﾞﾏﾝ</type_name>
         <!-- <encounter_name> Hardcoded -->
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_CHEAPSUIT</armor>
@@ -514,7 +514,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_GANGUNIT">
-        <type_name>ギャング対策部警官</type_name>
+        <type_name>ｷﾞｬﾝｸﾞ対策部警官</type_name>
         <weapon>WEAPON_SMG_MP5</weapon>
         <weapon>WEAPON_SHOTGUN_PUMP</weapon>
         <weapon>WEAPON_SEMIPISTOL_9MM</weapon>
@@ -618,8 +618,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_SECRET_SERVICE">
-        <type_name>シークレットサービス</type_name>
-        <encounter_name>シークレットサービス</encounter_name>
+        <type_name>ｼｰｸﾚｯﾄｻｰﾋﾞｽ</type_name>
+        <encounter_name>ｼｰｸﾚｯﾄｻｰﾋﾞｽ</encounter_name>
         <weapon>WEAPON_SEMIPISTOL_9MM</weapon>
         <weapon>WEAPON_AUTORIFLE_M16</weapon>
         <weapon>WEAPON_SMG_MP5</weapon>
@@ -647,8 +647,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_RADIOPERSONALITY">
-        <type_name>ラジオパーソナリティ</type_name>
-        <encounter_name>ラジオパーソナリティ</encounter_name>
+        <type_name>ﾗｼﾞｵﾊﾟｰｿﾅﾘﾃｨ</type_name>
+        <encounter_name>ﾗｼﾞｵﾊﾟｰｿﾅﾘﾃｨ</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_EXPENSIVESUIT</armor>
         <age>MATURE</age>
@@ -666,8 +666,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_NEWSANCHOR">
-        <type_name>ケーブルニュースキャスター</type_name>
-        <encounter_name>ケーブルニュースキャスター</encounter_name>
+        <type_name>ｹｰﾌﾞﾙﾆｭｰｽｷｬｽﾀｰ</type_name>
+        <encounter_name>ｹｰﾌﾞﾙﾆｭｰｽｷｬｽﾀｰ</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_EXPENSIVESUIT</armor>
         <age>MATURE</age>
@@ -908,8 +908,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_FASTFOODWORKER">
-        <type_name>ファーストフード店員</type_name>
-        <encounter_name>ファーストフード店員</encounter_name>
+        <type_name>ﾌｧｰｽﾄﾌｰﾄﾞ店員</type_name>
+        <encounter_name>ﾌｧｰｽﾄﾌｰﾄﾞ店員</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <!-- <age> Hardcoded -->
@@ -982,8 +982,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_FOOTBALLCOACH">
-        <type_name>フットボールコーチ</type_name>
-        <encounter_name>フットボールコーチ</encounter_name>
+        <type_name>ﾌｯﾄﾎﾞｰﾙｺｰﾁ</type_name>
+        <encounter_name>ﾌｯﾄﾎﾞｰﾙｺｰﾁ</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MIDDLEAGED</age>
@@ -1083,8 +1083,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_TANK">
-        <type_name>M1エイブラムス戦車</type_name>
-        <encounter_name>M1エイブラムス戦車</encounter_name>
+        <type_name>M1ｴｲﾌﾞﾗﾑｽ戦車</type_name>
+        <encounter_name>M1ｴｲﾌﾞﾗﾑｽ戦車</encounter_name>
         <!-- <weapon> Hardcoded -->
         <!--<armor>ARMOR_NONE</armor> Hardcoded -->
         <age>TEENAGER</age>
@@ -1098,7 +1098,7 @@ Elements marked as hardcoded may have their values overridden by the game.
 
     <creaturetype idname="CREATURE_MERC">
         <type_name>エリート警備員</type_name>
-        <encounter_name>Elite Security</encounter_name>
+        <encounter_name>エリート警備員</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_CIVILLIANARMOR</armor>
         <age>YOUNGADULT</age>
@@ -1414,7 +1414,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_FASHIONDESIGNER">
-        <type_name>ファッションデザイナー</type_name>
+        <type_name>ﾌｧｯｼｮﾝﾃﾞｻﾞｲﾅｰ</type_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -1462,7 +1462,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_YOGAINSTRUCTOR">
-        <type_name>ヨガインストラクター</type_name>
+        <type_name>ﾖｶﾞｲﾝｽﾄﾗｸﾀｰ</type_name>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
         <attributes>

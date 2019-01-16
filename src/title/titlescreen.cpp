@@ -582,10 +582,10 @@ void mode_title()
    strcpy(str,"http://lcs.wikidot.com/");
    move(18,39-((len(str)-1)>>1));
    addstr(str);
-   strcpy(str,"ESCキー: 終了する。終了すると自動的に保存される");
+   strcpy(str,"ESC - 終了する。終了すると自動的に保存される");
    move(20,39-((len(str)-1)>>1));
    addstr(str);
-   strcpy(str,"その他のキー: リベラルアジェンダを追求する!");
+   strcpy(str,"その他のキー - リベラルアジェンダを追求する!");
    move(22,39-((len(str)-1)>>1));
    addstr(str);
    move(24,79);
@@ -595,8 +595,8 @@ void mode_title()
    do
    {
       if(c=='m') music.enableIf(!music.isEnabled());
-      if(music.isEnabled()) strcpy(str,"Mキー: 音楽を止める");
-      else strcpy(str,"Mキー: 音楽を鳴らす");
+      if(music.isEnabled()) strcpy(str,"M - 音楽を止める");
+      else strcpy(str,"M - 音楽を鳴らす");
       move(21,39-((len(str)-1)>>1));
       addstr(str);
       if(c==ESC) end_game();
