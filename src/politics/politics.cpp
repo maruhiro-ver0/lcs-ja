@@ -454,96 +454,96 @@ void elections(char clearformess,char canseethings)
          switch(prop[p])
          {
             case LAW_ABORTION:
-               if(propdir[p]==1)addstr("Strengthen Reproductive Freedom"); // was "Strengthen Abortion Rights"
-               else addstr("Protect the Unborn Child");
+               if(propdir[p]==1)addstr("出産の決定権の推進"); // was "Strengthen Abortion Rights"
+               else addstr("胎児保護の強化");
                break;
             case LAW_ANIMALRESEARCH:
-               if(propdir[p]==1)addstr("Limit Animal Cruelty");
-               else addstr("Help Scientists Cure Diseases"); // was "Expand Animal Research"
+               if(propdir[p]==1)addstr("動物虐待の禁止");
+               else addstr("医学医療の推進"); // was "Expand Animal Research"
                break;
             case LAW_POLICEBEHAVIOR:
-               if(propdir[p]==1)addstr("Curtail Police Misconduct");
-               else addstr("Help Police Fight Crime"); // was "Stop Harassment of Police Officers"
+               if(propdir[p]==1)addstr("警察の不正行為の監視強化");
+               else addstr("警察権の強化"); // was "Stop Harassment of Police Officers"
                break;
             case LAW_PRIVACY:
-               if(propdir[p]==1)addstr("Enhance Privacy Protection");
-               else addstr("Promote Transparency and Accountability"); // was "Allow Corporations Access to Information"
+               if(propdir[p]==1)addstr("プライバシー保護の推進");
+               else addstr("透明性と説明責任の向上"); // was "Allow Corporations Access to Information"
                break;
             case LAW_DEATHPENALTY:
-               if(propdir[p]==1)addstr("Stop Barbaric Executions"); // was "Limit the Death Penalty"
-               else addstr("Deter Criminals via Capital Punishment"); // "Expand Capital Punishment"
+               if(propdir[p]==1)addstr("残酷な刑罰の廃止"); // was "Limit the Death Penalty"
+               else addstr("極刑による犯罪の抑止"); // "Expand Capital Punishment"
                break;
             case LAW_NUCLEARPOWER:
-               if(propdir[p]==1)addstr("Prevent Nuclear Meltdowns"); // was "Limit Nuclear Power"
-               else addstr("Promote Alternative Energy Sources"); // was "Expand Nuclear Power"
+               if(propdir[p]==1)addstr("核汚染の防止"); // was "Limit Nuclear Power"
+               else addstr("エネルギー源の多様化"); // was "Expand Nuclear Power"
                break;
             case LAW_POLLUTION:
-               if(propdir[p]==1)addstr("Protect our Environment"); // was "Punish Polluters"
-               else addstr("Support American Manufacturing"); // was "Reward Industry"
+               if(propdir[p]==1)addstr("環境保護"); // was "Punish Polluters"
+               else addstr("アメリカの産業の保護"); // was "Reward Industry"
                break;
             case LAW_LABOR:
-               if(propdir[p]==1)addstr("Protect Workers' Rights"); // was "Enhance Labor Standards"
-               else addstr("Fight Corrupt Union Thugs"); // was "End Undue Union Influence"
+               if(propdir[p]==1)addstr("労働者の権利の保護"); // was "Enhance Labor Standards"
+               else addstr("不当な団体交渉の制限"); // was "End Undue Union Influence"
                break;
             case LAW_GAY:
-               if(propdir[p]==1)addstr("Fight Homophobic Bigotry in our Laws"); // was "Expand Homosexual Rights"
-               else addstr("Support the Sanctity of Marriage");
+               if(propdir[p]==1)addstr("同性愛差別的な制度の是正"); // was "Expand Homosexual Rights"
+               else addstr("結婚の神聖性の維持");
                break;
             case LAW_CORPORATE:
-               if(propdir[p]==1)addstr("Stop Corporate Criminals");
-               else addstr("Help Small Businesses Expand"); // was "Reward Small Businesses"
+               if(propdir[p]==1)addstr("企業犯罪の防止");
+               else addstr("小規模ビジネスの拡大の援助"); // was "Reward Small Businesses"
                break;
             case LAW_FREESPEECH:
-               if(propdir[p]==1)addstr("Protect Free Speech");
-               else addstr("Limit Hate Speech"); // was "Limit Hurtful Speech"
+               if(propdir[p]==1)addstr("言論の自由の保護");
+               else addstr("ヘイトスピーチの禁止"); // was "Limit Hurtful Speech"
                break;
             case LAW_TAX:
-               if(propdir[p]==1)addstr("Fight Income Inequality"); // was "Punish the Wealthy"
-               else addstr("Cut Job-Killing Taxes"); // was "Stimulate Economic Growth"
+               if(propdir[p]==1)addstr("税の不公正の是正"); // was "Punish the Wealthy"
+               else addstr("競争力を失う税の廃止"); // was "Stimulate Economic Growth"
                break;
             case LAW_FLAGBURNING:
-               if(propdir[p]==1)addstr("Limit Prohibitions on Flag Burning");
-               else addstr("Protect the Symbol of Our Nation");
+               if(propdir[p]==1)addstr("国旗の焼却禁止の制限");
+               else addstr("我が国のシンボルの尊重");
                break;
             case LAW_GUNCONTROL:
-               if(propdir[p]==1)addstr("Prevent Mass Shootings"); // was "Prevent Gun Violence"
-               else addstr("Protect our Second Amendment Rights"); // was "Assert our Second Amendment Rights"
+               if(propdir[p]==1)addstr("殺傷力の高い銃の制限"); // was "Prevent Gun Violence"
+               else addstr("修正第2条の堅持"); // was "Assert our Second Amendment Rights"
                break;
             case LAW_WOMEN:
-               if(propdir[p]==1)addstr("Promote Gender Equality"); // was "Expand Women's Rights"
-               else addstr("Preserve Traditional Gender Roles");
+               if(propdir[p]==1)addstr("男女平等の推進"); // was "Expand Women's Rights"
+               else addstr("伝統的な性別役割の維持");
                break;
             case LAW_CIVILRIGHTS:
-               if(propdir[p]==1)addstr("Promote Racial Equality"); // was "Expand Civil Rights"
-               else addstr("Fight Reverse Discrimination");
+               if(propdir[p]==1)addstr("人種の平等の推進"); // was "Expand Civil Rights"
+               else addstr("逆差別の是正");
                break;
             case LAW_DRUGS:
-               if(propdir[p]==1)addstr("Repeal Oppressive Drug Laws"); // was "Limit Oppressive Drug Laws"
-               else addstr("Fight Drug Trafficking"); // was "Strengthen the War On Drugs"
+               if(propdir[p]==1)addstr("薬物に関する抑圧的な法の廃止"); // was "Limit Oppressive Drug Laws"
+               else addstr("麻薬取引の監視強化"); // was "Strengthen the War On Drugs"
                break;
             case LAW_IMMIGRATION:
-               if(propdir[p]==1)addstr("Protect Immigrant Rights");
-               else addstr("Protect our Borders");
+               if(propdir[p]==1)addstr("移民の権利の保護");
+               else addstr("国境の管理強化");
                break;
             case LAW_ELECTIONS:
-               if(propdir[p]==1)addstr("Fight Political Corruption");
-               else addstr("Limit Regulation of Political Speech"); // was "Limit Campaign Finance Reforms"
+               if(propdir[p]==1)addstr("政治腐敗の防止");
+               else addstr("政治演説の制限の禁止"); // was "Limit Campaign Finance Reforms"
                break;
             case LAW_MILITARY:
-               if(propdir[p]==1)addstr("Shrink the Military-Industrial Complex"); // was "Limit Military Spending"
-               else addstr("Support our Troops in Defending America"); // was "Strengthen our National Defense"
+               if(propdir[p]==1)addstr("軍産複合体の縮小"); // was "Limit Military Spending"
+               else addstr("アメリカの防衛力の強化"); // was "Strengthen our National Defense"
                break;
             case LAW_TORTURE:
-               if(propdir[p]==1)addstr("Protect Human Rights from Torture"); // was "Ban Torture Techniques"
-               else addstr("Enhance Interrogations to Fight Terrorism"); // was "Permit Strong Tactics in Interrogations"
+               if(propdir[p]==1)addstr("拷問による人権侵害の禁止"); // was "Ban Torture Techniques"
+               else addstr("テロとの戦いのための取調べの強化"); // was "Permit Strong Tactics in Interrogations"
                break;
             case LAW_PRISONS:
                if(propdir[p]==1)
                {
-                  if(law[LAW_PRISONS]==1) addstr("Establish Prison Rehabilitation"); // was "Mandate Prison Rehabilitation"
-                  else addstr("Improve Prison Conditions"); // was "Expand Prisoners' Rights"
+                  if(law[LAW_PRISONS]==1) addstr("囚人の社会復帰制度の設立"); // was "Mandate Prison Rehabilitation"
+                  else addstr("収容所の環境改善"); // was "Expand Prisoners' Rights"
                }
-               else addstr("Enhance Prison Security"); // was "Limit Prisoners' Rights"
+               else addstr("収容所の管理強化"); // was "Limit Prisoners' Rights"
                break;
          }
          set_color(COLOR_WHITE,COLOR_BLACK,0);
@@ -1107,96 +1107,96 @@ void supremecourt(char clearformess,char canseethings)
          switch(scase[c])
          {
             case LAW_ABORTION:
-               if(scasedir[c]==1)addstr("Strengthen Reproductive Freedom"); // was "Strengthen Abortion Rights"
-               else addstr("Protect the Unborn Child");
+               if(scasedir[c]==1)addstr("出産の決定権の推進"); // was "Strengthen Abortion Rights"
+               else addstr("胎児保護の強化");
                break;
             case LAW_ANIMALRESEARCH:
-               if(scasedir[c]==1)addstr("Limit Animal Cruelty");
-               else addstr("Help Scientists Cure Diseases"); // was "Expand Animal Research"
+               if(scasedir[c]==1)addstr("動物虐待の禁止");
+               else addstr("医学医療の推進"); // was "Expand Animal Research"
                break;
             case LAW_POLICEBEHAVIOR:
-               if(scasedir[c]==1)addstr("Curtail Police Misconduct");
-               else addstr("Help Police Fight Crime"); // was "Stop Harassment of Police Officers"
+               if(scasedir[c]==1)addstr("警察の不正行為の監視強化");
+               else addstr("警察権の強化"); // was "Stop Harassment of Police Officers"
                break;
             case LAW_PRIVACY:
-               if(scasedir[c]==1)addstr("Enhance Privacy Protection");
-               else addstr("Promote Transparency and Accountability"); // was "Allow Corporations Access to Information"
+               if(scasedir[c]==1)addstr("プライバシー保護の推進");
+               else addstr("透明性と説明責任の向上"); // was "Allow Corporations Access to Information"
                break;
             case LAW_DEATHPENALTY:
-               if(scasedir[c]==1)addstr("Stop Barbaric Executions"); // was "Limit the Death Penalty"
-               else addstr("Deter Criminals via Capital Punishment"); // "Expand Capital Punishment"
+               if(scasedir[c]==1)addstr("残酷な刑罰の廃止"); // was "Limit the Death Penalty"
+               else addstr("極刑による犯罪の抑止"); // "Expand Capital Punishment"
                break;
             case LAW_NUCLEARPOWER:
-               if(scasedir[c]==1)addstr("Prevent Nuclear Meltdowns"); // was "Limit Nuclear Power"
-               else addstr("Promote Alternative Energy Sources"); // was "Expand Nuclear Power"
+               if(scasedir[c]==1)addstr("核汚染の防止"); // was "Limit Nuclear Power"
+               else addstr("エネルギー源の多様化"); // was "Expand Nuclear Power"
                break;
             case LAW_POLLUTION:
-               if(scasedir[c]==1)addstr("Protect our Environment"); // was "Punish Polluters"
-               else addstr("Support American Manufacturing"); // was "Reward Industry"
+               if(scasedir[c]==1)addstr("環境保護"); // was "Punish Polluters"
+               else addstr("アメリカの産業の保護"); // was "Reward Industry"
                break;
             case LAW_LABOR:
-               if(scasedir[c]==1)addstr("Protect Workers' Rights"); // was "Enhance Labor Standards"
-               else addstr("Fight Corrupt Union Thugs"); // was "End Undue Union Influence"
+               if(scasedir[c]==1)addstr("労働者の権利の保護"); // was "Enhance Labor Standards"
+               else addstr("不当な団体交渉の制限"); // was "End Undue Union Influence"
                break;
             case LAW_GAY:
-               if(scasedir[c]==1)addstr("Fight Homophobic Bigotry in our Laws"); // was "Expand Homosexual Rights"
-               else addstr("Support the Sanctity of Marriage");
+               if(scasedir[c]==1)addstr("同性愛差別的な制度の是正"); // was "Expand Homosexual Rights"
+               else addstr("結婚の神聖性の維持");
                break;
             case LAW_CORPORATE:
-               if(scasedir[c]==1)addstr("Stop Corporate Criminals");
-               else addstr("Help Small Businesses Expand"); // was "Reward Small Businesses"
+               if(scasedir[c]==1)addstr("企業犯罪の防止");
+               else addstr("小規模ビジネスの拡大の援助"); // was "Reward Small Businesses"
                break;
             case LAW_FREESPEECH:
-               if(scasedir[c]==1)addstr("Protect Free Speech");
-               else addstr("Limit Hate Speech"); // was "Limit Hurtful Speech"
+               if(scasedir[c]==1)addstr("言論の自由の保護");
+               else addstr("ヘイトスピーチの禁止"); // was "Limit Hurtful Speech"
                break;
             case LAW_TAX:
-               if(scasedir[c]==1)addstr("Fight Income Inequality"); // was "Punish the Wealthy"
-               else addstr("Cut Job-Killing Taxes"); // was "Stimulate Economic Growth"
+               if(scasedir[c]==1)addstr("税の不公正の是正"); // was "Punish the Wealthy"
+               else addstr("競争力を失う税の廃止"); // was "Stimulate Economic Growth"
                break;
             case LAW_FLAGBURNING:
-               if(scasedir[c]==1)addstr("Limit Prohibitions on Flag Burning");
-               else addstr("Protect the Symbol of Our Nation");
+               if(scasedir[c]==1)addstr("国旗の焼却禁止の制限");
+               else addstr("我が国のシンボルの尊重");
                break;
             case LAW_GUNCONTROL:
-               if(scasedir[c]==1)addstr("Prevent Mass Shootings"); // was "Prevent Gun Violence"
-               else addstr("Protect our Second Amendment Rights"); // was "Assert our Second Amendment Rights"
+               if(scasedir[c]==1)addstr("殺傷力の高い銃の制限"); // was "Prevent Gun Violence"
+               else addstr("修正第2条の堅持"); // was "Assert our Second Amendment Rights"
                break;
             case LAW_WOMEN:
-               if(scasedir[c]==1)addstr("Promote Gender Equality"); // was "Expand Women's Rights"
-               else addstr("Preserve Traditional Gender Roles");
+               if(scasedir[c]==1)addstr("男女平等の推進"); // was "Expand Women's Rights"
+               else addstr("伝統的な性別役割の維持");
                break;
             case LAW_CIVILRIGHTS:
-               if(scasedir[c]==1)addstr("Promote Racial Equality"); // was "Expand Civil Rights"
-               else addstr("Fight Reverse Discrimination");
+               if(scasedir[c]==1)addstr("人種の平等の推進"); // was "Expand Civil Rights"
+               else addstr("逆差別の是正");
                break;
             case LAW_DRUGS:
-               if(scasedir[c]==1)addstr("Repeal Oppressive Drug Laws"); // was "Limit Oppressive Drug Laws"
-               else addstr("Fight Drug Trafficking"); // was "Strengthen the War On Drugs"
+               if(scasedir[c]==1)addstr("薬物に関する抑圧的な法の廃止"); // was "Limit Oppressive Drug Laws"
+               else addstr("麻薬取引の監視強化"); // was "Strengthen the War On Drugs"
                break;
             case LAW_IMMIGRATION:
-               if(scasedir[c]==1)addstr("Protect Immigrant Rights");
-               else addstr("Protect our Borders");
+               if(scasedir[c]==1)addstr("移民の権利の保護");
+               else addstr("国境の管理強化");
                break;
             case LAW_ELECTIONS:
-               if(scasedir[c]==1)addstr("Fight Political Corruption");
-               else addstr("Limit Regulation of Political Speech"); // was "Limit Campaign Finance Reforms"
+               if(scasedir[c]==1)addstr("政治腐敗の防止");
+               else addstr("政治演説の制限の禁止"); // was "Limit Campaign Finance Reforms"
                break;
             case LAW_MILITARY:
-               if(scasedir[c]==1)addstr("Shrink the Military-Industrial Complex"); // was "Limit Military Spending"
-               else addstr("Support our Troops in Defending America"); // was "Strengthen our National Defense"
+               if(scasedir[c]==1)addstr("軍産複合体の縮小"); // was "Limit Military Spending"
+               else addstr("アメリカの防衛力の強化"); // was "Strengthen our National Defense"
                break;
             case LAW_TORTURE:
-               if(scasedir[c]==1)addstr("Protect Human Rights from Torture"); // was "Ban Torture Techniques"
-               else addstr("Enhance Interrogations to Fight Terrorism"); // was "Permit Strong Tactics in Interrogations"
+               if(scasedir[c]==1)addstr("拷問による人権侵害の禁止"); // was "Ban Torture Techniques"
+               else addstr("テロとの戦いのための取調べの強化"); // was "Permit Strong Tactics in Interrogations"
                break;
             case LAW_PRISONS:
                if(scasedir[c]==1)
                {
-                  if(law[LAW_PRISONS]==1) addstr("Establish Prison Rehabilitation"); // was "Mandate Prison Rehabilitation"
-                  else addstr("Improve Prison Conditions"); // was "Expand Prisoners' Rights"
+                  if(law[LAW_PRISONS]==1) addstr("囚人の社会復帰制度の設立"); // was "Mandate Prison Rehabilitation"
+                  else addstr("収容所の環境改善"); // was "Expand Prisoners' Rights"
                }
-               else addstr("Enhance Prison Security"); // was "Limit Prisoners' Rights"
+               else addstr("収容所の管理強化"); // was "Limit Prisoners' Rights"
                break;
          }
          set_color(COLOR_WHITE,COLOR_BLACK,0);
@@ -1516,96 +1516,96 @@ void congress(char clearformess,char canseethings)
          switch(bill[c])
          {
             case LAW_ABORTION:
-               if(billdir[c]==1) addstr("出産の自由の推進"); // was "Strengthen Abortion Rights"
-               else addstr("胎児の保護");
+               if(billdir[c]==1) addstr("出産の決定権の推進"); // was "Strengthen Abortion Rights"
+               else addstr("胎児保護の強化");
                break;
             case LAW_ANIMALRESEARCH:
-               if(billdir[c]==1) addstr("Limit Animal Cruelty");
-               else addstr("Help Scientists Cure Diseases"); // was "Expand Animal Research"
+               if(billdir[c]==1) addstr("動物虐待の禁止");
+               else addstr("医学医療の推進"); // was "Expand Animal Research"
                break;
             case LAW_POLICEBEHAVIOR:
-               if(billdir[c]==1) addstr("Curtail Police Misconduct");
-               else addstr("Help Police Fight Crime"); // was "Stop Harassment of Police Officers"
+               if(billdir[c]==1) addstr("警察の不正行為の監視強化");
+               else addstr("警察権の強化"); // was "Stop Harassment of Police Officers"
                break;
             case LAW_PRIVACY:
-               if(billdir[c]==1) addstr("Enhance Privacy Protection");
-               else addstr("Promote Transparency and Accountability"); // was "Allow Corporations Access to Information"
+               if(billdir[c]==1) addstr("プライバシー保護の推進");
+               else addstr("透明性と説明責任の向上"); // was "Allow Corporations Access to Information"
                break;
             case LAW_DEATHPENALTY:
-               if(billdir[c]==1) addstr("Stop Barbaric Executions"); // was "Limit the Death Penalty"
-               else addstr("Deter Criminals via Capital Punishment"); // "Expand Capital Punishment"
+               if(billdir[c]==1) addstr("残酷な刑罰の廃止"); // was "Limit the Death Penalty"
+               else addstr("極刑による犯罪の抑止"); // "Expand Capital Punishment"
                break;
             case LAW_NUCLEARPOWER:
-               if(billdir[c]==1) addstr("Prevent Nuclear Meltdowns"); // was "Limit Nuclear Power"
-               else addstr("Promote Alternative Energy Sources"); // was "Expand Nuclear Power"
+               if(billdir[c]==1) addstr("核汚染の防止"); // was "Limit Nuclear Power"
+               else addstr("エネルギー源の多様化"); // was "Expand Nuclear Power"
                break;
             case LAW_POLLUTION:
-               if(billdir[c]==1) addstr("Protect our Environment"); // was "Punish Polluters"
-               else addstr("Support American Manufacturing"); // was "Reward Industry"
+               if(billdir[c]==1) addstr("環境保護"); // was "Punish Polluters"
+               else addstr("アメリカの産業の保護"); // was "Reward Industry"
                break;
             case LAW_LABOR:
-               if(billdir[c]==1) addstr("Protect Workers' Rights"); // was "Enhance Labor Standards"
-               else addstr("Fight Corrupt Union Thugs"); // was "End Undue Union Influence"
+               if(billdir[c]==1) addstr("労働者の権利の保護"); // was "Enhance Labor Standards"
+               else addstr("不当な団体交渉の制限"); // was "End Undue Union Influence"
                break;
             case LAW_GAY:
-               if(billdir[c]==1) addstr("Fight Homophobic Bigotry in our Laws"); // was "Expand Homosexual Rights"
-               else addstr("Support the Sanctity of Marriage");
+               if(billdir[c]==1) addstr("同性愛差別的な制度の是正"); // was "Expand Homosexual Rights"
+               else addstr("結婚の神聖性の維持");
                break;
             case LAW_CORPORATE:
-               if(billdir[c]==1) addstr("Stop Corporate Criminals");
-               else addstr("Help Small Businesses Expand"); // was "Reward Small Businesses"
+               if(billdir[c]==1) addstr("企業犯罪の防止");
+               else addstr("小規模ビジネスの拡大の援助"); // was "Reward Small Businesses"
                break;
             case LAW_FREESPEECH:
-               if(billdir[c]==1) addstr("Protect Free Speech");
-               else addstr("Limit Hate Speech"); // was "Limit Hurtful Speech"
+               if(billdir[c]==1) addstr("言論の自由の保護");
+               else addstr("ヘイトスピーチの禁止"); // was "Limit Hurtful Speech"
                break;
             case LAW_TAX:
-               if(billdir[c]==1) addstr("Fight Income Inequality"); // was "Punish the Wealthy"
-               else addstr("Cut Job-Killing Taxes"); // was "Stimulate Economic Growth"
+               if(billdir[c]==1) addstr("税の不公正の是正"); // was "Punish the Wealthy"
+               else addstr("競争力を失う税の廃止"); // was "Stimulate Economic Growth"
                break;
             case LAW_FLAGBURNING:
                if(billdir[c]==1) addstr("国旗の焼却禁止の制限");
                else addstr("我が国のシンボルの尊重");
                break;
             case LAW_GUNCONTROL:
-               if(billdir[c]==1) addstr("Prevent Mass Shootings"); // was "Prevent Gun Violence"
-               else addstr("Protect our Second Amendment Rights"); // was "Assert our Second Amendment Rights"
+               if(billdir[c]==1) addstr("殺傷力の高い銃の制限"); // was "Prevent Gun Violence"
+               else addstr("修正第2条の堅持"); // was "Assert our Second Amendment Rights"
                break;
             case LAW_WOMEN:
                if(billdir[c]==1) addstr("男女平等の推進"); // was "Expand Women's Rights"
                else addstr("伝統的な性別役割の維持");
                break;
             case LAW_CIVILRIGHTS:
-               if(billdir[c]==1) addstr("Promote Racial Equality"); // was "Expand Civil Rights"
-               else addstr("Fight Reverse Discrimination");
+               if(billdir[c]==1) addstr("人種の平等の推進"); // was "Expand Civil Rights"
+               else addstr("逆差別の是正");
                break;
             case LAW_DRUGS:
-               if(billdir[c]==1) addstr("Repeal Oppressive Drug Laws"); // was "Limit Oppressive Drug Laws"
-               else addstr("Fight Drug Trafficking"); // was "Strengthen the War On Drugs"
+               if(billdir[c]==1) addstr("薬物に関する抑圧的な法の廃止"); // was "Limit Oppressive Drug Laws"
+               else addstr("麻薬取引の監視強化"); // was "Strengthen the War On Drugs"
                break;
             case LAW_IMMIGRATION:
-               if(billdir[c]==1) addstr("Protect Immigrant Rights");
-               else addstr("Protect our Borders");
+               if(billdir[c]==1) addstr("移民の権利の保護");
+               else addstr("国境の管理強化");
                break;
             case LAW_ELECTIONS:
-               if(billdir[c]==1) addstr("Fight Political Corruption");
-               else addstr("Limit Regulation of Political Speech"); // was "Limit Campaign Finance Reforms"
+               if(billdir[c]==1) addstr("政治腐敗の防止");
+               else addstr("政治演説の制限の禁止"); // was "Limit Campaign Finance Reforms"
                break;
             case LAW_MILITARY:
-               if(billdir[c]==1) addstr("Shrink the Military-Industrial Complex"); // was "Limit Military Spending"
-               else addstr("Support our Troops in Defending America"); // was "Strengthen our National Defense"
+               if(billdir[c]==1) addstr("軍産複合体の縮小"); // was "Limit Military Spending"
+               else addstr("アメリカの防衛力の強化"); // was "Strengthen our National Defense"
                break;
             case LAW_TORTURE:
-               if(billdir[c]==1) addstr("Protect Human Rights from Torture"); // was "Ban Torture Techniques"
-               else addstr("Enhance Interrogations to Fight Terrorism"); // was "Permit Strong Tactics in Interrogations"
+               if(billdir[c]==1) addstr("拷問による人権侵害の禁止"); // was "Ban Torture Techniques"
+               else addstr("テロとの戦いのための取調べの強化"); // was "Permit Strong Tactics in Interrogations"
                break;
             case LAW_PRISONS:
                if(billdir[c]==1)
                {
-                  if(law[LAW_PRISONS]==1) addstr("Establish Prison Rehabilitation"); // was "Mandate Prison Rehabilitation"
-                  else addstr("Improve Prison Conditions"); // was "Expand Prisoners' Rights"
+                  if(law[LAW_PRISONS]==1) addstr("囚人の社会復帰制度の設立"); // was "Mandate Prison Rehabilitation"
+                  else addstr("収容所の環境改善"); // was "Expand Prisoners' Rights"
                }
-               else addstr("Enhance Prison Security"); // was "Limit Prisoners' Rights"
+               else addstr("収容所の管理強化"); // was "Limit Prisoners' Rights"
                break;
          }
          set_color(COLOR_WHITE,COLOR_BLACK,0);
@@ -1803,7 +1803,7 @@ void congress(char clearformess,char canseethings)
             else
             {
                set_color(COLOR_RED,COLOR_BLACK,1);
-               addstr("*** VETO ***");
+               addstr("*** 拒否 ***");
             }
 
             pause_ms(500);

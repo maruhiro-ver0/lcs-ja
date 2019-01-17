@@ -1271,7 +1271,7 @@ void makecharacter()
    newsq->id=0;cursquadid++;
    newsq->squad[0]=newcr;
    newcr->squadid=0;
-   strcpy(newsq->name,"リベラル・クライム・スコード");
+   strcpy(newsq->name,"The Liberal Crime Squad");
    for(int l=0;l<len(location);l++)
    {
       if(location[l]->type==base)

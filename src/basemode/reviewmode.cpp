@@ -283,25 +283,25 @@ void review_mode(short mode)
       switch(mode)
       {
       case REVIEWMODE_LIBERALS:
-         addstr("Active Liberals");
+         addstr("活動中のリベラル");
          break;
       case REVIEWMODE_HOSTAGES:
-         addstr("Conservative Automatons in Captivity");
+         addstr("捕らわれの保守の操り人形");
          break;
       case REVIEWMODE_CLINIC:
-         addstr("Liberals in CLINICS");
+         addstr("入院中のリベラル");
          break;
       case REVIEWMODE_JUSTICE:
-         addstr("Liberals and the Justice System");
+         addstr("リベラルと司法制度");
          break;
       case REVIEWMODE_SLEEPERS:
-         addstr("Sleepers");
+         addstr("潜伏者");
          break;
       case REVIEWMODE_DEAD:
-         addstr("Liberal Martyrs and Dead Bodies");
+         addstr("犠牲となったリベラルと遺体");
          break;
       case REVIEWMODE_AWAY:
-         addstr("Liberals that are Away");
+         addstr("去ったリベラル");
          break;
       }
       move(1,0);
@@ -311,22 +311,22 @@ void review_mode(short mode)
       switch(mode)
       {
       case REVIEWMODE_LIBERALS:
-         addstr("SQUAD / ACTIVITY");
+         addstr("部隊/活動");
          break;
       case REVIEWMODE_HOSTAGES:
-         addstr("DAYS IN CAPTIVITY");
+         addstr("捕らわれてからの日数");
          break;
       case REVIEWMODE_JUSTICE:
-         addstr("MONTHS LEFT");
+         addstr("残りの月");
          break;
       case REVIEWMODE_CLINIC:
-         addstr("PROGNOSIS");
+         addstr("退院予定");
          break;
       case REVIEWMODE_SLEEPERS:
          addstr("PROFESSION");
          break;
       case REVIEWMODE_DEAD:
-         addstr("DAYS SINCE PASSING");
+         addstr("経過した日数");
          break;
       case REVIEWMODE_AWAY:
          addstr("DAYS UNTIL RETURN");
@@ -433,7 +433,7 @@ void review_mode(short mode)
                else
                {
                   set_color(COLOR_BLACK,COLOR_BLACK,1);
-                  addstr("ﾄﾄﾄﾄﾄﾄﾄ"); // 7 characters
+                  addstr("-------"); // 7 characters
                }
                break;
             }
