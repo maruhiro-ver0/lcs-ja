@@ -2643,5 +2643,5 @@ void statebrokenlaws(Creature & cr)
    //LOITERING
    else if(breakercount[LAWFLAG_LOITERING])
       addstr("LOITERING");
-   addstr("で手配中");
+   addstr("の容疑");
 }

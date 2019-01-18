@@ -82,9 +82,9 @@ void advanceday(char &clearformess,char canseethings)
                   addstr(squad[sq]->squad[p]->name, gamelog);
                   addstr("は");
                   addstr(getactivity(squad[sq]->squad[p]->activity), gamelog);
-                  addstr("の代わりに");
+                  addstr("をせずに");
                   addstr(squad[sq]->name, gamelog);
-                  addstr("と共に行動する。", gamelog);
+                  addstr("と行動", gamelog);
                   gamelog.newline();
 
                   getkey();
@@ -340,9 +340,9 @@ void advanceday(char &clearformess,char canseethings)
             else makedelimiter();
             move(8,1);
             addstr(squad[sq]->name, gamelog);
-            addstr(" arrives in ", gamelog);
+            addstr("は", gamelog);
             addstr(location[squad[sq]->activity.arg]->getname(), gamelog);
-            addstr(".", gamelog);
+            addstr("にたどり着いた。", gamelog);
             gamelog.nextMessage();
 
             getkey();
@@ -404,9 +404,9 @@ void advanceday(char &clearformess,char canseethings)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(8,1);
             addstr(squad[sq]->name, gamelog);
-            addstr(" has arrived at ", gamelog);
+            addstr("は", gamelog);
             addstr(location[squad[sq]->activity.arg]->getname(), gamelog);
-            addstr(".", gamelog);
+            addstr("に到着した。", gamelog);
             gamelog.nextMessage();
 
             getkey();
@@ -425,17 +425,17 @@ void advanceday(char &clearformess,char canseethings)
             if(squad[sq]->squad[0]->base==squad[sq]->activity.arg)
             {
                addstr(squad[sq]->name, gamelog);
-               addstr(" looks around ", gamelog);
+               addstr("は", gamelog);
                addstr(location[squad[sq]->activity.arg]->getname(), gamelog);
-               addstr(".", gamelog);
+               addstr("の見回りを始めた。", gamelog);
                gamelog.nextMessage();
             }
             else
             {
                addstr(squad[sq]->name, gamelog);
-               addstr(" has arrived at ", gamelog);
+               addstr("は", gamelog);
                addstr(location[squad[sq]->activity.arg]->getname(), gamelog);
-               addstr(".", gamelog);
+               addstr("に到着した。", gamelog);
                gamelog.nextMessage();
             }
 

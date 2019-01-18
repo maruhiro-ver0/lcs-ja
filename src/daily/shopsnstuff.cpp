@@ -45,20 +45,20 @@ void hospital(int loc)
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(10,1);
-      addstr("F - Go in and fix up Conservative wounds");
+      addstr("F - 入院して保守的負傷を治療する");
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(12,1);
-      addstr("Enter - Leave");
+      addstr("Enter - 帰る");
 
       if(partysize>0&&(party_status==-1||partysize>1)) set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(13,1);
-      addstr("# - Check the status of a squad Liberal");
+      addstr("# - リベラルの状態を確認する");
       if(party_status!=-1) set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(14,1);
-      addstr("0 - Show the squad's Liberal status");
+      addstr("0 - 部隊の状態を表示する");
 
       int c=getkey();
 

@@ -1127,7 +1127,7 @@ void assemblesquad(squadst *cursquad)
          move(24,0);
          addstr("                                                                                "); // 80 spaces
 
-         enter_name(24,0,cursquad->name,SQUAD_NAMELEN,"リベラルクライムスコード");
+         enter_name(24,0,cursquad->name,SQUAD_NAMELEN,"The Liberal Crime Squad");
 
          squad.push_back(cursquad);
       }

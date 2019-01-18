@@ -255,12 +255,12 @@ void enemyattack()
 
    static const char *escape_running[] =
    {
-      " makes a break for it!",
+      "は急いでこの場を去った!",
       "は悲鳴を上げて逃げ出した!",
       "は逃げ出した!",
       "は走り去った!",
       "は大声を上げて逃げた!",
-      " bolts out of there!",
+      "はあわてて走り出した!",
       "は叫び声を上げ走り去った!",
    };
 
@@ -582,29 +582,29 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
       if(!a.animalgloss) //Move into WEAPON_NONE -XML
       {
          if(!LCSrandom(a.get_skill(SKILL_HANDTOHAND)+1))
-            strcat(str,"に体当たりした");
+            strcat(str,"に体当たり");
          else if(!LCSrandom(a.get_skill(SKILL_HANDTOHAND)))
-            strcat(str,"を殴った");
+            strcat(str,"を殴る");
          else if(!LCSrandom(a.get_skill(SKILL_HANDTOHAND)-1))
-            strcat(str,"を掴んだ");
+            strcat(str,"を掴む");
          else if(!LCSrandom(a.get_skill(SKILL_HANDTOHAND)-2))
-            strcat(str,"を蹴った");
+            strcat(str,"を蹴る");
          else if(!LCSrandom(a.get_skill(SKILL_HANDTOHAND)-3))
-            strcat(str,"を打った");
+            strcat(str,"を打つ");
          else if(!LCSrandom(a.get_skill(SKILL_HANDTOHAND)-4))
-            strcat(str,"に跳び蹴りをした");
-         else strcat(str,"を舞うように打った");
+            strcat(str,"に跳び蹴り");
+         else strcat(str,"を舞うように打つ");
       }
       else
       {
          if(a.specialattack==ATTACK_CANNON)
          {
-            strcat(str,"に120mm砲弾を発射した");
+            strcat(str,"に120mm砲弾を発射");
             melee=false;
          }
-         else if(a.specialattack==ATTACK_FLAME) strcat(str,"に火を吹いた");
-         else if(a.specialattack==ATTACK_SUCK) strcat(str,"を突き刺した");
-         else strcat(str,"に噛み付いた");
+         else if(a.specialattack==ATTACK_FLAME) strcat(str,"に火を吹く");
+         else if(a.specialattack==ATTACK_SUCK) strcat(str,"を突き刺す");
+         else strcat(str,"に噛み付く");
       }
    }
    else
@@ -1014,7 +1014,7 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
       // Report vehicle protection effect
       if (mode==GAMEMODE_CHASECAR && vehicle != NULL && extraarmor > 0)
       {
-         strcat(str, "。攻撃は");
+         strcat(str, "、");
          strcat(str, vehicle->shortname()+"の");
          strcat(str, vehicle->getpartname(vehicleHitLocation));
          // Could the vehicle have bounced that round on its own?
@@ -1025,16 +1025,16 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
             
             if (cardmg < 2) //fudge factor of 1 armor level due to randomness
             {
-               strcpy(str, "で遮られている。");
+               strcpy(str, "で遮蔽");
             }
             else
             {
-               strcpy(str, "を貫通している。");
+               strcpy(str, "を貫通");
             }
          }
          else
          {
-            strcpy(str, "を貫通している。");
+            strcpy(str, "を貫通");
          }
       }
       
@@ -1176,13 +1176,13 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
             }
 
             if(w==BODYPART_HEAD && target->wound[BODYPART_HEAD] & WOUND_CLEANOFF)
-               strcat(str," CUTTING IT OFF!");
+               strcat(str,"、切り落とされた!");
             else if(w==BODYPART_BODY && target->wound[BODYPART_BODY] & WOUND_CLEANOFF)
-               strcat(str," CUTTING IT IN HALF!");
+               strcat(str,"、真っ二つだ!");
             else if(w==BODYPART_HEAD && target->wound[BODYPART_HEAD] & WOUND_NASTYOFF)
-               strcat(str," BLOWING IT APART!");
+               strcat(str,"、砕け散った!");
             else if(w==BODYPART_BODY && target->wound[BODYPART_BODY] & WOUND_NASTYOFF)
-               strcat(str," BLOWING IT IN HALF!");
+               strcat(str,"、バラバラになった!");
             else strcat(str,attack_used->hit_punctuation);
             move(17,1);
             //set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -1206,8 +1206,8 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
          }
          else
          {
-            if(target->wound[w] & WOUND_CLEANOFF) strcat(str," CUTTING IT OFF!");
-            else if(target->wound[w] & WOUND_NASTYOFF) strcat(str," BLOWING IT OFF!");
+            if(target->wound[w] & WOUND_CLEANOFF) strcat(str,"、切り落とされた!");
+            else if(target->wound[w] & WOUND_NASTYOFF) strcat(str,"、ちぎれ飛んだ!");
             else strcat(str,attack_used->hit_punctuation);
 
             if(target->wound[w] & WOUND_NASTYOFF) bloodblast(&target->get_armor());
@@ -1627,7 +1627,7 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
       else
       {
          set_color(COLOR_YELLOW,COLOR_BLACK,1);
-         strcat(str,"効かなかった。");
+         strcat(str,"が効かなかった。");
          move(17,1);
          addstr(str, gamelog);
          gamelog.newline();

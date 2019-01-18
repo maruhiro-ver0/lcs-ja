@@ -715,7 +715,7 @@ void fundreport(char &clearformess)
       int y=2,totalmoney=0,dailymoney=0,numpages=1;
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      mvaddstr(0,0,"リベラルクライムスコード: 収支報告");
+      mvaddstr(0,0,"リベラル・クライム・スコード: 収支報告");
 
       for(int i=0;i<INCOMETYPENUM;i++)
       {

@@ -106,14 +106,13 @@ void hospitalize(int loc, Creature &patient)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
       addstr(patient.name, gamelog);
-      addstr(" will be at ", gamelog);
+      addstr("は", gamelog);
       addstr(location[loc]->name, gamelog);
-      addstr(" for ", gamelog);
+      addstr("に", gamelog);
       addstr(time, gamelog);
-      addstr(" ", gamelog);
-      if(time>1)addstr("months", gamelog);
-      else addstr("month", gamelog);
-      addstr(".", gamelog);
+      if(time>1)addstr("ヶ月", gamelog);
+      else addstr("ヶ月", gamelog);
+      addstr("間入院する。", gamelog);
       gamelog.nextMessage(); //Time for the next message.
 
       getkey();
