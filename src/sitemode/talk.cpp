@@ -683,10 +683,10 @@ char heyINeedAGun(Creature &a, Creature &tk)
    clearcommandarea();clearmessagearea();clearmaparea();
 
    set_color(COLOR_WHITE,COLOR_BLACK,1);
-   move(9,1);addstr(a.name, gamelog);addstr(" says, ", gamelog);
+   move(9,1);addstr(a.name, gamelog);addstr("は言った。", gamelog);
    set_color(COLOR_GREEN,COLOR_BLACK,1);
    move(10,1);
-   addstr("\"Hey, I need a gun.\"", gamelog);
+   addstr("「やあ。銃が欲しいんだ。」", gamelog);
    gamelog.newline();
 
    getkey();
@@ -697,7 +697,7 @@ char heyINeedAGun(Creature &a, Creature &tk)
       move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(13,1);
-      addstr("\"Jesus...\"", gamelog);
+      addstr("「ジーザス…」", gamelog);
       gamelog.newline();
 
       getkey();
@@ -714,7 +714,7 @@ char heyINeedAGun(Creature &a, Creature &tk)
       move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(13,1);
-      addstr("\"I don't sell guns, officer.\"", gamelog);
+      addstr("「お巡りさん、銃は売っていません。」", gamelog);
       gamelog.newline();
 
       getkey();
@@ -727,7 +727,7 @@ char heyINeedAGun(Creature &a, Creature &tk)
       move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(13,1);
-      addstr("\"We can talk when things are calm.\"", gamelog);
+      addstr("「騒ぎが収まったら売ってやる。」", gamelog);
       gamelog.newline();
 
       getkey();
@@ -747,7 +747,7 @@ char heyINeedAGun(Creature &a, Creature &tk)
       move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(13,1);
-      addstr("\"What exactly do you need?\"", gamelog);
+      addstr("「どれが要るんだ? 」", gamelog);
       gamelog.newline();
 
       getkey();
@@ -759,7 +759,7 @@ char heyINeedAGun(Creature &a, Creature &tk)
       move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(13,1);
-      addstr("\"Uhhh... not a good place for this.\"", gamelog);
+      addstr("「うーむ…ここではダメだ。」", gamelog);
       gamelog.newline();
 
       getkey();
@@ -1343,13 +1343,13 @@ char talkAboutIssues(Creature &a, Creature &tk)
    {
       switch(lw)
       {
-      case LAW_ABORTION:      addstr("\"Conservatives make women turn to coat hangers.\"", gamelog);break;
-      case LAW_ANIMALRESEARCH:addstr("\"Richard Gere put a gerbil in his butt!\"", gamelog);break;
+      case LAW_ABORTION:      addstr("「保守派は女をコートのハンガーのようにしてしまう。」", gamelog);break;
+      case LAW_ANIMALRESEARCH:addstr("「リチャード・ギアはケツの穴にネズミを入れたことがある! 」", gamelog);break;
       case LAW_POLICEBEHAVIOR:
                               if(law[LAW_FREESPEECH]==ALIGN_ARCHCONSERVATIVE)
-                                  addstr("\"[The police are not doing their job very well!]\"", gamelog);
+                                  addstr("「 [警官はまじめに仕事をしていない! ] 」", gamelog);
                               else
-                                  addstr("\"The cops suck!\"", gamelog);
+                                  addstr("「ポリ公のクソッタレ! 」", gamelog);
                               break;
       case LAW_PRIVACY:       addstr("\"The government, like, knows things about you.\"", gamelog);break;
       case LAW_DEATHPENALTY:  addstr("\"They executed this one dude, and like, his head caught on fire.\"", gamelog);break;
@@ -1376,9 +1376,9 @@ char talkAboutIssues(Creature &a, Creature &tk)
    {
       switch(lw)
       {
-      case LAW_ABORTION:      addstr("\"Conservatives don't like abortion.\"", gamelog);break;
-      case LAW_ANIMALRESEARCH:addstr("\"Animals are denied the right to vote.\"", gamelog);break;
-      case LAW_POLICEBEHAVIOR:addstr("\"The police are still out there.\"", gamelog);break;
+      case LAW_ABORTION:      addstr("「保守派は中絶が好きではない。」", gamelog);break;
+      case LAW_ANIMALRESEARCH:addstr("「動物には投票権がない。」", gamelog);break;
+      case LAW_POLICEBEHAVIOR:addstr("「いまだに警察は存在する。」", gamelog);break;
       case LAW_PRIVACY:       addstr("\"The government runs intelligence agencies.\"", gamelog);break;
       case LAW_DEATHPENALTY:  addstr("\"You can go to prison for life for serious crimes.\"", gamelog);break;
       case LAW_NUCLEARPOWER:  addstr("\"Some people support legalizing nuclear power.\"", gamelog);break;
@@ -1405,15 +1405,13 @@ char talkAboutIssues(Creature &a, Creature &tk)
       switch(lw)
       {
       case LAW_ABORTION:
-         addstr("\"The government is systematically trying to rob women of the right ", gamelog);move(y++,1);
-         addstr("to control their own destinies.\"", gamelog);
+         addstr("「政府は女性の自己決定権を組織的に奪おうとしている。」", gamelog);
          break;
       case LAW_ANIMALRESEARCH:
-         addstr("\"Animals are routinely subjected to inhumane treatment in labs in this", gamelog);move(y++,1);
-         addstr("country.\"", gamelog);
+         addstr("「この国の動物たちは研究所で常にひどい扱いを受けている。」", gamelog);
          break;
       case LAW_POLICEBEHAVIOR:
-         addstr("\"The police regularly torture minority suspects during interrogations.\"", gamelog);
+         addstr("「警察はマイノリティの容疑者にしばしば拷問を行っている。」", gamelog);
          break;
       case LAW_PRIVACY:
          addstr("\"Files are being kept on innocent citizens whose only crime is to ", gamelog);move(y++,1);
@@ -1520,31 +1518,31 @@ char talkAboutIssues(Creature &a, Creature &tk)
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(y++,1);
       if(tk.type==CREATURE_MUTANT&&tk.get_attribute(ATTRIBUTE_INTELLIGENCE,true)<3)
-         addstr("\"Aaaahhh...\"", gamelog);
+         addstr("「ア゛ア゛ァ゛ァ゛……」", gamelog);
       else
       {
          switch(LCSrandom(10))
          {
-         case 0: addstr("\"Dear me! Is there anything we can do?\"", gamelog); break;
-         case 1: addstr("\"That *is* disturbing!   What can I do?\"", gamelog); break;
-         case 2: addstr("\"Gosh!   Is there anything I can do?\"", gamelog); break;
-         case 3: addstr("\"That's frightening!   What can we do?\"", gamelog); break;
-         case 4: addstr("\"Oh, really?\" ", gamelog);
+         case 0: addstr("「ええっ! 私たちに何かできることはないのか? 」", gamelog); break;
+         case 1: addstr("「それはひどい! 私に何かできることはある? 」", gamelog); break;
+         case 2: addstr("「ああ! 私に何かできることはあるのか? 」", gamelog); break;
+         case 3: addstr("「恐ろしい! 私たちはどうすればよいのか? 」", gamelog); break;
+         case 4: addstr("「おお! 本当か? 」", gamelog);
 
                  getkey();
 
                  move(y++,1);
                  set_color(COLOR_GREEN,COLOR_BLACK,1);
-                 addstr("\"Yeah, really!\"", gamelog);
+                 addstr("「ああ、本当だ! 」", gamelog);
                  break;
-         case 5: addstr("\"Oh my Science!   We've got to do something!\"", gamelog); break;
-         case 6: addstr("\"Dude... that's like... totally bumming me.\"", gamelog); break;
-         case 7: addstr("\"Gadzooks! Something must be done!\"", gamelog);break;
-         case 8: addstr("\"You got anything to smoke on you?\" ", gamelog);
+         case 5: addstr("「オー・マイ・サイエンス! 我々は何かしなければ! 」", gamelog); break;
+         case 6: addstr("「ううむ… それは… 大変だ。」", gamelog); break;
+         case 7: addstr("「ヒェーッ! 何とかしなければ! 」", gamelog);break;
+         case 8: addstr("「タバコを持ってないか? 」", gamelog);
                  set_color(COLOR_WHITE,COLOR_BLACK,1);
-                 addstr("*cough*", gamelog);
+                 addstr("*ゴホン*", gamelog);
                  break;
-         case 9: addstr("\"Lawks, I don't think we can allow that.\"", gamelog);break;
+         case 9: addstr("「大変だ。それは許せないな。」", gamelog);break;
          }
       }
       gamelog.newline();
@@ -1553,9 +1551,9 @@ char talkAboutIssues(Creature &a, Creature &tk)
 
       move(++y,1);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      addstr("After more discussion, ", gamelog);
+      addstr("更なる議論の後、", gamelog);
       addstr(tk.name, gamelog);
-      addstr(" agrees to come by later tonight.", gamelog);
+      addstr("と今晩会う約束をした。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -1582,7 +1580,7 @@ char talkAboutIssues(Creature &a, Creature &tk)
          tk.get_attribute(ATTRIBUTE_INTELLIGENCE,true)<3)
       {
          move(y++,1);
-         addstr("\"Ugh.  Pfft.\"", gamelog);
+         addstr("「ウゥ。シュー。」", gamelog);
       }
       else
       {
@@ -1590,17 +1588,17 @@ char talkAboutIssues(Creature &a, Creature &tk)
          {
             move(y++,1);
             if(tk.type==CREATURE_GANGUNIT)
-               addstr("\"Do you want me to arrest you?\"", gamelog);
+               addstr("「逮捕されたいのか? 」", gamelog);
             else if(tk.type==CREATURE_DEATHSQUAD)
-               addstr("\"If you don't shut up, I'm going to shoot you.\"", gamelog);
+               addstr("「黙れ。さもないと撃つぞ。」", gamelog);
             else
             {
                switch(LCSrandom(10))
                {
-               case 0:addstr("\"Get away from me, you hippie.\"", gamelog);break;
-               case 1:addstr("\"My heart aches for humanity.\"", gamelog);break;
-               case 2:addstr("\"I'm sorry, but I think I'm done talking to you.\"", gamelog);break;
-               case 3:addstr("\"Do you need some help finding the exit?\"", gamelog);break;
+               case 0:addstr("「うせろ、ヒッピーめ。」", gamelog);break;
+               case 1:addstr("「私の心が人間性で痛んでいる。」", gamelog);break;
+               case 2:addstr("「残念だが話すことは何もない。」", gamelog);break;
+               case 3:addstr("「出口がわからないのか? 」", gamelog);break;
                case 4:addstr("\"People like you are the reason I'm on medication.\"", gamelog);break;
                case 5:addstr("\"Everyone is entitled to be stupid, but you abuse the privilege.\"", gamelog);break;
                case 6:addstr("\"I don't know what you're on, but I hope it's illegal.\"", gamelog);break;
@@ -1615,9 +1613,9 @@ char talkAboutIssues(Creature &a, Creature &tk)
             move(y++,1);
             switch(lw)
             {
-            case LAW_ABORTION:      addstr("\"Abortion is murder.\"", gamelog);break;
-            case LAW_ANIMALRESEARCH:addstr("\"Don't pretend animals are human.\"", gamelog);break;
-            case LAW_POLICEBEHAVIOR:addstr("\"Only criminals have reason to fear police.\"", gamelog);break;
+            case LAW_ABORTION:      addstr("「中絶は殺人だ。」", gamelog);break;
+            case LAW_ANIMALRESEARCH:addstr("「動物を人のように扱うべきではない。」", gamelog);break;
+            case LAW_POLICEBEHAVIOR:addstr("「警察を恐れるのは犯罪者だけだ。」", gamelog);break;
             case LAW_PRIVACY:       addstr("\"National security is important.\"", gamelog);break;
             case LAW_DEATHPENALTY:  addstr("\"Some people deserve to die.\"", gamelog);break;
             case LAW_NUCLEARPOWER:  addstr("\"Nuclear power is clean.\"", gamelog);break;
@@ -1642,11 +1640,11 @@ char talkAboutIssues(Creature &a, Creature &tk)
          else
          {
             move(y++,1);
-            addstr("\"Whatever.\"", gamelog);
+            addstr("「どうでもいい。」", gamelog);
          }
       }
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      addstr(" <turns away>", gamelog);
+      addstr(" <立ち去った>", gamelog);
       gamelog.newline();
 
       getkey();
@@ -1666,7 +1664,7 @@ char talkInCombat(Creature &a, Creature &tk)
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(9,1);
    addstr(a.name, gamelog);
-   addstr(" talks to ", gamelog);
+   addstr("が", gamelog);
    switch(tk.align)
    {
    case ALIGN_CONSERVATIVE: set_color(COLOR_RED,COLOR_BLACK,1); break;
@@ -1675,7 +1673,7 @@ char talkInCombat(Creature &a, Creature &tk)
    }
    addstr(tk.name, gamelog);
    set_color(COLOR_WHITE,COLOR_BLACK,1);
-   addstr(":", gamelog);
+   addstr("に話しかける:", gamelog);
    gamelog.newline();
 
    int c=0,hostages=0,weaponhostage=0;
@@ -1709,18 +1707,18 @@ char talkInCombat(Creature &a, Creature &tk)
 
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(11,1);
-   addstr("A - Intimidate");
+   addstr("A - 威圧する");
    if(!hostages)set_color(COLOR_BLACK,COLOR_BLACK,1);
    move(12,1);
-   addstr("B - Threaten hostages");
+   addstr("B - 人質を脅す");
    if(tk.cantbluff!=2)set_color(COLOR_WHITE,COLOR_BLACK,0);
    else set_color(COLOR_BLACK,COLOR_BLACK,1);
    move(13,1);
-   addstr("C - Bluff");
+   addstr("C - 嘘をつく");
    if(cop)set_color(COLOR_WHITE,COLOR_BLACK,0);
    else set_color(COLOR_BLACK,COLOR_BLACK,1);
    move(14,1);
-   addstr("D - Surrender to authorities");
+   addstr("D - 投降する");
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    while(true)
    {
@@ -1756,9 +1754,9 @@ char talkInCombat(Creature &a, Creature &tk)
                sitestory->claimed=1;
             break;
          }
-      case 1: addstr("Die you Conservative dogs!", gamelog); break;
-      case 2: addstr("We're the Liberal Crime Squad!", gamelog); break;
-      case 3: addstr("Praying won't help you now!", gamelog); break;
+      case 1: addstr("「くたばれ! 保守の犬め! 」", gamelog); break;
+      case 2: addstr("「我々はリベラル・クライム・スコードだ! 」", gamelog); break;
+      case 3: addstr("「命乞いをしても無駄だ! 」", gamelog); break;
       }
 
       getkey();
@@ -1791,12 +1789,12 @@ char talkInCombat(Creature &a, Creature &tk)
                addstr(encounter[e].name, gamelog);
                switch(LCSrandom(6))
                {
-               case 0:addstr(" chickens out!", gamelog);break;
-               case 1:addstr(" backs off!", gamelog);break;
-               case 2:addstr(" doesn't want to die!", gamelog);break;
-               case 3:addstr(" is out of there!", gamelog);break;
-               case 4:addstr(" has a family!", gamelog);break;
-               case 5:addstr(" is too young to die!", gamelog);break;
+               case 0:addstr("は怖気づいた!", gamelog);break;
+               case 1:addstr("は後ずさりした!", gamelog);break;
+               case 2:addstr("はまだ死にたくない!", gamelog);break;
+               case 3:addstr("は立ち去った!", gamelog);break;
+               case 4:addstr("には家族がいる!", gamelog);break;
+               case 5:addstr("は死ぬには若すぎる!", gamelog);break;
                }
                delenc(e,0);
                addjuice(a,2,200); // Instant juice!

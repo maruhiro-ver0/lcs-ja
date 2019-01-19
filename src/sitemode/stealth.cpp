@@ -328,10 +328,10 @@ void disguisecheck(int timer)
             move(16,1);
 
             if(partysize > 1)
-               addstr("The squad", gamelog);
+               addstr("部隊", gamelog);
             else
                addstr(activesquad->squad[0]->name, gamelog);
-            addstr(" fades into the shadows.", gamelog);
+            addstr("は物陰に隠れた。", gamelog);
             gamelog.newline();
 
             getkey();
@@ -377,10 +377,10 @@ void disguisecheck(int timer)
             move(16,1);
 
             if(partysize > 1)
-               addstr("The squad", gamelog);
+               addstr("部隊", gamelog);
             else
                addstr(activesquad->squad[0]->name, gamelog);
-            addstr(" acts natural.", gamelog);
+            addstr("は自然に振る舞った。", gamelog);
             gamelog.newline();
 
             getkey();

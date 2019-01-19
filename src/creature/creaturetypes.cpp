@@ -57,7 +57,7 @@ void makecreature(Creature &cr,short type)
       case CREATURE_BOUNCER:
          if(mode==GAMEMODE_SITE && location[cursite]->highsecurity)
          {
-            strcpy(cr.name,"Enforcer");
+            strcpy(cr.name,"用心棒");
             cr.set_skill(SKILL_CLUB,LCSrandom(3)+3);
          }
          if(law[LAW_GUNCONTROL]==-2)
@@ -188,13 +188,13 @@ void makecreature(Creature &cr,short type)
       case CREATURE_HICK:
          switch(LCSrandom(7))
          {
-            case 0:strcpy(cr.name,"Country Boy");break;
-			case 1:strcpy(cr.name,"Good ol' Boy");break;
-			case 2:strcpy(cr.name,"Hick");break;
-			case 3:strcpy(cr.name,"Hillbilly");break;
-			case 4:strcpy(cr.name,"Redneck");break;
-            case 5:strcpy(cr.name,"Rube");break;
-            case 6:strcpy(cr.name,"Yokel");break;
+            case 0:strcpy(cr.name,"ｶﾝﾄﾘｰﾎﾞｰｲ");break;
+			case 1:strcpy(cr.name,"オールドボーイ");break;
+			case 2:strcpy(cr.name,"田舎者");break;
+			case 3:strcpy(cr.name,"山男");break;
+			case 4:strcpy(cr.name,"赤っ首");break;
+            case 5:strcpy(cr.name,"おのぼり");break;
+            case 6:strcpy(cr.name,"田夫");break;
          }
          if((law[LAW_GUNCONTROL]==-2&&!LCSrandom(2))||!LCSrandom(10))
          {
@@ -209,7 +209,7 @@ void makecreature(Creature &cr,short type)
          if(law[LAW_POLICEBEHAVIOR]==2 && cr.align==ALIGN_LIBERAL && !LCSrandom(3)) // Peace Officer
          {
             cr.align=ALIGN_MODERATE;
-            strcpy(cr.name,"Police Negotiator");
+            strcpy(cr.name,"交渉担当警官");
             cr.set_skill(SKILL_PERSUASION,LCSrandom(4)+1);
             cr.set_skill(SKILL_PISTOL,LCSrandom(3)+1);
             cr.set_attribute(ATTRIBUTE_HEART,4);
@@ -249,14 +249,14 @@ void makecreature(Creature &cr,short type)
             cr.take_clips(*cliptype[getcliptype("CLIP_GASOLINE")],4);
             cr.reload(false);
             cr.set_skill(SKILL_HEAVYWEAPONS,LCSrandom(3)+2);
-            strcpy(cr.name,"Fireman");
+            strcpy(cr.name,"ファイヤーマン");
             cr.align=ALIGN_CONSERVATIVE;
          }
          else
          {
             cr.give_weapon(*weapontype[getweapontype("WEAPON_AXE")],NULL);
             cr.set_skill(SKILL_AXE,LCSrandom(3)+2);
-            strcpy(cr.name,"Firefighter");
+            strcpy(cr.name,"消防士");
          }
          if(sitealarm) // Respond to emergencies in bunker gear
             cr.give_armor(*armortype[getarmortype("ARMOR_BUNKERGEAR")],NULL);
@@ -356,7 +356,7 @@ void makecreature(Creature &cr,short type)
       case CREATURE_GENETIC:
          if(location[cursite]->type==SITE_CORPORATE_HOUSE)
          {
-            strcpy(cr.name,"Pet ");
+            strcpy(cr.name,"ﾍﾟｯﾄ･");
             attcap[ATTRIBUTE_CHARISMA]=10;
          }
          else
@@ -364,19 +364,19 @@ void makecreature(Creature &cr,short type)
 
          switch(LCSrandom(11))
          {
-         case 0:strcat(cr.name,"Genetic Monster");break;
-         case 1:strcat(cr.name,"Flaming Rabbit");
+         case 0:strcat(cr.name,"人造ﾓﾝｽﾀｰ");break;
+         case 1:strcat(cr.name,"火炎ｳｻｷﾞ");
             cr.specialattack=ATTACK_FLAME;break;
-         case 2:strcat(cr.name,"Genetic Nightmare");break;
-         case 3:strcat(cr.name,"Mad Cow");break;
-         case 4:strcat(cr.name,"Giant Mosquito");
+         case 2:strcat(cr.name,"人造ﾅｲﾄﾒｱ");break;
+         case 3:strcat(cr.name,"狂牛");break;
+         case 4:strcat(cr.name,"巨大蚊");
             cr.specialattack=ATTACK_SUCK;break;
-         case 5:strcat(cr.name,"Six-legged Pig");break;
-         case 6:strcat(cr.name,"Purple Gorilla");break;
-         case 7:strcat(cr.name,"Warped Bear");break;
-         case 8:strcat(cr.name,"Writhing Mass");break;
-         case 9:strcat(cr.name,"Something Bad");break;
-         case 10:strcat(cr.name,"Pink Elephant");break;
+         case 5:strcat(cr.name,"6足豚");break;
+         case 6:strcat(cr.name,"紫ゴリラ");break;
+         case 7:strcat(cr.name,"狂熊");break;
+         case 8:strcat(cr.name,"うごめく塊");break;
+         case 9:strcat(cr.name,"何か悪いもの");break;
+         case 10:strcat(cr.name,"ﾋﾟﾝｸの象");break;
          }
          cr.animalgloss=ANIMALGLOSS_ANIMAL;
          if(law[LAW_ANIMALRESEARCH]!=2)cr.money=0;

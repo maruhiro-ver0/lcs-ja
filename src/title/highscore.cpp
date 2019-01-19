@@ -118,7 +118,7 @@ void viewhighscores(int musicoverride)
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_DISPERSED:
-               addstr("リベラル・クライム・スコードは解散した。");
+               addstr("リベラル・クライム・スコードは全滅した。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_CCS:
@@ -126,7 +126,7 @@ void viewhighscores(int musicoverride)
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_FIREMEN:
-               addstr("リベラル・クライム・スコードは燃やされた。");
+               addstr("リベラル・クライム・スコードは焼却された。");
                if(yourscore==s&&musicoverride==MUSIC_OFF) music.play(MUSIC_DEFEAT);
                break;
             case END_STALIN:
