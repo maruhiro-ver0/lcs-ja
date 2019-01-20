@@ -336,10 +336,10 @@ void special_lab_cosmetics_cagedanimals()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("You see fluffy white rabbits in a locked cage.", gamelog);
+      addstr("ケージの中に白い毛のウサギが見える。", gamelog);
       gamelog.newline();
       move(17,1);
-      addstr("Free them? (Yes or No)");
+      addstr("解放するか? (Yes / No)");
 
       int c=getkey();
 
@@ -568,10 +568,10 @@ void special_lab_genetic_cagedanimals()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("You see horrible misshapen creatures in a sealed cage.", gamelog);
+      addstr("ケージの中に恐ろしく異様な姿の生き物が見える。", gamelog);
       gamelog.newline();
       move(17,1);
-      addstr("Free them? (Yes or No)");
+      addstr("解放するか? (Yes / No)");
 
       int c=getkey();
 
@@ -596,7 +596,7 @@ void special_lab_genetic_cagedanimals()
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
-               addstr("Uh, maybe that idea was Conservative in retrospect...", gamelog);
+               addstr("ああ、思えばそれは保守的考えだったかもしれない…", gamelog);
                gamelog.newline();
 
                int numleft=LCSrandom(6)+1;
@@ -1174,10 +1174,10 @@ void special_sweatshop_equipment()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("You see some textile equipment.", gamelog);
+      addstr("織機がある。", gamelog);
       gamelog.newline();
       move(17,1);
-      addstr("Destroy it? (Yes or No)");
+      addstr("破壊するか? (Yes / No)");
 
       int c=getkey();
 

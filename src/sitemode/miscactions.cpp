@@ -108,14 +108,13 @@ char unlock(short type,char &actual)
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(16,1);
          addstr(activesquad->squad[p]->name, gamelog);
-         addstr(" ", gamelog);
          switch(type)
          {
-            case UNLOCK_DOOR:addstr("unlocks the door", gamelog);break;
+            case UNLOCK_DOOR:addstr("は錠を外した", gamelog);break;
             case UNLOCK_CAGE_HARD:
-            case UNLOCK_CAGE:addstr("unlocks the cage", gamelog);break;
-            case UNLOCK_SAFE:addstr("cracks the safe", gamelog);break;
-            case UNLOCK_ARMORY:addstr("opens the armory", gamelog);break;
+            case UNLOCK_CAGE:addstr("はケージを開けた", gamelog);break;
+            case UNLOCK_SAFE:addstr("は金庫を壊した", gamelog);break;
+            case UNLOCK_ARMORY:addstr("は兵器庫を開けた", gamelog);break;
             case UNLOCK_CELL:addstr("unlocks the cell", gamelog);break;
             case UNLOCK_VAULT:addstr("cracks the combo locks", gamelog);break;
          }

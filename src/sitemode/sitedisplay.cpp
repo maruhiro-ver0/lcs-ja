@@ -118,9 +118,9 @@ void printsitemap(int x,int y,int z)
    char str[200];
    switch(levelmap[locx][locy][locz].special)
    {
-      case SPECIAL_LAB_COSMETICS_CAGEDANIMALS:strcpy(str,"Caged Animals");break;
-      case SPECIAL_NUCLEAR_ONOFF:strcpy(str,"Reactor Control Room");break;
-      case SPECIAL_LAB_GENETIC_CAGEDANIMALS:strcpy(str,"Caged \"Animals\"");break;
+      case SPECIAL_LAB_COSMETICS_CAGEDANIMALS:strcpy(str,"ケージと動物");break;
+      case SPECIAL_NUCLEAR_ONOFF:strcpy(str,"原子炉制御室");break;
+      case SPECIAL_LAB_GENETIC_CAGEDANIMALS:strcpy(str,"ケージと「動物」");break;
       case SPECIAL_POLICESTATION_LOCKUP:strcpy(str,"Police Detention Room");break;
       case SPECIAL_COURTHOUSE_LOCKUP:strcpy(str,"Courthouse Jail");break;
       case SPECIAL_COURTHOUSE_JURYROOM:strcpy(str,"Jury Room");break;
@@ -129,26 +129,26 @@ void printsitemap(int x,int y,int z)
       case SPECIAL_PRISON_CONTROL_MEDIUM:
       case SPECIAL_PRISON_CONTROL_HIGH:strcpy(str,"Prison Control Room");break;
       case SPECIAL_INTEL_SUPERCOMPUTER:strcpy(str,"Supercomputer");break;
-      case SPECIAL_SWEATSHOP_EQUIPMENT:strcpy(str,"Textile Equipment");break;
+      case SPECIAL_SWEATSHOP_EQUIPMENT:strcpy(str,"織機");break;
       case SPECIAL_POLLUTER_EQUIPMENT:strcpy(str,"Factory Equipment");break;
       case SPECIAL_ARMORY:strcpy(str,"Armory");break;
       case SPECIAL_HOUSE_CEO:strcpy(str,"CEO's Study");break;
       case SPECIAL_HOUSE_PHOTOS:
-      case SPECIAL_CORPORATE_FILES:strcpy(str,"Safe");break;
+      case SPECIAL_CORPORATE_FILES:strcpy(str,"金庫");break;
       case SPECIAL_RADIO_BROADCASTSTUDIO:strcpy(str,"Radio Broadcast Room");break;
       case SPECIAL_NEWS_BROADCASTSTUDIO:strcpy(str,"News Broadcast Studio");break;
       case SPECIAL_APARTMENT_LANDLORD:strcpy(str,"Landlord's Office");break;
       case SPECIAL_SIGN_ONE:
       case SPECIAL_SIGN_TWO:
-      case SPECIAL_SIGN_THREE:strcpy(str,"Sign");break;
+      case SPECIAL_SIGN_THREE:strcpy(str,"看板");break;
       case SPECIAL_DISPLAY_CASE:strcpy(str,"Display Case");break;
-      case SPECIAL_STAIRS_UP:strcpy(str,"Stairs Up");break;
-      case SPECIAL_STAIRS_DOWN:strcpy(str,"Stairs Down");break;
-      case SPECIAL_RESTAURANT_TABLE:strcpy(str,"Table");break;
-      case SPECIAL_CAFE_COMPUTER:strcpy(str,"Computer");break;
+      case SPECIAL_STAIRS_UP:strcpy(str,"上階段");break;
+      case SPECIAL_STAIRS_DOWN:strcpy(str,"下階段");break;
+      case SPECIAL_RESTAURANT_TABLE:strcpy(str,"テーブル");break;
+      case SPECIAL_CAFE_COMPUTER:strcpy(str,"コンピュータ");break;
       case SPECIAL_PARK_BENCH:strcpy(str,"Bench");break;
       case SPECIAL_BANK_VAULT:strcpy(str,"Bank Vault");break;
-      case SPECIAL_BANK_TELLER:strcpy(str,"Bank Teller");break;
+      case SPECIAL_BANK_TELLER:strcpy(str,"銀行窓口");break;
       case SPECIAL_BANK_MONEY:strcpy(str,"Oh Wow So Much Money");break;
       case SPECIAL_CCS_BOSS:strcpy(str,"CCS Boss");break;
       case SPECIAL_OVAL_OFFICE_NW:

@@ -1741,8 +1741,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_PSYCHOLOGIST">
-        <type_name>心理学者</type_name>
-        <encounter_name>心理学者</encounter_name>
+        <type_name>精神科医</type_name>
+        <encounter_name>精神科医</encounter_name>
         <!-- <weapon> Hardcoded -->
         <!-- <armor> Hardcoded -->
         <age>GRADUATE</age>

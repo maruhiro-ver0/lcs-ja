@@ -855,8 +855,8 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       line=LCSrandom(3);
       switch(line)
       {
-         case 0:addstr("\"[What church do you go to?]\"", gamelog);break;
-         case 1:addstr("\"[Will you marry me?]\"", gamelog);break;
+         case 0:addstr("「[どの教会へ行っていますか? ]」", gamelog);break;
+         case 1:addstr("「[結婚してくれますか? ]」", gamelog);break;
          case 2:addstr("\"[Do you believe in abstinence education?]\"", gamelog);break;
       }
    }
@@ -865,9 +865,9 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       line=LCSrandom(47);
       switch(line)
       {
-      case 0:addstr("\"Hey baby, you're kinda ugly.  I like that.\"", gamelog);break;
-      case 1:addstr("\"I lost my phone number.  Could I have yours?\"", gamelog);break;
-      case 2:addstr("\"Hey, you wanna go rub one off?\"", gamelog);break;
+      case 0:addstr("「あなたはあまり美しくない…だがそこがいい。」", gamelog);break;
+      case 1:addstr("「電話番号をなくしてしまって…。あなたのを貸してくれないか? 」", gamelog);break;
+      case 2:addstr("「やあ。私のコレを擦ってみたくないか? 」", gamelog);break;
       case 3:addstr("\"Hot damn.  You're built like a brick shithouse, honey.\"", gamelog);break;
       case 4:addstr("\"I know I've seen you on the back of a milk carton, ", gamelog);
              move(11,1);y++;
@@ -1029,8 +1029,8 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       {
          switch(line)
          {
-            case 0:addstr("\"[I go to your church.]\"", gamelog);break;
-            case 1:addstr("\"[Yes.]\"", gamelog);break;
+            case 0:addstr("「[あなたの教会です。]」", gamelog);break;
+            case 1:addstr("「[はい。]」", gamelog);break;
             case 2:addstr("\"[Yes.  Yes, I do.]\"", gamelog);break;
          }
       }
@@ -1039,9 +1039,9 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          switch(line)
          {
          //LIMIT          :-----------------------------------------------------------------------------:
-         case 0 :addstr("\"You're not so cute yourself.  Wanna get a room?\"", gamelog);break;
-         case 1 :addstr("\"How sweet!  You can call me tonight...\"", gamelog);break;
-         case 2 :addstr("\"You bet, baby.\"", gamelog);break;
+         case 0 :addstr("「あなたもね。少し休んでいきませんか? 」", gamelog);break;
+         case 1 :addstr("「ステキな人! 今晩電話してください…」", gamelog);break;
+         case 2 :addstr("「もちろん。」", gamelog);break;
          case 3 :addstr("\"He he, I'll let that one slide.  Besides, I like country folk...\"", gamelog);break;
          case 4 :addstr("\"That's sick.  I can do sick tonight.\"", gamelog);break;
          case 5 :addstr("\"Oooo, let me see!\"", gamelog);break;
@@ -1158,9 +1158,9 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       {
          switch(line)
          {  // all 3 of these lines are from Darth Vader (the 3rd one from back when he's a little kid)
-            case 0:addstr("\"I find your lack of faith disturbing.\"", gamelog);break;
-            case 1:addstr("\"No.  I am your father.\"", gamelog);break;
-            case 2:addstr("\"Don't count on it, slimeball!\"", gamelog);break;
+            case 0:addstr("「あなたの信念の欠如が気掛かりだ。」", gamelog);break;
+            case 1:addstr("「違う、私があなたの父親だ。」", gamelog);break;
+            case 2:addstr("「当てにしないほうがいいよ、スライム・ボール。」", gamelog);break;
          }
       }
       else
@@ -1168,15 +1168,15 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          switch(line)
          {
          //LIMIT          :-----------------------------------------------------------------------------:
-         case 0 : addstr("\"You're such an asshole!\"", gamelog);
+         case 0 : addstr("「あんたはクソみたいだ! 」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <pouts>", gamelog);break;
-         case 1 : addstr("\"Sure, here ya go...\"", gamelog);
+            addstr(" <怒っている>", gamelog);break;
+         case 1 : addstr("「ええ、どうぞ…」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <writes wrong number>", gamelog);break;
-         case 2 : addstr("\"I'm.. uh.. waiting for someone.\"", gamelog);
+            addstr(" <嘘の番号を書いた>", gamelog);break;
+         case 2 : addstr("「えーと…人を待っているので。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <turns away>", gamelog);break;
+            addstr(" <立ち去った>", gamelog);break;
          case 3 : addstr("\"Go use a real bathroom, ya hick.\"", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <points towards bathroom>", gamelog);break;

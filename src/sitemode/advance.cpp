@@ -127,7 +127,7 @@ void creatureadvance()
 
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
             move(16,1);
-            addstr("The Squad smells Conservative panic.", gamelog);
+            addstr("部隊は保守的騒動を感じた。", gamelog);
             gamelog.newline();
 
             if(mode==GAMEMODE_CHASECAR||

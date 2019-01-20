@@ -124,11 +124,11 @@ bool chasesequence()
          {
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(9,1);
-            addstr("D - Try to lose them!");
+            addstr("D - 奴らを巻く!");
             move(10,1);
-            addstr("E - Equip");
+            addstr("E - 装備");
             move(11,1);
-            addstr("F - Fight!");
+            addstr("F - 戦う!");
          }
          else
          {
@@ -403,10 +403,7 @@ bool footchase()
    erase();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
-   addstr("As you exit the site, you notice that you are ", gamelog);
-   move(1,0);
-   gamelog.newline(); //New line. I'd rather it be continuous but whatever.
-   addstr("being followed by Conservative swine!", gamelog);
+   addstr("建物を出ると、保守派に付けられているのを感じた!", gamelog);
    gamelog.newline(); //New line.
 
    getkey();
@@ -443,15 +440,15 @@ bool footchase()
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(9,1);
-         addstr("D - Try to lose them!");
+         addstr("D - 奴らを巻く!");
          move(10,1);
-         addstr("E - Equip");
+         addstr("E - 装備");
          move(11,1);
-         addstr("F - Fight!");
+         addstr("F - 戦う!");
          if(chaseseq.canpullover)
          {
             move(12,1);
-            addstr("G - Give Up");
+            addstr("G - 投降する");
          }
       }
       else
@@ -734,7 +731,7 @@ void evasivedrive()
                break;
             }
          }
-         addstr(" is still on your tail!", gamelog);
+         addstr("はまだ付けている!", gamelog);
          gamelog.newline(); //Blarg. Newline.
 
          getkey();
@@ -784,19 +781,19 @@ void evasiverun()
       switch(LCSrandom(yourworst/5))
       {
       default:
-         addstr("You suddenly dart into an alley!", gamelog);
+         addstr("いきなり路地に駆け込んだ!", gamelog);
          gamelog.newline(); //New line.
          break;
       case 1:
-         addstr("You run as fast as you can!", gamelog);
+         addstr("全速力で逃げた!", gamelog);
          gamelog.newline(); //New line.
          break;
       case 2:
-         addstr("You climb a fence in record time!", gamelog);
+         addstr("世界記録の速さでフェンスをよじ登った!", gamelog);
          gamelog.newline(); //New line.
          break;
       case 3:
-         addstr("You scale a small building and leap between rooftops!", gamelog);
+         addstr("小さなビルを駆け上がり屋根伝いに逃げた!", gamelog);
          gamelog.newline(); //New line.
       }
 

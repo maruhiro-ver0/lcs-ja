@@ -151,7 +151,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>を発砲</attack_description>
+            <attack_description>を発砲した</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>PISTOL</skill>
             <ammotype>CLIP_38</ammotype>
@@ -166,7 +166,7 @@
             <priority>2</priority>
             <strength_min>2</strength_min>
             <strength_max>6</strength_max>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>CLUB</skill>
             <random_damage>6</random_damage>
@@ -188,7 +188,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>を発砲</attack_description>
+            <attack_description>を発砲した</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>PISTOL</skill>
             <ammotype>CLIP_44</ammotype>
@@ -201,7 +201,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>CLUB</skill>
             <strength_min>2</strength_min>
@@ -225,7 +225,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>を発砲</attack_description>
+            <attack_description>を発砲した</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>PISTOL</skill>
             <ammotype>CLIP_45</ammotype>
@@ -238,7 +238,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>CLUB</skill>
             <strength_min>2</strength_min>
@@ -262,7 +262,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>を発砲</attack_description>
+            <attack_description>を発砲した</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>PISTOL</skill>
             <ammotype>CLIP_9</ammotype>
@@ -275,7 +275,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>CLUB</skill>
             <strength_min>2</strength_min>
@@ -300,7 +300,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>を発砲</attack_description>
+            <attack_description>を発砲した</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>SHOTGUN</skill>
             <ammotype>CLIP_BUCKSHOT</ammotype>
@@ -317,7 +317,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>CLUB</skill>
             <strength_min>6</strength_min>
@@ -342,7 +342,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>を発砲</attack_description>
+            <attack_description>を発砲した</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>RIFLE</skill>
             <ammotype>CLIP_ASSAULT</ammotype>
@@ -362,7 +362,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>CLUB</skill>
             <strength_min>6</strength_min>
@@ -387,7 +387,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>を発砲</attack_description>
+            <attack_description>を発砲した</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>RIFLE</skill>
             <ammotype>CLIP_ASSAULT</ammotype>
@@ -401,7 +401,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>CLUB</skill>
             <strength_min>6</strength_min>
@@ -425,7 +425,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>を発砲</attack_description>
+            <attack_description>を発砲した</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>PISTOL</skill>
             <ammotype>CLIP_50AE</ammotype>
@@ -439,7 +439,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>CLUB</skill>
             <strength_min>3</strength_min>
@@ -481,7 +481,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>CLUB</skill>
             <strength_min>12</strength_min>
@@ -506,7 +506,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>を発砲</attack_description>
+            <attack_description>を発砲した</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>RIFLE</skill>
             <ammotype>CLIP_ASSAULT</ammotype>
@@ -527,7 +527,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>CLUB</skill>
             <strength_min>6</strength_min>
@@ -552,7 +552,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>を発砲</attack_description>
+            <attack_description>を発砲した</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>RIFLE</skill>
             <ammotype>CLIP_ASSAULT</ammotype>
@@ -572,7 +572,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>CLUB</skill>
             <strength_min>6</strength_min>
@@ -597,7 +597,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>を発砲</attack_description>
+            <attack_description>を発砲した</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>HEAVYWEAPONS</skill>
             <ammotype>CLIP_DRUM</ammotype>
@@ -619,7 +619,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>CLUB</skill>
             <strength_min>8</strength_min>
@@ -642,7 +642,7 @@
             <priority>1</priority>
             <ranged>true</ranged>
             <thrown>true</thrown>
-            <attack_description>を投擲</attack_description>
+            <attack_description>を投げつける</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <hit_description>爆発して</hit_description>
             <always_describe_hit>true</always_describe_hit>
@@ -674,7 +674,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>を発砲</attack_description>
+            <attack_description>を発砲した</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>SMG</skill>
             <ammotype>CLIP_SMG</ammotype>
@@ -690,7 +690,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>CLUB</skill>
             <strength_min>5</strength_min>
@@ -715,7 +715,7 @@
         <attack>
             <priority>1</priority>
             <ranged>true</ranged>
-            <attack_description>を発砲</attack_description>
+            <attack_description>を発砲した</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>SHOTGUN</skill>
             <ammotype>CLIP_BUCKSHOT</ammotype>
@@ -730,7 +730,7 @@
         </attack>
         <attack>
             <priority>2</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <skill>CLUB</skill>
             <strength_min>6</strength_min>
@@ -753,7 +753,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で斬撃</attack_description>
+            <attack_description>で斬りつける</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
@@ -779,7 +779,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <ranged>false</ranged>
             <strength_min>6</strength_min>
@@ -802,7 +802,7 @@
         <size>5</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>を振り回した</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>1</strength_min>
             <strength_max>6</strength_max>
@@ -824,7 +824,7 @@
         <bashstrengthmod>105</bashstrengthmod>
         <size>4</size>
         <attack>
-            <attack_description>で斬撃</attack_description>
+            <attack_description>で斬りつける</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <hit_description>刃が</hit_description>
             <skill>KNIFE</skill>
@@ -851,7 +851,7 @@
         <size>5</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>1</strength_min>
             <strength_max>4</strength_max>
@@ -873,7 +873,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>4</strength_min>
             <strength_max>8</strength_max>
@@ -893,7 +893,7 @@
         <fencevalue>10</fencevalue>
         <size>5</size>
         <attack>
-            <attack_description>で斬撃</attack_description>
+            <attack_description>で斬りつける</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <hit_description>刃が</hit_description>
             <strength_min>1</strength_min>
@@ -927,7 +927,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で斬撃</attack_description>
+            <attack_description>で斬りつける</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
@@ -953,7 +953,7 @@
         <size>5</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>1</strength_min>
             <strength_max>4</strength_max>
@@ -977,7 +977,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>4</strength_min>
             <strength_max>8</strength_max>
@@ -999,7 +999,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>8</strength_min>
             <strength_max>18</strength_max>
@@ -1022,7 +1022,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>8</strength_min>
             <strength_max>18</strength_max>
@@ -1045,7 +1045,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>4</strength_min>
             <strength_max>8</strength_max>
@@ -1067,7 +1067,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で刺突</attack_description>
+            <attack_description>を突き刺す</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
@@ -1090,7 +1090,7 @@
         <fencevalue>5</fencevalue>
         <size>5</size>
         <attack>
-            <attack_description>で刺突</attack_description>
+            <attack_description>を突き刺す</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <hit_description>刃が</hit_description>
             <strength_min>1</strength_min>
@@ -1119,7 +1119,7 @@
         <size>5</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>1</strength_min>
             <strength_max>4</strength_max>
@@ -1141,7 +1141,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
@@ -1164,7 +1164,7 @@
         <size>15</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で斬撃</attack_description>
+            <attack_description>で斬りつける</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>6</strength_min>
             <strength_max>12</strength_max>
@@ -1189,7 +1189,7 @@
         <size>5</size>
         <attack>
             <priority>1</priority>
-            <attack_description>で刺突</attack_description>
+            <attack_description>を突き刺す</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>1</strength_min>
             <strength_max>2</strength_max>
@@ -1211,7 +1211,7 @@
         <size>15</size> <!-- You can't conceal a burning torch under your clothes. -->        
         <attack>
             <priority>1</priority>
-            <attack_description>で殴打</attack_description>
+            <attack_description>で殴りかかる</attack_description>
             <hit_punctuation>!</hit_punctuation>
             <strength_min>1</strength_min>
             <strength_max>1</strength_max>

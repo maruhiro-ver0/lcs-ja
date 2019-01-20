@@ -2258,7 +2258,7 @@ void mode_site()
                         clearmessagearea();
                         set_color(COLOR_WHITE,COLOR_BLACK,1);
                         move(16,1);
-                        addstr("The computer has been unplugged.", gamelog);
+                        addstr("コンピュータには電源が入っていない。", gamelog);
                         gamelog.newline();
                         levelmap[locx][locy][locz].special=-1;
 
@@ -2269,7 +2269,7 @@ void mode_site()
                         clearmessagearea();
                         set_color(COLOR_WHITE,COLOR_BLACK,1);
                         move(16,1);
-                        addstr("The computer is occupied.", gamelog);
+                        addstr("コンピュータは使用中だ。", gamelog);
                         gamelog.newline();
                         levelmap[locx][locy][locz].special=-1;
 
@@ -2285,7 +2285,7 @@ void mode_site()
                         clearmessagearea();
                         set_color(COLOR_WHITE,COLOR_BLACK,1);
                         move(16,1);
-                        addstr("Some people are hiding under the table.", gamelog);
+                        addstr("何人かがテーブルの下に隠れている。", gamelog);
                         gamelog.newline();
                         levelmap[locx][locy][locz].special=-1;
 
@@ -2298,7 +2298,7 @@ void mode_site()
                         clearmessagearea();
                         set_color(COLOR_WHITE,COLOR_BLACK,1);
                         move(16,1);
-                        addstr("The table is occupied.", gamelog);
+                        addstr("テーブルは人でいっぱいだ。", gamelog);
                         gamelog.newline();
                         levelmap[locx][locy][locz].special=-1;
 
@@ -2313,7 +2313,7 @@ void mode_site()
                         clearmessagearea();
                         set_color(COLOR_WHITE,COLOR_BLACK,1);
                         move(16,1);
-                        addstr("The bench is empty.", gamelog);
+                        addstr("ベンチには誰もいない。", gamelog);
                         gamelog.newline();
                         levelmap[locx][locy][locz].special=-1;
 
@@ -2324,7 +2324,7 @@ void mode_site()
                         clearmessagearea();
                         set_color(COLOR_WHITE,COLOR_BLACK,1);
                         move(16,1);
-                        addstr("There are people sitting here.", gamelog);
+                        addstr("人が座っている。", gamelog);
                         gamelog.newline();
                         levelmap[locx][locy][locz].special=-1;
 
@@ -2658,10 +2658,10 @@ void open_door(bool restricted)
 
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(16,1);
-         addstr("You try the door, but it is locked.", gamelog);
+         addstr("扉を開けようとしたが鍵がかかっている。", gamelog);
          gamelog.newline();
          move(17,1);
-         addstr("Try to pick the lock? (Yes or No)");
+         addstr("錠を外そうとするか? (Yes / No)");
 
          int c=getkey();
 

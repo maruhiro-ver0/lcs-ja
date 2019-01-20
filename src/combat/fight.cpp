@@ -599,7 +599,7 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
       {
          if(a.specialattack==ATTACK_CANNON)
          {
-            strcat(str,"に120mm砲弾を発射");
+            strcat(str,"に120mm砲弾を発射した");
             melee=false;
          }
          else if(a.specialattack==ATTACK_FLAME) strcat(str,"に火を吹く");
@@ -896,8 +896,8 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
       {
          strcat(str,attack_used->hit_description);
       }
-      if(sneak_attack) strcat(str, "突き刺した");
-      else strcat(str,"命中した");
+      if(sneak_attack) strcat(str, "不意打ち");
+      else strcat(str,"命中");
 
       char damtype=0;
       int damamount=0;

@@ -350,47 +350,47 @@ void Shop::sell_loot(squadst& customers) const
          set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(10,40);
-      addstr("F - Pawn Selectively");
+      addstr("F - 売る物を選ぶ");
 
       if(len(location[customers.squad[0]->base]->loot))
          set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(11,1);
-      addstr("W - Pawn all Weapons");
+      addstr("W - 武器を全て売る");
 
       if(len(location[customers.squad[0]->base]->loot))
          set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(11,40);
-      addstr("A - Pawn all Ammunition");
+      addstr("A - 弾丸を全て売る");
 
       if(len(location[customers.squad[0]->base]->loot))
          set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(12,1);
-      addstr("C - Pawn all Clothes");
+      addstr("C - 服を全て売る");
 
       if(len(location[customers.squad[0]->base]->loot))
          set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(12,40);
-      addstr("L - Pawn all Loot");
+      addstr("L - 略奪品を全て売る");
 
       if(party_status!=-1)
          set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(15,1);
-      addstr("0 - Show the squad's Liberal status");
+      addstr("0 - 部隊の状態を表示する");
 
       if(partysize&&(party_status==-1||partysize>1))
          set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(15,40);
-      addstr("# - Check the status of a squad Liberal");
+      addstr("# - リベラルの状態を表示する");
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(16,40);
-      addstr("Enter - Done pawning");
+      addstr("Enter - 戻る");
 
       int c=getkey();
 
@@ -462,9 +462,9 @@ void Shop::sell_loot(squadst& customers) const
          {
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(8,1);
-            addstr("You add $");
+            addstr("$");
             addstr(fenceamount);
-            addstr(" to Liberal Funds.");
+            addstr("のリベラル資金になった。");
 
             getkey();
 
@@ -488,7 +488,7 @@ int Shop::fenceselect(squadst& customers) const
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
-      addstr("What will you sell?");
+      addstr("何を売るか?");
 
       if(ret)
       {
