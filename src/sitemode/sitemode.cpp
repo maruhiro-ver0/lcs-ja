@@ -2661,7 +2661,7 @@ void open_door(bool restricted)
          addstr("扉を開けようとしたが鍵がかかっている。", gamelog);
          gamelog.newline();
          move(17,1);
-         addstr("錠を外そうとするか? (Yes / No)");
+         addstr("錠を外すか? (Yes / No)");
 
          int c=getkey();
 
@@ -2717,14 +2717,14 @@ void open_door(bool restricted)
          move(16,1);
          if(locked)
          {
-            addstr("You shake the handle but it is ", gamelog);
-            if(has_security) addstr("still ", gamelog);
-            addstr("locked.", gamelog);
+            addstr("ドアノブを回そうとしたが", gamelog);
+            if(has_security) addstr("まだ", gamelog);
+            addstr("鍵がかかっている。", gamelog);
          }
          else addstr("It's locked from the other side.",gamelog);
          gamelog.newline();
          move(17,1);
-         addstr("Force it open? (Yes or No)");
+         addstr("こじ開けるか? (Yes / No)");
 
          int c=getkey();
 

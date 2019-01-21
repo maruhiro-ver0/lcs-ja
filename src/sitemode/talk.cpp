@@ -2589,49 +2589,49 @@ char heyMisterMonster(Creature &a, Creature &tk)
       switch(LCSrandom(11))
       {
       case 0:
-         pitch = "\"Hi Mister Monster!\"";
-         response = "\"Die in a fire!\"";
+         pitch = "「やあモンスターさん! 」";
+         response = "『燃え尽きて死ね! 』";
          break;
       case 1:
-         pitch = "\"Good monster!\"";
-         response = "\"Die in a fire!\"";
+         pitch = "「グッド・モンスター! 」";
+         response = "『燃え尽きて死ね! 』";
          break;
       case 2:
-         pitch = "\"Woah, uh... shit!\"";
-         response = "\"Foolish mortal!\"";
+         pitch = "「うぉ…クソッ! 」";
+         response = "『愚かな死すべき者よ! 』";
          break;
       case 3:
-         pitch = "\"Don't kill us!\"";
-         response = "\"You're already dead!\"";
+         pitch = "「殺さないでくれ! 」";
+         response = "『オマエはもう死んでいる! 』";
          break;
       case 4:
-         pitch = "\"Oh crap!\"";
-         response = "\"Where is your god now, mortal?!\"";
+         pitch = "「バカな! 」";
+         response = "『オマエの神はどこへ行った?! 死すべき者よ。』";
          break;
       case 5:
-         pitch = "\"Uhhh... down, boy!\"";
-         response = "\"I'm a girl, fool!\"";
+         pitch = "「うう… この野郎! 」";
+         response = "『オレは女だ! バカめ! 』";
          break;
       case 6:
-         pitch = "\"Don't eat me!\"";
-         response = "\"I will feast on your flesh!\"";
+         pitch = "「食べないでくれ! 」";
+         response = "『生肉は好物だ! 』";
          break;
       case 7:
-         pitch = "\"Excuse me, I am, uh...\"";
-         response = "\"About to die?!\"";
+         pitch = "「失礼、私は…えー…」";
+         response = "『死のうとしている?!』";
          break;
       case 8:
-         pitch = "\"Shh... it's okay... I'm a friend!\"";
-         response = "\"We will kill you AND your friends!\"";
+         pitch = "「シーッ… OK、私たちは友達だ! 」";
+         response = "『オマエとオマエの友を殺してやる! 』";
          break;
       case 9:
-         pitch = "\"OH MAN I LOVE MONSTERS!\"";
-         response = "\"WHAT A COINCIDENCE, I'M HUNGRY!\"";
+         pitch = "「ああ、モンスターは大好きだ! 」";
+         response = "『ちょうどいい。腹が減っていたのだ! 」";
          break;
       case 10:
       default:
-         pitch = "\"Slurp! Boom! Raaahgh!\"";
-         response = "\"Your mockery will be met with death!\"";
+         pitch = "「ズルズル! ブーン! ラララー! 」";
+         response = "『オマエのゴマカシは死と出会うだろう! 』";
          break;
       }
    }
@@ -2643,7 +2643,7 @@ char heyMisterMonster(Creature &a, Creature &tk)
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(10,1);
    addstr(activesquad->squad[bestp]->name, gamelog);
-   addstr(" says, ", gamelog);
+   addstr("は言った。", gamelog);
    move(11,1);
    set_color(COLOR_GREEN,COLOR_BLACK,1);
    addstr(pitch, gamelog);
@@ -2654,7 +2654,7 @@ char heyMisterMonster(Creature &a, Creature &tk)
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(13,1);
    addstr(tk.name, gamelog);
-   addstr(" says, ", gamelog);
+   addstr("は言った。", gamelog);
    move(14,1);
    set_color(COLOR_YELLOW,COLOR_BLACK,1);
    addstr(response, gamelog);

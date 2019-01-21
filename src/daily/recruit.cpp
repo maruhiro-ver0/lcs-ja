@@ -222,11 +222,10 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
 
       return 1;
    }
-   addstr("Meeting with ", gamelog);
    addstr(r.recruit->name, gamelog);
-   addstr(", ", gamelog);
+   addstr("との対話、", gamelog);
    addstr(r.recruit->get_type_name(), gamelog);
-   addstr(", ", gamelog);
+   addstr("、", gamelog);
    addstr(location[r.recruit->location]->name, gamelog);
    gamelog.newline();
 
@@ -240,37 +239,36 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
    addstr(r.recruit->name);
    switch(r.eagerness())
    {
-   case 1: addstr(" will take a lot of persuading."); break;
-   case 2: addstr(" is interested in learning more."); break;
-   case 3: addstr(" feels something needs to be done."); break;
-   default: if(r.eagerness()>=4) addstr(" is ready to fight for the Liberal Cause.");
-            else addstr(" kind of regrets agreeing to this."); break;
+   case 1: addstr("にはさらなる説得が必要だろう。"); break;
+   case 2: addstr("はもっとよく知りたいようだ。"); break;
+   case 3: addstr("はすべきことがわかってきたようだ。"); break;
+   default: if(r.eagerness()>=4) addstr("はリベラル蜂起のために戦う準備ができたようだ。");
+            else addstr("は失望しているようだ。"); break;
    }
    move(11,0);
-   addstr("How should ");
    addstr(pool[p]->name);
-   addstr(" approach the situation?");
+   addstr("はどうするか?");
 
    move(13,0);
    if(ledger.get_funds()<50) set_color(COLOR_BLACK,COLOR_BLACK,1);
-   addstr("A - Spend $50 on props and a book for them to keep afterward.");
+   addstr("A - 興味を保つために$50を費やして本などを与える");
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(14,0);
-   addstr("B - Just casually chat with them and discuss politics.");
+   addstr("B - ただ注意深く話し、政治の議論を行う");
 
    move(15,0);
    if(subordinatesleft(*pool[p]) && r.eagerness()>=4)
    {
-      addstr("C - Offer to let ");
+      addstr("C - ");
       addstr(r.recruit->name);
-      addstr(" join the LCS as a full member.");
+      addstr("にLCSのメンバーに加わるように勧める");
    }
    else if(!subordinatesleft(*pool[p]))
    {
       set_color(COLOR_BLACK,COLOR_BLACK,1);
-      addstr("C - ");
+      addstr("C - メンバーにするには、");
       addstr(pool[p]->name);
-      addstr(" needs more Juice to recruit.");
+      addstr("にはもっとジュースが必要だ");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
    }
    else
@@ -278,12 +276,12 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
       set_color(COLOR_BLACK,COLOR_BLACK,1);
       addstr("C - ");
       addstr(r.recruit->name);
-      addstr(" isn't ready to join the LCS.");
+      addstr("はLCSに加わる準備ができていない");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
    }
 
    move(16,0);
-   addstr("D - Break off the meetings.");
+   addstr("D - 対話を打ち切る");
 
    int y=18;
 
@@ -369,10 +367,10 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
 
             move(y++,0);
             addstr(pool[p]->name, gamelog);
-            addstr(" shares ", gamelog);
+            addstr("は", gamelog);
             getissueeventstring(str);
             addstr(str, gamelog);
-            addstr(".", gamelog);
+            addstr("。", gamelog);
             gamelog.newline();
 
             getkey();
@@ -381,11 +379,11 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
          {
             move(y++,0);
             addstr(pool[p]->name, gamelog);
-            addstr(" explains ", gamelog);
+            addstr("は", gamelog);
             addstr(pool[p]->hisher(), gamelog);
-            addstr(" views on ", gamelog);
+            addstr("の", gamelog);
             addstr(getview(LCSrandom(VIEWNUM-3),true), gamelog);
-            addstr(".", gamelog);
+            addstr("に対する考え方を述べた。", gamelog);
             gamelog.newline();
 
             getkey();
@@ -416,12 +414,12 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
             if(r.eagerness1<127) r.eagerness1++;
             move(y++,0);
             addstr(r.recruit->name, gamelog);
-            addstr(" found ", gamelog);
+            addstr("は", gamelog);
             addstr(pool[p]->name, gamelog);
-            addstr("'s views to be insightful.", gamelog);
+            addstr("の考え方に洞察力を感じたようだ。", gamelog);
             gamelog.newline();
             move(y++,0);
-            addstr("They'll definitely meet again tomorrow.", gamelog);
+            addstr("2人は次の晩に再び合う約束をした。", gamelog);
             gamelog.nextMessage();
          }
          else if(pool[p]->skill_check(SKILL_PERSUASION,difficulty)) // Second chance to not fail horribly
@@ -430,12 +428,12 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
             if(r.eagerness1>-128) r.eagerness1--;
             move(y++,0);
             addstr(r.recruit->name, gamelog);
-            addstr(" is skeptical about some of ", gamelog);
+            addstr("は", gamelog);
             addstr(pool[p]->name, gamelog);
-            addstr("'s arguments.", gamelog);
+            addstr("の意見に疑問を持っているようだ。", gamelog);
             gamelog.newline();
             move(y++,0);
-            addstr("They'll meet again tomorrow.", gamelog);
+            addstr("2人は次の晩に再び合う約束をした。", gamelog);
             gamelog.nextMessage();
          }
          else
@@ -445,23 +443,23 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
             if(r.recruit->talkreceptive() && r.recruit->align==ALIGN_LIBERAL)
             {
                addstr(r.recruit->name, gamelog);
-               addstr(" isn't convinced ", gamelog);
+               addstr("は", gamelog);
                addstr(pool[p]->name, gamelog);
-               addstr(" really understands the problem.", gamelog);
+               addstr("がこの問題を本当は理解していないと思っているようだ。", gamelog);
                gamelog.newline();
                move(y++,0);
-               addstr("Maybe ", gamelog);
+               addstr("恐らく", gamelog);
                addstr(pool[p]->name, gamelog);
-               addstr(" needs more experience.", gamelog);
+               addstr("にはもっと経験が必要だ。", gamelog);
                gamelog.nextMessage();
             }
             else
             {
                addstr(pool[p]->name, gamelog);
-               addstr(" comes off as slightly insane.", gamelog);
+               addstr("はおかしな印象を与えてしまったようだ。", gamelog);
                gamelog.newline();
                move(y++,0);
-               addstr("This whole thing was a mistake. There won't be another meeting.", gamelog);
+               addstr("これは大きな誤りだった。もう会うことはないだろう。", gamelog);
                gamelog.nextMessage();
             }
 

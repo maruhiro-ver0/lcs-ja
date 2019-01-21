@@ -162,7 +162,7 @@ void review()
          else if(p==len(squad)+5)
          {
             set_color(COLOR_BLACK,COLOR_BLACK,1);
-            mvaddstr(y,0,"6 - 死亡 ("+tostring(n[5])+')');
+            mvaddstr(y,0,"6 - 遺体 ("+tostring(n[5])+')');
          }
          else if(p==len(squad)+6)
          {

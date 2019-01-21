@@ -375,8 +375,8 @@ void initlocation(Location &loc)
       else
       {
          lastname(loc.name,true);
-         strcat(loc.name," 収容所");
-         strcpy(loc.shortname,"収容所");
+         strcat(loc.name," 刑務所");
+         strcpy(loc.shortname,"刑務所");
       }
       break;
    case SITE_INDUSTRY_NUCLEAR:
