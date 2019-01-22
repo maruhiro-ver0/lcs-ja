@@ -254,7 +254,7 @@ void stopevil()
       erase();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      mvaddstr(0,0,"Where will the Squad go?");
+      mvaddstr(0,0,"部隊はどこへ向かうか?");
 
       printparty();
 
@@ -489,11 +489,11 @@ void investlocation()
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(8,1);
          if(location[loc]->type == SITE_OUTDOOR_BUNKER)
-            addstr("W - Repair the Bunker Fortifications ($2000)");
+            addstr("W - 壕を修理する ($2000)");
          else if(location[loc]->type == SITE_RESIDENTIAL_BOMBSHELTER)
-            addstr("W - Fortify the Bomb Shelter Entrances ($2000)");
+            addstr("W - 防空壕の入り口を要塞化する ($2000)");
          else
-            addstr("W - Fortify the Compound for a Siege ($2000)");
+            addstr("W - 包囲に備えて要塞化する ($2000)");
       }
 
       if(!(location[loc]->compound_walls & COMPOUND_CAMERAS))
@@ -501,7 +501,7 @@ void investlocation()
          if(ledger.get_funds()>=2000) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(9,1);
-         addstr("C - Place Security Cameras around the Compound ($2000)");
+         addstr("C - 周りに監視カメラを配置する ($2000)");
       }
 
       if(location[loc]->can_be_trapped())
@@ -509,7 +509,7 @@ void investlocation()
          if(ledger.get_funds()>=3000) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(10,1);
-         addstr("B - Place Booby Traps throughout the Compound ($3000)");
+         addstr("B - 周りにブービートラップを配置する ($3000)");
       }
 
       if(location[loc]->can_install_tanktraps())
@@ -517,7 +517,7 @@ void investlocation()
          if(ledger.get_funds()>=3000) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(11,1);
-         addstr("T - Ring the Compound with Tank Traps ($3000)");
+         addstr("T - 対戦車障害物で囲む ($3000)");
       }
 
       if(!(location[loc]->compound_walls & COMPOUND_GENERATOR))
@@ -525,7 +525,7 @@ void investlocation()
          if(ledger.get_funds()>=3000) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(12,1);
-         addstr("G - Buy a Generator for emergency electricity ($3000)");
+         addstr("G - 非常用発電機を購入する ($3000)");
       }
 
       if(!(location[loc]->compound_walls & COMPOUND_AAGUN))
@@ -534,14 +534,14 @@ void investlocation()
          {
             if(ledger.get_funds()>=35000) set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(13,1);
-            addstr("A - Install a perfectly legal Anti-Aircraft gun on the roof ($35,000)");
+            addstr("A - 屋根の上に合法的に対空砲を配備する ($35,000)");
          }
          else
          {
             if(ledger.get_funds()>=200000) set_color(COLOR_WHITE,COLOR_BLACK,0);
             else set_color(COLOR_BLACK,COLOR_BLACK,1);
             move(13,1);
-            addstr("A - Install and conceal an illegal Anti-Aircraft gun on the roof ($200,000)");
+            addstr("A - 屋根の上に違法に対空砲を配備する ($200,000)");
          }
       }
 
@@ -550,7 +550,7 @@ void investlocation()
          if(ledger.get_funds()>=3000) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(14,1);
-         addstr("P - Buy a Printing Press to start your own newspaper ($3000)");
+         addstr("P - 新聞を発行するために印刷機を購入する ($3000)");
       }
 
       if(location[loc]->can_have_businessfront())
@@ -558,16 +558,16 @@ void investlocation()
          if(ledger.get_funds()>=3000) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(15,1);
-         addstr("F - Setup a Business Front to ward off suspicion ($3000)");
+         addstr("F - ビジネス・オフィスで偽装する ($3000)");
       }
 
       if(ledger.get_funds()>=150) set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(16,1);
-      addstr("R - Stockpile 20 daily rations of food ($150)");
+      addstr("R - 20日分の食料を蓄える ($150)");
 
       move(17,1);
-      addstr("Enter - Done");
+      addstr("Enter - 完了");
 
       int c=getkey();
 

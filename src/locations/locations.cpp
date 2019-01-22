@@ -698,7 +698,7 @@ void initlocation(Location &loc)
       loc.rename("デザートイーグル バー&グリル", "ﾊﾞｰ&ｸﾞﾘﾙ");
       break;
    case SITE_OUTDOOR_BUNKER:
-      loc.rename("ロバート・E.・リー バンカー", "ﾊﾞﾝｶｰ");
+      loc.rename("ロバート・E・リー バンカー", "ﾊﾞﾝｶｰ");
       break;
    case SITE_BUSINESS_ARMSDEALER:
       loc.rename("ブラック・マーケット", "ﾌﾞﾗｯｸﾏｰｹｯﾄ");

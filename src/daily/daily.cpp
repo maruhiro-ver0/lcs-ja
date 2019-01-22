@@ -1262,7 +1262,7 @@ void dispersalcheck(char &clearformess)
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
                   addstr(pool[p]->name, gamelog);
-                  addstr(" has lost touch with the Liberal Crime Squad.", gamelog);
+                  addstr("はリベラル・クライム・スコードとの関わりを絶った。", gamelog);
                   gamelog.nextMessage();
 
                   getkey();
@@ -1289,7 +1289,7 @@ void dispersalcheck(char &clearformess)
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
                   addstr(pool[p]->name, gamelog);
-                  addstr(" has lost touch with the Liberal Crime Squad.", gamelog);
+                  addstr("はリベラル・クライム・スコードとの関わりを絶った。", gamelog);
                   gamelog.nextMessage();
 
                   getkey();
@@ -1376,13 +1376,13 @@ bool promotesubordinates(Creature &cr, char &clearformess)
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(8,1);
          addstr(cr.name, gamelog);
-         addstr(" has died.", gamelog);
+         addstr("は死んだ。", gamelog);
          gamelog.newline();
 
          getkey();
 
          move(10,1);
-         addstr("There are none left with the courage and conviction to lead....", gamelog);
+         addstr("信念と勇敢さで人々を束ねる者はもういない…", gamelog);
          gamelog.nextMessage();
 
          getkey();

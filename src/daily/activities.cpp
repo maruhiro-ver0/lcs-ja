@@ -257,11 +257,11 @@ void repairarmor(Creature &cr,char &clearformess)
       addstr(cr.name, gamelog);
       switch (LCSrandom(4))
       {
-         case 0: addstr(" tidies up the safehouse.", gamelog); break;
-         case 1: addstr(" reorganizes the armor closet.", gamelog); break;
-         case 2: addstr(" cleans the kitchen.", gamelog); break;
+         case 0: addstr("はアジトを掃除した。", gamelog); break;
+         case 1: addstr("はアーマークローゼットを整理した。", gamelog); break;
+         case 2: addstr("は台所を片付けた。", gamelog); break;
          case 3:
-            addstr(" peruses some sewing magazines.", gamelog);
+            addstr("は手芸雑誌を読みふけった。", gamelog);
             cr.train(SKILL_TAILORING,1);
             break;
       }

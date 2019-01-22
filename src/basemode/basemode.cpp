@@ -347,7 +347,7 @@ void mode_base()
                !location[selectedsiege]->siege.siege)
             {
                set_color(COLOR_WHITE,COLOR_BLACK,0);
-               mvaddstr(8,1,"I - Invest in this location");
+               mvaddstr(8,1,"I - この場所に費用を投じる");
             }
          }
          else if(activesquad!=NULL) printparty();

@@ -276,11 +276,11 @@ void locheader()
    {
       set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(3,6);
-      addstr("To form a new squad:");
+      addstr("新しい部隊を編成する方法:");
       move(4,6);
-      addstr("1) R - Review Assets and Form Squads");
+      addstr("1) R - 配置の確認と部隊の編成");
       move(5,6);
-      addstr("2) Press Z to Assemble a New Squad");
+      addstr("2) Zキーで新しい部隊を編成する");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
    }
 
@@ -505,17 +505,17 @@ void printlocation(long loc)
          switch(location[loc]->siege.siegetype)
          {
          case SIEGE_POLICE:
-            mvaddstr(2,1,"The police are raiding this location!");break;
+            mvaddstr(2,1,"警官隊がこの場所を攻撃中だ!");break;
          case SIEGE_CIA:
-            mvaddstr(2,1,"The CIA is raiding this location!");break;
+            mvaddstr(2,1,"CIAがこの場所を攻撃中だ!");break;
          case SIEGE_HICKS:
-            mvaddstr(2,1,"The masses are storming this location!");break;
+            mvaddstr(2,1,"群集がこの場所を攻撃中だ!");break;
          case SIEGE_CORPORATE:
-            mvaddstr(2,1,"The Corporations are raiding this location!");break;
+            mvaddstr(2,1,"企業がこの場所を攻撃中だ!");break;
          case SIEGE_CCS:
-            mvaddstr(2,1,"The CCS is raiding this location!");break;
+            mvaddstr(2,1,"CCSがこの場所を攻撃中だ!");break;
          case SIEGE_FIREMEN:
-            mvaddstr(2,1,"Firemen are raiding this location!");break;
+            mvaddstr(2,1,"消防隊がこの場所を攻撃中だ!");break;
          }
       }
    }
@@ -535,33 +535,33 @@ void printlocation(long loc)
             {
                if(!location[loc]->siege.siege)set_color(COLOR_WHITE,COLOR_BLACK,0);
                else set_color(COLOR_YELLOW,COLOR_BLACK,1);
-               mvaddstr(3,1,"This location has food for only a few days.");
+               mvaddstr(3,1,"ここには数日分の食料しかない。");
             }
          }
          else
          {
             if(!location[loc]->siege.siege)set_color(COLOR_WHITE,COLOR_BLACK,0);
             else set_color(COLOR_RED,COLOR_BLACK,1);
-            mvaddstr(3,1,"This location has insufficient food stores.");
+            mvaddstr(3,1,"ここには十分な食料がない。");
          }
       }
 
       if(location[loc]->compound_walls & COMPOUND_BASIC)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,1);
-         mvaddstr(4,1,"FORTIFIED COMPOUND");
+         mvaddstr(4,1,"要塞化");
       }
 
       if(location[loc]->compound_walls & COMPOUND_PRINTINGPRESS)
       {
          set_color(COLOR_BLUE,COLOR_BLACK,1);
-         mvaddstr(4,31,"PRINTING PRESS");
+         mvaddstr(4,31,"印刷機");
       }
 
       if(location[loc]->front_business!=-1)
       {
          set_color(COLOR_MAGENTA,COLOR_BLACK,1);
-         mvaddstr(4,54,"BUSINESS FRONT");
+         mvaddstr(4,54,"ビジネス・オフィス");
       }
 
       if(location[loc]->compound_walls & COMPOUND_CAMERAS)
@@ -569,42 +569,42 @@ void printlocation(long loc)
          if(location[loc]->siege.siege&&location[loc]->siege.cameras_off)
          {
             set_color(COLOR_RED,COLOR_BLACK,0);
-            mvaddstr(5,1,"CAMERAS OFF");
+            mvaddstr(5,1,"カメラ OFF");
          }
          else
          {
             set_color(COLOR_GREEN,COLOR_BLACK,1);
-            mvaddstr(5,1,"CAMERAS ON");
+            mvaddstr(5,1,"カメラ ON");
          }
       }
 
       if(location[loc]->compound_walls & COMPOUND_TRAPS)
       {
          set_color(COLOR_RED,COLOR_BLACK,1);
-         mvaddstr(5,16,"BOOBY TRAPS");
+         mvaddstr(5,16,"ブービートラップ");
       }
 
       if(location[loc]->compound_walls & COMPOUND_AAGUN)
       {
          set_color(COLOR_CYAN,COLOR_BLACK,1);
-         mvaddstr(5,33,"AA GUN");
+         mvaddstr(5,33,"対空砲");
       }
 
       if(location[loc]->compound_walls & COMPOUND_TANKTRAPS)
       {
          set_color(COLOR_YELLOW,COLOR_BLACK,1);
-         mvaddstr(5,46,"TANK TRAPS");
+         mvaddstr(5,46,"対戦車障害物");
       }
 
       if(location[loc]->siege.siege&&location[loc]->siege.lights_off)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
-         mvaddstr(5,60,"LIGHTS OUT");
+         mvaddstr(5,60,"消灯");
       }
       else if(location[loc]->compound_walls & COMPOUND_GENERATOR)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,1);
-         mvaddstr(5,61,"GENERATOR");
+         mvaddstr(5,61,"発電機");
       }
 
       int eaters=numbereating(loc),days=fooddaysleft(loc);
@@ -615,7 +615,7 @@ void printlocation(long loc)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             mvaddstr(6,50,days);
-            addstr("日分の食料");
+            addstr("食分の食料");
          }
          else if(days==0)
          {
@@ -625,12 +625,12 @@ void printlocation(long loc)
       }
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       mvaddstr(6,1,location[loc]->compound_stores);
-      addstr(" Daily Ration");
-      if(location[loc]->compound_stores!=1)addstr("s");
+      addstr("日/人分の食料");
+      if(location[loc]->compound_stores!=1)addstr("");
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       mvaddstr(6,30,eaters);
-      addstr(" Eating");
+      addstr("人");
    }
 }
 

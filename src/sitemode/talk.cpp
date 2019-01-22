@@ -855,8 +855,8 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       line=LCSrandom(3);
       switch(line)
       {
-         case 0:addstr("「[どの教会へ行っていますか? ]」", gamelog);break;
-         case 1:addstr("「[結婚してくれますか? ]」", gamelog);break;
+         case 0:addstr("「 [どの教会へ行っていますか? ] 」", gamelog);break;
+         case 1:addstr("「 [結婚してくれますか? ] 」", gamelog);break;
          case 2:addstr("\"[Do you believe in abstinence education?]\"", gamelog);break;
       }
    }
@@ -868,12 +868,12 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       case 0:addstr("「あなたはあまり美しくない…だがそこがいい。」", gamelog);break;
       case 1:addstr("「電話番号をなくしてしまって…。あなたのを貸してくれないか? 」", gamelog);break;
       case 2:addstr("「やあ。私のコレを擦ってみたくないか? 」", gamelog);break;
-      case 3:addstr("\"Hot damn.  You're built like a brick shithouse, honey.\"", gamelog);break;
-      case 4:addstr("\"I know I've seen you on the back of a milk carton, ", gamelog);
+      case 3:addstr("「すげえ。レンガ造りの便所みたいに丈夫でたくましい肉体だ。」", gamelog);break;
+      case 4:addstr("「あなたのことは牛乳パックの尋ね人で見たことがある。", gamelog);
              move(11,1);y++;
-             addstr("cuz you've been missing from my life.\"", gamelog);
+             addstr("あなたは私が探していた人だ。」", gamelog);
              break;
-      case 5:addstr("\"I'm big where it counts.\"", gamelog);break;
+      case 5:addstr("「大切な所はデカいぜ。」", gamelog);break;
       case 6:addstr("\"Daaaaaamn girl, I want to wrap your legs around my face and ", gamelog);
              move(11,1);y++;
              addstr("wear you like a feed bag!\"", gamelog); // Bill Hicks
@@ -1029,8 +1029,8 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       {
          switch(line)
          {
-            case 0:addstr("「[あなたの教会です。]」", gamelog);break;
-            case 1:addstr("「[はい。]」", gamelog);break;
+            case 0:addstr("「 [あなたの教会です。] 」", gamelog);break;
+            case 1:addstr("「 [はい。] 」", gamelog);break;
             case 2:addstr("\"[Yes.  Yes, I do.]\"", gamelog);break;
          }
       }
@@ -1042,9 +1042,9 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 0 :addstr("「あなたもね。少し休んでいきませんか? 」", gamelog);break;
          case 1 :addstr("「ステキな人! 今晩電話してください…」", gamelog);break;
          case 2 :addstr("「もちろん。」", gamelog);break;
-         case 3 :addstr("\"He he, I'll let that one slide.  Besides, I like country folk...\"", gamelog);break;
-         case 4 :addstr("\"That's sick.  I can do sick tonight.\"", gamelog);break;
-         case 5 :addstr("\"Oooo, let me see!\"", gamelog);break;
+         case 3 :addstr("「へっへっ。見逃してやるよ。ところで、私は田舎者が大好きなんだ…」", gamelog);break;
+         case 4 :addstr("「病気だ。そして今夜、もっと病が重くなる…」", gamelog);break;
+         case 5 :addstr("「おおお、見せてくれ! 」", gamelog);break;
          case 6 :addstr("\"Wow, looks like I'm going to have to reward creativity tonight!\"", gamelog);break;
          case 7 :addstr("\"Winter's coming.  You'd better bust more than one.\"", gamelog);break;
          case 8 :addstr("\"But you're not, so the pleasure's all mine.\"", gamelog);break;
@@ -1177,15 +1177,15 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 2 : addstr("「えーと…人を待っているので。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <立ち去った>", gamelog);break;
-         case 3 : addstr("\"Go use a real bathroom, ya hick.\"", gamelog);
+         case 3 : addstr("「本物の便所へ行けよ、この田舎者。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <points towards bathroom>", gamelog);break;
-         case 4 : addstr("\"That was a very traumatic incident.\"", gamelog);
+            addstr(" <トイレを指差した>", gamelog);break;
+         case 4 : addstr("「トラウマ的事件だ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <cries>", gamelog);break;
-         case 5 : addstr("\"You're big everywhere, fatass.\"", gamelog);
+            addstr(" <泣き出した>", gamelog);break;
+         case 5 : addstr("「全部大きいぞ、デブ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <laughs>", gamelog);break;
+            addstr(" <笑った>", gamelog);break;
          case 6 : addstr("\"You're disgusting.\"", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <turns away>", gamelog);break;
