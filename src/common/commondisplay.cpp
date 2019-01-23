@@ -952,12 +952,12 @@ void printliberalskills(Creature &cr)
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(2,0);
    if(strcmp(cr.propername,cr.name)!=0)
-      addstr("Code name: ");
-   else addstr("Name: ");
+      addstr("コードネーム: ");
+   else addstr("氏名: ");
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    addstr(cr.name);
    set_color(COLOR_WHITE,COLOR_BLACK,0);
-   addstr(", ");
+   addstr("、");
    addstr(gettitle(cr));
    addstr(" (");
    addstr(cr.get_type_name());
@@ -970,9 +970,9 @@ void printliberalskills(Creature &cr)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(4,27*(s/3));
-         addstr("SKILL");
+         addstr("スキル");
          move(4,15+27*(s/3));
-         addstr("NOW   MAX");
+         addstr("現在  最大");
       }
 
       // Maxed skills are cyan
@@ -1193,19 +1193,20 @@ void printliberalstats(Creature &cr)
          (cr.wound[BODYPART_LEG_RIGHT] & WOUND_CLEANOFF))legok--;
       if((cr.wound[BODYPART_LEG_LEFT] & WOUND_NASTYOFF)||
          (cr.wound[BODYPART_LEG_LEFT] & WOUND_CLEANOFF))legok--;
-      if(cr.flag & CREATUREFLAG_WHEELCHAIR)addstr("Wheelchair");
-      else if(legok>=1)addstr("On Foot");
-      else addstr("On \"Foot\"");
+      if(cr.flag & CREATUREFLAG_WHEELCHAIR)addstr("車椅子");
+      else if(legok>=1)addstr("徒歩");
+      else addstr("歩行不能");
    }
 
    // Add recruit stats
    if(cr.flag!=CREATUREFLAG_BRAINWASHED)
    {
       move(18,0);
+      addstr("勧誘 ");
       addstr(maxsubordinates(cr)-subordinatesleft(cr));
-      addstr(" Recruits / ");
+      addstr("人 / 最大 ");
       addstr(maxsubordinates(cr));
-      addstr(" Max");
+      addstr("人 ");
    }
    else
    {
@@ -1217,8 +1218,9 @@ void printliberalstats(Creature &cr)
    if(scheduledmeetings(cr))
    {
       move(18,55);
-      addstr("Scheduled Meetings: ");
+      addstr("会談の約束: ");
       addstr(scheduledmeetings(cr));
+      addstr("人");
    }
    // Add seduction stats
    move(19,0);
@@ -1228,15 +1230,16 @@ void printliberalstats(Creature &cr)
    if(lovers)
    {
       addstr(lovers);
-      addstr(" Romantic Interest");
-      if(lovers>1)addstr("s");
+      addstr("人の愛人");
+      if(lovers>1)addstr("");
    }
    // Any dates with potential love interests scheduled?
    if(scheduleddates(cr))
    {
       move(19,55);
-      addstr("Scheduled Dates:    ");
+      addstr("デートの約束: ");
       addstr(scheduleddates(cr));
+      addstr("人");
    }
 
    // Add wound status
@@ -1390,12 +1393,12 @@ void printliberalcrimes(Creature &cr)
    // Add name
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    if(strcmp(cr.propername,cr.name)!=0)
-      mvaddstr(2,0,"Code name: ");
-   else mvaddstr(2,0,"Name: ");
+      mvaddstr(2,0,"コードネーム: ");
+   else mvaddstr(2,0,"氏名: ");
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    addstr(cr.name);
    set_color(COLOR_WHITE,COLOR_BLACK,0);
-   addstr(", ");
+   addstr("、");
    addstr(gettitle(cr));
    addstr(" (");
    addstr(cr.get_type_name());
@@ -1431,8 +1434,8 @@ void printliberalcrimes(Creature &cr)
       if(i%2==0 && i<4)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
-         mvaddstr(4,40*(i/2),"CRIME");
-         mvaddstr(4,30+40*(i/2),"NUM");
+         mvaddstr(4,40*(i/2),"犯罪");
+         mvaddstr(4,30+40*(i/2),"件数");
       }
 
       // Commited crimes are yellow

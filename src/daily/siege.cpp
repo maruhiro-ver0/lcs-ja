@@ -2448,7 +2448,7 @@ void statebrokenlaws(int loc)
       addstr("扇動罪", gamelog);
    //BROWNIES
    else if(breakercount[LAWFLAG_BROWNIES])
-      addstr("規制薬物の売買", gamelog);
+      addstr("違法薬物の売買", gamelog);
    //ESCAPED
    else if(breakercount[LAWFLAG_ESCAPED])
       addstr("脱獄", gamelog);
@@ -2496,7 +2496,7 @@ void statebrokenlaws(int loc)
       addstr("通商妨害", gamelog);
    //INFORMATION
    else if(breakercount[LAWFLAG_INFORMATION])
-      addstr("情報システムへの違法アクセス", gamelog);
+      addstr("システムへの不正アクセス", gamelog);
    //UNLAWFUL BURIAL
    else if(breakercount[LAWFLAG_BURIAL])
       addstr("違法な遺体処理", gamelog);

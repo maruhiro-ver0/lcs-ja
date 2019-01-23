@@ -254,7 +254,7 @@ void mode_site()
             if(encounter[e].type==CREATURE_WORKER_SERVANT||
                encounter[e].type==CREATURE_WORKER_FACTORY_CHILD||
                encounter[e].type==CREATURE_WORKER_SWEATSHOP||
-               (strcmp(encounter[e].name,"Prisoner")==0&&encounter[e].align==1))freeable++;
+               (strcmp(encounter[e].name,"囚人")==0&&encounter[e].align==1))freeable++;
             else if((encounter[e].cantbluff!=1||sitealarm)&&!(encounter[e].align==1&&sitealarm&&enemy))talkers++;
             if(encounter[e].type==CREATURE_CORPORATE_CEO||
                encounter[e].type==CREATURE_RADIOPERSONALITY||
@@ -290,9 +290,9 @@ void mode_site()
          set_color(COLOR_RED,COLOR_BLACK,1);
          move(0,0);
          addstr(location[cursite]->getname(-1,true));
-         addstr(", Level ");
+         addstr("、");
          addstr(locz+1);
-         addstr(": Escape or Engage");
+         addstr("階: Escape or Engage");
       }
       else
       {
@@ -301,8 +301,9 @@ void mode_site()
          else set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(0,0);
          addstr(location[cursite]->getname(-1,true));
-         addstr(", Level ");
+         addstr("、");
          addstr(locz+1);
+         addstr("階");
 
          if(postalarmtimer>80)
          {
@@ -485,7 +486,7 @@ void mode_site()
                if(hostages) set_color(COLOR_WHITE,COLOR_BLACK,0);
                else set_color(COLOR_BLACK,COLOR_BLACK,1);
                move(14,32);
-               addstr("R - 捕虜を解放する");
+               addstr("R - 人質を解放する");
             }
          }
          else
@@ -619,7 +620,7 @@ void mode_site()
             clearmessagearea();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(16,1);
-            addstr("Which way?  (W,A,D, and X to move, ENTER to abort)");
+            addstr("どの方向? (W, A, D, Xで移動、ENTERで中止)");
 
             while(true)
             {
@@ -1106,9 +1107,9 @@ void mode_site()
                   if((encounter[e].type==CREATURE_WORKER_SERVANT||
                      encounter[e].type==CREATURE_WORKER_FACTORY_CHILD||
                      encounter[e].type==CREATURE_WORKER_SWEATSHOP||
-                     (strcmp(encounter[e].name,"Prisoner")==0 && encounter[e].align==1))&&!flipstart)
+                     (strcmp(encounter[e].name,"囚人")==0 && encounter[e].align==1))&&!flipstart)
                   {
-                     if(strcmp(encounter[e].name,"Prisoner")==0)
+                     if(strcmp(encounter[e].name,"囚人")==0)
                      {
                         sitealarm=1; /* alarm for prisoner escape */
                         criminalize(encounter[e],LAWFLAG_ESCAPED);
@@ -1184,11 +1185,11 @@ void mode_site()
 
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(16,1);
-                  if(actgot==0&&followers>1)addstr("They all leave", gamelog);
-                  else if(followers-actgot>1)addstr("Some leave", gamelog);
-                  else if(actgot==0)addstr("The Liberal leaves", gamelog);
-                  else addstr("One Liberal leaves", gamelog);
-                  addstr(" you, feeling safer getting out alone.", gamelog);
+                  if(actgot==0&&followers>1)addstr("全員が", gamelog);
+                  else if(followers-actgot>1)addstr("数人が", gamelog);
+                  else if(actgot==0)addstr("リベラルは", gamelog);
+                  else addstr("リベラルは", gamelog);
+                  addstr("一人で行動しても安全だと思い、去っていった。", gamelog);
                   gamelog.newline();
                }
 
@@ -1569,7 +1570,7 @@ void mode_site()
 
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(0,0);
-            addstr("Site mode options");
+            addstr("移動中オプション");
 
             printparty();
 
@@ -1577,11 +1578,11 @@ void mode_site()
             move(10,1);
             addstr("[ ] E - Encounter warnings");
             move(11,1);
-            addstr("[ ] M - Music");
+            addstr("[ ] M - 音楽");
 
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(24,1);
-            addstr("Enter - Done");
+            addstr("Enter - 完了");
 
             int c=0;
             while(true)

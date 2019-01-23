@@ -1422,7 +1422,7 @@ recruitData recruitable_creatures[] = {
    recruitData(CREATURE_MUSICIAN, (char*)"音楽家", 4),
    recruitData(CREATURE_MUTANT, (char*)"ミュータント", 4),
    recruitData(CREATURE_PROSTITUTE, (char*)"売春婦", 2),
-   recruitData(CREATURE_PSYCHOLOGIST, (char*)"心理学者", 4),
+   recruitData(CREATURE_PSYCHOLOGIST, (char*)"精神科医", 4),
    recruitData(CREATURE_TAXIDRIVER, (char*)"タクシー運転手", 4),
    recruitData(CREATURE_TEACHER, (char*)"教師", 4)
 };

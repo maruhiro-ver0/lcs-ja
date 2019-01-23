@@ -375,7 +375,7 @@ void makecreature(Creature &cr,short type)
          case 6:strcat(cr.name,"紫ゴリラ");break;
          case 7:strcat(cr.name,"狂熊");break;
          case 8:strcat(cr.name,"うごめく塊");break;
-         case 9:strcat(cr.name,"何か悪いもの");break;
+         case 9:strcat(cr.name,"邪悪な何か");break;
          case 10:strcat(cr.name,"ﾋﾟﾝｸの象");break;
          }
          cr.animalgloss=ANIMALGLOSS_ANIMAL;
