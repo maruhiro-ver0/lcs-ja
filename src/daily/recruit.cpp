@@ -456,7 +456,7 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
             else
             {
                addstr(pool[p]->name, gamelog);
-               addstr("はおかしな印象を与えてしまったようだ。", gamelog);
+               addstr("は危険な印象を与えてしまったようだ。", gamelog);
                gamelog.newline();
                move(y++,0);
                addstr("これは大きな誤りだった。もう会うことはないだろう。", gamelog);

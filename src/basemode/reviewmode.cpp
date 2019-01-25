@@ -872,23 +872,23 @@ void assemblesquad(squadst *cursquad)
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
-      if(partysize<6)addstr("Assemble the squad!");
-      else addstr("The squad is full.");
+      if(partysize<6)addstr("部隊を編成せよ!");
+      else addstr("部隊は満員だ。");
 
       if(newsquad)
       {
          move(0,71);
-         addstr("New Squad");
+         addstr("新しい部隊");
       }
       else
       {
          move(0,73-len(cursquad->name));
-         addstr("Squad: ");
+         addstr("部隊: ");
          addstr(cursquad->name);
       }
 
       move(1,0);
-      addstr("ﾄﾄﾄﾄCODE NAMEﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄSKILLﾄﾄﾄHEALTHﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄPROFESSIONﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ"); // 80 characters
+      addstr("----コードネーム---------スキル--健康状態---------職業--------------------------"); // 80 characters
 
       int y=2;
       for(p=page*19;p<len(temppool)&&p<page*19+19;p++)
@@ -916,22 +916,22 @@ void assemblesquad(squadst *cursquad)
          if(temppool[p]->squadid==cursquad->id)
          {
             set_color(COLOR_GREEN,COLOR_BLACK,1);
-            move(y,75);
-            addstr("SQUAD");
+            move(y,74);
+            addstr("部隊入");
          }
          else if(temppool[p]->squadid!=-1)
          {
             set_color(COLOR_YELLOW,COLOR_BLACK,0);
-            move(y,75);
-            addstr("SQUAD");
+            move(y,74);
+            addstr("部隊入");
          }
          else if(cursquad->squad[0]!=NULL)
          {
             if(cursquad->squad[0]->location!=temppool[p]->location)
             {
                set_color(COLOR_BLACK,COLOR_BLACK,1);
-               move(y,75);
-               addstr("AWAY");
+               move(y,74);
+               addstr("別部隊");
             }
          }
 
@@ -945,19 +945,19 @@ void assemblesquad(squadst *cursquad)
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(22,0);
-      addstr("Press a Letter to add or remove a Liberal from the squad.");
+      addstr("アルファベットキーでリベラルを部隊に加える、または外す。");
       move(23,0);
       addpagestr();
-      addstr(" T to sort people.");
+      addstr(" T - ソートする");
 		move(23,50);
-      addstr("V - View a Liberal");
+      addstr("V - リベラルを表示する");
       move(24,0);
-      if(partysize>0) addstr("Enter - The squad is ready.");
-      else addstr("Enter - I need no squad!");
+      if(partysize>0) addstr("Enter - 完了");
+      else addstr("Enter - 部隊は必要ない!");
       if(partysize>0) set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(24,40);
-      addstr("9 - Dissolve the squad.");
+      addstr("9 - 部隊を再編成する");
 
       int c=getkey();
 
@@ -980,7 +980,7 @@ void assemblesquad(squadst *cursquad)
                   move(22,0);
                   addstr("                                                                                "); // 80 spaces
                   move(23,0);
-                  addstr("           Liberals must be in the same location to form a Squad.               "); // 80 characters
+                  addstr("                      部隊と同じ場所にいなければならない。                      "); // 80 characters
                   move(24,0);
                   addstr("                                                                                "); // 80 spaces
 
@@ -996,7 +996,7 @@ void assemblesquad(squadst *cursquad)
                move(22,0);
                addstr("                                                                                "); // 80 spaces
                move(23,0);
-               addstr("                Squad Liberals must be able to move around.                     "); // 80 characters
+               addstr("                   部隊のリベラルは歩行できなければならない。                   "); // 80 characters
                move(24,0);
                addstr("                                                                                "); // 80 spaces
 
@@ -1045,7 +1045,7 @@ void assemblesquad(squadst *cursquad)
 		{
 			move(22,0);
 			set_color(COLOR_WHITE,COLOR_BLACK,1);
-			addstr("Press a Letter to view Liberal details.                                         "); // 80 characters
+			addstr("アルファベットキーを押すと詳細を表示する。                                      "); // 80 characters
 			move(23,0);
 			addstr("                                                                                "); // 80 spaces
 			move(24,0);
@@ -1061,7 +1061,7 @@ void assemblesquad(squadst *cursquad)
                int oldSquadID = temppool[p]->squadid;
                //create a temp squad containing just this liberal
                activesquad=new squadst;
-               strcpy(activesquad->name, "Temporary Squad");
+               strcpy(activesquad->name, "仮部隊");
                activesquad->id=cursquadid;
                activesquad->squad[0]=temppool[p];
                temppool[p]->squadid = activesquad->id;
@@ -1093,7 +1093,7 @@ void assemblesquad(squadst *cursquad)
             move(22,0);
             addstr("                                                                                "); // 80 spaces
             move(23,0);
-            addstr("You cannot form a Squad with only Conservatives!                                "); // 80 characters
+            addstr("保守派のみの部隊は編成できない!                                                 "); // 80 characters
             move(24,0);
             addstr("                                                                                "); // 80 spaces
 
@@ -1123,7 +1123,7 @@ void assemblesquad(squadst *cursquad)
          move(22,0);
          addstr("                                                                                "); // 80 spaces
          move(23,0);
-         addstr("What shall we designate this Liberal squad?                                     "); // 80 characters
+         addstr("この部隊を何と名づけるか?                                                       "); // 80 characters
          move(24,0);
          addstr("                                                                                "); // 80 spaces
 
