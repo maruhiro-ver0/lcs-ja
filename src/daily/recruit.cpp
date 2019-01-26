@@ -293,9 +293,9 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
       {
          move(y,0);
          addstr(pool[p]->name, gamelog);
-         addstr(" offers to let ", gamelog);
+         addstr("は", gamelog);
          addstr(r.recruit->name, gamelog);
-         addstr(" join the Liberal Crime Squad.", gamelog);
+         addstr("にリベラル・クライム・スコードに加わるように勧めた。", gamelog);
          gamelog.newline();
 
          getkey();
@@ -304,7 +304,7 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
          move(y+=2,0);
 
          addstr(r.recruit->name, gamelog);
-         addstr(" accepts, and is eager to get started.", gamelog);
+         addstr("はそれを受け入れ、活動の開始を強く望んだ。", gamelog);
          gamelog.nextMessage();
 
          liberalize(*r.recruit,false);

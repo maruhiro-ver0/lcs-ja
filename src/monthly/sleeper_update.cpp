@@ -575,9 +575,9 @@ void sleeper_embezzle(Creature &cr,char &clearformess,char canseethings,int (&li
       {
          erase();
          move(6,1);
-         addstr("Sleeper ", gamelog);
+         addstr("潜伏中の", gamelog);
          addstr(cr.name, gamelog);
-         addstr(" has been arrested while embezzling funds.", gamelog);
+         addstr("は資金横領の容疑で逮捕された。", gamelog);
          gamelog.nextMessage();
 
          getkey();
@@ -632,9 +632,9 @@ void sleeper_steal(Creature &cr,char &clearformess,char canseethings,int (&libpo
       {
          erase();
          move(6,1);
-         addstr("Sleeper ", gamelog);
+         addstr("潜伏中の", gamelog);
          addstr(cr.name, gamelog);
-         addstr(" has been arrested while stealing things.", gamelog);
+         addstr("は窃盗の容疑で逮捕された。", gamelog);
          gamelog.nextMessage();
 
          getkey();

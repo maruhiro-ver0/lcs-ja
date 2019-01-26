@@ -1657,7 +1657,7 @@ void doActivityProstitution(vector<Creature *> &prostitutes, char &clearformess)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(8,1);
             addstr(prostitutes[p]->name, gamelog);
-            addstr(" has been arrested in a prostitution sting.", gamelog);
+            addstr("は売春の容疑で逮捕された。", gamelog);
             gamelog.nextMessage();
 
             addjuice(*prostitutes[p],-7,-30);
@@ -1681,7 +1681,7 @@ void doActivityProstitution(vector<Creature *> &prostitutes, char &clearformess)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(8,1);
             addstr(prostitutes[p]->name, gamelog);
-            addstr(" was nearly caught in a prostitution sting.", gamelog);
+            addstr("は売春であやうく逮捕されるところだった。", gamelog);
             gamelog.nextMessage();
 
             addjuice(*prostitutes[p],5,0);
@@ -1798,8 +1798,8 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
-      if(len(trouble)>1) addstr("Your Activists have ",gamelog);
-      else { addstr(trouble[0]->name,gamelog); addstr(" has ",gamelog); }
+      if(len(trouble)>1) addstr("攪乱グループは",gamelog);
+      else { addstr(trouble[0]->name,gamelog); addstr("は",gamelog); }
 
       int power=0;
       for(int t=0;t<len(trouble);t++)
@@ -1819,7 +1819,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
          switch(LCSrandom(10))
          {
             case 0:
-               addstr("run around uptown splashing paint on fur coats!", gamelog);
+               addstr("住宅街を走り回り、毛皮のコートにペンキをぶちまけた!", gamelog);
                juiceval=2;
                crime=LAWFLAG_ASSAULT;
                change_public_opinion(VIEW_LIBERALCRIMESQUAD,mod);
@@ -1832,7 +1832,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
             {
                if(law[LAW_GAY]<2)
                {
-                  addstr("disrupted a traditional wedding at a church!", gamelog);
+                  addstr("教会で伝統的な結婚式を台無しにした!", gamelog);
                   change_public_opinion(VIEW_LIBERALCRIMESQUAD,mod);
                   change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,mod,0,70);
                   public_interest[VIEW_GAY]+=mod;
@@ -1847,7 +1847,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
             {
                if(law[LAW_ABORTION]<2)
                {
-                  addstr("posted horrifying dead abortion doctor pictures downtown!", gamelog);
+                  addstr("恐ろしい死を遂げた中絶医の写真を街中に張り出した!", gamelog);
                   change_public_opinion(VIEW_LIBERALCRIMESQUAD,mod);
                   change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,mod,0,70);
                   public_interest[VIEW_WOMEN]+=mod;
@@ -1861,7 +1861,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
             {
                if(law[LAW_POLICEBEHAVIOR]<2)
                {
-                  addstr("gone downtown and reenacted a police beating!", gamelog);
+                  addstr("街へ向かい、警官による暴力を再現した!", gamelog);
                   change_public_opinion(VIEW_LIBERALCRIMESQUAD,mod);
                   change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,mod,0,70);
                   public_interest[VIEW_POLICEBEHAVIOR]+=mod;
@@ -1876,8 +1876,8 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
             {
                if(law[LAW_NUCLEARPOWER]<2)
                {
-                  if(len(trouble)>1)addstr("dressed up and pretended to be radioactive mutants!", gamelog);
-                  else addstr("dressed up and pretended to be a radioactive mutant!", gamelog);
+                  if(len(trouble)>1)addstr("仮装して放射能ミュータントを演じた!", gamelog);
+                  else addstr("仮装して放射能ミュータントを演じた!", gamelog);
                   change_public_opinion(VIEW_LIBERALCRIMESQUAD,mod);
                   change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,mod,0,70);
                   public_interest[VIEW_NUCLEARPOWER]+=mod;
@@ -1892,7 +1892,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
             {
                if(law[LAW_POLLUTION]<2)
                {
-                  addstr("squirted business people with fake polluted water!", gamelog);
+                  addstr("会社員に偽物の汚染水を掛けた!", gamelog);
                   change_public_opinion(VIEW_LIBERALCRIMESQUAD,mod);
                   change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,mod,0,70);
                   public_interest[VIEW_POLLUTION]+=mod;
@@ -1907,7 +1907,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
             {
                if(law[LAW_DEATHPENALTY]<2)
                {
-                  addstr("distributed fliers graphically illustrating executions!", gamelog);
+                  addstr("死刑執行を絵で説明したビラをばら撒いた!", gamelog);
                   change_public_opinion(VIEW_LIBERALCRIMESQUAD,mod);
                   change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,mod,0,70);
                   public_interest[VIEW_DEATHPENALTY]+=mod;
@@ -1919,7 +1919,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
             }
             case 7:
             {
-               addstr("distributed fliers graphically illustrating CIA torture!", gamelog);
+               addstr("CIAによる拷問を絵で説明したビラをばら撒いた!", gamelog);
                change_public_opinion(VIEW_LIBERALCRIMESQUAD,mod);
                change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,mod,0,70);
                public_interest[VIEW_TORTURE]+=mod;
@@ -1930,7 +1930,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
             }
             case 8:
             {
-               addstr("burned a corporate symbol and denounced capitalism!", gamelog);
+               addstr("企業のマークを焼き払い、資本主義を弾劾した!", gamelog);
                change_public_opinion(VIEW_LIBERALCRIMESQUAD,mod);
                change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,mod,0,70);
                public_interest[VIEW_CORPORATECULTURE]+=mod;
@@ -1946,7 +1946,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
             }
             case 9:
             {
-               addstr("set up a mock sweatshop in the middle of the mall!", gamelog);
+               addstr("商店街の中心に搾取工場の模型を置いた!", gamelog);
                change_public_opinion(VIEW_LIBERALCRIMESQUAD,mod);
                change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,mod,0,70);
                public_interest[VIEW_SWEATSHOPS]+=mod;

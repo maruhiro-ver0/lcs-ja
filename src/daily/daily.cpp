@@ -454,7 +454,7 @@ void advanceday(char &clearformess,char canseethings)
             {
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
-               addstr("Why is the squad here?   (S)afe House, to cause (T)rouble, or (B)oth?");
+               addstr("なぜここを訪れるのか?   S - アジトを移す  T - トラブルを起こす  B - 両方");
 
                do c=getkey(); while(c!='s'&&c!='b'&&c!='t');
             }

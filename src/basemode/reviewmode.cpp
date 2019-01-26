@@ -1061,7 +1061,7 @@ void assemblesquad(squadst *cursquad)
                int oldSquadID = temppool[p]->squadid;
                //create a temp squad containing just this liberal
                activesquad=new squadst;
-               strcpy(activesquad->name, "仮部隊");
+               strcpy(activesquad->name, "Temporary Squad");
                activesquad->id=cursquadid;
                activesquad->squad[0]=temppool[p];
                temppool[p]->squadid = activesquad->id;

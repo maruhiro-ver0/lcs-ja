@@ -584,29 +584,27 @@ void sleeperize_prompt(Creature &converted, Creature &recruiter, int y)
    {
       move(y,0);
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      addstr("In what capacity will ");
+      addstr("リベラルを喚起するために、");
       addstr(converted.name);
-      addstr(" best serve the Liberal cause?");
+      addstr("の能力はどこで生かせるか?");
       move(y+2,0);
       set_color(COLOR_WHITE,COLOR_BLACK,!selection);
       addstr(selection?"   ":"-> ");
-      addstr("Come to ");
-      addstr(location[recruiter.location]->getname(-1,true));
-      addstr(" as a ");
       set_color(COLOR_GREEN,COLOR_BLACK,!selection);
-      addstr("regular member");
+      addstr("正式メンバー");
       set_color(COLOR_WHITE,COLOR_BLACK,!selection);
-      addstr(".");
+      addstr("として");
+      addstr(location[recruiter.location]->getname(-1,true));
+      addstr("に迎える。");
       move(y+3,0);
       set_color(COLOR_WHITE,COLOR_BLACK,selection);
       addstr(selection?"-> ":"   ");
-      addstr("Stay at ");
-      addstr(location[converted.worklocation]->getname(-1,true));
-      addstr(" as a ");
       set_color(COLOR_CYAN,COLOR_BLACK,selection);
-      addstr("sleeper agent");
+      addstr("スパイ");
       set_color(COLOR_WHITE,COLOR_BLACK,selection);
-      addstr(".");
+      addstr("として");
+      addstr(location[converted.worklocation]->getname(-1,true));
+      addstr("に潜伏する。");
 
       int c=getkey();
 

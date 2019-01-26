@@ -29,7 +29,7 @@ This file is part of Liberal Crime Squad.                                       
 // Note: this file is encoded in the PC-8 / Code Page 437 / OEM-US character set
 // (The same character set used by Liberal Crime Squad when it is running)
 // Certain special characters won't display correctly unless your text editor is
-// set to use that character set, such as this e with an accent: �
+// set to use that character set, such as this e with an accent: é
 
 // In Windows Notepad with the Terminal font, OEM/DOS encoding it should work fine.
 // You can set this in Notepad by going to Format->Font and choosing the Terminal font,
@@ -290,7 +290,7 @@ void passmonth(char &clearformess,char canseethings)
          {
             set_alignment_color(pip,true);
             if(pip==2) mvaddchar(y,x+22,'\x11');
-            addstr("���");
+            addstr("ﾄﾄﾄ");
             if(pip==-2) addchar('\x10');
          }
          if(v>=0) pip=14-(attitude[v]*14)/100;
@@ -467,14 +467,14 @@ void passmonth(char &clearformess,char canseethings)
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
                   addstr(pool[p]->name, gamelog);
-                  addstr(" has broken under the pressure and ratted you out!", gamelog);
+                  addstr("は圧力に屈し、あなたのことを密告した!", gamelog);
                   gamelog.newline();
 
                   getkey();
 
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(9,1);
-                  addstr("The traitor will testify in court, and safehouses may be compromised.", gamelog);
+                  addstr("裏切り者は法廷で証言し、アジトの位置が明らかになるだろう。", gamelog);
                   gamelog.nextMessage();
 
                   getkey();

@@ -1683,8 +1683,8 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                    strcpy(str, driver->name);
                switch(droll) // If no driver then droll is 0.
                {
-                  case 1: strcpy(str, a.name); strcat(str," missed!"); break;
-                  case 2: strcpy(str, a.name); strcat(str," just barely missed!"); break;
+                  case 1: strcpy(str, a.name); strcat(str,"は外した!"); break;
+                  case 2: strcpy(str, a.name); strcat(str,"はあと少しのところで外した!"); break;
                   case 3: strcat(str," can't seem to keep the vehicle in either the lane or the line of fire!"); break;
                   case 4: strcat(str," swerves randomly!"); break;
                   case 5: strcat(str," cuts off another driver and the shot is blocked!"); break;
@@ -1707,8 +1707,8 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                strcpy(str, t.name);
                switch(droll)
                {
-                  case 1: strcpy(str, a.name); strcat(str," missed!"); break;
-                  case 2: strcpy(str, a.name); strcat(str," just barely missed!"); break;
+                  case 1: strcpy(str, a.name); strcat(str,"は外した!"); break;
+                  case 2: strcpy(str, a.name); strcat(str,"はあと少しのところで外した!"); break;
                   case 3: strcat(str," tumbles out of the way!"); break;
                   case 4: strcat(str," jumps aside at the last moment!"); break;
                   case 5: strcat(str," leaps for cover!"); break;
