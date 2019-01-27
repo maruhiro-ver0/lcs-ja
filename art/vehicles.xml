@@ -97,11 +97,11 @@
             <add>0</add>
         </year>
         <colors>
-            <color>Red</color>
-            <color>White</color>
-            <color>Blue</color>
-            <color>Beige</color>
-            <color>Black</color>
+            <color>赤</color>
+            <color>白</color>
+            <color>青</color>
+            <color>ベージュ</color>
+            <color>黒</color>
         </colors>
         <drivebonus>
             <base>6</base>
@@ -127,8 +127,8 @@
             <armor_midpoint>60</armor_midpoint>
         </armor>
         <size>1</size>
-        <longname>Bug</longname>
-        <shortname>Bug</shortname>
+        <longname>バグ</longname>
+        <shortname>バグ</shortname>
         <stealing>
             <difficulty_to_find>2</difficulty_to_find>
             <juice>0</juice>
@@ -148,8 +148,8 @@
             <add>1</add>
         </year>
         <colors>
-            <color>Beige</color>
-            <color>Green</color>
+            <color>ベージュ</color>
+            <color>緑</color>
         </colors>
         <drivebonus>
             <base>1</base>
@@ -175,8 +175,8 @@
             <armor_midpoint>90</armor_midpoint> <!-- Small windows - Go for the headshots-->
         </armor>
         <size>4</size> <!-- but easy to hit car -->
-        <longname>HMMWV</longname>
-        <shortname>Humvee</shortname>
+        <longname>ハンビー</longname>
+        <shortname>ハンビー</shortname>
         <stealing>
             <difficulty_to_find>10</difficulty_to_find>
             <juice>0</juice>
@@ -195,11 +195,11 @@
             <add>1</add>
         </year>
         <colors>
-            <color>Red</color>
-            <color>White</color>
-            <color>Blue</color>
-            <color>Beige</color>
-            <color>Black</color>
+            <color>赤</color>
+            <color>白</color>
+            <color>青</color>
+            <color>ベージュ</color>
+            <color>黒</color>
         </colors>
         <drivebonus>
             <base>2</base>
@@ -225,8 +225,8 @@
             <armor_midpoint>30</armor_midpoint>
         </armor>
         <size>1</size>
-        <longname>Jeep</longname>
-        <shortname>Jeep</shortname>
+        <longname>ジープ</longname>
+        <shortname>ジープ</shortname>
         <stealing>
             <difficulty_to_find>6</difficulty_to_find>
             <juice>0</juice>
@@ -245,11 +245,11 @@
             <add>1</add>
         </year>
         <colors>
-            <color>Red</color>
-            <color>White</color>
-            <color>Blue</color>
-            <color>Beige</color>
-            <color>Black</color>
+            <color>赤</color>
+            <color>白</color>
+            <color>青</color>
+            <color>ベージュ</color>
+            <color>黒</color>
         </colors>
         <drivebonus>
             <base>3</base>
@@ -275,8 +275,8 @@
             <armor_midpoint>65</armor_midpoint>
         </armor>
         <size>3</size>
-        <longname>Pickup Truck</longname>
-        <shortname>Pickup</shortname>
+        <longname>軽トラック</longname>
+        <shortname>軽トラ</shortname>
         <stealing>
             <difficulty_to_find>1</difficulty_to_find>
             <juice>0</juice>
@@ -297,7 +297,7 @@
         </year>
         <colors>
             <display_color>false</display_color>
-            <color>Police-Marked</color>
+            <color>パトカー</color>
         </colors>
         <drivebonus>
             <base>1</base>
@@ -323,8 +323,8 @@
             <armor_midpoint>50</armor_midpoint>
         </armor>
         <size>2</size>
-        <longname>Police Cruiser</longname>
-        <shortname>Cruiser</shortname>
+        <longname>パトカー</longname>
+        <shortname>パトカー</shortname>
         <stealing>
             <difficulty_to_find>7</difficulty_to_find>
             <juice>2</juice>
@@ -343,7 +343,7 @@
             <add>1</add>
         </year>
         <colors>
-            <color>Black</color>
+            <color>黒</color>
         </colors>
         <drivebonus>
             <base>0</base>
@@ -369,8 +369,8 @@
             <armor_midpoint>30</armor_midpoint>
         </armor>
         <size>2</size>
-        <longname>Sportscar</longname>
-        <shortname>Sport</shortname>
+        <longname>スポーツカー</longname>
+        <shortname>スポーツ</shortname>
         <stealing> <!-- Stealing isn't possible for agentcars -->
             <difficulty_to_find>10</difficulty_to_find>
             <juice>0</juice>
@@ -389,11 +389,11 @@
             <add>1</add>
         </year>
         <colors>
-            <color>Red</color>
-            <color>White</color>
-            <color>Blue</color>
-            <color>Beige</color>
-            <color>Black</color>
+            <color>赤</color>
+            <color>白</color>
+            <color>青</color>
+            <color>ベージュ</color>
+            <color>黒</color>
         </colors>
         <drivebonus>
             <base>-4</base> <!-- not forgiving of noobs, but if you're good you can get a lot out of it. -->
@@ -419,8 +419,8 @@
             <armor_midpoint>30</armor_midpoint>
         </armor>
         <size>2</size>
-        <longname>Sportscar</longname>
-        <shortname>Sport</shortname>
+        <longname>スポーツカー</longname>
+        <shortname>スポーツ</shortname>
         <stealing>
             <difficulty_to_find>3</difficulty_to_find>
             <juice>0</juice>
@@ -440,11 +440,11 @@
             <add>1</add>
         </year>
         <colors>
-            <color>Red</color>
-            <color>White</color>
-            <color>Blue</color>
-            <color>Beige</color>
-            <color>Black</color>
+            <color>赤</color>
+            <color>白</color>
+            <color>青</color>
+            <color>ベージュ</color>
+            <color>黒</color>
         </colors>
         <drivebonus>
             <base>5</base>
@@ -470,8 +470,8 @@
             <armor_midpoint>60</armor_midpoint>
         </armor>
         <size>4</size>
-        <longname>Station Wagon</longname>
-        <shortname>Wagon</shortname>
+        <longname>ステーションワゴン</longname>
+        <shortname>ワゴン</shortname>
         <stealing>
             <difficulty_to_find>1</difficulty_to_find>   
             <juice>0</juice>
@@ -492,11 +492,11 @@
             <add>0</add>
         </year>
         <colors>
-            <color>Red</color>
-            <color>White</color>
-            <color>Blue</color>
-            <color>Beige</color>
-            <color>Black</color>
+            <color>赤</color>
+            <color>白</color>
+            <color>青</color>
+            <color>ベージュ</color>
+            <color>黒</color>
         </colors>
         <drivebonus>
             <base>2</base>
@@ -544,7 +544,7 @@
         </year>
         <colors>
             <display_color>false</display_color>
-            <color>Taxi-Striped</color>
+            <color>タクシー</color>
         </colors>
         <drivebonus>
             <base>2</base>
@@ -570,8 +570,8 @@
             <armor_midpoint>50</armor_midpoint>
         </armor>
         <size>2</size>
-        <longname>Taxicab</longname>
-        <shortname>Taxicab</shortname>
+        <longname>タクシー</longname>
+        <shortname>タクシー</shortname>
         <stealing>
             <difficulty_to_find>8</difficulty_to_find>
             <juice>0</juice>
@@ -590,11 +590,11 @@
             <add>1</add>
         </year>
         <colors>
-            <color>Red</color>
-            <color>White</color>
-            <color>Blue</color>
-            <color>Beige</color>
-            <color>Black</color>
+            <color>赤</color>
+            <color>白</color>
+            <color>青</color>
+            <color>ベージュ</color>
+            <color>黒</color>
         </colors>
         <drivebonus>
             <base>2</base>
@@ -621,8 +621,8 @@
             <armor_midpoint>95</armor_midpoint>
         </armor>
         <size>5</size>
-        <longname>Van</longname>
-        <shortname>Van</shortname>
+        <longname>バン</longname>
+        <shortname>バン</shortname>
         <stealing>
             <difficulty_to_find>2</difficulty_to_find>
             <juice>0</juice>

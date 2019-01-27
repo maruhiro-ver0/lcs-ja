@@ -454,14 +454,14 @@ void mode_site()
                }
             }
             if(!evade)
-               addstr("V - 隠れる");
-            else
                addstr("V - 逃げる");
+            else
+               addstr("V - 隠れる");
          }
          else
          {
             set_color(COLOR_BLACK,COLOR_BLACK,1);
-            addstr("V - 逃れる");
+            addstr("V - 逃げる");
          }
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);

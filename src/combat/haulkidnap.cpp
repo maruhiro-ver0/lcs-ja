@@ -53,7 +53,7 @@ void kidnapattempt()
    if(!available)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      mvaddstr(16,1,"No one can do the job.            ");
+      mvaddstr(16,1,"実行できる者がいない。            ");
       mvaddstr(17,1,"                                  ");
 
       getkey();
@@ -67,7 +67,7 @@ void kidnapattempt()
 
       move(8,20);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      addstr("Choose a Liberal squad member to do the job.");
+      addstr("誰が実行する?");
 
       int c=getkey();
 
@@ -99,7 +99,7 @@ void kidnapattempt()
 
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(9,1);
-         addstr("Kidnap whom?");
+         addstr("誰を?");
 
          int x=1,y=11;
          for(int t2=0;t2<len(target);t2++)
@@ -168,7 +168,7 @@ void kidnapattempt()
    else
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      mvaddstr(16,1,"All of the targets are too dangerous.                ");
+      mvaddstr(16,1,"全員危険そうだ。                                     ");
       mvaddstr(17,1,"                                                     ");
 
       getkey();

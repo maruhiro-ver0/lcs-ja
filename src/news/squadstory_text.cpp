@@ -2,7 +2,7 @@
 
 void squadstory_text_location(newsstoryst& ns,bool liberalguardian,bool ccs,char* story)
 {
-   strcat(story,"  The events took place ");
+   strcat(story,"  それは");
    std::string placename=location[ns.loc]->getname();
    if(placename.substr(0,4)=="The ")
       placename=placename.substr(4);
@@ -19,7 +19,6 @@ void squadstory_text_location(newsstoryst& ns,bool liberalguardian,bool ccs,char
    case SITE_CITY_ATLANTA:
    case SITE_CITY_MIAMI:
    case SITE_CITY_WASHINGTON_DC:
-      strcat(story,"in ");
       break;
    case SITE_DOWNTOWN:
    case SITE_COMMERCIAL:
@@ -27,65 +26,55 @@ void squadstory_text_location(newsstoryst& ns,bool liberalguardian,bool ccs,char
    case SITE_OUTOFTOWN:
    case SITE_INDUSTRIAL:
    case SITE_TRAVEL:
-      if(placename=="Shopping")
+      if(placename=="Shopping"||placename=="ショッピング")
       {
-         placename="Shopping Mall";
-         strcat(story,"at the ");
+         placename="ショッピングモール";
       }
-      else if(placename=="Travel")
+      else if(placename=="Travel"||placename=="旅行")
       {
-         placename="Travel Agency";
-         strcat(story,"at the ");
+         placename="旅行会社";
       }
       else if(placename=="Outskirts and Orange County")
       {
-         placename="Orange County";
-         strcat(story,"in ");
+         placename="オレンジ郡";
       }
       else if(placename=="Brooklyn and Queens")
       {
-         placename="Long Island";
-         strcat(story,"on ");
+         placename="ロングアイランド";
       }
       else if(placename=="Greater Hollywood")
       {
-         placename="Hollywood";
-         strcat(story,"in ");
+         placename="ハリウッド";
       }
       else if(placename=="Manhattan Island")
       {
-         placename="Manhattan";
-         strcat(story,"in ");
+         placename="マンハッタン";
       }
       else if(placename=="Arlington")
-         strcat(story,"in ");
+         ;
       else if(placename=="National Mall")
-         strcat(story,"on the ");
-      else if(placename!="Downtown")
-         strcat(story,"in the ");
+         ;
+      else if(placename!="Downtown"&&placename!="都心部")
+         ;
       break;
    case SITE_BUSINESS_PAWNSHOP:
       if(placename.find("'s")!=string::npos)
       {
-         strcat(story,"at ");
-         if(liberalguardian&&!ccs)strcat(story,"the notorious ");
+         if(liberalguardian&&!ccs)strcat(story,"よく知られた");
       }
       else
       {
-         strcat(story,"at the ");
-         if(liberalguardian&&!ccs)strcat(story,"notorious ");
+         if(liberalguardian&&!ccs)strcat(story,"よく知られた");
       }
       break;
    case SITE_RESIDENTIAL_APARTMENT:
    case SITE_BUSINESS_CARDEALERSHIP:
    case SITE_BUSINESS_DEPTSTORE:
    case SITE_OUTDOOR_PUBLICPARK:
-      strcat(story,"at ");
-      if(liberalguardian&&!ccs)strcat(story,"the notorious ");
+      if(liberalguardian&&!ccs)strcat(story,"よく知られた");
       break;
    default:
-      strcat(story,"at the ");
-      if(liberalguardian&&!ccs)strcat(story,"notorious ");
+      if(liberalguardian&&!ccs)strcat(story,"よく知られた");
       break;
    }
    if(ccs)
@@ -93,45 +82,45 @@ void squadstory_text_location(newsstoryst& ns,bool liberalguardian,bool ccs,char
       switch(location[ns.loc]->type)
       {
       case SITE_RESIDENTIAL_APARTMENT_UPSCALE:
-         strcat(story,"University Dormitory.  ");break;
+         strcat(story,"大学寮");break;
       case SITE_BUSINESS_CIGARBAR:
-         strcat(story,"Lady Luck Strip Club.  ");break;
+         strcat(story,"ラッキーレディー・ストリップクラブ");break;
       case SITE_LABORATORY_COSMETICS:
-         strcat(story,"Animal Shelter.  ");break;
+         strcat(story,"動物保護シェルター");break;
       case SITE_LABORATORY_GENETIC:
-         strcat(story,"Research Ethics Commission HQ.  ");break;
+         strcat(story,"倫理研究所委員会本部");break;
       case SITE_GOVERNMENT_POLICESTATION:
-         strcat(story,"Seedy Back Alley(tm).  ");break;
+         strcat(story,"Seedy Back Alley(tm)");break;
       case SITE_GOVERNMENT_COURTHOUSE:
-         strcat(story,"Abortion Clinic.  ");break;
+         strcat(story,"中絶病院");break;
       case SITE_GOVERNMENT_PRISON:
-         strcat(story,"Rehabilitation Center.  ");break;
+         strcat(story,"リハビリセンター");break;
       case SITE_GOVERNMENT_INTELLIGENCEHQ:
-         strcat(story,"WikiLeaks HQ.  ");break;
+         strcat(story,"WikiLeaks本部");break;
       case SITE_INDUSTRY_SWEATSHOP:
-         strcat(story,"Labor Union HQ.  ");break;
+         strcat(story,"労働組合本部");break;
       case SITE_INDUSTRY_POLLUTER:
-         strcat(story,"Greenpeace Offices.  ");break;
+         strcat(story,"平和と緑のオフィス");break;
       case SITE_INDUSTRY_NUCLEAR:
-         strcat(story,"Whirled Peas Museum.  ");break;
+         strcat(story,"ホイールド・ピーズ美術館");break;
       case SITE_CORPORATE_HEADQUARTERS:
-         strcat(story,"Welfare Assistance Agency.  ");break;
+         strcat(story,"福祉補助機関");break;
       case SITE_CORPORATE_HOUSE:
-         strcat(story,"Tax Collection Agency.  ");break;
+         strcat(story,"税金収集機関");break;
       case SITE_MEDIA_AMRADIO:
-         strcat(story,"Public Radio Station.  ");break;
+         strcat(story,"公共ラジオ局");break;
       case SITE_MEDIA_CABLENEWS:
-         strcat(story,"Network News Station.  ");break;
+         strcat(story,"ネットワークニュース局");break;
       case SITE_GOVERNMENT_ARMYBASE:
-         strcat(story,"Greenpeace Offices.  ");break;
+         strcat(story,"緑と平和の機関");break;
       case SITE_GOVERNMENT_FIRESTATION:
-         strcat(story,"ACLU Branch Office.  ");break;
+         strcat(story,"アメリカ市民自由連合支所");break;
       case SITE_BUSINESS_BANK:
-         strcat(story,"Richard Dawkins Food Bank.  ");break;
+         strcat(story,"リチャード・ドーキンス フードバンク");break;
       default:
-         strcat(story,placename);
-         strcat(story,".  ");break;
+         strcat(story,placename);break;
       }
+      strcat(story,"で行われた。");
    }
    else strcat(story,placename);
    if(liberalguardian&&!ccs)
@@ -139,44 +128,45 @@ void squadstory_text_location(newsstoryst& ns,bool liberalguardian,bool ccs,char
       switch(location[ns.loc]->type)
       {
       case SITE_RESIDENTIAL_APARTMENT_UPSCALE:
-         strcat(story,", known for its rich and snooty residents.  ");break;
+         strcat(story,"、自己中心的な富裕層の住処");break;
       case SITE_BUSINESS_CIGARBAR:
-         strcat(story,", a spawning ground of Wrong Conservative Ideas.  ");break;
+         strcat(story,"、悪しき保守思想の巣窟");break;
       case SITE_LABORATORY_COSMETICS:
-         strcat(story,", a Conservative animal rights abuser.  ");break;
+         strcat(story,"、保守派の動物虐待者の居所");break;
       case SITE_LABORATORY_GENETIC:
-         strcat(story,", a dangerous Conservative genetic research lab.  ");break;
+         strcat(story,"、危険な保守派の遺伝子研究所");break;
       case SITE_GOVERNMENT_POLICESTATION:
-         strcat(story,", headquarters of one of the most oppressive and Conservative police forces in the country.  ");break;
+         strcat(story,"、この国で最も抑圧的な保守派警察権力の本部");break;
       case SITE_GOVERNMENT_COURTHOUSE:
-         strcat(story,", site of numerous Conservative Injustices.  ");break;
+         strcat(story,"、保守派による無数の不正義の場所");break;
       case SITE_GOVERNMENT_PRISON:
-         strcat(story,", where innocent people are regularly beaten by Conservative guards.  ");break;
+         strcat(story,"、無実の人々が保守派の看守に虐待されている場所");break;
       case SITE_GOVERNMENT_INTELLIGENCEHQ:
-         strcat(story,", the Conservative headquarters of one of the biggest privacy violators in the world.  ");break;
+         strcat(story,", 世界中で最もプライバシーを侵害している保守派の機関の1つ");break;
       case SITE_GOVERNMENT_ARMYBASE:
-         strcat(story,", pride of Conservative torturers and warmongers everywhere.  ");break;
+         strcat(story,"、保守派の拷問者と戦争屋の群れの中");break;
       case SITE_INDUSTRY_SWEATSHOP:
-         strcat(story,", a Conservative sweatshop and human rights abuser.  ");break;
+         strcat(story,"、保守による強制労働と人権侵害の工場");break;
       case SITE_INDUSTRY_POLLUTER:
-         strcat(story,", a factory whose Conservative smokestacks choke the city with deadly pollutants.  ");break;
+         strcat(story,"、有害な煙を街に蔓延される保守の工場");break;
       case SITE_INDUSTRY_NUCLEAR:
-         strcat(story,", also known to be a Conservative storage facility for radioactive waste.  ");break;
+         strcat(story,"、保守の核のゴミの貯蔵庫としても知られる場所");break;
       case SITE_CORPORATE_HEADQUARTERS:
-         strcat(story,", where evil and Conservatism coagulate in the hallways.  ");break;
+         strcat(story,"、邪悪な保守思想の殿堂");break;
       case SITE_CORPORATE_HOUSE:
-         strcat(story,", a building with enough square footage enough to house a hundred people if it weren't in Conservative Hands.  ");break;
+         strcat(story,"、もし保守の手の中になければ百人もの人々が暮せる建造物");break;
       case SITE_MEDIA_AMRADIO:
       case SITE_MEDIA_CABLENEWS:
-         strcat(story,", known for its Extreme Conservative Bias.  ");break;
+         strcat(story,"、極めて保守に偏向した番組で知られる場所");break;
       case SITE_BUSINESS_BANK:
-         strcat(story,", the very symbol of economic inequality.  ");break;
+         strcat(story,"、経済的不平等を象徴する場所");break;
       default:
-         strcat(story,".  ");break;
+         break;
       }
+      strcat(story,"で行われた。");
    }
    else if(!ccs)
-      strcat(story,".  ");
+      strcat(story,"で行われた。");
 }
 
 void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char* story)
@@ -187,31 +177,27 @@ void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char*
       {
          if(ns.positive)
          {
-            strcat(story,"A group calling itself the Liberal Crime Squad ");
-            strcat(story,"burst onto the scene of political activism yesterday, according ");
-            strcat(story,"to a spokesperson from the police department.");
+            strcat(story,"警察の発表によると、昨日リベラル・クライム・スコードを自称するグループによる政治的アピールらしい突然の行動があった。");
             strcat(story,"&r");
          }
          else
          {
-            strcat(story,"A group of thugs calling itself the Liberal Crime Squad ");
-            strcat(story,"went on a rampage yesterday, according ");
-            strcat(story,"to a spokesperson from the police department.");
+            strcat(story,"警察の発表によると、昨日リベラル・クライム・スコードを自称する犯罪グループによる事件が発生した。");
          }
       }
       else
       {
          if(ns.positive)
          {
-            strcat(story,"The Liberal Crime Squad has struck again.  ");
+            strcat(story,"リベラル・クライム・スコードが再び現れた。");
             strcat(story,"&r");
          }
          else
          {
             if(!liberalguardian)
-               strcat(story,"The Liberal Crime Squad has gone on a rampage.  ");
+               strcat(story,"リベラル・クライム・スコードが凶行に及んだ。");
             else
-               strcat(story,"A Liberal Crime Squad operation went horribly wrong.  ");
+               strcat(story,"リベラル・クライム・スコードによる作戦は悲しい結果を引き起こした。");
             strcat(story,"&r");
          }
       }

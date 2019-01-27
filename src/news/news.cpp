@@ -1201,56 +1201,54 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                      {
                         if(!liberalguardian)
                         {
-                           strcat(story,"  Further details are sketchy, but police sources suggest that the LCS ");
-                           strcat(story,"engaged in ");
+                           strcat(story,"  詳細は不明だが、警察はLCSが");
                         }
                         else
                         {
-                           strcat(story,"  The Liberal Crime Squad ");
+                           strcat(story,"  リベラル・クライム・スコードは");
                         }
                      }
                      else
                      {
-                        strcat(story,"  Further details are sketchy, but police sources suggest that the CCS ");
-                           strcat(story,"engaged in ");
+                        strcat(story,"  詳細は不明だが、警察はCCSが");
                      }
                      if(crime[CRIME_ARSON])
                      {
                         if(!liberalguardian||ccs)
                         {
-                           strcat(story,"arson");
+                           strcat(story,"放火");
                         }
                         else
                         {
-                           strcat(story,"set fire to Conservative property");
+                           strcat(story,"保守の設備の焼却処分");
                         }
 
-                        if(typesum>=3)strcat(story,", ");
-                        else if(typesum==2)strcat(story," and ");
+                        if(typesum>=3)strcat(story,"、");
+                        else if(typesum==2)strcat(story,"と");
                         typesum--;
                      }
                      if(!liberalguardian||ccs)
                      {
                         if(crime[CRIME_KILLEDSOMEBODY])
                         {
-                           strcat(story,"murder");
-                           if(typesum>=3)strcat(story,", ");
-                           else if(typesum==2)strcat(story," and ");
+                           strcat(story,"殺人");
+                           if(typesum>=3)strcat(story,"、");
+                           else if(typesum==2)strcat(story,"と");
                            typesum--;
                         }
                         if(crime[CRIME_ATTACKED_MISTAKE])
                         {
-                           strcat(story,"violence");
-                           if(typesum>=3)strcat(story,", ");
-                           else if(typesum==2)strcat(story," and ");
+                           strcat(story,"傷害");
+                           if(typesum>=3)strcat(story,"、");
+                           else if(typesum==2)strcat(story,"と");
                            typesum--;
                         }
                         if(crime[CRIME_ATTACKED])
                         {
-                           if(crime[CRIME_ATTACKED_MISTAKE])strcat(story,"more violence");
-                           else strcat(story,"violence");
-                           if(typesum>=3)strcat(story,", ");
-                           else if(typesum==2)strcat(story," and ");
+                           if(crime[CRIME_ATTACKED_MISTAKE])strcat(story,"多数を巻き込んだ傷害");
+                           else strcat(story,"傷害");
+                           if(typesum>=3)strcat(story,"、");
+                           else if(typesum==2)strcat(story,"と");
                            typesum--;
                         }
                      }
@@ -1258,9 +1256,9 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                      {
                         if(crime[CRIME_ATTACKED])
                         {
-                           strcat(story,"engaged in combat with Conservative forces");
-                           if(typesum>=3)strcat(story,", ");
-                           else if(typesum==2)strcat(story," and ");
+                           strcat(story,"保守派との戦闘");
+                           if(typesum>=3)strcat(story,"、");
+                           else if(typesum==2)strcat(story,"と");
                            typesum--;
                         }
                      }
@@ -1268,92 +1266,100 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                      {
                         if(!liberalguardian||ccs)
                         {
-                           strcat(story,"theft");
+                           strcat(story,"強盗");
                         }
                         else
                         {
-                           strcat(story,"liberated enemy resources");
+                           strcat(story,"敵の資源の解放");
                         }
-                        if(typesum>=3)strcat(story,", ");
-                        else if(typesum==2)strcat(story," and ");
+                        if(typesum>=3)strcat(story,"、");
+                        else if(typesum==2)strcat(story,"と");
                         typesum--;
                      }
                      if(crime[CRIME_FREE_RABBITS]||crime[CRIME_FREE_BEASTS])
                      {
                         if(!liberalguardian)
                         {
-                           strcat(story,"tampering with lab animals");
+                           strcat(story,"研究所の動物の放出");
                         }
                         else
                         {
-                           strcat(story,"liberated abused animals");
+                           strcat(story,"虐待された動物の解放");
                         }
 
-                        if(typesum>=3)strcat(story,", ");
-                        else if(typesum==2)strcat(story," and ");
+                        if(typesum>=3)strcat(story,"、");
+                        else if(typesum==2)strcat(story,"と");
                         typesum--;
                      }
                      if(crime[CRIME_BREAK_SWEATSHOP]||crime[CRIME_BREAK_FACTORY]||crime[CRIME_VANDALISM])
                      {
                         if(!liberalguardian||ccs)
                         {
-                           strcat(story,"destruction of private property");
+                           strcat(story,"設備の破壊");
                         }
                         else
                         {
-                           strcat(story,"damaged enemy infrastructure");
+                           strcat(story,"敵のインフラの破壊");
                         }
 
-                        if(typesum>=3)strcat(story,", ");
-                        else if(typesum==2)strcat(story," and ");
+                        if(typesum>=3)strcat(story,"、");
+                        else if(typesum==2)strcat(story,"と");
                         typesum--;
                      }
                      if(crime[CRIME_TAGGING])
                      {
                         if(!liberalguardian||ccs)
                         {
-                           strcat(story,"vandalism");
+                           strcat(story,"破壊行為");
                         }
                         else
                         {
-                           strcat(story,"marked the site for Liberation");
+                           strcat(story,"解放の印のマーキング");
                         }
 
-                        if(typesum>=3)strcat(story,", ");
-                        else if(typesum==2)strcat(story," and ");
+                        if(typesum>=3)strcat(story,"、");
+                        else if(typesum==2)strcat(story,"と");
                         typesum--;
                      }
                      if(crime[CRIME_BROKEDOWNDOOR])
                      {
                         if(!liberalguardian||ccs)
                         {
-                           strcat(story,"breaking and entering");
+                           strcat(story,"破壊と侵入");
                         }
                         else
                         {
-                           strcat(story,"broke down doors");
+                           strcat(story,"破壊された扉からの入場");
                         }
 
-                        if(typesum>=3)strcat(story,", ");
-                        else if(typesum==2)strcat(story," and ");
+                        if(typesum>=3)strcat(story,"、");
+                        else if(typesum==2)strcat(story,"と");
                         typesum--;
                      }
                      if(crime[CRIME_UNLOCKEDDOOR])
                      {
                         if(!liberalguardian||ccs)
                         {
-                           strcat(story,"unlawful entry");
+                           strcat(story,"不法侵入");
                         }
                         else
                         {
-                           strcat(story,"picked locks");
+                           strcat(story,"鍵の解除");
                         }
 
-                        if(typesum>=3)strcat(story,", ");
-                        else if(typesum==2)strcat(story," and ");
+                        if(typesum>=3)strcat(story,"、");
+                        else if(typesum==2)strcat(story,"と");
                         typesum--;
                      }
-                     strcat(story,".");
+                     if(!ccs&&!liberalguardian)
+                        {
+                        strcat(story,"の犯行に及んだと見て調査している");
+                        }
+                     else
+                        {
+                        strcat(story,"を敢行した");
+                        }
+                     strcat(story,"。");
                   }
                   strcat(story,"&r");
                }
@@ -1362,33 +1368,32 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                {
                   if(!liberalguardian||ccs)
                   {
-                     strcat(story,"  It is known that there was a high-speed chase ");
-                     strcat(story,"following the incident.  ");
+                     strcat(story,"  事件の後、車は猛スピードで追跡された。");
                   }
                   else
                   {
-                     strcat(story,"  Conservative operatives engaged in a reckless ");
-                     strcat(story,"pursuit of the LCS.  ");
+                     strcat(story,"  保守派は無謀にもLCSを猛スピードで追跡した。");
                   }
 
                   if(crime[CRIME_CARCRASH])
                   {
                      if(crime[CRIME_CARCRASH]>1)
                      {
+                        strcat(story,"そして");
                         strcat(story,crime[CRIME_CARCRASH]);
-                        strcat(story," vehicles crashed.  ");
+                        strcat(story,"台の車が事故を起こした。");
                      }
-                     else strcat(story,"One vehicle crashed.  ");
+                     else strcat(story,"そして1台の車が破損した。");
                      if(!liberalguardian||ccs)
-                        strcat(story,"Details about injuries were not released.  ");//XXX: Why not turn them into martyrs?
+                        strcat(story,"犠牲者の詳細はまだ発表されていない。");//XXX: Why not turn them into martyrs?
                   }
 
                   if(crime[CRIME_FOOTCHASE])
                   {
                      if(!liberalguardian||ccs)
-                        strcat(story,"There was also a foot chase when the suspect or suspects bailed out after the high-speed pursuit.  ");
+                        strcat(story,"車による追跡の後にも、徒歩による追跡が容疑者を見失うまで続いた。");
                      else
-                        strcat(story,"The Liberal Crime Squad ended the dangerous high-speed chase in order to protect the public, and attempted to escape on foot.  ");
+                        strcat(story,"リベラル・クライム・スコードは市民を車による危険な追跡から守るため、徒歩で逃走することを選択した。");
                   }
                   strcat(story,"&r");
                }
@@ -1398,9 +1403,9 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                   {
                      if(crime[CRIME_TAGGING])
                      {
-                        strcat(story,"  The slogan, \"");
+                        strcat(story,"  壁には" "\"");
                         strcat(story,slogan);
-                        strcat(story,"\" was found painted on the walls.");
+                        strcat(story,"\"" "という言葉が残されていた。");
                      }
                      else
                      {
@@ -1409,26 +1414,26 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                         case 0:
                            if (ns.type==NEWSSTORY_SQUAD_KILLED_SITE)
                            {
-                              strcat(story,"  One uttered the words, \"");
+                              strcat(story,"  生存者によれば、現場を去る前に" "\"");
                               strcat(story,slogan);
-                              strcat(story,"\" before passing out.");
+                              strcat(story,"\"" "とつぶやいていたとも伝えられている。");
                            }
                            else
                            {
-                              strcat(story,"  As they left, they shouted, \"");
+                              strcat(story,"  現場を去る前に" "\"");
                               strcat(story,slogan);
-                              strcat(story,"\"");
+                              strcat(story,"\"" "と叫んでいたとも伝えられている。");
                            }
                            break;
                         case 1:
-                           strcat(story,"  One of them was rumored to have cried out, \"");
+                           strcat(story,"  彼らの内の一人が" "\"");
                            strcat(story,slogan);
-                           strcat(story,"\"");
+                           strcat(story,"\"" "と叫んだとも伝えられている。");
                            break;
                         case 2:
-                           strcat(story,"  Witnesses reported hearing the phrase, \"");
+                           strcat(story,"  目撃者は" "\"");
                            strcat(story,slogan);
-                           strcat(story,"\"");
+                           strcat(story,"\"" "という言葉を聞いたと証言している。");
                            break;
                         }
                      }
@@ -1802,6 +1807,34 @@ void displaynewspicture(int p,int y)
       }
 }
 
+int chrsize(char *str)
+{
+   if(strlen("漢")==3) // UTF-8
+   {
+      if((*str & 0x80) == 0)
+         return 1;
+      else if((*str & 0xe0) == 0xc0)
+         return 2;
+      else if((*str & 0xf0) == 0xe0)
+        return 3;
+      else if((*str & 0xf8) == 0xf0)
+        return 4;
+      else if((*str & 0xfc) == 0xf8)
+        return 5;
+      else if((*str & 0xfe) == 0xfc)
+        return 6;
+      else
+        return 1;
+   }
+   else // ShiftJIS or EUC
+   {
+      if(*str & 0x80)
+         return 2;
+      else
+         return 1;
+   }
+}
+
 /* news - draws the specified block of text to the screen */
 void displaynewsstory(char *story,short *storyx_s,short *storyx_e,int y)
 {
@@ -1820,6 +1853,8 @@ void displaynewsstory(char *story,short *storyx_s,short *storyx_e,int y)
    char endparagraph=0;
    char iscentered=0;
    int i=0;
+   int j;
+   int size;
 
    while(curpos<len(story)&&cury<25)
    {
@@ -1851,9 +1886,21 @@ void displaynewsstory(char *story,short *storyx_s,short *storyx_e,int y)
             content=1;
 
             if(story[i]=='&')i++;
+            if((size = chrsize(&story[i])) > 1) {
+               for(j=0;j<size-1;j++)
+		          addstring[addstrcur++]=story[i++];
+               totalwidth++;
+            }
             addstring[addstrcur]=story[i];
             addstring[addstrcur+1]='\x0';
             totalwidth++;
+            if(totalwidth+1>length&&size>1)
+            {
+               i-=(size-1);
+               addstrcur-=(size-1);
+               addstring[addstrcur]='\x0';
+               break;
+            }
             if(totalwidth>length)
             {
                while(story[i]!=' ') i--,addstrcur--;

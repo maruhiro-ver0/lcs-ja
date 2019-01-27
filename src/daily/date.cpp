@@ -46,9 +46,9 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
       set_color(COLOR_CYAN,COLOR_BLACK,1);
       move(y,0);y++;
       addstr(d.date[e]->name, gamelog);
-      addstr(" is quite taken with ", gamelog);
+      addstr("は", gamelog);
       addstr(pool[p]->name, gamelog);
-      addstr("'s unique life philosophy...", gamelog);
+      addstr("の独自の人生哲学に引き付けられた…", gamelog);
       gamelog.newline();
 
       getkey();
@@ -58,27 +58,27 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
          set_color(COLOR_YELLOW,COLOR_BLACK,1);
 
          move(y++,0);
-         addstr("But ", gamelog);
+         addstr("しかし", gamelog);
          addstr(pool[p]->name, gamelog);
-         addstr(" is already dating ", gamelog);
+         addstr("は既に", gamelog);
          int num_relationships=loveslaves(*pool[p]);
          if(pool[p]->flag&CREATUREFLAG_LOVESLAVE) num_relationships++;
-         if(num_relationships==1) addstr("someone!", gamelog);
-         else addstr(tostring(num_relationships)+" people!", gamelog);
+         if(num_relationships==1) addstr("誰かと付き合っている!", gamelog);
+         else addstr(tostring(num_relationships)+"人と付き合っている!", gamelog);
          gamelog.newline();
          move(y++,0);
          addstr(pool[p]->name, gamelog);
-         addstr(" isn't seductive enough to juggle ", gamelog);
-         if(num_relationships==1) addstr("another", gamelog);
-         else addstr("yet another", gamelog);
-         addstr(" relationship.", gamelog);
+         addstr("には", gamelog);
+         if(num_relationships==1) addstr("他の", gamelog);
+         else addstr("さらに他の", gamelog);
+         addstr("者との関係を持てるほど誘惑的でない。", gamelog);
          gamelog.newline();
 
          getkey();
          set_color(COLOR_WHITE,COLOR_BLACK,0);
 
          move(y++,0);
-         addstr("It was fun though. They agree to part ways amicably.", gamelog);
+         addstr("楽しい時間だった。2人は穏便に別れた。", gamelog);
          gamelog.nextMessage();
 
          getkey();
@@ -92,11 +92,11 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
       {
          set_color(COLOR_GREEN,COLOR_BLACK,1);
          move(y,0);y++;
-         addstr("In fact, ", gamelog);
+         addstr("もはや", gamelog);
          addstr(d.date[e]->name, gamelog);
-         addstr(" is ", gamelog);
+         addstr("は", gamelog);
          addstr(pool[p]->name, gamelog);
-         addstr("'s totally unconditional love-slave!", gamelog);
+         addstr("の完全な愛の奴隷だ!", gamelog);
          gamelog.nextMessage();
          //Get map of their workplace
          location[d.date[e]->worklocation]->mapped=1;
@@ -111,16 +111,15 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
 
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(0,0);
-         addstr("The Self-Nullifying Infatuation of ");
          addstr(d.date[e]->propername);
+         addstr("の自我消去");
 
          move(2,0);
          set_color(COLOR_WHITE,COLOR_BLACK,0);
-         addstr("What name will you use for this ");
          addstr(d.date[e]->get_type_name());
-         addstr(" in its presence?");
+         addstr("をどのような名前で呼ぶか?");
          move(3,0);
-         addstr("If you do not enter anything, their real name will be used.");
+         addstr("もし何も入力しなければ、本名が使われる。");
 
          enter_name(4,0,d.date[e]->name,CREATURE_NAMELEN,d.date[e]->propername);
 
@@ -139,7 +138,7 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
             set_color(COLOR_GREEN,COLOR_BLACK,1);
             y++;
             move(y++,0);
-            addstr(s+pool[p]->name+" is slowly warming "+d.date[e]->name+"'s frozen Conservative heart.", gamelog);
+            addstr(s+pool[p]->name+"は"+d.date[e]->name+"の凍りついた保守の心を暖めつつある。", gamelog);
             gamelog.newline();
             move(y++,0);
             d.date[e]->adjust_attribute(ATTRIBUTE_WISDOM,-1);
@@ -154,21 +153,21 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
          {
             y++;
             move(y++,0);
-            addstr(s+d.date[e]->name+" turns the topic of discussion to the "
-               +location[d.date[e]->worklocation]->name+".", gamelog);
+            addstr(s+d.date[e]->name+"は話題を"
+               +location[d.date[e]->worklocation]->name+"に切り替えた。", gamelog);
             gamelog.newline();
             move(y++,0);
             if(!(location[d.date[e]->worklocation]->type<=SITE_RESIDENTIAL_SHELTER))
             {
                addstr(pool[p]->name, gamelog);
-               addstr(" was able to create a map of the site with this information.", gamelog);
+               addstr("はその情報を元に地図を作った。", gamelog);
                gamelog.newline();
                y++;
             }
             else
             {
                addstr(pool[p]->name, gamelog);
-               addstr(" knows all about that already.", gamelog);
+               addstr("はその場所についてよく知っている。", gamelog);
                gamelog.newline();
                y++;
             }
@@ -178,7 +177,7 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(y++,0);
-         addstr("They'll meet again tomorrow.", gamelog);
+         addstr("2人は翌日再び会う約束をした。", gamelog);
          gamelog.nextMessage();
 
          getkey();
@@ -191,29 +190,31 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(y++,0);
       addstr(d.date[e]->name,gamelog);
-      addstr(" seemed to have fun, but left early",gamelog);
+      addstr("は興味を示したが、",gamelog);
       move(y++,0);
       switch(LCSrandom(4))
       {
-      case 0: addstr(s+" to wash "+d.date[e]->hisher()+" hair.",gamelog); break;
-      case 1: addstr(" due to an allergy attack.",gamelog); break;
-      case 2: addstr(" due to an early meeting tomorrow.",gamelog); break;
-      case 3: addstr(s+" to catch "+d.date[e]->hisher()+" favourite TV show.", gamelog); break;
+      case 0: addstr("髪を洗わなければならない",gamelog); break;
+      case 1: addstr("アレルギーのせい",gamelog); break;
+      case 2: addstr("明日は朝が早い",gamelog); break;
+      case 3: addstr("好きなテレビ番組を見なければならない", gamelog); break;
       case 4:
-         addstr(s+" to take care of "+d.date[e]->hisher()+" pet",gamelog);
+         addstr("ペットの",gamelog);
          switch(LCSrandom(3+(law[LAW_ANIMALRESEARCH]==-2)))
          {
-         case 0: addstr(" cat.",gamelog); break;
-         case 1: addstr(" dog.",gamelog); break;
-         case 2: addstr(" fish.",gamelog); break;
-         case 3: addstr(" six-legged pig.",gamelog); break;
+         case 0: addstr("猫",gamelog); break;
+         case 1: addstr("犬",gamelog); break;
+         case 2: addstr("熱帯魚",gamelog); break;
+         case 3: addstr("6足豚",gamelog); break;
          }
+         addstr("の世話をしなければならない",gamelog);
          break;
-      case 5: addstr(" to go to a birthday party.",gamelog); break;
-      case 6: addstr(s+" to recharge "+d.date[e]->hisher()+" cell phone.",gamelog); break;
+      case 5: addstr("バースデーパーティーへ行かなければならない",gamelog); break;
+      case 6: addstr("携帯電話を充電しなければならない",gamelog); break;
       }
+      addstr("と言って早々と帰宅した。",gamelog);
       move(y++,0);
-      addstr("They'll meet again tomorrow.",gamelog);
+      addstr("2人は翌日再び会う約束をした。", gamelog);
       gamelog.nextMessage();
 
       getkey();
@@ -453,29 +454,34 @@ char completedate(datest &d,int p,char &clearformess)
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
    addstr(pool[p]->name, gamelog);
-   addstr(" has ", gamelog);
+   addstr("は", gamelog);
    if(len(d.date)==1)
    {
-      if(pool[p]->clinic) addstr("a \"hot\" date with ", gamelog);
-      else addstr("a hot date with ", gamelog);
+      if(pool[p]->clinic) addstr("「楽しく」", gamelog);
+      else addstr("楽しく", gamelog);
    }
-   else addstr("dates to manage with ", gamelog);
+   else addstr("何とか", gamelog);
    for(e=0;e<len(d.date);e++)
    {
       addstr(d.date[e]->name, gamelog);
 
-      if(e<=len(d.date)-3) addstr(", ", gamelog);
-      else if(e==len(d.date)-2) addstr(" and ", gamelog);
+      if(e<=len(d.date)-3) addstr("、", gamelog);
+      else if(e==len(d.date)-2) addstr("と", gamelog);
       else
       {
          if(pool[p]->clinic>0)
          {
-            addstr(" at ", gamelog);
+            addstr("と", gamelog);
             addstr(location[pool[p]->location]->name, gamelog);
+            addstr("で", gamelog);
          }
-         addstr(".", gamelog);
+         else
+         {
+            addstr("と", gamelog);
+         }
       }
    }
+   addstr("デートした。", gamelog);
 
    gamelog.newline();
 
@@ -558,11 +564,10 @@ char completedate(datest &d,int p,char &clearformess)
       erase();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
-      addstr("Seeing ");
       addstr(d.date[e]->name, gamelog);
-      addstr(", ", gamelog);
+      addstr("とのデート、", gamelog);
       addstr(d.date[e]->get_type_name(),gamelog);
-      addstr(", ", gamelog);
+      addstr("、", gamelog);
       addstr(location[d.date[e]->worklocation]->getname(false,true), gamelog);
       gamelog.newline();
 
@@ -591,30 +596,29 @@ char completedate(datest &d,int p,char &clearformess)
       }
 
       move(10,0);
-      addstr("How should ");
       addstr(pool[p]->name);
-      addstr(" approach the situation?");
+      addstr("はどのようなシチュエーションで迫るか?");
 
       if(ledger.get_funds()>=100&&!pool[p]->clinic)set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(11,0);
-      addstr("A - Spend a hundred bucks tonight to get the ball rolling.");
+      addstr("A - きっかけを掴むために$100を費やす");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(12,0);
-      addstr("B - Try to get through the evening without spending a penny.");
+      addstr("B - 1セントも使わずに夜まで過ごす");
       if(!pool[p]->clinic&&pool[p]->blood==100)set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(13,0);
-      if(pool[p]->blood==100) addstr("C - Spend a week on a cheap vacation (stands up any other dates).");
-      else addstr("C - Spend a week on a cheap vacation (must be uninjured).");
+      if(pool[p]->blood==100) addstr("C - 1週間を安いバケーションに費やす (他のデートはすっぽかす)");
+      else addstr("C - 1週間を安いバケーションに費やす (負傷していてはならない)");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(14,0);
-      addstr("D - Break it off.");
+      addstr("D - 打ち切る");
       if(d.date[e]->align==-1&&!pool[p]->clinic)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(15,0);
-         addstr("E - Just kidnap the Conservative bitch.");
+         addstr("E - 保守の狐をだた誘拐する");
       }
 
       int thingsincommon = 0;
@@ -709,19 +713,19 @@ char completedate(datest &d,int p,char &clearformess)
 
             if(pool[p]->get_weapon().is_ranged())
             {
-               addstr(" comes back from the bathroom toting the ", gamelog);
+               addstr("はバスルームから", gamelog);
                addstr(pool[p]->get_weapon().get_name(1), gamelog);
                move(18,0);
-               addstr("and threatens to blow the Conservative's brains out!", gamelog);
+               addstr("を持って戻り、保守を脅した!", gamelog);
                gamelog.newline();
                bonus=5;
             }
             else if(pool[p]->is_armed())
             {
-               addstr(" grabs the Conservative from behind, holding the ", gamelog);
+               addstr("は保守を後ろから掴み、首に", gamelog);
                addstr(pool[p]->get_weapon().get_name(1), gamelog);
                move(18,0);
-               addstr("to the corporate slave's throat!", gamelog);
+               addstr("を押し付けた!", gamelog);
                gamelog.newline();
                if(pool[p]->get_weapon().can_take_hostages())
                   bonus=5;
@@ -729,12 +733,12 @@ char completedate(datest &d,int p,char &clearformess)
             }                 // to kidnap them with a gavel or some shit like that
             else
             {
-               addstr(" seizes the Conservative swine from behind and warns it", gamelog);
+               addstr("は後ろから保守の豚を掴み、", gamelog);
                move(18,0);
                if(law[LAW_FREESPEECH]!=-2)
-                  addstr("not to fuck around!", gamelog);
+                  addstr("馬鹿な真似をするなと脅した!", gamelog);
                else
-                  addstr("not to [resist]!", gamelog);
+                  addstr("[抵抗]するなと脅した!", gamelog);
                gamelog.newline();
 
                bonus+=pool[p]->get_skill(SKILL_HANDTOHAND)-1;
@@ -754,12 +758,12 @@ char completedate(datest &d,int p,char &clearformess)
                addstr(d.date[e]->name, gamelog);
                if(bonus)
                {
-                  addstr(" doesn't resist.", gamelog);
+                  addstr("は抵抗しなかった。", gamelog);
                   gamelog.newline();
                }
                else
                {
-                  addstr(" struggles and yells for help, but nobody comes.", gamelog);
+                  addstr("は抵抗し助けを呼んだが、誰も来なかった。", gamelog);
                   gamelog.newline();
                }
 
@@ -767,7 +771,7 @@ char completedate(datest &d,int p,char &clearformess)
 
                move(22,0);
                addstr(pool[p]->name, gamelog);
-               addstr(" kidnaps the Conservative!", gamelog);
+               addstr("は保守を捕らえた!", gamelog);
                gamelog.nextMessage();
 
                getkey();
@@ -791,17 +795,16 @@ char completedate(datest &d,int p,char &clearformess)
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(0,0);
-               addstr("The Education of ");
                addstr(d.date[e]->propername);
+               addstr("への教育");
 
                move(2,0);
                set_color(COLOR_WHITE,COLOR_BLACK,0);
-               addstr("What name will you use for this ");
                addstr(d.date[e]->get_type_name());
-               addstr(" in its presence?");
+               addstr("をどのような名前で呼ぶか?");
 
                move(3,0);
-               addstr("If you do not enter anything, their real name will be used.");
+               addstr("もし何も入力しなければ、本名が使われる。");
 
                enter_name(4,0,d.date[e]->name,CREATURE_NAMELEN,d.date[e]->propername);
 
@@ -818,14 +821,14 @@ char completedate(datest &d,int p,char &clearformess)
                   set_color(COLOR_MAGENTA,COLOR_BLACK,1);
                   move(y++,0);
                   addstr(d.date[e]->name, gamelog);
-                  addstr(" manages to get away on the way back to the safehouse!", gamelog);
+                  addstr("はアジトへ向かう途中で何とか逃げ出した!", gamelog);
                   gamelog.newline();
 
                   getkey();
 
                   move((++y)++,0);
                   addstr(pool[p]->name, gamelog);
-                  addstr(" has failed to kidnap the Conservative.", gamelog);
+                  addstr("は保守の誘拐に失敗した。", gamelog);
                   gamelog.nextMessage();
 
                   // Charge with kidnapping
@@ -841,15 +844,15 @@ char completedate(datest &d,int p,char &clearformess)
                   set_color(COLOR_RED,COLOR_BLACK,1);
                   move(y++,0);
                   addstr(d.date[e]->name, gamelog);
-                  addstr("'s fist is the last thing ", gamelog);
+                  addstr("の拳が", gamelog);
                   addstr(pool[p]->name, gamelog);
-                  addstr(" remembers seeing!", gamelog);
+                  addstr("が最後に見たものだった!", gamelog);
                   gamelog.newline();
 
                   getkey();
 
                   move((++y)++,0);
-                  addstr("The Liberal wakes up in the police station...", gamelog);
+                  addstr("リベラルは拘置所で目が覚めた…", gamelog);
                   gamelog.nextMessage();
 
                   // Find the police station

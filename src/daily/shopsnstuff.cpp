@@ -143,7 +143,7 @@ void dealership(int loc)
       if(!car_to_sell) set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(10,1);
-      addstr("G - Get a Liberal car");
+      addstr("G - リベラル車を購入する");
 
       move(11,1);
       if(car_to_sell)
@@ -153,12 +153,12 @@ void dealership(int loc)
          if(car_to_sell->get_heat())
             price/=10;
          set_color(COLOR_WHITE,COLOR_BLACK,0);
-         addstr("S - Sell the "+car_to_sell->fullname()+" ($"+tostring(price)+")");
+         addstr("S - "+car_to_sell->fullname()+" ($"+tostring(price)+")を売る");
       }
       else
       {
          set_color(COLOR_BLACK,COLOR_BLACK,1);
-         addstr("S - Sell a car");
+         addstr("S - 車を売る");
       }
 
       /*if(car_to_sell && car_to_sell->heat>1 && ledger.get_funds()>=500)
@@ -171,20 +171,20 @@ void dealership(int loc)
       if(partysize>=2)set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(16,1);
-      addstr("B - Choose a buyer");
+      addstr("B - 購入する者を選ぶ");
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(16,40);
-      addstr("Enter - Leave");
+      addstr("Enter - 戻る");
 
       if(party_status!=-1)set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(15,1);
-      addstr("0 - Show the squad's Liberal status");
+      addstr("0 - 部隊の状態を表示する");
       if(partysize>0&&(party_status==-1||partysize>1))set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(15,40);
-      addstr("# - Check the status of a squad Liberal");
+      addstr("# - リベラルの状態を表示する");
 
       int c=getkey();
 
@@ -219,14 +219,14 @@ void dealership(int loc)
             }
          while(true)
          {
-            carchoice = choiceprompt("Choose a vehicle","",vehicleoption,"Vehicle",
-                                     true,"We don't need a Conservative car");
+            carchoice = choiceprompt("車を選択する","",vehicleoption,"Vehicle",
+                                     true,"保守車はいらない");
             if (carchoice!=-1 && (sleepercarsalesman?vehicletype[availablevehicle[carchoice]]->sleeperprice():
                                   vehicletype[availablevehicle[carchoice]]->price()) > ledger.get_funds())
             {
                set_color(COLOR_RED,COLOR_BLACK,0);
                move(1,1);
-               addstr("You don't have enough money!");
+               addstr("資金が足りない!");
 
                getkey();
             }
@@ -239,8 +239,8 @@ void dealership(int loc)
          int colorchoice;
          //if(len(vehicletype[availablevehicle[choice]]->color())>1) //Allow to back out if you don't like single colour? -XML
          //{
-         colorchoice = choiceprompt("Choose a color","",vehicletype[availablevehicle[carchoice]]->color(),
-                                    "Color",true,"These colors are Conservative");
+         colorchoice = choiceprompt("色を選択する","",vehicletype[availablevehicle[carchoice]]->color(),
+                                    "Color",true,"保守色ばかりだ");
          //}
          //else
          //   colorchoice = 0;

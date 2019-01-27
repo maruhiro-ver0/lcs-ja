@@ -536,17 +536,17 @@ void initlocation(Location &loc)
    case SITE_LABORATORY_GENETIC:
       lastname(loc.name,true);
       strcat(loc.name," 遺伝子研究所");
-      strcpy(loc.shortname,"遺伝子");
+      strcpy(loc.shortname,"遺伝子研究所");
       break;
    case SITE_LABORATORY_COSMETICS:
       lastname(loc.name,true);
       strcat(loc.name," 化粧品研究所");
-      strcpy(loc.shortname,"化粧品");
+      strcpy(loc.shortname,"化粧品研究所");
       break;
    case SITE_BUSINESS_CARDEALERSHIP:
       generate_name(loc.name,GENDER_WHITEMALEPATRIARCH);
       strcat(loc.name," 中古車販売店");
-      strcpy(loc.shortname,"中古車");
+      strcpy(loc.shortname,"中古車店");
       break;
    case SITE_BUSINESS_DEPTSTORE:
       lastname(loc.name,true);

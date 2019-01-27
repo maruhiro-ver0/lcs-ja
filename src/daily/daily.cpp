@@ -82,9 +82,9 @@ void advanceday(char &clearformess,char canseethings)
                   addstr(squad[sq]->squad[p]->name, gamelog);
                   addstr("は");
                   addstr(getactivity(squad[sq]->squad[p]->activity), gamelog);
-                  addstr("をせずに");
+                  addstr("をやめて");
                   addstr(squad[sq]->name, gamelog);
-                  addstr("と行動", gamelog);
+                  addstr("と行動する", gamelog);
                   gamelog.newline();
 
                   getkey();

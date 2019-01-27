@@ -403,11 +403,11 @@ void disguisecheck(int timer)
          {
             sitealarm=1;
 
-            addstr(" shouts in alarm at the squad's Liberal Trespassing!", gamelog);
+            addstr("はリベラルの侵入を見て大声で叫んだ!", gamelog);
          }
          else
          {
-            addstr(" looks at the Squad suspiciously.", gamelog);
+            addstr("は部隊を疑いの目で見ている。", gamelog);
 
             int time;
 

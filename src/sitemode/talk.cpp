@@ -1096,18 +1096,18 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(y++,1);
       addstr(a.name, gamelog);
-      addstr(" and ", gamelog);
+      addstr("と", gamelog);
       addstr(tk.name, gamelog);
-      addstr(" make plans for tonight", gamelog);
+      addstr("は今夜の予定を組んだ", gamelog);
       if(strcmp(tk.name,"囚人")==0)
       {
-         addstr(", and ", gamelog);
+         addstr("。そして", gamelog);
          move(y++,1);
          addstr(tk.name, gamelog);
-         addstr(" breaks for the exit", gamelog);
+         addstr("は出入り口を壊した", gamelog);
          criminalize(tk,LAWFLAG_ESCAPED);
       }
-      addstr(".  ", gamelog);
+      addstr("。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -1599,12 +1599,12 @@ char talkAboutIssues(Creature &a, Creature &tk)
                case 1:addstr("「私の心が人間性で痛んでいる。」", gamelog);break;
                case 2:addstr("「残念だが話すことは何もない。」", gamelog);break;
                case 3:addstr("「出口がわからないのか? 」", gamelog);break;
-               case 4:addstr("\"People like you are the reason I'm on medication.\"", gamelog);break;
-               case 5:addstr("\"Everyone is entitled to be stupid, but you abuse the privilege.\"", gamelog);break;
-               case 6:addstr("\"I don't know what you're on, but I hope it's illegal.\"", gamelog);break;
-               case 7:addstr("\"Don't you have a parole meeting to get to?\"", gamelog);break;
-               case 8:addstr("\"Wow. Why am I talking to you again?\"", gamelog);break;
-               case 9:addstr("\"Were you dropped as a child?\"", gamelog);break;
+               case 4:addstr("「あなたの様な人がいるから私は投薬治療を受けているのだ。」", gamelog);break;
+               case 5:addstr("「あらゆる者には愚行権がある。だが、あなたはそれを乱用している。」", gamelog);break;
+               case 6:addstr("「あなたが何をしているのかは知らないが、それが合法であることを願っている。」", gamelog);break;
+               case 7:addstr("「仮出所中なのか? 」", gamelog);break;
+               case 8:addstr("「ああ、なぜあなたに返事をしなければならないのだ? 」", gamelog);break;
+               case 9:addstr("「子供に戻ったのか? 」", gamelog);break;
                }
             }
          }
@@ -1616,12 +1616,12 @@ char talkAboutIssues(Creature &a, Creature &tk)
             case LAW_ABORTION:      addstr("「中絶は殺人だ。」", gamelog);break;
             case LAW_ANIMALRESEARCH:addstr("「動物を人のように扱うべきではない。」", gamelog);break;
             case LAW_POLICEBEHAVIOR:addstr("「警察を恐れるのは犯罪者だけだ。」", gamelog);break;
-            case LAW_PRIVACY:       addstr("\"National security is important.\"", gamelog);break;
-            case LAW_DEATHPENALTY:  addstr("\"Some people deserve to die.\"", gamelog);break;
-            case LAW_NUCLEARPOWER:  addstr("\"Nuclear power is clean.\"", gamelog);break;
-            case LAW_POLLUTION:     addstr("\"It's not that bad.\"", gamelog);break;
-            case LAW_LABOR:         addstr("\"Trust the free market, it hasn't failed us yet.\"", gamelog);break;
-            case LAW_GAY:           addstr("\"Homosexuality is a sin.\"", gamelog);break;
+            case LAW_PRIVACY:       addstr("「国防は重要だ。」", gamelog);break;
+            case LAW_DEATHPENALTY:  addstr("「死がふさわしい者もいる。」", gamelog);break;
+            case LAW_NUCLEARPOWER:  addstr("「原子力はクリーンだ。」", gamelog);break;
+            case LAW_POLLUTION:     addstr("「問題にするほどではない。」", gamelog);break;
+            case LAW_LABOR:         addstr("「市場原理に任せろ。それでうまくいく。」", gamelog);break;
+            case LAW_GAY:           addstr("「同性愛は反道徳的だ。」", gamelog);break;
             case LAW_CORPORATE:     addstr("\"Corporations are part of capitalism.\"", gamelog);break;
             case LAW_FREESPEECH:    addstr("\"Don't be offensive and you'll be fine.\"", gamelog);break;
             case LAW_FLAGBURNING:   addstr("\"That flag is the sacred symbol of our country.\"", gamelog);break;

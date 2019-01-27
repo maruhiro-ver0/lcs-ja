@@ -28,7 +28,7 @@
 			<class>ARMOR</class>
 			<type>ARMOR_EXPENSIVESUIT</type>
 			<letter>v</letter>
-			<description>高級スーツ</description>
+			<description>高級スーツを買う</description>
 			<price>5000</price>
 		</item>
 		
@@ -118,14 +118,14 @@
         </item>
 		<item>
             <class>WEAPON</class>
-            <description>AR-15シビリアンモデルを買う</description>
+            <description>AR-15ｼﾋﾞﾘｱﾝﾓﾃﾞﾙを買う</description>
             <type>WEAPON_SEMIRIFLE_AR15</type>
 			<letter>R</letter>
             <price>450</price>
         </item>
 		<item>
 			<class>WEAPON</class>
-		    <description>.50AE弾デザートイーグルを買う</description>
+		    <description>.50AE弾ﾃﾞｻﾞｰﾄｲｰｸﾞﾙを買う</description>
 			<type>WEAPON_DESERT_EAGLE</type>
 			<letter>D</letter>
 			<price>1200</price>
@@ -159,7 +159,7 @@
         </item>
         <item>
             <class>CLIP</class>
-            <description>9mmサブマシンガンマガジンを買う</description>
+            <description>9mmｻﾌﾞﾏｼﾝｶﾞﾝﾏｶﾞｼﾞﾝを買う</description>
             <type>CLIP_SMG</type>
             <letter>s</letter>
             <price>50</price>

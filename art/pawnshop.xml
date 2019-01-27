@@ -53,7 +53,7 @@
         </item>
         <item>
             <class>WEAPON</class>
-            <description>AR-15シビリアンモデルを買う</description>
+            <description>AR-15ｼﾋﾞﾘｱﾝﾓﾃﾞﾙを買う</description>
             <type>WEAPON_SEMIRIFLE_AR15</type>
             <letter>r</letter>
             <price>350</price>

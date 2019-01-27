@@ -242,15 +242,15 @@ void enemyattack()
 {
    static const char *escape_crawling[] =
    {
-      " crawls off moaning...",
-      " crawls off whimpering...",
-      " crawls off trailing blood...",
-      " crawls off screaming...",
-      " crawls off crying...",
-      " crawls off sobbing...",
-      " crawls off whispering...",
-      " crawls off praying...",
-      " crawls off cursing..."
+      "はうめきながら這い出た…",
+      "はすすり泣きをしながら這い出た…",
+      "は血の跡をつけながら這い出た…",
+      "は悲鳴を上げて這い出た…",
+      "は泣きながら這い出た…",
+      "は涙を流しながら這い出た…",
+      "はすすり泣きをしながら這い出た…",
+      "は祈りながら這い出た…",
+      "は呪いながら這い出た…"
    };
 
    static const char *escape_running[] =
@@ -420,9 +420,9 @@ void enemyattack()
                      set_color(COLOR_WHITE,COLOR_BLACK,1);
                      move(16,1);
                      addstr(activesquad->squad[target]->name, gamelog);
-                     addstr(" drops ", gamelog);
+                     addstr("は", gamelog);
                      addstr(activesquad->squad[target]->prisoner->name, gamelog);
-                     addstr("'s body.", gamelog);
+                     addstr("を置いた。", gamelog);
                      gamelog.newline();
 
                      int prisonerType = activesquad->squad[target]->prisoner->type;
@@ -529,15 +529,15 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
       {
          a.reload(false);
          strcpy(str,a.name);
-         strcat(str," reloads.");
+         strcat(str,"は装填した。");
       }
       else if(a.has_thrown_weapon && len(a.extra_throwing_weapons))
       {
          a.ready_another_throwing_weapon();
          strcpy(str,a.name);
-         strcat(str," readies another ");
+         strcat(str,"は別の");
          strcat(str,a.get_weapon().get_name());
-         strcat(str,".");
+         strcat(str,"の準備をした。");
       }
       move(16,1);
       addstr(str, gamelog);
@@ -602,7 +602,7 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
             strcat(str,"に120mm砲弾を発射した");
             melee=false;
          }
-         else if(a.specialattack==ATTACK_FLAME) strcat(str,"に火を吹く");
+         else if(a.specialattack==ATTACK_FLAME) strcat(str,"に火を吹いた");
          else if(a.specialattack==ATTACK_SUCK) strcat(str,"を突き刺す");
          else strcat(str,"に噛み付く");
       }
@@ -1834,10 +1834,10 @@ void specialattack(Creature &a, Creature &t, char &actual)
    std::string s = "";
    static const char *judge_debate[]   =
    {
-      "debates the death penalty with",
-      "debates gay rights with",
-      "debates free speech with",
-      "debates the Second Amendment with"
+      "死刑制度に関する討論を仕掛けてきた",
+      "同性愛者の権利に関する討論を仕掛けてきた",
+      "言論の自由に関する討論を仕掛けてきた",
+      "修正第2条に関する討論を仕掛けてきた"
    };
 
    static const char *conservative_ceo_debate[] =
@@ -1931,7 +1931,7 @@ void specialattack(Creature &a, Creature &t, char &actual)
    set_color(COLOR_WHITE,COLOR_BLACK,1);
 
    strcpy(str,a.name);
-   strcat(str," ");
+   strcat(str,"は");
 
    int attack=0;
    if(a.align!=1)
@@ -1943,9 +1943,9 @@ void specialattack(Creature &a, Creature &t, char &actual)
    {
       case CREATURE_JUDGE_CONSERVATIVE:
       case CREATURE_JUDGE_LIBERAL:
-         strcat(str,pickrandom(judge_debate));
-         strcat(str," ");
          strcat(str,t.name);
+         strcat(str,"に");
+         strcat(str,pickrandom(judge_debate));
          strcat(str,"!");
          if(t.align==1)
             resist=t.skill_roll(SKILL_LAW)+
@@ -1956,15 +1956,15 @@ void specialattack(Creature &a, Creature &t, char &actual)
          attack+=a.skill_roll(SKILL_LAW);
          break;
       case CREATURE_SCIENTIST_EMINENT:
+         strcat(str,t.name);
+         strcat(str,"に");
          switch(LCSrandom(3))
          {
-            case 0:strcat(str,"debates scientific ethics with");break;
-            case 1:if(a.align==-1)strcat(str,"explains the benefits of research to");
-                   else strcat(str,"explains ethical research to");break;
-            case 2:strcat(str,"discusses the scientific method with");break;
+            case 0:strcat(str,"科学的方法論について討論を仕掛けてきた");break;
+            case 1:if(a.align==-1)strcat(str,"研究の有用性を説明した");
+                   else strcat(str,"研究倫理について説明した");break;
+            case 2:strcat(str,"科学的方法論について議論を仕掛けてきた");break;
          }
-         strcat(str," ");
-         strcat(str,t.name);
          strcat(str,"!");
          if(t.align==1)
             resist=t.skill_roll(SKILL_SCIENCE)+
@@ -1975,12 +1975,12 @@ void specialattack(Creature &a, Creature &t, char &actual)
          attack+=a.skill_roll(SKILL_SCIENCE);
          break;
       case CREATURE_POLITICIAN:
+         strcat(str,t.name);
+         strcat(str,"に");
          if(a.align==-1)
             strcat(str,pickrandom(conservative_politician_debate));
          else
             strcat(str,pickrandom(other_politician_debate));
-         strcat(str," ");
-         strcat(str,t.name);
          strcat(str,"!");
          if(t.align==1)
             resist=t.skill_roll(SKILL_LAW)+
@@ -1991,12 +1991,12 @@ void specialattack(Creature &a, Creature &t, char &actual)
          attack+=a.skill_roll(SKILL_LAW);
          break;
       case CREATURE_CORPORATE_CEO:
+         strcat(str,t.name);
+         strcat(str,"に");
          if(a.align==-1)
             strcat(str,pickrandom(conservative_ceo_debate));
          else
             strcat(str,pickrandom(other_ceo_debate));
-         strcat(str," ");
-         strcat(str,t.name);
          strcat(str,"!");
          if(t.align==1)
             resist=t.skill_roll(SKILL_BUSINESS)+
@@ -2008,9 +2008,9 @@ void specialattack(Creature &a, Creature &t, char &actual)
          break;
       case CREATURE_RADIOPERSONALITY:
       case CREATURE_NEWSANCHOR:
-         strcat(str,pickrandom(media_debate));
-         strcat(str," ");
          strcat(str,t.name);
+         strcat(str,"に");
+         strcat(str,pickrandom(media_debate));
          strcat(str,"!");
          if(t.align==1)
             resist=t.attribute_roll(ATTRIBUTE_HEART);
@@ -2019,9 +2019,9 @@ void specialattack(Creature &a, Creature &t, char &actual)
          attack+=a.attribute_roll(ATTRIBUTE_CHARISMA);
          break;
       case CREATURE_MILITARYOFFICER:
-         strcat(str,pickrandom(military_debate));
-         strcat(str," ");
          strcat(str,t.name);
+         strcat(str,"に");
+         strcat(str,pickrandom(military_debate));
          strcat(str,"!");
          if(t.align==1)
             resist=t.attribute_roll(ATTRIBUTE_HEART);
@@ -2032,8 +2032,9 @@ void specialattack(Creature &a, Creature &t, char &actual)
       case CREATURE_COP:
          if(a.enemy())
          {
-            strcat(str,pickrandom(police_debate));
             strcat(str,t.name);
+            strcat(str,"に");
+            strcat(str,pickrandom(police_debate));
             strcat(str,"!");
 
             resist=t.attribute_roll(ATTRIBUTE_HEART);
@@ -2045,6 +2046,8 @@ void specialattack(Creature &a, Creature &t, char &actual)
       default:
          if(a.get_weapon().has_musical_attack() || a.type==CREATURE_COP)
          {
+            strcat(str,t.name);
+            strcat(str,"に");
             switch(LCSrandom(5))
             {
                case 0:strcat(str,"plays a song for");break;
@@ -2062,8 +2065,6 @@ void specialattack(Creature &a, Creature &t, char &actual)
                       break;
                case 4:strcat(str,"rocks out at");break;
             }
-            strcat(str," ");
-            strcat(str,t.name);
             strcat(str,"!");
 
             attack=a.skill_roll(SKILL_MUSIC);
@@ -2086,12 +2087,12 @@ void specialattack(Creature &a, Creature &t, char &actual)
     ||(a.enemy() && t.flag & CREATUREFLAG_BRAINWASHED))
    {
       move(17,1);
-      addstr(s+t.name+" is immune to the attack!", gamelog);
+      addstr(s+t.name+"には効かない!", gamelog);
    }
    else if (a.align == t.align)
    {
       move (17,1);
-      addstr(s+t.name+" already agrees with "+a.name+".");
+      addstr(s+t.name+"は"+a.name+"と既に意見が一致している。");
    }
    else if(attack>resist)
    {
@@ -2101,26 +2102,26 @@ void specialattack(Creature &a, Creature &t, char &actual)
          if(t.juice>100)
          {
             move(17,1);
-            addstr(s+t.name+" loses juice!", gamelog);
+            addstr(s+t.name+"はジュースを失った!", gamelog);
             addjuice(t,-50,100);
          }
          else if(LCSrandom(15)>t.get_attribute(ATTRIBUTE_WISDOM,true) || t.get_attribute(ATTRIBUTE_WISDOM,true) < t.get_attribute(ATTRIBUTE_HEART,true))
          {
             move(17,1);
-            addstr(s+t.name+" is tainted with Wisdom!", gamelog);
+            addstr(s+t.name+"は教養で汚された!", gamelog);
             t.adjust_attribute(ATTRIBUTE_WISDOM,+1);
          }
          else if(t.align==ALIGN_LIBERAL && t.flag & CREATUREFLAG_LOVESLAVE)
          {
             move(17,1);
-            addstr(s+t.name+" can't bear to leave!", gamelog);
+            addstr(s+t.name+"は聞かずにはいられなかった!", gamelog);
          }
          else
          {
             if(a.align==-1)
             {
                move(17,1);
-               addstr(s+t.name+" is turned Conservative", gamelog);
+               addstr(s+t.name+"は保守に転向した", gamelog);
                t.stunned=0;
                if(t.prisoner!=NULL)
                   freehostage(t,0);
@@ -2129,7 +2130,7 @@ void specialattack(Creature &a, Creature &t, char &actual)
             else
             {
                move(17,1);
-               addstr(s+t.name+" doesn't want to fight anymore", gamelog);
+               addstr(s+t.name+"はこれ以上戦えない", gamelog);
                t.stunned=0;
                if(t.prisoner!=NULL)
                   freehostage(t,0);
@@ -2169,20 +2170,20 @@ void specialattack(Creature &a, Creature &t, char &actual)
          if(t.juice>=100)
          {
             move(17,1);
-            addstr(s+t.name+" seems less badass!", gamelog);
+            addstr(s+t.name+"は少しマシになった!", gamelog);
             addjuice(t,-50,99);
          }
          else if(!t.attribute_check(ATTRIBUTE_HEART,DIFFICULTY_AVERAGE) ||
             t.get_attribute(ATTRIBUTE_HEART,true) < t.get_attribute(ATTRIBUTE_WISDOM,true))
          {
             move(17,1);
-            addstr(s+t.name+"'s Heart swells!", gamelog);
+            addstr(s+t.name+"の精神が高まった!", gamelog);
             t.adjust_attribute(ATTRIBUTE_HEART,+1);
          }
          else
          {
             move(17,1);
-            addstr(s+t.name+" has turned Liberal!", gamelog);
+            addstr(s+t.name+"はリベラルに転向した!", gamelog);
             t.stunned=0;
 
             liberalize(t);
@@ -2195,7 +2196,7 @@ void specialattack(Creature &a, Creature &t, char &actual)
    else
    {
       move(17,1);
-      addstr(s+t.name+" remains strong.", gamelog);
+      addstr(s+t.name+"にはまだ力がある。", gamelog);
    }
 
    gamelog.newline();
@@ -2442,7 +2443,7 @@ char incapacitated(Creature &a,char noncombat,char &printed)
             case 0: addstr("は苦しみ鳴いている…", gamelog); break;
             case 1: if(law[LAW_FREESPEECH]==-2) addstr("は床を[ピー]した。", gamelog);
                     else addstr("は床を台無しにした。", gamelog); break;
-            case 2: addstr("痛々しく吠えた…", gamelog); break;
+            case 2: addstr("は痛々しく吠えた…", gamelog); break;
             }
 
             gamelog.newline();
@@ -2481,9 +2482,9 @@ char incapacitated(Creature &a,char noncombat,char &printed)
          case 10: addstr("は手を伸ばしうめき声を上げた。"); break;
          case 11: addstr("は痛みででうずくまっている。"); break;
          case 12: addstr("は苦しそうにうめき声を上げた。"); break;
-         case 13: addstr("は激しく息をし始めた。"); break;
+         case 13: addstr("は激しく息をした。"); break;
          case 14: addstr("は叫び祈った。"); break;
-         case 15: addstr(" coughs up blood."); break;
+         case 15: addstr("は血を吐いた。"); break;
          case 16: if(mode!=GAMEMODE_CHASECAR) addstr(" stumbles against a wall.");
                   else addstr(" leans against the door."); break;
          case 17: addstr(" begs for forgiveness."); break;
@@ -2564,7 +2565,7 @@ char incapacitated(Creature &a,char noncombat,char &printed)
          case 2: addstr(" looks around uneasily.", gamelog); break;
          case 3: addstr(" begins to weep.", gamelog); break;
          case 4: addstr(" asks \"Is this right?\"", gamelog); break;
-         case 5: addstr(" asks for guidance.", gamelog); break;
+         case 5: addstr("は助言を求めた。", gamelog); break;
          case 6: addstr(" is caught in indecision.", gamelog); break;
          case 7: addstr(" feels numb.", gamelog); break;
          case 8: addstr(" prays softly.", gamelog); break;
@@ -2687,7 +2688,7 @@ void adddeathmessage(Creature &cr)
          addstr(str, gamelog);
          move(17,1);
          if(law[LAW_FREESPEECH]==-2)addstr("床を[ピー]した。", gamelog);
-         else addstr("床を台無しにした。soils the floor.", gamelog);
+         else addstr("床を台無しにした。", gamelog);
          break;
       case 2:
          strcat(str,"は何かをつぶやき、");

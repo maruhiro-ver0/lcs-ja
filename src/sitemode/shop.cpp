@@ -207,7 +207,7 @@ void Shop::browse_halfscreen(squadst& customers, int& buyer) const
          move(y,1+(x-1)*39);
          if(ledger.get_funds()>=15) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
-         addstr("M - Buy a Mask                ($15)");
+         addstr("M - 仮面を買う                ($15)");
       }
       if(x==2) y++;
 
@@ -227,13 +227,13 @@ void Shop::browse_halfscreen(squadst& customers, int& buyer) const
       if(party_status!=-1) set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(++y,1);
-      addstr("0 - 部隊のリベラルの状態を表示する");
+      addstr("0 - 部隊の状態を表示する");
 
       if(partysize>0&&(party_status==-1||partysize>1))
          set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(y++,40);
-      addstr("# - 部隊のリベラルの状態を確認する");
+      addstr("# - リベラルの状態を表示する");
 
       if(partysize>=2) set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
@@ -654,12 +654,11 @@ void Shop::maskselect(Creature &buyer) const
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
-      addstr("Which mask will ");
       addstr(buyer.name);
-      addstr(" buy?");
+      addstr("はどの仮面を買うか?");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(1,0);
-      addstr("ﾄﾄﾄﾄPRODUCT NAMEﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄDESCRIPTIONﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ");
+      addstr("----商品名-----------------------------説明-------------------------------------");
 
       for(int p=page*19,y=2;p<len(masktype)&&p<page*19+19;p++,y++)
       {
@@ -674,13 +673,13 @@ void Shop::maskselect(Creature &buyer) const
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(22,0);
-      addstr("Press a Letter to select a Mask");
+      addstr("アルファベットキーで仮面を選ぶ");
       move(23,0);
       addpagestr();
       move(24,0);
-      addstr("Z - Surprise ");
+      addstr("Z - ランダムな仮面で");
       addstr(buyer.name);
-      addstr(" With a Random Mask");
+      addstr("を驚かせる");
 
       int c=getkey();
 
