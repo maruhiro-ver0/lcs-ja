@@ -110,7 +110,7 @@ char unlock(short type,char &actual)
          addstr(activesquad->squad[p]->name, gamelog);
          switch(type)
          {
-            case UNLOCK_DOOR:addstr("は錠を外した", gamelog);break;
+            case UNLOCK_DOOR:addstr("は鍵を外した", gamelog);break;
             case UNLOCK_CAGE_HARD:
             case UNLOCK_CAGE:addstr("はケージを開けた", gamelog);break;
             case UNLOCK_SAFE:addstr("は金庫を壊した", gamelog);break;
@@ -179,7 +179,7 @@ char unlock(short type,char &actual)
          if(i==3)
          {
             addstr(activesquad->squad[p]->name, gamelog);
-            addstr(" can't figure the lock out.", gamelog);
+            addstr("は鍵を外せなかった。", gamelog);
             gamelog.newline();
          }
 
@@ -293,16 +293,16 @@ char bash(short type,char &actual)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
       addstr(activesquad->squad[maxp]->name, gamelog);
-      addstr(" ", gamelog);
+      addstr("は", gamelog);
       switch(type)
       {
       case BASH_DOOR:
-         if(crowable) addstr("uses a crowbar on the door", gamelog);
+         if(crowable) addstr("バールで扉を壊した", gamelog);
          else if(activesquad->squad[maxp]->get_weapon().get_bashstrengthmod()>1)
-            addstr("smashes in the door", gamelog);
+            addstr("扉を叩き壊した", gamelog);
          else if(activesquad->squad[maxp]->flag&CREATUREFLAG_WHEELCHAIR)
-            addstr("rams open the door", gamelog);
-         else addstr("kicks in the door", gamelog);
+            addstr("扉に体当たりして壊した", gamelog);
+         else addstr("扉を蹴り壊した", gamelog);
          break;
       }
       addstr("!", gamelog);
@@ -325,7 +325,7 @@ char bash(short type,char &actual)
          sitealarm=1;
          move(17,1);
          set_color(COLOR_RED,COLOR_BLACK,1);
-         addstr("Alarms go off!", gamelog);
+         addstr("アラームが鳴り出した!", gamelog);
          gamelog.newline();
 
          getkey();
@@ -340,12 +340,13 @@ char bash(short type,char &actual)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
       addstr(activesquad->squad[maxp]->name, gamelog);
+      addstr("は", gamelog);
       switch(type)
       {
          case BASH_DOOR:
             if(activesquad->squad[maxp]->flag&CREATUREFLAG_WHEELCHAIR)
-               addstr(" rams into the door", gamelog);
-            else addstr(" kicks the door", gamelog);
+               addstr("扉に体当たりして壊した", gamelog);
+            else addstr("扉を蹴り壊した", gamelog);
             break;
       }
       addstr("!", gamelog);

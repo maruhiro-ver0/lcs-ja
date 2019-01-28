@@ -1185,7 +1185,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
             addstr(" <泣き出した>", gamelog);break;
          case 5 : addstr("「全部大きいぞ、デブ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <笑った>", gamelog);break;
+            addstr(" <笑われた>", gamelog);break;
          case 6 : addstr("\"You're disgusting.\"", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <turns away>", gamelog);break;
@@ -1351,9 +1351,9 @@ char talkAboutIssues(Creature &a, Creature &tk)
                               else
                                   addstr("「ポリ公のクソッタレ! 」", gamelog);
                               break;
-      case LAW_PRIVACY:       addstr("\"The government, like, knows things about you.\"", gamelog);break;
-      case LAW_DEATHPENALTY:  addstr("\"They executed this one dude, and like, his head caught on fire.\"", gamelog);break;
-      case LAW_NUCLEARPOWER:  addstr("\"Have you seen Godzilla?  Nuclear power is bad, yo.\"", gamelog);break;
+      case LAW_PRIVACY:       addstr("「政府…のようなもの…はおまえのことは何でも知っている。」", gamelog);break;
+      case LAW_DEATHPENALTY:  addstr("「死刑執行人は首をこうやって…さらに…頭を炎に投げ込むんだ。」", gamelog);break;
+      case LAW_NUCLEARPOWER:  addstr("「ゴジラは見たか? 放射能は悪者だ。」", gamelog);break;
       case LAW_POLLUTION:     addstr("\"You wanna look like the Toxic Avenger?  Oppose pollution!\"", gamelog);break;
       case LAW_LABOR:         addstr("\"Bad people wanna make babies work and stuff.\"", gamelog);break;
       case LAW_GAY:           addstr("\"Lots of people don't like homosexuals.\"", gamelog);break;
@@ -1376,12 +1376,12 @@ char talkAboutIssues(Creature &a, Creature &tk)
    {
       switch(lw)
       {
-      case LAW_ABORTION:      addstr("「保守派は中絶が好きではない。」", gamelog);break;
+      case LAW_ABORTION:      addstr("「保守派は中絶が嫌いだ。」", gamelog);break;
       case LAW_ANIMALRESEARCH:addstr("「動物には投票権がない。」", gamelog);break;
       case LAW_POLICEBEHAVIOR:addstr("「いまだに警察は存在する。」", gamelog);break;
-      case LAW_PRIVACY:       addstr("\"The government runs intelligence agencies.\"", gamelog);break;
-      case LAW_DEATHPENALTY:  addstr("\"You can go to prison for life for serious crimes.\"", gamelog);break;
-      case LAW_NUCLEARPOWER:  addstr("\"Some people support legalizing nuclear power.\"", gamelog);break;
+      case LAW_PRIVACY:       addstr("「政府には諜報機関がある。」", gamelog);break;
+      case LAW_DEATHPENALTY:  addstr("「重犯罪を犯すと終身刑務所に入ることができる。」", gamelog);break;
+      case LAW_NUCLEARPOWER:  addstr("「原子力の合法化を支持する者もいる。」", gamelog);break;
       case LAW_POLLUTION:     addstr("\"We're still polluting a little bit.\"", gamelog);break;
       case LAW_LABOR:         addstr("\"Corporate bosses don't always give in to unions.\"", gamelog);break;
       case LAW_GAY:           addstr("\"Not everybody likes gay people.\"", gamelog);break;
@@ -1414,15 +1414,15 @@ char talkAboutIssues(Creature &a, Creature &tk)
          addstr("「警察はマイノリティの容疑者にしばしば拷問を行っている。」", gamelog);
          break;
       case LAW_PRIVACY:
-         addstr("\"Files are being kept on innocent citizens whose only crime is to ", gamelog);move(y++,1);
-         addstr("speak out against a system that is trying to farm them like beasts.\"", gamelog);
+         addstr("「人々を農場の動物のように飼いならすシステムに反対しただけの", gamelog);move(y++,1);
+         addstr("無実の市民の情報が保管され続けている。」", gamelog);
          break;
       case LAW_DEATHPENALTY:
-         addstr("\"Over thirty innocent people have been executed over the past decade.\"", gamelog);
+         addstr("「過去10年間で30人以上の人々が処刑されている。」", gamelog);
          break;
       case LAW_NUCLEARPOWER:
-         addstr("\"Radioactive waste is being stored all over the country, and it poses ", gamelog);move(y++,1);
-         addstr("a serious threat to many families, even in this neighborhood.\"", gamelog);
+         addstr("「核廃棄物は何世紀にも渡って存在し、多くの家族の脅威となる。", gamelog);move(y++,1);
+         addstr("もちろんこの付近でも。」", gamelog);
          break;
       case LAW_POLLUTION:
          addstr("\"Industries that stop at nothing to become more profitable are polluting ", gamelog);move(y++,1);
@@ -1580,7 +1580,7 @@ char talkAboutIssues(Creature &a, Creature &tk)
          tk.get_attribute(ATTRIBUTE_INTELLIGENCE,true)<3)
       {
          move(y++,1);
-         addstr("「ウゥ。シュー。」", gamelog);
+         addstr("「ウゥ…シュー。」", gamelog);
       }
       else
       {
@@ -1710,7 +1710,7 @@ char talkInCombat(Creature &a, Creature &tk)
    addstr("A - 威圧する");
    if(!hostages)set_color(COLOR_BLACK,COLOR_BLACK,1);
    move(12,1);
-   addstr("B - 人質を脅す");
+   addstr("B - 人質を脅かす");
    if(tk.cantbluff!=2)set_color(COLOR_WHITE,COLOR_BLACK,0);
    else set_color(COLOR_BLACK,COLOR_BLACK,1);
    move(13,1);
@@ -1814,15 +1814,15 @@ char talkInCombat(Creature &a, Creature &tk)
       move(17,1);
       switch(LCSrandom(6))
       {
-      case 0:addstr("\"Back off or the hostage dies!\"", gamelog);break;
-      case 1:addstr("\"Don't push the LCS!\"", gamelog);
+      case 0:addstr("「下がれ! こいつの命はないぞ! 」", gamelog);break;
+      case 1:addstr("「LCSをナメるな! 」", gamelog);
          if(!sitestory->claimed)sitestory->claimed=1;break;
-      case 2:addstr("\"Hostage says you better leave!\"", gamelog);break;
-      case 3:addstr("\"I'll do it! I'll kill this one!\"", gamelog);break;
-      case 4:addstr("\"You gonna tell the family you pushed me?!\"", gamelog);break;
+      case 2:addstr("「こいつも去れと言っている! 」", gamelog);break;
+      case 3:addstr("「こいつを殺すぞ! 」", gamelog);break;
+      case 4:addstr("「私を怒らせたと家族に知られたいのか?!」", gamelog);break;
       case 5:
-             if(law[LAW_FREESPEECH]==-2)addstr("\"Don't [play] with me!\"", gamelog);
-             else addstr("\"Don't fuck with me!\"", gamelog);
+             if(law[LAW_FREESPEECH]==-2)addstr("「 [遊び] はよせ! 」", gamelog);
+             else addstr("「馬鹿な真似はよせ! 」", gamelog);
              break;
       }
       gamelog.newline();
@@ -1869,11 +1869,11 @@ char talkInCombat(Creature &a, Creature &tk)
                      set_color(COLOR_GREEN,COLOR_BLACK,1);
                      switch(LCSrandom(5))
                      {
-                     case 0:addstr("\"Let them go. Think about what you're doing.\"", gamelog);break;
-                     case 1:addstr("\"Calm down, and let's talk about this.\"", gamelog);break;
-                     case 2:addstr("\"Wait! We can work this out.\"", gamelog);break;
-                     case 3:addstr("\"This isn't right, think about it.\"", gamelog);break;
-                     case 4:addstr("\"Slow down. We can work this out.\"", gamelog);break;
+                     case 0:addstr("「人質を解放しろ。自分が何をしているのかわかっているのか。」", gamelog);break;
+                     case 1:addstr("「落ち着け。話をしよう。」", gamelog);break;
+                     case 2:addstr("「待て! 要求は何だ。」", gamelog);break;
+                     case 3:addstr("「お前は間違っている。よく考えろ。」", gamelog);break;
+                     case 4:addstr("「落ち着け。要求は何だ。」", gamelog);break;
                      }
                   }
                   else
@@ -1888,11 +1888,11 @@ char talkInCombat(Creature &a, Creature &tk)
                      {
                         switch(LCSrandom(5))
                         {
-                        case 0:addstr("\"Hahahaha...\"", gamelog);break;
-                        case 1:addstr("\"You think you can scare me?\"", gamelog);break;
-                        case 2:addstr("\"You're not getting out of here alive.\"", gamelog);break;
-                        case 3:addstr("\"What's wrong?  Need your diaper changed?\"", gamelog);break;
-                        case 4:addstr("\"Three... two...\"", gamelog);break;
+                        case 0:addstr("「ハハハハハ…」", gamelog);break;
+                        case 1:addstr("「私を脅しているのか? 」", gamelog);break;
+                        case 2:addstr("「ここから生きては出られないぞ。」", gamelog);break;
+                        case 3:addstr("「どうしたんだ? オムツを替えて欲しいのか? 」", gamelog);break;
+                        case 4:addstr("「3… 2…」", gamelog);break;
                         }
                      }
                      else
@@ -1901,13 +1901,13 @@ char talkInCombat(Creature &a, Creature &tk)
                         {
                         case 0:
                            if(hostages>1)
-                              addstr("\"Release your hostages, and nobody gets hurt.\"", gamelog);
-                           else addstr("\"Let the hostage go, and nobody gets hurt.\"", gamelog);
+                              addstr("「人質を解放しろ。誰も傷つけたくない。」", gamelog);
+                           else addstr("「人質を解放しろ。誰も傷つけたくない。」", gamelog);
                            break;
-                        case 1:addstr("\"You got about five seconds to back down.\"", gamelog);break;
-                        case 2:addstr("\"You want to do this the hard way?\"", gamelog);break;
-                        case 3:addstr("\"Big mistake.\"", gamelog);break;
-                        case 4:addstr("\"Release them, and I'll let you go.\"", gamelog);break;
+                        case 1:addstr("「5秒以内に離れるんだ。」", gamelog);break;
+                        case 2:addstr("「面倒なことにしたいのか? 」", gamelog);break;
+                        case 3:addstr("「それは大きな過ちだ。」", gamelog);break;
+                        case 4:addstr("「人質を解放しろ。そうすれば見逃してやる。」", gamelog);break;
                         }
                      }
 
@@ -1926,7 +1926,7 @@ char talkInCombat(Creature &a, Creature &tk)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             clearmessagearea();
             move(16,1);
-            addstr("The ploy works! The Conservatives back off.", gamelog);
+            addstr("脅しが効いた! 保守は引き下がった。", gamelog);
             gamelog.newline();
             for(int i=ENCMAX;i>=0;i--)
             {
@@ -1947,21 +1947,20 @@ char talkInCombat(Creature &a, Creature &tk)
             clearmessagearea();
             clearmaparea();
             move(9,1);
-            addstr("How should ");
             addstr(a.name);
-            addstr(" respond?");
+            addstr("はどう反応する?");
             move(11,1);
             if(hostages>1)
-               addstr("A - Execute a hostage");
+               addstr("A - 人質を殺害する");
             else
-               addstr("A - Execute the hostage");
+               addstr("A - 人質を殺害する");
             move(12,1);
             if(hostages>1)
-               addstr("B - Offer to trade the hostages for freedom");
+               addstr("B - 条件を受け入れ人質を解放する");
             else
-               addstr("B - Offer to trade the hostage for freedom");
+               addstr("B - 条件を受け入れ人質を解放する");
             move(13,1);
-            addstr("C - No reply");
+            addstr("C - 返事をしない");
 
             while(true)
             {
@@ -1991,13 +1990,13 @@ char talkInCombat(Creature &a, Creature &tk)
                if(executer->get_weapon().is_ranged()
                   && executer->get_weapon().get_ammoamount()>0)
                {
-                  addstr("BLAM!", gamelog);
+                  addstr("バン!", gamelog);
                   gamelog.newline();
                   executer->get_weapon().decrease_ammo(1); //What if it doesn't use ammo? -XML
                }
                else
                {
-                  addstr("CRUNCH!", gamelog);
+                  addstr("グシャ!", gamelog);
                   gamelog.newline();
                }
 
@@ -2006,9 +2005,9 @@ char talkInCombat(Creature &a, Creature &tk)
                move(17,1);
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                addstr(executer->name, gamelog);
-               addstr(" drops ", gamelog);
+               addstr("は", gamelog);
                addstr(executer->prisoner->name, gamelog);
-               addstr("'s body.", gamelog);
+               addstr("の遺体を床に落とした。", gamelog);
                gamelog.newline();
 
                addjuice(*executer,-5,-50); // DE-juice for this shit
@@ -2038,15 +2037,15 @@ char talkInCombat(Creature &a, Creature &tk)
                   set_color(COLOR_RED,COLOR_BLACK,1);
                   move(17,1);
                   if(law[LAW_FREESPEECH]>ALIGN_ARCHCONSERVATIVE)
-                     addstr("\"Fuck! ", gamelog);
-                  else addstr("\"[No!] ", gamelog);
+                     addstr("「畜生! ", gamelog);
+                  else addstr("「 [ああ!] ", gamelog);
                   switch(LCSrandom(5))
                   {
-                  case 0:addstr("Okay, okay, you win!\"", gamelog);break;
-                  case 1:addstr("Don't shoot!\"", gamelog);break;
-                  case 2:addstr("Do you even care?!\"", gamelog);break;
-                  case 3:addstr("Heartless!\"", gamelog);break;
-                  case 4:addstr("It's not worth it!\"", gamelog);break;
+                  case 0:addstr("わかった、わかった。お前の勝ちだ! 」", gamelog);break;
+                  case 1:addstr("撃ちやがったな! 」", gamelog);break;
+                  case 2:addstr("何とも思わないのか?!」", gamelog);break;
+                  case 3:addstr("人でなし! 」", gamelog);break;
+                  case 4:addstr("こんなことをするとは! 」", gamelog);break;
                   }
                   gamelog.newline();
 
@@ -2170,36 +2169,36 @@ char talkInCombat(Creature &a, Creature &tk)
       if(location[cursite]->siege.siege)
       {
          addstr(a.name, gamelog);
-         addstr(" ", gamelog);
+         addstr("は", gamelog);
          switch(location[cursite]->siege.siegetype)
          {
             case SIEGE_POLICE:
-               addstr("pretends to be part of a police raid.", gamelog);
+               addstr("警官のふりをした。", gamelog);
                break;
             case SIEGE_CIA:
-               addstr("pretends to be a Secret Agent.", gamelog);
+               addstr("諜報員のふりをした。", gamelog);
                break;
             case SIEGE_CCS:
             case SIEGE_HICKS:
                switch(LCSrandom(2))
                {
                   case 0:
-                     addstr("pretends to be Mountain ", gamelog);
+                     addstr("\"Next of Kin\"" "のパトリック・スウェイジのように", gamelog);
                      move(17,1);
-                     addstr("like Patrick Swayze in Next of Kin.", gamelog);
+                     addstr("山のふりをした。", gamelog);
                      break;
                   case 1:
-                     addstr("squeals like Ned Beatty ", gamelog);
+                     addstr("「脱出」のネッド・ビーティのように金切り声を", gamelog);
                      move(17,1);
-                     addstr("in Deliverance.", gamelog);
+                     addstr("上げた。", gamelog);
                      break;
                }
                break;
             case SIEGE_CORPORATE:
-               addstr("pretends to be a mercenary.", gamelog);
+               addstr("民間傭兵のふりをした。", gamelog);
                break;
             case SIEGE_FIREMEN:
-               addstr("lights a match and throws it on the ground. ", gamelog);
+               addstr("マッチを擦り、床に向かって投げた。", gamelog);
                if((!(levelmap[locx][locy][locz].flag & SITEBLOCK_FIRE_END) ||
                   !(levelmap[locx][locy][locz].flag & SITEBLOCK_FIRE_PEAK) ||
                   !(levelmap[locx][locy][locz].flag & SITEBLOCK_FIRE_START) ||
@@ -2207,10 +2206,10 @@ char talkInCombat(Creature &a, Creature &tk)
                {
                   levelmap[locx][locy][locz].flag |= SITEBLOCK_FIRE_START;
                   move(17,1);
-                  addstr("The carpet smolders, then bursts into flame.", gamelog);
+                  addstr("カーペットがくすぶり、やがて炎が上がった。", gamelog);
                   gamelog.newline();
                   move(18,1);
-                  addstr("Perhaps that was a bad idea...", gamelog);
+                  addstr("これは失敗だったかもしれない…", gamelog);
                }
                break;
          }
@@ -2222,35 +2221,35 @@ char talkInCombat(Creature &a, Creature &tk)
             a.get_armor().get_itemtypename() == "ARMOR_POLICEARMOR" ||
             a.get_armor().get_itemtypename() == "ARMOR_SWATARMOR")
          {
-            addstr("\"The situation is under control.\"", gamelog);
+            addstr("「状況はコントロール下にある。」", gamelog);
          }
          else if (a.get_armor().get_itemtypename() == "ARMOR_BUNKERGEAR")
          {
-            if(siteonfire) addstr("\"Fire! Evacuate immediately!\"", gamelog);
-            else addstr("\"Everything's in check.\"", gamelog);
+            if(siteonfire) addstr("「よし! 撤収! 」", gamelog);
+            else addstr("「点検は完了しました。」", gamelog);
          }
 
          else if(a.get_armor().get_itemtypename() == "ARMOR_LABCOAT")
-            addstr("\"Make way, I'm a doctor!\"", gamelog);
+            addstr("「道を開けてくれ。私は医者だ! 」", gamelog);
 
          else if(a.get_armor().get_itemtypename() == "ARMOR_DEATHSQUADUNIFORM")
-            addstr("\"Non-targets please leave the site.\"", gamelog);
+            addstr("「非目標は建物から退去せよ。」", gamelog);
 
          else if(a.get_armor().get_itemtypename() == "ARMOR_MITHRIL")
          {
             addstr(a.name, gamelog);
-            addstr(" engraves ", gamelog);
+            addstr("は床に", gamelog);
             set_color(COLOR_CYAN, COLOR_BLACK, 1);
             addstr("Elbereth", gamelog);     //Fanciful multicolor message
             set_color(COLOR_GREEN, COLOR_BLACK, 1);
-            addstr(" on the floor.", gamelog);
+            addstr("の文字を刻んだ。", gamelog);
          }
          else
          {
             addstr(a.name, gamelog);
-            addstr(" talks like a Conservative ", gamelog);
+            addstr("は保守のように話し、", gamelog);
             move(17,1);
-            addstr("and pretends to belong here.", gamelog);
+            addstr("この場所の者のように振る舞った。", gamelog);
          }
       }
       gamelog.newline();
@@ -2295,16 +2294,16 @@ char talkInCombat(Creature &a, Creature &tk)
          move(16,1);
          if(encounter[e].type==CREATURE_HICK)
          {
-            addstr("But ", gamelog);
+            addstr("だが", gamelog);
             addstr(encounter[e].name, gamelog);
-            addstr(" weren't born yesterday.", gamelog);
+            addstr("はお人よしではない。", gamelog);
          }
          else
          {
             addstr(encounter[e].name, gamelog);
             if(law[LAW_FREESPEECH]==ALIGN_ARCHCONSERVATIVE)
-               addstr(" is not fooled by that [act].", gamelog);
-            else addstr(" is not fooled by that crap.", gamelog);
+               addstr("は芝居に騙されなかった。", gamelog);
+            else addstr("は芝居に騙されなかった。", gamelog);
          }
 
          getkey();
@@ -2315,7 +2314,7 @@ char talkInCombat(Creature &a, Creature &tk)
 
          set_color(COLOR_GREEN,COLOR_BLACK,1);
          move(16,1);
-         addstr("The Enemy is fooled and departs.", gamelog);
+         addstr("敵は騙され解散した。", gamelog);
 
          getkey();
 
@@ -2329,7 +2328,7 @@ char talkInCombat(Creature &a, Creature &tk)
    {
       move(14,1);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      addstr("The Squad is arrested.", gamelog);
+      addstr("部隊は逮捕された。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -2431,49 +2430,49 @@ char heyMisterDog(Creature &a, Creature &tk)
       switch(LCSrandom(11))
       {
       case 0:
-         pitch = "\"Hi Mister Dog!\"";
-         response = "\"Woof?\"";
+         pitch = "「やあ犬さん! 」";
+         response = "「ワン? 」";
          break;
       case 1:
-         pitch = "\"Good dog!\"";
-         response = "\"Bark!\"";
+         pitch = "「グッド・ドッグ! 」";
+         response = "「ガウ! 」";
          break;
       case 2:
-         pitch = "\"Hey there, boy.\"";
-         response = "\"Woof!\"";
+         pitch = "「さあおいで。いい子だ。」";
+         response = "「ワン! 」";
          break;
       case 3:
-         pitch = "\"Woof...?\"";
-         response = "\"Woof!\"";
+         pitch = "「わん…? 」";
+         response = "「ワン! 」";
          break;
       case 4:
-         pitch = "\"Bark at the man for me!\"";
-         response = "\"Bark! Grr...\"";
+         pitch = "「吠えてみろ! 」";
+         response = "「ガウ! グルル…」";
          break;
       case 5:
-         pitch = "\"Down, boy!\"";
-         response = "\"Rr...?\"";
+         pitch = "「伏せ! 」";
+         response = "「クーン…? 」";
          break;
       case 6:
-         pitch = "\"Don't bite me!\"";
-         response = "\"Grrr...!\"";
+         pitch = "「咬まないでくれ! 」";
+         response = "「グルル…! 」";
          break;
       case 7:
-         pitch = "\"Hi doggy!\"";
-         response = "\"Bark!\"";
+         pitch = "「やあワンちゃん! 」";
+         response = "「ガウ! 」";
          break;
       case 8:
-         pitch = "\"Hi, puppy.\"";
-         response = "\"Bark!\"";
+         pitch = "「やあ子犬さん。」";
+         response = "「ガウ! 」";
          break;
       case 9:
-         pitch = "\"OH MAN I LOVE DOGS!\"";
-         response = "\"Bark!\"";
+         pitch = "「ああ、犬は大好きだ! 」";
+         response = "「ガウ! 」";
          break;
       case 10:
       default:
-         pitch = "\"Bark! Bark!\"";
-         response = "\"Your accent is atrocious.\"";
+         pitch = "「がう! がう! 」";
+         response = "『ひどいアクセントだ。』";
          break;
       }
    }
@@ -2485,7 +2484,7 @@ char heyMisterDog(Creature &a, Creature &tk)
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(10,1);
    addstr(activesquad->squad[bestp]->name, gamelog);
-   addstr(" says, ", gamelog);
+   addstr("は言った。", gamelog);
    move(11,1);
    set_color(COLOR_GREEN,COLOR_BLACK,1);
    addstr(pitch, gamelog);
@@ -2496,7 +2495,7 @@ char heyMisterDog(Creature &a, Creature &tk)
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(13,1);
    addstr(tk.name, gamelog);
-   addstr(" says, ", gamelog);
+   addstr("は言った。", gamelog);
    move(14,1);
    set_color(COLOR_YELLOW,COLOR_BLACK,1);
    addstr(response, gamelog);
@@ -2626,7 +2625,7 @@ char heyMisterMonster(Creature &a, Creature &tk)
          break;
       case 9:
          pitch = "「ああ、モンスターは大好きだ! 」";
-         response = "『ちょうどいい。腹が減っていたのだ! 」";
+         response = "『ちょうどいい。腹が減っていたのだ! 』";
          break;
       case 10:
       default:

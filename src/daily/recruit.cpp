@@ -206,14 +206,15 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
    if(pool[p]->meetings++>5 && LCSrandom(pool[p]->meetings-5))
    {
       addstr(pool[p]->name, gamelog);
-      addstr(" accidentally missed the meeting with ", gamelog);
+      addstr("はダブルブッキングしてしまい、", gamelog);
       addstr(r.recruit->name, gamelog);
+      addstr("との", gamelog);
       move(1,0);
-      addstr("due to multiple booking of recruitment sessions.", gamelog);
+      addstr("会談ができなかった。", gamelog);
       gamelog.newline();
 
       move(3,0);
-      addstr("Get it together, ", gamelog);
+      addstr("おちつけ、", gamelog);
       addstr(pool[p]->name, gamelog);
       addstr("!", gamelog);
       gamelog.nextMessage();

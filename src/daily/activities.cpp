@@ -1211,7 +1211,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
          {
             case 0:
             {
-               strcat(msg,"企業のサーバからファイルを盗み取った。");
+               strcat(msg,"企業のサーバからファイルを盗み取った");
 
                Item *it=new Loot(*loottype[getloottype("LOOT_CORPFILES")]);
                location[hack[0]->location]->loot.push_back(it);
@@ -1222,7 +1222,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
                break;
             }
             case 1: // *JDS* Penetrated government networks; don't get any loot, but do scare the info community
-               strcat(msg,"CIAネットワークに侵入して恐怖を与えた。");
+               strcat(msg,"CIAネットワークに侵入して恐怖を与えた");
 
                trackdif=DIFFICULTY_IMPOSSIBLE;
                crime=LAWFLAG_INFORMATION;
@@ -1230,7 +1230,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
                change_public_opinion(VIEW_INTELLIGENCE,10,0,75);
                break;
             case 2:
-               strcat(msg,"遺伝子調査会社のネットワークを妨害した。");
+               strcat(msg,"遺伝子調査会社のネットワークを妨害した");
 
                trackdif=DIFFICULTY_SUPERHEROIC;
                crime=LAWFLAG_INFORMATION;
@@ -1239,7 +1239,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
                break;
             case 3:
             {
-               strcat(msg,"マスメディアの電子メールを傍受した。");
+               strcat(msg,"マスメディアの電子メールを傍受した");
 
                Item *it;
                if(LCSrandom(2))it=new Loot(*loottype[getloottype("LOOT_CABLENEWSFILES")]);
@@ -1252,7 +1252,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
                break;
             }
             case 4:
-               strcat(msg,"軍用ネットワークに侵入しLCSのスローガンを書き残した。");
+               strcat(msg,"軍用ネットワークに侵入しLCSのスローガンを書き残した");
 
                trackdif=DIFFICULTY_IMPOSSIBLE;
                crime=LAWFLAG_INFORMATION;
@@ -1261,7 +1261,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
                break;
             case 5:
             {
-               strcat(msg,"問題のある研究の情報を明らかにした。");
+               strcat(msg,"問題のある研究の情報を明らかにした");
 
                Item *it=new Loot(*loottype[getloottype("LOOT_RESEARCHFILES")]);
                location[hack[0]->location]->loot.push_back(it);
@@ -1273,7 +1273,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
             }
             case 6:
             {
-               strcat(msg,"司法の汚職の証拠を発見した。");
+               strcat(msg,"司法の汚職の証拠を発見した");
 
                Item *it=new Loot(*loottype[getloottype("LOOT_JUDGEFILES")]);
                location[hack[0]->location]->loot.push_back(it);
@@ -1285,7 +1285,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
             }
             case 7:
             {
-               strcat(msg,"保守的家族のフォーラムを攻撃した。");
+               strcat(msg,"保守的家族のフォーラムを攻撃した");
 
                trackdif=DIFFICULTY_SUPERHEROIC;
                crime=LAWFLAG_INFORMATION;
@@ -1296,7 +1296,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
             }
             case 8:
             {
-               strcat(msg,"人種差別的な警官が暴行する動画を拡散した。");
+               strcat(msg,"人種差別的な警官が暴行する動画を拡散した");
 
                trackdif=DIFFICULTY_SUPERHEROIC;
                crime=LAWFLAG_INFORMATION;
@@ -1307,7 +1307,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
             }
             case 9:
             {
-               strcat(msg,"CEOの税金逃れを暴露する電子メールを送った。");
+               strcat(msg,"CEOの税金逃れを暴露する電子メールを送った");
                //Scambaiting, except you're baiting a CEO
 
                trackdif=DIFFICULTY_SUPERHEROIC;
@@ -1319,7 +1319,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
             }
             case 10:
             {
-               strcat(msg,"移民帰化局の政治的偏りを暴露した。");
+               strcat(msg,"移民帰化局の政治的偏りを暴露した");
 
                trackdif=DIFFICULTY_SUPERHEROIC;
                crime=LAWFLAG_INFORMATION;
@@ -1360,10 +1360,10 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
          strcat(msg,"を");
          switch(LCSrandom(4))
          {
-         case 0: strcat(msg,"改ざんした。");crime=LAWFLAG_INFORMATION; break;
-         case 1: strcat(msg,"停止させた。");crime=LAWFLAG_COMMERCE; break;
-         case 2: strcat(msg,"脅迫した。");crime=LAWFLAG_SPEECH; break;
-         case 3: strcat(msg,"ハックした。");crime=LAWFLAG_INFORMATION; break;
+         case 0: strcat(msg,"改ざんした");crime=LAWFLAG_INFORMATION; break;
+         case 1: strcat(msg,"停止させた");crime=LAWFLAG_COMMERCE; break;
+         case 2: strcat(msg,"脅迫した");crime=LAWFLAG_SPEECH; break;
+         case 3: strcat(msg,"ハックした");crime=LAWFLAG_INFORMATION; break;
          }
          strcat(msg,"。");
 
@@ -1488,7 +1488,7 @@ void doActivityGraffiti(vector<Creature *> &graffiti, char &clearformess)
             if(!foundone && ledger.get_funds()>=20)
             {
                ledger.subtract_funds(20,EXPENSE_SHOPPING);
-               addstr(" bought spraypaint for graffiti.", gamelog);
+               addstr("は落書きのためにスプレー缶を買った。", gamelog);
 
                getkey();
 
@@ -1497,7 +1497,7 @@ void doActivityGraffiti(vector<Creature *> &graffiti, char &clearformess)
             }
             else if (!foundone)
             {
-               addstr(" needs a spraycan equipped to do graffiti.", gamelog);
+               addstr("が落書きするにはスプレー缶が必要だ。", gamelog);
                graffiti[s]->activity.type=ACTIVITY_NONE;
 
                getkey();

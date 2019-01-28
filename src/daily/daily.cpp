@@ -767,7 +767,7 @@ void advanceday(char &clearformess,char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
                addstr(pool[p]->name, gamelog);
-               addstr("'s injuries require professional treatment.", gamelog);
+               addstr("の傷は専門家による治療が必要だ。", gamelog);
                gamelog.nextMessage();
                pool[p]->activity.type=ACTIVITY_CLINIC;
 
