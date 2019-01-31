@@ -1627,7 +1627,7 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
       else
       {
          set_color(COLOR_YELLOW,COLOR_BLACK,1);
-         strcat(str,"が効かなかった。");
+         strcat(str,"! だが効かなかった。");
          move(17,1);
          addstr(str, gamelog);
          gamelog.newline();
@@ -2108,7 +2108,7 @@ void specialattack(Creature &a, Creature &t, char &actual)
          else if(LCSrandom(15)>t.get_attribute(ATTRIBUTE_WISDOM,true) || t.get_attribute(ATTRIBUTE_WISDOM,true) < t.get_attribute(ATTRIBUTE_HEART,true))
          {
             move(17,1);
-            addstr(s+t.name+"は教養で汚された!", gamelog);
+            addstr(s+t.name+"は知恵で汚された!", gamelog);
             t.adjust_attribute(ATTRIBUTE_WISDOM,+1);
          }
          else if(t.align==ALIGN_LIBERAL && t.flag & CREATUREFLAG_LOVESLAVE)
@@ -2177,7 +2177,7 @@ void specialattack(Creature &a, Creature &t, char &actual)
             t.get_attribute(ATTRIBUTE_HEART,true) < t.get_attribute(ATTRIBUTE_WISDOM,true))
          {
             move(17,1);
-            addstr(s+t.name+"の精神が高まった!", gamelog);
+            addstr(s+t.name+"の心が高まった!", gamelog);
             t.adjust_attribute(ATTRIBUTE_HEART,+1);
          }
          else

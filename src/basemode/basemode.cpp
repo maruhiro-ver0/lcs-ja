@@ -419,7 +419,7 @@ void mode_base()
 
          if(safenumber>0) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
-         mvaddstr(8,62,"Z - 次の場所");
+         mvaddstr(8,62,"Z - 次のアジト");
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          mvaddstr(21,40,"L - リベラルアジェンダの状況");

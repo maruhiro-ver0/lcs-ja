@@ -74,7 +74,7 @@ std::string getactivity(activityst &act)
          else return str+"a bug";
       }
    case ACTIVITY_RECRUITING:
-      return "勧誘活動";
+      return "スカウト活動";
    case ACTIVITY_REPAIR_ARMOR:
       return "服の修繕";
    case ACTIVITY_WHEELCHAIR:

@@ -664,7 +664,7 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
       }
    }
 
-   mvaddstr(2,0,"精神:   ");
+   mvaddstr(2,0,"心:     ");
    if(knowledge>0)
       addstr(cr->get_attribute(ATTRIBUTE_HEART,true));
    else addstr("?");
@@ -672,7 +672,7 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
    if(knowledge>0)
       addstr(cr->get_attribute(ATTRIBUTE_INTELLIGENCE,true));
    else addstr("?");
-   mvaddstr(4,0,"教養:   ");
+   mvaddstr(4,0,"知恵:   ");
    if(knowledge>0)
       addstr(cr->get_attribute(ATTRIBUTE_WISDOM,true));
    else addstr("?");
@@ -1079,11 +1079,11 @@ void printliberalstats(Creature &cr)
       else addstr("1000");
    }
    // Add attributes
-   move(5,0);addstr("精神:   ");
+   move(5,0);addstr("心:     ");
    addstr(cr.get_attribute(ATTRIBUTE_HEART,true));
    move(6,0);addstr("知識:   ");
    addstr(cr.get_attribute(ATTRIBUTE_INTELLIGENCE,true));
-   move(7,0);addstr("教養:   ");
+   move(7,0);addstr("知恵:   ");
    addstr(cr.get_attribute(ATTRIBUTE_WISDOM,true));
    move(8,0);addstr("体力:   ");
    addstr(cr.get_attribute(ATTRIBUTE_HEALTH,true));
@@ -1202,7 +1202,7 @@ void printliberalstats(Creature &cr)
    if(cr.flag!=CREATUREFLAG_BRAINWASHED)
    {
       move(18,0);
-      addstr("勧誘 ");
+      addstr("スカウト ");
       addstr(maxsubordinates(cr)-subordinatesleft(cr));
       addstr("人 / 最大 ");
       addstr(maxsubordinates(cr));

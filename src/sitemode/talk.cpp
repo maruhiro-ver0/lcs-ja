@@ -434,7 +434,7 @@ char heyIWantToCancelMyRoom(Creature &a, Creature &tk)
 
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(15,1);
-   addstr("<Your possessions at this location have been moved to the shelter.>", gamelog);
+   addstr("<ここにあるあなたの持ち物はシェルターに移された。>", gamelog);
    gamelog.newline();
 
    getkey();

@@ -119,7 +119,7 @@ std::string Skill::get_name(int skill_type)
    case SKILL_RIFLE:          return "ライフル";
    case SKILL_HEAVYWEAPONS:   return "重火器";
    case SKILL_SHOTGUN:        return "ショットガン";
-   case SKILL_SMG:            return "サブマシンガン";
+   case SKILL_SMG:            return "ｻﾌﾞﾏｼﾝｶﾞﾝ";
    case SKILL_PERSUASION:     return "説得";
    case SKILL_PSYCHOLOGY:     return "心理学";
    case SKILL_SECURITY:       return "セキュリティ";
@@ -136,7 +136,7 @@ std::string Skill::get_name(int skill_type)
    case SKILL_BUSINESS:       return "ビジネス";
    case SKILL_STEALTH:        return "隠密";
    case SKILL_TEACHING:       return "教育";
-   case SKILL_STREETSENSE:    return "ストリートセンス";
+   case SKILL_STREETSENSE:    return "ｽﾄﾘｰﾄｾﾝｽ";
    case SKILL_SEDUCTION:      return "誘惑";
    case SKILL_FIRSTAID:       return "応急手当";
    case SKILL_DODGE:          return "防御";

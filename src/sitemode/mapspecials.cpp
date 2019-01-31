@@ -398,9 +398,9 @@ void special_readsign(int sign)
       case SITE_RESIDENTIAL_APARTMENT:
       case SITE_RESIDENTIAL_APARTMENT_UPSCALE:
          move(16,1);
-         addstr("The landlord's office is the first door");
+         addstr("大家のオフィスは最初の扉を左へ。");
          move(17,1);
-         addstr("on the left.");
+         addstr("");
          break;
       }
       break;

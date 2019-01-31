@@ -190,8 +190,8 @@ void activate_sleeper(Creature *cr)
          {
             set_color(COLOR_BLACK,COLOR_BLACK,1);
             if(cr->flag & CREATUREFLAG_BRAINWASHED)
-               addstr("3 - [啓蒙された者は勧誘できない]");
-            else addstr("3 - [勧誘にはもっとジュースが必要だ]");
+               addstr("3 - [啓蒙された者はスカウトできない]");
+            else addstr("3 - [スカウトにはもっとジュースが必要だ]");
          }
          break;
       case 'b':
@@ -227,7 +227,7 @@ void activate_sleeper(Creature *cr)
          {
             move(22,3);
             addstr(cr->name);
-            addstr("は新たな潜伏者の勧誘を試みる。");
+            addstr("は新たな潜伏者のスカウトを試みる。");
          }
          break;
       case ACTIVITY_SLEEPER_SPY:

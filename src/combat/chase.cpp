@@ -77,9 +77,7 @@ bool chasesequence()
    erase();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
-   addstr("As you pull away from the site, you notice that you are ", gamelog);
-   move(1,0);
-   addstr("being followed by Conservative swine!", gamelog);
+   addstr("この場所から引き上げるとき、保守派に付けられているのを感じた!", gamelog);
    gamelog.newline(); //New line.
 
    getkey();
@@ -109,15 +107,15 @@ bool chasesequence()
          if(partysize>1)set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(9,40);
-         addstr("O - Change the squad's Liberal order");
+         addstr("O - リベラルの順序を変更する");
          if(partysize>0&&(party_status==-1||partysize>1))set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(10,40);
-         addstr("# - Check the status of a squad Liberal");
+         addstr("# - リベラルの状態を表示する");
          if(party_status!=-1)set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(11,40);
-         addstr("0 - Show the squad's Liberal status");
+         addstr("0 - 部隊の状態を表示する");
 
          int y=12;
          if(obstacle==-1)
@@ -138,54 +136,54 @@ bool chasesequence()
                   set_color(COLOR_MAGENTA,COLOR_BLACK,1);
                   move(9,1);
                   //LIMIT :------------------------------------:
-                  addstr("You are speeding toward a flimsy fruit stand!", gamelog);
+                  addstr("オンボロのフルーツスタンドに向かっている!", gamelog);
                   gamelog.newline(); //Newline!
                   move(10,1);
-                  addstr("D - Swerve to avoid hitting anyone!");
+                  addstr("D - 急転換で避ける!");
                   move(11,1);
-                  addstr("F - Play it safe and plow through it!");
+                  addstr("F - 安全第一でそのまま突っ込む!");
                   break;
                case CARCHASE_OBSTACLE_TRUCKPULLSOUT:
                   set_color(COLOR_MAGENTA,COLOR_BLACK,1);
                   move(9,1);
                   //LIMIT :------------------------------------:
-                  addstr("A truck pulls out in your path!", gamelog);
+                  addstr("トラックが車線を塞ごうとしている!", gamelog);
                   gamelog.newline(); //Newline.
                   move(10,1);
-                  addstr("D - Speed around it!");
+                  addstr("D - 加速!");
                   move(11,1);
-                  addstr("F - Slow down!");
+                  addstr("F - 減速!");
                   break;
                case CARCHASE_OBSTACLE_CROSSTRAFFIC:
                   set_color(COLOR_MAGENTA,COLOR_BLACK,1);
                   move(9,1);
                   //LIMIT :------------------------------------:
-                  addstr("There's a red light with cross traffic ahead!", gamelog);
+                  addstr("赤信号だ!", gamelog);
                   gamelog.newline(); //Newline...
                   move(10,1);
-                  addstr("D - Run the light anyway!");
+                  addstr("D - そのまま進む!");
                   move(11,1);
-                  addstr("F - Slow down and turn!");
+                  addstr("F - 減速してターン!");
                   break;
                case CARCHASE_OBSTACLE_CHILD:
                   set_color(COLOR_MAGENTA,COLOR_BLACK,1);
                   move(9,1);
                   //LIMIT :------------------------------------:
-                  addstr("A kid runs into the street for his ball!", gamelog);
+                  addstr("ボールを追いかける子供が!", gamelog);
                   gamelog.newline(); //Newline.
                   move(10,1);
-                  addstr("D - Swerve around him!");
+                  addstr("D - 急転換で避ける!");
                   move(11,1);
-                  addstr("F - Slam the brakes!");
+                  addstr("F - 急ブレーキをかける!");
                   break;
             }
          }
          move(y,1);
-         addstr("B - Bail out and run!");
+         addstr("B - 車を捨てて逃げる!");
          if(chaseseq.canpullover)
          {
             move(y+1,1);
-            addstr("P - Pull over");
+            addstr("P - 車を止める");
          }
       }
       else
@@ -205,7 +203,7 @@ bool chasesequence()
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(9,1);
-         addstr("C - Reflect on your lack of skill.");
+         addstr("C - 運転技術のなさを反省する");
       }
 
       //PRINT ENEMIES
@@ -353,7 +351,7 @@ bool chasesequence()
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             clearmessagearea();
             move(16,1);
-            addstr("It looks like you've lost them!", gamelog);
+            addstr("どうやら逃げ切ったようだ!", gamelog);
             gamelog.newline(); //New line.
 
             getkey();
@@ -428,15 +426,15 @@ bool footchase()
          if(partysize>1) set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(9,40);
-         addstr("O - Change the squad's Liberal order");
+         addstr("O - リベラルの順序を変更する");
          if(partysize>0&&(party_status==-1||partysize>1))set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(10,40);
-         addstr("# - Check the status of a squad Liberal");
+         addstr("# - リベラルの状態を表示する");
          if(party_status!=-1)set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(11,40);
-         addstr("0 - Show the squad's Liberal status");
+         addstr("0 - 部隊の状態を表示する");
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(9,1);
@@ -468,7 +466,7 @@ bool footchase()
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(9,1);
-         addstr("C - Reflect on your lack of skill.");
+         addstr("C - 逃げ足の遅さを反省する");
       }
 
       //PRINT ENEMIES
@@ -558,7 +556,7 @@ bool footchase()
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             clearmessagearea();
             move(16,1);
-            addstr("It looks like you've lost them!", gamelog);
+            addstr("どうやら逃げ切ったようだ!", gamelog);
             gamelog.newline(); //New line.
 
             getkey();
@@ -793,7 +791,7 @@ void evasiverun()
          gamelog.newline(); //New line.
          break;
       case 3:
-         addstr("小さなビルを駆け上がり屋根伝いに逃げた!", gamelog);
+         addstr("小さなビルを駆け上がり、屋根伝いに逃げた!", gamelog);
          gamelog.newline(); //New line.
       }
 
@@ -821,19 +819,19 @@ void evasiverun()
          switch(LCSrandom(4))
          {
          case 0:
-            addstr(" plows through a brick wall like it was nothing!", gamelog);
+            addstr("は何もないかのようにレンガの壁をなぎ倒した!", gamelog);
             gamelog.newline(); //New line.
             break;
          case 1:
-            addstr(" charges down an alley, smashing both side walls out!", gamelog);
+            addstr("は両側の壁を壊しながら路地に突っ込んできた!", gamelog);
             gamelog.newline(); //Blarg.
             break;
          case 2:
-            addstr(" smashes straight through traffic, demolishing cars!", gamelog);
+            addstr("は自動車を破壊しながら道路をまっすぐ進んだ!", gamelog);
             gamelog.newline(); //Newline.
             break;
          case 3:
-            addstr(" destroys everything in its path, closing the distance!", gamelog);
+            addstr("は近くにあるあらゆる物を破壊しながら進んだ!", gamelog);
             gamelog.newline(); //I wish these were all contained in addstr.
             break;
          }
@@ -848,12 +846,12 @@ void evasiverun()
          addstr(encounter[e].name, gamelog);
          if(encounter[e].type == CREATURE_TANK)
          {
-            addstr(" tips into a pool. The tank is trapped!", gamelog);
+            addstr("は深みにはまった。戦車は動けない!", gamelog);
             gamelog.newline(); //New line.
          }
          else
          {
-            addstr(" can't keep up!", gamelog);
+            addstr("は追いつけなかった!", gamelog);
             gamelog.newline(); //Another new line.
          }
 
@@ -869,7 +867,7 @@ void evasiverun()
          set_color(COLOR_YELLOW,COLOR_BLACK,1);
          move(16,1);
          addstr(encounter[e].name, gamelog);
-         addstr(" is still on your tail!", gamelog);
+         addstr("はまだ付けている!", gamelog);
          gamelog.newline(); //New line.
 
          getkey();
@@ -893,7 +891,7 @@ void evasiverun()
             set_color(COLOR_CYAN,COLOR_BLACK,1);
             move(16,1);
             addstr(activesquad->squad[p]->name, gamelog);
-            addstr(" breaks away!", gamelog);
+            addstr("は逃げ切った!", gamelog);
             gamelog.newline(); //New line.
 
             getkey();
@@ -932,48 +930,48 @@ void evasiverun()
             switch(encounter[0].type)
             {
             case CREATURE_COP:
-               addstr(" is seized, ", gamelog);
+               addstr("は取り押さえられた。そして", gamelog);
                if(law[LAW_POLICEBEHAVIOR]>=ALIGN_LIBERAL)
                {
-                  addstr("pushed to the ground, and handcuffed!", gamelog);
+                  addstr("地面に押し付けられ、障害を負った!", gamelog);
                   gamelog.newline(); //...Newline.
                }
                else
                {
                   if(activesquad->squad[p]->blood<=10)
                   {
-                     addstr("thrown to the ground, and tazed to death!", gamelog);
+                     addstr("地面に叩きつけられ死んだ!", gamelog);
                      gamelog.newline(); //Not another newline!
                   }
                   else
                   {
-                     addstr("thrown to the ground, and tazed repeatedly!", gamelog);
+                     addstr("地面に叩きつけられ、何度も殴られた!", gamelog);
                      gamelog.newline(); //Yet another newline...
                   }
                   activesquad->squad[p]->blood-=10;
                }
                break;
             case CREATURE_DEATHSQUAD:
-               addstr(" is seized, ", gamelog);
-               addstr("thrown to the ground, and shot in the head!", gamelog);
+               addstr("は取り押さえられた。そして", gamelog);
+               addstr("地面に叩きつけられ、頭を撃ち抜かれた!", gamelog);
                gamelog.newline(); //New line.
                activesquad->squad[p]->blood=0;
                break;
             case CREATURE_TANK:
-               addstr(" crushed beneath the tank's treads!", gamelog);
+               addstr("は戦車にひき殺された!", gamelog);
                gamelog.newline(); //New line.
                activesquad->squad[p]->blood=0;
                break;
             default:
-               addstr(" is seized, ", gamelog);
+               addstr("は取り押さえられた。そして", gamelog);
                if(activesquad->squad[p]->blood<=60)
                {
-                  addstr("thrown to the ground, and beaten to death!", gamelog);
+                  addstr("地面に叩きつけられ、死ぬまで殴打された!", gamelog);
                   gamelog.newline(); //New line.
                }
                else
                {
-                  addstr("thrown to the ground, and beaten senseless!", gamelog);
+                  addstr("地面に叩きつけられ、激しく何度も殴られた!", gamelog);
                   gamelog.newline(); //New line.
                }
                activesquad->squad[p]->blood-=60;

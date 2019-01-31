@@ -167,7 +167,7 @@ void review()
          else if(p==len(squad)+6)
          {
             set_color(COLOR_BLUE,COLOR_BLACK,1);
-            mvaddstr(y,0,"7 - 逃亡 ("+tostring(n[6])+')');
+            mvaddstr(y,0,"7 - 休暇中 ("+tostring(n[6])+')');
          }
          else if(p==len(squad)+7)
          {
@@ -177,17 +177,17 @@ void review()
       }
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      mvaddstr(21,0,"Press V to Inspect Liberal finances.");
+      mvaddstr(21,0,"Vキーでリベラル資産を監査する。");
       if(music.isEnabled())
-         mvaddstr(21,38,"Press Y to turn off the Music.");
-      else mvaddstr(21,38,"Press Y to turn on some Music.");
+         mvaddstr(21,38,"Yキーで音楽を止める。");
+      else mvaddstr(21,38,"Yキーで音楽を鳴らす。");
       move(22,0);
-      addstr("Press a Letter to select a squad.  1-7 to view Liberal groups.");
+      addstr("アルファベットキーで部隊を選択する。  1-7キーでグループを見る。");
       move(23,0);
       addpagestr();
-      addstr("  Press U to Promote Liberals.");
+      addstr("  Uキーでリベラルを昇進させる。");
       move(24,0);
-      addstr("Press Z to Assemble a New Squad.  Press T to Assign New Bases to the Squadless.");
+      addstr("Zキーで部隊を再編成する。  Tキーで所属のない者にアジトを割り当てる。");
 
       int c=getkey();
 
@@ -301,7 +301,7 @@ void review_mode(short mode)
          addstr("犠牲となったリベラルと遺体");
          break;
       case REVIEWMODE_AWAY:
-         addstr("去ったリベラル");
+         addstr("休暇中");
          break;
       }
       move(1,0);
@@ -323,13 +323,13 @@ void review_mode(short mode)
          addstr("退院予定");
          break;
       case REVIEWMODE_SLEEPERS:
-         addstr("PROFESSION");
+         addstr("職業");
          break;
       case REVIEWMODE_DEAD:
          addstr("経過した日数");
          break;
       case REVIEWMODE_AWAY:
-         addstr("DAYS UNTIL RETURN");
+         addstr("戻るまでの日数");
          break;
       }
 
@@ -532,10 +532,10 @@ void review_mode(short mode)
                if(temppool[p]->is_active_liberal() &&
                   temppool[p]->hireid !=-1)  // If alive and not own boss? (suicide?)
                {
-                  addstr("R - メンバーを除隊");
+                  addstr("R - メンバーを除隊する");
                   int boss = getpoolcreature(temppool[p]->hireid);
                   if(pool[boss]->location==temppool[p]->location)
-                     addstr("        K - メンバーを消し去る");
+                     addstr("        K - メンバーを殺害する");
                }
 
                move(23,0);
@@ -574,7 +574,7 @@ void review_mode(short mode)
                if(c=='n')
                {
                   set_color(COLOR_WHITE,COLOR_BLACK,0);
-                  mvaddstr(23,0,"What is the new code name?                                                      "); // 80 characters
+                  mvaddstr(23,0,"新しいコードネームは?                                                           "); // 80 characters
                   mvaddstr(24,0,"                                                                                "); // 80 spaces
 
                   enter_name(24,0,temppool[p]->name,CREATURE_NAMELEN,temppool[p]->propername);
@@ -592,13 +592,13 @@ void review_mode(short mode)
 
                   move(22,0);
                   set_color(COLOR_WHITE,COLOR_BLACK,0);
-                  addstr("Do you want to permanently release this squad member from the LCS?              "); // 80 characters
+                  addstr("このメンバーを本当にLCSから永久追放するか?                                      "); // 80 characters
 
                   move(23,0);
-                  addstr("If the member has low heart they may go to the police.                          "); // 80 characters
+                  addstr("心無いメンバーは警察に駆け込むかもしれない。                                    "); // 80 characters
 
                   move(24,0);
-                  addstr("  C - Confirm       Any other key to continue                                   "); // 80 characters
+                  addstr("  C - 了解          他のキーで戻る                                              "); // 80 characters
 
                   int c=getkey();
 
@@ -607,7 +607,7 @@ void review_mode(short mode)
                      // Release squad member
                      move(22,0);
                      addstr(temppool[p]->name, gamelog);
-                     addstr(" has been released.                                                             ", gamelog); // 80 characters
+                     addstr("は追放された。                                                                  ", gamelog); // 80 characters
                      move(23,0);
                      gamelog.newline(); //New line.
                      addstr("                                                                                "); // 80 spaces
@@ -624,17 +624,14 @@ void review_mode(short mode)
                      {
                         set_color(COLOR_CYAN,COLOR_BLACK,1);
                         move(22,0);
-                        addstr("A Liberal friend tips you off on ", gamelog);
+                        addstr("リベラルの仲間が", gamelog);
                         addstr(temppool[p]->name, gamelog);
-                        addstr("'s whereabouts.", gamelog);
+                        addstr("の居場所を特定した。", gamelog);
                         move(24,0);
                         gamelog.newline(); //New line.
-                        addstr("The Conservative traitor has ratted you out to the police, and sworn", gamelog);
-                        move(25,0);
-                        gamelog.newline(); //New line.
-                        addstr("to testify against ", gamelog);
+                        addstr("保守の裏切り者はあなたを警察に密告し、法廷で", gamelog);
                         addstr(pool[boss]->name, gamelog);
-                        addstr(" in court.", gamelog);
+                        addstr("のことを証言するだろう。", gamelog);
 
                         criminalize(*pool[boss],LAWFLAG_RACKETEERING);
                         pool[boss]->confessions++;
@@ -665,13 +662,12 @@ void review_mode(short mode)
 
                   move(22,0);
                   set_color(COLOR_WHITE,COLOR_BLACK,0);
-                  addstr("Confirm you want to have "); // 25 characters (25+55=80)
                   addstr(pool[boss]->name);
-                  addstr(" kill this squad member?                               "); // 55 characters (25+55=80)
+                  addstr("は部隊のメンバーを本当に殺害するか?                                             ");
                   move(23,0);
-                  addstr("Killing your squad members is Not a Liberal Act.                                "); // 80 characters
+                  addstr("部隊のメンバーを殺害するのはリベラル的行為ではない。                            "); // 80 characters
                   move(24,0);
-                  addstr("  C - Confirm       Any other key to continue                                   "); // 80 characters
+                  addstr("  C - 了解          他のキーで戻る                                              "); // 80 characters
 
                   int c=getkey();
 
@@ -683,14 +679,14 @@ void review_mode(short mode)
 
                      move(22,0);
                      addstr(pool[boss]->name, gamelog);
-                     addstr(" executes ", gamelog); // 10 characters (10+4+66=80)
+                     addstr("は", gamelog); // 10 characters (10+4+66=80)
                      addstr(temppool[p]->name, gamelog);
-                     addstr(" by ", gamelog); // 4 characters (10+4+66=80)
+                     addstr("を", gamelog); // 4 characters (10+4+66=80)
                      switch(LCSrandom(3))
                      {
-                     case 0:addstr("strangling to death.                                              ", gamelog);break; // 66 characters (10+4+66=80)
-                     case 1:addstr("beating to death.                                                 ", gamelog);break; // 66 characters (10+4+66=80)
-                     case 2:addstr("cold execution.                                                   ", gamelog);break; // 66 characters (10+4+66=80)
+                     case 0:addstr("絞殺した。                                                        ", gamelog);break; // 66 characters (10+4+66=80)
+                     case 1:addstr("殴り殺した。                                                      ", gamelog);break; // 66 characters (10+4+66=80)
+                     case 2:addstr("凍死させた。                                                      ", gamelog);break; // 66 characters (10+4+66=80)
                      }
                      move(23,0);
                      addstr("                                                                                "); // 80 spaces
@@ -707,21 +703,21 @@ void review_mode(short mode)
                            set_color(COLOR_GREEN,COLOR_BLACK,1);
                            gamelog.newline(); //New line.
                            addstr(pool[boss]->name, gamelog);
-                           addstr(" feels sick to the stomach afterward and                                        ", gamelog); // 80 characters
+                           addstr("は吐き気を感じた。そして", gamelog); // 80 characters
                            pool[boss]->adjust_attribute(ATTRIBUTE_HEART,-1);
-                           move(23,0); // this sentence probably takes more than 80 characters so use 2 lines and break it here
+                           //move(23,0); // this sentence probably takes more than 80 characters so use 2 lines and break it here
                            gamelog.newline(); //New line.
                            switch(LCSrandom(4))
                            {
-                           case 0:addstr("throws up in a trash can.                                                       ", gamelog);break; // 80 characters
-                           case 1:addstr("gets drunk, eventually falling asleep.                                          ", gamelog);break; // 80 characters
-                           case 2:addstr("curls up in a ball, crying softly.                                              ", gamelog);break; // 80 characters
-                           case 3:addstr("shoots up and collapses in a heap on the floor.                                 ", gamelog);break; // 80 characters
+                           case 0:addstr("ゴミ箱に嘔吐した。", gamelog);break;
+                           case 1:addstr("大量の酒を飲み眠った。", gamelog);break;
+                           case 2:addstr("うずくまり泣いた。", gamelog);break;
+                           case 3:addstr("床に向かって銃を撃った。", gamelog);break;
                            }
                            move(24,0);
                            gamelog.newline(); //New line.
                            addstr(pool[boss]->name, gamelog);
-                           addstr(" has lost heart.                                                                ", gamelog); // 80 characters
+                           addstr("は心を失った。                                                                ", gamelog); // 80 characters
                            getkey();
                         }
                         else if(!LCSrandom(3))
@@ -729,12 +725,12 @@ void review_mode(short mode)
                            gamelog.newline(); //New line here too.
                            set_color(COLOR_CYAN,COLOR_BLACK,1);
                            addstr(pool[boss]->name, gamelog);
-                           addstr(" grows colder.                                                                  ", gamelog); // 80 characters
+                           addstr("はより冷酷になった。                                                            ", gamelog); // 80 characters
                            pool[boss]->adjust_attribute(ATTRIBUTE_WISDOM,+1);
                            move(24,0);
                            gamelog.newline(); //New line.
                            addstr(pool[boss]->name, gamelog);
-                           addstr(" has gained wisdom.                                                             ", gamelog); // 80 characters
+                           addstr("の知恵が増した。                                                                ", gamelog); // 80 characters
                            getkey();
                         }
                      }
@@ -1178,11 +1174,11 @@ void squadlessbaseassign()
       printfunds();
 
       move(0,0);
-      addstr("New Bases for Squadless Liberals");
+      addstr("部隊に属していないリベラルのアジト");
       move(1,0);
-      addstr("ﾄﾄﾄﾄCODE NAMEﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄCURRENT BASEﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ"); // 80 characters
+      addstr("----コードネーム---------現在のアジト-------------------------------------------"); // 80 characters
       move(1,51);
-      addstr("NEW BASE");
+      addstr("新しいアジト");
 
       int y=2;
       for(p=page_lib*19;p<len(temppool)&&p<page_lib*19+19;p++,y++)
@@ -1214,8 +1210,8 @@ void squadlessbaseassign()
       }
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      mvaddstr(21,0,"Press a Letter to assign a Base.  Press a Number to select a Base.");
-      mvaddstr(22,0,"Liberals must be moved in squads to transfer between cities.");
+      mvaddstr(21,0,"アルファベットキーでアジトを割り当てる。数字キーでアジトを選択する。");
+      mvaddstr(22,0,"都市間は部隊に属して移動しなければならない。");
       if(len(temppool)>19)
       {
          move(23,0);
@@ -1224,10 +1220,10 @@ void squadlessbaseassign()
       if(len(temploc)>9)
       {
          move(24,0);
-         addstr(",. to view other Base pages.");
+         addstr(",.キーで別のページを表示する。");
       }
       move(23,35);
-      addstr("T to sort people.");
+      addstr("Tキーでソートする。");
 
       int c=getkey();
 
@@ -1366,11 +1362,11 @@ void promoteliberals()
       printfunds();
 
       move(0,0);
-      addstr("Promote the Elite Liberals");
+      addstr("エリート・リベラルの昇格");
       move(1,0);
-      addstr("ﾄﾄﾄﾄCODE NAMEﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄCURRENT CONTACTﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ"); // 80 characters
+      addstr("----コードネーム-----------現在の所属-------------------------------------------"); // 80 characters
       move(1,54);
-      addstr("CONTACT AFTER PROMOTION");
+      addstr("昇格後の所属");
 
       int y=2;
 
@@ -1395,9 +1391,9 @@ void promoteliberals()
                   if(pool[p3]->alive==1&&pool[p3]->id==pool[p2]->hireid)
                   {
                      if(temppool[p]->flag&CREATUREFLAG_LOVESLAVE)
-                        addstr("<Refuses Promotion>");
+                        addstr("<昇格を拒否>");
                      else if(!subordinatesleft(*pool[p3])&&!(temppool[p]->flag&CREATUREFLAG_BRAINWASHED))
-                        addstr("<Can't Lead More>");
+                        addstr("<これ以上リーダーになれない>");
                      else
                         printname(*pool[p3]);
                      break;
@@ -1407,7 +1403,7 @@ void promoteliberals()
                break;
             }
          }
-         if(p2==len(pool)) addstr("<LCS Leader>");
+         if(p2==len(pool)) addstr("<LCSのリーダー>");
 
          move(y++,4+level[p]);
          printname(*temppool[p]);
@@ -1415,42 +1411,42 @@ void promoteliberals()
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(21,0);
-      addstr("Recruited/");
+      addstr("スカウト/");
       set_color(COLOR_MAGENTA,COLOR_BLACK,0);
-      addstr("Seduced");
+      addstr("誘惑");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       addstr("/");
       set_color(COLOR_YELLOW,COLOR_BLACK,0);
-      addstr("Enlightened");
+      addstr("啓蒙");
       set_color(COLOR_YELLOW,COLOR_BLACK,1);
       addstr("   [");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      addstr("Arrested");
+      addstr("逮捕");
       set_color(COLOR_YELLOW,COLOR_BLACK,1);
       addstr("]");
       set_color(COLOR_RED,COLOR_BLACK,1);
       addstr(" [");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      addstr("In Jail");
+      addstr("収監");
       set_color(COLOR_RED,COLOR_BLACK,1);
       addstr("]");
       set_color(COLOR_BLACK,COLOR_BLACK,1);
       addstr(" [");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      addstr("In Hiding");
+      addstr("休暇");
       set_color(COLOR_BLACK,COLOR_BLACK,1);
       addstr("]");
       set_color(COLOR_BLUE,COLOR_BLACK,1);
       addstr(" [");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      addstr("Sleeper");
+      addstr("潜伏");
       set_color(COLOR_BLUE,COLOR_BLACK,1);
       addstr("]");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(22,0);
-      addstr("Press a letter to promote a Liberal. You cannot promote Liberals in hiding.");
+      addstr("アルファベットキーでリベラルを昇格させる。休暇中のリベラルは昇格できない。");
       move(23,0);
-      addstr("Enlightened Liberals follow anyone. Seduced Liberals follow only their lover.");
+      addstr("啓蒙されたリベラルは誰にでも所属する。誘惑されたリベラルはその愛人にのみ所属する");
       if(len(temppool)>PAGELENGTH)
       {
          move(24,0);

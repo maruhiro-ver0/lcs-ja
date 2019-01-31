@@ -789,23 +789,23 @@ void fundreport(char &clearformess)
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                switch(i)
                {
-               case EXPENSE_TROUBLEMAKING: mvaddstr(y,0,"Activism"); break;
-               case EXPENSE_CONFISCATED: mvaddstr(y,0,"Confiscated"); break;
-               case EXPENSE_DATING: mvaddstr(y,0,"Dating"); break;
-               case EXPENSE_SKETCHES: mvaddstr(y,0,"Drawing Materials"); break;
-               case EXPENSE_FOOD: mvaddstr(y,0,"Groceries"); break;
-               case EXPENSE_HOSTAGE: mvaddstr(y,0,"Hostage Tending"); break;
-               case EXPENSE_LEGAL: mvaddstr(y,0,"Legal Fees"); break;
-               case EXPENSE_MANUFACTURE: mvaddstr(y,0,"Manufacturing"); break;
-               case EXPENSE_CARS: mvaddstr(y,0,"New Cars"); break;
-               case EXPENSE_SHOPPING: mvaddstr(y,0,"Purchasing Goods"); break;
-               case EXPENSE_RECRUITMENT: mvaddstr(y,0,"Recruitment"); break;
-               case EXPENSE_RENT: mvaddstr(y,0,"Rent"); break;
-               case EXPENSE_COMPOUND: mvaddstr(y,0,"Safehouse Investments"); break;
-               case EXPENSE_TRAINING: mvaddstr(y,0,"Training"); break;
-               case EXPENSE_TRAVEL: mvaddstr(y,0,"Travel"); break;
-               case EXPENSE_TSHIRTS: mvaddstr(y,0,"T-Shirt Materials"); break;
-               default: mvaddstr(y,0,"Other Expenses"); break;
+               case EXPENSE_TROUBLEMAKING: mvaddstr(y,0,"活動"); break;
+               case EXPENSE_CONFISCATED: mvaddstr(y,0,"押収"); break;
+               case EXPENSE_DATING: mvaddstr(y,0,"デート"); break;
+               case EXPENSE_SKETCHES: mvaddstr(y,0,"絵の販売"); break;
+               case EXPENSE_FOOD: mvaddstr(y,0,"食料品"); break;
+               case EXPENSE_HOSTAGE: mvaddstr(y,0,"捕虜の世話"); break;
+               case EXPENSE_LEGAL: mvaddstr(y,0,"訴訟費用"); break;
+               case EXPENSE_MANUFACTURE: mvaddstr(y,0,"作成"); break;
+               case EXPENSE_CARS: mvaddstr(y,0,"自動車の購入"); break;
+               case EXPENSE_SHOPPING: mvaddstr(y,0,"物品の購入"); break;
+               case EXPENSE_RECRUITMENT: mvaddstr(y,0,"スカウト"); break;
+               case EXPENSE_RENT: mvaddstr(y,0,"家賃"); break;
+               case EXPENSE_COMPOUND: mvaddstr(y,0,"アジトの改修"); break;
+               case EXPENSE_TRAINING: mvaddstr(y,0,"訓練"); break;
+               case EXPENSE_TRAVEL: mvaddstr(y,0,"旅行"); break;
+               case EXPENSE_TSHIRTS: mvaddstr(y,0,"Tシャツの販売"); break;
+               default: mvaddstr(y,0,"その他"); break;
                }
             }
             totalmoney-=ledger.expense[i];
@@ -824,7 +824,7 @@ void fundreport(char &clearformess)
          if(page==numpages-1)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            mvaddstr(y,0,"Net Change This Month (Day):");
+            mvaddstr(y,0,"今月の収支 (本日):");
             if(totalmoney>0) { set_color(COLOR_GREEN,COLOR_BLACK,1); num="+"; }
             else if(totalmoney<0) { set_color(COLOR_RED,COLOR_BLACK,1); num="-"; }
             else { set_color(COLOR_WHITE,COLOR_BLACK,1); num=""; }
@@ -869,7 +869,7 @@ void fundreport(char &clearformess)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          mvaddstr(y,0,dotdotdot);
-         mvaddstr(y,0,"Cash");
+         mvaddstr(y,0,"現金");
          set_color(ledger.get_funds()?COLOR_GREEN:COLOR_WHITE,COLOR_BLACK,0);
          num="$"+tostring(ledger.get_funds());
          mvaddstr(y,60-len(num),num);
@@ -881,7 +881,7 @@ void fundreport(char &clearformess)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          mvaddstr(y,0,dotdotdot);
-         mvaddstr(y,0,"Tools and Weapons");
+         mvaddstr(y,0,"道具と武器");
          set_color(weaponValue?COLOR_GREEN:COLOR_WHITE,COLOR_BLACK,0);
          num="$"+tostring(weaponValue);
          mvaddstr(y,60-len(num),num);
@@ -893,7 +893,7 @@ void fundreport(char &clearformess)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          mvaddstr(y,0,dotdotdot);
-         mvaddstr(y,0,"Clothing and Armor");
+         mvaddstr(y,0,"衣服と鎧");
          set_color(armorValue?COLOR_GREEN:COLOR_WHITE,COLOR_BLACK,0);
          num="$"+tostring(armorValue);
          mvaddstr(y,60-len(num),num);
@@ -905,7 +905,7 @@ void fundreport(char &clearformess)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          mvaddstr(y,0,dotdotdot);
-         mvaddstr(y,0,"Ammunition");
+         mvaddstr(y,0,"弾薬");
          set_color(clipValue?COLOR_GREEN:COLOR_WHITE,COLOR_BLACK,0);
          num="$"+tostring(clipValue);
          mvaddstr(y,60-len(num),num);
@@ -917,7 +917,7 @@ void fundreport(char &clearformess)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          mvaddstr(y,0,dotdotdot);
-         mvaddstr(y,0,"Miscellaneous Loot");
+         mvaddstr(y,0,"その他の略奪品");
          set_color(lootValue?COLOR_GREEN:COLOR_WHITE,COLOR_BLACK,0);
          num="$"+tostring(lootValue);
          mvaddstr(y,60-len(num),num);
@@ -932,7 +932,7 @@ void fundreport(char &clearformess)
       if(page==numpages-1)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,1);
-         mvaddstr(y,0,"Total Liquid Assets:");
+         mvaddstr(y,0,"全資産:");
          long netWorth=ledger.get_funds()+weaponValue+armorValue+clipValue+lootValue;
          set_color(netWorth?COLOR_GREEN:COLOR_WHITE,COLOR_BLACK,1);
          num="$"+tostring(netWorth);
@@ -942,7 +942,7 @@ void fundreport(char &clearformess)
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       if(numpages>1)
       {
-         mvaddstr(24,0,"Press Enter to reflect on the report.  ");
+         mvaddstr(24,0,"報告書をよく読んだならばEnterキーを押すこと。");
          addpagestr();
 
          while(true)
@@ -963,7 +963,7 @@ void fundreport(char &clearformess)
       }
       else
       {
-         mvaddstr(24,0,"Press any key to reflect on the report.");
+         mvaddstr(24,0,"報告書をよく読んだならば何かキーを押すこと。 ");
 
          getkey();
 

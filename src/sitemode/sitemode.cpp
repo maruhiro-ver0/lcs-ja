@@ -2406,7 +2406,7 @@ void mode_site()
                         clearmessagearea(false);
                         set_color(COLOR_WHITE,COLOR_BLACK,1);
                         move(16,1);
-                        addstr("The landlord is out of the office.", gamelog);
+                        addstr("大家はオフィスにいないようだ。", gamelog);
                         gamelog.newline();
                         levelmap[locx][locy][locz].special=-1;
 
@@ -2417,7 +2417,7 @@ void mode_site()
                         clearmessagearea(false);
                         set_color(COLOR_WHITE,COLOR_BLACK,1);
                         move(16,1);
-                        addstr("The landlord is in.", gamelog);
+                        addstr("大家は在室中だ。", gamelog);
                         gamelog.newline();
                         levelmap[locx][locy][locz].special=-1;
 

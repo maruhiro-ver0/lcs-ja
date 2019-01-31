@@ -421,7 +421,7 @@ void activate(Creature *cr)
       mvaddstr(12,1,"C - 違法な資金集めを行う");
 
       set_color(COLOR_WHITE,COLOR_BLACK,state=='d');
-      mvaddstr(13,1,"D - 勧誘と買収を行う");
+      mvaddstr(13,1,"D - スカウトと買収を行う");
 
       set_color(COLOR_WHITE,COLOR_BLACK,state=='t');
       mvaddstr(14,1,"T - 他のリベラルを教育する");
@@ -552,7 +552,7 @@ void activate(Creature *cr)
          break;
       case 'd':
          set_color(COLOR_WHITE,COLOR_BLACK,cr->activity.type==ACTIVITY_RECRUITING);
-         mvaddstr(10,40,"1 - 勧誘活動");
+         mvaddstr(10,40,"1 - スカウト活動");
 
          set_color(COLOR_WHITE,COLOR_BLACK,cr->activity.type==ACTIVITY_MAKE_ARMOR);
          mvaddstr(11,40,"2 - 服の縫製");
@@ -611,7 +611,7 @@ void activate(Creature *cr)
          addstr(cr->name);
          addstr("はスプレーで政治的な落書きをする。");
          move(23,1);
-         addstr("  「アート(芸術)」と「ハート(精神)」がリベラルを喚起するだろう。");
+         addstr("  「アート(芸術)」と「ハート(心)」がリベラルを喚起するだろう。");
          break;
       case ACTIVITY_POLLS:
          move(22,3);
@@ -1470,7 +1470,7 @@ void recruitSelect(Creature &cr)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
       addstr(cr.name);
-      addstr("はどのようなタイプの人物を勧誘するか?");
+      addstr("はどのようなタイプの人物をスカウトするか?");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(1,0);
       addstr("----タイプ---------------------------------------面会の難易度-------------------");
