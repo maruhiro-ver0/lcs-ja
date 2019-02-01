@@ -2420,7 +2420,7 @@ void statebrokenlaws(int loc)
    }
    //TREASON
    else if(breakercount[LAWFLAG_TREASON])
-      addstr("国家反逆罪", gamelog);
+      addstr("国家反逆", gamelog);
    //TERRORISM
    else if(breakercount[LAWFLAG_TERRORISM])
       addstr("テロ", gamelog);
@@ -2439,43 +2439,43 @@ void statebrokenlaws(int loc)
    //BURN FLAG
    else if(breakercount[LAWFLAG_BURNFLAG])
    {
-      if(law[LAW_FLAGBURNING]==-2)addstr("国旗不敬罪", gamelog);
+      if(law[LAW_FLAGBURNING]==-2)addstr("国旗不敬", gamelog);
       else if(law[LAW_FLAGBURNING]==-1)addstr("国旗焼却罪", gamelog);
       else addstr("国旗焼却", gamelog);
    }
    //SPEECH
    else if(breakercount[LAWFLAG_SPEECH])
-      addstr("扇動罪", gamelog);
+      addstr("扇動", gamelog);
    //BROWNIES
    else if(breakercount[LAWFLAG_BROWNIES])
-      addstr("違法薬物の売買", gamelog);
+      addstr("違法薬物取引", gamelog);
    //ESCAPED
    else if(breakercount[LAWFLAG_ESCAPED])
       addstr("脱獄", gamelog);
    //HELP ESCAPED
    else if(breakercount[LAWFLAG_HELPESCAPE])
-      addstr("脱獄を手助けした罪", gamelog);
+      addstr("逃走援助", gamelog);
    //JURY
    else if(breakercount[LAWFLAG_JURY])
-      addstr("陪審員の買収", gamelog);
+      addstr("陪審員買収", gamelog);
    //RACKETEERING
    else if(breakercount[LAWFLAG_RACKETEERING])
-      addstr("racketeering", gamelog);
+      addstr("詐欺", gamelog);
    //EXTORTION
    else if(breakercount[LAWFLAG_EXTORTION])
-      addstr("extortion", gamelog);
+      addstr("恐喝", gamelog);
    //ASSAULT
    else if(breakercount[LAWFLAG_ARMEDASSAULT])
-      addstr("傷害罪", gamelog);
+      addstr("傷害", gamelog);
    //ASSAULT
    else if(breakercount[LAWFLAG_ASSAULT])
-      addstr("暴行罪", gamelog);
+      addstr("暴行", gamelog);
    //CAR THEFT
    else if(breakercount[LAWFLAG_CARTHEFT])
       addstr("自動車窃盗", gamelog);
    //CC FRAUD
    else if(breakercount[LAWFLAG_CCFRAUD])
-      addstr("カード番号窃盗", gamelog);
+      addstr("カード番号不正取得", gamelog);
    //THIEF
    else if(breakercount[LAWFLAG_THEFT])
       addstr("窃盗", gamelog);
@@ -2493,13 +2493,13 @@ void statebrokenlaws(int loc)
       addstr("違法な武器の運搬", gamelog);*/
    //COMMERCE
    else if(breakercount[LAWFLAG_COMMERCE])
-      addstr("通商妨害", gamelog);
+      addstr("業務妨害", gamelog);
    //INFORMATION
    else if(breakercount[LAWFLAG_INFORMATION])
-      addstr("システムへの不正アクセス", gamelog);
+      addstr("情報システムへの違法アクセス", gamelog);
    //UNLAWFUL BURIAL
    else if(breakercount[LAWFLAG_BURIAL])
-      addstr("違法な遺体処理", gamelog);
+      addstr("死体遺棄", gamelog);
    //BREAKING
    else if(breakercount[LAWFLAG_BREAKING])
       addstr("不法侵入", gamelog);
@@ -2508,7 +2508,7 @@ void statebrokenlaws(int loc)
       addstr("器物損壊", gamelog);
    //RESIST
    else if(breakercount[LAWFLAG_RESIST])
-      addstr("逮捕に抵抗した罪", gamelog);
+      addstr("逮捕抵抗", gamelog);
    //DISTURBANCE
    else if(breakercount[LAWFLAG_DISTURBANCE])
       addstr("治安妨害", gamelog);
@@ -2517,7 +2517,7 @@ void statebrokenlaws(int loc)
       addstr("公然猥褻", gamelog);
    //LOITERING
    else if(breakercount[LAWFLAG_LOITERING])
-      addstr("loitering", gamelog);
+      addstr("浮浪", gamelog);
    //THEY WERE LOOKING FOR SOMEONE ELSE
    else addstr("正義に背く行為", gamelog);
 
@@ -2546,70 +2546,70 @@ void statebrokenlaws(Creature & cr)
 
    //KIDNAP VICTIM
    if(kidnapped)
-      addstr("REHABILITATION");
+      addstr("リハビリ");
    //TREASON
    else if(breakercount[LAWFLAG_TREASON])
-      addstr("TREASON");
+      addstr("国家反逆");
    //TERRORISM
    else if(breakercount[LAWFLAG_TERRORISM])
-      addstr("TERRORISM");
+      addstr("テロ");
    //MURDERER
    else if(breakercount[LAWFLAG_MURDER])
       addstr("殺人");
    //KIDNAPPER
    else if(breakercount[LAWFLAG_KIDNAPPING])
-      addstr("KIDNAPPING");
+      addstr("誘拐");
    //BANK ROBBER
    else if(breakercount[LAWFLAG_BANKROBBERY])
-      addstr("BANK ROBBERY");
+      addstr("銀行強盗");
    //ARSONIST
    else if(breakercount[LAWFLAG_BANKROBBERY])
-      addstr("ARSON");
+      addstr("放火");
    //BURN FLAG
    else if(breakercount[LAWFLAG_BURNFLAG])
-      addstr(law[LAW_FLAGBURNING]==-2?"FLAG MURDER":"FLAG BURNING");
+      addstr(law[LAW_FLAGBURNING]==-2?"国旗不敬":"国旗焼却");
    //SPEECH
    else if(breakercount[LAWFLAG_SPEECH])
-      addstr("HARMFUL SPEECH");
+      addstr("煽動");
    //BROWNIES
    else if(breakercount[LAWFLAG_BROWNIES])
-      addstr("DRUG DEALING");
+      addstr("違法薬物取引");
    //ESCAPED
    else if(breakercount[LAWFLAG_ESCAPED])
-      addstr("ESCAPING PRISON");
+      addstr("脱獄");
    //HELP ESCAPED
    else if(breakercount[LAWFLAG_HELPESCAPE])
-      addstr("RELEASING PRISONERS");
+      addstr("逃走援助");
    //JURY
    else if(breakercount[LAWFLAG_JURY])
-      addstr("JURY TAMPERING");
+      addstr("陪審員買収");
    //RACKETEERING
    else if(breakercount[LAWFLAG_RACKETEERING])
-      addstr("RACKETEERING");
+      addstr("詐欺");
    //EXTORTION
    else if(breakercount[LAWFLAG_EXTORTION])
-      addstr("EXTORTION");
+      addstr("恐喝");
    //ASSAULT
    else if(breakercount[LAWFLAG_ARMEDASSAULT])
-      addstr("ARMED ASSAULT");
+      addstr("傷害");
    //ASSAULT
    else if(breakercount[LAWFLAG_ASSAULT])
-      addstr("ASSAULT");
+      addstr("暴行");
    //CAR THEFT
    else if(breakercount[LAWFLAG_CARTHEFT])
-      addstr("GRAND THEFT AUTO");
+      addstr("自動車窃盗");
    //CC FRAUD
    else if(breakercount[LAWFLAG_CCFRAUD])
-      addstr("CREDIT CARD FRAUD");
+      addstr("カード番号不正取得");
    //THIEF
    else if(breakercount[LAWFLAG_THEFT])
-      addstr("THEFT");
+      addstr("窃盗");
    //PROSTITUTION
    else if(breakercount[LAWFLAG_PROSTITUTION])
-      addstr("PROSTITUTION");
+      addstr("売春");
    //HIRE ILLEGAL
    else if(breakercount[LAWFLAG_HIREILLEGAL])
-      addstr(law[LAW_IMMIGRATION]<1?"HIRING ILLEGAL ALIENS":"HIRING UNDOCUMENTED WORKERS");
+      addstr(law[LAW_IMMIGRATION]<1?"不法移民雇用":"不法雇用");
    //GUN USE
    /*else if(breakercount[LAWFLAG_GUNUSE])
       addstr("FIRING ILLEGAL WEAPONS");
@@ -2621,27 +2621,27 @@ void statebrokenlaws(Creature & cr)
       addstr("業務妨害");
    //INFORMATION
    else if(breakercount[LAWFLAG_INFORMATION])
-      addstr("ハッキング");
+      addstr("不法アクセス");
    //UNLAWFUL BURIAL
    else if(breakercount[LAWFLAG_BURIAL])
-      addstr("UNLAWFUL BURIAL");
+      addstr("死体遺棄");
    //BREAKING
    else if(breakercount[LAWFLAG_BREAKING])
-      addstr("BREAKING AND ENTERING");
+      addstr("不法侵入");
    //VANDALISM
    else if(breakercount[LAWFLAG_VANDALISM])
-      addstr("VANDALISM");
+      addstr("器物損壊");
    //RESIST
    else if(breakercount[LAWFLAG_RESIST])
-      addstr("RESISTING ARREST");
+      addstr("逮捕抵抗");
    //DISTURBANCE
    else if(breakercount[LAWFLAG_DISTURBANCE])
-      addstr("DISTURBING THE PEACE");
+      addstr("治安妨害");
    //PUBLIC NUDITY
    else if(breakercount[LAWFLAG_PUBLICNUDITY])
-      addstr("PUBLIC NUDITY");
+      addstr("公然猥褻");
    //LOITERING
    else if(breakercount[LAWFLAG_LOITERING])
-      addstr("LOITERING");
+      addstr("浮浪");
    addstr("の容疑");
 }

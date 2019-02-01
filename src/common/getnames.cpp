@@ -759,38 +759,38 @@ std::string getlawflag(int type)
 {
    switch(type)
    {
-   case LAWFLAG_TREASON:return "国家反逆罪";
+   case LAWFLAG_TREASON:return "国家反逆";
    case LAWFLAG_TERRORISM:return "テロ";
    case LAWFLAG_MURDER:return "一級殺人";
    case LAWFLAG_KIDNAPPING:return "誘拐";
    case LAWFLAG_BANKROBBERY:return "銀行強盗";
    case LAWFLAG_ARSON:return "放火";
    case LAWFLAG_BURNFLAG:return(law[LAW_FLAGBURNING]==-2?"国旗不敬":"国旗焼却");
-   case LAWFLAG_SPEECH:return "有害な言論";
+   case LAWFLAG_SPEECH:return "煽動";
    case LAWFLAG_BROWNIES:return "違法薬物取引";
    case LAWFLAG_ESCAPED:return "脱獄";
    case LAWFLAG_HELPESCAPE:return "逃走援助";
    case LAWFLAG_JURY:return "陪審員買収";
-   case LAWFLAG_RACKETEERING:return "Racketeering";
-   case LAWFLAG_EXTORTION:return "Extortion";
-   case LAWFLAG_ARMEDASSAULT:return "傷害罪";
-   case LAWFLAG_ASSAULT:return "暴行罪";
+   case LAWFLAG_RACKETEERING:return "詐欺";
+   case LAWFLAG_EXTORTION:return "恐喝";
+   case LAWFLAG_ARMEDASSAULT:return "傷害";
+   case LAWFLAG_ASSAULT:return "暴行";
    case LAWFLAG_CARTHEFT:return "自動車窃盗";
-   case LAWFLAG_CCFRAUD:return "カード番号窃盗";
+   case LAWFLAG_CCFRAUD:return "カード番号不正取得";
    case LAWFLAG_THEFT:return "窃盗";
    case LAWFLAG_PROSTITUTION:return "売春";
    case LAWFLAG_HIREILLEGAL:return(law[LAW_IMMIGRATION]<1?"不法移民雇用":"不法雇用");
    //case LAWFLAG_GUNUSE:return "違法な武器の使用";
    //case LAWFLAG_GUNCARRY:return "違法な武器の運搬";
    case LAWFLAG_COMMERCE:return "業務妨害";
-   case LAWFLAG_INFORMATION:return "ハッキング";
-   case LAWFLAG_BURIAL:return "違法な遺体処理";
+   case LAWFLAG_INFORMATION:return "不法アクセス";
+   case LAWFLAG_BURIAL:return "死体遺棄";
    case LAWFLAG_BREAKING:return "不法侵入";
    case LAWFLAG_VANDALISM:return "器物損壊";
-   case LAWFLAG_RESIST:return "逮捕に抵抗した罪";
+   case LAWFLAG_RESIST:return "逮捕抵抗";
    case LAWFLAG_DISTURBANCE:return "治安妨害";
    case LAWFLAG_PUBLICNUDITY:return "公然猥褻";
-   case LAWFLAG_LOITERING:return "Loitering";
+   case LAWFLAG_LOITERING:return "浮浪";
    default:return "バグ";
    }
 }

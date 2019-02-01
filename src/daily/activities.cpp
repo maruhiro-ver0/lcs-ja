@@ -1467,11 +1467,11 @@ void doActivityGraffiti(vector<Creature *> &graffiti, char &clearformess)
                   Weapon *w = static_cast<Weapon*>(location[graffiti[s]->base]->loot[i]); //cast -XML
                   if(w->can_graffiti())
                   {
-                     addstr(" grabbed a ", gamelog);
+                     addstr("は", gamelog);
                      addstr(w->get_name(), gamelog);
-                     addstr(" from ", gamelog);
+                     addstr("を", gamelog);
                      addstr(location[graffiti[s]->base]->getname()); //TODO: Explicitly log it, or will the game log it?
-                     addstr(".", gamelog);
+                     addstr("で現地調達した。", gamelog);
 
                      getkey();
 
@@ -1520,16 +1520,17 @@ void doActivityGraffiti(vector<Creature *> &graffiti, char &clearformess)
             move(8,1);
 
             addstr(graffiti[s]->name, gamelog);
-            addstr(" was spotted by the police", gamelog);
+            addstr("は", gamelog);
             criminalize(*graffiti[s],LAWFLAG_VANDALISM);
             graffiti[s]->train(SKILL_STREETSENSE,20);
 
             if(graffiti[s]->activity.arg!=-1)
             {
-               addstr(" while working on the mural!", gamelog);
+               addstr("壁絵を描いている", gamelog);
                graffiti[s]->activity.arg=-1;
             }
-            else addstr(" while spraying an LCS tag!", gamelog);
+            else addstr("LCSのマークをスプレーしている", gamelog);
+            addstr("ところを警官に見られた!", gamelog);
             gamelog.nextMessage();
 
             newsstoryst *ns=new newsstoryst;
@@ -1554,11 +1555,10 @@ void doActivityGraffiti(vector<Creature *> &graffiti, char &clearformess)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
                addstr(graffiti[s]->name, gamelog);
-               addstr(" has completed a", gamelog);
-               if(power>3)addstr(" beautiful", gamelog);
-               addstr(" mural about ", gamelog);
+               addstr("は", gamelog);
+               if(power>3)addstr("すばらしい", gamelog);
                addstr(getview(issue,false), gamelog);
-               addstr(".", gamelog);
+               addstr("の壁絵を完成させた。", gamelog);
                gamelog.nextMessage();
 
                graffiti[s]->activity.arg=-1;
@@ -1574,7 +1574,7 @@ void doActivityGraffiti(vector<Creature *> &graffiti, char &clearformess)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
                addstr(graffiti[s]->name, gamelog);
-               addstr(" works through the night on a large mural.", gamelog);
+               addstr("は一晩をかけて巨大な壁絵を描いた。", gamelog);
                gamelog.nextMessage();
                graffiti[s]->train(SKILL_ART,MAX(10-graffiti[s]->get_skill(SKILL_ART)/2,1));
 
@@ -1587,9 +1587,9 @@ void doActivityGraffiti(vector<Creature *> &graffiti, char &clearformess)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(8,1);
             addstr(graffiti[s]->name, gamelog);
-            addstr(" has begun work on a large mural about ", gamelog);
+            addstr("は", gamelog);
             addstr(getview(issue,false), gamelog);
-            addstr(".", gamelog);
+            addstr("の巨大な壁絵を描き始めた。", gamelog);
             gamelog.nextMessage();
             graffiti[s]->activity.arg=issue;
             power=0;

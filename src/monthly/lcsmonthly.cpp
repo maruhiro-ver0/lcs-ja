@@ -740,20 +740,20 @@ void fundreport(char &clearformess)
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                switch(i)
                {
-               case INCOME_BROWNIES: mvaddstr(y,0,"Brownies"); break;
-               case INCOME_CARS: mvaddstr(y,0,"Car Sales"); break;
-               case INCOME_CCFRAUD: mvaddstr(y,0,"Credit Card Fraud"); break;
-               case INCOME_DONATIONS: mvaddstr(y,0,"Donations"); break;
-               case INCOME_SKETCHES: mvaddstr(y,0,"Drawing Sales"); break;
-               case INCOME_EMBEZZLEMENT: mvaddstr(y,0,"Embezzlement"); break;
-               case INCOME_EXTORTION: mvaddstr(y,0,"Extortion"); break;
-               case INCOME_HUSTLING: mvaddstr(y,0,"Hustling"); break;
-               case INCOME_PAWN: mvaddstr(y,0,"Pawning Goods"); break;
-               case INCOME_PROSTITUTION: mvaddstr(y,0,"Prostitution"); break;
-               case INCOME_BUSKING: mvaddstr(y,0,"Street Music"); break;
-               case INCOME_THIEVERY: mvaddstr(y,0,"Thievery"); break;
-               case INCOME_TSHIRTS: mvaddstr(y,0,"T-Shirt Sales"); break;
-               default: mvaddstr(y,0,"Other Income"); break;
+               case INCOME_BROWNIES: mvaddstr(y,0,"ケーキの販売"); break;
+               case INCOME_CARS: mvaddstr(y,0,"自動車の売却"); break;
+               case INCOME_CCFRAUD: mvaddstr(y,0,"カード番号取得"); break;
+               case INCOME_DONATIONS: mvaddstr(y,0,"寄付"); break;
+               case INCOME_SKETCHES: mvaddstr(y,0,"絵の販売"); break;
+               case INCOME_EMBEZZLEMENT: mvaddstr(y,0,"横領"); break;
+               case INCOME_EXTORTION: mvaddstr(y,0,"恐喝"); break;
+               case INCOME_HUSTLING: mvaddstr(y,0,"窃盗"); break;
+               case INCOME_PAWN: mvaddstr(y,0,"備品の売却"); break;
+               case INCOME_PROSTITUTION: mvaddstr(y,0,"売春"); break;
+               case INCOME_BUSKING: mvaddstr(y,0,"ストリートミュージック"); break;
+               case INCOME_THIEVERY: mvaddstr(y,0,"盗品"); break;
+               case INCOME_TSHIRTS: mvaddstr(y,0,"Tシャツの販売"); break;
+               default: mvaddstr(y,0,"その他の収入"); break;
                }
             }
             totalmoney+=ledger.income[i];

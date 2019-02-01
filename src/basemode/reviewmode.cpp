@@ -359,7 +359,7 @@ void review_mode(short mode)
          if(mode==REVIEWMODE_JUSTICE)set_color(COLOR_YELLOW,COLOR_BLACK,1);
          else set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(y,42);
-         if(temppool[p]->location==-1) addstr("Away");
+         if(temppool[p]->location==-1) addstr("休暇");
          else addstr(location[temppool[p]->location]->getname(true, true));
 
          move(y,57);
@@ -376,7 +376,7 @@ void review_mode(short mode)
                      if(squad[sq]->activity.type!=ACTIVITY_NONE)
                      {
                         set_color(COLOR_GREEN,COLOR_BLACK,1);
-                        addstr("SQUAD");
+                        addstr("部隊");
                         usepers=0;
                      }
                   }
@@ -392,9 +392,8 @@ void review_mode(short mode)
             {
                set_color(COLOR_MAGENTA,COLOR_BLACK,1);
                addstr(temppool[p]->joindays);
-               addstr(" ");
-               if(temppool[p]->joindays>1)addstr("Days");
-               else addstr("Day");
+               if(temppool[p]->joindays>1)addstr("日");
+               else addstr("日");
                break;
             }
          case REVIEWMODE_JUSTICE:
@@ -403,11 +402,10 @@ void review_mode(short mode)
                   location[temppool[p]->location]->type==SITE_GOVERNMENT_PRISON)
                {
                   set_color(COLOR_RED,COLOR_BLACK,1);
-                  addstr("DEATH ROW: ");
+                  addstr("死刑囚監房: ");
                   addstr(temppool[p]->sentence);
-                  addstr(" ");
-                  if(temppool[p]->sentence>1)addstr("Months");
-                  else addstr("Month");
+                  if(temppool[p]->sentence>1)addstr("ヶ月");
+                  else addstr("ヶ月");
                }
                else if(temppool[p]->sentence<=-1&&
                         location[temppool[p]->location]->type==SITE_GOVERNMENT_PRISON)
@@ -416,19 +414,18 @@ void review_mode(short mode)
                   if(temppool[p]->sentence<-1)
                   {
                      addstr(-(temppool[p]->sentence));
-                     addstr(" Life Sentences");
+                     addstr(" 終身刑");
                   }
                   else
-                     addstr("Life Sentence");
+                     addstr("終身刑");
                }
                else if(temppool[p]->sentence!=0&&
                         location[temppool[p]->location]->type==SITE_GOVERNMENT_PRISON)
                {
                   set_color(COLOR_YELLOW,COLOR_BLACK,1);
                   addstr(temppool[p]->sentence);
-                  addstr(" ");
-                  if(temppool[p]->sentence>1)addstr("Months");
-                  else addstr("Month");
+                  if(temppool[p]->sentence>1)addstr("ヶ月");
+                  else addstr("ヶ月");
                }
                else
                {
@@ -440,11 +437,10 @@ void review_mode(short mode)
          case REVIEWMODE_CLINIC:
             {
                set_color(COLOR_CYAN,COLOR_BLACK,1);
-               addstr("Out in ");
+               addstr("退院まで");
                addstr(temppool[p]->clinic);
-               addstr(" ");
-               if(temppool[p]->clinic>1)addstr("Months");
-               else addstr("Month");
+               if(temppool[p]->clinic>1)addstr("ヶ月");
+               else addstr("ヶ月");
                break;
             }
          case REVIEWMODE_SLEEPERS:
@@ -459,9 +455,8 @@ void review_mode(short mode)
             {
                set_color(COLOR_MAGENTA,COLOR_BLACK,1);
                addstr(temppool[p]->deathdays);
-               addstr(" ");
-               if(temppool[p]->deathdays>1)addstr("Days");
-               else addstr("Day");
+               if(temppool[p]->deathdays>1)addstr("日");
+               else addstr("日");
                break;
             }
          case REVIEWMODE_AWAY:
@@ -470,12 +465,11 @@ void review_mode(short mode)
                if(temppool[p]->hiding!=-1)
                {
                   addstr(temppool[p]->dating+temppool[p]->hiding);
-                  addstr(" ");
                   if(temppool[p]->dating+temppool[p]->hiding>1)
-                     addstr("Days");
-                  else addstr("Day");
+                     addstr("日");
+                  else addstr("日");
                }
-               else addstr("<No Contact>");
+               else addstr("<連絡なし>");
                break;
             }
          }

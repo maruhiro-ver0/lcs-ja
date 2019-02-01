@@ -43,7 +43,7 @@ void trial(Creature &g)
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(1,1);
    addstr(g.name, gamelog);
-   addstr(" is standing trial.", gamelog);
+   addstr("の裁判が始まった。", gamelog);
    gamelog.newline();
 
    getkey();
@@ -87,18 +87,18 @@ void trial(Creature &g)
    move(3,1);
    if(sleeperjudge)
    {
-      addstr("Sleeper ", gamelog);
+      addstr("潜伏者", gamelog);
       addstr(sleeperjudge->name, gamelog);
-      addstr(" reads the charges, trying to hide a smile:", gamelog);
+      addstr("は笑みを隠しながら罪状を読み上げた:", gamelog);
       g.confessions=0; //Made sleeper judge prevent these lunatics from testifying
    }
-   else addstr("The judge reads the charges:", gamelog);
+   else addstr("裁判官は罪状を読み上げた:", gamelog);
    gamelog.newline();
    set_color(COLOR_RED,COLOR_BLACK,1);
    move(5,1);
-   addstr("The defendant, ", gamelog);
+   addstr("被告人", gamelog);
    addstr(g.propername, gamelog);
-   addstr(", is charged with ", gamelog);
+   addstr("には、", gamelog);
    int x=2,y=5;
    while((typenum--)>0)
    {
@@ -121,9 +121,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_TREASON]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_TREASON], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("treason", gamelog);
+         addstr("国家反逆", gamelog);
          breaker[LAWFLAG_TREASON]=0;
       }
       else if(breaker[LAWFLAG_TERRORISM])
@@ -131,9 +131,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_TERRORISM]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_TERRORISM], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("terrorism", gamelog);
+         addstr("テロ", gamelog);
          breaker[LAWFLAG_TERRORISM]=0;
       }
       else if(breaker[LAWFLAG_MURDER])//XXX: How about the addition of a `manslaughter` charge? -- LK
@@ -143,9 +143,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_MURDER]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_MURDER], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("murder", gamelog);
+         addstr("殺人", gamelog);
          breaker[LAWFLAG_MURDER]=0;
       }
       else if(breaker[LAWFLAG_KIDNAPPING])
@@ -153,9 +153,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_KIDNAPPING]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_KIDNAPPING], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("kidnapping", gamelog);
+         addstr("誘拐", gamelog);
          breaker[LAWFLAG_KIDNAPPING]=0;
       }
       else if(breaker[LAWFLAG_BANKROBBERY])
@@ -163,9 +163,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_BANKROBBERY]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_BANKROBBERY], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("bank robbery", gamelog);
+         addstr("銀行強盗", gamelog);
          breaker[LAWFLAG_BANKROBBERY]=0;
       }
       else if(breaker[LAWFLAG_ARSON])
@@ -173,9 +173,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_ARSON]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_ARSON], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("arson", gamelog);
+         addstr("放火", gamelog);
          breaker[LAWFLAG_ARSON]=0;
       }
       else if(breaker[LAWFLAG_BURNFLAG] && law[LAW_FLAGBURNING] <= 0)
@@ -183,14 +183,14 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_BURNFLAG]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_BURNFLAG]);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
          if(law[LAW_FLAGBURNING]==-2)
-            addstr("Flag Murder", gamelog);
+            addstr("国旗不敬", gamelog);
          else if(law[LAW_FLAGBURNING]==-1)
-            addstr("felony flag burning", gamelog);
+            addstr("国旗焼却罪", gamelog);
          else if(law[LAW_FLAGBURNING]==0)
-            addstr("flag burning", gamelog);
+            addstr("国旗焼却", gamelog);
          breaker[LAWFLAG_BURNFLAG]=0;
       }
       else if(breaker[LAWFLAG_SPEECH])
@@ -198,9 +198,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_SPEECH]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_SPEECH], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("sedition", gamelog);
+         addstr("煽動", gamelog);
          breaker[LAWFLAG_SPEECH]=0;
       }
       else if(breaker[LAWFLAG_BROWNIES])
@@ -208,9 +208,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_BROWNIES]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_BROWNIES], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("drug dealing", gamelog);
+         addstr("違法薬物取引", gamelog);
          breaker[LAWFLAG_BROWNIES]=0;
          //x=2;
       }
@@ -219,9 +219,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_ESCAPED]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_ESCAPED], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("escaping prison", gamelog);
+         addstr("脱獄", gamelog);
          breaker[LAWFLAG_ESCAPED]=0;
          //autoconvict=1; // *Impossible* to beat this charge if this line isn't commented out
       }
@@ -230,9 +230,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_HELPESCAPE]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_HELPESCAPE], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("aiding a prison escape", gamelog);
+         addstr("逃走援助", gamelog);
          breaker[LAWFLAG_HELPESCAPE]=0;
          x=2;
       }
@@ -241,14 +241,14 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_JURY]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_JURY], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("jury tampering", gamelog);
+         addstr("陪審員買収", gamelog);
          breaker[LAWFLAG_JURY]=0;
       }
       else if(breaker[LAWFLAG_RACKETEERING])
       {
-         addstr("racketeering", gamelog);
+         addstr("詐欺", gamelog);
          breaker[LAWFLAG_RACKETEERING]=0;
       }
       else if(breaker[LAWFLAG_EXTORTION])
@@ -256,9 +256,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_EXTORTION]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_EXTORTION], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("extortion", gamelog);
+         addstr("恐喝", gamelog);
          breaker[LAWFLAG_EXTORTION]=0;
       }
       else if(breaker[LAWFLAG_ARMEDASSAULT])
@@ -266,9 +266,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_ARMEDASSAULT]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_ARMEDASSAULT], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("felony assault", gamelog);
+         addstr("傷害", gamelog);
          breaker[LAWFLAG_ARMEDASSAULT]=0;
       }
       else if(breaker[LAWFLAG_ASSAULT])
@@ -276,9 +276,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_ASSAULT]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_ASSAULT], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("misdemeanor assault", gamelog);
+         addstr("暴行", gamelog);
          breaker[LAWFLAG_ASSAULT]=0;
       }
       else if(breaker[LAWFLAG_CARTHEFT])
@@ -286,9 +286,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_CARTHEFT]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_CARTHEFT], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("grand theft auto", gamelog);// If chase lasts more than 20 `turns` then
+         addstr("自動車窃盗", gamelog);// If chase lasts more than 20 `turns` then
          breaker[LAWFLAG_CARTHEFT]=0;// this should be `Grand Theft Auto` -- LK
       }                              // We'll just make it grand theft auto anyway :) -Fox
       else if(breaker[LAWFLAG_CCFRAUD])
@@ -296,9 +296,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_CCFRAUD]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_CCFRAUD], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("credit card fraud", gamelog);
+         addstr("カード番号不正取得", gamelog);
          breaker[LAWFLAG_CCFRAUD]=0;
       }
       else if(breaker[LAWFLAG_THEFT])
@@ -306,9 +306,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_THEFT]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_THEFT], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("petty larceny", gamelog);
+         addstr("窃盗", gamelog);
          breaker[LAWFLAG_THEFT]=0;
       }
       else if(breaker[LAWFLAG_PROSTITUTION])
@@ -316,9 +316,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_PROSTITUTION]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_PROSTITUTION], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("prostitution", gamelog);
+         addstr("売春", gamelog);
          breaker[LAWFLAG_PROSTITUTION]=0;
       }
       else if(breaker[LAWFLAG_HIREILLEGAL])
@@ -326,10 +326,10 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_HIREILLEGAL]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_HIREILLEGAL], gamelog);
-            addstr(" counts of ", gamelog);
-            addstr((law[LAW_IMMIGRATION]<1?"hiring illegal aliens":"hiring undocumented workers"), gamelog);
+            addstr("件の", gamelog);
+            addstr((law[LAW_IMMIGRATION]<1?"不法移民雇用":"不法雇用"), gamelog);
          }
-         else addstr((law[LAW_IMMIGRATION]<1?"hiring an illegal alien":"hiring an undocumented worker"), gamelog);
+         else addstr((law[LAW_IMMIGRATION]<1?"不法移民雇用":"不法雇用"), gamelog);
          breaker[LAWFLAG_HIREILLEGAL]=0;
          x=2;
       }
@@ -360,9 +360,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_COMMERCE]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_COMMERCE], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("interference with interstate commerce", gamelog);
+         addstr("業務妨害", gamelog);
          breaker[LAWFLAG_COMMERCE]=0;
          x=2;
       }
@@ -371,9 +371,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_INFORMATION]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_INFORMATION], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("unlawful access of an information system", gamelog);
+         addstr("情報システムへの違法アクセス", gamelog);
          breaker[LAWFLAG_INFORMATION]=0;
          x=2;
       }
@@ -382,9 +382,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_BURIAL]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_BURIAL], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("unlawful burial", gamelog);
+         addstr("死体遺棄", gamelog);
          breaker[LAWFLAG_BURIAL]=0;
       }
       else if(breaker[LAWFLAG_BREAKING])
@@ -392,9 +392,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_BREAKING]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_BREAKING], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("breaking and entering", gamelog);
+         addstr("不法侵入", gamelog);
          breaker[LAWFLAG_BREAKING]=0;
       }
       else if(breaker[LAWFLAG_VANDALISM])
@@ -402,14 +402,14 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_VANDALISM]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_VANDALISM], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("vandalism", gamelog);
+         addstr("器物損壊", gamelog);
          breaker[LAWFLAG_VANDALISM]=0;
       }
       else if(breaker[LAWFLAG_RESIST])
       {
-         addstr("resisting arrest", gamelog);
+         addstr("逮捕抵抗", gamelog);
          breaker[LAWFLAG_RESIST]=0;
       }
       else if(breaker[LAWFLAG_DISTURBANCE])
@@ -417,9 +417,9 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_DISTURBANCE]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_DISTURBANCE], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("disturbing the peace", gamelog);
+         addstr("治安妨害", gamelog);
          breaker[LAWFLAG_DISTURBANCE]=0;
       }
       else if(breaker[LAWFLAG_PUBLICNUDITY])
@@ -427,20 +427,20 @@ void trial(Creature &g)
          if(g.crimes_suspected[LAWFLAG_PUBLICNUDITY]>1)
          {
             addstr(g.crimes_suspected[LAWFLAG_PUBLICNUDITY], gamelog);
-            addstr(" counts of ", gamelog);
+            addstr("件の", gamelog);
          }
-         addstr("indecent exposure", gamelog);
+         addstr("公然猥褻", gamelog);
          breaker[LAWFLAG_PUBLICNUDITY]=0;
       }
       else if(breaker[LAWFLAG_LOITERING])
       {
-         addstr("loitering", gamelog);
+         addstr("浮浪", gamelog);
          breaker[LAWFLAG_LOITERING]=0;
       }
 
-      if(typenum>1) addstr(", ", gamelog);
-      if(typenum==1) addstr(" and ", gamelog);
-      if(typenum==0) addstr(".", gamelog);
+      if(typenum>1) addstr("、", gamelog);
+      if(typenum==1) addstr("そして", gamelog);
+      if(typenum==0) addstr("の容疑がある。", gamelog);
 
       getkey();
    }
@@ -453,11 +453,11 @@ void trial(Creature &g)
       if(g.confessions>1)
       {
          addstr(g.confessions, gamelog);
-         addstr(" former LCS members will testify against ", gamelog);
+         addstr("人のLCS正式メンバーは", gamelog);
       }
-      else addstr("A former LCS member will testify against ", gamelog);
+      else addstr("LCS正式メンバーは", gamelog);
       addstr(g.name, gamelog);
-      addstr(".", gamelog);
+      addstr("について不利な証言をした。", gamelog);
       gamelog.newline();
 
       getkey();

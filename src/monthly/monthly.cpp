@@ -598,9 +598,9 @@ void passmonth(char &clearformess,char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
                addstr(pool[p]->name, gamelog);
-               addstr(" has been transferred to ", gamelog);
+               addstr("は", gamelog);
                addstr(location[hospital]->name, gamelog);
-               addstr(".", gamelog);
+               addstr("に移された。", gamelog);
                gamelog.nextMessage();
 
                getkey();
@@ -617,9 +617,9 @@ void passmonth(char &clearformess,char canseethings)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(8,1);
             addstr(pool[p]->name, gamelog);
-            addstr(" has left ", gamelog);
+            addstr("は", gamelog);
             addstr(location[pool[p]->location]->name, gamelog);
-            addstr(".", gamelog);
+            addstr("を退院した。", gamelog);
             gamelog.nextMessage();
 
             int hs=find_homeless_shelter(*pool[p]);

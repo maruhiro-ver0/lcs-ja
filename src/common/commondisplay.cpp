@@ -262,7 +262,7 @@ void locheader()
    {
       if(selectedsiege==-1)
       {
-         addstr("No Squad Selected");
+         addstr("部隊なし");
          addstr(" ");
       }
       else
