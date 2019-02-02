@@ -364,15 +364,15 @@ void mode_site()
          if(partysize>1)set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(11,1);
-         addstr("O - 部隊のリベラルの順序を変える");
+         addstr("O - リベラルの順序を変える");
          if(partysize>0&&(party_status==-1||partysize>1))set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(12,1);
-         addstr("# - 部隊のリベラルの状態を確認する");
+         addstr("# - リベラルの状態を表示する");
          if(party_status!=-1)set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(13,1);
-         addstr("0 - 部隊のリベラルの状態を表示する");
+         addstr("0 - 部隊の状態を表示する");
 
          if(len(groundloot)||(levelmap[locx][locy][locz].flag&SITEBLOCK_LOOT))
             set_color(COLOR_WHITE,COLOR_BLACK,0);

@@ -552,7 +552,7 @@ void advanceday(char &clearformess,char canseethings)
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(8,1);
          addstr(pool[p]->name, gamelog);
-         addstr(" surfs the Net for recent opinion polls.", gamelog);
+         addstr("は世論の動向を調査するためネットを検索した。", gamelog);
          gamelog.nextMessage();
 
          getkey();

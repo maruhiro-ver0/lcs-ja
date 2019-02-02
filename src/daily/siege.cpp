@@ -1789,32 +1789,32 @@ char sally_forth_aux(int loc)
          if(partysize>1)set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(9,40);
-         addstr("O - Change the squad's Liberal order");
+         addstr("O - リベラルの順序を変更する");
          if(partysize>0&&(party_status==-1||partysize>1))set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(10,40);
-         addstr("# - Check the status of a squad Liberal");
+         addstr("# - リベラルの状態を表示する");
          if(party_status!=-1)set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(11,40);
-         addstr("0 - Show the squad's Liberal status");
+         addstr("0 - 部隊の状態を表示する");
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(9,1);
-         addstr("D - Escape");
+         addstr("D - 脱出する");
          move(10,1);
-         addstr("E - Equip");
+         addstr("E - 装備");
          move(11,1);
-         addstr("F - Fight!");
+         addstr("F - 戦う!");
          move(12,1);
-         addstr("G - Surrender");
+         addstr("G - 投降する");
       }
       else
       {
          endcheck(-2); // play the right music in case we're dead
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(9,1);
-         addstr("C - Reflect on your Conservative judgment.");
+         addstr("C - 保守的判断を反省する");
       }
 
       // Enemies
@@ -1896,7 +1896,7 @@ char sally_forth_aux(int loc)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                clearmessagearea();
                move(16,1);
-               addstr("You're free!", gamelog);
+               addstr("これで自由だ!", gamelog);
                gamelog.nextMessage();
 
                getkey();
@@ -1910,7 +1910,7 @@ char sally_forth_aux(int loc)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                clearmessagearea();
                move(16,1);
-               addstr("The siege is broken!", gamelog);
+               addstr("包囲網は崩壊した!", gamelog);
                gamelog.nextMessage();
 
                getkey();
@@ -1932,24 +1932,24 @@ void sally_forth()
    music.play(MUSIC_DEFENSE);
    erase();
    set_color(COLOR_RED,COLOR_BLACK,1);
-   move(1,26);
-   addstr("UNDER SIEGE: ESCAPE OR ENGAGE");
+   move(1,30);
+   addstr("包囲網: 脱出か死か");
 
    set_color(COLOR_WHITE,COLOR_BLACK,0);
-   move(3,16);
-   addstr("You are about to exit the compound to lift the Conservative");
+   move(3,15);
+   addstr("あなたは今、アジトを囲む保守派の包囲網から脱出し");
    move(4,11);
-   addstr("siege on your safehouse.  The enemy is ready for you, and");
+   addstr("ようとしている。敵の準備は整っている。そして、あなた");
    move(5,11);
-   addstr("you will have to defeat them all or run away to survive this");
+   addstr("は彼らを倒すか、それともここから逃げ出すかして生き延");
    move(6,11);
-   addstr("encounter.");
+   addstr("びなければならない。");
    move(8,11);
-   addstr("Your Squad has filled out to six members if any were ");
+   addstr("あなたの部隊は可能ならば6人まで増強することができる。");
    move(9,11);
-   addstr("available.  If you have a larger pool of Liberals, they");
+   addstr("もしリベラルが多数いるならば、彼らから援護射撃を得ら");
    move(10,11);
-   addstr("will provide cover fire from the compound until needed.");
+   addstr("れるだろう。");
 
    int loc=-1;
    if(selectedsiege!=-1)loc=selectedsiege;
@@ -1957,11 +1957,11 @@ void sally_forth()
    if(loc==-1)return;
 
    set_color(COLOR_RED,COLOR_BLACK,1);
-   move(23,11);
-   addstr("Press any key to Confront the Conservative Aggressors");
+   move(23,18);
+   addstr("何かキーを押すと保守の侵略者と立ち向かう");
 
    // Seperate logging text
-   gamelog.log("Your Liberals sally forth to confront the siege.");
+   gamelog.log("リベラル達は果敢にも包囲網に立ち向かう。");
 
    getkey();
 
@@ -2023,7 +2023,7 @@ void sally_forth()
    // forcing you to "give up".
    if(result==0)
    {
-      gamelog.log("You have been defeated.");
+      gamelog.log("あなたは敗れた。");
       resolvesafehouses();
    }
 }

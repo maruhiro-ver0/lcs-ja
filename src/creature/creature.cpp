@@ -1410,9 +1410,9 @@ const char* Creature::heshe(bool capitalize) const
 {  // subject pronoun (nominative case)
    switch(gender_liberal)
    {
-   case GENDER_MALE: return capitalize?"He":"he";
-   case GENDER_FEMALE: return capitalize?"She":"she";
-   default: return capitalize?"Xe":"xe"; // Elite Liberal gender-neutral pronoun... it is pronounced "zee" rhyming with "he" and "she"
+   case GENDER_MALE: return capitalize?"彼":"彼";
+   case GENDER_FEMALE: return capitalize?"彼女":"彼女";
+   default: return capitalize?"彼/彼女":"彼/彼女"; // Elite Liberal gender-neutral pronoun... it is pronounced "zee" rhyming with "he" and "she"
    // see http://homepage.ntlworld.com/jonathan.deboynepollard/FGA/sex-neutral-pronouns.html (great reference on this)
    // or http://en.wiktionary.org/wiki/xe or http://en.wikipedia.org/wiki/Gender-specific_and_gender-neutral_pronouns#Summary (wiki references)
    // or http://genderneutralpronoun.wordpress.com/about/alice/xe/ (examples of it being used in text)
@@ -1433,9 +1433,9 @@ const char* Creature::hisher(bool capitalize) const
 {  // pronominal adjective (possessive determiner)
    switch(gender_liberal)
    {
-   case GENDER_MALE: return capitalize?"His":"his";
-   case GENDER_FEMALE: return capitalize?"Her":"her";
-   default: return capitalize?"Xyr":"xyr"; // Elite Liberal gender-neutral pronoun... it is pronounced "zur" rhyming with "her"
+   case GENDER_MALE: return capitalize?"彼の":"彼の";
+   case GENDER_FEMALE: return capitalize?"彼女の":"彼女の";
+   default: return capitalize?"その":"その"; // Elite Liberal gender-neutral pronoun... it is pronounced "zur" rhyming with "her"
    // see http://homepage.ntlworld.com/jonathan.deboynepollard/FGA/sex-neutral-pronouns.html (great reference on this)
    // or http://en.wiktionary.org/wiki/xyr or http://en.wikipedia.org/wiki/Gender-specific_and_gender-neutral_pronouns#Summary (wiki references)
    // or http://genderneutralpronoun.wordpress.com/about/alice/xe/ (examples of it being used in text)
@@ -1448,9 +1448,9 @@ const char* Creature::himher(bool capitalize) const
 {  // object pronoun (oblique case)
    switch(gender_liberal)
    {
-   case GENDER_MALE: return capitalize?"Him":"him";
-   case GENDER_FEMALE: return capitalize?"Her":"her";
-   default: return capitalize?"Xem":"xem"; // Elite Liberal gender-neutral pronoun... it is pronounced "zem" rhyming with "them"
+   case GENDER_MALE: return capitalize?"彼":"彼";
+   case GENDER_FEMALE: return capitalize?"彼女":"彼女";
+   default: return capitalize?"彼/彼女":"彼/彼女"; // Elite Liberal gender-neutral pronoun... it is pronounced "zem" rhyming with "them"
    // see http://homepage.ntlworld.com/jonathan.deboynepollard/FGA/sex-neutral-pronouns.html (great reference on this)
    // or http://en.wiktionary.org/wiki/xem or http://en.wikipedia.org/wiki/Gender-specific_and_gender-neutral_pronouns#Summary (wiki references)
    // or http://genderneutralpronoun.wordpress.com/about/alice/xe/ (examples of it being used in text)

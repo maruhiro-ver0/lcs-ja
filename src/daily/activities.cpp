@@ -296,39 +296,7 @@ void repairarmor(Creature &cr,char &clearformess)
 
       std::string result = "";
       result += cr.name;
-
-      if (armorDestroyed)
-      {
-         set_color(COLOR_RED,COLOR_BLACK,1);
-         result += " disposes of ";
-      }else if(repairfailed && armor->is_bloody())
-      {
-         set_color(COLOR_CYAN,COLOR_BLACK,1);
-         result += " cleans ";
-      }else if(repairfailed)
-      {
-         set_color(COLOR_WHITE,COLOR_BLACK,1);
-         result += " is working to repair ";
-      }else
-      {
-         if(!qualityReduction)
-         {
-            set_color(COLOR_GREEN,COLOR_BLACK,1);
-            result += " repairs ";
-         }else
-         {
-            armorDestroyed = !armor->decrease_quality(1);
-            if(armorDestroyed)
-            {
-               set_color(COLOR_RED,COLOR_BLACK,1);
-               result += " finds there is no hope of repairing ";
-            }else
-            {
-               set_color(COLOR_YELLOW,COLOR_BLACK,1);
-               result += " repairs what little can be fixed of ";
-            }
-         }
-      }
+      result += "は";
 
       if (pile)
       {
@@ -338,9 +306,44 @@ void repairarmor(Creature &cr,char &clearformess)
          result += cr.hisher();
 
       if (armorDestroyed)
-         result += " ruined";
+         result += "壊れた";
 
-      result += " " + armorname + ".";
+      result += armorname + "を";
+
+      if (armorDestroyed)
+      {
+         set_color(COLOR_RED,COLOR_BLACK,1);
+         result += "廃棄した";
+      }else if(repairfailed && armor->is_bloody())
+      {
+         set_color(COLOR_CYAN,COLOR_BLACK,1);
+         result += "洗濯した";
+      }else if(repairfailed)
+      {
+         set_color(COLOR_WHITE,COLOR_BLACK,1);
+         result += "修繕しようとした";
+      }else
+      {
+         if(!qualityReduction)
+         {
+            set_color(COLOR_GREEN,COLOR_BLACK,1);
+            result += "修繕した";
+         }else
+         {
+            armorDestroyed = !armor->decrease_quality(1);
+            if(armorDestroyed)
+            {
+               set_color(COLOR_RED,COLOR_BLACK,1);
+               result += "直せないことがわかった";
+            }else
+            {
+               set_color(COLOR_YELLOW,COLOR_BLACK,1);
+               result += "直すのが困難だとわかった";
+            }
+         }
+      }
+
+      result += "。";
 
       addstr(result,gamelog);
       gamelog.nextMessage();
@@ -437,7 +440,7 @@ void makearmor(Creature &cr,char &clearformess)
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(8,1);
          addstr(cr.name, gamelog);
-         addstr(" cannot find enough cloth to reduce clothing costs.", gamelog);
+         addstr("は買うよりも安く服を作れないとわかった。", gamelog);
          gamelog.nextMessage();
 
          getkey();
@@ -463,24 +466,26 @@ void makearmor(Creature &cr,char &clearformess)
          addstr(cr.name, gamelog);
          if(quality <= ((Armor*)it)->get_quality_levels() )
          {
-            addstr(" has made a ", gamelog);
+            addstr("は", gamelog);
             switch(quality)
             {
-               case 1:addstr("first-rate", gamelog);break;
-               case 2:addstr("second-rate", gamelog);break;
-               case 3:addstr("third-rate", gamelog);break;
-               case 4:addstr("fourth-rate", gamelog);break;
-               default:addstr(quality,gamelog);addstr("th-rate", gamelog); break;
+               case 1:addstr("1級品", gamelog);break;
+               case 2:addstr("2級品", gamelog);break;
+               case 3:addstr("3級品", gamelog);break;
+               case 4:addstr("4級品", gamelog);break;
+               default:addstr(quality,gamelog);addstr("級品", gamelog); break;
             }
             location[cr.location]->loot.push_back(it);
+            addstr("の", gamelog);
+            addstr(armortype[at]->get_name(), gamelog);
+            addstr("を作った。", gamelog);
          }
          else
          {
-            addstr(" wasted the materials for a", gamelog);
+            addstr("材料を無駄にするだけで", gamelog);
+            addstr(armortype[at]->get_name(), gamelog);
+            addstr("を作れなかった。", gamelog);
          }
-         addstr(" ", gamelog);
-         addstr(armortype[at]->get_name(), gamelog);
-         addstr(".", gamelog);
          gamelog.nextMessage();
 
          getkey();
@@ -545,170 +550,170 @@ void survey(Creature *cr)
    //TODO: Sort out the gamelog for this.
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
-   addstr("Survey of Public Opinion, According to Recent Polls");
+   addstr("現在の世論");
 
    int y=8,approval=presidentapproval();
    move(2,0);
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    addstr(approval/10+(LCSrandom(noise*2+1)-noise), gamelog);
-   addstr("% had a favorable opinion of ");
+   addstr("%の人が");
    set_alignment_color(exec[EXEC_PRESIDENT],true);
-   addstr("President ");
    addstr(execname[EXEC_PRESIDENT]);
    set_color(COLOR_WHITE,COLOR_BLACK,0);
-   addstr(".");
+   addstr("大統領に良い印象を持っている。");
 
    //Top excitement issue
    if(maxview!=-1)
    {
       move(4,0);
-      addstr("The people are most concerned about ");
+      addstr("多くの人が");
       switch(maxview)
       {
          case VIEW_GAY:
-            if(attitude[VIEW_GAY]>50) addstr("protecting gay rights.");
-            else addstr("protecting the traditional family.");
+            if(attitude[VIEW_GAY]>50) addstr("同性愛者の権利をどう守るか");
+            else addstr("伝統的な家族観をどう守るか");
             break;
          case VIEW_DEATHPENALTY:
-            if(attitude[VIEW_DEATHPENALTY]>50) addstr("the unjust death penalty.");
+            if(attitude[VIEW_DEATHPENALTY]>50) addstr("不当な死刑");
             else
             {
-               if(law[LAW_DEATHPENALTY]==2) addstr("restoring the death penalty.");
-               else addstr("protecting the death penalty.");
+               if(law[LAW_DEATHPENALTY]==2) addstr("死刑制度の復活");
+               else addstr("死刑制度の維持");
             }
             break;
          case VIEW_TAXES:
-            if(attitude[VIEW_TAXES]>50) addstr("the oppressive tax structure.");
-            else addstr("the excessive tax burden.");
+            if(attitude[VIEW_TAXES]>50) addstr("不公正な税制度");
+            else addstr("重すぎる税負担");
             break;
          case VIEW_NUCLEARPOWER:
-            if(attitude[VIEW_NUCLEARPOWER]>50) addstr("the dangers of nuclear power.");
+            if(attitude[VIEW_NUCLEARPOWER]>50) addstr("原子力の危険性");
             else
             {
-               if(law[LAW_NUCLEARPOWER]==2) addstr("legalizing nuclear power.");
-               else  addstr("threats to nuclear power.");
+               if(law[LAW_NUCLEARPOWER]==2) addstr("原子力の合法化");
+               else  addstr("原子力の危機");
             }
             break;
          case VIEW_ANIMALRESEARCH:
-            if(attitude[VIEW_ANIMALRESEARCH]>50) addstr("brutal animal research practices.");
-            else addstr("excessive regulation of animal research.");
+            if(attitude[VIEW_ANIMALRESEARCH]>50) addstr("brutal animal research practices");
+            else addstr("excessive regulation of animal research");
             break;
          case VIEW_POLICEBEHAVIOR:
-            if(attitude[VIEW_POLICEBEHAVIOR]>50) addstr("preventing police brutality.");
-            else addstr("expanding police powers.");
+            if(attitude[VIEW_POLICEBEHAVIOR]>50) addstr("preventing police brutality");
+            else addstr("expanding police powers");
             break;
          case VIEW_INTELLIGENCE:
-            if(attitude[VIEW_INTELLIGENCE]>50) addstr("civil liberties and personal privacy.");
-            else addstr("national security and intelligence.");
+            if(attitude[VIEW_INTELLIGENCE]>50) addstr("civil liberties and personal privacy");
+            else addstr("national security and intelligence");
             break;
          case VIEW_FREESPEECH:
-            if(attitude[VIEW_FREESPEECH]>50) addstr("protecting free speech.");
-            else addstr("ending hate speech.");
+            if(attitude[VIEW_FREESPEECH]>50) addstr("言論の自由をどう守るか");
+            else addstr("どうやってヘイトスピーチを止めさせるか");
             break;
          case VIEW_GENETICS:
-            if(attitude[VIEW_GENETICS]>50) addstr("the dangers of genetic engineering.");
-            else addstr("excessive regulation of genetic research.");
+            if(attitude[VIEW_GENETICS]>50) addstr("the dangers of genetic engineering");
+            else addstr("excessive regulation of genetic research");
             break;
          case VIEW_JUSTICES:
-            if(attitude[VIEW_JUSTICES]>50) addstr("appointing proper Liberal justices.");
-            else addstr("appointing proper Conservative justices.");
+            if(attitude[VIEW_JUSTICES]>50) addstr("appointing proper Liberal justices");
+            else addstr("appointing proper Conservative justices");
             break;
          case VIEW_SWEATSHOPS:
-            if(attitude[VIEW_SWEATSHOPS]>50) addstr("threats to labor rights.");
-            else addstr("corrupt union thugs.");
+            if(attitude[VIEW_SWEATSHOPS]>50) addstr("threats to labor rights");
+            else addstr("corrupt union thugs");
             break;
          case VIEW_POLLUTION:
-            if(attitude[VIEW_POLLUTION]>50) addstr("threats to the environment.");
-            else addstr("excessive regulation of industry.");
+            if(attitude[VIEW_POLLUTION]>50) addstr("threats to the environment");
+            else addstr("excessive regulation of industry");
             break;
          case VIEW_CORPORATECULTURE:
-            if(attitude[VIEW_CORPORATECULTURE]>50) addstr("corporate corruption.");
-            else addstr("excessive regulation of corporations.");
+            if(attitude[VIEW_CORPORATECULTURE]>50) addstr("corporate corruption");
+            else addstr("excessive regulation of corporations");
             break;
          case VIEW_CEOSALARY:
-            if(attitude[VIEW_CEOSALARY]>50) addstr("severe income inequality.");
-            else addstr("resisting communist wage limits.");
+            if(attitude[VIEW_CEOSALARY]>50) addstr("severe income inequality");
+            else addstr("resisting communist wage limits");
             break;
          case VIEW_PRISONS:
-            if(attitude[VIEW_PRISONS]>50) addstr("stopping the prisoners' suffering.");
-            else addstr("putting the prisoners in line.");
+            if(attitude[VIEW_PRISONS]>50) addstr("stopping the prisoners' suffering");
+            else addstr("putting the prisoners in line");
             break;
          //case VIEW_POLITICALVIOLENCE:
-         //   if(attitude[VIEW_POLITICALVIOLENCE]>50) addstr("taking strong action.");
-         //   else addstr("political terrorism.");
+         //   if(attitude[VIEW_POLITICALVIOLENCE]>50) addstr("taking strong action");
+         //   else addstr("political terrorism");
          //   break;
          case VIEW_IMMIGRATION:
-            if(attitude[VIEW_IMMIGRATION]>50) addstr("immigrant rights.");
+            if(attitude[VIEW_IMMIGRATION]>50) addstr("immigrant rights");
             else
             {
-               if(law[LAW_IMMIGRATION]>=1) addstr("uncontrolled immigration.");
-               else addstr("illegal immigration.");
+               if(law[LAW_IMMIGRATION]>=1) addstr("uncontrolled immigration");
+               else addstr("illegal immigration");
             }
             break;
          case VIEW_DRUGS:
-            if(attitude[VIEW_DRUGS]>50) addstr("drug rights.");
-            else addstr("drug abuse.");
+            if(attitude[VIEW_DRUGS]>50) addstr("drug rights");
+            else addstr("drug abuse");
             break;
          case VIEW_WOMEN:
-            if(attitude[VIEW_WOMEN]>50) addstr("women's equality.");
-            else addstr("women.");
+            if(attitude[VIEW_WOMEN]>50) addstr("women's equality");
+            else addstr("women");
             break;
          case VIEW_CIVILRIGHTS:
-            if(attitude[VIEW_CIVILRIGHTS]>50) addstr("civil rights.");
-            else addstr("troublemaking minorities.");
+            if(attitude[VIEW_CIVILRIGHTS]>50) addstr("civil rights");
+            else addstr("troublemaking minorities");
             break;
          case VIEW_GUNCONTROL:
-            if(attitude[VIEW_GUNCONTROL]>50) addstr("gun violence.");
-            else addstr("protecting the Second Amendment.");
+            if(attitude[VIEW_GUNCONTROL]>50) addstr("gun violence");
+            else addstr("protecting the Second Amendment");
             break;
          case VIEW_MILITARY:
-            if(attitude[VIEW_MILITARY]>50) addstr("military imperialism.");
-            else addstr("defending the nation.");
+            if(attitude[VIEW_MILITARY]>50) addstr("military imperialism");
+            else addstr("defending the nation");
             break;
          case VIEW_LIBERALCRIMESQUAD:
          case VIEW_LIBERALCRIMESQUADPOS:
-            if(attitude[VIEW_LIBERALCRIMESQUAD]<50) addstr("activist political groups.");
+            if(attitude[VIEW_LIBERALCRIMESQUAD]<50) addstr("activist political groups");
             else
             {
-               if(attitude[VIEW_LIBERALCRIMESQUADPOS]>50) addstr("the Liberal Crime Squad.");
-               else addstr("the LCS terrorists.");
+               if(attitude[VIEW_LIBERALCRIMESQUADPOS]>50) addstr("the Liberal Crime Squad");
+               else addstr("the LCS terrorists");
             }
             break;
          case VIEW_CONSERVATIVECRIMESQUAD:
-            if(attitude[VIEW_CONSERVATIVECRIMESQUAD]<50) addstr("the Conservative Crime Squad.");
-            else addstr("the CCS terrorists.");
+            if(attitude[VIEW_CONSERVATIVECRIMESQUAD]<50) addstr("the Conservative Crime Squad");
+            else addstr("the CCS terrorists");
             break;
          case VIEW_TORTURE:
-            if(attitude[VIEW_TORTURE]>50)addstr("ending the use of torture.");
-            else addstr("enhancing interrogations.");
+            if(attitude[VIEW_TORTURE]>50)addstr("ending the use of torture");
+            else addstr("enhancing interrogations");
             break;
          case VIEW_AMRADIO:
          case VIEW_CABLENEWS:
-            if(attitude[VIEW_AMRADIO]+attitude[VIEW_CABLENEWS]>100) addstr("Conservative Media Bias.");
-            else addstr("Liberal Media Bias.");
+            if(attitude[VIEW_AMRADIO]+attitude[VIEW_CABLENEWS]>100) addstr("Conservative Media Bias");
+            else addstr("Liberal Media Bias");
             break;
       }
+      addstr("に関心を持っている。");
    }
    else
    {
       move(4,0);
-      addstr("The public is not concerned with politics right now.");
+      addstr("ほとんどの人が政治に関心を寄せていない。");
    }
 
    //Header for issue box
    move(6,0);
-   addstr("Additional notable findings:");
+   addstr("更なる調査結果:");
    move(7,0);
-   addstr("XX% Issue ﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ Public Interest");
+   addstr("XX% 議題 -------------------------------------------------- 関心度");
 
    //Footer
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(23,0);
-   addstr("Results are +/- ");
+   addstr("結果には±");
    addstr(noise);
-   addstr(" Liberal percentage points.");
+   addstr("%程度の誤差がある。");
    move(24,0);
-   addstr("Enter - Done");
+   addstr("Enter - 了解");
    move(24,40);
    addprevpagestr();
    addstr("    ");
@@ -735,19 +740,19 @@ void survey(Creature *cr)
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(y,4);
          addstr("........................................................");
-         if(noise>=7||survey[v]==-1) addstr("Unknown  ");
+         if(noise>=7||survey[v]==-1) addstr("不明     ");
          else if(noise>=4)
          {
-            if(public_interest[v]>50) addstr("High     ");
-            else addstr("Low      ");
+            if(public_interest[v]>50) addstr("高       ");
+            else addstr("低       ");
          }
          else
          {
-            if(public_interest[v]>100) addstr("Very High");
-            else if(public_interest[v]>50) addstr("High     ");
-            else if(public_interest[v]>10) addstr("Moderate ");
-            else if(public_interest[v]) addstr("Low      ");
-            else addstr("None     ");
+            if(public_interest[v]>100) addstr("非常に高 ");
+            else if(public_interest[v]>50) addstr("高       ");
+            else if(public_interest[v]>10) addstr("中       ");
+            else if(public_interest[v]) addstr("低       ");
+            else addstr("無       ");
          }
 
          if(survey[v]==-1)set_color(COLOR_BLACK,COLOR_BLACK,1);
@@ -765,39 +770,39 @@ void survey(Creature *cr)
             if(survey[v]<10)addchar('0');
             addstr(survey[v]);
          }
-         addstr("% ");
+         addstr("%");
 
          switch(v)
          {
-         case VIEW_GAY: addstr("were in favor of equal rights for homosexuals"); break;
-         case VIEW_DEATHPENALTY: addstr("opposed the death penalty"); break;
-         case VIEW_TAXES: addstr("were against cutting taxes"); break;
-         case VIEW_NUCLEARPOWER: addstr("were terrified of nuclear power"); break;
-         case VIEW_ANIMALRESEARCH: addstr("deplored animal research"); break;
-         case VIEW_POLICEBEHAVIOR: addstr("were critical of the police"); break;
-         case VIEW_TORTURE: addstr("wanted stronger measures to prevent torture"); break;
-         case VIEW_INTELLIGENCE: addstr("thought the intelligence community invades privacy"); break;
-         case VIEW_FREESPEECH: addstr("believed in unfettered free speech"); break;
-         case VIEW_GENETICS: addstr("abhorred genetically altered food products"); break;
-         case VIEW_JUSTICES: addstr("were for the appointment of Liberal justices"); break;
-         case VIEW_SWEATSHOPS: addstr("would boycott companies that used sweatshops"); break;
-         case VIEW_POLLUTION: addstr("thought industry should lower pollution"); break;
-         case VIEW_CORPORATECULTURE: addstr("were disgusted by corporate malfeasance"); break;
-         case VIEW_CEOSALARY: addstr("believed that CEO salaries are too great"); break;
-         case VIEW_WOMEN: addstr("favored doing more for gender equality"); break;
-         case VIEW_CIVILRIGHTS: addstr("felt more work was needed for racial equality"); break;
-         case VIEW_GUNCONTROL: addstr("are concerned about gun violence"); break;
-         case VIEW_DRUGS: if(law[LAW_DRUGS]>=1) addstr("supported keeping marijuana legal");
-                          else addstr("believed in legalizing marijuana"); break;
-         case VIEW_IMMIGRATION: if(law[LAW_IMMIGRATION]>=1) addstr("condemned unnecessary immigration regulations");
-                                else addstr("wanted amnesty for illegal immigrants"); break;
-         case VIEW_MILITARY: addstr("opposed increasing military spending"); break;
-         case VIEW_LIBERALCRIMESQUAD: addstr("respected the power of the Liberal Crime Squad"); break;
-         case VIEW_LIBERALCRIMESQUADPOS: addstr("of these held the Liberal Crime Squad in high regard"); break;
-         case VIEW_CONSERVATIVECRIMESQUAD: addstr("held the Conservative Crime Squad in contempt"); break;
-         case VIEW_PRISONS: addstr("wanted to end prisoner abuse and torture"); break;
-         case VIEW_AMRADIO: addstr("do not like AM radio"); break;
-         case VIEW_CABLENEWS: addstr("have a negative opinion of cable news programs"); break;
+         case VIEW_GAY: addstr("が同性愛者の対等な権利を歓迎している"); break;
+         case VIEW_DEATHPENALTY: addstr("が死刑制度に反対している"); break;
+         case VIEW_TAXES: addstr("が減税に抗議している"); break;
+         case VIEW_NUCLEARPOWER: addstr("が原子力に不安を感じている"); break;
+         case VIEW_ANIMALRESEARCH: addstr("が動物実験を非難している"); break;
+         case VIEW_POLICEBEHAVIOR: addstr("が警察を批判している"); break;
+         case VIEW_TORTURE: addstr("が拷問が行われていないかの監視の強化を望んでいる"); break;
+         case VIEW_INTELLIGENCE: addstr("が情報機関がプライバシーを侵害していると考えている"); break;
+         case VIEW_FREESPEECH: addstr("が無制限の言論の自由を信用している"); break;
+         case VIEW_GENETICS: addstr("が遺伝子組み換え食品を避けている"); break;
+         case VIEW_JUSTICES: addstr("が司法は自由主義的であるべきと考えている"); break;
+         case VIEW_SWEATSHOPS: addstr("が労働者を搾取する企業に抗議している"); break;
+         case VIEW_POLLUTION: addstr("が工場は低公害であるべきと考えている"); break;
+         case VIEW_CORPORATECULTURE: addstr("が企業の不正にうんざりしている"); break;
+         case VIEW_CEOSALARY: addstr("がCEOの報酬が高すぎると感じている"); break;
+         case VIEW_WOMEN: addstr("が男女平等の推進を求めている"); break;
+         case VIEW_CIVILRIGHTS: addstr("が人種の平等のための更なる取り組みが必要だと感じている"); break;
+         case VIEW_GUNCONTROL: addstr("が銃犯罪に憂慮している"); break;
+         case VIEW_DRUGS: if(law[LAW_DRUGS]>=1) addstr("がマリファナ合法化の維持を支持している");
+                          else addstr("がマリファナの合法化を支持している"); break;
+         case VIEW_IMMIGRATION: if(law[LAW_IMMIGRATION]>=1) addstr("が入管法を問題視している");
+                                else addstr("不法移民への恩赦を望んでいる"); break;
+         case VIEW_MILITARY: addstr("軍事支出の増加に反対している"); break;
+         case VIEW_LIBERALCRIMESQUAD: addstr("がリベラル・クライム・スコードに良い印象を持っている"); break;
+         case VIEW_LIBERALCRIMESQUADPOS: addstr("がリベラル・クライム・スコードに高い関心を持っている"); break;
+         case VIEW_CONSERVATIVECRIMESQUAD: addstr("がコンサバ・クライム・スコードに悪い印象を持っている"); break;
+         case VIEW_PRISONS: addstr("が囚人への虐待と拷問を止めるべきだと考えている"); break;
+         case VIEW_AMRADIO: addstr("がAMラジオを好まない"); break;
+         case VIEW_CABLENEWS: addstr("がケーブルテレビニュースに否定的な意見を持っている"); break;
          //case VIEW_POLITICALVIOLENCE: addstr("thought political violence was justified");break;
          }
       }

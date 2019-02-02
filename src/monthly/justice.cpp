@@ -466,7 +466,7 @@ void trial(Creature &g)
    //CHOOSE DEFENSE
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(y+2,1);
-   addstr("How will you conduct the defense?");
+   addstr("どのように弁護する?");
 
    char attorneyname[200];
    unsigned long oldseed[RNG_SIZE];
@@ -477,42 +477,42 @@ void trial(Creature &g)
 
    y+=4;
    move(y++,1);
-   addstr("A - Use a court-appointed attorney.");
+   addstr("A - 裁判所が任命した弁護士を使う");
    move(y++,1);
-   addstr("B - Defend self!");
+   addstr("B - 自己弁護する!");
    move(y++,1);
-   addstr("C - Plead guilty.");
+   addstr("C - 罪を認める");
    if(ledger.get_funds()<5000) set_color(COLOR_BLACK,COLOR_BLACK,1);
    move(y++,1);
-   addstr("D - Pay $5000 to hire ace Liberal attorney ");
+   addstr("D - $5000でリベラル派弁護士の");
    addstr(attorneyname);
-   addstr(".");
+   addstr("雇う");
    if(sleeperlawyer)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(y++,1);
-      addstr("E - Accept sleeper ");
+      addstr("E - 潜伏者の");
       addstr(sleeperlawyer->name);
-      addstr("'s offer to assist pro bono.");
+      addstr("の推薦するボランティア法律家を受け入れる");
    }
    if(ledger.get_funds()<5000) set_color(COLOR_WHITE,COLOR_BLACK,0);
 
    //SAV - added in display of skills and relevant attributes to help
    // decide when to defend self.
    move(++y,5);
-   addstr("Heart: ");
+   addstr("心:   ");
    addstr(g.get_attribute(ATTRIBUTE_HEART,true));
    move(y,25);
-   addstr("Persuasion: ");
+   addstr("説得: ");
    addstr(g.get_skill(SKILL_PERSUASION));
    move(++y,5);
-   addstr("Charisma: ");
+   addstr("魅力: ");
    addstr(g.get_attribute(ATTRIBUTE_CHARISMA,true));
    move(y++,25);
-   addstr("Law: ");
+   addstr("法律: ");
    addstr(g.get_skill(SKILL_LAW));
    move(y++,5);
-   addstr("Intelligence: ");
+   addstr("知識: ");
    addstr(g.get_attribute(ATTRIBUTE_INTELLIGENCE,true));
    // End SAV's adds
 
@@ -547,12 +547,12 @@ void trial(Creature &g)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(1,1);
       addstr(g.name, gamelog);
-      addstr(" is standing trial.");
+      addstr("が法廷に立つ。");
 
       //TRIAL MESSAGE
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(3,1);
-      addstr("The trial proceeds.  Jury selection is first.", gamelog);
+      addstr("裁判が始まる。最初は陪審員の選任だ。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -567,9 +567,9 @@ void trial(Creature &g)
          if(LCSrandom(10))
          {
             addstr(attorneyname, gamelog);
-            addstr(" ensures the jury is stacked in ", gamelog);
+            addstr("は陪審員を", gamelog);
             addstr(g.name, gamelog);
-            addstr("'s favor!", gamelog);
+            addstr("にとって有利な状況に持ち込んだ!", gamelog);
             gamelog.newline();
             if(jury>0) jury=0;
             jury-=30;
@@ -578,7 +578,7 @@ void trial(Creature &g)
          {
             set_color(COLOR_RED,COLOR_BLACK,1);
             addstr(attorneyname, gamelog);
-            addstr("'s CONSERVATIVE ARCH-NEMESIS will represent the prosecution!!!", gamelog);
+            addstr("の保守派の大敵が検察だ!!!", gamelog);
             gamelog.newline();
             jury=0;
             prosecution+=100; // DUN DUN DUN!!
@@ -589,25 +589,25 @@ void trial(Creature &g)
          set_color(COLOR_GREEN,COLOR_BLACK,1);
          switch(LCSrandom(4))
          {
-            case 0:addstr(g.name);addstr("'s best friend from childhood is a juror.", gamelog);break;
-            case 1:addstr("The jury is Flaming Liberal.", gamelog);break;
-            case 2:addstr("A few of the jurors are closet Socialists.", gamelog);break;
-            case 3:addstr("One of the jurors flashes a SECRET LIBERAL HAND SIGNAL when no one is looking.", gamelog);break;
+            case 0:addstr("陪審員の一人は");addstr(g.name);addstr("の子供時代からの親友だ。", gamelog);break;
+            case 1:addstr("陪審員は燃えるリベラルだ。", gamelog);break;
+            case 2:addstr("陪審員の何人かはほぼ社会主義者だ。", gamelog);break;
+            case 3:addstr("陪審員の一人は誰も見ていないとき秘密のリベラル・ハンドサインをした。", gamelog);break;
          }
          gamelog.newline();
       }
-      else if(jury<=-15) addstr("The jury is fairly Liberal.", gamelog);
-      else if(jury<15) addstr("The jury is quite moderate.", gamelog);
-      else if(jury<29) addstr("The jury is a bit Conservative.", gamelog);
+      else if(jury<=-15) addstr("陪審員はややリベラル寄りだ。", gamelog);
+      else if(jury<15) addstr("陪審員はほぼ穏健派だ。", gamelog);
+      else if(jury<29) addstr("陪審員はやや保守的だ。", gamelog);
       else
       {
          set_color(COLOR_YELLOW,COLOR_BLACK,1);
          switch(LCSrandom(4))
          {
-            case 0:addstr("Such a collection of Conservative jurors has never before been assembled.", gamelog);break;
-            case 1:addstr("One of the accepted jurors is a Conservative activist.", gamelog);break;
-            case 2:addstr("A few of the jurors are members of the KKK.", gamelog);break;
-            case 3:addstr("The jury is frighteningly Conservative.", gamelog);break;
+            case 0:addstr("結成以来これほど保守派の陪審員が集まったことはない。", gamelog);break;
+            case 1:addstr("陪審員の一人は保守の活動家だ。", gamelog);break;
+            case 2:addstr("陪審員の何人かはKKKのメンバーだ。", gamelog);break;
+            case 3:addstr("陪審員はぞっとするほど保守的だ。", gamelog);break;
          }
       }
       gamelog.newline();
@@ -635,18 +635,17 @@ void trial(Creature &g)
 
       if(autoconvict)
       {
-         addstr("There is no question of ", gamelog);
          addstr(g.name, gamelog);
-         addstr("'s guilt.", gamelog);
+         addstr("の有罪に異議はなかった。", gamelog);
          gamelog.newline();
       }
       else
       {
-         if(prosecution<=50) addstr("The prosecution's presentation is terrible.", gamelog);
-         else if(prosecution<=75) addstr("The prosecution gives a standard presentation.", gamelog);
-         else if(prosecution<=125) addstr("The prosecution's case is solid.", gamelog);
-         else if(prosecution<=175) addstr("The prosecution makes an airtight case.", gamelog);
-         else addstr("The prosecution is incredibly strong.", gamelog);
+         if(prosecution<=50) addstr("検察の主張はひどいものだ。", gamelog);
+         else if(prosecution<=75) addstr("検察は通常通り主張した。", gamelog);
+         else if(prosecution<=125) addstr("検察の主張は強固なものだ。", gamelog);
+         else if(prosecution<=175) addstr("検察の主張には隙がない。", gamelog);
+         else addstr("検察の主張は極めて強力だ。", gamelog);
          gamelog.newline();
       }
 
@@ -674,7 +673,7 @@ void trial(Creature &g)
       {
          if(autoconvict)
          {
-            addstr("The defense makes a noble attempt, but the outcome is inevitable.", gamelog);
+            addstr("堂々と弁護したが、結果を変えることはできなかった。", gamelog);
             gamelog.newline();
          }
          else
@@ -690,31 +689,31 @@ void trial(Creature &g)
                sleeperlawyer->train(SKILL_PERSUASION,prosecution/4);
             }
 
-            if(defensepower<=5) addstr("The defense attorney rarely showed up.", gamelog);
-            else if(defensepower<=15) addstr("The defense attorney accidentally said \"My client is GUILTY!\" during closing.", gamelog);
-            else if(defensepower<=25) addstr("The defense is totally lame.", gamelog);
-            else if(defensepower<=50) addstr("The defense was lackluster.", gamelog);
-            else if(defensepower<=75) addstr("Defense arguments were pretty good.", gamelog);
-            else if(defensepower<=100) addstr("The defense was really slick.", gamelog);
+            if(defensepower<=5) addstr("弁護士はほとんど何も言えなかった。", gamelog);
+            else if(defensepower<=15) addstr("弁護士は終了間際に思わず「私のクライアントは有罪だ! 」と言ってしまった。", gamelog);
+            else if(defensepower<=25) addstr("弁護はまったくひどいものだった。", gamelog);
+            else if(defensepower<=50) addstr("弁護は決め手に欠くものだった。", gamelog);
+            else if(defensepower<=75) addstr("弁護はかなりうまくいった。", gamelog);
+            else if(defensepower<=100) addstr("弁護はとてもうまくいった。", gamelog);
             else if(defensepower<=145)
             {
-               if(prosecution<100) addstr("The defense makes the prosecution look like amateurs.", gamelog);
-               else addstr("The defense is extremely compelling.", gamelog);
+               if(prosecution<100) addstr("弁護士は検察の主張を素人のようにしてしまった。", gamelog);
+               else addstr("弁護は極めて強固なものだった。", gamelog);
             }
             else
             {
                if(prosecution<100)
                {
                   addstr(attorneyname, gamelog);
-                  addstr("'s arguments made several of the jurors stand up ", gamelog);
+                  addstr("の弁護を聞いた陪審員は立ち上がり、", gamelog);
                   move(10,1);
-                  addstr("and shout \"NOT GUILTY!\" before deliberations even began.", gamelog);
+                  addstr("評議が始まっていないのに「無罪だ! 」と叫んだ。", gamelog);
                   if(defense==4) addjuice(*sleeperlawyer,10,500); // Bow please
                }
                else
                {
                   addstr(attorneyname, gamelog);
-                  addstr(" conducts an incredible defense.", gamelog);
+                  addstr("の弁護は完璧だった。", gamelog);
                }
             }
             gamelog.newline();
@@ -739,18 +738,18 @@ void trial(Creature &g)
          addstr(g.name, gamelog);
          if(defensepower<=0)
          {
-            addstr(" makes one horrible mistake after another.", gamelog);
+            addstr("は致命的なミスをしてしまった。", gamelog);
             gamelog.newline();
             addjuice(g,-10,-50); // You should be ashamed
          }
-         else if(defensepower<=25) addstr("'s case really sucked.", gamelog);
-         else if(defensepower<=50) addstr(" did all right, but made some mistakes.", gamelog);
-         else if(defensepower<=75) addstr("'s arguments were pretty good.", gamelog);
-         else if(defensepower<=100) addstr(" worked the jury very well.", gamelog);
-         else if(defensepower<=150) addstr(" made a very powerful case.", gamelog);
+         else if(defensepower<=25) addstr("の弁護は本当にひどいものだった。", gamelog);
+         else if(defensepower<=50) addstr("の弁護は悪くなかったが、いくつかのミスがあった。", gamelog);
+         else if(defensepower<=75) addstr("の弁護はかなりうまくいった。", gamelog);
+         else if(defensepower<=100) addstr("は陪審員にとてもよい印象を与えた。", gamelog);
+         else if(defensepower<=150) addstr("の弁護は極めて強力だった。", gamelog);
          else
          {
-            addstr(" had the jury, judge, and prosecution crying for freedom.", gamelog);
+            addstr("の弁護は陪審員、裁判官、そして検察さえも自由への渇望で涙するものだった。", gamelog);
             addjuice(g,50,1000); // That shit is legend
          }
          gamelog.newline();
@@ -772,7 +771,7 @@ void trial(Creature &g)
       //DELIBERATION MESSAGE
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(12,1);
-      addstr("The jury leaves to consider the case.", gamelog);
+      addstr("陪審員は議論するために離れた。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -781,7 +780,7 @@ void trial(Creature &g)
       erase();
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(1,1);
-      addstr("The jury has returned from deliberations.", gamelog);
+      addstr("陪審員は評議から戻ってきた。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -793,7 +792,7 @@ void trial(Creature &g)
       {
          set_color(COLOR_YELLOW,COLOR_BLACK,1);
          move(3,1);
-         addstr("But they can't reach a verdict!", gamelog);
+         addstr("だが、評決することができなかった!", gamelog);
          gamelog.newline();
 
          getkey();
@@ -803,7 +802,7 @@ void trial(Creature &g)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(5,1);
-            addstr("The case will be re-tried next month.", gamelog);
+            addstr("判決は来月に持ち越された。", gamelog);
             gamelog.newline();
 
             getkey();
@@ -816,32 +815,32 @@ void trial(Creature &g)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(5,1);
-            addstr("The prosecution declines to re-try the case.", gamelog);
+            addstr("検察は判決の来月への持ち越しを拒否した。", gamelog);
             gamelog.newline();
             if(g.sentence==0)
             {
                set_color(COLOR_GREEN,COLOR_BLACK,1);
                move(7,1);
                addstr(g.name, gamelog);
-               addstr(" is free!", gamelog);
+               addstr("は自由の身となった!", gamelog);
             }
             else
             {
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                move(7,1);
                addstr(g.name, gamelog);
-               addstr(" will be returned to prison to resume an earlier sentence", gamelog);
+               addstr("はこれ以前の刑のために刑務所へ戻った", gamelog);
                if(!g.deathpenalty && g.sentence>1 && (LCSrandom(2)||sleeperjudge))
                {
                   g.sentence--;
-                  addstr(", less a month for time already served.", gamelog);
+                  addstr("。経過した1ヶ月が服役期間とみなされた", gamelog);
                }
-               else addstr(".", gamelog);
+               else addstr("。", gamelog);
                if(g.deathpenalty)
                {
                   g.sentence=3;
                   move(9,1);
-                  addstr("The execution is scheduled to occur three months from now.", gamelog);
+                  addstr("死刑執行は現在から3ヵ月後と決定された。", gamelog);
                }
             }
             gamelog.nextMessage();
@@ -854,7 +853,7 @@ void trial(Creature &g)
       {
          set_color(COLOR_GREEN,COLOR_BLACK,1);
          move(3,1);
-         addstr("NOT GUILTY!", gamelog);
+         addstr("無罪!", gamelog);
          gamelog.newline();
 
          getkey();
@@ -864,25 +863,25 @@ void trial(Creature &g)
             set_color(COLOR_GREEN,COLOR_BLACK,1);
             move(5,1);
             addstr(g.name, gamelog);
-            addstr(" is free!", gamelog);
+            addstr("は自由の身となった!", gamelog);
          }
          else
          {
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(5,1);
             addstr(g.name, gamelog);
-            addstr(" will be returned to prison to resume an earlier sentence", gamelog);
+            addstr("はこれ以前の刑のために刑務所へ戻った", gamelog);
             if(!g.deathpenalty && g.sentence>1 && (LCSrandom(2)||sleeperjudge))
             {
                g.sentence--;
-               addstr(", less a month for time already served.", gamelog);
+               addstr("。経過した1ヶ月が服役期間とみなされた", gamelog);
             }
-            else addstr(".", gamelog);
+            else addstr("。", gamelog);
             if(g.deathpenalty)
             {
                g.sentence=3;
                move(7,1);
-               addstr("The execution is scheduled to occur three months from now.", gamelog);
+               addstr("死刑執行は現在から3ヵ月後と決定された。", gamelog);
             }
          }
          gamelog.nextMessage();
@@ -927,7 +926,7 @@ void trial(Creature &g)
       erase();
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(1,1);
-      addstr("The court accepts the plea.", gamelog);
+      addstr("裁判所はそれを受け入れた。", gamelog);
       gamelog.nextMessage();
 
       getkey();
@@ -956,7 +955,7 @@ void penalize(Creature &g,char lenient)
 {
    set_color(COLOR_RED,COLOR_BLACK,1);
    move(3,1);
-   addstr("GUILTY!", gamelog);
+   addstr("有罪!", gamelog);
    gamelog.newline();
 
    getkey();
@@ -1052,7 +1051,7 @@ void penalize(Creature &g,char lenient)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(5,1);
-      addstr("During sentencing, the judge grants some leniency.", gamelog);
+      addstr("結審の前に陪審員は寛大な処置を求めた。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -1066,14 +1065,14 @@ void penalize(Creature &g,char lenient)
       set_color(COLOR_RED,COLOR_BLACK,1);
       move(7,1);
       addstr(g.propername, gamelog);
-      addstr(", you will be returned to prison to carry out your death sentence.", gamelog);
+      addstr("、あなたは刑務所に戻り死刑執行を待つこと。", gamelog);
       gamelog.newline();
 
       getkey();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(9,1);
-      addstr("The execution is scheduled to occur three months from now.", gamelog);
+      addstr("死刑執行は現在から3ヵ月後と決定された。", gamelog);
 
       getkey();
    }
@@ -1083,14 +1082,14 @@ void penalize(Creature &g,char lenient)
       set_color(COLOR_YELLOW,COLOR_RED,1);
       move(7,1);
       addstr(g.propername, gamelog);
-      addstr(", you are sentenced to DEATH!", gamelog);
+      addstr("、あなたに死刑判決を言い渡す!", gamelog);
       gamelog.newline();
 
       getkey();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(9,1);
-      addstr("The execution is scheduled to occur three months from now.", gamelog);
+      addstr("死刑執行は現在から3ヵ月後と決定された。", gamelog);
 
       getkey();
    }
@@ -1102,15 +1101,15 @@ void penalize(Creature &g,char lenient)
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(7,1);
       addstr(g.propername, gamelog);
-      addstr(", the court sees no need to add to your existing sentence.", gamelog);
+      addstr("、あなたに追加の刑はない。", gamelog);
       move(8,1);
-      addstr("You will be returned to prison to resume it", gamelog);
+      addstr("刑務所に戻ること", gamelog);
       if(g.sentence>1 && lenient)
       {
          g.sentence--;
-         addstr(", less a month for time already served.", gamelog);
+         addstr("。経過した1ヶ月は服役期間とみなす", gamelog);
       }
-      else addstr(".", gamelog);
+      else addstr("。", gamelog);
 
       getkey();
    }
@@ -1119,7 +1118,7 @@ void penalize(Creature &g,char lenient)
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(7,1);
       addstr(g.propername, gamelog);
-      addstr(", consider this a warning.  You are free to go.", gamelog);
+      addstr("、これは警告と考えること。釈放する。", gamelog);
 
       getkey();
    }
@@ -1130,7 +1129,7 @@ void penalize(Creature &g,char lenient)
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(7,1);
       addstr(g.propername, gamelog);
-      addstr(", you are sentenced to ", gamelog);
+      addstr("、あなたに", gamelog);
       if(g.sentence>1200) g.sentence/=-1200;
 
       if(g.sentence<=-1)
@@ -1138,7 +1137,7 @@ void penalize(Creature &g,char lenient)
          if(g.sentence<-1)
          {
             addstr(-(g.sentence), gamelog);
-            addstr(" consecutive life terms in prison", gamelog);
+            addstr("回の終身刑を言い渡す", gamelog);
             gamelog.newline();
 
             // Don't bother saying this if the convicted already has one or
@@ -1146,50 +1145,50 @@ void penalize(Creature &g,char lenient)
             // statements later easier to tack on.
             if(oldsentence>=0)
             {
-               addstr(".", gamelog);
+               addstr("。", gamelog);
 
                getkey();
 
                move(9,1);
-               addstr("Have a nice day, ", gamelog);
+               addstr("よい一日を、", gamelog);
                addstr(g.propername, gamelog);
             }
          }
-         else addstr("life in prison", gamelog);
+         else addstr("終身刑をを言い渡す", gamelog);
       }
       else if(g.sentence>=36)
       {
+         addstr("懲役", gamelog);
          addstr(g.sentence/12, gamelog);
-         addstr(" years in prison", gamelog);
+         addstr("年を言い渡す", gamelog);
       }
       else
       {
+         addstr("懲役", gamelog);
          addstr(g.sentence, gamelog);
-         addstr(" month", gamelog);
-         if(g.sentence>1)addstr("s", gamelog);
-         addstr(" in prison", gamelog);
+         addstr("ヶ月を言い渡す", gamelog);
+         if(g.sentence>1)addstr("", gamelog);
       }
 
       // Mash together compatible sentences.
       if((g.sentence>0 && oldsentence>0) ||
          (g.sentence<0 && oldsentence<0))
       {
-         addstr(",", gamelog);
          move(8,1);
          if(lenient)
          {
             if(ABS(oldsentence)>ABS(g.sentence))
                g.sentence=oldsentence;
-            addstr("to be served concurrently", gamelog);
+            addstr("(刑期は平行となった)", gamelog);
          }
          else
          {
             g.sentence+=oldsentence;
-            addstr("to be served consecutively", gamelog);
+            addstr("(刑期は合計された)", gamelog);
          }
       }
 
-      addstr(".", gamelog);
+      addstr("。", gamelog);
 
       //dejuice boss
       int boss=getpoolcreature(g.hireid);
@@ -1221,41 +1220,41 @@ char prison(Creature &g)
 {
    static const char *cruel_and_unusual_execution_methods[] =
    {
-      "beheading",
-      "drawing and quartering",
-      "disemboweling",
-      "one thousand cuts",
-      "feeding the lions",
-      "repeated gladiatorial death matches",
-      "burning",
-      "crucifixion",
-      "head-squishing",
-      "piranha tank swimming exhibition",
-      "forced sucking of Ronald Reagan's ass",
-      "covering with peanut butter and letting rats eat",
-      "burying up to the neck in a fire ant nest",
-      "running truck over the head",
-      "drowning in a sewage digester vat",
-      "chipper-shredder",
-      "use in lab research",
-      "blood draining",
-      "chemical weapons test",
-      "sale to a furniture maker",
-      "sale to a CEO as a personal pleasure toy",
-      "sale to foreign slave traders",
-      "exposure to degenerate Bay 12 Curses games"
+      "斬首",
+      "四つ裂き",
+      "腹裂き",
+      "千切り",
+      "ライオンの餌",
+      "剣闘士デスマシンとの連戦",
+      "火あぶり",
+      "はりつけ",
+      "頭部圧砕",
+      "公開ピラニアプール",
+      "ロナルド・レーガンの強制ケツ吸い",
+      "全身にピーナッツバターを塗りネズミに食わせる",
+      "火蟻の巣に首まで埋める",
+      "頭部をトラックに轢かせる",
+      "下水タンクで溺死",
+      "巨大シュレッダー",
+      "人体実験",
+      "血抜き",
+      "化学兵器の検体",
+      "家具メーカーへの売却",
+      "CEOのおもちゃとして売却",
+      "外国の奴隷トレーダーに売却",
+      "恐怖のBay 12 Curses gamesへの暴露"
    };
 
    static const char *standard_execution_methods[] =
    {
-      "lethal injection",
-      "hanging",
-      "firing squad",
-      "electrocution"
+      "毒物注射",
+      "絞首刑",
+      "銃殺刑",
+      "電気椅子"
    };
 
    static const char *supposedly_painless_execution_method =
-      "lethal injection";
+      "毒物注射";
 
    char showed=0;
 

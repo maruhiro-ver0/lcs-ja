@@ -490,7 +490,7 @@ void passmonth(char &clearformess,char canseethings)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(8,1);
             addstr(pool[p]->name, gamelog);
-            addstr(" is moved to the courthouse for trial.", gamelog);
+            addstr("は公判のため裁判所に移された。", gamelog);
             gamelog.nextMessage();
 
             getkey();

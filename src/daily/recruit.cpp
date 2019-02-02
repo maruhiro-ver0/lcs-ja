@@ -102,12 +102,12 @@ char recruitment_activity(Creature &cr,char &clearformess)
 
       erase();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      mvaddstr(0,0,"Adventures in Liberal Recruitment");
+      mvaddstr(0,0,"リベラルスカウトの冒険");
       printcreatureinfo(&cr);
       makedelimiter();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      mvaddstr_f(10,0,"%s asks around for a %s...", cr.name, name);
+      mvaddstr_f(10,0,"%sは%sを尋ねまわった…", cr.name, name);
 
       getkey();
 
@@ -126,25 +126,25 @@ char recruitment_activity(Creature &cr,char &clearformess)
          }
 
       if(recruitCount == 0) {
-         mvaddstr_f(11, 0, "%s was unable to track down a %s.", cr.name, name);
+         mvaddstr_f(11, 0, "%sは%sを見つけられなかった。", cr.name, name);
 
          getkey();
 
          cursite = ocursite;
          return 0;
       } else if(recruitCount == 1) {
-         mvaddstr_f(11, 0, "%s managed to set up a meeting with ", cr.name);
+         mvaddstr_f(11, 0, "%sはどうにか", cr.name);
          set_alignment_color(encounter[0].align);
          addstr(encounter[0].name);
          add_age(encounter[0]);
          set_color(COLOR_WHITE,COLOR_BLACK,0);
-         addstr(".");
+         addstr("と会うことができた。");
 
          getkey();
 
          erase();
          set_color(COLOR_WHITE,COLOR_BLACK,1);
-         mvaddstr(0,0,"Adventures in Liberal Recruitment");
+         mvaddstr(0,0,"リベラルスカウトの冒険");
          printcreatureinfo(&encounter[0]);
          makedelimiter();
          talk(cr, 0);
@@ -153,12 +153,12 @@ char recruitment_activity(Creature &cr,char &clearformess)
          {
             erase();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            mvaddstr(0,0,"Adventures in Liberal Recruitment");
+            mvaddstr(0,0,"リベラルスカウトの冒険");
             printcreatureinfo(&cr);
             makedelimiter();
 
             set_color(COLOR_WHITE,COLOR_BLACK,0);
-            mvaddstr_f(10, 0, "%s was able to get information on multiple people.", cr.name);
+            mvaddstr_f(10, 0, "%sは複数の人物と会うことができた。", cr.name);
             for(int i=0; i<recruitCount; i++) {
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                mvaddstr_f(12+i, 0, "%c - ", 'a'+i);
@@ -167,7 +167,7 @@ char recruitment_activity(Creature &cr,char &clearformess)
                add_age(encounter[i]);
             }
             set_color(COLOR_WHITE,COLOR_BLACK,0);
-            mvaddstr(12+recruitCount+1, 0, "Press enter or escape to call it a day.");
+            mvaddstr(12+recruitCount+1, 0, "EnterまたはEscキーで今日は切り上げる。");
 
             int c=getkey();
 
@@ -178,7 +178,7 @@ char recruitment_activity(Creature &cr,char &clearformess)
                int id=encounter[c].id;
                erase();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
-               mvaddstr(0,0,"Adventures in Liberal Recruitment");
+               mvaddstr(0,0,"リベラルスカウトの冒険");
                printcreatureinfo(&encounter[c]);
                makedelimiter();
 
