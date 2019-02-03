@@ -402,7 +402,7 @@ void review_mode(short mode)
                   location[temppool[p]->location]->type==SITE_GOVERNMENT_PRISON)
                {
                   set_color(COLOR_RED,COLOR_BLACK,1);
-                  addstr("死刑囚監房: ");
+                  addstr("死刑執行まで: ");
                   addstr(temppool[p]->sentence);
                   if(temppool[p]->sentence>1)addstr("ヶ月");
                   else addstr("ヶ月");

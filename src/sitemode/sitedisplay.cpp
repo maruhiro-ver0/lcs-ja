@@ -130,7 +130,7 @@ void printsitemap(int x,int y,int z)
       case SPECIAL_PRISON_CONTROL_HIGH:strcpy(str,"Prison Control Room");break;
       case SPECIAL_INTEL_SUPERCOMPUTER:strcpy(str,"Supercomputer");break;
       case SPECIAL_SWEATSHOP_EQUIPMENT:strcpy(str,"織機");break;
-      case SPECIAL_POLLUTER_EQUIPMENT:strcpy(str,"Factory Equipment");break;
+      case SPECIAL_POLLUTER_EQUIPMENT:strcpy(str,"工場設備");break;
       case SPECIAL_ARMORY:strcpy(str,"Armory");break;
       case SPECIAL_HOUSE_CEO:strcpy(str,"CEO's Study");break;
       case SPECIAL_HOUSE_PHOTOS:
@@ -141,12 +141,12 @@ void printsitemap(int x,int y,int z)
       case SPECIAL_SIGN_ONE:
       case SPECIAL_SIGN_TWO:
       case SPECIAL_SIGN_THREE:strcpy(str,"看板");break;
-      case SPECIAL_DISPLAY_CASE:strcpy(str,"Display Case");break;
+      case SPECIAL_DISPLAY_CASE:strcpy(str,"展示ケース");break;
       case SPECIAL_STAIRS_UP:strcpy(str,"上階段");break;
       case SPECIAL_STAIRS_DOWN:strcpy(str,"下階段");break;
       case SPECIAL_RESTAURANT_TABLE:strcpy(str,"テーブル");break;
       case SPECIAL_CAFE_COMPUTER:strcpy(str,"コンピュータ");break;
-      case SPECIAL_PARK_BENCH:strcpy(str,"Bench");break;
+      case SPECIAL_PARK_BENCH:strcpy(str,"ベンチ");break;
       case SPECIAL_BANK_VAULT:strcpy(str,"Bank Vault");break;
       case SPECIAL_BANK_TELLER:strcpy(str,"銀行窓口");break;
       case SPECIAL_BANK_MONEY:strcpy(str,"Oh Wow So Much Money");break;

@@ -647,7 +647,7 @@ void advanceday(char &clearformess,char canseethings)
                move(8,1);
                pool[p]->die();
                addstr(pool[p]->name, gamelog);
-               addstr(" has died of injuries.", gamelog);
+               addstr("は怪我がもとで死んだ。", gamelog);
                gamelog.nextMessage();
             }
 
@@ -1442,14 +1442,14 @@ bool promotesubordinates(Creature &cr, char &clearformess)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
       addstr(cr.name, gamelog);
-      addstr(" has died.", gamelog);
+      addstr("は死んだ。", gamelog);
       gamelog.newline();
 
       getkey();
 
       move(10,1);
       addstr(pool[newboss]->name, gamelog);
-      addstr(" is the new leader of the Liberal Crime Squad!", gamelog);
+      addstr("がリベラル・クライム・スコードの新しいリーダーとなった!", gamelog);
       gamelog.nextMessage();
 
       getkey();

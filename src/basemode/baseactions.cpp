@@ -160,7 +160,7 @@ void getslogan()
 {
    set_color(COLOR_WHITE,COLOR_BLACK,0);
 
-   mvaddstr(16,0,"What is your new slogan?");
+   mvaddstr(16,0,"新しいスローガンは?");
    mvaddstr(17,0,"                                                                                          "); // 80 spaces
 
    enter_name(17,0,slogan,SLOGAN_LEN,"We need a slogan!");
@@ -181,17 +181,18 @@ void orderparty()
    {
       printparty();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      mvaddstr(8,26,"Choose squad member to move");
+      mvaddstr(8,26,"移動させるメンバーを選択する ");
 
       int oldPos=getkey();
 
       if(oldPos<'1'||oldPos>partysize+'1'-1) return; // User chose index out of range, exit
       makedelimiter();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      std::string str="Choose squad member to replace ";
+      std::string str="メンバーの移動先を選択する ";
       str+=activesquad->squad[oldPos-'1']->name;
-      str+=" in Spot ";
+      str+="は";
       str+=(char)oldPos;
+      str+="にいる";
       int x=39-((len(str)-1)>>1);
       if(x<0) x=0;
       mvaddstr(8,x,str);
@@ -353,7 +354,7 @@ void stopevil()
             this_location->update_heat_protection();
 
             set_color(COLOR_WHITE,COLOR_BLACK,0);
-            mvaddstr(y,54,"Heat: ");
+            mvaddstr(y,54,"危険: ");
             if(this_location->heat > this_location->heat_protection)
                set_color(COLOR_YELLOW,COLOR_BLACK,1);
             else set_color(COLOR_BLACK,COLOR_BLACK,1);
@@ -361,7 +362,7 @@ void stopevil()
             addstr("%");
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(y,66);
-            addstr("Secrecy: ");
+            addstr("隠蔽: ");
             if(this_location->heat > this_location->heat_protection)
                set_color(COLOR_YELLOW,COLOR_BLACK,1);
             else set_color(COLOR_BLACK,COLOR_BLACK,1);
@@ -410,8 +411,8 @@ void stopevil()
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(24,1);
-      if((loc == -1) || (multipleCityMode && location[loc]->type == squad_location->city)) addstr("Enter - The squad is not yet Liberal enough.");
-      else addstr("Enter - Back one step.");
+      if((loc == -1) || (multipleCityMode && location[loc]->type == squad_location->city)) addstr("Enter - 部隊はまだ十分にはリベラルでない");
+      else addstr("Enter - 1段階戻る");
 
       int c=getkey();
 

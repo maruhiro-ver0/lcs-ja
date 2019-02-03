@@ -1261,13 +1261,12 @@ void select_tendhostage(Creature *cr)
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
-      addstr("Which hostage will ");
       addstr(cr->name);
-      addstr(" be watching over?");
+      addstr("はどの捕虜を監視するか?");
       move(1,0);
-      addstr("ﾄﾄﾄﾄCODE NAMEﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄSKILLﾄﾄﾄHEALTHﾄﾄﾄLOCATIONﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ");
+      addstr("----コードネーム---------スキル--健康-----位置----------------------------------");
       move(1,57);
-      addstr("DAYS IN CAPTIVITY");
+      addstr("捕らえてからの日数");
 
       int y=2;
       for(int p=page*19;p<len(temppool)&&p<page*19+19;p++,y++)
@@ -1301,13 +1300,13 @@ void select_tendhostage(Creature *cr)
          set_color(COLOR_MAGENTA,COLOR_BLACK,1);
          addstr(temppool[p]->joindays);
          addstr(" ");
-         if(temppool[p]->joindays>1)addstr("Days");
-         else addstr("Day");
+         if(temppool[p]->joindays>1)addstr("日");
+         else addstr("日");
       }
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(22,0);
-      addstr("Press a Letter to select a Conservative");
+      addstr("アルファベットキーで保守を選択する");
       move(23,0);
       addpagestr();
 

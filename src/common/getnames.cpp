@@ -328,7 +328,7 @@ std::string getlaw(int l)
    case LAW_CIVILRIGHTS:return "市民の権利";
    case LAW_DRUGS:return "薬物規制"; // a.k.a. "Drug Law"
    case LAW_IMMIGRATION:return "移民政策";
-   case LAW_ELECTIONS:return "選挙改革";
+   case LAW_ELECTIONS:return "選挙制度";
    case LAW_MILITARY:return "軍事支出";
    case LAW_PRISONS:return "受刑者の権利";
    case LAW_TORTURE:return "人権";

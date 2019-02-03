@@ -98,7 +98,7 @@ void trial(Creature &g)
    move(5,1);
    addstr("被告人", gamelog);
    addstr(g.propername, gamelog);
-   addstr("には、", gamelog);
+   addstr("には", gamelog);
    int x=2,y=5;
    while((typenum--)>0)
    {
@@ -439,7 +439,7 @@ void trial(Creature &g)
       }
 
       if(typenum>1) addstr("、", gamelog);
-      if(typenum==1) addstr("そして", gamelog);
+      if(typenum==1) addstr("、そして", gamelog);
       if(typenum==0) addstr("の容疑がある。", gamelog);
 
       getkey();
@@ -552,7 +552,7 @@ void trial(Creature &g)
       //TRIAL MESSAGE
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(3,1);
-      addstr("裁判が始まる。最初は陪審員の選任だ。", gamelog);
+      addstr("裁判が始まった。最初は陪審員の選任だ。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -1082,7 +1082,7 @@ void penalize(Creature &g,char lenient)
       set_color(COLOR_YELLOW,COLOR_RED,1);
       move(7,1);
       addstr(g.propername, gamelog);
-      addstr("、あなたに死刑判決を言い渡す!", gamelog);
+      addstr("に死刑判決を言い渡す!", gamelog);
       gamelog.newline();
 
       getkey();
@@ -1101,7 +1101,7 @@ void penalize(Creature &g,char lenient)
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(7,1);
       addstr(g.propername, gamelog);
-      addstr("、あなたに追加の刑はない。", gamelog);
+      addstr("に追加の刑はない。", gamelog);
       move(8,1);
       addstr("刑務所に戻ること", gamelog);
       if(g.sentence>1 && lenient)
@@ -1129,7 +1129,7 @@ void penalize(Creature &g,char lenient)
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(7,1);
       addstr(g.propername, gamelog);
-      addstr("、あなたに", gamelog);
+      addstr("に", gamelog);
       if(g.sentence>1200) g.sentence/=-1200;
 
       if(g.sentence<=-1)
@@ -1224,21 +1224,21 @@ char prison(Creature &g)
       "四つ裂き",
       "腹裂き",
       "千切り",
-      "ライオンの餌",
+      "ライオンの餌にする刑",
       "剣闘士デスマシンとの連戦",
       "火あぶり",
       "はりつけ",
       "頭部圧砕",
       "公開ピラニアプール",
       "ロナルド・レーガンの強制ケツ吸い",
-      "全身にピーナッツバターを塗りネズミに食わせる",
-      "火蟻の巣に首まで埋める",
-      "頭部をトラックに轢かせる",
+      "全身にピーナッツバターを塗りネズミの餌にする刑",
+      "火蟻の巣に首まで埋めるの刑",
+      "頭部をトラックに轢かせるの刑",
       "下水タンクで溺死",
       "巨大シュレッダー",
       "人体実験",
       "血抜き",
-      "化学兵器の検体",
+      "化学兵器の検体とするの刑",
       "家具メーカーへの売却",
       "CEOのおもちゃとして売却",
       "外国の奴隷トレーダーに売却",
@@ -1287,9 +1287,9 @@ char prison(Creature &g)
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(8,1);
          addstr(g.name, gamelog);
-         addstr("'s death sentence has been commuted to life, ", gamelog);
+         addstr("の死刑は終身刑になった。", gamelog);
          move(9,1);
-         addstr("due to the abolition of the death penalty.", gamelog);
+         addstr("死刑制度が廃止されたためだ。", gamelog);
          gamelog.nextMessage();
 
          getkey();
@@ -1309,21 +1309,20 @@ char prison(Creature &g)
             erase();
             set_color(COLOR_RED,COLOR_BLACK,1);
             move(8,1);
-            addstr("FOR SHAME:", gamelog);
+            addstr("恥辱:", gamelog);
             gamelog.newline();
             move(9,1);
-            addstr("Today, the Conservative Machine executed ", gamelog);
+            addstr("本日、保守の機械人形は", gamelog);
             addstr(g.name, gamelog);
-            gamelog.record(" "); //Log this for formatting purposes.
+            gamelog.record("を"); //Log this for formatting purposes.
             move(10,1);
-            addstr("by ", gamelog);
             if(law[LAW_DEATHPENALTY]==-2)
                addstr(pickrandom(cruel_and_unusual_execution_methods), gamelog);
             else if(law[LAW_DEATHPENALTY]==-1||law[LAW_DEATHPENALTY]==0)
                addstr(pickrandom(standard_execution_methods), gamelog);
             else
                addstr(supposedly_painless_execution_method, gamelog);
-            addstr(".", gamelog);
+            addstr("で処刑した。", gamelog);
 
             getkey();
 
@@ -1335,10 +1334,10 @@ char prison(Creature &g)
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                move(12,1);
                addstr(pool[boss]->name, gamelog);
-               addstr(" has failed the Liberal Crime Squad.", gamelog);
+               addstr("はリベラル・クライム・スコードを失望させた。", gamelog);
                gamelog.newline();
                move(14,1);
-               addstr("If you can't protect your own people, who can you protect?", gamelog);
+               addstr("自分の部下を守れないものが誰を守れるというのか?", gamelog);
 
                getkey();
 
@@ -1357,10 +1356,10 @@ char prison(Creature &g)
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(8,1);
             addstr(g.name, gamelog);
-            addstr(" has been released from prison.", gamelog);
+            addstr("は刑期を終えた。", gamelog);
             gamelog.newline();
             move(9,1);
-            addstr("No doubt there are some mental scars, but the Liberal is back.", gamelog);
+            addstr("心に傷を負ったことは疑いないが、リベラルが帰ってきた。", gamelog);
             gamelog.nextMessage();
 
             getkey();
@@ -1383,7 +1382,7 @@ char prison(Creature &g)
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
             move(8,1);
             addstr(g.name, gamelog);
-            addstr(" is due to be executed next month.", gamelog);
+            addstr("の死刑執行は来月だ。", gamelog);
             gamelog.nextMessage();
 
             getkey();
@@ -1396,7 +1395,7 @@ char prison(Creature &g)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(8,1);
             addstr(g.name, gamelog);
-            addstr(" is due to be released next month.", gamelog);
+            addstr("は来月刑期を終える。", gamelog);
             gamelog.nextMessage();
 
             getkey();
@@ -1412,9 +1411,9 @@ char prison(Creature &g)
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
             move(8,1);
             addstr(g.name, gamelog);
-            addstr(" is due to be executed in ", gamelog);
+            addstr("の死刑執行は", gamelog);
             addstr(g.sentence, gamelog);
-            addstr(" months.", gamelog);
+            addstr("ヶ月後だ。", gamelog);
             gamelog.nextMessage();
 
             getkey();
@@ -1630,54 +1629,54 @@ void prisonscene(Creature &g)
       if(g.hireid == -1 && !LCSrandom(10))
       {
          escaped = 2;
-         experience = " leads a riot with dozens of prisoners chanting the LCS slogan!";
+         experience = "は数十人の受刑者と共にLCSのスローガンを叫び暴動を引き起こした!";
       }
       else if(g.skill_check(SKILL_COMPUTERS, DIFFICULTY_HARD) && !LCSrandom(5))
       {
          escaped = 2;
-         experience = " codes a virus on a smuggled phone that opens all the prison doors!";
+         experience = "は密かに持ち込まれた携帯電話で監獄の扉を開くウィルスを作成した!";
       }
       else if(g.skill_check(SKILL_DISGUISE, DIFFICULTY_HARD) && !LCSrandom(5))
       {
          escaped = 1;
-         experience = " puts on smuggled street clothes and calmly walks out of prison.";
+         experience = "は密かに持ち込まれた普段着で監獄の外を平然と歩いている。";
          g.give_armor(*armortype[getarmortype("ARMOR_CLOTHES")],NULL);
       }
       else if(g.skill_check(SKILL_SECURITY, DIFFICULTY_CHALLENGING) && g.skill_check(SKILL_STEALTH, DIFFICULTY_CHALLENGING) && !LCSrandom(5))
       {
          escaped = 1;
-         experience = " jimmies the cell door and cuts the outer fence in the dead of night!";
+         experience = "は深夜に独房の扉をこじ開け、刑務所の外側のフェンスを切断した!";
       }
       else if(g.skill_check(SKILL_SCIENCE, DIFFICULTY_AVERAGE) && g.skill_check(SKILL_HANDTOHAND, DIFFICULTY_EASY) && !LCSrandom(5))
       {
          escaped = 1;
-         experience = " intentionally ODs on smuggled drugs, then breaks out of the medical ward!";
+         experience = "は密かに持ち込まれた薬物をわざと過剰に摂取し、その後病室を抜け出した!";
       }
    }
 
    static const char *good_experiences[] =
    {
-      " advertises the LCS every day to other inmates.",
-      " organizes a group of inmates to beat up on a serial rapist.",
-      " learns lots of little skills from other inmates.",
-      " gets a prison tattoo with the letters L-C-S.",
-      " thinks up new protest songs while in prison."
+      "は毎日他の受刑者にLCSの宣伝をしている。",
+      "は刑務所内のシリアルレイピストを叩きのめすグループを結成した。",
+      "は他の受刑者から様々な技術を学んだ。",
+      "は刑務所内でL-C-Sの刺青をした。",
+      "は刑務所内で新しい抵抗の歌を思いついた。"
    };
    static const char *bad_experiences[] =
    {
-      " gets sick for a few days from nasty prison food.",
-      " spends too much time working out at the prison gym.",
-      " is raped by another prison inmate, repeatedly.",
-      " writes a letter to the warden swearing off political activism.",
-      " rats out one of the other inmates in exchange for benefits."
+      "は刑務所のひどい食事のせいで数日間体調を崩した。",
+      "は刑務所のジムで運動しすぎた。",
+      "は他の受刑者から何度も性的暴行を受けている。",
+      "は刑務所長に政治的活動の停止を誓う手紙を書かされた。",
+      "は便宜を得るため他の受刑者を密告した。"
    };
    static const char *general_experiences[] =
    {
-      " mouths off to a prison guard and ends up in solitary.",
-      " gets high off drugs smuggled into the prison.",
-      " does nothing but read books at the prison library.",
-      " gets into a fight and is punished with latrine duty.",
-      " constantly tries thinking how to escape from prison."
+      "は看守に怒鳴り独房に送られた。",
+      "は刑務所に密かに持ち込まれたドラッグでハイになっている。",
+      "は刑務所の図書館で本ばかり読んでいる。",
+      "は刑務所でケンカして便所掃除の罰を受けた。",
+      "は監獄を抜け出す方法を常に考えている。"
    };
 
    if(escaped==0)
@@ -1710,7 +1709,7 @@ void prisonscene(Creature &g)
    {
       int prison = g.location;
       addstr(g.name, gamelog);
-      addstr(" escaped from prison!", gamelog);
+      addstr("は脱獄に成功した!", gamelog);
       addjuice(g,50,1000);
       criminalize(g, LAWFLAG_ESCAPED);
       g.location = find_homeless_shelter(g);
@@ -1730,31 +1729,31 @@ void prisonscene(Creature &g)
          if(num_escaped == 1)
          {
             gamelog.nextMessage();
-            mvaddstr(11,1, "Another imprisoned LCS member also gets out!", gamelog);
+            mvaddstr(11,1, "他のLCSメンバーも脱走した!", gamelog);
          }
          else if(num_escaped > 1)
          {
             gamelog.nextMessage();
-            mvaddstr(11,1, "The LCS will rise again! Multiple LCS members escape!", gamelog);
+            mvaddstr(11,1, "LCSが再び立ち上がる! 他の複数のLCSメンバーも脱走した!", gamelog);
          }
       }
    }
    else if(effect > 0)
    {
       addstr(g.name, gamelog);
-      addstr(" has become a more hardened, Juicier criminal.", gamelog);
+      addstr("は犯罪者として鍛えられ、ジュースを獲得した。", gamelog);
       addjuice(g,20,1000);
    }
    else if(effect < 0)
    {
       addstr(g.name, gamelog);
-      addstr(" is kinda losing it in here. Juice, that is.", gamelog);
+      addstr("はジュースを少し失った。", gamelog);
       addjuice(g,-20,-30);
    }
    else
    {
       addstr(g.name, gamelog);
-      addstr(" seems to be mostly fine, though.", gamelog);
+      addstr("はそれでも大丈夫のようだ。", gamelog);
    }
    gamelog.nextMessage();
 

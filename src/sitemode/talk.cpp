@@ -495,14 +495,14 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
    move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
    set_color(COLOR_CYAN,COLOR_BLACK,1);
    move(13,1);
-   addstr("\"It'll be $", gamelog);
+   addstr("「家賃は1ヶ月あたり $", gamelog);
    addstr(rent, gamelog);
-   addstr(" a month.", gamelog);
+   addstr("、", gamelog);
    gamelog.newline();
    move(14,1);
-   addstr("I'll need $", gamelog);
+   addstr("敷金は $", gamelog);
    addstr(rent, gamelog);
-   addstr(" now as a security deposit.\"", gamelog);
+   addstr("です。」", gamelog);
    gamelog.newline();
 
    getkey();
@@ -515,12 +515,12 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
 
       if(ledger.get_funds()<rent)set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(11,1);
-      addstr("A - Accept.");
+      addstr("A - 部屋を借りる");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(12,1);
-      addstr("B - Decline.");
+      addstr("B - 部屋を借りない");
       move(13,1);
-      addstr("C - Threaten the landlord.");
+      addstr("C - 大家を脅す");
 
       c=getkey();
 
@@ -531,10 +531,10 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
 
          clearcommandarea();clearmessagearea();clearmaparea();
          set_color(COLOR_WHITE,COLOR_BLACK,1);
-         move(9,1);addstr(a.name, gamelog);addstr(" says, ", gamelog);
+         move(9,1);addstr(a.name, gamelog);addstr("は言った。", gamelog);
          set_color(COLOR_GREEN,COLOR_BLACK,1);
          move(10,1);
-         addstr("\"I'll take it.\"", gamelog);
+         addstr("「わかった。借りよう。」", gamelog);
          gamelog.newline();
 
          getkey();
@@ -543,13 +543,13 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
          move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
          set_color(COLOR_CYAN,COLOR_BLACK,1);
          move(13,1);
-         addstr("\"Rent is due by the third of every month.", gamelog);
+         addstr("「家賃は毎月3日に払ってください。", gamelog);
          gamelog.newline();
          move(14,1);
-         addstr("We'll start next month.\"", gamelog);
+         addstr("来月からお願いします。」", gamelog);
          gamelog.newline();
          set_color(COLOR_WHITE,COLOR_BLACK,1);
-         addstr(" <turns away>");
+         addstr(" <行ってしまった>");
 
          getkey();
 
@@ -563,10 +563,10 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
       case 'b': // Refuse rent deal
          clearcommandarea();clearmessagearea();clearmaparea();
          set_color(COLOR_WHITE,COLOR_BLACK,1);
-         move(9,1);addstr(a.name, gamelog);addstr(" says, ", gamelog);
+         move(9,1);addstr(a.name, gamelog);addstr("は言った。", gamelog);
          set_color(COLOR_GREEN,COLOR_BLACK,1);
          move(10,1);
-         addstr("\"Whoa, I was looking for something cheaper.\"", gamelog);
+         addstr("「おっと、もっと安いかと思っていた。」", gamelog);
          gamelog.newline();
 
          getkey();
@@ -575,9 +575,9 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
          move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
          set_color(COLOR_CYAN,COLOR_BLACK,1);
          move(13,1);
-         addstr("\"Not my problem...\"", gamelog);
+         addstr("「そう言われましても…」", gamelog);
          set_color(COLOR_WHITE,COLOR_BLACK,1);
-         addstr(" <turns away>", gamelog);
+         addstr(" <行ってしまった>", gamelog);
          gamelog.newline();
 
          getkey();
@@ -601,9 +601,9 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
          {
             move(9,1);
             addstr(armed_liberal->name, gamelog);
-            addstr(" brandishes the ", gamelog);
+            addstr("は", gamelog);
             addstr(armed_liberal->get_weapon().get_shortname(0), gamelog);
-            addstr(".", gamelog);
+            addstr("を見せびらかした。", gamelog);
             gamelog.newline();
 
             getkey();
@@ -611,10 +611,10 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
          }
          move(9,1);
          addstr(a.name, gamelog);
-         addstr(" says, ", gamelog);
+         addstr("は言った", gamelog);
          set_color(COLOR_GREEN,COLOR_BLACK,1);
          move(10,1);
-         addstr("\"What's the price for the Liberal Crime Squad?\"", gamelog);
+         addstr("「リベラル・クライム・スコードにはいくらだ? 」", gamelog);
          gamelog.newline();
 
          getkey();
@@ -633,9 +633,9 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
             move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
             set_color(COLOR_CYAN,COLOR_BLACK,1);
             move(13,1);
-            addstr("\"I think you'd better leave.\"", gamelog);
+            addstr("「帰ったほうがいいぞ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <crosses arms>", gamelog);
+            addstr(" <腕を交差させた>", gamelog);
             gamelog.newline();
 
             getkey();
@@ -649,7 +649,7 @@ char heyIWantToRentARoom(Creature &a, Creature &tk)
             move(12,1);addstr(tk.name, gamelog);addstr("は答えた。", gamelog);
             set_color(COLOR_CYAN,COLOR_BLACK,1);
             move(13,1);
-            addstr("\"Jesus... it's yours...\"", gamelog);
+            addstr("「ジーザス…どうぞ…」", gamelog);
             gamelog.newline();
 
             getkey();
@@ -1354,9 +1354,9 @@ char talkAboutIssues(Creature &a, Creature &tk)
       case LAW_PRIVACY:       addstr("「政府…のようなもの…はおまえのことは何でも知っている。」", gamelog);break;
       case LAW_DEATHPENALTY:  addstr("「死刑執行人は首をこうやって…さらに…頭を炎に投げ込むんだ。」", gamelog);break;
       case LAW_NUCLEARPOWER:  addstr("「ゴジラは見たか? 放射能は悪者だ。」", gamelog);break;
-      case LAW_POLLUTION:     addstr("\"You wanna look like the Toxic Avenger?  Oppose pollution!\"", gamelog);break;
-      case LAW_LABOR:         addstr("\"Bad people wanna make babies work and stuff.\"", gamelog);break;
-      case LAW_GAY:           addstr("\"Lots of people don't like homosexuals.\"", gamelog);break;
+      case LAW_POLLUTION:     addstr("「『悪魔の毒々モンスター』を見たいのか? 公害に反対しよう! 」", gamelog);break;
+      case LAW_LABOR:         addstr("「悪い奴らは赤ちゃんまで働かせようとしている。」", gamelog);break;
+      case LAW_GAY:           addstr("「多くの人が同性愛者が好きではない。」", gamelog);break;
       case LAW_CORPORATE:     addstr("\"The corporations are putting you down, dude.\"", gamelog);break;
       case LAW_FREESPEECH:    addstr("\"Better watch what you say.  They've got ears everywhere.\"", gamelog);break;
       case LAW_FLAGBURNING:   addstr("\"The flag is stupid.\"", gamelog);break;
@@ -1381,10 +1381,10 @@ char talkAboutIssues(Creature &a, Creature &tk)
       case LAW_POLICEBEHAVIOR:addstr("「いまだに警察は存在する。」", gamelog);break;
       case LAW_PRIVACY:       addstr("「政府には諜報機関がある。」", gamelog);break;
       case LAW_DEATHPENALTY:  addstr("「重犯罪を犯すと終身刑務所に入ることができる。」", gamelog);break;
-      case LAW_NUCLEARPOWER:  addstr("「原子力の合法化を支持する者もいる。」", gamelog);break;
-      case LAW_POLLUTION:     addstr("\"We're still polluting a little bit.\"", gamelog);break;
-      case LAW_LABOR:         addstr("\"Corporate bosses don't always give in to unions.\"", gamelog);break;
-      case LAW_GAY:           addstr("\"Not everybody likes gay people.\"", gamelog);break;
+      case LAW_NUCLEARPOWER:  addstr("「原子力を支持する者もいる。」", gamelog);break;
+      case LAW_POLLUTION:     addstr("「我々はいまだに環境を汚染させている。」", gamelog);break;
+      case LAW_LABOR:         addstr("「企業のトップは労働組合の要求に応じない。」", gamelog);break;
+      case LAW_GAY:           addstr("「同性愛者が好きでない者もいる。」", gamelog);break;
       case LAW_CORPORATE:     addstr("\"There are corporations.\"", gamelog);break;
       case LAW_FREESPEECH:    addstr("\"People get mad if you swear a lot in public.\"", gamelog);break;
       case LAW_FLAGBURNING:   addstr("\"The flag code says you shouldn't make it into clothing.\"", gamelog);break;
@@ -1425,17 +1425,17 @@ char talkAboutIssues(Creature &a, Creature &tk)
          addstr("もちろんこの付近でも。」", gamelog);
          break;
       case LAW_POLLUTION:
-         addstr("\"Industries that stop at nothing to become more profitable are polluting ", gamelog);move(y++,1);
-         if (tk.animalgloss==ANIMALGLOSS_ANIMAL) addstr("the environment in ways that hurt not only humans, but animals too.", gamelog);
-         else addstr("the environment in ways that hurt not only animals, but people too.", gamelog);
+         addstr("「利益のみを追求し他のことは何もしない工場は、環境を汚染させ", gamelog);move(y++,1);
+         if (tk.animalgloss==ANIMALGLOSS_ANIMAL) addstr("人間だけでなく動物も傷つけている。」", gamelog);
+         else addstr("動物だけでなく人間も傷つけている。」", gamelog);
          break;
       case LAW_LABOR:
-         addstr("\"Have you noticed how people are working more and more hours for less and ", gamelog);move(y++,1);
-         addstr("less money?  It's all part of a plan to keep you enslaved, man.\"", gamelog);
+         addstr("「労働時間はますます長くなっているのに、給料はますます低くなっている", gamelog);move(y++,1);
+         addstr("ことに気づいているか。人々は計画的に奴隷のように働かされている。」", gamelog);
          break;
       case LAW_GAY:
-         addstr("\"Homosexuals are people like anyone else, and yet they are treated in this ", gamelog);move(y++,1);
-         addstr("country as if they are deviants fit only for cheap entertainment.\"", gamelog);
+         addstr("「同性愛者はそうでない者と変わりない。だが、この国では未だ安っぽい", gamelog);move(y++,1);
+         addstr("エンターテイメントに登場する逸脱者のような扱いを受けている。」", gamelog);
          break;
       case LAW_CORPORATE:
          addstr("\"Corporate executives use giant corporations as a means to become parasites ", gamelog);move(y++,1);
@@ -2042,9 +2042,9 @@ char talkInCombat(Creature &a, Creature &tk)
                   switch(LCSrandom(5))
                   {
                   case 0:addstr("わかった、わかった。お前の勝ちだ! 」", gamelog);break;
-                  case 1:addstr("撃ちやがったな! 」", gamelog);break;
+                  case 1:addstr("やりやがったな! 」", gamelog);break;
                   case 2:addstr("何とも思わないのか?!」", gamelog);break;
-                  case 3:addstr("人でなし! 」", gamelog);break;
+                  case 3:addstr("人でなしめ! 」", gamelog);break;
                   case 4:addstr("こんなことをするとは! 」", gamelog);break;
                   }
                   gamelog.newline();

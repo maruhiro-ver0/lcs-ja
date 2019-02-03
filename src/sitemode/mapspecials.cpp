@@ -90,9 +90,9 @@ void special_bouncer_assess_squad()
    move(16,1);
    if(autoadmit)
    {
-      addstr("Sleeper ", gamelog);
+      addstr("潜伏者の", gamelog);
       addstr(sleepername, gamelog);
-      addstr(" smirks and lets the squad in.", gamelog);
+      addstr("が薄ら笑いをしながら部隊を中にいれた。", gamelog);
       gamelog.newline();
 
       levelmap[locx][locy][locz].special=-1;
@@ -100,9 +100,9 @@ void special_bouncer_assess_squad()
    else
    {
       if(location[cursite]->renting==RENTING_CCS)
-         addstr("The Conservative scum block the door.", gamelog);
+         addstr("保守のロクデナシに遮られた。", gamelog);
       else
-         addstr("The bouncer assesses your squad.", gamelog);
+         addstr("ガードマンが部隊をチェックした。", gamelog);
       gamelog.newline();
       levelmap[locx][locy][locz].special=SPECIAL_CLUB_BOUNCER_SECONDVISIT;
    }
@@ -189,49 +189,49 @@ void special_bouncer_assess_squad()
          set_color(COLOR_RED,COLOR_BLACK,1);
          switch(LCSrandom(4))
          {
-         case 0:addstr("\"No shirt, no underpants, no service.\"", gamelog);break;
-         case 1:addstr("\"Put some clothes on! That's disgusting.\"", gamelog);break;
-         case 2:addstr("\"No! No, you can't come in naked! God!!\"", gamelog);break;
-		 case 3:addstr("\"No shoes, no shirt and you don't get service\"", gamelog);break;
+         case 0:addstr("「スカートなし、パンツなし、入場なし。」", gamelog);break;
+         case 1:addstr("「何か服を着てくれ! もうイヤだ。」", gamelog);break;
+         case 2:addstr("「ダメ! ダメだ、裸で来てはならない! 神よ!!」", gamelog);break;
+		 case 3:addstr("「靴なし、スカートなし。それでは入れない。」", gamelog);break;
          }
          break;
       case REJECTED_UNDERAGE:
          set_color(COLOR_RED,COLOR_BLACK,1);
          switch(LCSrandom(5))
          {
-         case 0:addstr("\"Hahaha, come back in a few years.\"", gamelog);break;
-         case 1:addstr("\"Find some kiddy club.\"", gamelog);break;
-         case 2:addstr("\"You don't look 18 to me.\"", gamelog);break;
-         case 3:addstr("\"Go back to your treehouse.\"", gamelog);break;
-         case 4:addstr("\"Where's your mother?\"", gamelog);break;
+         case 0:addstr("「ハハハ、数年後にまた来るんだな。」", gamelog);break;
+         case 1:addstr("「子供用クラブを探してくれ。」", gamelog);break;
+         case 2:addstr("「18には見えないな。」", gamelog);break;
+         case 3:addstr("「子供部屋に帰るんだ。」", gamelog);break;
+         case 4:addstr("「お母さんはどこ? 」", gamelog);break;
          }
          break;
       case REJECTED_FEMALE:
          set_color(COLOR_RED,COLOR_BLACK,1);
          switch(LCSrandom(4))
          {
-         case 0:addstr("\"Move along ma'am, this club's for men.\"", gamelog);break;
-         case 1:addstr("\"This 'ain't no sewing circle, ma'am.\"", gamelog);break;
-         case 2:addstr("\"Sorry ma'am, this place is only for the men.\"", gamelog);break;
-         case 3:addstr("\"Where's your husband?\"", gamelog);break;
+         case 0:addstr("「お帰りください、マダム。当クラブは男性専用です。」", gamelog);break;
+         case 1:addstr("「ここは手芸サークルではありません、マダム。」", gamelog);break;
+         case 2:addstr("「失礼ですがマダム、ここは男性専用です。」", gamelog);break;
+         case 3:addstr("「貴女の旦那はどちらへ? 」", gamelog);break;
          }
          break;
       case REJECTED_FEMALEISH:
          set_color(COLOR_RED,COLOR_BLACK,1);
          switch(LCSrandom(3))
          {
-         case 0:addstr("\"You /really/ don't look like a man to me...\"", gamelog);break;
-         case 1:addstr("\"Y'know... the \'other\' guys won't like you much.\"", gamelog);break;
-         case 2:addstr("\"Uhh... can't let you in, ma'am. Sir. Whatever.\"", gamelog);break;
+         case 0:addstr("「私には/本当の/男性には見えないのですが…」", gamelog);break;
+         case 1:addstr("「わかっていると思いますが…『他の』男性はあなたのようではありません。」", gamelog);break;
+         case 2:addstr("「ううむ…入れるわけにはいきません、マダム、サー。どうやっても。」", gamelog);break;
          }
          break;
       case REJECTED_DRESSCODE:
          set_color(COLOR_RED,COLOR_BLACK,1);
          switch(LCSrandom(3))
          {
-         case 0:addstr("\"Check the dress code.\"", gamelog);break;
-         case 1:addstr("\"We have a dress code here.\"", gamelog);break;
-         case 2:addstr("\"I can't let you in looking like that.\"", gamelog);break;
+         case 0:addstr("「ドレスコードをチェックしてください。」", gamelog);break;
+         case 1:addstr("「当クラブはドレスコードがあります。」", gamelog);break;
+         case 2:addstr("「そのような服装では入れるわけにはいきません。」", gamelog);break;
          }
          break;
       case REJECTED_SMELLFUNNY:
@@ -390,15 +390,15 @@ void special_readsign(int sign)
          break;
       case SITE_INDUSTRY_NUCLEAR:
          move(16,1);
-         addstr("Welcome to the NPP Nuclear Plant. Please enjoy");
+         addstr("NPP原子力発電所へようこそ。資料館の");
          move(17,1);
-         addstr("the museum displays in the gift shop.");
+         addstr("展示とお買い物をお楽しみください。");
          break;
       case SITE_RESIDENTIAL_TENEMENT:
       case SITE_RESIDENTIAL_APARTMENT:
       case SITE_RESIDENTIAL_APARTMENT_UPSCALE:
          move(16,1);
-         addstr("大家のオフィスは最初の扉を左へ。");
+         addstr("管理人のオフィスは最初の扉を左");
          move(17,1);
          addstr("");
          break;
@@ -418,7 +418,7 @@ void special_readsign(int sign)
       {
       default:
          move(16,1);
-         addstr("Employees Only");
+         addstr("従業員専用");
          break;
       }
       break;

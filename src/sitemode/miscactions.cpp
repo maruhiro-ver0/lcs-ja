@@ -170,7 +170,7 @@ char unlock(short type,char &actual)
                }
 
                addstr(activesquad->squad[p]->name, gamelog);
-               addstr(" is close, but can't quite get the lock open.", gamelog);
+               addstr("は鍵を外そうとしたが、まったく歯が立たなかった。", gamelog);
                gamelog.newline();
                break;
             }

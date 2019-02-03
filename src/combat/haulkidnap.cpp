@@ -433,9 +433,9 @@ void squadgrab_immobile(char dead)
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
             move(16,1);
             addstr(activesquad->squad[p]->name, gamelog);
-            addstr(" can no longer handle ", gamelog);
+            addstr("はもはや", gamelog);
             addstr(activesquad->squad[p]->prisoner->name, gamelog);
-            addstr(".", gamelog);
+            addstr("を抑えることができない。", gamelog);
             gamelog.newline(); //New line.
 
             getkey();
@@ -461,9 +461,9 @@ void squadgrab_immobile(char dead)
                   clearmessagearea();
                   set_color(COLOR_YELLOW,COLOR_BLACK,1);
                   move(16,1);
-                  addstr("Nobody can carry Martyr ", gamelog);
+                  addstr("誰も", gamelog);
                   addstr(activesquad->squad[p]->name, gamelog);
-                  addstr(".", gamelog);
+                  addstr("を運ぶことができない。", gamelog);
                   gamelog.newline();
 
                   //DROP LOOT
@@ -478,7 +478,7 @@ void squadgrab_immobile(char dead)
                   set_color(COLOR_YELLOW,COLOR_BLACK,1);
                   move(16,1);
                   addstr(activesquad->squad[p]->name, gamelog);
-                  addstr(" is left to be captured.", gamelog);
+                  addstr("は床に置き去りにされた。", gamelog);
                   gamelog.newline(); //New line.
 
                   capturecreature(*activesquad->squad[p]);
@@ -502,9 +502,9 @@ void squadgrab_immobile(char dead)
                         set_color(COLOR_YELLOW,COLOR_BLACK,1);
                         move(16,1);
                         addstr(activesquad->squad[p2]->name, gamelog);
-                        addstr(" hauls ", gamelog);
+                        addstr("は", gamelog);
                         addstr(activesquad->squad[p]->name, gamelog);
-                        addstr(".", gamelog);
+                        addstr("を運んだ。", gamelog);
                         gamelog.newline(); //New line.
                         break;
                      }

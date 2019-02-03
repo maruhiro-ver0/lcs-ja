@@ -589,17 +589,17 @@ void survey(Creature *cr)
             if(attitude[VIEW_NUCLEARPOWER]>50) addstr("原子力の危険性");
             else
             {
-               if(law[LAW_NUCLEARPOWER]==2) addstr("原子力の合法化");
-               else  addstr("原子力の危機");
+               if(law[LAW_NUCLEARPOWER]==2) addstr("原子力利用の再開");
+               else  addstr("原子力利用の危機");
             }
             break;
          case VIEW_ANIMALRESEARCH:
-            if(attitude[VIEW_ANIMALRESEARCH]>50) addstr("brutal animal research practices");
-            else addstr("excessive regulation of animal research");
+            if(attitude[VIEW_ANIMALRESEARCH]>50) addstr("動物実験の残酷さ");
+            else addstr("過度な動物実験の制限");
             break;
          case VIEW_POLICEBEHAVIOR:
-            if(attitude[VIEW_POLICEBEHAVIOR]>50) addstr("preventing police brutality");
-            else addstr("expanding police powers");
+            if(attitude[VIEW_POLICEBEHAVIOR]>50) addstr("警察による暴力の防止");
+            else addstr("警察権の拡大");
             break;
          case VIEW_INTELLIGENCE:
             if(attitude[VIEW_INTELLIGENCE]>50) addstr("civil liberties and personal privacy");
@@ -704,7 +704,7 @@ void survey(Creature *cr)
    move(6,0);
    addstr("更なる調査結果:");
    move(7,0);
-   addstr("XX% 議題 -------------------------------------------------- 関心度");
+   addstr("XX%  議題 ------------------------------------------------- 関心度");
 
    //Footer
    set_color(COLOR_WHITE,COLOR_BLACK,0);
@@ -791,12 +791,12 @@ void survey(Creature *cr)
          case VIEW_CEOSALARY: addstr("がCEOの報酬が高すぎると感じている"); break;
          case VIEW_WOMEN: addstr("が男女平等の推進を求めている"); break;
          case VIEW_CIVILRIGHTS: addstr("が人種の平等のための更なる取り組みが必要だと感じている"); break;
-         case VIEW_GUNCONTROL: addstr("が銃犯罪に憂慮している"); break;
+         case VIEW_GUNCONTROL: addstr("が銃犯罪を憂慮している"); break;
          case VIEW_DRUGS: if(law[LAW_DRUGS]>=1) addstr("がマリファナ合法化の維持を支持している");
                           else addstr("がマリファナの合法化を支持している"); break;
          case VIEW_IMMIGRATION: if(law[LAW_IMMIGRATION]>=1) addstr("が入管法を問題視している");
-                                else addstr("不法移民への恩赦を望んでいる"); break;
-         case VIEW_MILITARY: addstr("軍事支出の増加に反対している"); break;
+                                else addstr("が不法移民への恩赦を望んでいる"); break;
+         case VIEW_MILITARY: addstr("が軍事支出の増加に反対している"); break;
          case VIEW_LIBERALCRIMESQUAD: addstr("がリベラル・クライム・スコードに良い印象を持っている"); break;
          case VIEW_LIBERALCRIMESQUADPOS: addstr("がリベラル・クライム・スコードに高い関心を持っている"); break;
          case VIEW_CONSERVATIVECRIMESQUAD: addstr("がコンサバ・クライム・スコードに悪い印象を持っている"); break;

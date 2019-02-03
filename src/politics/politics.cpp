@@ -1023,7 +1023,7 @@ void supremecourt(char clearformess,char canseethings)
       else makedelimiter();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
-      addstr("The Supreme court is handing down decisions!");
+      addstr("最高裁判所による審査が始まった!");
 
       getkey();
    }
@@ -1036,7 +1036,7 @@ void supremecourt(char clearformess,char canseethings)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
       move(0,0);
-      addstr("Supreme Court Watch ");
+      addstr("最高裁判所による審査 ");
       addstr(year);
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
@@ -1077,7 +1077,7 @@ void supremecourt(char clearformess,char canseethings)
       {
          move(c*3+2,0);
          char name1[80], name2[80];
-         if(!LCSrandom(5)) strcpy(name1,"United States");
+         if(!LCSrandom(5)) strcpy(name1,"合衆国");
          else lastname(name1);
 
          lastname(name2);
@@ -1097,11 +1097,11 @@ void supremecourt(char clearformess,char canseethings)
          }
 
          addstr(name1);
-         addstr(" vs. ");
+         addstr(" 対 ");
          addstr(name2);
 
          move(c*3+3,0);
-         addstr("A Decision could ");
+         addstr("以下を可能にする: ");
          if(scasedir[c]==1)set_color(COLOR_GREEN,COLOR_BLACK,1);
          else set_color(COLOR_RED,COLOR_BLACK,1);
          switch(scase[c])
@@ -1209,7 +1209,7 @@ void supremecourt(char clearformess,char canseethings)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(23,0);
-      addstr("Press any key to watch the decisions unfold.");
+      addstr("何かキーを押すと審査が始まる。");
 
       getkey();
    }
@@ -1248,14 +1248,14 @@ void supremecourt(char clearformess,char canseethings)
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(c*3+2,63);
             addstr(yesvotes);
-            addstr(" for Change");
+            addstr(" 改正");
 
             if(l==COURTNUM-1&&!yeswin)set_color(COLOR_WHITE,COLOR_BLACK,1);
             else if(l==COURTNUM-1)set_color(COLOR_BLACK,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(c*3+3,63);
             addstr(l+1-yesvotes);
-            addstr(" for Status Quo");
+            addstr(" 現状維持");
 
             pause_ms(60);
          }
@@ -1268,7 +1268,7 @@ void supremecourt(char clearformess,char canseethings)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(23,0);
-      addstr("Press any key to reflect on what has happened.");
+      addstr("何かキーを押すと結果を熟慮する。");
 
       getkey();
    }
@@ -1282,7 +1282,7 @@ void supremecourt(char clearformess,char canseethings)
 
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(0,0);
-         addstr("Changing the Guard!");
+         addstr("最高裁裁判官の変更!");
       }
 
       int j=LCSrandom(COURTNUM);
@@ -1291,15 +1291,15 @@ void supremecourt(char clearformess,char canseethings)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(2,0);
-         addstr("Justice ");
+         addstr("最高裁裁判官");
          addstr(courtname[j]);
-         addstr(", ");
+         addstr("(");
          addstr(getalign(court[j],false));
-         addstr(", is stepping down.");
+         addstr(")は辞意を表明した。");
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(7,0);
-         addstr("Press any key to see what happens.");
+         addstr("何かキーを押すと結果を表示する");
 
          getkey();
       }
@@ -1328,18 +1328,18 @@ void supremecourt(char clearformess,char canseethings)
       if(canseethings)
       {
          move(4,0);
-         addstr("After much debate and televised testimony, a new justice,");
+         addstr("多くの議論とテレビ中継された宣誓の後、新しい最高裁裁判官には");
          move(5,0);
-         if(court[j]==ALIGN_STALINIST) addstr("Comrade ");
-         else addstr("the Honorable ");
+         if(court[j]==ALIGN_STALINIST) addstr("同志");
          addstr(courtname[j]);
-         addstr(", ");
+         if(court[j]!=ALIGN_STALINIST) addstr("閣下");
+         addstr("(");
          addstr(getalign(court[j],false));
-         addstr(", is appointed to the bench.");
+         addstr(")が任命された。");
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(7,0);
-         addstr("Press any key to reflect on what has happened.");
+         addstr("何かキーを押すと結果を熟慮する。");
 
          getkey();
       }
@@ -1793,12 +1793,12 @@ void congress(char clearformess,char canseethings)
             else if(killbill[c]==BILL_FAILED)
             {
                set_color(COLOR_BLACK,COLOR_BLACK,1);
-               addstr("Dead in Congress");
+               addstr("連邦議会により廃案");
             }
             else if(killbill[c]==BILL_OVERRIDE_VETO)
             {
                set_color(COLOR_WHITE,COLOR_BLACK,1);
-               addstr("FORCED BY CONGRESS");
+               addstr("連邦議会により成立");
             }
             else
             {

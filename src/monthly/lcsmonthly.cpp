@@ -796,7 +796,7 @@ void fundreport(char &clearformess)
                case EXPENSE_FOOD: mvaddstr(y,0,"食料品"); break;
                case EXPENSE_HOSTAGE: mvaddstr(y,0,"捕虜の世話"); break;
                case EXPENSE_LEGAL: mvaddstr(y,0,"訴訟費用"); break;
-               case EXPENSE_MANUFACTURE: mvaddstr(y,0,"作成"); break;
+               case EXPENSE_MANUFACTURE: mvaddstr(y,0,"内製"); break;
                case EXPENSE_CARS: mvaddstr(y,0,"自動車の購入"); break;
                case EXPENSE_SHOPPING: mvaddstr(y,0,"物品の購入"); break;
                case EXPENSE_RECRUITMENT: mvaddstr(y,0,"スカウト"); break;

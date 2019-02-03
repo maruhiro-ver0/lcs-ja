@@ -84,11 +84,11 @@ bool liberalagenda(signed char won)
       {
 
          move(1,0);
-         addstr("+-----------------+----------+----------+");
+         addstr("+-----------------+ ---------+ ---------+");
          move(2,0);
-         addstr("|       概要      |  論点 A  |  論点 B  |");
+         addstr("|       概要      |  議題 A  |  議題 B  |");
          move(3,0);
-         addstr("+                 +----------+----------+---------------------------------------");
+         addstr("+                 +-------------------------------------------------------------");
 
          signed char align=exec[EXEC_PRESIDENT];
          set_alignment_color(align,true);
@@ -139,7 +139,7 @@ bool liberalagenda(signed char won)
          {
             set_color(COLOR_RED,COLOR_BLACK,1);
             move(10,0);
-            addstr("CEO・テレビ宣教師議会");
+            addstr("CEOおよびテレビ宣教師議会");
          }
          else if(won==-2)
          {
@@ -254,20 +254,20 @@ bool liberalagenda(signed char won)
          if(page==PAGE_ISSUES_A)
          {
             move(1,0);
-            addstr("+-----------------+----------+----------+");
+            addstr("+---------------- +----------+ ---------+");
             move(2,0);
-            addstr("|       概要      |  論点 A  |  論点 B  |");
+            addstr("|       概要      |  議題 A  |  議題 B  |");
             move(3,0);
-            addstr("+-----------------+          +----------+---------------------------------------");
+            addstr("------------------+          +--------------------------------------------------");
          }
          else
          {
             move(1,0);
-            addstr("+-----------------+----------+----------+");
+            addstr("+---------------- +--------- +----------+");
             move(2,0);
-            addstr("|       概要      |  論点 A  |  論点 B  |");
+            addstr("|       概要      |  議題 A  |  議題 B  |");
             move(3,0);
-            addstr("+-----------------+----------+          +---------------------------------------");
+            addstr("-----------------------------+          +---------------------------------------");
          }
 
          int y=4,startinglaw=0;
@@ -382,26 +382,26 @@ bool liberalagenda(signed char won)
                   else addstr("Money no longer exists, everything is free, and everyone enjoys lives of luxury.");
                   break;
                case LAW_ABORTION:
-                  if(won==-2)addstr("Mandatory abortions are carried out for population control.");
-                  else if(won==-1)addstr("Abortion, contraception, and consensual sex are all capital offenses.");
+                  if(won==-2)addstr("強制的な中絶を人口抑制のため実施する。");
+                  else if(won==-1)addstr("中絶、避妊、そして性交渉の合意は全て死刑に相当する罪である。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Abortion is a felony equal to murder, not allowed under any circumstance.");
-                  else if(law[l]==-1)addstr("Abortion is prohibited except in cases of rape, incest, or health of the mother.");
-                  else if(law[l]==0)addstr("Abortion is limited to the first trimester, and is very expensive.");
-                  else if(law[l]==1)addstr("Abortion is legal, but taxpayer funding of abortion is prohibited.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("The right to an abortion is strongly protected, and subsidized for poor women.");
-                  else addstr("Free abortions are easily available at any time during pregnancy.");
+                     addstr("中絶は殺人と同様の重罪であり、いかなる理由においても許されない。");
+                  else if(law[l]==-1)addstr("中絶は強姦、近親相姦、母体保護の場合を除き禁止する。");
+                  else if(law[l]==0)addstr("中絶は第一期(妊娠3ヶ月以内)に限られる。そして多額の費用が掛かる。");
+                  else if(law[l]==1)addstr("中絶は合法である。だが、中絶を税金で賄うことは禁止する。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("中絶の権利は強く保護されている。そして貧しい女性には政府の補助がある。");
+                  else addstr("中絶は妊娠のあらゆる期間で容易に可能である。");
                   break;
                case LAW_ANIMALRESEARCH:
-                  if(won==-2)addstr("All forms of human experimentation on \"class enemies\" are encouraged.");
-                  else if(won==-1)addstr("All forms of human experimentation on the poor are encouraged.");
+                  if(won==-2)addstr("「敵認定」の人々に対するあらゆる人体実験が推奨される。");
+                  else if(won==-1)addstr("貧しい人々に対するあらゆる形態の試験が推奨される。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Animals are property that can be experimented upon freely.");
-                  else if(law[l]==-1)addstr("Animal testing is self-regulated by the scientific community.");
-                  else if(law[l]==0)addstr("Animal research is regulated with a system of licenses and certificates.");
-                  else if(law[l]==1)addstr("Animal research is strictly regulated by purpose and suffering caused.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("Animals are people, too, and have full citizenship rights.");
-                  else addstr("All species of life have equal rights as people, even bacteria.");
+                     addstr("動物は自由に実験できる所有物である。");
+                  else if(law[l]==-1)addstr("動物実験は科学者グループによって自主管理される。");
+                  else if(law[l]==0)addstr("動物実験には資格と許可が必要である。");
+                  else if(law[l]==1)addstr("動物実験は目的と与える苦痛により厳しく制限される。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("動物も人と変わりがなく、市民権が与えられる。");
+                  else addstr("全ての種は人と同様の権利がある。バクテリアでさえも。");
                   break;
                case LAW_POLICEBEHAVIOR:
                   if(won==-2)addstr("Everyone lives in constant fear of the Stalinist Party's Secret Police.");
@@ -426,15 +426,15 @@ bool liberalagenda(signed char won)
                   else addstr("All large organizations are prohibited from keeping any data about anyone.");
                   break;
                case LAW_DEATHPENALTY:
-                  if(won==-2)addstr("Class enemies receive mandatory death sentences.");
-                  else if(won==-1)addstr("Poor and minority criminals receive mandatory death sentences.");
+                  if(won==-2)addstr("敵認定された者は必ず死刑判決とする。");
+                  else if(won==-1)addstr("貧しい者やマイノリティーによる犯罪は必ず死刑判決とする。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("People can be put to death for minor offenses.");
-                  else if(law[l]==-1)addstr("The death penalty is actively enforced in many states.");
-                  else if(law[l]==0)addstr("The death penalty is in effect but under scrutiny.");
-                  else if(law[l]==1)addstr("The death penalty is only permitted in extreme cases.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("The death penalty is considered barbaric and never practiced.");
-                  else addstr("The death penalty, like all other harsh punishments, has been abolished.");
+                     addstr("死刑は軽犯罪にも適用できる。");
+                  else if(law[l]==-1)addstr("死刑は多くの州で実際に適用されている。");
+                  else if(law[l]==0)addstr("死刑制度は存在するが存続が議論されている。");
+                  else if(law[l]==1)addstr("死刑は極端な場合のみ適用される。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("死刑は残虐な刑罰とみなし、決して適用されない。");
+                  else addstr("死刑やその他の厳しすぎる刑罰は既に廃止された。");
                   break;
                case LAW_NUCLEARPOWER:
                   if(won==-2)addstr("Nuclear power plants routinely have meltdowns but keep getting built.");
@@ -514,15 +514,15 @@ bool liberalagenda(signed char won)
                   else addstr("Flag-burning is traditionally done on July 4th to celebrate freedom.");
                   break;
                case LAW_GUNCONTROL:
-                  if(won==-2)addstr("Anyone owning a gun is executed by firing squad.");
-                  else if(won==-1)addstr("Gangs of young children carrying AK-47s roam the streets.");
+                  if(won==-2)addstr("銃を所有する者は全て銃殺される。");
+                  else if(won==-1)addstr("子供のギャングがAK-47を携帯し、あてもなく路地をさまよっている。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Machine guns, tanks, and missiles can be bought and sold freely.");
-                  else if(law[l]==-1)addstr("Military weapons are banned, but similar-looking guns are available.");
-                  else if(law[l]==0)addstr("A comprehensive ban on military-style weapons is in effect.");
-                  else if(law[l]==1)addstr("Most guns cannot be sold to anyone outside of law enforcement.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("It is illegal to buy or sell a gun, or carry one in public.");//XXX: Should guns be legal in private, too? -- LK
-                  else addstr("All gun manufacturers have been shut down and all existing guns destroyed."); //They are illegal in private under Elite Liberal victory conditions - yetisyny
+                     addstr("機関砲、戦車、ミサイル等を含むあらゆる武器を自由に売買できる。");
+                  else if(law[l]==-1)addstr("軍用武器は禁止する。だが、それに近い武器は所有できる。");
+                  else if(law[l]==0)addstr("軍用武器の所有は事実上全て禁止されている。");
+                  else if(law[l]==1)addstr("ほとんどの武器は法執行機関以外に販売することができない。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("公共の場での武器の携帯および売買は違法である。");//XXX: Should guns be legal in private, too? -- LK
+                  else addstr("全ての武器製作者は廃業し、現存する銃も廃棄する。"); //They are illegal in private under Elite Liberal victory conditions - yetisyny
                   break;
             }
          }

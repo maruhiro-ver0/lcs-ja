@@ -358,7 +358,7 @@ void mode_base()
             if(underattack)
             {
                set_color(COLOR_RED,COLOR_BLACK,1);
-               mvaddstr(8,1,"攻撃中");
+               mvaddstr(8,1,"防衛中");
             }
             else
             {

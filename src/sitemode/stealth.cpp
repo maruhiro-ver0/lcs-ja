@@ -143,11 +143,11 @@ void disguisecheck(int timer)
 {
    static const char *blew_stealth_check[] =
    {
-      " coughs.",
-      " accidentally mumbles the slogan.",
-      " paces uneasily.",
-      " stares at the Conservatives.",
-      " laughs nervously."
+      "は咳をした。",
+      "は無意識にスローガンをつぶやいた。",
+      "は不安そうに歩いた。",
+      "は保守を睨みつけた。",
+      "は神経質そうに微笑んだ。"
    };
 
    int weapon=0,partysize=squadsize(activesquad),blew_it=-1;

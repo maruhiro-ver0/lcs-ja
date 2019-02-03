@@ -1689,18 +1689,17 @@ void crashenemycar(int v)
    clearmessagearea();
    set_color(COLOR_CYAN,COLOR_BLACK,1);
    move(16,1);
-   addstr("The ", gamelog);
    addstr(chaseseq.enemycar[v]->fullname(), gamelog);
    switch(LCSrandom(3))
    {
-      case 0:addstr(" slams into a building.", gamelog);break;
+      case 0:addstr("はビルに衝突した。", gamelog);break;
       case 1:
-         addstr(" spins out and crashes.", gamelog);
+         addstr("は横滑りしてクラッシュした。", gamelog);
          move(17,1);
-         if(victimsum>1)addstr("Everyone inside is peeled off against the pavement.", gamelog);
-         else if(victimsum==1)addstr("The person inside is squashed into a cube.", gamelog);
+         if(victimsum>1)addstr("乗車していた全員が車道に投げ出された。", gamelog);
+         else if(victimsum==1)addstr("運転手は車だった塊の中に閉じ込められた。", gamelog);
          break;
-      case 2:addstr(" hits a parked car and flips over.", gamelog);break;
+      case 2:addstr("停められた車と衝突して横転した。", gamelog);break;
    }
    gamelog.newline(); //New line.
 
@@ -1741,16 +1740,16 @@ void chase_giveup()
    clearcommandarea();
    set_color(COLOR_MAGENTA,COLOR_BLACK,1);
    move(16,1);
-   if(mode!=GAMEMODE_CHASECAR)addstr("You stop and are arrested.", gamelog);
-   else addstr("You pull over and are arrested.", gamelog);
+   if(mode!=GAMEMODE_CHASECAR)addstr("あなたは逃げるのをやめ、逮捕された。", gamelog);
+   else addstr("あなたは止められ逮捕された。", gamelog);
    gamelog.newline(); //New line.
    if(hostagefreed)
    {
       move(17,1);
-      addstr("Your hostage", gamelog);
+      addstr("人質の", gamelog);
       if(hostagefreed>1)
-         addstr("s are free.", gamelog);
-      else addstr(" is free.", gamelog);
+         addstr("達は解放された。", gamelog);
+      else addstr("は解放された。", gamelog);
       gamelog.newline(); //New line.
    }
 

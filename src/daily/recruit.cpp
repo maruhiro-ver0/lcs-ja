@@ -56,30 +56,30 @@ static void getissueeventstring(char* str)
 {
    switch(LCSrandom(VIEWNUM-3))
    {
-   case VIEW_DRUGS: strcat(str,"a collection of studies on the health effects of marijuana"); break;
-   case VIEW_MILITARY: strcat(str,"a book on the history of military atrocities"); break;
-   case VIEW_IMMIGRATION: strcat(str,"a reality TV episode on the lives of immigrants"); break;
-   case VIEW_CIVILRIGHTS: strcat(str,"a documentary on the civil rights struggle"); break;
-   case VIEW_WOMEN: strcat(str,"a documentary on the women's rights struggle"); break;
-   case VIEW_GAY: strcat(str,"a documentary on the gay rights struggle"); break;
-   case VIEW_DEATHPENALTY: strcat(str,"a research paper on abuses of the death penalty"); break;
-   case VIEW_TAXES: strcat(str,"an economic paper on the flaws of trickle-down"); break;
-   case VIEW_NUCLEARPOWER: strcat(str,"a video tour of the Chernobyl dead zone"); break;
-   case VIEW_ANIMALRESEARCH: strcat(str,"a documentary on animal research"); break;
-   case VIEW_POLICEBEHAVIOR: strcat(str,"a hand-recorded video of police brutality"); break;
-   case VIEW_TORTURE: strcat(str,"a government inquiry into military interrogations"); break;
-   case VIEW_PRISONS: strcat(str,"a documentary on the prisoners' suffering"); break;
-   case VIEW_INTELLIGENCE: strcat(str,"a documentary on privacy rights"); break;
-   case VIEW_FREESPEECH: strcat(str,"a collection of banned books"); break;
-   case VIEW_GENETICS: strcat(str,"a video about genetic engineering accidents"); break;
-   case VIEW_JUSTICES: strcat(str,"a Liberal policy paper inquiring into judicial decisions"); break;
-   case VIEW_GUNCONTROL: strcat(str,"a book profiling school shootings"); break;
-   case VIEW_SWEATSHOPS: strcat(str,"a hand-recorded video of unregulated sweatshops"); break;
-   case VIEW_POLLUTION: strcat(str,"a leaked government paper on environmental conditions"); break;
-   case VIEW_CORPORATECULTURE: strcat(str,"a documentary on life under corporate culture"); break;
-   case VIEW_CEOSALARY: strcat(str,"a Liberal think-tank survey of top CEO salaries"); break;
-   case VIEW_AMRADIO: strcat(str,"a collection of Conservative radio host rants"); break;
-   case VIEW_CABLENEWS: strcat(str,"a collection of leaked Conservative cable news memos"); break;
+   case VIEW_DRUGS: strcat(str,"マリファナと健康に関する研究論文"); break;
+   case VIEW_MILITARY: strcat(str,"軍隊の残虐行為の歴史に関する本"); break;
+   case VIEW_IMMIGRATION: strcat(str,"移民の生活を扱ったリアリティ・テレビ番組"); break;
+   case VIEW_CIVILRIGHTS: strcat(str,"公民権闘争のドキュメンタリー"); break;
+   case VIEW_WOMEN: strcat(str,"女性の権利闘争のドキュメンタリー"); break;
+   case VIEW_GAY: strcat(str,"同性愛者の権利闘争のドキュメンタリー"); break;
+   case VIEW_DEATHPENALTY: strcat(str,"死刑の乱用に関する研究論文"); break;
+   case VIEW_TAXES: strcat(str,"トリクルダウンの欠陥に関する論文"); break;
+   case VIEW_NUCLEARPOWER: strcat(str,"チェルノブイリの立ち入り禁止地域の視察ビデオ"); break;
+   case VIEW_ANIMALRESEARCH: strcat(str,"動物実験のドキュメンタリー"); break;
+   case VIEW_POLICEBEHAVIOR: strcat(str,"警官の暴行を録画したビデオ"); break;
+   case VIEW_TORTURE: strcat(str,"軍の取り調べに関する政府の報告書"); break;
+   case VIEW_PRISONS: strcat(str,"受刑者の扱いに関するドキュメンタリー"); break;
+   case VIEW_INTELLIGENCE: strcat(str,"プライバシー権のドキュメンタリー"); break;
+   case VIEW_FREESPEECH: strcat(str,"発禁処分された本"); break;
+   case VIEW_GENETICS: strcat(str,"遺伝子工学の事故に関するビデオ"); break;
+   case VIEW_JUSTICES: strcat(str,"判決を調査した論文"); break;
+   case VIEW_GUNCONTROL: strcat(str,"学校での銃乱射事件をプロファイリングした本"); break;
+   case VIEW_SWEATSHOPS: strcat(str,"規制外の搾取労働を録画したビデオ"); break;
+   case VIEW_POLLUTION: strcat(str,"環境問題に関する政府から流出した報告書"); break;
+   case VIEW_CORPORATECULTURE: strcat(str,"企業文化下の生活に関するドキュメンタリー"); break;
+   case VIEW_CEOSALARY: strcat(str,"リベラル・シンクタンクが調査したCEOの報酬"); break;
+   case VIEW_AMRADIO: strcat(str,"保守派ラジオ司会者の暴言集"); break;
+   case VIEW_CABLENEWS: strcat(str,"保守派ケーブルニュースの流出メモ"); break;
    //case VIEW_POLITICALVIOLENCE: strcat(str,"a documentary about progress made by direct action"); break;
    }
 }
@@ -371,7 +371,7 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
             addstr("は", gamelog);
             getissueeventstring(str);
             addstr(str, gamelog);
-            addstr("。", gamelog);
+            addstr("を共に閲覧した。", gamelog);
             gamelog.newline();
 
             getkey();
