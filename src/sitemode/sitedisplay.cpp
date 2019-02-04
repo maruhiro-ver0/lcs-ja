@@ -393,14 +393,14 @@ void printwall(int x, int y, int z, int px, int py)
 
             // Draw face
             if(dir==WALL_RIGHT||dir==WALL_LEFT)
-               for(int i=0;i<3;i++) mvaddstr(y++,x,"ｺ");
-            else for(int i=0;i<5;i++) mvaddstr(y,x++,"ﾍ");
+               for(int i=0;i<3;i++) mvaddchar(y++,x,CH_BOX_DRAWINGS_DOUBLE_VERTICAL);
+            else for(int i=0;i<5;i++) mvaddchar(y,x++,CH_BOX_DRAWINGS_DOUBLE_HORIZONTAL);
 
             // Corners are possible if walls nearby are blown away, although this is rare
-            if((dir==WALL_LEFT&&visible[WALL_UP])||(dir==WALL_UP&&visible[WALL_LEFT])) mvaddstr(py,px,"ﾉ");
-            if((dir==WALL_RIGHT&&visible[WALL_UP])||(dir==WALL_UP&&visible[WALL_RIGHT])) mvaddstr(py,px+4,"ｻ");
-            if((dir==WALL_LEFT&&visible[WALL_DOWN])||(dir==WALL_DOWN&&visible[WALL_LEFT])) mvaddstr(py+2,px,"ﾈ");
-            if((dir==WALL_RIGHT&&visible[WALL_DOWN])||(dir==WALL_DOWN&&visible[WALL_RIGHT])) mvaddstr(py+2,px+4,"ｼ");
+            if((dir==WALL_LEFT&&visible[WALL_UP])||(dir==WALL_UP&&visible[WALL_LEFT])) mvaddchar(py,px,CH_BOX_DRAWINGS_DOUBLE_DOWN_AND_RIGHT);
+            if((dir==WALL_RIGHT&&visible[WALL_UP])||(dir==WALL_UP&&visible[WALL_RIGHT])) mvaddchar(py,px+4,CH_BOX_DRAWINGS_DOUBLE_DOWN_AND_LEFT);
+            if((dir==WALL_LEFT&&visible[WALL_DOWN])||(dir==WALL_DOWN&&visible[WALL_LEFT])) mvaddchar(py+2,px,CH_BOX_DRAWINGS_DOUBLE_UP_AND_RIGHT);
+            if((dir==WALL_RIGHT&&visible[WALL_DOWN])||(dir==WALL_DOWN&&visible[WALL_RIGHT])) mvaddchar(py+2,px+4,CH_BOX_DRAWINGS_DOUBLE_UP_AND_LEFT);
          }
       }
    }
@@ -561,8 +561,8 @@ void printblock(int x,int y,int z,int px, int py)
          case SPECIAL_SIGN_ONE:
          case SPECIAL_SIGN_TWO:
          case SPECIAL_SIGN_THREE:mvaddstr(py,px,"SIGN!");break;
-         case SPECIAL_STAIRS_UP:mvaddstr(py,px+1,"UP\x18");break;
-         case SPECIAL_STAIRS_DOWN:mvaddstr(py,px+1,"DN\x19");break;
+         case SPECIAL_STAIRS_UP:mvaddstr(py,px+1,"UP");addch(CH_UPWARDS_ARROW);break;
+         case SPECIAL_STAIRS_DOWN:mvaddstr(py,px+1,"DN");addch(CH_DOWNWARDS_ARROW);break;
          case SPECIAL_RESTAURANT_TABLE:mvaddstr(py,px,"TABLE");break;
          case SPECIAL_CAFE_COMPUTER:mvaddstr(py,px+1,"CPU");break;
          case SPECIAL_PARK_BENCH:mvaddstr(py,px,"BENCH");break;

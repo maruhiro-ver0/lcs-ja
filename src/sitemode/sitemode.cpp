@@ -434,7 +434,7 @@ void mode_site()
          }
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(11,42);
-         if(graffiti)addstr("U - ラクガキ");
+         if(graffiti)addstr("U - 落書き");
          else addstr("U - 使う");
 
          move(12,42);
@@ -1172,7 +1172,7 @@ void mode_site()
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
                addstr("保守派から", gamelog);
-               if(followers>1)addstr("リベラルたち", gamelog);
+               if(followers>1)addstr("リベラル達", gamelog);
                else addstr("リベラル", gamelog);
                addstr("を解放した。", gamelog);
                gamelog.newline();
@@ -1526,7 +1526,7 @@ void mode_site()
                      clearmessagearea();
                      set_color(COLOR_WHITE,COLOR_BLACK,0);
                      move(16,1);
-                     addstr("You find: ", gamelog);
+                     addstr("見つけたもの: ", gamelog);
                      move(17,1);
                      addstr(s, gamelog);
                      gamelog.newline();
@@ -1712,12 +1712,12 @@ void mode_site()
             {
                // Seperate logging message.
                gamelog.record(activesquad->name);
-               gamelog.record(" has left ");
+               gamelog.record("は");
                if(location[cursite]->front_business!=-1)
                   gamelog.record(location[cursite]->front_name);
                else
                   gamelog.record(location[cursite]->name);
-               gamelog.record(".");
+               gamelog.record("を離れた。");
                gamelog.nextMessage();
 
                //RESET MODE PRIOR TO CHASE
@@ -2662,7 +2662,7 @@ void open_door(bool restricted)
          addstr("扉を開けようとしたが鍵がかかっている。", gamelog);
          gamelog.newline();
          move(17,1);
-         addstr("錠を外すか? (Yes / No)");
+         addstr("鍵を外すか? (Yes / No)");
 
          int c=getkey();
 
