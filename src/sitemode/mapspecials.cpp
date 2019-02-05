@@ -1115,7 +1115,7 @@ void special_graffiti()
 
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(16,1);
-   addstr("The squad sprays Liberal Graffiti!", gamelog);
+   addstr("部隊はリベラル落書きをした!", gamelog);
    gamelog.newline();
 
    if(!sitestory->claimed)

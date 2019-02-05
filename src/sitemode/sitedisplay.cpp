@@ -128,7 +128,7 @@ void printsitemap(int x,int y,int z)
       case SPECIAL_PRISON_CONTROL_LOW:
       case SPECIAL_PRISON_CONTROL_MEDIUM:
       case SPECIAL_PRISON_CONTROL_HIGH:strcpy(str,"Prison Control Room");break;
-      case SPECIAL_INTEL_SUPERCOMPUTER:strcpy(str,"Supercomputer");break;
+      case SPECIAL_INTEL_SUPERCOMPUTER:strcpy(str,"スーパーコンピュータ");break;
       case SPECIAL_SWEATSHOP_EQUIPMENT:strcpy(str,"織機");break;
       case SPECIAL_POLLUTER_EQUIPMENT:strcpy(str,"工場設備");break;
       case SPECIAL_ARMORY:strcpy(str,"Armory");break;
@@ -149,7 +149,7 @@ void printsitemap(int x,int y,int z)
       case SPECIAL_PARK_BENCH:strcpy(str,"ベンチ");break;
       case SPECIAL_BANK_VAULT:strcpy(str,"Bank Vault");break;
       case SPECIAL_BANK_TELLER:strcpy(str,"銀行窓口");break;
-      case SPECIAL_BANK_MONEY:strcpy(str,"Oh Wow So Much Money");break;
+      case SPECIAL_BANK_MONEY:strcpy(str,"すごい大金だ");break;
       case SPECIAL_CCS_BOSS:strcpy(str,"CCS Boss");break;
       case SPECIAL_OVAL_OFFICE_NW:
       case SPECIAL_OVAL_OFFICE_NE:
@@ -561,8 +561,8 @@ void printblock(int x,int y,int z,int px, int py)
          case SPECIAL_SIGN_ONE:
          case SPECIAL_SIGN_TWO:
          case SPECIAL_SIGN_THREE:mvaddstr(py,px,"SIGN!");break;
-         case SPECIAL_STAIRS_UP:mvaddstr(py,px+1,"UP");addch(CH_UPWARDS_ARROW);break;
-         case SPECIAL_STAIRS_DOWN:mvaddstr(py,px+1,"DN");addch(CH_DOWNWARDS_ARROW);break;
+         case SPECIAL_STAIRS_UP:mvaddstr(py,px+1,"UP↑");break;
+         case SPECIAL_STAIRS_DOWN:mvaddstr(py,px+1,"DN↓");break;
          case SPECIAL_RESTAURANT_TABLE:mvaddstr(py,px,"TABLE");break;
          case SPECIAL_CAFE_COMPUTER:mvaddstr(py,px+1,"CPU");break;
          case SPECIAL_PARK_BENCH:mvaddstr(py,px,"BENCH");break;

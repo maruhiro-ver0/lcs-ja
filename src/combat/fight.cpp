@@ -1709,23 +1709,23 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                {
                   case 1: strcpy(str, a.name); strcat(str,"は外した!"); break;
                   case 2: strcpy(str, a.name); strcat(str,"はあと少しのところで外した!"); break;
-                  case 3: strcat(str," tumbles out of the way!"); break;
-                  case 4: strcat(str," jumps aside at the last moment!"); break;
-                  case 5: strcat(str," leaps for cover!"); break;
-                  case 6: strcat(str," ducks back behind cover!"); break;
-                  case 7: strcat(str," wisely stays behind cover!"); break;
-                  case 8: strcat(str," rolls away from the attack!"); break;
-                  case 9: strcat(str," nimbly dodges away from the line of fire!"); break;
-                  case 10: strcat(str," leaps over the attack!"); break;
-                  case 11: strcat(str," gracefully dives to avoid the attack!"); break;
-                  case 12: strcat(str," twists to avoid the attack!"); break;
-                  case 13: strcat(str," spins to the side!"); break;
-                  case 14: strcat(str," does the Matrix-dodge!"); break; // You saying I can dodge bullets?
-                  case 15: strcat(str," avoids the attack with no difficulty at all!"); break;
-                  case 16: strcat(str," flexes slightly to avoid being hit!"); break;
-                  case 17: strcat(str," confidently allows the attack to miss!"); break;
-                  case 18: strcat(str," seems to avoid the attack with only an angry glare!"); break; //When you're ready, you won't have to.
-                  default: strcpy(str, a.name); strcat(str," misses completely!"); break; // You failed to hit someone who probably rolled a zero.  You should feel bad.
+                  case 3: strcat(str,"は反対方向に転がって避けた!"); break;
+                  case 4: strcat(str,"はわずかのところで跳び退いた!"); break;
+                  case 5: strcat(str,"はジャンプして避けた!"); break;
+                  case 6: strcat(str,"は物陰に身を潜めた!"); break;
+                  case 7: strcat(str,"はうまく物陰に隠れた!"); break;
+                  case 8: strcat(str,"は転がって攻撃を避けた!"); break;
+                  case 9: strcat(str,"はわずかのところで避けた!"); break;
+                  case 10: strcat(str,"はジャンプして攻撃を避けた!"); break;
+                  case 11: strcat(str,"は優雅に飛び込んで攻撃を避けた!"); break;
+                  case 12: strcat(str,"は体をひねって攻撃を避けた!"); break;
+                  case 13: strcat(str,"は回転して避けた!"); break;
+                  case 14: strcat(str,"はマトリックス避けをした!"); break; // You saying I can dodge bullets?
+                  case 15: strcat(str,"は難なく攻撃を避けた!"); break;
+                  case 16: strcat(str,"はわずかに体を曲げて避けた!"); break;
+                  case 17: strcat(str,"は堂々と避けた!"); break;
+                  case 18: strcat(str,"はまるで睨みつけただけで攻撃を避けたようだ!"); break; //When you're ready, you won't have to.
+                  default: strcpy(str, a.name); strcat(str,"は完全に外した!"); break; // You failed to hit someone who probably rolled a zero.  You should feel bad.
                }
             }
          }

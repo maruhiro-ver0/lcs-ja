@@ -157,7 +157,7 @@ void squadstory_text_location(newsstoryst& ns,bool liberalguardian,bool ccs,char
          strcat(story,"、もし保守の手の中になければ百人もの人々が暮せる建造物");break;
       case SITE_MEDIA_AMRADIO:
       case SITE_MEDIA_CABLENEWS:
-         strcat(story,"、極めて保守に偏向した番組で知られる場所");break;
+         strcat(story,"、極めて保守に偏向した番組で知られる放送局");break;
       case SITE_BUSINESS_BANK:
          strcat(story,"、経済的不平等を象徴する場所");break;
       default:
@@ -177,7 +177,7 @@ void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char*
       {
          if(ns.positive)
          {
-            strcat(story,"警察の発表によると、昨日リベラル・クライム・スコードを自称するグループによる政治的アピールらしい突然の行動があった。");
+            strcat(story,"警察の発表によると、昨日リベラル・クライム・スコードを自称するグループによる政治的アピールらしき突然の行動があった。");
             strcat(story,"&r");
          }
          else
@@ -335,14 +335,14 @@ void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char*
 
    if(ns.type==NEWSSTORY_SQUAD_KILLED_SITE)
    {
-      if(liberalguardian)strcat(story,"Unfortunately, the LCS group was defeated by the forces of evil.  ");
-      else if(ns.positive)strcat(story,"Everyone in the LCS group was arrested or killed.  ");
-      else strcat(story,"Fortunately, the LCS thugs were stopped by brave citizens.  ");
+      if(liberalguardian)strcat(story,"悲しむべきことにLCSの集団は悪の軍勢に葬り去られた。 ");
+      else if(ns.positive)strcat(story,"LCSのメンバーは全員が逮捕または死亡した。 ");
+      else strcat(story,"幸いなことに、LCSの凶行は勇敢な市民によって阻止された。 ");
    }
    if(ns.type==NEWSSTORY_CCS_KILLED_SITE)
    {
-      if(ns.positive&&!liberalguardian)strcat(story,"Everyone in the CCS group was arrested or killed.  ");
-      else strcat(story,"Fortunately, the CCS thugs were stopped by brave citizens.  ");
+      if(ns.positive&&!liberalguardian)strcat(story,"CCSのメンバーは全員が逮捕または死亡した。 ");
+      else strcat(story,"幸いなことに、CCSの凶行は勇敢な市民によって阻止された。 ");
    }
    strcat(story,"&r");
 }

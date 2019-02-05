@@ -55,16 +55,16 @@ void fight_subdued()
    clearcommandarea();
    set_color(COLOR_MAGENTA,COLOR_BLACK,1);
    move(16,1);
-   addstr("The police subdue and arrest the squad.", gamelog);
+   addstr("警官は部隊を鎮圧した。", gamelog);
    gamelog.newline();
    if(hostagefreed>0)
    {
       move(17,1);
-      addstr("Your hostage", gamelog);
+      addstr("人質", gamelog);
       if(hostagefreed>1)
-         addstr("s are free.", gamelog);
+         addstr("達は解放された。", gamelog);
       else
-         addstr(" is free.", gamelog);
+         addstr("は解放された", gamelog);
    }
    gamelog.newline();
 
@@ -310,43 +310,43 @@ void mode_site()
             switch(location[cursite]->type)
             {
             case SITE_GOVERNMENT_ARMYBASE:
-               addstr(": SOLDIERS AND TANKS RESPONDING");
+               addstr(": 陸軍応戦中");
                break;
             case SITE_GOVERNMENT_WHITE_HOUSE:
-               addstr(": SECRET SERVICE RESPONDING");
+               addstr(": シークレットサービス応戦中");
                break;
             case SITE_GOVERNMENT_INTELLIGENCEHQ:
-               addstr(": AGENTS RESPONDING");
+               addstr(": 諜報員応戦中");
                break;
             case SITE_CORPORATE_HEADQUARTERS:
             case SITE_CORPORATE_HOUSE:
-               addstr(": MERCENARIES RESPONDING");
+               addstr(": 民間傭兵応戦中");
                break;
             case SITE_MEDIA_AMRADIO:
             case SITE_MEDIA_CABLENEWS:
-               addstr(": ANGRY MOB RESPONDING");
+               addstr(": 怒れる群集応戦中");
                break;
             case SITE_BUSINESS_CRACKHOUSE:
-               addstr(": GANG MEMBERS RESPONDING");
+               addstr(": ギャング応戦中");
                break;
             case SITE_GOVERNMENT_POLICESTATION:
             default:
                if(location[cursite]->renting==RENTING_CCS)
                {
-                  addstr(": CCS VIGILANTIES RESPONDING");
+                  addstr(": CCS自警団応戦中");
                }
                else if(law[LAW_DEATHPENALTY]==-2&&
-                  law[LAW_POLICEBEHAVIOR]==-2)addstr(": DEATH SQUADS RESPONDING");
-               else addstr(": POLICE RESPONDING");
+                  law[LAW_POLICEBEHAVIOR]==-2)addstr(": 死の部隊応戦中");
+               else addstr(": 警官隊応戦中");
                break;
             }
             music.play(MUSIC_HEAVYCOMBAT);
          }
-         else if(postalarmtimer>60) { addstr(": CONSERVATIVE REINFORCEMENTS INCOMING"); music.play(MUSIC_ALARMED); }
-         else if(sitealienate==1) { addstr(": ALIENATED MASSES"); music.play(MUSIC_ALARMED); }
-         else if(sitealienate==2) { addstr(": ALIENATED EVERYONE"); music.play(MUSIC_ALARMED); }
-         else if(sitealarm) { addstr(": CONSERVATIVES ALARMED"); music.play(MUSIC_ALARMED); }
-         else if(sitealarmtimer==0) { addstr(": CONSERVATIVES SUSPICIOUS"); music.play(MUSIC_SUSPICIOUS); }
+         else if(postalarmtimer>60) { addstr(": 保守増援部隊接近中"); music.play(MUSIC_ALARMED); }
+         else if(sitealienate==1) { addstr(": 群集から疎外"); music.play(MUSIC_ALARMED); }
+         else if(sitealienate==2) { addstr(": 全員から疎外"); music.play(MUSIC_ALARMED); }
+         else if(sitealarm) { addstr(": 保守巡回中"); music.play(MUSIC_ALARMED); }
+         else if(sitealarmtimer==0) { addstr(": 保守警戒中"); music.play(MUSIC_SUSPICIOUS); }
          else music.play(MUSIC_SITEMODE);
       }
 

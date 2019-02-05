@@ -707,7 +707,7 @@ void trial(Creature &g)
                   addstr(attorneyname, gamelog);
                   addstr("の弁護を聞いた陪審員は立ち上がり、", gamelog);
                   move(10,1);
-                  addstr("評議が始まっていないのに「無罪だ! 」と叫んだ。", gamelog);
+                  addstr("協議が始まっていないのに「無罪だ! 」と叫んだ。", gamelog);
                   if(defense==4) addjuice(*sleeperlawyer,10,500); // Bow please
                }
                else
@@ -771,7 +771,7 @@ void trial(Creature &g)
       //DELIBERATION MESSAGE
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(12,1);
-      addstr("陪審員は議論するために離れた。", gamelog);
+      addstr("陪審員は協議のため離れた。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -780,7 +780,7 @@ void trial(Creature &g)
       erase();
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(1,1);
-      addstr("陪審員は評議から戻ってきた。", gamelog);
+      addstr("陪審員は協議から戻ってきた。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -1065,7 +1065,7 @@ void penalize(Creature &g,char lenient)
       set_color(COLOR_RED,COLOR_BLACK,1);
       move(7,1);
       addstr(g.propername, gamelog);
-      addstr("、あなたは刑務所に戻り死刑執行を待つこと。", gamelog);
+      addstr("は刑務所に戻り死刑執行を待つこと。", gamelog);
       gamelog.newline();
 
       getkey();
