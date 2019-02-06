@@ -397,7 +397,7 @@ void makearmor(Creature &cr,char &clearformess)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
       addstr(cr.name, gamelog);
-      addstr(" cannot afford material for clothing.", gamelog);
+      addstr("には服を作る余裕がない。", gamelog);
       gamelog.nextMessage();
 
       getkey();
@@ -599,97 +599,97 @@ void survey(Creature *cr)
             break;
          case VIEW_POLICEBEHAVIOR:
             if(attitude[VIEW_POLICEBEHAVIOR]>50) addstr("警察による暴力の防止");
-            else addstr("警察権の拡大");
+            else addstr("警察の強化");
             break;
          case VIEW_INTELLIGENCE:
-            if(attitude[VIEW_INTELLIGENCE]>50) addstr("civil liberties and personal privacy");
-            else addstr("national security and intelligence");
+            if(attitude[VIEW_INTELLIGENCE]>50) addstr("市民の自由とプライバシー保護");
+            else addstr("安全保障と諜報機関の重要性");
             break;
          case VIEW_FREESPEECH:
             if(attitude[VIEW_FREESPEECH]>50) addstr("言論の自由をどう守るか");
             else addstr("どうやってヘイトスピーチを止めさせるか");
             break;
          case VIEW_GENETICS:
-            if(attitude[VIEW_GENETICS]>50) addstr("the dangers of genetic engineering");
-            else addstr("excessive regulation of genetic research");
+            if(attitude[VIEW_GENETICS]>50) addstr("遺伝子工学の危険性");
+            else addstr("過度な遺伝子研究の制限");
             break;
          case VIEW_JUSTICES:
-            if(attitude[VIEW_JUSTICES]>50) addstr("appointing proper Liberal justices");
-            else addstr("appointing proper Conservative justices");
+            if(attitude[VIEW_JUSTICES]>50) addstr("リベラル派判事の必要性");
+            else addstr("保守派判事の必要性");
             break;
          case VIEW_SWEATSHOPS:
-            if(attitude[VIEW_SWEATSHOPS]>50) addstr("threats to labor rights");
-            else addstr("corrupt union thugs");
+            if(attitude[VIEW_SWEATSHOPS]>50) addstr("労働者の権利の危機");
+            else addstr("労働組合の不当な要求");
             break;
          case VIEW_POLLUTION:
-            if(attitude[VIEW_POLLUTION]>50) addstr("threats to the environment");
-            else addstr("excessive regulation of industry");
+            if(attitude[VIEW_POLLUTION]>50) addstr("環境の危機");
+            else addstr("過度な公害規制");
             break;
          case VIEW_CORPORATECULTURE:
-            if(attitude[VIEW_CORPORATECULTURE]>50) addstr("corporate corruption");
-            else addstr("excessive regulation of corporations");
+            if(attitude[VIEW_CORPORATECULTURE]>50) addstr("企業腐敗");
+            else addstr("過度な企業への規制");
             break;
          case VIEW_CEOSALARY:
-            if(attitude[VIEW_CEOSALARY]>50) addstr("severe income inequality");
-            else addstr("resisting communist wage limits");
+            if(attitude[VIEW_CEOSALARY]>50) addstr("過度に不公正な賃金");
+            else addstr("社会主義的な報酬の制限");
             break;
          case VIEW_PRISONS:
-            if(attitude[VIEW_PRISONS]>50) addstr("stopping the prisoners' suffering");
-            else addstr("putting the prisoners in line");
+            if(attitude[VIEW_PRISONS]>50) addstr("囚人への虐待の防止");
+            else addstr("囚人の更生");
             break;
          //case VIEW_POLITICALVIOLENCE:
          //   if(attitude[VIEW_POLITICALVIOLENCE]>50) addstr("taking strong action");
          //   else addstr("political terrorism");
          //   break;
          case VIEW_IMMIGRATION:
-            if(attitude[VIEW_IMMIGRATION]>50) addstr("immigrant rights");
+            if(attitude[VIEW_IMMIGRATION]>50) addstr("移民の権利");
             else
             {
-               if(law[LAW_IMMIGRATION]>=1) addstr("uncontrolled immigration");
-               else addstr("illegal immigration");
+               if(law[LAW_IMMIGRATION]>=1) addstr("管理されていない移民");
+               else addstr("不法移民");
             }
             break;
          case VIEW_DRUGS:
-            if(attitude[VIEW_DRUGS]>50) addstr("drug rights");
-            else addstr("drug abuse");
+            if(attitude[VIEW_DRUGS]>50) addstr("薬物の権利");
+            else addstr("薬物の規制");
             break;
          case VIEW_WOMEN:
-            if(attitude[VIEW_WOMEN]>50) addstr("women's equality");
-            else addstr("women");
+            if(attitude[VIEW_WOMEN]>50) addstr("男女平等");
+            else addstr("女性");
             break;
          case VIEW_CIVILRIGHTS:
-            if(attitude[VIEW_CIVILRIGHTS]>50) addstr("civil rights");
-            else addstr("troublemaking minorities");
+            if(attitude[VIEW_CIVILRIGHTS]>50) addstr("市民の権利");
+            else addstr("問題を引き起こすマイノリティ");
             break;
          case VIEW_GUNCONTROL:
-            if(attitude[VIEW_GUNCONTROL]>50) addstr("gun violence");
-            else addstr("protecting the Second Amendment");
+            if(attitude[VIEW_GUNCONTROL]>50) addstr("銃犯罪");
+            else addstr("修正第2条の堅持");
             break;
          case VIEW_MILITARY:
-            if(attitude[VIEW_MILITARY]>50) addstr("military imperialism");
-            else addstr("defending the nation");
+            if(attitude[VIEW_MILITARY]>50) addstr("軍事的帝国主義");
+            else addstr("国防");
             break;
          case VIEW_LIBERALCRIMESQUAD:
          case VIEW_LIBERALCRIMESQUADPOS:
-            if(attitude[VIEW_LIBERALCRIMESQUAD]<50) addstr("activist political groups");
+            if(attitude[VIEW_LIBERALCRIMESQUAD]<50) addstr("政治活動家");
             else
             {
-               if(attitude[VIEW_LIBERALCRIMESQUADPOS]>50) addstr("the Liberal Crime Squad");
-               else addstr("the LCS terrorists");
+               if(attitude[VIEW_LIBERALCRIMESQUADPOS]>50) addstr("リベラル・クライム・スコード");
+               else addstr("LCSのテロリスト");
             }
             break;
          case VIEW_CONSERVATIVECRIMESQUAD:
-            if(attitude[VIEW_CONSERVATIVECRIMESQUAD]<50) addstr("the Conservative Crime Squad");
-            else addstr("the CCS terrorists");
+            if(attitude[VIEW_CONSERVATIVECRIMESQUAD]<50) addstr("コンサバ・クライム・スコード");
+            else addstr("CCSのテロリスト");
             break;
          case VIEW_TORTURE:
-            if(attitude[VIEW_TORTURE]>50)addstr("ending the use of torture");
-            else addstr("enhancing interrogations");
+            if(attitude[VIEW_TORTURE]>50)addstr("拷問の禁止");
+            else addstr("取調べの強化");
             break;
          case VIEW_AMRADIO:
          case VIEW_CABLENEWS:
-            if(attitude[VIEW_AMRADIO]+attitude[VIEW_CABLENEWS]>100) addstr("Conservative Media Bias");
-            else addstr("Liberal Media Bias");
+            if(attitude[VIEW_AMRADIO]+attitude[VIEW_CABLENEWS]>100) addstr("保守メディアの偏向");
+            else addstr("リベラルメディアの偏向");
             break;
       }
       addstr("に関心を持っている。");
@@ -779,7 +779,7 @@ void survey(Creature *cr)
          case VIEW_TAXES: addstr("が減税に抗議している"); break;
          case VIEW_NUCLEARPOWER: addstr("が原子力に不安を感じている"); break;
          case VIEW_ANIMALRESEARCH: addstr("が動物実験を非難している"); break;
-         case VIEW_POLICEBEHAVIOR: addstr("が警察を批判している"); break;
+         case VIEW_POLICEBEHAVIOR: addstr("が警察の暴力を批判している"); break;
          case VIEW_TORTURE: addstr("が拷問が行われていないかの監視の強化を望んでいる"); break;
          case VIEW_INTELLIGENCE: addstr("が情報機関がプライバシーを侵害していると考えている"); break;
          case VIEW_FREESPEECH: addstr("が無制限の言論の自由を信用している"); break;
@@ -831,9 +831,9 @@ void attemptarrest(Creature & liberal,const char* string,int clearformess)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
       addstr(liberal.name, gamelog);
-      addstr(" is accosted by police while ", gamelog);
+      addstr(" が", gamelog);
       addstr(string, gamelog);
-      addstr("!", gamelog);
+      addstr("警官が近づいてきた!", gamelog);
       gamelog.nextMessage();
 
       getkey();
@@ -1018,7 +1018,7 @@ void doActivitySolicitDonations(vector<Creature *> &solicit, char &clearformess)
    long total_income=0;
    for(int s=0;s<len(solicit);s++)
    {
-      if(!checkforarrest(*solicit[s],"soliciting donations",clearformess))
+      if(!checkforarrest(*solicit[s],"寄付金を集めていると",clearformess))
       {
          int income=solicit[s]->skill_roll(SKILL_PERSUASION) *
                     solicit[s]->get_armor().get_professionalism()+1;
@@ -1044,7 +1044,7 @@ void doActivitySellTshirts(vector<Creature *> &tshirts, char &clearformess)
 {
    for(int s=0;s<len(tshirts);s++)
    {
-      if(!checkforarrest(*tshirts[s],"selling shirts",clearformess))
+      if(!checkforarrest(*tshirts[s],"Tシャツを売っていると",clearformess))
       {
          long money = (tshirts[s]->skill_roll(SKILL_TAILORING) +
                        tshirts[s]->skill_roll(SKILL_BUSINESS))/2;
@@ -1071,7 +1071,7 @@ void doActivitySellArt(vector<Creature *> &art, char &clearformess)
 {
 	for(int s=0;s<len(art);s++)
    {
-      if(!checkforarrest(*art[s],"sketching portraits",clearformess))
+      if(!checkforarrest(*art[s],"似顔絵を描いていると",clearformess))
       {
          long money = art[s]->skill_roll(SKILL_ART);
 
@@ -1096,7 +1096,7 @@ void doActivitySellMusic(vector<Creature *> &music, char &clearformess)
 {
    for(int s=0;s<len(music);s++)
    {
-      if(!checkforarrest(*music[s],"playing music",clearformess))
+      if(!checkforarrest(*music[s],"音楽を弾いていると",clearformess))
       {
          long money = music[s]->skill_roll(SKILL_MUSIC)/2;
          bool has_instrument = music[s]->get_weapon().is_instrument();
@@ -1141,7 +1141,7 @@ void doActivitySellBrownies(vector<Creature *> &brownies, char &clearformess)
          sitestory=ns;
 
          criminalize(*brownies[s],LAWFLAG_BROWNIES);
-         attemptarrest(*brownies[s],"selling brownies",clearformess);
+         attemptarrest(*brownies[s],"ケーキを売っていると",clearformess);
       }
 
       long money = brownies[s]->skill_roll(SKILL_PERSUASION) +
@@ -1780,9 +1780,9 @@ void doActivityLearn(vector<Creature *> &students, char &clearformess)
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(8,1);
          addstr(students[s]->name, gamelog);
-         addstr(" has learned as much as ", gamelog);
+         addstr("は限界まで", gamelog);
          addstr(students[s]->heshe(), gamelog);
-         addstr(" can.", gamelog);
+         addstr("を学んだ。", gamelog);
          gamelog.nextMessage();
 
          getkey();
@@ -1985,14 +1985,14 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
                   ns->positive=0;
                   newsstory.push_back(ns);
                   sitestory=ns;
-                  attemptarrest(*trouble[t],"causing trouble",clearformess);
+                  attemptarrest(*trouble[t],"騒ぎを起こしていると",clearformess);
                }
                else
                {
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
                   addstr(trouble[t]->name, gamelog);
-                  addstr(" is cornered by a mob of angry rednecks.", gamelog);
+                  addstr("は怒れる赤っ首の群集に詰め寄られた。", gamelog);
                   gamelog.nextMessage();
 
                   getkey();
@@ -2007,9 +2007,9 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
                      set_color(COLOR_WHITE,COLOR_BLACK,1);
                      move(8,1);
                      addstr(trouble[t]->name, gamelog);
-                     addstr(" brandishes the ", gamelog);
+                     addstr("は", gamelog);
                      addstr(trouble[t]->get_weapon().get_name(), gamelog);
-                     addstr("!", gamelog);
+                     addstr("をちらつかせた!", gamelog);
                      gamelog.nextMessage();
 
                      getkey();
@@ -2019,7 +2019,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
 
                      set_color(COLOR_WHITE,COLOR_BLACK,1);
                      move(8,1);
-                     addstr("The mob scatters!", gamelog);
+                     addstr("群集は逃げ出した!", gamelog);
                      gamelog.nextMessage();
 
                      getkey();
@@ -2041,14 +2041,14 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
                            addstr(trouble[t]->name, gamelog);
                            switch(LCSrandom(8))
                            {
-                           case 0:addstr(" breaks the arm of the nearest person!", gamelog);break;
-                           case 1:addstr(" knees a guy in the balls!", gamelog);break;
-                           case 2:addstr(" knocks one out with a fist to the face!", gamelog);break;
-                           case 3:addstr(" bites some hick's ear off!", gamelog);break;
-                           case 4:addstr(" smashes one of them in the jaw!", gamelog);break;
-                           case 5:addstr(" shakes off a grab from behind!", gamelog);break;
-                           case 6:addstr(" yells the slogan!", gamelog);break;
-                           case 7:addstr(" knocks two of their heads together!", gamelog);break;
+                           case 0:addstr("は近くにいる者の腕をへし折った!", gamelog);break;
+                           case 1:addstr("は股間を蹴り上げた!", gamelog);break;
+                           case 2:addstr("は顔面を殴った!", gamelog);break;
+                           case 3:addstr("は耳を噛みちぎった!", gamelog);break;
+                           case 4:addstr("はあごを強打した!", gamelog);break;
+                           case 5:addstr("は後ろから掴まれたが振り払った!", gamelog);break;
+                           case 6:addstr("はスローガンを叫んだ!", gamelog);break;
+                           case 7:addstr("は2人の頭を掴みぶつけた!", gamelog);break;
                            }
 
                            gamelog.nextMessage();
@@ -2064,14 +2064,14 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
                            addstr(trouble[t]->name, gamelog);
                            switch(LCSrandom(8))
                            {
-                           case 0:addstr(" is held down and kicked by three guys!", gamelog);break;
-                           case 1:addstr(" gets pummeled!", gamelog);break;
-                           case 2:addstr(" gets hit by a sharp rock!", gamelog);break;
-                           case 3:addstr(" is thrown against the sidewalk!", gamelog);break;
-                           case 4:addstr(" is bashed in the face with a shovel!", gamelog);break;
-                           case 5:addstr(" is forced into a headlock!", gamelog);break;
-                           case 6:addstr(" crumples under a flurry of blows!", gamelog);break;
-                           case 7:addstr(" is hit in the chest with a pipe!", gamelog);break;
+                           case 0:addstr("は押さえつけられ3人の男に殴られた!", gamelog);break;
+                           case 1:addstr("は殴られた!", gamelog);break;
+                           case 2:addstr("は尖った石で殴られた!", gamelog);break;
+                           case 3:addstr("は歩道に投げ飛ばされた!", gamelog);break;
+                           case 4:addstr("はシャベルで顔を殴られた!", gamelog);break;
+                           case 5:addstr("は首を掴まれた!", gamelog);break;
+                           case 6:addstr("は何度も殴られた!", gamelog);break;
+                           case 7:addstr("はパイプで腹を殴られた!", gamelog);break;
                            }
 
                            gamelog.nextMessage();
@@ -2091,11 +2091,11 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
                         set_color(COLOR_GREEN,COLOR_BLACK,1);
                         move(8,1);
                         addstr(trouble[t]->name, gamelog);
-                        addstr(" beat the ", gamelog);
+                        addstr("は詰め寄ってきた", gamelog);
                         if(law[LAW_FREESPEECH]==-2)
-                           addstr("[tar]", gamelog);
-                        else addstr("shit", gamelog);
-                        addstr(" out of everyone who got close!", gamelog);
+                           addstr("[きたない]", gamelog);
+                        else addstr("クソ", gamelog);
+                        addstr("野郎を全て打ちのめした!", gamelog);
 
                         gamelog.nextMessage();
 
@@ -2113,7 +2113,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
                      set_color(COLOR_RED,COLOR_BLACK,1);
                      move(8,1);
                      addstr(trouble[t]->name, gamelog);
-                     addstr(" is severely beaten before the mob is broken up.", gamelog);
+                     addstr("は群集に打ちのめされた。", gamelog);
                      gamelog.nextMessage();
 
                      trouble[t]->activity.type=ACTIVITY_CLINIC;
@@ -2134,7 +2134,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
                               {
                                  move(8,1);
                                  addstr(trouble[t]->name, gamelog);
-                                 addstr("'s lower spine has been broken!", gamelog);
+                                 addstr("の下部脊椎が折れた!", gamelog);
                                  gamelog.nextMessage();
                                  trouble[t]->special[SPECIALWOUND_LOWERSPINE]=0;
 
@@ -2146,7 +2146,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
                               {
                                  move(8,1);
                                  addstr(trouble[t]->name, gamelog);
-                                 addstr("'s upper spine has been broken!", gamelog);
+                                 addstr("の上部脊椎が折れた!", gamelog);
                                  gamelog.nextMessage();
                                  trouble[t]->special[SPECIALWOUND_UPPERSPINE]=0;
 
@@ -2158,7 +2158,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
                               {
                                  move(8,1);
                                  addstr(trouble[t]->name, gamelog);
-                                 addstr("'s neck has been broken!", gamelog);
+                                 addstr("の首の骨が折れた!", gamelog);
                                  gamelog.nextMessage();
                                  trouble[t]->special[SPECIALWOUND_NECK]=0;
 
@@ -2170,8 +2170,8 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
                               {
                                  move(8,1);
                                  addstr(trouble[t]->name);
-                                 if(trouble[t]->special[SPECIALWOUND_TEETH]>1)addstr("'s teeth have been smashed out on the curb.", gamelog);
-                                 else addstr("'s tooth has been pulled out with pliers!", gamelog);
+                                 if(trouble[t]->special[SPECIALWOUND_TEETH]>1)addstr("の歯が道に落ちている。", gamelog);
+                                 else addstr("の歯がペンチで引き抜かれた!", gamelog);
                                  gamelog.nextMessage();
                                  trouble[t]->special[SPECIALWOUND_TEETH]=0;
 
@@ -2188,26 +2188,25 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
                                  move(8,1);
                                  if(ribminus>1)
                                  {
-                                    if(ribminus==trouble[t]->special[SPECIALWOUND_RIBS])
-                                       addstr("All ", gamelog);
-                                    addstr(ribminus, gamelog);
-                                    addstr(" of ", gamelog);
                                     addstr(trouble[t]->name, gamelog);
-                                    addstr("'s ribs are ", gamelog);
+                                    addstr("の肋骨", gamelog);
+                                    addstr(ribminus, gamelog);
+                                    addstr("本", gamelog);
+                                    if(ribminus==trouble[t]->special[SPECIALWOUND_RIBS])
+                                       addstr("全て", gamelog);
                                  }
                                  else if(trouble[t]->special[SPECIALWOUND_RIBS]>1)
                                  {
-                                    addstr("One of ", gamelog);
                                     addstr(trouble[t]->name, gamelog);
-                                    addstr("'s rib is ", gamelog);
+                                    addstr("の肋骨", gamelog);
                                  }
                                  else
                                  {
                                     addstr(trouble[t]->name);
-                                    addstr("'s last unbroken rib is ", gamelog);
+                                    addstr("の最後の肋骨", gamelog);
                                  }
 
-                                 addstr("broken!", gamelog);
+                                 addstr("が折れた!", gamelog);
                                  gamelog.nextMessage();
 
                                  getkey();
@@ -2394,9 +2393,9 @@ void doActivityBury(vector<Creature *> &bury, char &clearformess)
                sitestory=ns;
 
                criminalize(*bury[b],LAWFLAG_BURIAL);
-               char str[100] = "burying ";
-               strcat(str, pool[p]->name);
-               strcat(str, "'s body");
+               char str[100];
+               strcpy(str, pool[p]->name);
+               strcat(str, "の遺体を埋めていると");
                attemptarrest(*bury[b],str,clearformess);
 
                // If a liberal is spotted they should not do more burials.
@@ -2437,7 +2436,7 @@ bool stealcar(Creature &cr,char &clearformess)
       erase();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
-      addstr("Adventures in Liberal Car Theft", gamelog);
+      addstr("車泥棒の冒険", gamelog);
       gamelog.nextMessage();
       printcreatureinfo(&cr);
       makedelimiter();
@@ -2445,7 +2444,7 @@ bool stealcar(Creature &cr,char &clearformess)
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(10,0);
       addstr(cr.name, gamelog);
-      addstr(" looks around for an accessible vehicle...", gamelog);
+      addstr("は盗めそうな車を探している…", gamelog);
 
       getkey();
 
@@ -2460,13 +2459,13 @@ bool stealcar(Creature &cr,char &clearformess)
       addstr(cr.name, gamelog);
       if(old!=cartype)
       {
-         addstr(" was unable to find a ", gamelog);
+         addstr("は", gamelog);
          addstr(vehicletype[old]->longname(), gamelog);
-         addstr(" but did find a ", gamelog);
+         addstr("を見つけられなかった。だが、", gamelog);
       }
-      else addstr(" found a ", gamelog);
+      else addstr("は", gamelog);
       addstr(v->longname(), gamelog);
-      addstr(".", gamelog);
+      addstr("を見つけた。", gamelog);
       gamelog.nextMessage();
 
       getkey();
@@ -2475,23 +2474,23 @@ bool stealcar(Creature &cr,char &clearformess)
       erase();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
-      addstr("Adventures in Liberal Car Theft");
+      addstr("車泥棒の冒険");
       printcreatureinfo(&cr);
       makedelimiter();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(10,0);
       addstr(cr.name, gamelog);
-      addstr(" looks from a distance at an empty ", gamelog);
+      addstr("は遠くから", gamelog);
       addstr(carname, gamelog);
-      addstr(".", gamelog);
+      addstr("を見たが、誰も乗っていないようだ。", gamelog);
 
       gamelog.nextMessage();
 
       move(12,0);
-      addstr("A - Approach the driver's side door.");
+      addstr("A - 運転席の方向のドアに近づく");
       move(13,0);
-      addstr("Enter - Call it a day.");
+      addstr("Enter - 引き上げる");
 
       while(true)
       {
@@ -2510,7 +2509,7 @@ bool stealcar(Creature &cr,char &clearformess)
          erase();
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(0,0);
-         addstr("Adventures in Liberal Car Theft");
+         addstr("車泥棒の冒険");
          printcreatureinfo(&cr);
          makedelimiter();
 
@@ -2518,20 +2517,20 @@ bool stealcar(Creature &cr,char &clearformess)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(10,0);
-            if(sensealarm)addstr("THE VIPER");
+            if(sensealarm)addstr("VIPER");
             else addstr(carname);
-            addstr(":   ");
+            addstr(": ");
             set_color(COLOR_RED,COLOR_BLACK,1);
-            if(sensealarm)addstr("STAND AWAY FROM THE VEHICLE!   <BEEP!!> <BEEP!!>");
-            else addstr("<BEEP!!> <BEEP!!> <BEEP!!> <BEEP!!>");
+            if(sensealarm)addstr("車から離れなさい!   <ビー!!> <ビー!!>");
+            else addstr("<ビー!!> <ビー!!> <ビー!!> <ビー!!>");
          }
          else if(sensealarm)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(10,0);
-            addstr("THE VIPER:   ");
+            addstr("VIPER: ");
             set_color(COLOR_RED,COLOR_BLACK,1);
-            addstr("THIS IS THE VIPER!   STAND AWAY!", gamelog);
+            addstr("こちらVIPER!   車から離れなさい!", gamelog);
             gamelog.nextMessage();
          }
          else
@@ -2539,33 +2538,33 @@ bool stealcar(Creature &cr,char &clearformess)
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(10,0);
             addstr(cr.name, gamelog);
-            addstr(" stands by the ", gamelog);
+            addstr("は", gamelog);
             addstr(carname, gamelog);
-            addstr(".", gamelog);
+            addstr("に近づいた。", gamelog);
             gamelog.nextMessage();
          }
 
          move(12,0);
          set_color(COLOR_WHITE,COLOR_BLACK,0);
-         addstr("A - Pick the lock.");
+         addstr("A - 鍵を外す");
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(13,0);
-         addstr("B - Break the window.");
+         addstr("B - 窓を壊す");
          move(14,0);
-         if(!sensealarm)addstr("Enter - Call it a day.");
+         if(!sensealarm)addstr("Enter - 引き上げる");
          else
          {
             if(!alarmon)
             {
-               addstr("Enter - The Viper?   ");
+               addstr("Enter - VIPER? ");
                addstr(cr.name);
-               addstr(" is deterred.");
+               addstr("はあきらめた。");
             }
             else
             {
-               addstr("Enter - Yes, the Viper has deterred ");
+               addstr("Enter - その通り。VIPERは");
                addstr(cr.name);
-               addstr(".");
+               addstr("をあきらめさせた。");
             }
          }
 
@@ -2595,7 +2594,7 @@ bool stealcar(Creature &cr,char &clearformess)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,0);
                addstr(cr.name, gamelog);
-               addstr(" jimmies the car door open.", gamelog);
+               addstr("は車のドアをこじ開けた。", gamelog);
                gamelog.nextMessage();
 
                getkey();
@@ -2607,7 +2606,7 @@ bool stealcar(Creature &cr,char &clearformess)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,0);
                addstr(cr.name, gamelog);
-               addstr(" fiddles with the lock with no luck.", gamelog);
+               addstr("は運悪く鍵を外せなかった。", gamelog);
                gamelog.nextMessage();
 
                getkey();
@@ -2623,13 +2622,13 @@ bool stealcar(Creature &cr,char &clearformess)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,0);
                addstr(cr.name, gamelog);
-               addstr(" smashes the window", gamelog);
+               addstr("は窓を", gamelog);
                if(cr.get_weapon().get_bashstrengthmod()>1)
                {
-                  addstr(" with a ", gamelog);
                   addstr(cr.get_weapon().get_name(2), gamelog);
+                  addstr("で", gamelog);
                }
-               addstr(".", gamelog);
+               addstr("壊した。", gamelog);
                gamelog.nextMessage();
                windowdamage=10;
 
@@ -2642,13 +2641,13 @@ bool stealcar(Creature &cr,char &clearformess)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,0);
                addstr(cr.name, gamelog);
-               addstr(" cracks the window", gamelog);
+               addstr("は窓を", gamelog);
                if(cr.get_weapon().get_bashstrengthmod()>1)
                {
-                  addstr(" with a ", gamelog);
                   addstr(cr.get_weapon().get_name(2), gamelog);
+                  addstr("で", gamelog);
                }
-               addstr(" but it is still somewhat intact.", gamelog);
+               addstr("壊そうとしたがヒビが入っただけだった。", gamelog);
                gamelog.nextMessage();
                windowdamage++;
 
@@ -2665,7 +2664,7 @@ bool stealcar(Creature &cr,char &clearformess)
             {
                set_color(COLOR_YELLOW,COLOR_BLACK,1);
                move(y++,0);
-               addstr("An alarm suddenly starts blaring!", gamelog);
+               addstr("突然アラームが鳴り始めた!", gamelog);
                gamelog.nextMessage();
 
                getkey();
@@ -2680,7 +2679,7 @@ bool stealcar(Creature &cr,char &clearformess)
             set_color(COLOR_RED,COLOR_BLACK,1);
             move(y++,0);
             addstr(cr.name, gamelog);
-            addstr(" has been spotted by a passerby!", gamelog);
+            addstr("は通行人に見つかった!", gamelog);
             gamelog.nextMessage();
 
             getkey();
@@ -2714,7 +2713,7 @@ bool stealcar(Creature &cr,char &clearformess)
          erase();
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(0,0);
-         addstr("Adventures in Liberal Car Theft");
+         addstr("リベラル車泥棒の冒険");
          printcreatureinfo(&cr);
          makedelimiter();
 
@@ -2723,32 +2722,32 @@ bool stealcar(Creature &cr,char &clearformess)
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(y++,0);
          addstr(cr.name, gamelog);
-         addstr(" is behind the wheel of a ", gamelog);
+         addstr("は", gamelog);
          addstr(carname, gamelog);
-         addstr(".", gamelog);
+         addstr("のハンドルの下に隠れている。", gamelog);
          gamelog.nextMessage();
 
          if(alarmon)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(y++,0);
-            if(sensealarm)addstr("THE VIPER");
+            if(sensealarm)addstr("VIPER");
             else addstr(carname);
-            addstr(":   ");
+            addstr(": ");
             set_color(COLOR_RED,COLOR_BLACK,1);
-            if(sensealarm)addstr("REMOVE YOURSELF FROM THE VEHICLE!   <BEEP!!> <BEEP!!>");
-            else addstr("<BEEP!!> <BEEP!!> <BEEP!!> <BEEP!!>");
+            if(sensealarm)addstr("車から降りなさい!   <ビー!!> <ビー!!>");
+            else addstr("<ビー!!> <ビー!!> <ビー!!> <ビー!!>");
          }
 
          move((++y)++,0);
          set_color(COLOR_WHITE,COLOR_BLACK,0);
-         addstr("A - Hotwire the car.");
+         addstr("A - キーを使わずにエンジンを掛ける");
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(y++,0);
-         addstr("B - Desperately search for keys.");
+         addstr("B - やぶれかぶれでキーを探す");
          move(y++,0);
-         if(!sensealarm)addstr("Enter - Call it a day.");
-         else {addstr("Enter - The Viper has finally deterred ");addstr(cr.name);addstr(".");}
+         if(!sensealarm)addstr("Enter - 引き上げる");
+         else {addstr("Enter - VIPERはついに");addstr(cr.name);addstr("をあきらめさせた");}
          y++;
 
          char method=-1;
@@ -2777,7 +2776,7 @@ bool stealcar(Creature &cr,char &clearformess)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(y++,0);
                addstr(cr.name, gamelog);
-               addstr(" hotwires the car!", gamelog);
+               addstr("はエンジンを掛けた!", gamelog);
                gamelog.nextMessage();
 
                getkey();
@@ -2795,11 +2794,11 @@ bool stealcar(Creature &cr,char &clearformess)
                else flavor_text = LCSrandom(5);
                switch(flavor_text)
                {
-                  case 0:addstr(" fiddles with the ignition, but the car doesn't start.", gamelog);break;
-                  case 1:addstr(" digs around in the steering column, but the car doesn't start.", gamelog);break;
-                  case 2:addstr(" touches some wires together, but the car doesn't start.", gamelog);break;
-                  case 3:addstr(" makes something in the engine click, but the car doesn't start.", gamelog);break;
-                  case 4:addstr(" manages to turn on some dash lights, but the car doesn't start.", gamelog);break;
+                  case 0:addstr("はイグニッションをいじったが、車は動かなかった。", gamelog);break;
+                  case 1:addstr("はステアリングコラムをいじったが、車は動かなかった。", gamelog);break;
+                  case 2:addstr("は色々なワイヤーに触れたが、車は動かなかった。", gamelog);break;
+                  case 3:addstr("は色々とエンジンを掛けようとしたが、車は動かなかった。", gamelog);break;
+                  case 4:addstr("はどうにかしてダッシュライトをつけようとしたが、車は動かなかった。", gamelog);break;
                }
                gamelog.nextMessage();
 
@@ -2815,41 +2814,42 @@ bool stealcar(Creature &cr,char &clearformess)
             if(!keys_in_car)
             {
                difficulty = DIFFICULTY_IMPOSSIBLE;
-               location   = "in SPACE. With ALIENS. Seriously.";
+               location   = "銀河の中、エイリアンと一緒に、マジで";
             }
             else switch(key_location)
             {
             case 0:
             default:
                difficulty = DIFFICULTY_AUTOMATIC;
-               location   = "in the ignition.  Damn.";
+               location   = "イグニッションの中(チクショウめ)";
                break;
             case 1:
                difficulty = DIFFICULTY_EASY;
-               location   = "above the pull-down sunblock thingy!";
+               location   = "日よけのアレの上";
                break;
             case 2:
                difficulty = DIFFICULTY_EASY;
-               location   = "in the glove compartment!";
+               location   = "小物入れ";
                break;
             case 3:
                difficulty = DIFFICULTY_AVERAGE;
-               location   = "under the front seat!";
+               location   = "運転席";
                break;
             case 4:
                difficulty = DIFFICULTY_HARD;
-               location   = "under the back seat!";
+               location   = "後部座席";
                break;
             }
             if(cr.attribute_check(ATTRIBUTE_INTELLIGENCE,difficulty))
             {
                set_color(COLOR_GREEN,COLOR_BLACK,1);
                move(y++,0);
-               if(law[LAW_FREESPEECH]==-2)addstr("Holy [Car Keys]!  ", gamelog); // Holy car keys Batman!
-               else addstr("Holy shit!  ", gamelog);
+               if(law[LAW_FREESPEECH]==-2)addstr("[やったぞ]! ", gamelog); // Holy car keys Batman!
+               else addstr("ヤバイ! ", gamelog);
                addstr(cr.name, gamelog);
-               addstr(" found the keys ", gamelog);
+               addstr("は", gamelog);
                addstr(location, gamelog);
+               addstr("で鍵を見つけた!", gamelog);
                gamelog.nextMessage();
 
                getkey();
@@ -2862,40 +2862,40 @@ bool stealcar(Creature &cr,char &clearformess)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(y++,0);
                addstr(cr.name, gamelog);
-               addstr(": <rummaging> ", gamelog);
+               addstr(": <探している> ", gamelog);
                set_color(COLOR_GREEN,COLOR_BLACK,1);
                if(key_search_total==5)
-                  addstr("Are they even in here?", gamelog);
+                  addstr("まだここにいるべきか?", gamelog);
                else if(key_search_total==10)
-                  addstr("I don't think they're in here...", gamelog);
+                  addstr("ここにあるとは思えない…", gamelog);
                else if(key_search_total==15)
-                  addstr("If they were here, I'd have found them by now.", gamelog);
+                  addstr("もしここにあるのならば、もう見つかっているはずだ。", gamelog);
                else if (key_search_total>15)
                {
                   switch(LCSrandom(5))
                   {
-                  case 0:addstr("This isn't working!", gamelog);break;
-                  case 1:addstr("Why me?", gamelog);break;
-                  case 2:addstr("What do I do now?", gamelog);break;
-                  case 3:addstr("Oh no...", gamelog);break;
-                  case 4:addstr("I'm going to get arrested, aren't I?", gamelog);break;
+                  case 0:addstr("見つからない!", gamelog);break;
+                  case 1:addstr("なぜこんなことを?", gamelog);break;
+                  case 2:addstr("一体何をしているんだ?", gamelog);break;
+                  case 3:addstr("ああ…", gamelog);break;
+                  case 4:addstr("逮捕して欲しいのか?", gamelog);break;
                   }
                }
                else
                {
                   switch(LCSrandom(5))
                   {
-                     case 0:addstr("Please be in here somewhere...", gamelog);break;
+                     case 0:addstr("ここにあればよいのだが…", gamelog);break;
                      case 1:
-                        if(law[LAW_FREESPEECH]==-2)addstr("[Shoot]!  Where are they?!", gamelog);
-                        else addstr("Fuck!  Where are they?!", gamelog);
+                        if(law[LAW_FREESPEECH]==-2)addstr("[まったく]! いったいどこに?!", gamelog);
+                        else addstr("畜生め! いったいどこに?!", gamelog);
                         break;
-                     case 2:addstr("Come on, baby, come to me...", gamelog);break;
+                     case 2:addstr("さあ、出ておいで…", gamelog);break;
                      case 3:
-                        if(law[LAW_FREESPEECH]==-2)addstr("[Darn] it...", gamelog);
-                        else addstr("Dammit...", gamelog);
+                        if(law[LAW_FREESPEECH]==-2)addstr("[うんざりだ]…", gamelog);
+                        else addstr("クソったれ…", gamelog);
                         break;
-                     case 4:addstr("I wish I could hotwire this thing...", gamelog);break;
+                     case 4:addstr("鍵なしでエンジンを掛ける技術があれば…", gamelog);break;
                   }
                }
                gamelog.nextMessage();
@@ -2910,7 +2910,7 @@ bool stealcar(Creature &cr,char &clearformess)
             set_color(COLOR_RED,COLOR_BLACK,1);
             move(y++,0);
             addstr(cr.name, gamelog);
-            addstr(" has been spotted by a passerby!", gamelog);
+            addstr("は通行人に見られた!", gamelog);
             gamelog.nextMessage();
 
             getkey();
@@ -2941,9 +2941,9 @@ bool stealcar(Creature &cr,char &clearformess)
             addstr(cr.name, gamelog);
             switch(LCSrandom(3))
             {
-               case 0:addstr(" hears someone nearby making a phone call.", gamelog);break;
-               case 1:addstr(" is getting nervous being out here this long.", gamelog);break;
-               case 2:addstr(" sees a police car driving around a few blocks away.", gamelog);break;
+               case 0:addstr("は誰かが携帯電話で話す声を聞いた。", gamelog);break;
+               case 1:addstr("はここに長く居ることに不安を感じた。", gamelog);break;
+               case 2:addstr("は数ブロック向こうでパトカーが走っているのを見た。", gamelog);break;
             }
             gamelog.nextMessage();
 
@@ -3003,12 +3003,11 @@ bool carselect(Creature &cr,short &cartype)
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
-      addstr("What type of car will ");
       addstr(cr.name);
-      addstr(" try to find and steal today?");
+      addstr("はどのような車を盗もうとするか?");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(1,0);
-      addstr("ﾄﾄﾄﾄTYPEﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄDIFFICULTY TO FIND UNATTENDEDﾄﾄ");
+      addstr("----車種-----------------------------------------無用心な車の見つけ易さ---------");
 
       int y=2,difficulty;
       for(int p=page*19;p<len(cart)&&p<page*19+19;p++)
@@ -3024,54 +3023,54 @@ bool carselect(Creature &cr,short &cartype)
          {
             case 0:
                set_color(COLOR_GREEN,COLOR_BLACK,1);
-               addstr("Simple");
+               addstr("単純");
                break;
             case 1:
                set_color(COLOR_CYAN,COLOR_BLACK,1);
-               addstr("Very Easy");
+               addstr("とても容易");
                break;
             case 2:
                set_color(COLOR_CYAN,COLOR_BLACK,0);
-               addstr("Easy");
+               addstr("容易");
                break;
             case 3:
                set_color(COLOR_BLUE,COLOR_BLACK,1);
-               addstr("Below Average");
+               addstr("平均の下");
                break;
             case 4:
                set_color(COLOR_WHITE,COLOR_BLACK,1);
-               addstr("Average");
+               addstr("平均");
                break;
             case 5:
                set_color(COLOR_WHITE,COLOR_BLACK,0);
-               addstr("Above Average");
+               addstr("平均の上");
                break;
             case 6:
                set_color(COLOR_YELLOW,COLOR_BLACK,1);
-               addstr("Hard");
+               addstr("困難");
                break;
             case 7:
                set_color(COLOR_MAGENTA,COLOR_BLACK,0);
-               addstr("Very Hard");
+               addstr("とても困難");
                break;
             case 8:
                set_color(COLOR_MAGENTA,COLOR_BLACK,1);
-               addstr("Extremely Difficult");
+               addstr("非常に困難");
                break;
             case 9:
                set_color(COLOR_RED,COLOR_BLACK,0);
-               addstr("Nearly Impossible");
+               addstr("ほぼ不可能");
                break;
             default:
                set_color(COLOR_RED,COLOR_BLACK,1);
-               addstr("Impossible");
+               addstr("不可能");
                break;
          }
       }
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(22,0);
-      addstr("Press a Letter to select a Type of Car");
+      addstr("アルファベットキーで車種を選択する。");
       move(23,0);
       addpagestr();
 
@@ -3113,7 +3112,7 @@ void getwheelchair(Creature &cr,char &clearformess)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
       addstr(cr.name, gamelog);
-      addstr(" has procured a wheelchair.", gamelog);
+      addstr("は何とか車椅子を手に入れた。", gamelog);
 
       cr.flag|=CREATUREFLAG_WHEELCHAIR;
    }
@@ -3122,7 +3121,7 @@ void getwheelchair(Creature &cr,char &clearformess)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
       addstr(cr.name, gamelog);
-      addstr(" was unable to get a wheelchair.  Maybe tomorrow...", gamelog);
+      addstr("は車椅子を手に入れられなかった。明日にしよう…", gamelog);
    }
    gamelog.nextMessage();
 

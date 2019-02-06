@@ -106,9 +106,9 @@ void advanceday(char &clearformess,char canseethings)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(8,1);
             addstr(squad[sq]->name, gamelog);
-            addstr(" decided ", gamelog);
+            addstr("は", gamelog);
             addstr(location[squad[sq]->activity.arg]->getname(), gamelog);
-            addstr(" was too hot to risk.", gamelog);
+            addstr("へ行くのは危険すぎると考えた。", gamelog);
             gamelog.nextMessage();
 
             getkey();
@@ -144,9 +144,9 @@ void advanceday(char &clearformess,char canseethings)
                         set_color(COLOR_WHITE,COLOR_BLACK,1);
                         move(8,1);
                         addstr(squad[sq]->name, gamelog);
-                        addstr(" couldn't use the ", gamelog);
+                        addstr("は", gamelog);
                         addstr(vehicle[v]->fullname(), gamelog);
-                        addstr(".", gamelog);
+                        addstr("を運転できない。", gamelog);
                         gamelog.nextMessage();
 
                         getkey();
@@ -263,9 +263,9 @@ void advanceday(char &clearformess,char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
                addstr(squad[sq]->name, gamelog);
-               addstr(" didn't have a car to get to ", gamelog);
+               addstr("には", gamelog);
                addstr(location[squad[sq]->activity.arg]->getname(), gamelog);
-               addstr(".", gamelog);
+               addstr("に行くための車がない。", gamelog);
                gamelog.nextMessage();
 
                getkey();
@@ -314,13 +314,13 @@ void advanceday(char &clearformess,char canseethings)
             price*=100;
             if(ledger.get_funds()<price)
             {
-               addstr_fl(gamelog,"%s couldn't afford tickets to go to %s.",squad[sq]->name,location[squad[sq]->activity.arg]->getname().c_str());
+               addstr_fl(gamelog,"%sには%sへ行くための資金がない。",squad[sq]->name,location[squad[sq]->activity.arg]->getname().c_str());
                canDepart=false;
             }
             else
             {
                ledger.subtract_funds(price,EXPENSE_TRAVEL);
-               addstr_fl(gamelog,"%s spent $%d on tickets to go to %s.",squad[sq]->name,price,location[squad[sq]->activity.arg]->getname().c_str());
+               addstr_fl(gamelog,"%sは$%dで%sへ行くチケットを購入した。",squad[sq]->name,price,location[squad[sq]->activity.arg]->getname().c_str());
             }
 
             getkey();
@@ -454,7 +454,7 @@ void advanceday(char &clearformess,char canseethings)
             {
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
-               addstr("なぜここを訪れるのか?   S - アジトを移す  T - トラブルを起こす  B - 両方");
+               addstr("ここを訪れる目的は?   S - アジトを移す  T - トラブルを起こす  B - 両方");
 
                do c=getkey(); while(c!='s'&&c!='b'&&c!='t');
             }
@@ -813,9 +813,9 @@ void advanceday(char &clearformess,char canseethings)
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
-               addstr("EVICTION NOTICE: ", gamelog);
+               addstr("立ち退き要求: ", gamelog);
                addstr(location[l]->name, gamelog);
-               addstr(".  Possessions go to the shelter.", gamelog);
+               addstr(" 住人たちはシェルターへ移動した。", gamelog);
                gamelog.nextMessage();
 
                getkey();
@@ -979,9 +979,9 @@ void advanceday(char &clearformess,char canseethings)
                      set_color(COLOR_WHITE,COLOR_BLACK,1);
                      move(8,1);
                      addstr(pool[p]->name, gamelog);
-                     addstr(" has passed away at the age of ", gamelog);
+                     addstr("は", gamelog);
                      addstr(pool[p]->age, gamelog);
-                     addstr(". The Liberal will be missed.", gamelog);
+                     addstr("歳でこの世を去った。リベラルの死が悔やまれる。", gamelog);
                      gamelog.nextMessage();
 
                      getkey();
@@ -1031,7 +1031,7 @@ void advanceday(char &clearformess,char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
                addstr(pool[p]->name, gamelog);
-               addstr(" regains contact with the LCS.", gamelog);
+               addstr("はLCSとの連絡を再開した。", gamelog);
                gamelog.nextMessage();
 
                getkey();
@@ -1269,7 +1269,7 @@ void dispersalcheck(char &clearformess)
 
                   set_color(COLOR_GREEN,COLOR_BLACK,1);
                   move(9,1);
-                  addstr("The Liberal has gone into hiding...", gamelog);
+                  addstr("リベラルは行方をくらませた…", gamelog);
                   gamelog.nextMessage();
 
                   getkey();
@@ -1279,7 +1279,7 @@ void dispersalcheck(char &clearformess)
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
                   addstr(pool[p]->name, gamelog);
-                  addstr(" has abandoned the LCS.", gamelog);
+                  addstr("はLCSを見捨てた。", gamelog);
                   gamelog.nextMessage();
 
                   getkey();
@@ -1417,21 +1417,21 @@ bool promotesubordinates(Creature &cr, char &clearformess)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
-      addstr(pool[bigboss]->name, gamelog);
-      addstr(" has promoted ", gamelog);
-      addstr(pool[newboss]->name, gamelog);
-      move(9,1);
-      addstr("due to the death of ", gamelog);
       addstr(cr.name, gamelog);
-      addstr(".", gamelog);
+      addstr("の死に伴い、", gamelog);
+      move(9,1);
+      addstr(pool[bigboss]->name, gamelog);
+      addstr("は", gamelog);
+      addstr(pool[newboss]->name, gamelog);
+      addstr("を昇格させた。", gamelog);
       if(subordinates>1)
       {
          gamelog.newline();
          move(11,1);
          addstr(pool[newboss]->name, gamelog);
-         addstr(" will take over for ", gamelog);
+         addstr("は", gamelog);
          addstr(cr.name, gamelog);
-         addstr(" in the command chain.", gamelog);
+         addstr("の指揮命令系を引き継ぐことになる。", gamelog);
       }
       gamelog.nextMessage();
 

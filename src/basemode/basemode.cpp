@@ -567,7 +567,7 @@ void mode_base()
          {
             erase();
             set_color(COLOR_WHITE,COLOR_BLACK,0);
-            mvaddstr(7,5,"Time passes...",gamelog);
+            mvaddstr(7,5,"時は流れる…",gamelog);
             mvaddstr(9,12,getmonth(month,true)+" ",gamelog);
             mvaddstr(9,17,tostring(day)+", ",gamelog);
             mvaddstr(9,21,year,gamelog);

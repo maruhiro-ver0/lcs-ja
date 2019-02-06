@@ -67,16 +67,16 @@ string Vehicle::fullname(bool halffull) const
    int words=0;
    if(heat_)
    {
-      s="Stolen ";
+      s="盗んだ";
       words++;
    }
    if(displayscolor())
    {
-      s+=color_+" ";
+      s+=color_+"の";
       words++;
    }
    if (myear_!=-1&&words<2) //don't print year if that will make the name too long.
-      s+=tostring(myear_)+" ";
+      s+=tostring(myear_)+"年製";
    if(halffull) s+=shortname();
    else s+=longname();
 
