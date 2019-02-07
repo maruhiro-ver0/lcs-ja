@@ -1793,7 +1793,7 @@ void congress(char clearformess,char canseethings)
             else if(killbill[c]==BILL_FAILED)
             {
                set_color(COLOR_BLACK,COLOR_BLACK,1);
-               addstr("連邦議会により廃案");
+               addstr("廃案");
             }
             else if(killbill[c]==BILL_OVERRIDE_VETO)
             {
@@ -1825,9 +1825,9 @@ void congress(char clearformess,char canseethings)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(23,0);
-      addstr("None of the items made it to the President's desk.");
+      addstr("大統領が署名すべきものは何もない。");
       move(24,0);
-      addstr("Press any key to reflect on what has happened.    ");
+      addstr("キーを押すとこの月に起こったことを表示する。      ");
 
       getkey();
    }

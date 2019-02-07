@@ -220,10 +220,10 @@ void tendhostage(Creature *cr,char &clearformess)
    erase();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
-   addstr("The Education of ");
    addstr(cr->name);
-   addstr(": Day ");
+   addstr("への教育: ");
    addstr(cr->joindays);
+   addstr("日目");
 
    getkey();
 
@@ -290,43 +290,43 @@ void tendhostage(Creature *cr,char &clearformess)
          if(techniques[TECHNIQUE_KILL])
          {
             set_color(COLOR_RED,COLOR_BLACK,1);
-            move(y,0);y+=2;addstr("The Execution of an Automaton         ");
+            move(y,0);y+=2;addstr("操り人形の処刑         ");
          }
          else
          {
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
-            move(y,0);y+=2;addstr("Selecting a Liberal Interrogation Plan");
+            move(y,0);y+=2;addstr("リベラル尋問 方針の選択");
          }
          if(techniques[TECHNIQUE_KILL])set_color(COLOR_BLACK,COLOR_BLACK,1);
          else set_color(COLOR_WHITE,COLOR_BLACK,techniques[TECHNIQUE_TALK]);
          move(y++,0);addstr("A - ");
-         if(!techniques[TECHNIQUE_TALK]) addstr("No Verbal Contact     ");
-         else addstr("Attempt to Convert");
+         if(!techniques[TECHNIQUE_TALK]) addstr("対話しない  ");
+         else addstr("対話を試みる");
          if(!techniques[TECHNIQUE_KILL])set_color(COLOR_WHITE,COLOR_BLACK,techniques[TECHNIQUE_RESTRAIN]);
          move(y++,0);addstr("B - ");
-         if(!techniques[TECHNIQUE_RESTRAIN]) addstr("No ");
-         addstr("Physical Restraints   ");
+         if(!techniques[TECHNIQUE_RESTRAIN]) addstr("身体的拘束を行わない");
+         else addstr("身体的拘束を行う    ");
          if(!techniques[TECHNIQUE_KILL])set_color(COLOR_WHITE,COLOR_BLACK,techniques[TECHNIQUE_BEAT]);
          move(y++,0);addstr("C - ");
-         if(!techniques[TECHNIQUE_BEAT]) addstr("Not ");
-         addstr("Violently Beaten    ");
+         if(!techniques[TECHNIQUE_BEAT]) addstr("暴行を加えない");
+         else addstr("暴行を加える  ");
          if(!techniques[TECHNIQUE_KILL])set_color(COLOR_WHITE,COLOR_BLACK,techniques[TECHNIQUE_PROPS]);
          move(y,0);addstr("D - ");
-         if(!techniques[TECHNIQUE_PROPS])addstr("No ");
-         addstr("Expensive Props     ");
+         if(!techniques[TECHNIQUE_PROPS])addstr("高価な設備を使わない");
+         else addstr("高価な設備を使う    ");
          move(y++,27);
          addstr("($250)");
          if(!techniques[TECHNIQUE_KILL])set_color(COLOR_WHITE,COLOR_BLACK,techniques[TECHNIQUE_DRUGS]);
          move(y,0);addstr("E - ");
-         if(!techniques[TECHNIQUE_DRUGS])addstr("No ");
-         addstr("Hallucinogenic Drugs    ");
+         if(!techniques[TECHNIQUE_DRUGS])addstr("幻覚剤を使わない");
+         else addstr("幻覚剤を使う    ");
          move(y,28);y+=2;
          addstr("($50)");
          if(techniques[TECHNIQUE_KILL])set_color(COLOR_RED,COLOR_BLACK,1);
          else set_color(COLOR_WHITE,COLOR_BLACK,0);
-         move(y,0);y+=2;addstr("K - Kill the Hostage");
+         move(y,0);y+=2;addstr("K - 捕虜を殺害する");
          set_color(COLOR_WHITE,COLOR_BLACK,0);
-         move(y++,0);addstr("Press Enter to Confirm the Plan");
+         move(y++,0);addstr("Enterキーで方針を確定する");
 
          show_interrogation_sidebar(cr,a);
 
@@ -348,10 +348,10 @@ void tendhostage(Creature *cr,char &clearformess)
          erase();
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(0,0);
-         addstr("The Final Education of ", gamelog);
          addstr(cr->name, gamelog);
-         addstr(": Day ", gamelog);
+         addstr("への最後の教育: ", gamelog);
          addstr(cr->joindays, gamelog);
+         addstr("日目", gamelog);
          gamelog.newline();
 
          a=NULL;
@@ -370,16 +370,16 @@ void tendhostage(Creature *cr,char &clearformess)
             stat_kills++;
             move(y++,0);
             addstr(a->name, gamelog);
-            addstr(" executes ", gamelog);
+            addstr("は", gamelog);
             addstr(cr->name, gamelog);
-            addstr(" by ", gamelog);
+            addstr("を", gamelog);
             switch(LCSrandom(5))
             {
-            case 0: addstr("strangling it to death.", gamelog); break;
-            case 1: addstr("beating it to death.", gamelog); break;
-            case 2: addstr("burning photos of Reagan in front of it.", gamelog); break;
-            case 3: addstr("telling it that taxes have been increased.", gamelog); break;
-            case 4: addstr("telling it its parents wanted to abort it.", gamelog); break;
+            case 0: addstr("絞殺した。", gamelog); break;
+            case 1: addstr("殴り殺した。", gamelog); break;
+            case 2: addstr("目の前でレーガンの写真を焼いて殺した。", gamelog); break;
+            case 3: addstr("税金は高くなっていると言って殺した。", gamelog); break;
+            case 4: addstr("両親は中絶を望んでいると言って殺した。", gamelog); break;
             }
             //show_interrogation_sidebar(cr,a);
 
@@ -391,15 +391,15 @@ void tendhostage(Creature *cr,char &clearformess)
                set_color(COLOR_GREEN,COLOR_BLACK,1);
                move(y++,0);
                addstr(a->name, gamelog);
-               addstr(" feels sick to the stomach afterward and ", gamelog);
+               addstr("は吐き気を感じた。そして", gamelog);
                a->adjust_attribute(ATTRIBUTE_HEART,-1);
                move(y++,0);
                switch(LCSrandom(4))
                {
-               case 0: addstr("throws up in a trash can.", gamelog); break;
-               case 1: addstr("gets drunk, eventually falling asleep.", gamelog); break;
-               case 2: addstr("curls up in a ball, crying softly.", gamelog); break;
-               case 3: addstr("shoots up and collapses in a heap on the floor.", gamelog); break;
+               case 0: addstr("ゴミ箱に嘔吐した。", gamelog); break;
+               case 1: addstr("大量の酒を飲み眠った。", gamelog); break;
+               case 2: addstr("うずくまり泣いた。", gamelog); break;
+               case 3: addstr("床に向かって銃を撃った。", gamelog); break;
                }
             }
             else if(!LCSrandom(3))
@@ -408,7 +408,7 @@ void tendhostage(Creature *cr,char &clearformess)
                set_color(COLOR_CYAN,COLOR_BLACK,1);
                move(y++,0);
                addstr(a->name, gamelog);
-               addstr(" grows colder.", gamelog);
+               addstr("はより冷酷になった。", gamelog);
                a->adjust_attribute(ATTRIBUTE_WISDOM,+1);
             }
             gamelog.nextMessage();
@@ -417,11 +417,9 @@ void tendhostage(Creature *cr,char &clearformess)
          {
             set_color(COLOR_YELLOW,COLOR_BLACK,0);
             move(y++,0);
-            addstr("There is no one able to get up the nerve to ", gamelog);
-            move(y++,0);
-            addstr("execute ", gamelog);
+            addstr("ここには", gamelog);
             addstr(cr->name, gamelog);
-            addstr(" in cold blood.", gamelog);
+            addstr("を殺せるほど冷酷な者はいない。", gamelog);
             gamelog.nextMessage();
 
             //Interrogation will continue as planned, with
@@ -438,7 +436,7 @@ void tendhostage(Creature *cr,char &clearformess)
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(24,0);
-         addstr("Press any key to reflect on this.");
+         addstr("何かキーを押すと続ける。");
 
          getkey();
 
@@ -458,28 +456,28 @@ void tendhostage(Creature *cr,char &clearformess)
       erase();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
-      addstr("The Education of ", gamelog);
       addstr(cr->name, gamelog);
-      addstr(": Day ", gamelog);
+      addstr("への教育: ", gamelog);
       addstr(cr->joindays, gamelog);
+      addstr("日目", gamelog);
       gamelog.newline();
 
       move((y=2)++,0);
-      addstr("The Automaton", gamelog);
+      addstr("操り人形", gamelog);
       if(techniques[TECHNIQUE_RESTRAIN]) // Restraint
       {
-         addstr(" is tied hands and feet to a metal chair", gamelog);
-         move(y++,0);
-         addstr("in the middle of a back room.", gamelog);
+         addstr("は手足を鎖でつながれた状態で奥の部屋にいる。", gamelog);
+         //move(y++,0);
+         //addstr("", gamelog);
          gamelog.newline();
 
          attack+=5;
       }
       else
       {
-         addstr(" is locked in a back room ", gamelog);
-         move(y++,0);
-         addstr("converted into a makeshift cell.", gamelog);
+         addstr("は独房に改装した奥の部屋に閉じ込められている。", gamelog);
+         //move(y++,0);
+         //addstr("", gamelog);
          gamelog.newline();
       }
       //show_interrogation_sidebar(cr,a);
@@ -490,7 +488,7 @@ void tendhostage(Creature *cr,char &clearformess)
       {
          move(++y,0);
 
-         addstr("It is subjected to dangerous hallucinogens.", gamelog);
+         addstr("危険な幻覚剤の影響を受けている。", gamelog);
          gamelog.newline();
 
          int drugbonus=10+a->get_armor().get_interrogation_drugbonus(); // we won't apply this JUST yet
@@ -504,7 +502,7 @@ void tendhostage(Creature *cr,char &clearformess)
             getkey();
 
             addstr(cr->name, gamelog);
-            addstr(" foams at the mouth and its eyes roll back in its skull.", gamelog);
+            addstr("は口から泡を吹き白目を剥いている。", gamelog);
             gamelog.newline();
             move(++y,0);
 
@@ -521,20 +519,20 @@ void tendhostage(Creature *cr,char &clearformess)
                if(maxskill)
                { // we have a real doctor but the patient is still dead anyway
                   addstr(doctor->name, gamelog);
-                  addstr(" uses a defibrillator repeatedly but ", gamelog);
+                  addstr("はAEDを使った。だが", gamelog);
                   addstr(cr->name, gamelog);
-                  addstr(" flatlines.", gamelog);
+                  addstr("は死んでしまった。", gamelog);
                }
                else
                {
                   addstr(doctor->name, gamelog);
                   if(law[LAW_FREESPEECH]==-2)
-                     addstr(" has a panic attack and [makes a stinky].", gamelog);
+                     addstr("はパニック発作で殴られ、そして[悪臭がした]。", gamelog);
                   else
                   {
-                     addstr(" has a panic attack and shits ", gamelog);
+                     addstr("はパニック発作で殴られ、そして", gamelog);
                      addstr(doctor->hisher(), gamelog);
-                     addstr(" pants.", gamelog);
+                     addstr("糞尿で汚された。", gamelog);
                   }
                }
                gamelog.newline();
@@ -545,16 +543,16 @@ void tendhostage(Creature *cr,char &clearformess)
                set_color(COLOR_YELLOW,COLOR_BLACK,1);
                if(maxskill)
                {
-                  addstr("It is a lethal overdose in ", gamelog);
+                  addstr("弱った", gamelog);
                   addstr(cr->name, gamelog);
-                  addstr("'s weakened state.", gamelog);
+                  addstr("には致死量だったのだ。", gamelog);
                }
                else
                {
                   addstr(cr->name, gamelog);
-                  addstr(" dies due to ", gamelog);
+                  addstr("は", gamelog);
                   addstr(doctor->name, gamelog);
-                  addstr("'s incompetence at first aid.", gamelog);
+                  addstr("の未熟な応急手当のせいで助からなかった。", gamelog);
                }
                gamelog.newline();
                cr->die();
@@ -565,23 +563,23 @@ void tendhostage(Creature *cr,char &clearformess)
                if(doctor->skill_check(SKILL_FIRSTAID,DIFFICULTY_CHALLENGING)) // is the doctor AWESOME?
                {
                   doctor->train(SKILL_FIRSTAID,5*max(10-doctor->get_skill(SKILL_FIRSTAID),0),10); // can train up to 10
-                  addstr(" deftly rescues it from cardiac arrest with a defibrillator.", gamelog); // not long enough for near-death experience
+                  addstr("は手際よくAEDを使って心停止から回復させた。", gamelog); // not long enough for near-death experience
                   gamelog.newline();
                   move(++y,0);
 
                   getkey();
 
                   addstr(doctor->name, gamelog);
-                  addstr(" skillfully saves ", gamelog);
+                  addstr("の技術で", gamelog);
                   addstr(cr->name, gamelog);
-                  addstr(" from any health damage.", gamelog);
+                  addstr("をあらゆる健康被害から救うことができた。", gamelog);
                   cr->adjust_attribute(ATTRIBUTE_HEALTH,+1); // no permanent health damage from a skilled doctor
                   techniques[TECHNIQUE_DRUGS]=(druguse=drugbonus=0); // drugs eliminated from the system (zeroing out 3 variables with 1 line of code)
                }
                else
                {
                   doctor->train(SKILL_FIRSTAID,5*max(5-doctor->get_skill(SKILL_FIRSTAID),0),5); // can train up to 5
-                  addstr(" clumsily rescues it from cardiac arrest with a defibrillator.", gamelog);
+                  addstr("は不器用にAEDを使って心停止から回復させた。", gamelog);
                   gamelog.newline();
                   move(++y,0);
 
@@ -589,8 +587,8 @@ void tendhostage(Creature *cr,char &clearformess)
 
                   addstr(cr->name, gamelog);
                   if(cr->get_skill(SKILL_RELIGION)) // the patient was out long enough to have a near-death experience
-                     addstr(" had a near-death experience and met God in heaven.", gamelog);
-                  else addstr(" had a near-death experience and met John Lennon.", gamelog);
+                     addstr("は臨死体験をして神と出会った。", gamelog);
+                  else addstr("は臨死体験をしてジョン・レノンと出会った。", gamelog);
                   drugbonus*=2; // the near-death experience doubles the drug bonus, since the hostage is spaced out afterwards
                }
                rapport[doctor->id]+=0.5f; // rapport bonus for having life saved by doctor
@@ -634,34 +632,34 @@ void tendhostage(Creature *cr,char &clearformess)
             addstr(a->name, gamelog);
             switch(LCSrandom(6))
             {
-            case 0:addstr(" reenacts scenes from Abu Ghraib", gamelog);break;
-            case 1:addstr(" whips the Automaton with a steel cable", gamelog);break;
-            case 2:addstr(" holds the hostage's head under water", gamelog);break;
-            case 3:addstr(" pushes needles under the Automaton's fingernails", gamelog);break;
-            case 4:addstr(" beats the hostage with a metal bat", gamelog);break;
-            case 5:addstr(" beats the hostage with a belt", gamelog);break;
+            case 0:addstr("はアブグレイブ刑務所を再現した", gamelog);break;
+            case 1:addstr("は金属のケーブルで操り人形を鞭打った", gamelog);break;
+            case 2:addstr("は捕虜の頭を水の中に押し込んだ", gamelog);break;
+            case 3:addstr("は指の爪の間に針を押し込んだ", gamelog);break;
+            case 4:addstr("は金属バットで捕虜を殴った", gamelog);break;
+            case 5:addstr("はベルトで捕虜を鞭打った", gamelog);break;
             }
-            addstr(", ", gamelog);
+            addstr("。悲鳴", gamelog);
             move(++y,0);
-            addstr("screaming \"", gamelog);
+            addstr("「", gamelog);
             for(int i=0;i<2;i++)
             {
                switch(LCSrandom(10))
                {
-               case 0:addstr("I hate you", gamelog);break;
-               case 1:addstr("Does it hurt?", gamelog);break;
-               case 2:addstr("Nobody loves you", gamelog);break;
-               case 3:addstr("God hates you", gamelog);break;
-               case 4:addstr("Don't fuck with me", gamelog);break;
-               case 5:addstr("This is Liberalism", gamelog);break;
-               case 6:addstr("Convert, bitch", gamelog);break;
-               case 7:addstr("I'm going to kill you", gamelog);break;
-               case 8:addstr("Do you love me?", gamelog);break;
-               case 9:addstr("I am your God", gamelog);break;
+               case 0:addstr("お前を憎む", gamelog);break;
+               case 1:addstr("心が痛まないのか?", gamelog);break;
+               case 2:addstr("皆がお前を憎んでいる", gamelog);break;
+               case 3:addstr("神はお前を憎んでいる", gamelog);break;
+               case 4:addstr("やめてくれ", gamelog);break;
+               case 5:addstr("これがリベラルか", gamelog);break;
+               case 6:addstr("心を入れ替えろ、豚め", gamelog);break;
+               case 7:addstr("殺してやる", gamelog);break;
+               case 8:addstr("私を愛しているのか?", gamelog);break;
+               case 9:addstr("私はお前の神だ", gamelog);break;
                }
                if(i<1) addstr("! ", gamelog);
             }
-            addstr("!\" in its face.", gamelog);
+            addstr("! 」", gamelog);
             gamelog.newline();
             if(cr->get_attribute(ATTRIBUTE_HEART,true)>1) cr->adjust_attribute(ATTRIBUTE_HEART,-1);
             if(cr->get_attribute(ATTRIBUTE_WISDOM,true)>1) cr->adjust_attribute(ATTRIBUTE_WISDOM,-1);
@@ -671,72 +669,72 @@ void tendhostage(Creature *cr,char &clearformess)
             if(len(temppool)==1)
             {
                addstr(temppool[0]->name, gamelog);
-               addstr(" beats", gamelog);
+               addstr("は", gamelog);
             }
             else if(len(temppool)==2)
             {
                addstr(temppool[0]->name, gamelog);
-               addstr(" and ", gamelog);
+               addstr("と", gamelog);
                addstr(temppool[1]->name, gamelog);
-               addstr(" beat", gamelog);
+               addstr("は", gamelog);
             }
             else
             {
                addstr(cr->name);
-               addstr("'s guards beat", gamelog);
+               addstr("の護衛は", gamelog);
             }
-            addstr(" the Automaton", gamelog);
+            addstr("操り人形を", gamelog);
             if(techniques[TECHNIQUE_PROPS])
             {
                switch(LCSrandom(6))
                {
-               case 0:addstr(" with a giant stuffed elephant", gamelog);break;
-               case 1:addstr(" while draped in a Confederate flag", gamelog);break;
-               case 2:addstr(" with a cardboard cutout of Reagan", gamelog);break;
-               case 3:addstr(" with a King James Bible", gamelog);break;
-               case 4:addstr(" with fists full of money", gamelog);break;
-               case 5:addstr(" with Conservative propaganda on the walls", gamelog);break;
+               case 0:addstr("巨大な象のぬいぐるみで", gamelog);break;
+               case 1:addstr("南部連合国旗を被って", gamelog);break;
+               case 2:addstr("レーガンの等身大ポップで", gamelog);break;
+               case 3:addstr("欽定訳聖書で", gamelog);break;
+               case 4:addstr("札束で", gamelog);break;
+               case 5:addstr("壁にある保守のプロパガンダで", gamelog);break;
                }
             }
-            addstr(", ", gamelog);
+            addstr("殴った。", gamelog);
             move(++y,0);
             switch(LCSrandom(4))
             {
-            case 0:addstr("scream", gamelog);break;
-            case 1:addstr("yell", gamelog);break;
-            case 2:addstr("shout", gamelog);break;
-            case 3:addstr("holler", gamelog);break;
+            case 0:addstr("悲鳴", gamelog);break;
+            case 1:addstr("大声", gamelog);break;
+            case 2:addstr("叫び", gamelog);break;
+            case 3:addstr("怒鳴り声", gamelog);break;
+            addstr("「", gamelog);
             }
-            addstr("ing \"", gamelog);
             for(int i=0;i<3;i++)
             {
                switch(LCSrandom(20))
                {
-               case 0:addstr("McDonalds", gamelog);break;
-               case 1:addstr("Microsoft", gamelog);break;
-               case 2:addstr("Bill Gates", gamelog);break;
-               case 3:addstr("Wal-Mart", gamelog);break;
-               case 4:addstr("George W. Bush", gamelog);break;
-               case 5:addstr("ExxonMobil", gamelog);break;
-               case 6:addstr("Trickle-down economics", gamelog);break;
-               case 7:addstr("Family values", gamelog);break;
-               case 8:addstr("Conservatism", gamelog);break;
-               case 9:addstr("War on Drugs", gamelog);break;
-               case 10:addstr("War on Terror", gamelog);break;
-               case 11:addstr("Ronald Reagan", gamelog);break;
-               case 12:addstr("Rush Limbaugh", gamelog);break;
-               case 13:addstr("Tax cuts", gamelog);break;
-               case 14:addstr("Military spending", gamelog);break;
-               case 15:addstr("Ann Coulter", gamelog);break;
-               case 16:addstr("Deregulation", gamelog);break;
-               case 17:addstr("Police", gamelog);break;
-               case 18:addstr("Corporations", gamelog);break;
-               case 19:addstr("Wiretapping", gamelog);break;
+               case 0:addstr("マクドナルド", gamelog);break;
+               case 1:addstr("マイクロソフト", gamelog);break;
+               case 2:addstr("ビルゲイツ", gamelog);break;
+               case 3:addstr("ウォルマート", gamelog);break;
+               case 4:addstr("ジョージ・W・ブッシュ", gamelog);break;
+               case 5:addstr("エクソンモービル", gamelog);break;
+               case 6:addstr("トリクルダウン", gamelog);break;
+               case 7:addstr("伝統的家族", gamelog);break;
+               case 8:addstr("保守主義", gamelog);break;
+               case 9:addstr("麻薬戦争", gamelog);break;
+               case 10:addstr("テロとの戦い", gamelog);break;
+               case 11:addstr("ロナルド・レーガン", gamelog);break;
+               case 12:addstr("ラッシュ・リンボー", gamelog);break;
+               case 13:addstr("減税", gamelog);break;
+               case 14:addstr("軍事支出", gamelog);break;
+               case 15:addstr("アン・コールター", gamelog);break;
+               case 16:addstr("規制緩和", gamelog);break;
+               case 17:addstr("警察", gamelog);break;
+               case 18:addstr("大企業", gamelog);break;
+               case 19:addstr("通信傍受", gamelog);break;
 
                }
                if(i<2) addstr("! ", gamelog);
             }
-            addstr("!\" in its face.", gamelog);
+            addstr("! 」", gamelog);
             gamelog.newline();
          }
          y++;
@@ -757,8 +755,8 @@ void tendhostage(Creature *cr,char &clearformess)
                {
                   switch(LCSrandom(2))
                   {
-                  case 0:addstr(" prays...", gamelog);break;
-                  case 1:addstr(" cries out for God.", gamelog);break;
+                  case 0:addstr("は祈った…", gamelog);break;
+                  case 1:addstr("は神に助けを求めた。", gamelog);break;
                   }
                   gamelog.newline();
                }
