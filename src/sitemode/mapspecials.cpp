@@ -2348,7 +2348,7 @@ void special_bank_teller()
       clearmessagearea(false);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("The teller window is empty.", gamelog);
+      addstr("窓口は閉まっている。", gamelog);
       gamelog.newline();
       levelmap[locx][locy][locz].special=-1;
 
@@ -2359,7 +2359,7 @@ void special_bank_teller()
       clearmessagearea(false);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("A bank teller is available.", gamelog);
+      addstr("窓口は受付中だ。", gamelog);
       gamelog.newline();
       levelmap[locx][locy][locz].special=-1;
 

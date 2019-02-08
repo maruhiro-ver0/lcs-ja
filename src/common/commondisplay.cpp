@@ -1409,14 +1409,14 @@ void printliberalcrimes(Creature &cr)
       set_color(COLOR_RED,COLOR_BLACK,1);
       if(location[cr.location]->type==SITE_GOVERNMENT_PRISON)
          mvaddstr(3,0,"死刑囚監房に服役中");
-      else mvaddstr(3,0,"死刑を宣告");
+      else mvaddstr(3,0,"死刑を求刑");
    }
    else if(cr.sentence<0)
    {
       set_color(COLOR_RED,COLOR_BLACK,1);
       if(location[cr.location]->type==SITE_GOVERNMENT_PRISON)
          mvaddstr(3,0,"終身刑で服役中");
-      else mvaddstr(3,0,"終身刑を宣告");
+      else mvaddstr(3,0,"終身刑を求刑");
    }
    else if(cr.sentence>0)
    {
@@ -1426,7 +1426,7 @@ void printliberalcrimes(Creature &cr)
       addstr("ヶ月");
       if(location[cr.location]->type==SITE_GOVERNMENT_PRISON)
          addstr("服役");
-      else addstr("の懲役刑を宣告");
+      else addstr("の懲役刑を求刑");
    }
 
    // Add all crimes

@@ -399,7 +399,7 @@ void tendhostage(Creature *cr,char &clearformess)
                case 0: addstr("ゴミ箱に嘔吐した。", gamelog); break;
                case 1: addstr("大量の酒を飲み眠った。", gamelog); break;
                case 2: addstr("うずくまり泣いた。", gamelog); break;
-               case 3: addstr("床に向かって銃を撃った。", gamelog); break;
+               case 3: addstr("床に倒れこんだ。", gamelog); break;
                }
             }
             else if(!LCSrandom(3))
@@ -532,7 +532,7 @@ void tendhostage(Creature *cr,char &clearformess)
                   {
                      addstr("はパニック発作で殴られ、そして", gamelog);
                      addstr(doctor->hisher(), gamelog);
-                     addstr("糞尿で汚された。", gamelog);
+                     addstr("糞まみれになった。", gamelog);
                   }
                }
                gamelog.newline();
@@ -764,8 +764,8 @@ void tendhostage(Creature *cr,char &clearformess)
                {
                   switch(LCSrandom(2))
                   {
-                  case 0:addstr(" takes solace in the personal appearance of God.", gamelog);break;
-                  case 1:addstr(" appears to be having a religious experience.", gamelog);break;
+                  case 0:addstr("は神の幻覚にすがった。", gamelog);break;
+                  case 1:addstr("は神秘的な体験と思っているようだ。", gamelog);break;
                   }
                   gamelog.newline();
                }
@@ -779,20 +779,21 @@ void tendhostage(Creature *cr,char &clearformess)
                addstr(cr->name, gamelog);
                switch(LCSrandom(4))
                {
-               case 0:addstr(" screams helplessly for ", gamelog);
-                  if(techniques[TECHNIQUE_DRUGS])addstr("John Lennon's mercy.", gamelog);
-                  else if(cr->get_skill(SKILL_RELIGION))addstr("God's mercy.", gamelog);
-                  else addstr("mommy.", gamelog);
+               case 0:addstr("は絶望し、", gamelog);
+                  if(techniques[TECHNIQUE_DRUGS])addstr("ジョン・レノンの慈悲", gamelog);
+                  else if(cr->get_skill(SKILL_RELIGION))addstr("神の慈悲", gamelog);
+                  else addstr("母の助け", gamelog);
+                  addstr("を求め叫んだ。", gamelog);
                   break;
                case 1:
-                  if(techniques[TECHNIQUE_RESTRAIN]) addstr(" goes limp in the restraints.", gamelog);
-                  else addstr(" curls up in the corner and doesn't move.", gamelog);break;
+                  if(techniques[TECHNIQUE_RESTRAIN]) addstr("は拘束されうなだれている。", gamelog);
+                  else addstr("は部屋の隅でうずくまり動けないでいる。", gamelog);break;
                case 2:
-                  if(techniques[TECHNIQUE_DRUGS] && !LCSrandom(5)) addstr(" barks helplessly.", gamelog);
-                  else addstr(" cries helplessly.", gamelog);break;
+                  if(techniques[TECHNIQUE_DRUGS] && !LCSrandom(5)) addstr("は絶望し吠えるような声を上げた。", gamelog);
+                  else addstr("は絶望し叫んだ。", gamelog);break;
                case 3:
-                  if(techniques[TECHNIQUE_DRUGS] && !LCSrandom(3)) addstr(" wonders about apples.", gamelog);
-                  else addstr(" wonders about death.", gamelog);
+                  if(techniques[TECHNIQUE_DRUGS] && !LCSrandom(3)) addstr("はリンゴを疑った。", gamelog);
+                  else addstr("は死を疑った。", gamelog);
                   break;
                }
                gamelog.newline();
@@ -813,19 +814,19 @@ void tendhostage(Creature *cr,char &clearformess)
 
                   move(y++,0);
                   addstr(a->name, gamelog);
-                  addstr(" beats information out of the pathetic thing.", gamelog);
+                  addstr("は哀れな捕虜から情報を引き出した。", gamelog);
                   gamelog.newline();
                   move(y++,0);
 
                   getkey();
 
                   if(location[cr->worklocation]->type<=SITE_RESIDENTIAL_SHELTER)
-                     addstr("Unfortunately, none of it is useful to the LCS.", gamelog);
+                     addstr("残念ながらLCSには役に立たないものだった。", gamelog);
                   else
                   {
-                     addstr("A detailed map has been created of ", gamelog);
+                     addstr("その情報を元に", gamelog);
                      addstr(location[cr->worklocation]->name, gamelog);
-                     addstr(".", gamelog);
+                     addstr("の詳細な地図を作った。", gamelog);
                   }
                   gamelog.newline();
                   location[cr->worklocation]->mapped=1;
@@ -836,7 +837,7 @@ void tendhostage(Creature *cr,char &clearformess)
             {
                move(y++,0);
                addstr(cr->name, gamelog);
-               addstr(" seems to be getting the message.", gamelog);
+               addstr("は何かを伝えようとしている。", gamelog);
                gamelog.newline();
 
                if(cr->juice>0) if((cr->juice-=forceroll)<0) cr->juice=0;
@@ -859,14 +860,14 @@ void tendhostage(Creature *cr,char &clearformess)
                {
                   cr->adjust_attribute(ATTRIBUTE_HEALTH,-1);
                   addstr(cr->name, gamelog);
-                  addstr(" is badly hurt.", gamelog);
+                  addstr("は重症を負っている。", gamelog);
                   gamelog.newline();
                }
                else
                {
                   cr->set_attribute(ATTRIBUTE_HEALTH,0);
                   addstr(cr->name, gamelog);
-                  addstr("'s weakened body crumbles under the brutal assault.", gamelog);
+                  addstr("の弱った体は暴行によって崩れ落ちた。", gamelog);
                   gamelog.newline();
                   cr->die();
                }
@@ -876,7 +877,7 @@ void tendhostage(Creature *cr,char &clearformess)
          {
             move(y++,0);
             addstr(cr->name, gamelog);
-            addstr(" takes it well.", gamelog);
+            addstr("は耐え忍んでいる。", gamelog);
             gamelog.newline();
          }
          //show_interrogation_sidebar(cr,a);
@@ -895,10 +896,10 @@ void tendhostage(Creature *cr,char &clearformess)
                move(y++,0);
                switch(LCSrandom(4))
                {
-                  case 0:addstr("throws up in a trash can.", gamelog);break;
-                  case 1:addstr("gets drunk, eventually falling asleep.", gamelog);break;
-                  case 2:addstr("curls up in a ball, crying softly.", gamelog);break;
-                  case 3:addstr("shoots up and collapses in a heap on the floor.", gamelog);break;
+                  case 0:addstr("ゴミ箱に嘔吐した。", gamelog);break;
+                  case 1:addstr("大量の酒を飲み眠った。", gamelog);break;
+                  case 2:addstr("うずくまり泣いた。", gamelog);break;
+                  case 3:addstr("床に倒れこんだ。", gamelog);break;
                }
                gamelog.newline();
             }
@@ -907,7 +908,7 @@ void tendhostage(Creature *cr,char &clearformess)
                set_color(COLOR_CYAN,COLOR_BLACK,1);
                move(y++,0);
                addstr(a->name, gamelog);
-               addstr(" grows colder.", gamelog);
+               addstr("はより冷酷になった。", gamelog);
                gamelog.newline();
                a->adjust_attribute(ATTRIBUTE_WISDOM,+1);
             }
@@ -925,21 +926,23 @@ void tendhostage(Creature *cr,char &clearformess)
 
          move((++y)++,0);
          addstr(a->name, gamelog);
+         addstr("は", gamelog);
+         addstr(cr->name, gamelog);
 
          if(techniques[TECHNIQUE_PROPS])//props
          {
             attack += 10;
             switch(LCSrandom(9))
             {
-            case 0:addstr(" plays violent video games with ", gamelog);break;
-            case 1:addstr(" reads Origin of the Species to ", gamelog);break;
-            case 2:addstr(" burns flags in front of ", gamelog);break;
-            case 3:addstr(" explores an elaborate political fantasy with ", gamelog);break;
-            case 4:addstr(" watches controversial avant-garde films with ", gamelog);break;
-            case 5:addstr(" plays the anime film Bible Black for ", gamelog);break;// Yes, this is a porno.
-            case 6:addstr(" watches a documentary about Emmett Till with ", gamelog);break;
-            case 7:addstr(" watches Michael Moore films with ", gamelog);break;
-            case 8:addstr(" listens to Liberal radio shows with ", gamelog);break;
+            case 0:addstr("と残酷なビデオゲームをプレーした", gamelog);break;
+            case 1:addstr("に種の起源を読み聞かせた", gamelog);break;
+            case 2:addstr("の目の前で国旗を焼き払った", gamelog);break;
+            case 3:addstr("と丹念に作られたポリティカル・ファンタジーを探索した", gamelog);break;
+            case 4:addstr("と物議を呼んだアバンギャルド映画を観た", gamelog);break;
+            case 5:addstr("と「バイブルブラック」をプレーした", gamelog);break;// Yes, this is a porno.
+            case 6:addstr("とエメット・ティルのドキュメンタリーを観た", gamelog);break;
+            case 7:addstr("とマイケル・ムーアの映画を観た", gamelog);break;
+            case 8:addstr("とリベラルなラジオ番組を聴いた", gamelog);break;
             }
             gamelog.newline();
          }
@@ -947,18 +950,15 @@ void tendhostage(Creature *cr,char &clearformess)
          {
             switch(LCSrandom(4))
             {
-            case 0:addstr(" talks about ", gamelog);
-                   addstr(getview(LCSrandom(VIEWNUM-3),true), gamelog);
-                   addstr(" with ", gamelog);break;
-            case 1:addstr(" argues about ", gamelog);
-                   addstr(getview(LCSrandom(VIEWNUM-3),true), gamelog);
-                   addstr(" with ", gamelog);break;
-            case 2:addstr(" tries to expose the true Liberal side of ", gamelog);break;
-            case 3:addstr(" attempts to recruit ", gamelog);break;
+            case 0:addstr(getview(LCSrandom(VIEWNUM-3),true), gamelog);
+                   addstr("の話をした", gamelog);break;
+            case 1:addstr(getview(LCSrandom(VIEWNUM-3),true), gamelog);
+                   addstr("の議論をした", gamelog);break;
+            case 2:addstr("のリベラル的側面を明らかにしようとした", gamelog);break;
+            case 3:addstr("を仲間に引き込もうとした", gamelog);break;
             }
          }
-         addstr(cr->name, gamelog);
-         addstr(".", gamelog);
+         addstr("。", gamelog);
          gamelog.newline();
 
          //Hallucinogenic drugs:
@@ -975,16 +975,16 @@ void tendhostage(Creature *cr,char &clearformess)
                switch(LCSrandom(4))
                {
                case 0:addstr(cr->name);
-                     addstr(" takes the drug-induced hallucinations with stoicism.", gamelog);
+                     addstr("は薬物による幻覚を呆然と見ている。", gamelog);
                      break;
                case 1:addstr(cr->name);
-                     addstr(" mutters its initials over and over again.", gamelog);
+                     addstr("は自分のイニシャルを何度もつぶやいている。", gamelog);
                      break;
                case 2:addstr(cr->name);
-                     addstr(" babbles continuous numerical sequences.", gamelog);
+                     addstr("は数字を数え続けている。", gamelog);
                      break;
                case 3:addstr(cr->name);
-                     addstr(" manages to remain grounded through the hallucinations.", gamelog);
+                     addstr("は幻覚に対して冷静になろうとしている。", gamelog);
                      break;
                }
                gamelog.newline();
@@ -996,28 +996,28 @@ void tendhostage(Creature *cr,char &clearformess)
                {
                case 0:
                   addstr(cr->name, gamelog);
-                  addstr(" hallucinates and sees ", gamelog);
+                  addstr("は幻覚作用で", gamelog);
                   addstr(a->name, gamelog);
-                  addstr(" as an angel.", gamelog);
+                  addstr("を天使だと思っているようだ。", gamelog);
                   break;
                case 1:
                   addstr(cr->name);
-                  addstr(" realizes with joy that ", gamelog);
+                  addstr("は", gamelog);
                   addstr(a->name, gamelog);
-                  addstr(" is Ronald Reagan!", gamelog);
+                  addstr("がロナルド・レーガンだと思い喜んでいる!", gamelog);
                   break;
                case 2:
                   addstr(cr->name, gamelog);
-                  addstr(" stammers and ", gamelog);
-                  techniques[TECHNIQUE_RESTRAIN] ? addstr("talks about hugging ", gamelog) : addstr("hugs ", gamelog);
+                  addstr("は口ごもり、", gamelog);
                   addstr(a->name, gamelog);
-                  addstr(".", gamelog);
+                  techniques[TECHNIQUE_RESTRAIN] ? addstr("を抱きしめたいと言った", gamelog) : addstr("を抱きしめた", gamelog);
+                  addstr("。", gamelog);
                   break;
                case 3:
                   addstr(cr->name, gamelog);
-                  addstr(" begs ", gamelog);
+                  addstr("は", gamelog);
                   addstr(a->name, gamelog);
-                  addstr(" to let the colors stay forever.", gamelog);
+                  addstr("がカラフルであり続けることを望んだ。", gamelog);
                   break;
                }
                gamelog.newline();
@@ -1029,35 +1029,36 @@ void tendhostage(Creature *cr,char &clearformess)
                {
                case 0:
                   addstr(cr->name, gamelog);
-                  addstr(" screams in horror as ", gamelog);
+                  addstr("は", gamelog);
                   addstr(a->name, gamelog);
-                  addstr(" turns into an alien.", gamelog);
+                  addstr("がエイリアンに変身した恐怖で叫んだ。", gamelog);
                   break;
                case 1:
                   addstr(cr->name, gamelog);
-                  if(!techniques[TECHNIQUE_RESTRAIN]) addstr(" curls up and", gamelog);
-                  addstr(" begs for the nightmare to end.", gamelog);
+                  addstr("は", gamelog);
+                  if(!techniques[TECHNIQUE_RESTRAIN]) addstr("うずくまり、", gamelog);
+                  addstr("悪夢が覚めることを望んだ。", gamelog);
                   break;
                case 2:
                   addstr(cr->name, gamelog);
-                  addstr(" watches ", gamelog);
+                  addstr("は", gamelog);
                   addstr(a->name, gamelog);
-                  addstr(" shift from one demonic form to another.", gamelog);
+                  addstr("が様々な悪魔に変身するのを見た。", gamelog);
                   break;
                case 3:
                   if(rapport[a->id]<-3)
                   {
                      addstr(cr->name, gamelog);
-                     addstr(" begs Hitler to stay and kill ", gamelog);
+                     addstr("はヒトラーがここに来て", gamelog);
                      addstr(a->name, gamelog);
-                     addstr(".", gamelog);
+                     addstr("を殺害することを望んだ。", gamelog);
                   }
                   else
                   {
                      addstr(cr->name, gamelog);
-                     addstr(" screams for ", gamelog);
+                     addstr("は", gamelog);
                      addstr(a->name, gamelog);
-                     addstr(" to stop looking like Hitler.", gamelog);
+                     addstr("にヒトラーの幻覚を見て叫んだ。", gamelog);
                   }
                   break;
                }
@@ -1069,23 +1070,23 @@ void tendhostage(Creature *cr,char &clearformess)
                {
                case 0:
                   addstr(cr->name, gamelog);
-                  addstr(" comments on the swirling light ", gamelog);
+                  addstr("は渦巻く光が", gamelog);
                   addstr(a->name, gamelog);
-                  addstr(" is radiating.", gamelog);
+                  addstr("から発していると言った。", gamelog);
                   break;
                case 1:
                   addstr(cr->name, gamelog);
-                  addstr(" can't stop looking at the moving colors.", gamelog);
+                  addstr("は変化する色から目を背けられない。", gamelog);
                   break;
                case 2:
                   addstr(cr->name, gamelog);
-                  addstr(" laughs hysterically at ", gamelog);
+                  addstr("は", gamelog);
                   addstr(a->name, gamelog);
-                  addstr("'s altered appearance.", gamelog);
+                  addstr("が変身した姿を見て大笑いした。", gamelog);
                   break;
                case 3:
                   addstr(cr->name, gamelog);
-                  addstr(" barks and woofs like a dog.", gamelog);
+                  addstr("は犬のように吠えてうなった。", gamelog);
                   break;
                }
                gamelog.newline();
@@ -1102,18 +1103,18 @@ void tendhostage(Creature *cr,char &clearformess)
             switch(LCSrandom(4))
             {
             case 0:addstr(cr->name, gamelog);
-                  addstr(" plays mind games with ", gamelog);
+                  addstr("は", gamelog);
                   addstr(a->name, gamelog);
-                  addstr(".", gamelog);
+                  addstr("と心理ゲームをした。", gamelog);
                   break;
             case 1:addstr(cr->name, gamelog);
-                  addstr(" knows how this works, and won't budge.", gamelog);
+                  addstr("はこれがどのような意味があるかわかっていた。そして考えを変えなかった。", gamelog);
                   break;
             case 2:addstr(cr->name, gamelog);
-                  addstr(" asks if Liberal mothers would approve of this.", gamelog);
+                  addstr("はリベラルの母がこれを許すのかと聞いた。", gamelog);
                   break;
             case 3:addstr(cr->name, gamelog);
-                  addstr(" seems resistant to this form of interrogation.", gamelog);
+                  addstr("はこのような尋問には耐えられそうだ。", gamelog);
                   break;
             }
          }

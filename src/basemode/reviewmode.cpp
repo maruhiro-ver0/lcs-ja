@@ -706,7 +706,7 @@ void review_mode(short mode)
                            case 0:addstr("ゴミ箱に嘔吐した。", gamelog);break;
                            case 1:addstr("大量の酒を飲み眠った。", gamelog);break;
                            case 2:addstr("うずくまり泣いた。", gamelog);break;
-                           case 3:addstr("床に向かって銃を撃った。", gamelog);break;
+                           case 3:addstr("床に倒れこんだ。", gamelog);break;
                            }
                            move(24,0);
                            gamelog.newline(); //New line.

@@ -439,7 +439,7 @@ void trial(Creature &g)
       }
 
       if(typenum>1) addstr("、", gamelog);
-      if(typenum==1) addstr("、そして", gamelog);
+      if(typenum==1) addstr("、および", gamelog);
       if(typenum==0) addstr("の容疑がある。", gamelog);
 
       getkey();
