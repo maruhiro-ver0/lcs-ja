@@ -397,7 +397,7 @@ void makearmor(Creature &cr,char &clearformess)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
       addstr(cr.name, gamelog);
-      addstr("には服を作る余裕がない。", gamelog);
+      addstr("には服を作るだけの金がない。", gamelog);
       gamelog.nextMessage();
 
       getkey();
@@ -831,7 +831,7 @@ void attemptarrest(Creature & liberal,const char* string,int clearformess)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
       addstr(liberal.name, gamelog);
-      addstr(" が", gamelog);
+      addstr("が", gamelog);
       addstr(string, gamelog);
       addstr("警官が近づいてきた!", gamelog);
       gamelog.nextMessage();

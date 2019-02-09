@@ -647,7 +647,7 @@ void advanceday(char &clearformess,char canseethings)
                move(8,1);
                pool[p]->die();
                addstr(pool[p]->name, gamelog);
-               addstr("は怪我がもとで死んだ。", gamelog);
+               addstr("は怪我が元で死んだ。", gamelog);
                gamelog.nextMessage();
             }
 
@@ -1031,7 +1031,7 @@ void advanceday(char &clearformess,char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
                addstr(pool[p]->name, gamelog);
-               addstr("はLCSとの連絡を再開した。", gamelog);
+               addstr("はLCSとの接触を再開した。", gamelog);
                gamelog.nextMessage();
 
                getkey();

@@ -229,11 +229,10 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
          set_color(COLOR_RED,COLOR_BLACK,1);
          move(y++,0);
 
-         addstr("Talking with ", gamelog);
          addstr(d.date[e]->name, gamelog);
-         addstr(" actually curses ", gamelog);
+         addstr("と話している内に", gamelog);
          addstr(pool[p]->name, gamelog);
-         addstr("'s mind with wisdom!!!", gamelog);
+         addstr("の精神は知恵で汚された!!!", gamelog);
          gamelog.newline();
          pool[p]->adjust_attribute(ATTRIBUTE_WISDOM,+1);
 
@@ -258,7 +257,7 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
          move(y++,0);
          set_color(COLOR_RED,COLOR_BLACK,1);
          addstr(d.date[e]->name, gamelog);
-         addstr(" was leaking information to the police the whole time!", gamelog);
+         addstr("は警察に情報をずっと漏らし続けていた!", gamelog);
 
          getkey();
 
@@ -272,7 +271,7 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
 
             set_color(COLOR_MAGENTA,COLOR_BLACK,1);
             addstr(pool[p]->name, gamelog);
-            addstr(" has been arrested.", gamelog);
+            addstr("は逮捕された。", gamelog);
             gamelog.nextMessage();
 
             removesquadinfo(*pool[p]);
@@ -290,9 +289,9 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
          else
          {
             set_color(COLOR_GREEN,COLOR_BLACK,1);
-            addstr("But ", gamelog);
+            addstr("しかし、", gamelog);
             addstr(pool[p]->name, gamelog);
-            addstr(" escapes the police ambush!", gamelog);
+            addstr("は警察の張り込みから逃れた!", gamelog);
             gamelog.nextMessage();
          }
       }
@@ -303,30 +302,9 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
          {
             set_color(COLOR_MAGENTA,COLOR_BLACK,1);
             move(y++,0);
-            addstr(s+"The date starts well, but goes horribly wrong when "+d.date[e]->name, gamelog);
-            move(y++,0);
-            addstr(s+"notices "+pool[p]->name+"'s ", gamelog);
-            switch (ls)
-            {
-               case 5:
-                  addstr("awe-inspiring ", gamelog);
-                  break;
-               case 4:
-                  addstr("intricate ", gamelog);
-                  break;
-               case 3:
-                  addstr("complicated ", gamelog);
-                  break;
-               case 2:
-                  addstr("detailed ", gamelog);
-                  break;
-               case 1:
-                  break;
-               default:
-                  addstr("mind-bending ", gamelog);
-            }
-            addstr(s+"schedule for keeping "+d.date[e]->himher(),gamelog);
-            addstr(s+" from meeting ",gamelog);
+            addstr(s+"デートは始めはうまくいった。", gamelog);
+            addstr(s+"しかし、"+d.date[e]->name + "が", gamelog);
+            addstr(s+pool[p]->name+"の", gamelog);
             move(y++,0);
             int lsfound = 0;
             for (int q=0; q<(int)pool.size(); q++)
@@ -340,14 +318,35 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
                   }
                   else if (lsfound < ls)
                   {
-                     addstr(s+", "+pool[q]->name, gamelog);
+                     addstr(s+"、"+pool[q]->name, gamelog);
                   }else
                   {
-                     addstr(s+" and "+ pool[q]->name, gamelog);
+                     addstr(s+"そして"+ pool[q]->name, gamelog);
                   }
                }
             }
-            addstr(".",gamelog);
+            move(y++,0);
+            addstr(s+"と会う",gamelog);
+            switch (ls)
+            {
+               case 5:
+                  addstr("荘厳な", gamelog);
+                  break;
+               case 4:
+                  addstr("複雑な", gamelog);
+                  break;
+               case 3:
+                  addstr("入り組んだ", gamelog);
+                  break;
+               case 2:
+                  addstr("詳細な", gamelog);
+                  break;
+               case 1:
+                  break;
+               default:
+                  addstr("ショッキングな", gamelog);
+            }
+            addstr(s+"スケジュールに気がつくと険悪になった。",gamelog);
             gamelog.newline();
             move(y++,0);
          }
@@ -356,11 +355,11 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
             set_color(COLOR_MAGENTA,COLOR_BLACK,1);
             move(y++,0);
             addstr(d.date[e]->name, gamelog);
-            addstr(" can sense that things just aren't working out.", gamelog);
+            addstr("はうまく行かないと感じた。", gamelog);
             gamelog.newline();
             move(y++,0);
          }
-         addstr("This relationship is over.", gamelog);
+         addstr("2人の関係は終わった。", gamelog);
          gamelog.nextMessage();
       }
 
@@ -384,7 +383,7 @@ char completevacation(datest &d,int p,char &clearformess)
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
    addstr(pool[p]->name, gamelog);
-   addstr(" is back from vacation.", gamelog);
+   addstr("はバケーションから戻ってきた。", gamelog);
    gamelog.nextMessage();
 
    // Temporarily make the date Conservative so that high-juice liberals aren't trivial to seduce
@@ -493,11 +492,11 @@ char completedate(datest &d,int p,char &clearformess)
       {
          case 0:
             move(2,0);
-            if(len(d.date)>2) addstr("Unfortunately, they all know each other and had been discussing",gamelog);
-            else addstr("Unfortunately, they know each other and had been discussing",gamelog);
+            if(len(d.date)>2) addstr("不運なことに、相手は全員知り合いで、",gamelog);
+            else addstr("不運なことに、相手は全員知り合いで、",gamelog);
             move(3,0);
             addstr(pool[p]->name,gamelog);
-            addstr(".  An ambush was set for the lying dog...",gamelog);
+            addstr("のことを聞いていた。これは予想外だった…",gamelog);
             gamelog.newline();
 
             getkey();
@@ -505,11 +504,11 @@ char completedate(datest &d,int p,char &clearformess)
             break;
          case 1:
             move(2,0);
-            if(len(d.date)>2) addstr("Unfortunately, they all turn up at the same time.",gamelog);
-            else addstr("Unfortunately, they turn up at the same time.",gamelog);
+            if(len(d.date)>2) addstr("不運なことに、全員と同じ場所で会ってしまった。",gamelog);
+            else addstr("不運なことに、全員と同じ場所で会ってしまった。",gamelog);
             gamelog.newline();
             move(3,0);
-            addstr("Ruh roh...",gamelog);
+            addstr("マズイ…",gamelog);
             gamelog.newline();
 
             getkey();
@@ -519,17 +518,18 @@ char completedate(datest &d,int p,char &clearformess)
             move(2,0);
             addstr(pool[p]->name,gamelog);
             if(len(d.date)>2)
-               addstr_fl(gamelog," realizes %s has committed to eating %d meals at once.",pool[p]->heshe(),len(d.date));
+               addstr_fl(gamelog,"は一度に%d人分のディナーの注文をしてしまったことに気づいた。",len(d.date));
             else
             {
-               addstr(" mixes up the names of ",gamelog);
+               addstr("は",gamelog);
                addstr(d.date[0]->name,gamelog);
-               addstr(" and ",gamelog);
+               addstr("と",gamelog);
                addstr(d.date[1]->name,gamelog);
+               addstr("の名前を間違えてしまった。",gamelog);
                gamelog.newline();
             }
             move(3,0);
-            addstr("Things go downhill fast.",gamelog);
+            addstr("一気に険悪なムードになった。",gamelog);
             gamelog.newline();
 
             getkey();
@@ -539,14 +539,14 @@ char completedate(datest &d,int p,char &clearformess)
 
 	   static const char *date_fail[] =
 	   {
-	      " is publicly humiliated."
-	      " runs away.",
-	      " escapes through the bathroom window.",
-	      " spends the night getting drunk alone.",
-	      " gets chased out by an angry mob.",
-	      " gets stuck washing dishes all night.",
-	      " is rescued by a passing Elite Liberal.",
-	      " makes like a tree and leaves."
+	      "は人前で恥をかいた。"
+	      "は逃げた。",
+	      "はバスルームの窓から抜け出した。",
+	      "は夜を一人で酔っ払って過ごした。",
+	      "は怒る相手に追われた。",
+	      "は一晩中皿を洗った。",
+	      "は通りがかりのエリートリベラルに助けられた。",
+	      "は木のふりをした。"
 	   };
       move(5,0);
       addstr(pool[p]->name,gamelog);
@@ -618,7 +618,7 @@ char completedate(datest &d,int p,char &clearformess)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(15,0);
-         addstr("E - 保守の狐をだた誘拐する");
+         addstr("E - 保守の豚を誘拐する");
       }
 
       int thingsincommon = 0;

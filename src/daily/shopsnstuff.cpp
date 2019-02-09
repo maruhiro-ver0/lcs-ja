@@ -319,7 +319,7 @@ void choose_buyer(short &buyer)
 
       move(8,20);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      addstr("Choose a Liberal squad member to SPEND.");
+      addstr("誰が支払うか?");
 
       int c=getkey();
 

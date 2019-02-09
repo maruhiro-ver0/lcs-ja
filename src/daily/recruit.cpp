@@ -371,7 +371,7 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
             addstr("は", gamelog);
             getissueeventstring(str);
             addstr(str, gamelog);
-            addstr("を共に閲覧した。", gamelog);
+            addstr("を共に見た。", gamelog);
             gamelog.newline();
 
             getkey();

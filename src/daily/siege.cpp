@@ -2264,7 +2264,7 @@ void conquertext()
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(3,16);
-      addstr("The Conservative automatons have been driven back ﾄﾄ for ", gamelog);
+      addstr("The Conservative automatons have been driven back -- for ", gamelog);
       move(4,11);
       addstr("the time being.  While they are regrouping, you might consider ", gamelog);
       move(5,11);
@@ -2405,7 +2405,7 @@ void statebrokenlaws(int loc)
 
    move(3,1);
    if(location[loc]->siege.escalationstate>=2&&publicmood(-1)<20)
-      addstr("神の御名において、お前たちのたくらみもここまでだ!", gamelog);
+      addstr("神の御名において、お前たちのたくらみを終わらせる!", gamelog);
    else addstr("お前たちは包囲されている!", gamelog);
    gamelog.newline();
 
