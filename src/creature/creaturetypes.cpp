@@ -249,7 +249,7 @@ void makecreature(Creature &cr,short type)
             cr.take_clips(*cliptype[getcliptype("CLIP_GASOLINE")],4);
             cr.reload(false);
             cr.set_skill(SKILL_HEAVYWEAPONS,LCSrandom(3)+2);
-            strcpy(cr.name,"ファイヤーマン");
+            strcpy(cr.name,"焚書官");
             cr.align=ALIGN_CONSERVATIVE;
          }
          else

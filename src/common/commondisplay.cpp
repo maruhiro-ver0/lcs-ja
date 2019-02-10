@@ -515,7 +515,7 @@ void printlocation(long loc)
          case SIEGE_CCS:
             mvaddstr(2,1,"CCSがこの場所を攻撃中だ!");break;
          case SIEGE_FIREMEN:
-            mvaddstr(2,1,"消防隊がこの場所を攻撃中だ!");break;
+            mvaddstr(2,1,"焚書課がこの場所を攻撃中だ!");break;
          }
       }
    }

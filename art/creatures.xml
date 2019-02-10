@@ -266,7 +266,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_WORKER_JANITOR">
-        <type_name>管理人</type_name><!-- Hardcoded to Custodian for L+ labor law. -->
+        <type_name>守衛</type_name><!-- Hardcoded to Custodian for L+ labor law. -->
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
@@ -970,8 +970,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_OFFICEWORKER">
-        <type_name>サラリーマン</type_name>
-        <encounter_name>サラリーマン</encounter_name>
+        <type_name>会社員</type_name>
+        <encounter_name>会社員</encounter_name>
         <weapon>CIVILIAN</weapon>
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>

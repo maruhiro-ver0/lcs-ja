@@ -228,34 +228,34 @@ void siegecheck(char canseethings)
                erase();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
-               addstr("You have received advance warning from your sleepers regarding ", gamelog);
-               move(9,1);
-               addstr("an imminent police raid on ", gamelog);
+               addstr("あなたは警察署の潜伏者から", gamelog);
                addstr(location[l]->getname());
-               addstr(".", gamelog);
+               addstr("への", gamelog);
+               move(9,1);
+               addstr("襲撃が迫っているとの警告を受けた。", gamelog);
                gamelog.newline();
 
                if(location[l]->siege.escalationstate>=1)
                {
                   move(11,1);
-                  addstr("The fighting force will be composed of national guard troops.", gamelog);
+                  addstr("攻撃には州兵は投入されるだろう。", gamelog);
                }
                if(location[l]->siege.escalationstate>=2)
                {
                   move(12,1);
-                  addstr("A tank will cover the entrance to the compound.", gamelog);
+                  addstr("アジトの出入り口には戦車が待ち構えているだろう。", gamelog);
                }
                if(location[l]->siege.escalationstate>=3)
                {
                   move(13,1);
-                  addstr("Planes will bomb the compound during the siege, and the final ", gamelog);
+                  addstr("包囲の間、航空機による空爆があり、", gamelog);
                   move(14,1);
-                  addstr("attack will be carried out by SEAL Team 6.", gamelog);
+                  addstr("最終的には海軍対テロ特殊部隊SEAL Team 6による攻撃が行われるだろう。", gamelog);
                }
                gamelog.nextMessage(); //Write out buffer to prepare for next message.
 
                move (15,1);
-               addstr("Press Esc to ponder the situation...");
+               addstr("ESCを押すと対策を熟慮する…");
                int c;
                do c=getkey(); while(c!='x'&&c!=ESC);
             }
@@ -287,7 +287,7 @@ void siegecheck(char canseethings)
                if(location[l]->siege.escalationstate>=1)
                {
                   move(9,1);
-                  addstr("National Guard troops are replacing normal SWAT units.", gamelog);
+                  addstr("通常のSWATに代わり州兵が配備されている。", gamelog);
                   gamelog.nextMessage();
 
                   getkey();
@@ -296,8 +296,8 @@ void siegecheck(char canseethings)
                {
                   move(10,1);
                   if(location[l]->compound_walls & COMPOUND_TANKTRAPS)
-                     addstr("An M1 Abrams Tank is stopped by the tank traps.", gamelog);
-                  else addstr("An M1 Abrams Tank takes up position outside the compound.", gamelog);
+                     addstr("対戦車障害物がM1エイブラムスの行く手を阻んでいる。", gamelog);
+                  else addstr("M1エイブラムス戦車がアジトの外で待ち構えている。", gamelog);
                   gamelog.nextMessage();
 
                   getkey();
@@ -305,7 +305,7 @@ void siegecheck(char canseethings)
                if(location[l]->siege.escalationstate>=3)
                {
                   move(11,1);
-                  addstr("You hear jet bombers streak overhead.", gamelog);
+                  addstr("ジェット爆撃機が頭上を飛行する音が聞こえる。", gamelog);
                   gamelog.nextMessage();
 
                   getkey();
@@ -325,9 +325,9 @@ void siegecheck(char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                move(8,1);
-               addstr("The cops have raided the ", gamelog);
+               addstr("警官隊は誰もいない", gamelog);
                addstr(location[l]->getname(), gamelog);
-               addstr(", an unoccupied safehouse.", gamelog);
+               addstr("に侵入した。", gamelog);
                gamelog.newline();
 
                getkey();
@@ -341,7 +341,7 @@ void siegecheck(char canseethings)
                   {
                      move(y,1);y++;
                      addstr(pool[p]->name, gamelog);
-                     addstr("'s corpse has been recovered.", gamelog);
+                     addstr("の遺体が見つかった。", gamelog);
                      gamelog.newline();
 
                      getkey();
@@ -353,7 +353,7 @@ void siegecheck(char canseethings)
                   {
                      move(y,1);y++;
                      addstr(pool[p]->name, gamelog);
-                     addstr(" has been rescued.", gamelog);
+                     addstr("が救出された。", gamelog);
                      gamelog.newline();
 
                      getkey();
@@ -393,15 +393,15 @@ void siegecheck(char canseethings)
                erase();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
-               addstr("You have received ", gamelog);
-               if(ceosleepercount)addstr("your sleeper CEO's warning", gamelog);
-               else addstr("an anonymous tip", gamelog);
-               addstr(" that the Corporations ", gamelog);
+               addstr("", gamelog);
+               if(ceosleepercount)addstr("潜伏者のCEOの警告", gamelog);
+               else addstr("匿名の情報", gamelog);
+               addstr("によると、", gamelog);
                move(9,1);
-               addstr("are hiring mercenaries to attack ", gamelog);
+               addstr("企業体に雇われた民間傭兵による", gamelog);
                if(ceosleepercount)addstr(location[l]->getname(), gamelog);
-               else addstr("the LCS", gamelog);
-               addstr(".", gamelog);
+               else addstr("LCS", gamelog);
+               addstr("の攻撃の準備がある。", gamelog);
                gamelog.nextMessage();
 
                getkey();
@@ -417,9 +417,9 @@ void siegecheck(char canseethings)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(8,1);
-            addstr("Corporate mercenaries are raiding the ", gamelog);
+            addstr("企業体の民間傭兵による", gamelog);
             addstr(location[l]->getname(), gamelog);
-            addstr("!", gamelog);
+            addstr("の襲撃だ!", gamelog);
             gamelog.nextMessage();
 
             getkey();
@@ -458,11 +458,10 @@ void siegecheck(char canseethings)
                   erase();
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
-                  addstr("You have received a sleeper warning that the CCS ", gamelog);
+                  addstr("あなたは潜伏者からCCSによる", gamelog);
                   move(9,1);
-                  addstr(" is gearing up to attack ", gamelog);
                   addstr(location[l]->name, gamelog);
-                  addstr(".", gamelog);
+                  addstr("の攻撃が近いとの警告を受けた。", gamelog);
                   gamelog.nextMessage();
 
                   getkey();
@@ -478,9 +477,9 @@ void siegecheck(char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                move(8,1);
-               addstr("A screeching truck pulls up to ", gamelog);
+               addstr("甲高いトラックのエンジン音が", gamelog);
                addstr(location[l]->getname(), gamelog);
-               addstr("!", gamelog);
+               addstr("に迫っている!", gamelog);
                gamelog.newline();
 
                getkey();
@@ -493,7 +492,7 @@ void siegecheck(char canseethings)
                   set_color(COLOR_RED,COLOR_BLACK,1);
 
                   move(8,1);
-                  addstr("The truck plows into the building and explodes!", gamelog);
+                  addstr("トラックが建物に突っ込み爆発した!", gamelog);
                   gamelog.nextMessage();
 
                   getkey();
@@ -502,17 +501,17 @@ void siegecheck(char canseethings)
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                   move(0,1);
-                  addstr("CCS CAR BOMBING CASUALTY REPORT");
+                  addstr("CCSの自動車爆弾による被害報告");
 
                   move(2,1);
-                  addstr("KILLED: ");
+                  addstr("死亡: ");
                   int killed_y = 2;
-                  int killed_x = 9;
+                  int killed_x = 7;
 
                   move(6,1);
-                  addstr("INJURED: ");
+                  addstr("負傷: ");
                   int injured_y = 6;
-                  int injured_x = 10;
+                  int injured_x = 7;
 
                   for(int i=0;i<len(pool);i++)
                   {
@@ -534,7 +533,7 @@ void siegecheck(char canseethings)
                               pool[i]->die();
                               set_alignment_color(pool[i]->align,false);
                               addstr(pool[i]->name);
-                              addstr(", ");
+                              addstr("、");
                               killed_x+=namelength+2;
                            }
                            else
@@ -548,7 +547,7 @@ void siegecheck(char canseethings)
                               move(injured_y,injured_x);
                               set_alignment_color(pool[i]->align,false);
                               addstr(pool[i]->name);
-                              addstr(", ");
+                              addstr("、");
                               injured_x+=namelength+2;
                            }
                            //set_alignment_color(pool[i]->align,false);
@@ -566,7 +565,7 @@ void siegecheck(char canseethings)
                   set_color(COLOR_RED,COLOR_BLACK,1);
 
                   move(8,1);
-                  addstr("CCS members pour out of the truck and shoot in the front doors!", gamelog);
+                  addstr("CCSメンバーはトラックから飛び降り、出入り口で発砲した!", gamelog);
                   gamelog.nextMessage();
 
                   getkey();
@@ -605,11 +604,10 @@ void siegecheck(char canseethings)
                erase();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
-               addstr("A sleeper agent has reported that the CIA is planning ", gamelog);
+               addstr("潜伏者の諜報員によると、CIAは", gamelog);
                move(9,1);
-               addstr("to launch an attack on ", gamelog);
                addstr(location[l]->getname(), gamelog);
-               addstr(".", gamelog);
+               addstr("の攻撃計画を実行しようとしている。", gamelog);
                gamelog.nextMessage();
 
                getkey();
@@ -625,31 +623,31 @@ void siegecheck(char canseethings)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(8,1);
-            addstr("Unmarked black vans are surrounding the ", gamelog);
+            addstr("印が何もない黒いバンが", gamelog);
             addstr(location[l]->getname(), gamelog);
-            addstr("!", gamelog);
+            addstr("を包囲している!", gamelog);
             gamelog.newline();
 
             if(location[l]->compound_walls & COMPOUND_CAMERAS)
             {
                move(9,1);
-               addstr("Through some form of high technology, they've managed ", gamelog);
+               addstr("高度な技術を駆使し、", gamelog);
                move(10,1);
-               addstr("to shut off the lights and the cameras!", gamelog);
+               addstr("明かりを消しカメラを停止させた!", gamelog);
                gamelog.nextMessage();
             }
             else if(location[l]->compound_walls & COMPOUND_GENERATOR)
             {
                move(9,1);
-               addstr("Through some form of high technology, they've managed ", gamelog);
+               addstr("高度な技術を駆使し、", gamelog);
                move(10,1);
-               addstr("to shut off the lights!", gamelog);
+               addstr("発電機を停止させ明かりを消した!", gamelog);
                gamelog.nextMessage();
             }
             else
             {
                move(9,1);
-               addstr("They've shut off the lights!", gamelog);
+               addstr("明かりが消えた!", gamelog);
                gamelog.nextMessage();
             }
 
@@ -671,11 +669,10 @@ void siegecheck(char canseethings)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(8,1);
-            addstr("Masses dissatisfied with your lack of respect for AM Radio ", gamelog);
+            addstr("AMラジオへの対抗に怒る群集が", gamelog);
             move(9,1);
-            addstr("are storming the ", gamelog);
             addstr(location[l]->getname(), gamelog);
-            addstr("!", gamelog);
+            addstr("を襲撃しようとしている!", gamelog);
             gamelog.nextMessage();
 
             getkey();
@@ -694,11 +691,11 @@ void siegecheck(char canseethings)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(8,1);
-            addstr("Masses dissatisfied with your lack of respect for Cable News ", gamelog);
+            addstr("ケーブルニュースへの対抗に怒る群集が", gamelog);
             move(9,1);
             addstr("are storming the ", gamelog);
             addstr(location[l]->getname(), gamelog);
-            addstr("!", gamelog);
+            addstr("に襲撃しようとしている!", gamelog);
             gamelog.nextMessage();
 
             getkey();
@@ -728,12 +725,12 @@ void siegecheck(char canseethings)
                erase();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
-               if(firemensleepercount) addstr("A sleeper Fireman has informed you that ", gamelog);
-               else addstr("Word in the underground is that ", gamelog);
+               if(firemensleepercount) addstr("潜伏者の焚書官によると、", gamelog);
+               else addstr("秘密情報によると、", gamelog);
                move(9,1);
-               addstr("the Firemen are planning to burn ", gamelog);
+               addstr("焚書課が", gamelog);
                addstr(location[l]->name, gamelog);
-               addstr(".", gamelog);
+               addstr("を焼き払う計画がある。", gamelog);
                gamelog.nextMessage();
 
                getkey();
@@ -749,13 +746,13 @@ void siegecheck(char canseethings)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(8,1);
-            addstr("Screaming fire engines pull up to the ", gamelog);
+            addstr("炎が", gamelog);
             addstr(location[l]->getname(), gamelog);
-            addstr("!", gamelog);
+            addstr("に迫る!", gamelog);
             gamelog.newline();
 
             move(9,1);
-            addstr("Armored firemen swarm out, pilot lights burning.", gamelog);
+            addstr("回転灯を炎で照らしながら、大勢の武装した焚書官が現れた。", gamelog);
             gamelog.newline();
 
             getkey();
@@ -764,19 +761,19 @@ void siegecheck(char canseethings)
 
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(1,1);
-            addstr("You hear a screeching voice over the sound of fire engine sirens:", gamelog);
+            addstr("サイレンと金切り声が聞こえる:", gamelog);
             gamelog.newline();
 
             move(3,1);
-            addstr("Surrender yourselves!", gamelog);
+            addstr("投降せよ!", gamelog);
             gamelog.newline();
 
             move(4,1);
-            addstr("Unacceptable Speech has occurred at this location.", gamelog);
+            addstr("受け入れることのできない要求が響き渡る。", gamelog);
             gamelog.newline();
 
             move(6,1);
-            addstr("Come quietly and you will not be harmed.", gamelog);
+            addstr("おとなしく投降するならば危害は加えない。", gamelog);
             gamelog.nextMessage();
 
             getkey();
@@ -795,9 +792,9 @@ void siegecheck(char canseethings)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(8,1);
-            addstr("The Firemen have raided the ", gamelog);
+            addstr("焚書官は誰もいない", gamelog);
             addstr(location[l]->getname(), gamelog);
-            addstr(", an unoccupied safehouse.", gamelog);
+            addstr("に侵入した。", gamelog);
             gamelog.newline();
 
             getkey();
@@ -811,7 +808,7 @@ void siegecheck(char canseethings)
                {
                   move(y++,1);
                   addstr(pool[p]->name, gamelog);
-                  addstr("'s corpse has been recovered.", gamelog);
+                  addstr("の遺体が見つかった。", gamelog);
                   gamelog.newline();
 
                   getkey();
@@ -823,7 +820,7 @@ void siegecheck(char canseethings)
                {
                   move(y++,1);
                   addstr(pool[p]->name, gamelog);
-                  addstr(" has been rescued.", gamelog);
+                  addstr("が救出された。", gamelog);
                   gamelog.newline();
 
                   getkey();
@@ -837,7 +834,7 @@ void siegecheck(char canseethings)
             if(location[l]->compound_walls & COMPOUND_PRINTINGPRESS)
             {
                move(10,1);
-               addstr("The printing press is dismantled and burned.", gamelog);
+               addstr("印刷機は破壊され焼却された。", gamelog);
                gamelog.newline();
                location[l]->compound_walls &= ~COMPOUND_PRINTINGPRESS;
                offended_firemen=0;
@@ -846,7 +843,7 @@ void siegecheck(char canseethings)
             if(location[l]->front_business!=-1)
             {
                move(12,1);
-               addstr("Materials relating to the business front have been destroyed.", gamelog);
+               addstr("ビジネスオフィスを偽装する設備は破壊された。", gamelog);
                gamelog.newline();
                location[l]->front_business=-1;
             }
@@ -892,9 +889,9 @@ void siegeturn(char clearformess)
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(8,1);
-            addstr("Conservatives have raided the ", gamelog);
+            addstr("保守は誰もいない", gamelog);
             addstr(location[l]->getname(), gamelog);
-            addstr(", an unoccupied safehouse.", gamelog);
+            addstr("に侵入した。", gamelog);
             gamelog.newline();
 
             if(location[l]->siege.siegetype==SIEGE_CCS&&location[l]->type==SITE_INDUSTRY_WAREHOUSE)
@@ -911,7 +908,7 @@ void siegeturn(char clearformess)
                {
                   move(y++,1);
                   addstr(pool[p]->name);
-                  addstr("'s corpse has been recovered.", gamelog);
+                  addstr("の遺体が見つかった。", gamelog);
                   gamelog.newline();
 
                   getkey();
@@ -923,7 +920,7 @@ void siegeturn(char clearformess)
                {
                   move(y++,1);
                   addstr(pool[p]->name);
-                  addstr(" has been rescued.", gamelog);
+                  addstr("が救出された。", gamelog);
                   gamelog.newline();
 
                   getkey();
@@ -999,7 +996,7 @@ void siegeturn(char clearformess)
                else makedelimiter();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
-               addstr("The cops are coming!", gamelog);
+               addstr("警官隊が迫り来る!", gamelog);
                gamelog.newline();
 
                getkey();
@@ -1020,7 +1017,7 @@ void siegeturn(char clearformess)
                   else makedelimiter();
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
-                  addstr("The police have cut the lights!", gamelog);
+                  addstr("警官隊は明かりを消した!", gamelog);
                   gamelog.newline();
 
                   getkey();
@@ -1045,9 +1042,9 @@ void siegeturn(char clearformess)
                      int targ=pickrandom(pol);
                      if((int)LCSrandom(50)>pool[targ]->juice)
                      {
-                        addstr("A sniper takes out ", gamelog);
+                        addstr("スナイパーが", gamelog);
                         addstr(pool[targ]->name, gamelog);
-                        addstr("!", gamelog);
+                        addstr("を狙撃した!", gamelog);
                         gamelog.newline();
 
                         if(pool[targ]->align==1) stat_dead++,liberalcount[l]--;
@@ -1058,9 +1055,9 @@ void siegeturn(char clearformess)
                      }
                      else
                      {
-                        addstr("A sniper nearly hits ", gamelog);
+                        addstr("スナイパーはわずかのところで", gamelog);
                         addstr(pool[targ]->name, gamelog);
-                        addstr("!", gamelog);
+                        addstr("を外した!", gamelog);
                         gamelog.newline();
                      }
 
@@ -1079,7 +1076,7 @@ void siegeturn(char clearformess)
                   else makedelimiter();
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
-                  addstr("You hear planes streak overhead!", gamelog);
+                  addstr("爆撃機の迫り来る音が聞こえる!", gamelog);
                   gamelog.newline();
 
                   getkey();
@@ -1092,7 +1089,7 @@ void siegeturn(char clearformess)
                      if(clearformess) erase();
                      else makedelimiter();
                      move(8,1);
-                     addstr("The thunder of the anti-aircraft gun shakes the compound!", gamelog);
+                     addstr("雷のような対空砲の音がアジトに響き渡った!", gamelog);
                      gamelog.newline();
 
                      getkey();
@@ -1103,10 +1100,10 @@ void siegeturn(char clearformess)
                      if(LCSrandom(5))
                      {
                         hit=false;
-                        if(LCSrandom(2)) addstr("You didn't shoot any down, but you've made them think twice!", gamelog);
+                        if(LCSrandom(2)) addstr("爆撃機には命中しなかった。だが、爆撃機は近づくのをためらうだろう!", gamelog);
                         else
                         {
-                           addstr("Hit! One of the bombers slams into to the ground.", gamelog);
+                           addstr("命中! 爆撃機の内の1機が墜落した。", gamelog);
                            gamelog.newline();
 
                            getkey();
@@ -1114,7 +1111,7 @@ void siegeturn(char clearformess)
                            if(clearformess) erase();
                            else makedelimiter();
                            move(8,1);
-                           addstr("It's all over the TV. Everyone in the Liberal Crime Squad gains 20 juice!", gamelog);
+                           addstr("一部始終がテレビ中継されている。リベラル・クライム・スコードのメンバー全員が20ジュースを得た!", gamelog);
                            for(int p=0;p<len(pool);p++) addjuice(*pool[p],20,1000);
                         }
                         gamelog.newline();
@@ -1123,7 +1120,7 @@ void siegeturn(char clearformess)
                      }
                      else
                      {
-                        addstr("A skilled pilot gets through!", gamelog);
+                        addstr("熟練パイロットは通り抜けた!", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1135,7 +1132,7 @@ void siegeturn(char clearformess)
                      if(clearformess) erase();
                      else makedelimiter();
                      move(8,1);
-                     addstr("Explosions rock the compound!", gamelog);
+                     addstr("爆発がアジトを揺さぶる!", gamelog);
                      gamelog.newline();
 
                      getkey();
@@ -1145,7 +1142,7 @@ void siegeturn(char clearformess)
                         if(clearformess) erase();
                         else makedelimiter();
                         move(8,1);
-                        addstr("The anti-aircraft gun takes a direct hit!", gamelog);
+                        addstr("対空砲に直撃した!", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1153,7 +1150,7 @@ void siegeturn(char clearformess)
                         if(clearformess) erase();
                         else makedelimiter();
                         move(8,1);
-                        addstr("There's nothing left but smoking wreckage...", gamelog);
+                        addstr("残されたものは破片だけだった…", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1165,7 +1162,7 @@ void siegeturn(char clearformess)
                         if(clearformess) erase();
                         else makedelimiter();
                         move(8,1);
-                        addstr("The generator has been destroyed!", gamelog);
+                        addstr("発電機が破壊された!", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1173,7 +1170,7 @@ void siegeturn(char clearformess)
                         if(clearformess) erase();
                         else makedelimiter();
                         move(8,1);
-                        addstr("The lights fade and all is dark.", gamelog);
+                        addstr("明かりが消え真っ暗になった。", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1196,7 +1193,7 @@ void siegeturn(char clearformess)
                            if((int)LCSrandom(100)>pool[targ]->juice)
                            {
                               addstr(pool[targ]->name, gamelog);
-                              addstr(" was killed in the bombing!", gamelog);
+                              addstr("は空爆で死んだ!", gamelog);
                               gamelog.newline();
 
                               if(pool[targ]->align==1) stat_dead++,liberalcount[l]--;
@@ -1208,7 +1205,7 @@ void siegeturn(char clearformess)
                            else
                            {
                               addstr(pool[targ]->name, gamelog);
-                              addstr(" narrowly avoided death!", gamelog);
+                              addstr("は少しのところで死を間逃れた!", gamelog);
                               gamelog.newline();
                            }
 
@@ -1220,7 +1217,7 @@ void siegeturn(char clearformess)
                         if(clearformess) erase();
                         else makedelimiter();
                         move(8,1);
-                        addstr("Fortunately, no one is hurt.", gamelog);
+                        addstr("幸いなことに死傷者はいなかった。", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -1238,7 +1235,7 @@ void siegeturn(char clearformess)
                   else makedelimiter();
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
-                  addstr("Army engineers have removed your tank traps.", gamelog);
+                  addstr("対戦車障害物は工兵に除去された。", gamelog);
                   gamelog.newline();
 
                   getkey();
@@ -1249,7 +1246,7 @@ void siegeturn(char clearformess)
                      makedelimiter();
                      move(8,1);
                   }
-                  addstr("The tank moves forward to your compound entrance.", gamelog);
+                  addstr("戦車がアジトの出入り口まで移動してきた。", gamelog);
                   gamelog.newline();
 
                   getkey();
@@ -1269,50 +1266,50 @@ void siegeturn(char clearformess)
 
                   erase();
                   move(1,1);
-                  addstr("Elitist ", gamelog);
-                  addstr(repname, gamelog);
-                  addstr(" from the ", gamelog);
                   switch(LCSrandom(5))
                   {
-                     case 0:addstr("news program", gamelog);break;
-                     case 1:addstr("news magazine", gamelog);break;
-                     case 2:addstr("website", gamelog);break;
-                     case 3:addstr("scandal rag", gamelog);break;
-                     case 4:addstr("newspaper", gamelog);break;
+                     case 0:addstr("ニュース番組", gamelog);break;
+                     case 1:addstr("ニュース雑誌", gamelog);break;
+                     case 2:addstr("ウェブサイト", gamelog);break;
+                     case 3:addstr("ゴシップ誌", gamelog);break;
+                     case 4:addstr("新聞", gamelog);break;
                   }
-                  addstr(" ");
+                  addstr("『");
                   switch(LCSrandom(12))
                   {
-                     case 0:addstr("Daily", gamelog);break;
-                     case 1:addstr("Nightly", gamelog);break;
-                     case 2:addstr("Current", gamelog);break;
-                     case 3:addstr("Pressing", gamelog);break;
-                     case 4:addstr("Socialist", gamelog);break;
-                     case 5:addstr("American", gamelog);break;
-                     case 6:addstr("National", gamelog);break;
-                     case 7:addstr("Union", gamelog);break;
-                     case 8:addstr("Foreign", gamelog);break;
-                     case 9:addstr("Associated", gamelog);break;
-                     case 10:addstr("International", gamelog);break;
-                     case 11:addstr("County", gamelog);break;
+                     case 0:addstr("デイリー", gamelog);break;
+                     case 1:addstr("ナイトリー", gamelog);break;
+                     case 2:addstr("カレント", gamelog);break;
+                     case 3:addstr("プレシング", gamelog);break;
+                     case 4:addstr("ソーシャリスト", gamelog);break;
+                     case 5:addstr("アメリカ", gamelog);break;
+                     case 6:addstr("ナショナル", gamelog);break;
+                     case 7:addstr("ユニオン", gamelog);break;
+                     case 8:addstr("フォーリン", gamelog);break;
+                     case 9:addstr("アソシエイテッド", gamelog);break;
+                     case 10:addstr("インターナショナル", gamelog);break;
+                     case 11:addstr("カウンティ", gamelog);break;
                   }
-                  addstr(" ", gamelog);
+                  addstr("・", gamelog);
                   switch(LCSrandom(11))
                   {
-                     case 0:addstr("Reporter", gamelog);break;
-                     case 1:addstr("Issue", gamelog);break;
-                     case 2:addstr("Take", gamelog);break;
-                     case 3:addstr("Constitution", gamelog);break;
-                     case 4:addstr("Times", gamelog);break;
-                     case 5:addstr("Post", gamelog);break;
-                     case 6:addstr("News", gamelog);break;
-                     case 7:addstr("Affair", gamelog);break;
-                     case 8:addstr("Statesman", gamelog);break;
-                     case 9:addstr("Star", gamelog);break;
-                     case 10:addstr("Inquirer", gamelog);break;
+                     case 0:addstr("レポーター", gamelog);break;
+                     case 1:addstr("イシュー", gamelog);break;
+                     case 2:addstr("テイク", gamelog);break;
+                     case 3:addstr("コンスティテューション", gamelog);break;
+                     case 4:addstr("タイム", gamelog);break;
+                     case 5:addstr("ポスト", gamelog);break;
+                     case 6:addstr("ニュース", gamelog);break;
+                     case 7:addstr("アフェア", gamelog);break;
+                     case 8:addstr("ステートマン", gamelog);break;
+                     case 9:addstr("スター", gamelog);break;
+                     case 10:addstr("インクアイラー", gamelog);break;
                   }
+                  addstr("』のエリート記者", gamelog);
+                  addstr(repname, gamelog);
+                  addstr("が", gamelog);
                   move(2,1);
-                  addstr("got into the compound somehow!", gamelog);
+                  addstr("アジトに飛び込んできた!", gamelog);
                   gamelog.newline();
 
                   getkey();
@@ -1332,13 +1329,13 @@ void siegeturn(char clearformess)
 
                   move(4,1);
                   addstr(pool[best]->name, gamelog);
-                  addstr(" decides to give an interview.", gamelog);
+                  addstr("はインタビューを受けることにした。", gamelog);
                   gamelog.newline();
 
                   getkey();
 
                   move(6,1);
-                  addstr("The interview is wide-ranging, covering a variety of topics.", gamelog);
+                  addstr("インタビューは多岐にわたり、様々な話題で会話がなされた。", gamelog);
                   gamelog.newline();
 
                   getkey();
@@ -1353,83 +1350,84 @@ void siegeturn(char clearformess)
                   if(segmentpower<15)
                   {
                      addstr(repname, gamelog);
-                     addstr(" canceled the interview halfway through", gamelog);
+                     addstr("はインタビューを途中で打ち切り、", gamelog);
                      move(9,1);
-                     addstr("and later used the material for a Broadway play called", gamelog);
-                     move(10,1);
+                     addstr("『", gamelog);
                      switch(LCSrandom(11))
                      {
-                        case 0: addstr("Flaming", gamelog); break;
-                        case 1: if(law[LAW_FREESPEECH]==-2) addstr("Dumb", gamelog);
-                                else addstr("Retarded", gamelog); break;
-                        case 2: addstr("Insane", gamelog); break;
-                        case 3: addstr("Crazy", gamelog); break;
-                        case 4: addstr("Loopy", gamelog); break;
-                        case 5: addstr("Idiot", gamelog); break;
-                        case 6: addstr("Empty-Headed", gamelog); break;
-                        case 7: addstr("Nutty", gamelog); break;
-                        case 8: addstr("Half-Baked", gamelog); break;
-                        case 9: addstr("Pot-Smoking", gamelog); break;
-                        case 10: addstr("Stoner", gamelog); break;
+                        case 0: addstr("炎上", gamelog); break;
+                        case 1: if(law[LAW_FREESPEECH]==-2) addstr("間抜けな", gamelog);
+                                else addstr("イカレた", gamelog); break;
+                        case 2: addstr("狂気の", gamelog); break;
+                        case 3: addstr("狂った", gamelog); break;
+                        case 4: addstr("愚かな", gamelog); break;
+                        case 5: addstr("馬鹿な", gamelog); break;
+                        case 6: addstr("空っぽの", gamelog); break;
+                        case 7: addstr("おかしな", gamelog); break;
+                        case 8: addstr("未熟な", gamelog); break;
+                        case 9: addstr("ヤク中", gamelog); break;
+                        case 10: addstr("酔っ払い", gamelog); break;
                      }
                      addstr(" ", gamelog);
                      switch(LCSrandom(10))
                      {
-                        case 0: addstr("Liberal", gamelog); break;
-                        case 1: addstr("Socialist", gamelog); break;
-                        case 2: addstr("Anarchist", gamelog); break;
-                        case 3: addstr("Communist", gamelog); break;
-                        case 4: addstr("Marxist", gamelog); break;
-                        case 5: addstr("Green", gamelog); break;
-                        case 6: addstr("Elite", gamelog); break;
-                        case 7: addstr("Guerrilla", gamelog); break;
-                        case 8: addstr("Commando", gamelog); break;
-                        case 9: addstr("Soldier", gamelog); break;
+                        case 0: addstr("リベラル", gamelog); break;
+                        case 1: addstr("ソーシャリスト", gamelog); break;
+                        case 2: addstr("アナーキスト", gamelog); break;
+                        case 3: addstr("コミュニスト", gamelog); break;
+                        case 4: addstr("マルキスト", gamelog); break;
+                        case 5: addstr("グリーン", gamelog); break;
+                        case 6: addstr("エリート", gamelog); break;
+                        case 7: addstr("ゲリラ", gamelog); break;
+                        case 8: addstr("コマンドー", gamelog); break;
+                        case 9: addstr("ソルジャー", gamelog); break;
                      }
-                     addstr(".", gamelog);
+                     addstr("』と呼ばれる", gamelog);
+                     move(10,1);
+                     addstr("ブロードウェイミュージカルの記事と差し替えられた。", gamelog);
                      gamelog.newline();
                   }
                   else if(segmentpower<20)
                   {
-                     addstr("But the interview is so boring that ", gamelog);
+                     addstr("だが、インタビューは退屈で、", gamelog);
                      addstr(repname, gamelog);
-                     addstr(" falls asleep.", gamelog);
+                     addstr("は寝てしまった。", gamelog);
                      gamelog.newline();
                   }
                   else if(segmentpower<25)
                   {
-                     addstr("But ", gamelog);
+                     addstr("だが、その間ずっと", gamelog);
                      addstr(pool[best]->name, gamelog);
-                     addstr(" stutters nervously the whole time.", gamelog);
+                     addstr("はイライラした様子だった。", gamelog);
                      gamelog.newline();
                   }
                   else if(segmentpower<30)
                   {
                      addstr(pool[best]->name, gamelog);
-                     addstr("'s verbal finesse leaves something to be desired.", gamelog);
+                     addstr("の話はいまいちだった。", gamelog);
                      gamelog.newline();
                   }
                   else if(segmentpower<45)
                   {
                      addstr(pool[best]->name, gamelog);
-                     addstr(" represents the LCS well.", gamelog);
+                     addstr("はLCSの考えをうまく表現できた。", gamelog);
                      gamelog.newline();
                   }
                   else if(segmentpower<60)
                   {
-                     addstr("The discussion was exciting and dynamic.", gamelog);
+                     addstr("議論はエキサイティングでダイナミックなものだった。", gamelog);
                      move(9,1);
-                     addstr("Even the Cable News and AM Radio spend days talking about it.", gamelog);
+                     addstr("ケーブルニュースやAMラジオさえも数日間これを話題にした。", gamelog);
                      gamelog.newline();
                   }
                   else
                   {
                      addstr(repname);
-                     addstr(" later went on to win a Pulitzer for it.", gamelog);
+                     addstr("は後にピューリッツァー賞を受賞する。", gamelog);
                      move(9,1);
-                     addstr("Virtually everyone in America was moved by ", gamelog);
+                     addstr("これは事実上全てのアメリカ人が", gamelog);
                      addstr(pool[best]->name, gamelog);
-                     addstr("'s words.", gamelog);
+                     addstr("の言葉に動かされたことになる。", gamelog);
                      gamelog.newline();
                   }
 
@@ -1475,7 +1473,7 @@ void giveup()
          addstr("警察は", gamelog);
       else if(location[loc]->siege.siegetype==SIEGE_POLICE && location[loc]->siege.escalationstate >= 1)
          addstr("兵士は", gamelog);
-      else addstr("消防は", gamelog);
+      else addstr("焚書官は", gamelog);
       addstr("部隊の武器を含む全てを差し押さえた。", gamelog);
       gamelog.newline();
 
@@ -1522,13 +1520,13 @@ void giveup()
       {
          move(3,1);
          addstr(kname);
-         addstr(" is rehabilitated and freed.", gamelog);
+         addstr("はリハビリを受け回復した。", gamelog);
          gamelog.newline();
       }
       if(kcount>1)
       {
          move(3,1);
-         addstr("The kidnap victims are rehabilitated and freed.", gamelog);
+         addstr("誘拐の犠牲者達はリハビリを受け回復した。", gamelog);
          gamelog.newline();
       }
       if(pcount==1)
@@ -1576,7 +1574,7 @@ void giveup()
          if(location[loc]->compound_walls & COMPOUND_PRINTINGPRESS)
          {
             move(10,1);
-            addstr("The printing press is dismantled and burned.", gamelog);
+            addstr("印刷機は破壊され焼却された。", gamelog);
             gamelog.newline();
             location[loc]->compound_walls &= ~COMPOUND_PRINTINGPRESS;
          }
@@ -1586,7 +1584,7 @@ void giveup()
          if(location[loc]->compound_walls)
          {
             move(10,1);
-            addstr("The compound is dismantled.", gamelog);
+            addstr("アジトの設備は撤去された。", gamelog);
             gamelog.newline();
             location[loc]->compound_walls=0;
          }
@@ -1594,7 +1592,7 @@ void giveup()
       if(location[loc]->front_business!=-1)
       {
          move(12,1);
-         addstr("Materials relating to the business front have been taken.", gamelog);
+         addstr("ビジネスオフィスを偽装する設備は破壊された。", gamelog);
          gamelog.newline();
          location[loc]->front_business=-1;
       }
@@ -1663,9 +1661,8 @@ void giveup()
       erase();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(1,1);
-      addstr("Everyone in the ", gamelog);
       addstr(location[loc]->getname(), gamelog);
-      addstr(" is slain.", gamelog);
+      addstr("にいた全員が殺害された。", gamelog);
       gamelog.newline();
       if(!endcheck(-2)) music.play(MUSIC_SIEGE); // play correct music for if we lost the game or didn't lose it
 

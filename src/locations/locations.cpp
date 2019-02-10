@@ -344,7 +344,7 @@ void initlocation(Location &loc)
       } break;
    case SITE_GOVERNMENT_FIRESTATION:
       if(law[LAW_FREESPEECH]==-2) {
-         loc.rename("消防隊司令部", "消防司令");
+         loc.rename("焚書課司令部", "焚書課");
          loc.hidden = false;
       } else {
          loc.rename("消防署", "消防署");

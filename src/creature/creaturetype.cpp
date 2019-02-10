@@ -301,19 +301,19 @@ std::string CreatureType::get_type_name() const
    switch(type_) // Hardcoded special cases.
    {
    case CREATURE_WORKER_SERVANT:
-      if(law[LAW_LABOR]==-2&&law[LAW_CORPORATE]==-2) return "Slave";
+      if(law[LAW_LABOR]==-2&&law[LAW_CORPORATE]==-2) return "奴隷";
       break;
    case CREATURE_WORKER_JANITOR:
-      if(law[LAW_LABOR]==2) return "Custodian";
+      if(law[LAW_LABOR]==2) return "管理人";
       break;
    case CREATURE_WORKER_SWEATSHOP:
-      if(law[LAW_LABOR]==2&&law[LAW_IMMIGRATION]==2) return "Migrant Worker";
+      if(law[LAW_LABOR]==2&&law[LAW_IMMIGRATION]==2) return "移民労働者";
 	   break;
    case CREATURE_CARSALESMAN:
-      if(law[LAW_WOMEN]==-2) return "Car Salesman";
+      if(law[LAW_WOMEN]==-2) return "自動車ｾｰﾙｽﾏﾝ";
       break;
    case CREATURE_FIREFIGHTER:
-      if(law[LAW_FREESPEECH]==-2) return "Fireman";
+      if(law[LAW_FREESPEECH]==-2) return "焚書官";
       break;
    }
    return type_name_;
