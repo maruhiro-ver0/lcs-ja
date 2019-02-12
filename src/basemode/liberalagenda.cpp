@@ -93,7 +93,7 @@ bool liberalagenda(signed char won)
          signed char align=exec[EXEC_PRESIDENT];
          set_alignment_color(align,true);
          move(5,0);
-         if(won==-1) addstr("王: ");
+         if(won==-1) addstr("国王: ");
          else if(won==-2) addstr("書記長: ");
          else
          {
@@ -383,12 +383,12 @@ bool liberalagenda(signed char won)
                   break;
                case LAW_ABORTION:
                   if(won==-2)addstr("強制的な中絶を人口抑制のため実施する。");
-                  else if(won==-1)addstr("中絶、避妊、そして性交渉の合意は全て死刑に相当する罪である。");
+                  else if(won==-1)addstr("中絶、避妊、そして性交渉の合意は全て死刑に相当する重罪である。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
                      addstr("中絶は殺人と同様の重罪であり、いかなる理由においても許されない。");
-                  else if(law[l]==-1)addstr("中絶は強姦、近親相姦、母体保護の場合を除き禁止する。");
-                  else if(law[l]==0)addstr("中絶は第一期(妊娠3ヶ月以内)に限られる。そして多額の費用が掛かる。");
-                  else if(law[l]==1)addstr("中絶は合法である。だが、中絶を税金で賄うことは禁止する。");
+                  else if(law[l]==-1)addstr("中絶は強姦、近親相姦、母体保護の場合を除き禁止されている。");
+                  else if(law[l]==0)addstr("中絶は妊娠3ヶ月以内に限られている。そして多額の費用が掛かる。");
+                  else if(law[l]==1)addstr("中絶は合法である。だが、中絶を税金で賄うことは禁止されている。");
                   else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("中絶の権利は強く保護されている。そして貧しい女性には政府の補助がある。");
                   else addstr("中絶は妊娠のあらゆる期間で容易に可能である。");
                   break;
@@ -492,15 +492,15 @@ bool liberalagenda(signed char won)
                   else addstr("Corporations have been abolished, along with the rest of capitalism.");
                   break;
                case LAW_FREESPEECH:
-                  if(won==-2)addstr("Counterrevolutionary speech is a capital crime.");
-                  else if(won==-1)addstr("Even *THINKING* about saying something unacceptable is a capital crime.");
+                  if(won==-2)addstr("反革命的言論は死刑に相当する重罪である。");
+                  else if(won==-1)addstr("容認できない発言しようと*考える*ことさえも死刑に相当する重罪である。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Armored squads are tasked with suppressing unacceptable speech.");
-                  else if(law[l]==-1)addstr("People who express unpopular opinions are often harassed and mistreated.");
-                  else if(law[l]==0)addstr("Free speech is legal, with minor exceptions, and is usually tolerated.");
-                  else if(law[l]==1)addstr("Free speech is legally protected and publicly encouraged.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("Free speech is strongly protected and universally supported.");
-                  else addstr("Free speech is sacrosanct and diverse points of view are celebrated.");
+                     addstr("容認できない言論を取り締まることは武装部隊の任務である。");
+                  else if(law[l]==-1)addstr("支持されない意見を発する人々は、しばしば嫌がらせや不当な扱いを受ける。");
+                  else if(law[l]==0)addstr("言論の自由はわずかな例外はあるが法で認められ、そして広く受け入れられている。");
+                  else if(law[l]==1)addstr("言論の自由は法的に保障され、公に推奨されている。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("言論の自由は強力に保障され、例外なく支持されている。");
+                  else addstr("言論の自由は絶対であり、視点の多様性が賞賛されている。");
                   break;
                case LAW_FLAGBURNING:
                   if(won==-2)addstr("Flags of the old American regime are burnt primarily as fuel.");
@@ -515,10 +515,10 @@ bool liberalagenda(signed char won)
                   break;
                case LAW_GUNCONTROL:
                   if(won==-2)addstr("銃を所有する者は全て銃殺される。");
-                  else if(won==-1)addstr("子供のギャングがAK-47を携帯し、あてもなく路地をさまよっている。");
+                  else if(won==-1)addstr("不良少年がAK-47を携帯し、あてもなく路地をさまよっている。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
                      addstr("機関砲、戦車、ミサイル等を含むあらゆる武器を自由に売買できる。");
-                  else if(law[l]==-1)addstr("軍用武器は禁止する。だが、それに近い武器は所有できる。");
+                  else if(law[l]==-1)addstr("軍用武器は禁止されている。だが、それに近い武器は所有できる。");
                   else if(law[l]==0)addstr("軍用武器の所有は事実上全て禁止されている。");
                   else if(law[l]==1)addstr("ほとんどの武器は法執行機関以外に販売することができない。");
                   else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("公共の場での武器の携帯および売買は違法である。");//XXX: Should guns be legal in private, too? -- LK

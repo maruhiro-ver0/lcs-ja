@@ -1942,7 +1942,7 @@ void sally_forth()
    move(6,11);
    addstr("びなければならない。");
    move(8,11);
-   addstr("あなたの部隊は可能ならば6人まで増強することができる。");
+   addstr("あなたの部隊は可能ならば6人まで増強される。");
    move(9,11);
    addstr("もしリベラルが多数いるならば、彼らから援護射撃を得ら");
    move(10,11);
@@ -2033,40 +2033,40 @@ void escape_engage()
    //GIVE INFO SCREEN
    erase();
    set_color(COLOR_RED,COLOR_BLACK,1);
-   move(1,26);
-   addstr("UNDER ATTACK: ESCAPE OR ENGAGE");
+   move(1,30);
+   addstr("防衛戦: 脱出か死か");
 
    set_color(COLOR_WHITE,COLOR_BLACK,0);
-   move(3,16);
-   addstr("You are about to engage Conservative forces in battle.");
+   move(3,15);
+   addstr("今、保守の軍勢と戦いが始まる。");
    move(4,11);
-   addstr("You will find yourself in the Liberal safehouse, and it will");
+   addstr("あなたはリベラルのアジトにいる。そして、そこに保守の");
    move(5,11);
-   addstr("be swarming with Conservative units.  The Liberal Crime");
+   addstr("部隊が押し入ろうとしている。リベラル・クライム・スコ");
    move(6,11);
-   addstr("Squad will be located far from the entrance to the safehouse.");
+   addstr("ードはアジトの出入口から離れた場所にいる。");
    move(7,11);
-   addstr("It is your task to bring your squad out to safety, or fight");
+   addstr("あなたがすべきことは、部隊を安全に脱出させるか、それと");
    move(8,11);
-   addstr("off the Conservatives within the perimeter.  Either way you");
+   addstr("も保守をここから追い出すかだ。どちらを選んでも、リベラ");
    move(9,11);
-   addstr("choose, any equipment from the safehouse which isn't held by a");
+   addstr("ルが持ち運んでいないアジトに残した装備は破壊される可能");
    move(10,11);
-   addstr("Liberal will be scattered about the compound.  Save what");
+   addstr("性がある。可能な限り守らなければならない。");
    move(11,11);
-   addstr("you can.  You might notice your Squad has filled out to");
+   addstr("あなたの部隊が可能ならば6人に増強されたことに気づくだ");
    move(12,11);
-   addstr("six members if any were available.  If you have a larger pool");
+   addstr("ろう。それ以上のリベラルがいるならば、彼らは部隊の背後");
    move(13,11);
-   addstr("of Liberals, they will be traveling behind the Squad.");
+   addstr("で行動する。");
    move(14,11);
-   addstr("There is a new button, (R)eorganize, which reflects this.");
+   addstr("新しいキー R - 再編成 を押すとそれが反映され、武装した");
    move(15,11);
-   addstr("Squad members in the back with firearms can provide cover");
+   addstr("背後のメンバーが援護射撃を行う。全員で6人の場合は、6人");
    move(16,11);
-   addstr("fire.  If you have at least six people total, then six must");
+   addstr("が部隊として行動する。6人未満ならば、全員がそうしなけ");
    move(17,11);
-   addstr("be in the Squad.  If less than six, then they all must.");
+   addstr("ればならない。");
 
    int loc=-1;
    if(selectedsiege!=-1) loc=selectedsiege;
@@ -2076,20 +2076,20 @@ void escape_engage()
    if(location[loc]->compound_walls&COMPOUND_CAMERAS)
    {
       move(18,16);
-      addstr("Your security cameras let you see units on the (M)ap.");
+      addstr("監視カメラが捕らえた部隊は M - 地図 上に表示される。");
    }
    if(location[loc]->compound_walls&COMPOUND_TRAPS)
    {
       move(19,16);
-      addstr("Your traps will harass the enemy, but not the Squad.");
+      addstr("ブービートラップは敵には効くが、味方には影響しない。");
    }
 
    set_color(COLOR_RED,COLOR_BLACK,1);
    move(23,11);
-   addstr("Press any key to Confront the Conservative Aggressors");
+   addstr("何かキーを押すと保守の侵略者と立ち向かう");
 
    // Seperate logging text
-   gamelog.log("Your Liberals confront the Conservatives within the safehouse.");
+   gamelog.log("リベラル達はアジトで保守に立ち向かう");
 
    getkey();
 
@@ -2157,18 +2157,18 @@ void escapesiege(char won)
       //GIVE INFO SCREEN
       erase();
       set_color(COLOR_YELLOW,COLOR_BLACK,1);
-      move(1,32);
-      addstr("You have escaped!", gamelog);
+      move(1,37);
+      addstr("脱出!", gamelog);
       gamelog.nextMessage();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      move(3,16);
+      move(3,15);
       addstr("The Conservatives thought that the Liberal Crime Squad was");
       move(4,11);
       addstr("finished, but once again, Conservative Thinking has proven");
       move(5,11);
       addstr("itself to be based on Unsound Notions.");
-      move(6,16);
+      move(6,15);
       addstr("However, all is not well.  In your haste to escape you have");
       move(7,11);
       addstr("lost everything that you've left behind.  You'll have");
