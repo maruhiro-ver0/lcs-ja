@@ -683,30 +683,30 @@ void sorting_prompt(short listforsorting)
    erase();
    move(1,1);
    set_color(COLOR_WHITE,COLOR_BLACK,0);
-   addstr("Choose how to sort list of ");
    switch(listforsorting)
    {
-      case SORTINGCHOICE_LIBERALS: addstr("active Liberals.");break;
-      case SORTINGCHOICE_HOSTAGES: addstr("hostages.");break;
-      case SORTINGCHOICE_CLINIC: addstr("Liberals in hospital.");break;
-      case SORTINGCHOICE_JUSTICE: addstr("oppressed Liberals.");break;
-      case SORTINGCHOICE_SLEEPERS: addstr("sleepers.");break;
-      case SORTINGCHOICE_DEAD: addstr("dead people.");break;
-      case SORTINGCHOICE_AWAY: addstr("people away.");break;
-      case SORTINGCHOICE_ACTIVATE: addstr("Liberal activity.");break;
-      case SORTINGCHOICE_ACTIVATESLEEPERS: addstr("sleeper activity.");break;
-      case SORTINGCHOICE_ASSEMBLESQUAD: addstr("available Liberals.");break;
-      case SORTINGCHOICE_BASEASSIGN: addstr("squadless members.");break;
+      case SORTINGCHOICE_LIBERALS: addstr("活動中のリベラル");break;
+      case SORTINGCHOICE_HOSTAGES: addstr("捕虜");break;
+      case SORTINGCHOICE_CLINIC: addstr("入院中のリベラル");break;
+      case SORTINGCHOICE_JUSTICE: addstr("拘束中のリベラル");break;
+      case SORTINGCHOICE_SLEEPERS: addstr("潜伏者");break;
+      case SORTINGCHOICE_DEAD: addstr("遺体");break;
+      case SORTINGCHOICE_AWAY: addstr("休暇中の人々");break;
+      case SORTINGCHOICE_ACTIVATE: addstr("リベラル活動");break;
+      case SORTINGCHOICE_ACTIVATESLEEPERS: addstr("潜伏活動");break;
+      case SORTINGCHOICE_ASSEMBLESQUAD: addstr("編成可能リベラル");break;
+      case SORTINGCHOICE_BASEASSIGN: addstr("所属のないリベラル");break;
       default: addstr("ERROR: INVALID VALUE FOR SORTINGCHOICE!");break;
    }
+   addstr("をどのようにソートするか");
    move(3,2);
-   addstr("A - No sorting.");
+   addstr("A - ソートしない");
    move(4,2);
-   addstr("B - Sort by name.");
+   addstr("B - 名前順");
    move(5,2);
-   addstr("C - Sort by location and name.");
+   addstr("C - 位置と名前順");
    move(6,2);
-   addstr("D - Sort by squad or name.");
+   addstr("D - 部隊または名前");
 
    while(true)
    {
@@ -772,9 +772,9 @@ int choiceprompt(const string &firstline, const string &secondline,
       {
       case 'a': case 'e': case 'i': case 'o': case 'u':
       case 'A': case 'E': case 'I': case 'O': case 'U':
-         addstr("Press a Letter to select an "+optiontypename); break;
+         addstr("アルファベットキーで"+optiontypename+"を選択する"); break;
       default:
-         addstr("Press a Letter to select a "+optiontypename); break;
+         addstr("アルファベットキーで"+optiontypename+"を選択する"); break;
       }
       move(23,0);
       addpagestr();
@@ -834,9 +834,9 @@ int buyprompt(const string &firstline, const string &secondline,
       {
       case 'a': case 'e': case 'i': case 'o': case 'u':
       case 'A': case 'E': case 'I': case 'O': case 'U':
-         addstr("Press a Letter to select an "+producttype); break;
+         addstr("アルファベットキーで"+producttype+"を選択する"); break;
       default:
-         addstr("Press a Letter to select a "+producttype); break;
+         addstr("アルファベットキーで"+producttype+"を選択する"); break;
       }
       move(23,0);
       addpagestr();

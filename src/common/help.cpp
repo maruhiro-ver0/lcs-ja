@@ -53,7 +53,7 @@ void HelpActivities(int activityType)
    erase();
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(0,0);
-   addstr("Liberal help on:");
+   addstr("リベラル・ヘルプ");
 
    switch(activityType)
    {
@@ -62,7 +62,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_COMMUNITYSERVICE
    case ACTIVITY_COMMUNITYSERVICE:
       move(2,0);
-      addstr("===Community Service===");
+      addstr("===社会奉仕===");
       move(4,0);
       addstr(" Has a minor effect on public opinion and increases Juice.");
       break;
@@ -70,7 +70,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_TROUBLE
    case ACTIVITY_TROUBLE:
       move(2,0);
-      addstr("===Liberal Disobedience===");
+      addstr("===リベラル反抗===");
       move(4,0);
       addstr(" Liberal Disobedience is an illegal activity and a form of Liberal Activism");
       move(5,0);
@@ -92,7 +92,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_GRAFFITI
    case ACTIVITY_GRAFFITI:
       move(2,0);
-      addstr("===Graffiti==");
+      addstr("===落書き===");
       move(4,0);
       addstr(" Spraying political graffiti is a misdemeanor, carrying with it relatively ");
       move(5,0);
@@ -108,7 +108,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_POLLS
    case ACTIVITY_POLLS:
       move(2,0);
-      addstr("===Search Opinion Polls===");
+      addstr("===世論調査===");
       move(4,0);
       addstr(" Search Opinion Polls is a legal activity that lets you see what people think");
       move(5,0);
@@ -124,7 +124,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_DOS_ATTACKS
    case ACTIVITY_DOS_ATTACKS:
       move(2,0);
-      addstr("===Harassing Websites===");
+      addstr("===ウェブサイトへの攻撃===");
       move(4,0);
       addstr(" Harassing Websites is an illegal activity and a form of Liberal Activism. It ");
       move(5,0);
@@ -140,7 +140,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_HACKING
    case ACTIVITY_HACKING:
       move(2,0);
-      addstr("===Hacking===");
+      addstr("===ハッキング===");
       move(4,0);
       addstr(" Hacking is a highly illegal form of Liberal Activism, which has a good effect");
       move(5,0);
@@ -170,7 +170,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_WRITE_LETTERS
    case ACTIVITY_WRITE_LETTERS:
       move(2,0);
-      addstr("===Write to Newspapers===");
+      addstr("===新聞への投書===");
       move(4,0);
       addstr(" Write to Newspapers is a legal activity and form of Liberal Activism that");
       move(5,0);
@@ -208,7 +208,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_WRITE_GUARDIAN
    case ACTIVITY_WRITE_GUARDIAN:
       move(2,0);
-      addstr("===Write for the Liberal Guardian ===");
+      addstr("===リベラルガーディアンの記事を書く===");
       move(4,0);
       addstr(" Writing for the Liberal Guardian is a legal (or illegal depending on the ");
       move(5,0);
@@ -250,7 +250,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_DONATIONS
    case ACTIVITY_DONATIONS:
       move(2,0);
-      addstr("===Soliciting Donations===");
+      addstr("===寄付金集め===");
       move(4,0);
       addstr(" Income depends on persuasion. ");
       move(5,0);
@@ -264,7 +264,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_SELL_TSHIRTS
    case ACTIVITY_SELL_TSHIRTS:
       move(2,0);
-      addstr("===Sell Shirts===");
+      addstr("===Tシャツの販売===");
       move(4,0);
       addstr(" Income depends on tailoring and business skills.");
       move(5,0);
@@ -278,7 +278,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_SELL_ART
    case ACTIVITY_SELL_ART:
       move(2,0);
-      addstr("===Sell Art===");
+      addstr("===アートの販売===");
       move(4,0);
       addstr(" Income depends on art skill and is lower if the country");
       move(5,0);
@@ -292,7 +292,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_SELL_MUSIC
    case ACTIVITY_SELL_MUSIC:
       move(2,0);
-      addstr("===Play Street Music===");
+      addstr("===ストリートミュージックの演奏===");
       move(4,0);
       addstr(" Income depends on music skill. ");
       move(6,0);
@@ -310,7 +310,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_SELL_DRUGS
    case ACTIVITY_SELL_DRUGS:
       move(2,0);
-      addstr("===Selling Brownies===");
+      addstr("===ケーキの販売===");
       move(4,0);
       addstr(" Selling brownies on the street is an illegal way to make money. Money earned is ");
       move(5,0);
@@ -330,7 +330,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_PROSTITUTION
    case ACTIVITY_PROSTITUTION:
       move(2,0);
-      addstr("===Prostitution===");
+      addstr("===売春===");
       move(4,0);
       addstr(" Prostitution is an activity which raises money illegally. The amount of money");
       move(5,0);
@@ -346,7 +346,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_CCFRAUD
    case ACTIVITY_CCFRAUD:
       move(2,0);
-      addstr("===Credit Card Fraud===");
+      addstr("===カード番号の不正取得===");
       move(4,0);
       addstr(" To steal credit card numbers you need to have someone who has a computer ");
       move(5,0);
@@ -358,7 +358,7 @@ void HelpActivities(int activityType)
 // {{{ ACTIVITY_REPAIR_ARMOR
    case ACTIVITY_REPAIR_ARMOR:
       move(2,0);
-      addstr("===Repair Clothing===");
+      addstr("===服の修繕===");
       move(4,0);
       addstr(" Repairing clothing will repair damaged armor and remove blood stains if there ");
       move(5,0);
@@ -373,7 +373,7 @@ void HelpActivities(int activityType)
 // {{{ Stealing {cars,wheelchairs}
    case ACTIVITY_STEALCARS:
       move(2,0);
-      addstr("===Stealing a Car===");
+      addstr("===自動車泥棒===");
       move(4,0);
       addstr(" Stealing a car will have the Liberal attempt to steal a car from the street. ");
       move(5,0);

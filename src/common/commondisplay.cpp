@@ -303,7 +303,7 @@ void locheader()
          }
          if(multipleact)
          {
-            str="Acting Individually";
+            str="個別に活動";
             set_color(COLOR_WHITE,COLOR_BLACK,1);
          }
       }
@@ -644,7 +644,7 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
 
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    mvaddstr(1,2,cr->name);
-   addstr(", ");
+   addstr("、");
    addstr(gettitle(*cr));
 
    if(cr->prisoner!=NULL)

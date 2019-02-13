@@ -2,7 +2,7 @@
     <only_sell_legal_items>true</only_sell_legal_items>
     <fullscreen>false</fullscreen>
     <allow_selling>true</allow_selling>
-    <exit>Leave</exit>
+    <exit>帰る</exit>
 
     <department>
         <entry>リベラル武器を買う</entry>
@@ -92,7 +92,7 @@
         <entry>リベラル弾を買う</entry>
         <letter>c</letter>
         <fullscreen>false</fullscreen>
-        <exit>Done buying Liberal clips</exit>
+        <exit>リベラル弾の買い物を終える</exit>
         <item>
             <class>CLIP</class>
             <description>ショットガン弾を買う</description>
@@ -148,7 +148,7 @@
         <entry>リベラル道具を買う</entry>
         <letter>t</letter>
         <fullscreen>false</fullscreen>
-        <exit>Done buying Liberal tools</exit>
+        <exit>リベラル道具の買い物を終える</exit>
         <item>
             <class>WEAPON</class>
             <description>バールを買う</description>

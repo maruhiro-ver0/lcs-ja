@@ -127,7 +127,7 @@ void review()
                   }
                   if(multipleact)
                   {
-                     str="Acting Individually";
+                     str="個別に活動";
                      set_color(COLOR_WHITE,COLOR_BLACK,1);
                   }
                }
@@ -479,12 +479,12 @@ void review_mode(short mode)
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(22,0);
-      addstr("Press a Letter to View Status.        Z - ");
-      if(swap) { addstr("Place "); addstr(swap->name); }
-      else addstr("Reorder Liberals");
+      addstr("アルファベットキーで状態を表示する。        Z - ");
+      if(swap) { addstr(swap->name); addstr("を移動する");  }
+      else addstr("リベラルの順序を変更する");
       move(23,0);
       addpagestr();
-      addstr(" T to sort people.");
+      addstr(" Tキーでソートする。");
 
       int c=getkey();
 
@@ -756,9 +756,9 @@ void review_mode(short mode)
 
          move(22,8);
          set_color(COLOR_WHITE,COLOR_BLACK,1);
-         addstr("Choose squad member to replace ");
 
          if(!swap) {
+            addstr("移動するメンバーを選択する ");
             int c=getkey();
 
             if(c=='x'||c==ENTER||c==ESC||c==SPACEBAR) break;
@@ -772,7 +772,8 @@ void review_mode(short mode)
          }
          else { // non-null swap
             addstr(swap->name);
-            addstr(" with");
+            addstr("と");
+            addstr("交代するメンバーを選択する ");
 
             int c=getkey();
 

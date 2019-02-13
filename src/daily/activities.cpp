@@ -1803,7 +1803,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
-      if(len(trouble)>1) addstr("攪乱グループは",gamelog);
+      if(len(trouble)>1) addstr("反抗グループは",gamelog);
       else { addstr(trouble[0]->name,gamelog); addstr("は",gamelog); }
 
       int power=0;
@@ -1992,7 +1992,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
                   addstr(trouble[t]->name, gamelog);
-                  addstr("は怒れる赤っ首の群集に詰め寄られた。", gamelog);
+                  addstr("は怒れる群集に詰め寄られた。", gamelog);
                   gamelog.nextMessage();
 
                   getkey();

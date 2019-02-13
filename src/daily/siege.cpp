@@ -2046,13 +2046,13 @@ void escape_engage()
    move(6,11);
    addstr("ードはアジトの出入口から離れた場所にいる。");
    move(7,11);
-   addstr("あなたがすべきことは、部隊を安全に脱出させるか、それと");
+   addstr("あなたがすべきことは、部隊を安全に脱出させるか、それ");
    move(8,11);
-   addstr("も保守をここから追い出すかだ。どちらを選んでも、リベラ");
+   addstr("とも保守をここから追い出すかだ。どちらを選んでも、リ");
    move(9,11);
-   addstr("ルが持ち運んでいないアジトに残した装備は破壊される可能");
+   addstr("ベラルが持ち運んでいないアジトに残した装備は破壊され");
    move(10,11);
-   addstr("性がある。可能な限り守らなければならない。");
+   addstr("る可能性がある。可能な限り守らなければならない。");
    move(11,11);
    addstr("あなたの部隊が可能ならば6人に増強されたことに気づくだ");
    move(12,11);
@@ -2163,23 +2163,23 @@ void escapesiege(char won)
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(3,15);
-      addstr("The Conservatives thought that the Liberal Crime Squad was");
+      addstr("保守はリベラル・クライム・スコードにとどめを刺し");
       move(4,11);
-      addstr("finished, but once again, Conservative Thinking has proven");
+      addstr("たと考えているだろう。だが、それは保守の考えが浅はか");
       move(5,11);
-      addstr("itself to be based on Unsound Notions.");
+      addstr("であることを自ら証明しているのと同じである。");
       move(6,15);
-      addstr("However, all is not well.  In your haste to escape you have");
+      addstr("しかし、よいことばかりではない。脱出できた代わりに、");
       move(7,11);
-      addstr("lost everything that you've left behind.  You'll have");
+      addstr("後に残したものは全て失われた。あなたは新しいアジトで");
       move(8,11);
-      addstr("to start from scratch in a new safe house.  Your");
+      addstr("一からやり直さなければならない。幸いなことに、資金は");
       move(9,11);
-      addstr("funds remain under your control, fortunately.  Your flight has");
+      addstr("全てあなたの元に残されている。");
       move(10,11);
-      addstr("given you some time to regroup, but the Conservatives will");
+      addstr("フライトはあなたに再編成のための時間を与えてくれた。");
       move(11,11);
-      addstr("doubtless be preparing another assault.");
+      addstr("しかし、保守は間違いなく次の襲撃に備えているだろう。");
 
       int homes=-1;
       if(activesquad)
@@ -2188,10 +2188,10 @@ void escapesiege(char won)
 
       set_color(COLOR_YELLOW,COLOR_BLACK,1);
       move(13,11);
-      addstr("Press any key to split up and lay low for a few days");
+      addstr("何かキーを押すと解散してしばらく身を潜める。");
 
       // Seperate logging text
-      gamelog.log("Your Liberals split up and lay low for a few days.");
+      gamelog.log("リベラルは解散ししばらく身を潜めた。");
 
       getkey();
 
@@ -2254,33 +2254,33 @@ void conquertext()
    erase();
    set_color(COLOR_GREEN,COLOR_BLACK,1);
    move(1,26);
-   addstr("* * * * *   VICTORY   * * * * *", gamelog);
+   addstr("* * * * *   勝利   * * * * *", gamelog);
    gamelog.newline();
 
    if(location[cursite]->siege.siegetype==SIEGE_POLICE)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      move(3,16);
-      addstr("The Conservative automatons have been driven back -- for ", gamelog);
+      move(3,15);
+      addstr("保守の操り人形たちは押し戻された -- しばらくの間", gamelog);
       move(4,11);
-      addstr("the time being.  While they are regrouping, you might consider ", gamelog);
+      addstr("だが。彼らが再編成するまでにこのアジトを放棄し、安全", gamelog);
       move(5,11);
-      addstr("abandoning this safe house for a safer location.", gamelog);
+      addstr("な新しいアジトに移ったほうがよいだろう。", gamelog);
    }
    else
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      move(3,16);
-      addstr("The Conservative automatons have been driven back.  ", gamelog);
+      move(3,15);
+      addstr("保守の操り人形たちは押し戻された。", gamelog);
       move(4,11);
-      addstr("Unfortunately, you will never truly be safe from ", gamelog);
+      addstr("だが、リベラル・アジェンダを実現するその日まで、真の", gamelog);
       move(5,11);
-      addstr("this filth until the Liberal Agenda is realized.", gamelog);
+      addstr("安全はないのだ。", gamelog);
    }
    gamelog.nextMessage();
 
    move(7,19);
-   addstr("Press C to Continue Liberally.");
+   addstr("Cキーでリベラルを続ける。");
 
    while(getkey()!='c');
 }
@@ -2295,73 +2295,73 @@ void conquertextccs()
    erase();
    set_color(COLOR_GREEN,COLOR_BLACK,1);
    move(1,26);
-   addstr("* * * * *   VICTORY   * * * * *", gamelog);
+   addstr("* * * * *   勝利   * * * * *", gamelog);
    gamelog.newline();
 
    if(ccs_kills<3)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      move(3,16);
+      move(3,15);
       if(ccs_siege_kills>10)
       {
-         addstr("Gunfire still ringing in their ears, the squad revels in ", gamelog);
+         addstr("銃声がまだ耳に残っている。部隊は勝利に歓喜した。", gamelog);
          move(4,11);
-         addstr("their victory.  ", gamelog);
+         addstr("", gamelog);
       }
       else
       {
-         addstr("The CCS Lieutenant lying dead at their feet, the squad ", gamelog);
+         addstr("CCSの大尉の亡骸が足元に横たわっている。部隊は撤収を", gamelog);
          move(4,11);
-         addstr("slips away.  ");
+         addstr("始めた。");
       }
-      addstr("The CCS Founder wasn't here, but for now, their ", gamelog);
+      addstr("CCSの設立者はここにはいなかった。だが、", gamelog);
       move(5,11);
-      addstr("power has been severely weakened.  Once the safehouse cools off, ", gamelog);
+      addstr("彼らの力は大きく損なわれたであろう。落ち着きを取り戻", gamelog);
       move(6,11);
-      addstr("this will make a fine base for future Liberal operations.", gamelog);
+      addstr("した後、ここを将来のリベラル基地にしなければならない。", gamelog);
    }
    else
    {
-      move(3,16);
+      move(3,15);
       if(ccs_siege_kills>10)
       {
-         addstr("Gunfire still ringing in their ears, the squad revels in ", gamelog);
+         addstr("銃声がまだ耳に残っている。部隊は最終的な勝利に歓", gamelog);
          move(4,11);
-         addstr("their final victory.  ", gamelog);
+         addstr("喜した。", gamelog);
 
-         move(6,16);
-         addstr("As your Liberals pick through the remains of the safehouse, ", gamelog);
+         move(6,15);
+         addstr("アジトに残されたものの調査が進むに連れ、ここが", gamelog);
          move(7,11);
-         addstr("it is increasingly clear that this was the CCS's last safehouse.", gamelog);
+         addstr("CCSの最後のアジトである確信がますます強くなった。", gamelog);
       }
       else
       {
-         addstr("The CCS Founder lying dead at their feet, the squad ", gamelog);
+         addstr("CCS設立者の亡骸が横たわっている。部隊は撤収を始", gamelog);
          move(4,11);
-         addstr("slips away.  ", gamelog);
+         addstr("めた。", gamelog);
 
-         move(6,16);
-         addstr("With its Founder killed in the heart of their own base, ", gamelog);
+         move(6,15);
+         addstr("設立者が自身の基地の中央で死んだ今、敵の士気と自", gamelog);
          move(7,11);
-         addstr("the last of the enemy's morale and confidence is shattered.", gamelog);
+         addstr("信は粉々に砕け散った。", gamelog);
       }
       gamelog.newline();
 
-      move(9,16);
-      addstr("The CCS has been completely destroyed.  Now wasn't there a ", gamelog);
-      move(10,16);
-      addstr("revolution to attend to?", gamelog);
+      move(9,15);
+      addstr("CCSは完全に崩壊した。これからは革命に注力すべきではな", gamelog);
+      move(10,15);
+      addstr("いだろうか。", gamelog);
       gamelog.newline();
 
       move(12,5);
-      addstr("+200 JUICE TO EVERYONE FOR ERADICATING THE CONSERVATIVE CRIME SQUAD", gamelog);
+      addstr("コンサバ・クライム・スコードを殲滅した全員が+200のジュースを得た。", gamelog);
 
       for(int p=0;p<len(pool);p++) addjuice(*pool[p],200,1000);
    }
    gamelog.nextMessage();
 
    move(15,19);
-   addstr("Press C to Continue Liberally.");
+   addstr("Cキーでリベラルを続ける。");
 
    while(getkey()!='c');
 }

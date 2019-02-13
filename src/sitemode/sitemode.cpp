@@ -364,7 +364,7 @@ void mode_site()
          if(partysize>1)set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(11,1);
-         addstr("O - リベラルの順序を変える");
+         addstr("O - リベラルの順序を変更する");
          if(partysize>0&&(party_status==-1||partysize>1))set_color(COLOR_WHITE,COLOR_BLACK,0);
          else set_color(COLOR_BLACK,COLOR_BLACK,1);
          move(12,1);

@@ -96,7 +96,7 @@ void activate()
       printfunds();
 
       move(0,0);
-      addstr("他に何もすることがない場合の活動を割り当てる");
+      addstr("部隊に編成されていないリベラルの活動を割り当てる");
       move(1,0);
       addstr("----コードネーム---------スキル--健康-----位置----------------------------------");
       move(1,57);
@@ -421,14 +421,14 @@ void activate(Creature *cr)
       mvaddstr(12,1,"C - 違法な資金集めを行う");
 
       set_color(COLOR_WHITE,COLOR_BLACK,state=='d');
-      mvaddstr(13,1,"D - スカウトと買収を行う");
+      mvaddstr(13,1,"D - スカウトと調達を行う");
 
       set_color(COLOR_WHITE,COLOR_BLACK,state=='t');
       mvaddstr(14,1,"T - 他のリベラルを教育する");
 
       if(hostagecount>0)set_color(COLOR_WHITE,COLOR_BLACK,state=='i');
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
-      mvaddstr(15,1,"I - 捕らえた保守派の世話をする");
+      mvaddstr(15,1,"I - 捕らえた保守を尋問する");
 
       set_color(COLOR_WHITE,COLOR_BLACK,state=='l');
       mvaddstr(16,1,"L - 大学で学ぶ");
@@ -480,7 +480,7 @@ void activate(Creature *cr)
          mvaddstr(10,40,"1 - 社会奉仕");
 
          set_color(COLOR_WHITE,COLOR_BLACK,cr->activity.type==ACTIVITY_TROUBLE);
-         mvaddstr(11,40,"2 - 攪乱");
+         mvaddstr(11,40,"2 - 反抗");
 
          set_color(COLOR_WHITE,COLOR_BLACK,cr->activity.type==ACTIVITY_GRAFFITI);
          mvaddstr(12,40,"3 - 落書き");
@@ -545,7 +545,7 @@ void activate(Creature *cr)
          mvaddstr(11,40,"2 - 売春");
 
          set_color(COLOR_WHITE,COLOR_BLACK,cr->activity.type==ACTIVITY_CCFRAUD);
-         mvaddstr(12,40,"3 - クレジットカード番号の盗み取り");
+         mvaddstr(12,40,"3 - クレジットカード番号の不正取得");
 
          /*set_color(COLOR_WHITE,COLOR_BLACK,cr->activity.type==ACTIVITY_DOS_RACKET);
          mvaddstr(13,40,"4 - 用心棒");*/

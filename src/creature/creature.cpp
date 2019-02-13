@@ -1235,27 +1235,27 @@ void nameCCSMember(Creature &cr)
    else if(cr.get_weapon().get_itemtypename()=="WEAPON_SHOTGUN_PUMP"||LCSrandom(2))
       switch(LCSrandom(7))
       {
-      case 0:strcpy(cr.name,"Country Boy");break;
-      case 1:strcpy(cr.name,"Good ol' Boy");break;
-      case 2:strcpy(cr.name,"Hick");break;
-      case 3:strcpy(cr.name,"Hillbilly");break;
-      case 4:strcpy(cr.name,"Redneck");break;
-      case 5:strcpy(cr.name,"Rube");break;
-      case 6:strcpy(cr.name,"Yokel");break;
+      case 0:strcpy(cr.name,"ｶﾝﾄﾘｰﾎﾞｰｲ");break;
+      case 1:strcpy(cr.name,"オールドボーイ");break;
+      case 2:strcpy(cr.name,"田舎者");break;
+      case 3:strcpy(cr.name,"山男");break;
+      case 4:strcpy(cr.name,"赤っ首");break;
+      case 5:strcpy(cr.name,"おのぼり");break;
+      case 6:strcpy(cr.name,"田夫");break;
       }
    else
       switch(LCSrandom(10))
       {
-      case 0: strcpy(cr.name,"Biker");break;
-      case 1: strcpy(cr.name,"Transient");break;
-      case 2: strcpy(cr.name,"Crackhead");break;
-      case 3: strcpy(cr.name,"Fast Food Worker");break;
-      case 4: strcpy(cr.name,"Telemarketer");break;
-      case 5: strcpy(cr.name,"Office Worker");break;
-      case 6: strcpy(cr.name,"Mailman");break;
-      case 7: strcpy(cr.name,"Musician");break;
-      case 8: strcpy(cr.name,"Hairstylist");break;
-      case 9: strcpy(cr.name,"Bartender");break;
+      case 0: strcpy(cr.name,"バイカー");break;
+      case 1: strcpy(cr.name,"期間労働者");break;
+      case 2: strcpy(cr.name,"薬物依存者");break;
+      case 3: strcpy(cr.name,"ﾌｧｰｽﾄﾌｰﾄﾞ店員");break;
+      case 4: strcpy(cr.name,"電話勧誘販売員");break;
+      case 5: strcpy(cr.name,"会社員");break;
+      case 6: strcpy(cr.name,"郵便配達員");break;
+      case 7: strcpy(cr.name,"音楽家");break;
+      case 8: strcpy(cr.name,"美容師");break;
+      case 9: strcpy(cr.name,"バーテンダー");break;
       }
 }
 

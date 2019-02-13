@@ -219,7 +219,7 @@ void dealership(int loc)
             }
          while(true)
          {
-            carchoice = choiceprompt("車を選択する","",vehicleoption,"Vehicle",
+            carchoice = choiceprompt("車を選択する","",vehicleoption,"車",
                                      true,"保守車はいらない");
             if (carchoice!=-1 && (sleepercarsalesman?vehicletype[availablevehicle[carchoice]]->sleeperprice():
                                   vehicletype[availablevehicle[carchoice]]->price()) > ledger.get_funds())
@@ -240,7 +240,7 @@ void dealership(int loc)
          //if(len(vehicletype[availablevehicle[choice]]->color())>1) //Allow to back out if you don't like single colour? -XML
          //{
          colorchoice = choiceprompt("色を選択する","",vehicletype[availablevehicle[carchoice]]->color(),
-                                    "Color",true,"保守色ばかりだ");
+                                    "色",true,"保守色ばかりだ");
          //}
          //else
          //   colorchoice = 0;

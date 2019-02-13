@@ -86,7 +86,7 @@ std::string getactivity(activityst &act)
    case ACTIVITY_MAKE_ARMOR:
       return armortype[act.arg]->get_shortname()+"の作成";
    case ACTIVITY_TROUBLE:
-      return "攪乱";
+      return "反抗";
    case ACTIVITY_PROSTITUTION:
       return "売春";
    case ACTIVITY_COMMUNITYSERVICE:

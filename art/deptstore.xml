@@ -2,7 +2,7 @@
     <only_sell_legal_items>true</only_sell_legal_items>
     <fullscreen>false</fullscreen>
     <allow_selling>false</allow_selling>
-    <exit>Leave</exit>
+    <exit>帰る</exit>
     
 	<department>
 		<entry>衣料品</entry>
