@@ -357,22 +357,22 @@ void reaganify(char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                erase();
-               move(12,10);
-               addstr("You disappeared safely, but you hadn't done enough.");
+               move(12,17);
+               addstr("あなたは安全に姿を消した。だが、まだ不十分だ。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                erase();
-               move(12,12);
-               addstr("The Conservatives have made the world in their image.");
+               move(12,13);
+               addstr("保守派はこの世界を自分たちの考えるとおりのものにした。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
                erase();
-               move(12,14);
-               addstr("They'll round the last of you up eventually.  All is lost.");
+               move(12,8);
+               addstr("あなたはいずれ捕らえられるであろう。もうどうすることもできない。");
 
                getkey();
 
@@ -566,22 +566,22 @@ void stalinize(char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                erase();
-               move(12,10);
-               addstr("You disappeared safely, but you hadn't done enough.");
+               move(12,17);
+               addstr("あなたは安全に姿を消した。だが、まだ不十分だ。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                erase();
-               move(12,12);
-               addstr("The Stalinists have made the world in their image.");
+               move(12,8);
+               addstr("スターリン主義者はこの世界を自分たちの考えるとおりのものにした。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
                erase();
-               move(12,14);
-               addstr("They'll round the last of you up eventually.  All is lost.");
+               move(12,8);
+               addstr("あなたはいずれ捕らえられるであろう。もうどうすることもできない。");
 
                getkey();
 

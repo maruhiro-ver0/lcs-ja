@@ -76,16 +76,17 @@ bool show_disbanding_screen(int& oldforcemonth)
    oldforcemonth=month;
    erase();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
-   mvaddstr(0,0,getmonth(month)+" ");
-   addstr(year);
+   mvaddstr(0,0,year);
+   addstr("年");
+   addstr(getmonth(month));
 
    signed char align=exec[EXEC_PRESIDENT];
    set_alignment_color(align,true);
-   mvaddstr(1,0,"President: ");
-   addstr(execname[EXEC_PRESIDENT]);addstr(", ");
+   mvaddstr(1,0,"大統領: ");
+   addstr(execname[EXEC_PRESIDENT]);addstr("、");
    addstr(getalign(align));
-   if(execterm==1)addstr(", 1st Term");
-   else addstr(", 2nd Term");
+   if(execterm==1)addstr("、1期目");
+   else addstr("、2期目");
 
    int housemake[6]={0,0,0,0,0,0};
    for(int h=0;h<HOUSENUM;h++) housemake[house[h]+2]++;
@@ -96,13 +97,13 @@ bool show_disbanding_screen(int& oldforcemonth)
    else if(housemake[3]+housemake[4]>=HOUSEMAJORITY) align=ALIGN_LIBERAL; // Liberals plus Elite Liberals have a majority
    else align=ALIGN_MODERATE; // nobody has a majority
    set_alignment_color(align,true);
-   mvaddstr(2,0,"House: ");
-   if(stalinmode) addstr(tostring(housemake[5])+"Sta, ");
-   addstr(tostring(housemake[4])+"Lib+, ");
-   addstr(tostring(housemake[3])+"Lib, ");
-   addstr(tostring(housemake[2])+"Mod, ");
-   addstr(tostring(housemake[1])+"Cons, ");
-   addstr(tostring(housemake[0])+"Cons+");
+   mvaddstr(2,0,"下院: ");
+   if(stalinmode) addstr("ｽﾀｰﾘﾝ"+tostring(housemake[5])+", ");
+   addstr("ﾘﾍﾞﾗﾙ+"+tostring(housemake[4])+", ");
+   addstr("ﾘﾍﾞﾗﾙ"+tostring(housemake[3])+", ");
+   addstr("穏健"+tostring(housemake[2])+", ");
+   addstr("保守"+tostring(housemake[1])+", ");
+   addstr("保守+"+tostring(housemake[0]));
 
    int senatemake[6]={0,0,0,0,0,0};
    for(int s=0;s<SENATENUM;s++) senatemake[senate[s]+2]++;
@@ -115,13 +116,13 @@ bool show_disbanding_screen(int& oldforcemonth)
    else align=ALIGN_MODERATE; // nobody has a majority
    set_alignment_color(align,true);
    senatemake[exec[EXEC_VP]+2]--; // Vice President isn't actually a Senator though
-   mvaddstr(3,0,"Senate: ");
-   if(stalinmode) addstr(tostring(senatemake[5])+"Sta, ");
-   addstr(tostring(senatemake[4])+"Lib+, ");
-   addstr(tostring(senatemake[3])+"Lib, ");
-   addstr(tostring(senatemake[2])+"Mod, ");
-   addstr(tostring(senatemake[1])+"Cons, ");
-   addstr(tostring(senatemake[0])+"Cons+");
+   mvaddstr(3,0,"上院: ");
+   if(stalinmode) addstr("ｽﾀｰﾘﾝ"+tostring(senatemake[5])+", ");
+   addstr("ﾘﾍﾞﾗﾙ+"+tostring(senatemake[4])+", ");
+   addstr("ﾘﾍﾞﾗﾙ"+tostring(senatemake[3])+", ");
+   addstr("穏健"+tostring(senatemake[2])+", ");
+   addstr("保守"+tostring(senatemake[1])+", ");
+   addstr("保守+"+tostring(senatemake[0]));
 
    int courtmake[6]={0,0,0,0,0,0};
    for(int s=0;s<COURTNUM;s++) courtmake[court[s]+2]++;
@@ -132,13 +133,13 @@ bool show_disbanding_screen(int& oldforcemonth)
    else if(courtmake[3]+courtmake[4]>=COURTMAJORITY) align=ALIGN_LIBERAL; // Liberals plus Elite Liberals have a majority
    else align=ALIGN_MODERATE; // nobody has a majority
    set_alignment_color(align,true);
-   mvaddstr(4,0,"Supreme Court: ");
-   if(stalinmode) addstr(tostring(courtmake[5])+"Sta, ");
-   addstr(tostring(courtmake[4])+"Lib+, ");
-   addstr(tostring(courtmake[3])+"Lib, ");
-   addstr(tostring(courtmake[2])+"Mod, ");
-   addstr(tostring(courtmake[1])+"Cons, ");
-   addstr(tostring(courtmake[0])+"Cons+");
+   mvaddstr(4,0,"最高裁判所裁判官: ");
+   if(stalinmode) addstr("ｽﾀｰﾘﾝ"+tostring(courtmake[5])+", ");
+   addstr("ﾘﾍﾞﾗﾙ+"+tostring(courtmake[4])+", ");
+   addstr("ﾘﾍﾞﾗﾙ"+tostring(courtmake[3])+", ");
+   addstr("穏健"+tostring(courtmake[2])+", ");
+   addstr("保守"+tostring(courtmake[1])+", ");
+   addstr("保守+"+tostring(courtmake[0]));
 
    for(int l=0;l<LAWNUM;l++)
    {
@@ -159,21 +160,21 @@ bool show_disbanding_screen(int& oldforcemonth)
       else if(stalin>=16) align=ALIGN_CONSERVATIVE;
       else align=ALIGN_ARCHCONSERVATIVE;
       set_alignment_color(align,true);
-      mvaddstr(17,33,"Public Mood");
+      mvaddstr(17,38,"世論");
       set_color(COLOR_RED,COLOR_BLACK,1);
-      mvaddstr(17,1,"Stalinist");
+      mvaddstr(17,1,"スターリン");
       set_color(COLOR_GREEN,COLOR_BLACK,1);
-      mvaddstr(17,68,"Libertarian");
+      mvaddstr(17,71,"リベラル");
       set_color(COLOR_RED,COLOR_BLACK,1);
-      mvaddstr(18,0,"\x11ﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ");
+      mvaddstr(18,0,"|---------------");
       set_color(COLOR_MAGENTA,COLOR_BLACK,1);
-      mvaddstr(18,16,"ﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ");
+      mvaddstr(18,16,"----------------");
       set_color(COLOR_YELLOW,COLOR_BLACK,1);
-      mvaddstr(18,32,"ﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ");
+      mvaddstr(18,32,"----------------");
       set_color(COLOR_CYAN,COLOR_BLACK,1);
-      mvaddstr(18,48,"ﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ");
+      mvaddstr(18,48,"----------------");
       set_color(COLOR_GREEN,COLOR_BLACK,1);
-      mvaddstr(18,64,"ﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ\x10");
+      mvaddstr(18,64,"---------------|");
       set_alignment_color(align,true);
       mvaddchar(18,stalin,'O');
    }
@@ -187,26 +188,26 @@ bool show_disbanding_screen(int& oldforcemonth)
    else if(mood>=16) align=ALIGN_LIBERAL;
    else align=ALIGN_ELITELIBERAL;
    set_alignment_color(align,true);
-   mvaddstr(stalinmode?21:20,33,"Public Mood");
+   mvaddstr(stalinmode?21:20,38,"世論");
    set_color(COLOR_GREEN,COLOR_BLACK,1);
-   mvaddstr(21,1,"Liberal");
+   mvaddstr(21,1,"リベラル");
    set_color(COLOR_RED,COLOR_BLACK,1);
-   mvaddstr(21,67,"Conservative");
+   mvaddstr(21,75,"保守");
    set_color(COLOR_GREEN,COLOR_BLACK,1);
-   mvaddstr(22,0,"\x11ﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ");
+   mvaddstr(22,0,"|---------------");
    set_color(COLOR_CYAN,COLOR_BLACK,1);
-   mvaddstr(22,16,"ﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ");
+   mvaddstr(22,16,"----------------");
    set_color(COLOR_YELLOW,COLOR_BLACK,1);
-   mvaddstr(22,32,"ﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ");
+   mvaddstr(22,32,"----------------");
    set_color(COLOR_MAGENTA,COLOR_BLACK,1);
-   mvaddstr(22,48,"ﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ");
+   mvaddstr(22,48,"----------------");
    set_color(COLOR_RED,COLOR_BLACK,1);
-   mvaddstr(22,64,"ﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄﾄ\x10");
+   mvaddstr(22,64,"---------------|");
    set_alignment_color(align,true);
    mvaddchar(22,mood,'O');
 
    set_color(COLOR_WHITE,COLOR_BLACK,0);
-   mvaddstr(24,0,"R - Recreate the Liberal Crime Squad                  Any Other Key - Next Month");
+   mvaddstr(24,0,"R - リベラル・クライム・スコードを再開する                 その他のキー - 翌月へ");
 
    return(getkey()!='r');
 }
@@ -264,10 +265,10 @@ void mode_base()
             erase();
             char str[100];
             if(nonsighttime>=365*16)
-               strcpy(str,"How long since you've heard these sounds...  times have changed.");
+               strcpy(str,"どれだけの時が流れただろうか…時代は変わった。");
             else if(nonsighttime>=365*8)
-               strcpy(str,"It has been a long time.  A lot must have changed...");
-            else strcpy(str,"It sure has been a while.  Things might have changed a bit.");
+               strcpy(str,"長い時が過ぎた。多くの物事が変わった…");
+            else strcpy(str,"しばらくの時が流れた。物事は少し変わったようだ。");
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             mvaddstr(12,39-((len(str)-1)>>1),str,gamelog);
             gamelog.nextMessage(); //Write out buffer to prepare for the next message.

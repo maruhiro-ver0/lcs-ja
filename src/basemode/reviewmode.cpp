@@ -868,7 +868,7 @@ void assemblesquad(squadst *cursquad)
 
       if(newsquad)
       {
-         move(0,71);
+         move(0,70);
          addstr("新しい部隊");
       }
       else

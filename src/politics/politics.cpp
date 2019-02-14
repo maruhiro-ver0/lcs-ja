@@ -142,7 +142,7 @@ void elections(char clearformess,char canseethings)
       else makedelimiter();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
-      addstr("The Elections are being held today!");
+      addstr("今日は投票日だ!");
 
       getkey();
    }
@@ -329,7 +329,7 @@ void elections(char clearformess,char canseethings)
                   addchar('.');
                   addstr(votes[c]%10);
                   addchar('%');
-                  if(c==winner&&recount&&l==999) addstr(" (After Recount)");
+                  if(c==winner&&recount&&l==999) addstr(" (再集計後)");
                }
 
                if(!disbanding) pause_ms(40);
@@ -342,7 +342,7 @@ void elections(char clearformess,char canseethings)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(8+stalinmode*2,0);
-         addstr("Press any key to continue the elections.   ");
+         addstr("キーを押すと投票が続く。                   ");
 
          getkey();
       }
@@ -372,7 +372,7 @@ void elections(char clearformess,char canseethings)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
       move(0,0);
-      addstr("Important Propositions ");
+      addstr("住民投票 ");
       addstr(year);
    }
 
@@ -447,9 +447,9 @@ void elections(char clearformess,char canseethings)
       {
          move(p*3+2,0);
          set_color(COLOR_WHITE,COLOR_BLACK,1);
-         addstr("Proposition "+tostring(propnums[p])+':');
+         addstr("住民投票事項 "+tostring(propnums[p])+':');
          move(p*3+2,18);
-         addstr("To ");
+         addstr(" ");
          set_alignment_color(propdir[p]);
          switch(prop[p])
          {
@@ -554,7 +554,7 @@ void elections(char clearformess,char canseethings)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(23,0);
-      addstr("Press any key to watch the elections unfold.");
+      addstr("キーを押すと投票結果を表示する。");
 
       getkey();
    }
@@ -582,19 +582,21 @@ void elections(char clearformess,char canseethings)
             else if(yesvotes<l/2||l==999) set_color(COLOR_BLACK,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(p*3+2,70);
+            addstr("賛成");
             addstr(yesvotes/10);
             addchar('.');
             addstr(yesvotes%10);
-            addstr("% Yes");
+            addstr("%");
 
             if((l!=999&&yesvotes<l/2)||(l==999&&!yeswin)) set_color(COLOR_WHITE,COLOR_BLACK,1);
             else if(yesvotes>l/2||l==999) set_color(COLOR_BLACK,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(p*3+3,70);
+            addstr("反対");
             addstr((l+1-yesvotes)/10);
             addchar('.');
             addstr((l+1-yesvotes)%10);
-            addstr("% No");
+            addstr("%");
 
             pause_ms(10);
          }
@@ -604,7 +606,7 @@ void elections(char clearformess,char canseethings)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(p*3+3,0);
-         addstr("A Recount was Necessary");
+         addstr("再集計を要する");
       }
 
       if(yeswin) law[prop[p]]+=propdir[p];
@@ -614,7 +616,7 @@ void elections(char clearformess,char canseethings)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(23,0);
-      addstr("Press any key to reflect on what has happened.");
+      addstr("何かキーを押すと結果を熟慮する。");
 
       getkey();
    }
@@ -1653,15 +1655,15 @@ void congress(char clearformess,char canseethings)
             else if(l==HOUSENUM-1) set_color(COLOR_BLACK,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(c*3+2,62);
-            addstr(yesvotes_h);
             addstr("賛成");
+            addstr(yesvotes_h);
 
             if(l==HOUSENUM-1&&!yeswin_h) set_color(COLOR_WHITE,COLOR_BLACK,1);
             else if(l==HOUSENUM-1) set_color(COLOR_BLACK,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(c*3+3,62);
-            addstr(l+1-yesvotes_h);
             addstr("反対");
+            addstr(l+1-yesvotes_h);
          }
 
          if(l%4==0&&s<SENATENUM)
@@ -1709,8 +1711,8 @@ void congress(char clearformess,char canseethings)
             else if(l==HOUSENUM-1) set_color(COLOR_BLACK,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(c*3+2,70);
-            addstr(yesvotes_s);
             addstr("賛成");
+            addstr(yesvotes_s);
 
             if(l==HOUSENUM-1&&yesvotes_s==SENATEMAJORITY-1&&yeswin_s)
             {
@@ -1723,8 +1725,8 @@ void congress(char clearformess,char canseethings)
             else if(l==HOUSENUM-1) set_color(COLOR_BLACK,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(c*3+3,70);
-            addstr(s-yesvotes_s);
             addstr("反対");
+            addstr(s-yesvotes_s);
 
             if(l==HOUSENUM-1&&yesvotes_s==SENATEMAJORITY-1&&!yeswin_s)
             {
