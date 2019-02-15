@@ -135,7 +135,7 @@ void printsitemap(int x,int y,int z)
       case SPECIAL_HOUSE_CEO:strcpy(str,"CEO's Study");break;
       case SPECIAL_HOUSE_PHOTOS:
       case SPECIAL_CORPORATE_FILES:strcpy(str,"金庫");break;
-      case SPECIAL_RADIO_BROADCASTSTUDIO:strcpy(str,"Radio Broadcast Room");break;
+      case SPECIAL_RADIO_BROADCASTSTUDIO:strcpy(str,"ラジオ放送室");break;
       case SPECIAL_NEWS_BROADCASTSTUDIO:strcpy(str,"News Broadcast Studio");break;
       case SPECIAL_APARTMENT_LANDLORD:strcpy(str,"Landlord's Office");break;
       case SPECIAL_SIGN_ONE:

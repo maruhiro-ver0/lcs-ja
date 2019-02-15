@@ -113,8 +113,8 @@ char alienationcheck(char mistake)
          set_color(COLOR_YELLOW,COLOR_BLACK,1);
 
          move(16,1);
-         if(sitealienate==1)addstr("We've alienated the masses here!              ", gamelog);
-         else addstr("We've alienated absolutely everyone here!               ", gamelog);
+         if(sitealienate==1)addstr("このあたりの大勢を敵にしてしまった!           ", gamelog);
+         else addstr("このあたりの全員を敵にしてしまった!                     ", gamelog);
          gamelog.newline();
          move(17,1);
          addstr("                                                        ");

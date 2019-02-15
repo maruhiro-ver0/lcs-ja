@@ -569,9 +569,10 @@ void mode_base()
             erase();
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             mvaddstr(7,5,"時は流れる…",gamelog);
-            mvaddstr(9,12,getmonth(month,true)+" ",gamelog);
-            mvaddstr(9,17,tostring(day)+", ",gamelog);
-            mvaddstr(9,21,year,gamelog);
+            mvaddstr(9,12,year,gamelog);
+            mvaddstr(9,16,"年",gamelog);
+            mvaddstr(9,19,getmonth(month,true)+" ",gamelog);
+            mvaddstr(9,24,tostring(day),gamelog);
             gamelog.nextMessage(); //Write out buffer to prepare for the next message.
             refresh();
          } } break;

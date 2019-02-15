@@ -818,7 +818,7 @@ void setvehicles()
       erase();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      mvaddstr(0,0,"Choosing the Right Liberal Vehicle");
+      mvaddstr(0,0,"リベラル自動車の選択");
 
       printparty();
 
@@ -882,13 +882,13 @@ void setvehicles()
          addnextpagestr();
       }
 
-      mvaddstr(18,1,"Press a letter to specify passengers for that Liberal vehicle");
-      mvaddstr(19,1,"Capitalize the letter to designate a driver.");
-      mvaddstr(20,1,"Press a number to remove that squad member from a vehicle.");
-      mvaddstr(21,1,"Note:  Vehicles in yellow have already been selected by another squad");
-      mvaddstr(22,1,"       Vehicles in red have been selected by both this squad and another");
-      mvaddstr(23,1,"       These cars may be used by both squads but not on the same day.");
-      mvaddstr(24,1,"Enter - Done");
+      mvaddstr(18,1,"アルファベットキーでそのリベラル車に乗る者を設定できる。");
+      mvaddstr(19,1,"SHIFT+アルファベットキーで運転手を割り当てる。");
+      mvaddstr(20,1,"数字キーでメンバーを車から除く。");
+      mvaddstr(21,1,"メモ:  黄色の車は既に別の部隊が選択している。");
+      mvaddstr(22,1,"       赤色の車は複数の部隊が選択している。この場合、それぞれの部隊が");
+      mvaddstr(23,1,"       車を使うが、同じ日には使えない。");
+      mvaddstr(24,1,"Enter - 完了");
 
       int c=getkey_cap();
 
@@ -915,7 +915,7 @@ void setvehicles()
             if(choice)
             {
                set_color(COLOR_WHITE,COLOR_BLACK,1);
-               mvaddstr(8,20,"Choose a Liberal squad member to drive it.");
+               mvaddstr(8,20,"この自動車を運転する者を選択する");
 
                c=getkey();
             }
@@ -956,7 +956,7 @@ void setvehicles()
             if(choice)
             {
                set_color(COLOR_WHITE,COLOR_BLACK,1);
-               mvaddstr(8,20,"Choose a Liberal squad member to be a passenger.");
+               mvaddstr(8,20,"この自動車に乗る者を選択する");
 
                c=getkey();
             }

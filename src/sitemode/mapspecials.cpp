@@ -1724,10 +1724,10 @@ void special_radio_broadcaststudio()
       else
       {
          move(16,1);
-         addstr("You've found a radio broadcasting room.", gamelog);
+         addstr("あなたはラジオ放送室を見つけた。", gamelog);
          gamelog.newline();
          move(17,1);
-         addstr("Interrupt this evening's programming? (Yes or No)");
+         addstr("昼の放送を妨害するか? (Yes / No)");
       }
 
       int c=getkey();
@@ -1922,7 +1922,7 @@ void special_security(bool metaldetect)
    }
    else
    {
-      if(metaldetect) addstr("The squad steps into a metal detector.", gamelog);
+      if(metaldetect) addstr("部隊は金属探知機に足を踏み入れた。", gamelog);
       else addstr("This door is guarded.", gamelog);
       gamelog.newline();
       levelmap[locx][locy][locz].special=SPECIAL_SECURITY_SECONDVISIT;
@@ -2042,7 +2042,7 @@ void special_security(bool metaldetect)
       set_color(COLOR_RED,COLOR_BLACK,1);
       if(metaldetect)
       {
-         addstr("-BEEEP- -BEEEP- -BEEEP-", gamelog);
+         addstr("-ビー- -ビー- -ビー-", gamelog);
          sitealarm=1;
       }
       else switch(LCSrandom(5))
