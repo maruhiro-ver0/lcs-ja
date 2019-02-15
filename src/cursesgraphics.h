@@ -1951,7 +1951,7 @@ struct unicodechar unicode_hacks[] = {
     #define CH_LOWER_HALF_BLOCK '_' /* 0xdc */
     #define CH_LEFT_HALF_BLOCK '[' /* 0xdd */
     #define CH_RIGHT_HALF_BLOCK ']' /* 0xde */
-    #define CH_UPPER_HALF_BLOCK '=' /* 0xdf */
+    #define CH_UPPER_HALF_BLOCK '~' /* 0xdf */
     #define CH_GREEK_SMALL_LETTER_ALPHA 'a' /* 0xe0 */
     #define CH_LATIN_SMALL_LETTER_SHARP_S 'B' /* 0xe1 */
     #define CH_GREEK_CAPITAL_LETTER_GAMMA 'F' /* 0xe2 */
@@ -2261,7 +2261,7 @@ extern int gchar[];
 
 #define CH_MAXIMUM 256
 
-#if !defined(CH_USE_CP437) && !defined(CH_USE_MULTIBYTE)
+#if !defined(CH_USE_CP437)
 /* Translate CP437 extended characters into the code page used by the console */
 inline int translateGraphicsChar(unsigned char c) { return gchar[c]; }
 #else // CH_USE_CP437

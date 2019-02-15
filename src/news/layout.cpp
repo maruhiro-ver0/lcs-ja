@@ -22,14 +22,14 @@ void preparepage(newsstoryst& ns, bool liberalguardian)
                set_color(translateGraphicsColor(newstops[5][x][y][1]),
                          translateGraphicsColor(newstops[5][x][y][2]),
                          newstops[5][x][y][3]);
-               addchar(newstops[5][x][y][0]);
+               addgrah(newstops[5][x][y][0]);
             }
             else
             {
                set_color(translateGraphicsColor(newstops[pap][x][y][1]),
                          translateGraphicsColor(newstops[pap][x][y][2]),
                          newstops[pap][x][y][3]);
-               addchar(newstops[pap][x][y][0]);
+               addgrah(newstops[pap][x][y][0]);
             }
          }
       }
