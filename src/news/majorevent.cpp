@@ -1453,37 +1453,36 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
          {
             displaycenterednewsfont("REAGAN FLAWED",5);//XXX: "Reagan was wrong" or something?
             char str[80];
-            strcpy(str,"");
+            strcpy(str,"新刊『");
             switch(LCSrandom(5))
             {
-               case 0:strcat(str,"Shadow");break;
-               case 1:strcat(str,"Dark");break;
-               case 2:strcat(str,"Abyssal");break;
-               case 3:strcat(str,"Orwellian");break;
-               case 4:strcat(str,"Craggy");break;
+               case 0:strcat(str,"影の");break;
+               case 1:strcat(str,"闇の");break;
+               case 2:strcat(str,"地の底の");break;
+               case 3:strcat(str,"オーウェル的");break;
+               case 4:strcat(str,"断崖の");break;
             }
-            strcat(str," ");
             switch(LCSrandom(5))
             {
-               case 0:strcat(str,"Actor");break;
-               case 1:strcat(str,"Lord");break;
-               case 2:strcat(str,"Emperor");break;
-               case 3:strcat(str,"Puppet");break;
-               case 4:strcat(str,"Dementia");break;
+               case 0:strcat(str,"俳優");break;
+               case 1:strcat(str,"領主");break;
+               case 2:strcat(str,"皇帝");break;
+               case 3:strcat(str,"操り人形");break;
+               case 4:strcat(str,"白痴");break;
             }
-            strcat(str,": A new book further documenting the other side of Reagan.");
+            strcat(str,"』: レーガン元大統領の知られざる側面に切り込む一冊。");
             displaycenteredsmallnews(str,12);
             displaynewspicture(PICTURE_BOOK,13);
             break;
          }
          case VIEW_NUCLEARPOWER:
             displaycenterednewsfont("MELTDOWN",5);
-            displaycenteredsmallnews("A nuclear power plant suffers a catastrophic meltdown.",12);
+            displaycenteredsmallnews("原子力発電所が破滅的メルトダウンに見舞われた。",12);
             displaynewspicture(PICTURE_MELTDOWN,13);
             break;
          case VIEW_ANIMALRESEARCH:
             displaycenterednewsfont("HELL ON EARTH",5);
-            displaycenteredsmallnews("A mutant animal has escaped from a lab and killed thirty people.",12);
+            displaycenteredsmallnews("研究所から逃げ出したミュータント・アニマルが30人を殺傷した。",12);
             displaynewspicture(PICTURE_MUTANT_BEAST,13);
             break;
          case VIEW_PRISONS:
@@ -1503,7 +1502,7 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
             break;
          case VIEW_GENETICS:
             displaycenterednewsfont("KILLER FOOD",5);
-            displaycenteredsmallnews("Over a hundred people become sick from genetically modified food.",12);
+            displaycenteredsmallnews("遺伝子組み換え食品で百人を超える人々が健康被害を被った。",12);
             displaynewspicture(PICTURE_GENETICS,13);
             break;
          case VIEW_JUSTICES:
@@ -1513,57 +1512,57 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
             break;
          case VIEW_SWEATSHOPS:
             displaycenterednewsfont("CHILD'S PLEA",5);
-            displaycenteredsmallnews("A T-shirt in a store is found scrawled with a message from a sweatshop worker.",12);
+            displaycenteredsmallnews("ある店のTシャツから搾取工場で働く子供のメモが見つかった。",12);
             displaynewspicture(PICTURE_TSHIRT,13);
             break;
          case VIEW_POLLUTION:
             displaycenterednewsfont("RING OF FIRE",5);
-            displaycenteredsmallnews("The Ohio River caught on fire again.",12);
+            displaycenteredsmallnews("オハイオ川が再び炎で包まれた。",12);
             displaynewspicture(PICTURE_RIVERFIRE,13);
             break;
          case VIEW_CORPORATECULTURE:
             displaycenterednewsfont("BELLY UP",5);
-            displaycenteredsmallnews("An enormous company files for bankruptcy, shattering the previous record.",12);// random company name
+            displaycenteredsmallnews("企業の倒産件数が記録を更新した。",12);// random company name
             displaynewspicture(PICTURE_DOLLARS,13);
             break;
          case VIEW_CEOSALARY:
          {
             displaycenterednewsfont("AMERICAN CEO",5);
             char str[80];
-            strcpy(str,"This major CEO ");
+            strcpy(str,"このよく知られたCEOは");
             switch(LCSrandom(10))
             {
                case 0:
-                  if(law[LAW_FREESPEECH]==-2&&law[LAW_WOMEN]!=-2)strcat(str,"regularly visits [working women].");
-                  else if(law[LAW_FREESPEECH]==-2&&law[LAW_WOMEN]==-2)strcat(str,"regularly [donates to sperm banks].");
-                  else strcat(str,"regularly visits prostitutes.");
+                  if(law[LAW_FREESPEECH]==-2&&law[LAW_WOMEN]!=-2)strcat(str,"日常的に[働く女性]を招いている。");
+                  else if(law[LAW_FREESPEECH]==-2&&law[LAW_WOMEN]==-2)strcat(str,"日常的に[精子バンクに寄付]している。");
+                  else strcat(str,"日常的に売春婦を招いている。");
                   break;
                case 1:
-                  strcat(str,"seeks the aid of psychics.");
+                  strcat(str,"占い師に助言を求めている。");
                   break;
                case 2:
-                  strcat(str,"donated millions to the KKK.");
+                  strcat(str,"KKKに数百万ドルを寄付している。");
                   break;
                case 3:
-                  strcat(str,"hasn't paid taxes in over 20 years.");
+                  strcat(str,"20年以上税金を逃れている。");
                   break;
                case 4:
-                  strcat(str,"took out a contract on his wife.");
+                  strcat(str,"妻と離婚した。");
                   break;
                case 5:
-                  strcat(str,"doesn't know what his company does.");
+                  strcat(str,"自分の会社が何をしているのか知らない。");
                   break;
                case 6:
-                  strcat(str,"has a zoo of imported exotic worms.");
+                  strcat(str,"輸入した外来ワームの昆虫園を持っている。");
                   break;
                case 7:
-                  strcat(str,"paid millions for high-tech bondage gear.");
+                  strcat(str,"ハイテク・ボンデージギアに大金を費やしている。");
                   break;
                case 8:
-                  strcat(str,"installed a camera in an office bathroom.");
+                  strcat(str,"オフィスのトイレに監視カメラを導入した。");
                   break;
                case 9:
-                  strcat(str,"owns slaves in another country.");
+                  strcat(str,"外国に自分の奴隷を所有している。");
                   break;
             }
             displaycenteredsmallnews(str,12);
@@ -1583,7 +1582,7 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
       {
          case VIEW_GAY:
             displaycenterednewsfont("KINKY WINKY",5);
-            displaycenteredsmallnews("Jerry Falwell explains the truth about Tinky Winky.  Again.",12);
+            displaycenteredsmallnews("ティンキー・ウィンキーはキンキー(変態)・ウィンキー。ファンダメンタリストのジェリー・ファルエルが真実を明らかにした。まただ。",12);
             displaynewspicture(PICTURE_TINKYWINKY,13);
             break;
          case VIEW_DEATHPENALTY:
@@ -1618,32 +1617,31 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
          {
             displaycenterednewsfont("REAGAN THE MAN",5);
             char str[80];
-            strcpy(str,"");
+            strcpy(str,"新刊『");
             switch(LCSrandom(5))
             {
-               case 0:strcat(str,"Great");break;
-               case 1:strcat(str,"Noble");break;
-               case 2:strcat(str,"True");break;
-               case 3:strcat(str,"Pure");break;
-               case 4:strcat(str,"Golden");break;
+               case 0:strcat(str,"偉大な");break;
+               case 1:strcat(str,"気高い");break;
+               case 2:strcat(str,"真実の");break;
+               case 3:strcat(str,"混じり気のない");break;
+               case 4:strcat(str,"黄金の");break;
             }
-            strcat(str," ");
             switch(LCSrandom(5))
             {
-               case 0:strcat(str,"Leadership");break;
-               case 1:strcat(str,"Courage");break;
-               case 2:strcat(str,"Pioneer");break;
-               case 3:strcat(str,"Communicator");break;
-               case 4:strcat(str,"Faith");break;
+               case 0:strcat(str,"リーダーシップ");break;
+               case 1:strcat(str,"勇気");break;
+               case 2:strcat(str,"先駆者");break;
+               case 3:strcat(str,"コミュニケーター");break;
+               case 4:strcat(str,"信念");break;
             }
-            strcat(str,": A new book lauding Reagan and the greatest generation.");
+            strcat(str,"』: レーガン元大統領と最も偉大な世代の人々が絶賛する一冊。");
             displaycenteredsmallnews(str,12);
             displaynewspicture(PICTURE_BOOK,13);
             break;
          }
          case VIEW_NUCLEARPOWER:
             displaycenterednewsfont("OIL CRUNCH",5);
-            displaycenteredsmallnews("OPEC cuts oil production sharply in response to a US foreign policy decision.",12);
+            displaycenteredsmallnews("米国の対外政策への対抗措置として、OPECは原油の大幅な減産を決定した。",12);
             displaynewspicture(PICTURE_OIL,13);
             break;
          case VIEW_ANIMALRESEARCH:
@@ -1668,7 +1666,7 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
             break;
          case VIEW_FREESPEECH:
             displaycenterednewsfont("HATE RALLY",5);
-            displaycenteredsmallnews("Free speech advocates fight hard to let a white supremacist rally take place.",12);
+            displaycenteredsmallnews("言論の自由の支持者は白人至上主義者の集会を開催するために戦っている。",12);
             displaynewspicture(PICTURE_KKK,13);
             break;
          case VIEW_GENETICS:
@@ -1683,8 +1681,8 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
             break;
          case VIEW_SWEATSHOPS:
             displaycenterednewsfont("THEY ARE HERE",5);
-            if(month>=8&&month<=11)displaycenteredsmallnews("Fall fashions hit the stores across the country.",12);
-            else displaycenteredsmallnews("Fall fashions are previewed in stores across the country.",12);
+            if(month>=8&&month<=11)displaycenteredsmallnews("秋ファッションが全国のストアで展開中。",12);
+            else displaycenteredsmallnews("秋を先取りしたファッションが全国のストアで展開中。",12);
             displaynewspicture(PICTURE_TSHIRT,13);
             break;
          case VIEW_POLLUTION:
@@ -1728,11 +1726,11 @@ void run_television_news_stories()
                   move(19,13);
                   addstr("+----------------------------------------------------+");
                   move(20,13);
-                  addstr("|     The  police  have  beaten  a  black  man  in   |");
+                  addstr("|   ロサンゼルスで再び警官が黒人男性に暴行を加えた。 |");
                   move(21,13);
-                  addstr("|   Los Angeles again.  This time, the incident is   |");
+                  addstr("|   今回の事件は通行人によって撮影され、ニュースで   |");
                   move(22,13);
-                  addstr("|   taped by  a passerby  and saturates  the news.   |");
+                  addstr("|   も大きく取り上げられた。                         |");
                   move(23,13);
                   addstr("+----------------------------------------------------+");
 
@@ -1744,27 +1742,28 @@ void run_television_news_stories()
                {
                   music.play(MUSIC_NEWSCAST);
                   char str[80];
-                  strcpy(str,"Tonight on a Cable News channel: ");
-                  switch(LCSrandom(5))
-                  {
-                  case 0:strcat(str,"Cross");break;
-                  case 1:strcat(str,"Hard");break;
-                  case 2:strcat(str,"Lightning");break;
-                  case 3:strcat(str,"Washington");break;
-                  case 4:strcat(str,"Capital");break;
-                  }
-                  switch(LCSrandom(5))
-                  {
-                  case 0:strcat(str," Fire");break;
-                  case 1:strcat(str," Ball");break;
-                  case 2:strcat(str," Talk");break;
-                  case 3:strcat(str," Insider");break;
-                  case 4:strcat(str," Gang");break;
-                  }
-                  strcat(str," with ");
+                  strcpy(str,"今夜のケーブルニュースチャンネル: ");
                   char bname[80];
                   generate_name(bname,GENDER_WHITEMALEPATRIARCH);
                   strcat(str,bname);
+                  strcat(str,"の");
+
+                  switch(LCSrandom(5))
+                  {
+                  case 0:strcat(str,"クロス");break;
+                  case 1:strcat(str,"ハード");break;
+                  case 2:strcat(str,"ライトニング");break;
+                  case 3:strcat(str,"ワシントン");break;
+                  case 4:strcat(str,"キャピタル");break;
+                  }
+                  switch(LCSrandom(5))
+                  {
+                  case 0:strcat(str,"・ファイア");break;
+                  case 1:strcat(str,"・ボール");break;
+                  case 2:strcat(str,"・トーク");break;
+                  case 3:strcat(str,"・インサイダー");break;
+                  case 4:strcat(str,"・ギャング");break;
+                  }
 
                   erase();
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -1800,11 +1799,11 @@ void run_television_news_stories()
                   move(19,13);
                   addstr("+----------------------------------------------------+");
                   move(20,13);
-                  addstr("|     A  Cable  News  anchor  accidentally  let  a   |");
+                  addstr("|   ケーブルニュースが誤って明朗なリベラルゲストに   |");
                   move(21,13);
-                  addstr("|   bright Liberal guest  finish a sentence.  Many   |");
+                  addstr("|   最後まで発言させてしまった。全米の大勢の視聴者   |");
                   move(22,13);
-                  addstr("|   viewers  across  the  nation  were  listening.   |");
+                  addstr("|   がこれを聞いていた。                             |");
                   move(23,13);
                   addstr("+----------------------------------------------------+");
 
@@ -1828,11 +1827,11 @@ void run_television_news_stories()
                   move(19,13);
                   addstr("+----------------------------------------------------+");
                   move(20,13);
-                  addstr("|     A new show glamorizing the lives of the rich   |");
+                  addstr("|   リッチな人々の生活を魅力的に紹介するテレビ番組   |");
                   move(21,13);
-                  addstr("|   begins airing  this week.  With the nationwide   |");
+                  addstr("|   が今週から始まる。これは全国で電撃的に宣伝され   |");
                   move(22,13);
-                  addstr("|   advertising  blitz, it's bound  to be popular.   |");
+                  addstr("|   ている。恐らく人気が出るだろう。                 |");
                   move(23,13);
                   addstr("+----------------------------------------------------+");
 
@@ -1849,11 +1848,11 @@ void run_television_news_stories()
                   move(19,13);
                   addstr("+----------------------------------------------------+");
                   move(20,13);
-                  addstr("|     A major Cable News channel has hired a slick   |");
+                  addstr("|  有力ケーブルニュースチャンネルが新しいニュース番  |");
                   move(21,13);
-                  addstr("|   new anchor for  one of its news shows.  Guided   |");
+                  addstr("|  組のために魅力的なキャスターを雇った。巧みな宣伝  |");
                   move(22,13);
-                  addstr("|   by impressive  advertising, America  tunes in.   |");
+                  addstr("|  も行われている。これは全米で視聴されるだろう。    |");
                   move(23,13);
                   addstr("+----------------------------------------------------+");
 
@@ -1872,11 +1871,11 @@ void run_television_news_stories()
                   move(19,13);
                   addstr("+----------------------------------------------------+");
                   move(20,13);
-                  addstr("|     A  failed partial  birth abortion  goes on a   |");
+                  addstr("|   有名な午後のトークショーで失敗した部分出産中絶   |");
                   move(21,13);
-                  addstr("|   popular  afternoon  talk  show.    The  studio   |");
+                  addstr("|   の話題が取り上げられた。スタジオの聴衆と全米の   |");
                   move(22,13);
-                  addstr("|   audience and viewers nationwide feel its pain.   |");
+                  addstr("|   視聴者は苦痛を感じただろう。                     |");
                   move(23,13);
                   addstr("+----------------------------------------------------+");
 

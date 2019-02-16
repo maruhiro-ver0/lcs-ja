@@ -1476,112 +1476,106 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
 
          strcpy(story,city);
          strcat(story," - ");
+         strcat(story,"昨日、");
+         strcat(story,location[ns.loc]->name);
+         strcat(story,"で");
          if(ns.crime[1]>2)
          {
             strcat(story,ns.crime[1]);
-            strcat(story," bodies were "); //Gruesome pile, large pile.
+            strcat(story,"体の遺体"); //Gruesome pile, large pile.
          }
-         else if(ns.crime[1]>1)strcat(story," Two bodies were ");
-         else strcat(story," A body was ");
-         strcat(story," found in the ");
-         strcat(story,location[ns.loc]->name);
-         strcat(story," yesterday.");
+         else if(ns.crime[1]>1)strcat(story,"2体の遺体");
+         else strcat(story,"遺体");
+         strcat(story,"が発見された。");
          if(!liberalguardian)
          {
-            strcat(story,"  According to a spokesperson for ");
-            strcat(story,"the police department, the matter is under investigation as a homicide.");
+            strcat(story,"  警察は殺人事件として調査している。");
             strcat(story,"&r");
-            strcat(story,"  Privately, sources in the department confide that there aren't any leads.  ");
-            strcat(story,"According to one person familiar with the case, \"");
+            strcat(story,"  今のところ有効な手がかりはないが、専門家は「");
          }
          else
          {
-            strcat(story,"  The police have opened an investigation into the massacre, but seem ");
-            strcat(story,"unwilling to pursue the case with any serious effort.");
+            strcat(story,"  警察はこの事件について調査を開始したが、");
+            strcat(story,"深い追求を避けているように思われる。");
             strcat(story,"&r");
-            strcat(story,"  The Liberal Crime Squad has claimed that the ");
-            if(ns.crime[1]>1)strcat(story,"victims were members ");
-            else strcat(story,"victim was a member ");
-            strcat(story,"of the LCS targeted simply due to their political beliefs.  ");
-            strcat(story,"According to an LCS spokesperson, \"");
+            strcat(story,"  リベラル・クライム・スコードは、犠牲となったLCSの");
+            if(ns.crime[1]>1)strcat(story,"メンバーたち");
+            else strcat(story,"メンバー");
+            strcat(story,"はその政治的信念が原因で狙われたと見ている。");
+            strcat(story,"LCSの広報官は「");
          }
          switch(ns.crime[0])
          {
             case SIEGE_CIA:
                if(!liberalguardian)
                {
-                  if(ns.crime[1]>1)strcat(story,"The bodies had no faces or ");
-                  else strcat(story,"The body had no face or ");
-                  strcat(story,"fingerprints.  Like, it was all smooth.  ");
-                  if(law[LAW_FREESPEECH]==-2)strcat(story,"[Craziest] thing I've ever seen");
-                  else if(law[LAW_FREESPEECH]==2)strcat(story,"Damnedest thing I've ever seen");
-                  else strcat(story,"D*mnd*st thing I've ever seen");
+                  if(ns.crime[1]>1)strcat(story,"遺体からは顔も");
+                  else strcat(story,"遺体からは顔も");
+                  strcat(story,"指紋も全て消されていた。これまで見た中で、最も");
+                  if(law[LAW_FREESPEECH]==-2)strcat(story,"[おかしな]事件だ");
+                  else if(law[LAW_FREESPEECH]==2)strcat(story,"イカレた事件だ");
+                  else strcat(story,"奇妙な事件だ");
                }
                else
                {
-                  strcat(story,"We have strong evidence that this was an extra-judicial slaughter ");
-                  strcat(story,"carried out by the Central Intelligence Agency in retaliation for our ");
-                  strcat(story,"previous actions to uncover human rights abuses and corruption in the ");
-                  strcat(story,"intelligence community");
+                  strcat(story,"この事件は中央情報局による超法的殺戮であるという確かな証拠が我々にはある。");
+                  strcat(story,"これは情報局の人権侵害と腐敗を暴こうとする我々に対する復讐だ");
                }
                break;
             case SIEGE_POLICE:
             case SIEGE_HICKS:
                if(!liberalguardian)
                {
-                  strcat(story,"Burned...  stabbed with, maybe, pitchforks.  There may have ");
-                  strcat(story,"been bite marks.  Nothing recognizable left.  Complete carnage.");
+                  strcat(story,"火傷と…恐らく干草用の熊手による刺し傷がある。咬まれたような傷もあるようだ。");
+                  strcat(story,"証拠は何も残されていない。完璧な虐殺だ");
                }
                else
                {
-                  strcat(story,"We have reason to believe that this brutal massacre was ");
-                  strcat(story,"inspired by the Conservative media's brainwashing propaganda");
+                  strcat(story,"これは保守メディアの洗脳的プロパガンダに影響を受けた残忍な虐殺であると確信している");
                }
                break;
             case SIEGE_CORPORATE:
                if(!liberalguardian)
                {
-                  strcat(story,"It was execution style.  Professional.  We've got nothing");
+                  strcat(story,"まるで処刑のようだ。これはプロの犯行だ。手がかりは何もない");
                }
                else
                {
-                  strcat(story,"This massacre has the signature mark of a group of mercenaries ");
-                  strcat(story,"known to work with several corporations we've had confrontations ");
-                  strcat(story,"with in the past.  *When* the police can't figure this one out, they're ");
-                  strcat(story,"just covering it up");
+                  strcat(story,"殺戮現場には、以前から我々と対立している複数の企業と協力関係にある民間傭兵グループのサインがあった。");
+                  strcat(story,"「もし」警察がこのことを公表しないならば、それは隠そうとしているのだろう");
                }
                break;
             case SIEGE_CCS:
                if(!liberalguardian)
                {
-                  strcat(story,"Look, it was a Conservative Crime Squad hit, that's all we know, ");
-                  strcat(story,"no names, no faces, not even where it happened really");
+                  strcat(story,"見よ、これがコンサバ・クライム・スコードの攻撃だ。");
+                  strcat(story,"知っての通り、彼らには名前も顔もなく、本当はどこで起こったことなのかさえもわからない");
                }
                else
                {
-                  strcat(story,"This is the doing of the Conservative Crime Squad butchers.  ");
-                  strcat(story,"They have to be stopped before they kill again");
+                  strcat(story,"これはコンサバ・クライム・スコードの殺戮者によるものだ。");
+                  strcat(story,"再び殺戮を行う前に阻止しなければならない");
                }
                break;
             case SIEGE_FIREMEN:
                if(!liberalguardian)
                {
-                  if(ns.crime[1]>1)strcat(story,"The recovered bodies were ");
-                  else strcat(story,"The recovered body was ");
-                  strcat(story,"burned unrecognizable.  ");
-                  strcat(story,"Scorch marks throughout the site indicate that this was no accident; ");
-                  strcat(story,"we are working closely with the Fire Department to track down the arsonist.  ");
-                  strcat(story,"Fortunately, firemen were able to respond before the fire could spread to other buildings");
+                  if(ns.crime[1]>1)strcat(story,"発見された遺体は");
+                  else strcat(story,"発見された遺体は");
+                  strcat(story,"焼かれて判別不能だった。");
+                  strcat(story,"建物の焼失状況によると、これは事件ではない。");
+                  strcat(story,"我々は消防局と協力して放火犯を追跡しているところだ。");
+                  strcat(story,"幸いなことに、他の建物に燃え広がる前に消防士が消し止めることができた");
                }
                else
                {
-                  if(ns.crime[1]>1)strcat(story,"The murdered were reporters ");
-                  else strcat(story,"The murdered was a reporter ");
-                  strcat(story,"working for this very paper. ");
-                  strcat(story,"This is clearly the work of conservative butchers enforcing the prohibition on a free press");
+                  if(ns.crime[1]>1)strcat(story,"殺害されたのはこの新聞の記者たち");
+                  else strcat(story,"殺害されたのはこの新聞の記者");
+                  strcat(story,"だ。");
+                  strcat(story,"これは新聞発行の自由を侵害する保守の殺戮者による反抗であることは明白だ");
                }
          }
-         strcat(story,".\"  ");
+         strcat(story,"。」と語っている。");
          strcat(story,"&r");
 
          generatefiller(story,200);

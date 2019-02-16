@@ -659,74 +659,73 @@ void investlocation()
             {
                location[loc]->front_business=LCSrandom(BUSINESSFRONTNUM);
                lastname(location[loc]->front_name,true);
-               strcat(location[loc]->front_name," ");
                switch(location[loc]->front_business)
                {
                case BUSINESSFRONT_INSURANCE:
                   switch(LCSrandom(7))
                   {
                   case 0:
-                     strcat(location[loc]->front_name,"Auto");
-                     strcpy(location[loc]->front_shortname,"Auto");
+                     strcat(location[loc]->front_name,"自動車");
+                     strcpy(location[loc]->front_shortname,"自動車");
                      break;
                   case 1:
-                     strcat(location[loc]->front_name,"Life");
-                     strcpy(location[loc]->front_shortname,"Life");
+                     strcat(location[loc]->front_name,"生命");
+                     strcpy(location[loc]->front_shortname,"生命");
                      break;
                   case 2:
-                     strcat(location[loc]->front_name,"Health");
-                     strcpy(location[loc]->front_shortname,"Health");
+                     strcat(location[loc]->front_name,"医療");
+                     strcpy(location[loc]->front_shortname,"医療");
                      break;
                   case 3:
-                     strcat(location[loc]->front_name,"Home");
-                     strcpy(location[loc]->front_shortname,"Home");
+                     strcat(location[loc]->front_name,"住宅");
+                     strcpy(location[loc]->front_shortname,"住宅");
                      break;
                   case 4:
-                     strcat(location[loc]->front_name,"Boat");
-                     strcpy(location[loc]->front_shortname,"Boat");
+                     strcat(location[loc]->front_name,"船舶");
+                     strcpy(location[loc]->front_shortname,"船舶");
                      break;
                   case 5:
-                     strcat(location[loc]->front_name,"Fire");
-                     strcpy(location[loc]->front_shortname,"Fire");
+                     strcat(location[loc]->front_name,"火災");
+                     strcpy(location[loc]->front_shortname,"火災");
                      break;
                   case 6:
-                     strcat(location[loc]->front_name,"Flood");
-                     strcpy(location[loc]->front_shortname,"Flood");
+                     strcat(location[loc]->front_name,"水害");
+                     strcpy(location[loc]->front_shortname,"水害");
                      break;
                   }
-                  strcat(location[loc]->front_name," Insurance");
-                  strcat(location[loc]->front_shortname," Ins.");
+                  strcat(location[loc]->front_name,"保険");
+                  strcat(location[loc]->front_shortname,"保険");
                   break;
                case BUSINESSFRONT_TEMPAGENCY:
                   switch(LCSrandom(7))
                   {
                   case 0:
-                     strcat(location[loc]->front_name,"Temp Agency");
-                     strcpy(location[loc]->front_shortname,"Agency");
+                     strcat(location[loc]->front_name,"人材派遣");
+                     strcpy(location[loc]->front_shortname,"派遣");
                      break;
                   case 1:
-                     strcat(location[loc]->front_name,"Manpower, LLC");
-                     strcpy(location[loc]->front_shortname,"Manpower");
+                     strcat(location[loc]->front_name,"マンパワーLLC");
+                     strcpy(location[loc]->front_shortname,"マンパワー");
                      break;
                   case 2:
-                     strcat(location[loc]->front_name,"Staffing, Inc");
-                     strcpy(location[loc]->front_shortname,"Staff");
+                     strcat(location[loc]->front_name,"スタッフィングInc");
+                     strcpy(location[loc]->front_shortname,"スタッフ");
                      break;
                   case 3:
-                     strcat(location[loc]->front_name,"Labor Ready");
-                     strcpy(location[loc]->front_shortname,"Labor");
+                     strcat(location[loc]->front_name,"レイバー・レディー");
+                     strcpy(location[loc]->front_shortname,"レイバー");
                      break;
                   case 4:
-                     strcat(location[loc]->front_name,"Employment");
-                     strcpy(location[loc]->front_shortname,"Employ");
+                     strcat(location[loc]->front_name,"エンプロイメント");
+                     strcpy(location[loc]->front_shortname,"エンプロイ");
                      break;
                   case 5:
-                     strcat(location[loc]->front_name,"Services");
-                     strcpy(location[loc]->front_shortname,"Services");
+                     strcat(location[loc]->front_name,"サービシーズ");
+                     strcpy(location[loc]->front_shortname,"サービス");
                      break;
                   case 6:
-                     strcat(location[loc]->front_name,"Solutions");
-                     strcpy(location[loc]->front_shortname,"Solutns");
+                     strcat(location[loc]->front_name,"ソリューションズ");
+                     strcpy(location[loc]->front_shortname,"ｿﾘｭｰｼｮﾝｽﾞ");
                      break;
                   }
                   break;
@@ -734,32 +733,32 @@ void investlocation()
                   switch(LCSrandom(7))
                   {
                   case 0:
-                     strcat(location[loc]->front_name,"Fried Chicken");
-                     strcpy(location[loc]->front_shortname,"Chicken");
+                     strcat(location[loc]->front_name,"フライドチキン");
+                     strcpy(location[loc]->front_shortname,"チキン");
                      break;
                   case 1:
-                     strcat(location[loc]->front_name,"Hamburgers");
-                     strcpy(location[loc]->front_shortname,"Burgers");
+                     strcat(location[loc]->front_name,"ハンバーガー");
+                     strcpy(location[loc]->front_shortname,"バーガー");
                      break;
                   case 2:
-                     strcat(location[loc]->front_name,"Steakhouse");
-                     strcpy(location[loc]->front_shortname,"Steak");
+                     strcat(location[loc]->front_name,"ステーキハウス");
+                     strcpy(location[loc]->front_shortname,"ステーキ");
                      break;
                   case 3:
-                     strcat(location[loc]->front_name,"Wok Buffet");
-                     strcpy(location[loc]->front_shortname,"Wok");
+                     strcat(location[loc]->front_name,"中華料理");
+                     strcpy(location[loc]->front_shortname,"中華");
                      break;
                   case 4:
-                     strcat(location[loc]->front_name,"Thai Cuisine");
-                     strcpy(location[loc]->front_shortname,"Thai");
+                     strcat(location[loc]->front_name,"タイ料理");
+                     strcpy(location[loc]->front_shortname,"タイ");
                      break;
                   case 5:
-                     strcat(location[loc]->front_name,"Pizzeria");
-                     strcpy(location[loc]->front_shortname,"Pizza");
+                     strcat(location[loc]->front_name,"ピザ");
+                     strcpy(location[loc]->front_shortname,"ピザ");
                      break;
                   case 6:
-                     strcat(location[loc]->front_name,"Fine Dining");
-                     strcpy(location[loc]->front_shortname,"Diner");
+                     strcat(location[loc]->front_name,"レストラン");
+                     strcpy(location[loc]->front_shortname,"レストラン");
                      break;
                   }
                   break;
@@ -767,32 +766,32 @@ void investlocation()
                   switch(LCSrandom(7))
                   {
                   case 0:
-                     strcat(location[loc]->front_name,"Real Estate");
-                     strcpy(location[loc]->front_shortname,"Realty");
+                     strcat(location[loc]->front_name,"不動産");
+                     strcpy(location[loc]->front_shortname,"不動産");
                      break;
                   case 1:
-                     strcat(location[loc]->front_name,"Imported Goods");
-                     strcpy(location[loc]->front_shortname,"Import");
+                     strcat(location[loc]->front_name,"輸入雑貨");
+                     strcpy(location[loc]->front_shortname,"雑貨");
                      break;
                   case 2:
-                     strcat(location[loc]->front_name,"Waste Disposal");
-                     strcpy(location[loc]->front_shortname,"Disposal");
+                     strcat(location[loc]->front_name,"廃棄物処理");
+                     strcpy(location[loc]->front_shortname,"廃棄物");
                      break;
                   case 3:
-                     strcat(location[loc]->front_name,"Liquor Shop");
-                     strcpy(location[loc]->front_shortname,"Liquor");
+                     strcat(location[loc]->front_name,"酒店");
+                     strcpy(location[loc]->front_shortname,"酒店");
                      break;
                   case 4:
-                     strcat(location[loc]->front_name,"Antiques");
-                     strcpy(location[loc]->front_shortname,"Antique");
+                     strcat(location[loc]->front_name,"アンティーク");
+                     strcpy(location[loc]->front_shortname,"アンティーク");
                      break;
                   case 5:
-                     strcat(location[loc]->front_name,"Repair, Inc");
-                     strcpy(location[loc]->front_shortname,"Repair");
+                     strcat(location[loc]->front_name,"修理屋");
+                     strcpy(location[loc]->front_shortname,"修理");
                      break;
                   case 6:
-                     strcat(location[loc]->front_name,"Pet Store");
-                     strcpy(location[loc]->front_shortname,"Pets");
+                     strcat(location[loc]->front_name,"ペットショップ");
+                     strcpy(location[loc]->front_shortname,"ペット");
                      break;
                   }
                   break;

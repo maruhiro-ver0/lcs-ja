@@ -1714,6 +1714,6 @@ string Creature::get_weapon_string(int subtype) const
       r = extra_throwing_weapons[0]->get_name(subtype);
       r += " (0/" + tostring(count_weapons()) + ")";
    }
-   else r = "None";
+   else r = "なし";
    return r;
 }

@@ -900,7 +900,7 @@ void mode_site()
                                        set_color(COLOR_WHITE,COLOR_BLACK,1);
                                        move(9,1);
                                        addstr(encounter[tk].name);
-                                       addstr("は話せない。");
+                                       addstr("とは話せない。");
 
                                        getkey();
                                     }
