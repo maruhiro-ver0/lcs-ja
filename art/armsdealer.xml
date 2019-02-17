@@ -36,7 +36,7 @@
     <fullscreen>false</fullscreen>
     <allow_selling>false</allow_selling>
     <increase_prices_with_illegality>true</increase_prices_with_illegality>
-    <exit>‹A‚é</exit>
+    <exit>å¸°ã‚‹</exit>
 
     <department>
         <entry>Buy a Liberal Gun</entry>
@@ -79,7 +79,7 @@
         <entry>Buy Liberal Clips</entry>
         <letter>c</letter>
         <fullscreen>false</fullscreen>
-        <exit>ƒŠƒxƒ‰ƒ‹’e‚Ì”ƒ‚¢•¨‚ğI‚¦‚é</exit>
+        <exit>ãƒªãƒ™ãƒ©ãƒ«å¼¾ã®è²·ã„ç‰©ã‚’çµ‚ãˆã‚‹</exit>
         <item>
             <class>CLIP</class>
             <description>Buy Shotgun Shells</description>
