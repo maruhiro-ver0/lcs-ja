@@ -283,15 +283,15 @@ bool liberalagenda(signed char won)
             switch(l)
             {
                case LAW_WOMEN:
-                  if(won==-2)addstr("Women are usually drafted into the armed forces to fight in place of men.");
-                  else if(won==-1)addstr("Women are considered property, and rape has been legalized.");
+                  if(won==-2)addstr("女性は通常男性の代わりに軍隊に召集される。");
+                  else if(won==-1)addstr("女性は所有物とみなされ、合意のない性交も合法である。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Women are second-class citizens.");
-                  else if(law[l]==-1)addstr("Non-discrimination laws do not apply to gender.");
-                  else if(law[l]==0)addstr("Women are nominally equal under law, but this is not enforced.");
-                  else if(law[l]==1)addstr("Women have substantial recourse against discrimination.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("Gender equality is universally respected.");
-                  else addstr("Binary gender identities no longer exist, and gender segregation has ended.");
+                     addstr("女性は2等市民である。");
+                  else if(law[l]==-1)addstr("差別禁止法は性差には適用されない。");
+                  else if(law[l]==0)addstr("男女は通常は法的に平等だが、それが強制されることはない。");
+                  else if(law[l]==1)addstr("女性には差別に対抗する具体的な手段が存在する。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("男女平等は普遍的に尊重されている。");
+                  else addstr("二分された性別はもはや存在しない。性別による分断は終わった。");
                   break;
                case LAW_CIVILRIGHTS:
                   if(won==-2)addstr("Entire ethnic groups are branded \"enemies of the state\".");
@@ -427,36 +427,36 @@ bool liberalagenda(signed char won)
                   break;
                case LAW_DEATHPENALTY:
                   if(won==-2)addstr("敵認定された者は必ず死刑判決とする。");
-                  else if(won==-1)addstr("貧しい者やマイノリティーによる犯罪は必ず死刑判決とする。");
+                  else if(won==-1)addstr("貧しい者やマイノリティーによる犯罪は必ず死刑判決となる。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
                      addstr("死刑は軽犯罪にも適用できる。");
                   else if(law[l]==-1)addstr("死刑は多くの州で実際に適用されている。");
                   else if(law[l]==0)addstr("死刑制度は存在するが存続が議論されている。");
                   else if(law[l]==1)addstr("死刑は極端な場合のみ適用される。");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("死刑は残虐な刑罰とみなし、決して適用されない。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("死刑は残虐な刑罰とみなされ、決して適用されない。");
                   else addstr("死刑やその他の厳しすぎる刑罰は既に廃止された。");
                   break;
                case LAW_NUCLEARPOWER:
-                  if(won==-2)addstr("Nuclear power plants routinely have meltdowns but keep getting built.");
-                  else if(won==-1)addstr("Nuclear power plants are ubiquitous and cancer rates are astronomical.");
+                  if(won==-2)addstr("原子力施設は定期的にメルトダウンしているが、建造は続いている。");
+                  else if(won==-1)addstr("原子力施設があらゆる場所に存在し、ガンの発症が急増している。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Nuclear power is wildly proliferating with no controls or regulation at all.");
-                  else if(law[l]==-1)addstr("Nuclear power is a preferred energy source and the industry self-regulates.");
-                  else if(law[l]==0)addstr("Nuclear power is often an energy source and only moderately regulated.");
-                  else if(law[l]==1)addstr("Nuclear power is intensely regulated and rarely used anymore.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("Nuclear power is illegal and the leftover nuclear waste is being cleaned up.");
-                  else addstr("A global ban on nuclear power and nuclear weapons is enforced by UN inspectors.");
+                     addstr("原子力の利用は管理や規制がなく急速に拡大している。");
+                  else if(law[l]==-1)addstr("原子力はエネルギー源としてよく利用され、産業界によって自主管理されている。");
+                  else if(law[l]==0)addstr("原子力はエネルギー源としてしばしば利用され、そして適切に管理されている。");
+                  else if(law[l]==1)addstr("原子力は厳しく管理され、利用はまれである。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("原子力利用は違法であり、核廃棄物の処理が進んでいる。");
+                  else addstr("原子力利用は禁止され、核兵器は国連の査察官に監視されている。");
                   break;
                case LAW_POLLUTION:
-                  if(won==-2)addstr("State-run industries pollute so much, the workers all have cancer.");
-                  else if(won==-1)addstr("Deformed children are the norm in the vast industrial wastelands.");
+                  if(won==-2)addstr("国営工場の汚染はすさまじく、労働者は全員ガンを発症している。");
+                  else if(won==-1)addstr("工業地帯では汚染による子供の病気が当たり前である。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Industry may pollute as much as they like.");
-                  else if(law[l]==-1)addstr("Industry voluntarily regulates pollution.");
-                  else if(law[l]==0)addstr("Industry is subject to moderate pollution regulations.");
-                  else if(law[l]==1)addstr("Industry is subject to strict pollution regulations.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("Industry is subject to zero-tolerance pollution regulations.");
-                  else addstr("Pollution is unheard of, and nature has reclaimed much of the land.");
+                     addstr("工場は必要ならば汚染させてもよい。");
+                  else if(law[l]==-1)addstr("工場は自主的な公害対策に従っている。");
+                  else if(law[l]==0)addstr("工場は適度な公害対策に従っている。");
+                  else if(law[l]==1)addstr("工場は厳格な公害対策に従っている。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("工場はゼロ容認の公害対策に従っている。");
+                  else addstr("公害は存在せず自然が回復した。");
                   break;
                case LAW_LABOR:
                   if(won==-2)addstr("The state has nationalized all industries and assigns everyone jobs.");
@@ -503,15 +503,15 @@ bool liberalagenda(signed char won)
                   else addstr("言論の自由は絶対であり、視点の多様性が賞賛されている。");
                   break;
                case LAW_FLAGBURNING:
-                  if(won==-2)addstr("Flags of the old American regime are burnt primarily as fuel.");
-                  else if(won==-1)addstr("Images or words describing flag burning are punished by death.");
+                  if(won==-2)addstr("アメリカ旧政府の旗は燃料である。");
+                  else if(won==-1)addstr("国旗焼却を扱った絵や文章にも死刑が適用される。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Burning the flag is a serious crime on par with murder.");
-                  else if(law[l]==-1)addstr("Burning the flag is a felony and vigorously prosecuted.");
-                  else if(law[l]==0)addstr("Flag-burning is a misdemeanor, but not a serious crime.");
-                  else if(law[l]==1)addstr("Flag-burning is technically legal but stigmatized as unpatriotic.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("The right of flag-burning is upheld even by its critics.");
-                  else addstr("Flag-burning is traditionally done on July 4th to celebrate freedom.");
+                     addstr("国旗焼却は殺人と同等の重犯罪である。");
+                  else if(law[l]==-1)addstr("国旗焼却は重罪で積極的に起訴される。");
+                  else if(law[l]==0)addstr("国旗焼却は罪を問われるが、重大な犯罪とはみなされない。");
+                  else if(law[l]==1)addstr("国旗焼却は違法ではないが、反愛国的であると非難される。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("国旗焼却は抗議の手段として支持されている。");
+                  else addstr("国旗焼却は7月4日の独立記念日に自由を称えるため伝統的に行われるようになった。");
                   break;
                case LAW_GUNCONTROL:
                   if(won==-2)addstr("銃を所有する者は全て銃殺される。");

@@ -172,17 +172,17 @@ void special_bouncer_assess_squad()
          set_color(COLOR_RED,COLOR_BLACK,1);
          switch(LCSrandom(11))
          {
-         case 0:addstr("\"Can I see... heh heh... some ID?\"", gamelog);break;
-         case 1:addstr("\"Woah... you think you're coming in here?\"", gamelog);break;
-         case 2:addstr("\"Check out this fool. Heh.\"", gamelog);break;
-         case 3:addstr("\"Want some trouble, dumpster breath?\"", gamelog);break;
-         case 4:addstr("\"You're gonna stir up the hornet's nest, fool.\"", gamelog);break;
-         case 5:addstr("\"Come on, take a swing at me. Just try it.\"", gamelog);break;
-         case 6:addstr("\"You really don't want to fuck with me.\"", gamelog);break;
-         case 7:addstr("\"Hey girly, have you written your will?\"", gamelog);break;
-         case 8:addstr("\"Oh, you're trouble. I *like* trouble.\"", gamelog);break;
-         case 9:addstr("\"I'll bury you in those planters over there.\"", gamelog);break;
-         case 10:addstr("\"Looking to check on the color of your blood?\"", gamelog);break;
+         case 0:addstr("「すみませんが…ヘヘ…IDを見せてもらえますか? 」", gamelog);break;
+         case 1:addstr("「おっと…入れると思っているのか? 」", gamelog);break;
+         case 2:addstr("「このバカをつまみ出せ。ケッ。」", gamelog);break;
+         case 3:addstr("「ゴミ箱の住民め、何のようだ? 」", gamelog);break;
+         case 4:addstr("「蜂の巣をかき回したいのか。バカめ。」", gamelog);break;
+         case 5:addstr("「さあ来い。俺を殴れ。やってみろ。」", gamelog);break;
+         case 6:addstr("「俺に殺されたくはないだろう。」", gamelog);break;
+         case 7:addstr("「やあ。遺言は書いたか? 」", gamelog);break;
+         case 8:addstr("「ああ、トラブルが来た。トラブルは大好きだ。」", gamelog);break;
+         case 9:addstr("「そこのプランターに埋めてやるぞ。」", gamelog);break;
+         case 10:addstr("「血の色を検査してもよろしいですか? 」", gamelog);break;
          }
          break;
       case REJECTED_NUDE:
@@ -221,7 +221,7 @@ void special_bouncer_assess_squad()
          switch(LCSrandom(3))
          {
          case 0:addstr("「私には/本当の/男性には見えないのですが…」", gamelog);break;
-         case 1:addstr("「わかっていると思いますが…『他の』男性はあなたのようではありません。」", gamelog);break;
+         case 1:addstr("「わかっていると思いますが…『他の』男性はあなたとは違います。」", gamelog);break;
          case 2:addstr("「ううむ…入れるわけにはいきません、マダム、サー。どうやっても。」", gamelog);break;
          }
          break;
@@ -238,69 +238,69 @@ void special_bouncer_assess_squad()
          set_color(COLOR_RED,COLOR_BLACK,1);
          switch(LCSrandom(6))
          {
-         case 0:addstr("\"God, you smell.\"", gamelog);break;
-         case 1:addstr("\"Not letting you in. Because I said so.\"", gamelog);break;
-         case 2:addstr("\"There's just something off about you.\"", gamelog);break;
-         case 3:addstr("\"Take a shower.\"", gamelog);break;
-         case 4:addstr("\"You'd just harass the others, wouldn't you?\"", gamelog);break;
+         case 0:addstr("「何だ、怪しい奴め。」", gamelog);break;
+         case 1:addstr("「あなたは入れません。なぜなら、俺がそう言ったからだ。」", gamelog);break;
+         case 2:addstr("「何か様子がおかしいのだが。」", gamelog);break;
+         case 3:addstr("「シャワーを浴びてこい。」", gamelog);break;
+         case 4:addstr("「他の客の嫌がらせに来たのか? 」", gamelog);break;
          case 5:
-                if(law[LAW_FREESPEECH]==-2)addstr("\"Get the [heck] out of here.\"", gamelog);
-                else if(law[LAW_FREESPEECH]==2)addstr("\"Get the fuck out of here.\"", gamelog);
-                else addstr("\"Get the hell out of here.\"", gamelog);break;
+                if(law[LAW_FREESPEECH]==-2)addstr("「帰れ[不快な人]。」", gamelog);
+                else if(law[LAW_FREESPEECH]==2)addstr("「帰れクソ野郎。」", gamelog);
+                else addstr("「帰れバカ。」", gamelog);break;
          }
          break;
       case REJECTED_BLOODYCLOTHES:
          set_color(COLOR_RED,COLOR_BLACK,1);
          switch(LCSrandom(5))
          {
-         case 0:addstr("\"Good God! What is wrong with your clothes?\"", gamelog);break;
-         case 1:addstr("\"Absolutely not. Clean up a bit.\"", gamelog);break;
-         case 2:addstr("\"This isn't a goth club, bloody clothes don't cut it here.\"", gamelog);break;
-         case 3:addstr("\"Uh, maybe you should wash... replace... those clothes.\"", gamelog);break;
-         case 4:addstr("\"Did you spill something on your clothes?\"", gamelog);break;
-         case 5:addstr("\"Come back when you get the red wine out of your clothes.\"", gamelog);break;
+         case 0:addstr("「おい! その服はどうしたんだ? 」", gamelog);break;
+         case 1:addstr("「絶対に入れません。服をきれいにしてください。」", gamelog);break;
+         case 2:addstr("「ここはゴスクラブではない。血まみれの服はここまでだ。」", gamelog);break;
+         case 3:addstr("「う、その服は洗うか…着替えるかしろ。」", gamelog);break;
+         case 4:addstr("「服に何をこぼしたんだ? 」", gamelog);break;
+         case 5:addstr("「その服の赤ワインをどうにかしてから来い。」", gamelog);break;
          }
          break;
       case REJECTED_DAMAGEDCLOTHES:
          set_color(COLOR_RED,COLOR_BLACK,1);
          switch(LCSrandom(2))
          {
-         case 0:addstr("\"Good God! What is wrong with your clothes?\"", gamelog);break;
-         case 1:addstr("\"This isn't a goth club, ripped clothes don't cut it here.\"", gamelog);break;
+         case 0:addstr("「おい! その服はどうしたんだ? 」", gamelog);break;
+         case 1:addstr("「ここはゴスクラブではない。引き裂かれた服はここまでだ。」", gamelog);break;
          }
          break;
       case REJECTED_SECONDRATECLOTHES:
          set_color(COLOR_RED,COLOR_BLACK,1);
          switch(LCSrandom(2))
          {
-         case 0:addstr("\"That looks like you sewed it yourself.\"", gamelog);break;
-         case 1:addstr("\"If badly cut clothing is a hot new trend, I missed it.\"", gamelog);break;
+         case 0:addstr("「その服は自分で作ったものだな。」", gamelog);break;
+         case 1:addstr("「そのひどい服は流行っているのか。知らなかったな。」", gamelog);break;
          }
          break;
       case REJECTED_WEAPONS:
          set_color(COLOR_RED,COLOR_BLACK,1);
          switch(LCSrandom(5))
          {
-         case 0:addstr("\"No weapons allowed.\"", gamelog);break;
-         case 1:addstr("\"I can't let you in carrying that.\"", gamelog);break;
-         case 2:addstr("\"I can't let you take that in.\"", gamelog);break;
-         case 3:addstr("\"Come to me armed, and I'll tell you to take a hike.\"", gamelog);break;
-         case 4:addstr("\"Real men fight with fists. And no, you can't come in.\"", gamelog);break;
+         case 0:addstr("「武器の持ち込みは禁止されています。」", gamelog);break;
+         case 1:addstr("「それを持ったまま入れるわけにはいかないな。」", gamelog);break;
+         case 2:addstr("「それを持ち込ませるわけにはいかないな。」", gamelog);break;
+         case 3:addstr("「武装して来たならば、ハイキングにでも行って来いと言うしかない。」", gamelog);break;
+         case 4:addstr("「真の男は拳で戦うものだ。そしてお前はそうではない。入れるわけにはいかない。」", gamelog);break;
          }
          break;
       case REJECTED_GUESTLIST:
          set_color(COLOR_RED,COLOR_BLACK,1);
-         addstr("\"This club is by invitation only.\"", gamelog);
+         addstr("「当クラブは紹介がなければ入れません。」", gamelog);
          break;
       case NOT_REJECTED:
          set_color(COLOR_GREEN,COLOR_BLACK,1);
 
          switch(LCSrandom(4))
          {
-         case 0:addstr("\"Keep it civil and don't drink too much.\"", gamelog);break;
-         case 1:addstr("\"Let me get the door for you.\"", gamelog);break;
-         case 2:addstr("\"Ehh, alright, go on in.\"", gamelog);break;
-         case 3:addstr("\"Come on in.\"", gamelog);break;
+         case 0:addstr("「礼儀正しく。そして飲み過ぎないように。」", gamelog);break;
+         case 1:addstr("「今扉を開けます。」", gamelog);break;
+         case 2:addstr("「えー、了解。入ってください。」", gamelog);break;
+         case 3:addstr("「お入りください。」", gamelog);break;
          }
          break;
       }
@@ -386,7 +386,7 @@ void special_readsign(int sign)
       {
       default:
          move(16,1);
-         addstr("\"The best way not to fail is to succeed.\"");
+         addstr("『失敗しない最善の方法は成功することだ。』");
          break;
       case SITE_INDUSTRY_NUCLEAR:
          move(16,1);
@@ -398,9 +398,7 @@ void special_readsign(int sign)
       case SITE_RESIDENTIAL_APARTMENT:
       case SITE_RESIDENTIAL_APARTMENT_UPSCALE:
          move(16,1);
-         addstr("管理人のオフィスは最初の扉を左");
-         move(17,1);
-         addstr("");
+         addstr("管理人のオフィスは最初の扉を左です。");
          break;
       }
       break;
@@ -409,7 +407,7 @@ void special_readsign(int sign)
       {
       default:
          move(16,1);
-         addstr("\"Great work is done by people who do great work.\"");
+         addstr("『すばらしい仕事はすばらしい人々によって成し遂げられる。』");
          break;
       }
       break;
@@ -1715,11 +1713,9 @@ void special_radio_broadcaststudio()
       if(sitealarm||sitealienate)
       {
          move(16,1);
-         addstr("The radio broadcasters left the equipment on in ", gamelog);
-         move(17,1);
-         addstr("their rush to get out.", gamelog);
+         addstr("ラジオのアナウンサーは機材をそのままにして逃げたようだ。", gamelog);
          gamelog.newline();
-         addstr(" Take over the studio? (Yes or No)");
+         addstr("スタジオを乗っ取るか? (Yes / No)");
       }
       else
       {
@@ -1797,9 +1793,9 @@ void special_display_case()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("You see a display case.", gamelog);
+      addstr("展示ケースがある。", gamelog);
       move(17,1);
-      addstr("Smash it? (Yes or No)");
+      addstr("破壊するか? (Yes / No)");
 
       int c=getkey();
 
@@ -1908,14 +1904,14 @@ void special_security(bool metaldetect)
    move(16,1);
    if(sitealarm)
    {
-      addstr("The security checkpoint is abandoned.", gamelog);
+      addstr("セキュリティ検査は停止している。", gamelog);
       gamelog.newline();
       levelmap[locx][locy][locz].special=SPECIAL_NONE;
       return;
    }
    else if(autoadmit)
    {
-      addstr("The squad flashes ID badges.", gamelog);
+      addstr("部隊はIDバッジをかざした。", gamelog);
       metaldetect=false;
       gamelog.newline();
       levelmap[locx][locy][locz].special=SPECIAL_SECURITY_SECONDVISIT;
@@ -1923,7 +1919,7 @@ void special_security(bool metaldetect)
    else
    {
       if(metaldetect) addstr("部隊は金属探知機に足を踏み入れた。", gamelog);
-      else addstr("This door is guarded.", gamelog);
+      else addstr("扉はガードされている。", gamelog);
       gamelog.newline();
       levelmap[locx][locy][locz].special=SPECIAL_SECURITY_SECONDVISIT;
    }
@@ -1967,13 +1963,13 @@ void special_security(bool metaldetect)
    {
    case REJECTED_NUDE:
       set_color(COLOR_RED,COLOR_BLACK,1);
-      if(autoadmit) addstr("\"Jesus! Put some clothes on!\"", gamelog);
+      if(autoadmit) addstr("「ジーザス! 服を着るんだ! 」", gamelog);
       else switch(LCSrandom(4))
       {
-      case 0:addstr("\"Get out of here you nudist!!\"", gamelog);break;
-      case 1:addstr("\"Back off, creep!\"", gamelog);break;
-      case 2:addstr("\"Jesus!! Somebody call the cops!\"", gamelog);break;
-	   case 3:addstr("\"Are you sleepwalking?!\"", gamelog);break;
+      case 0:addstr("「ヌーディストは立ち入り禁止だ!!」", gamelog);break;
+      case 1:addstr("「帰れ! おかしな奴め! 」", gamelog);break;
+      case 2:addstr("「ジーザス!! 誰か警察を呼んでくれ! 」", gamelog);break;
+	  case 3:addstr("「夢遊病なのか?!」", gamelog);break;
       }
       gamelog.newline();
       break;
@@ -1981,10 +1977,10 @@ void special_security(bool metaldetect)
       set_color(COLOR_RED,COLOR_BLACK,1);
       switch(LCSrandom(4))
       {
-      case 0:addstr("\"No admittance, youngster.\"", gamelog);break;
-      case 1:addstr("\"You're too young to work here.\"", gamelog);break;
-      case 2:addstr("\"Go play someplace else.\"", gamelog);break;
-      case 3:addstr("\"Where's your mother?\"", gamelog);break;
+      case 0:addstr("「子供はここには入れない。」", gamelog);break;
+      case 1:addstr("「ここで働くには若すぎる。」", gamelog);break;
+      case 2:addstr("「別の場所で遊びなさい。」", gamelog);break;
+      case 3:addstr("「お母さんはどこへ? 」", gamelog);break;
       }
       gamelog.newline();
       break;
@@ -1992,7 +1988,7 @@ void special_security(bool metaldetect)
       set_color(COLOR_RED,COLOR_BLACK,1);
       switch(LCSrandom(1))
       {
-      case 0:addstr("\"Employees only.\"", gamelog);break;
+      case 0:addstr("「ここは社員専用だ。」", gamelog);break;
       }
       gamelog.newline();
       break;
@@ -2000,10 +1996,10 @@ void special_security(bool metaldetect)
       set_color(COLOR_RED,COLOR_BLACK,1);
       switch(LCSrandom(4))
       {
-      case 0:addstr("\"You don't work here, do you?\"", gamelog);break;
-      case 1:addstr("\"Hmm... can I see your badge?\"", gamelog);break;
-      case 2:addstr("\"There's just something off about you.\"", gamelog);break;
-      case 3:addstr("\"You must be new. You'll need your badge.\"", gamelog);break;
+      case 0:addstr("「あなたはここで働いていませんね? 」", gamelog);break;
+      case 1:addstr("「うーむ…バッジを見せてもらえますか? 」", gamelog);break;
+      case 2:addstr("「あなたは何か様子がおかしいのですが。」", gamelog);break;
+      case 3:addstr("「新人か? ここではバッジが必要だ。」", gamelog);break;
       }
       gamelog.newline();
       break;
@@ -2011,12 +2007,12 @@ void special_security(bool metaldetect)
       set_color(COLOR_RED,COLOR_BLACK,1);
       switch(LCSrandom(5))
       {
-      case 0:addstr("\"Good God! What is wrong with your clothes?\"", gamelog);break;
-      case 1:addstr("\"Are you hurt?! The aid station is the other way!\"", gamelog);break;
-      case 2:addstr("\"Your clothes, that's blood!\"", gamelog);break;
-      case 3:addstr("\"Blood?! That's more than a little suspicious...\"", gamelog);break;
-      case 4:addstr("\"Did you just butcher a cat?!\"", gamelog);break;
-      case 5:addstr("\"Blood everywhere...?\"", gamelog);break;
+      case 0:addstr("「おい! その服はどうしたんだ? 」", gamelog);break;
+      case 1:addstr("「ケガをしているのか?! 医療室はあっちだ! 」", gamelog);break;
+      case 2:addstr("「服に血が! 」", gamelog);break;
+      case 3:addstr("「血?! 何があったんだ…」", gamelog);break;
+      case 4:addstr("「猫を殺したのか?!」", gamelog);break;
+      case 5:addstr("「血まみれだ…? 」", gamelog);break;
       }
       gamelog.newline();
       break;
@@ -2024,8 +2020,8 @@ void special_security(bool metaldetect)
       set_color(COLOR_RED,COLOR_BLACK,1);
       switch(LCSrandom(2))
       {
-      case 0:addstr("\"Good God! What is wrong with your clothes?\"", gamelog);break;
-      case 1:addstr("\"Is that a damaged halloween costume?\"", gamelog);break;
+      case 0:addstr("「おい! その服はどうしたんだ? 」", gamelog);break;
+      case 1:addstr("「そのボロボロの服はハロウィンの衣装か? 」", gamelog);break;
       }
       gamelog.newline();
       break;
@@ -2033,8 +2029,8 @@ void special_security(bool metaldetect)
       set_color(COLOR_RED,COLOR_BLACK,1);
       switch(LCSrandom(2))
       {
-      case 0:addstr("\"That looks like you sewed it yourself.\"", gamelog);break;
-      case 1:addstr("\"That's a poor excuse for a uniform. Who are you?\"", gamelog);break;
+      case 0:addstr("「その服は自分で作ったものだな。」", gamelog);break;
+      case 1:addstr("「その制服はできの悪い偽物だ。お前は誰だ? 」", gamelog);break;
       }
       gamelog.newline();
       break;
@@ -2047,11 +2043,11 @@ void special_security(bool metaldetect)
       }
       else switch(LCSrandom(5))
       {
-      case 0:addstr("\"Put that away!\"", gamelog);break;
-      case 1:addstr("\"Hey, back off!\"", gamelog);break;
-      case 2:addstr("\"Don't try anything!\"", gamelog);break;
-      case 3:addstr("\"Are you here to make trouble?\"", gamelog);break;
-      case 4:addstr("\"Stay back!\"", gamelog);break;
+      case 0:addstr("「離れろ! 」", gamelog);break;
+      case 1:addstr("「おい、下がれ! 」", gamelog);break;
+      case 2:addstr("「何もするな! 」", gamelog);break;
+      case 3:addstr("「何をするつもりだ? 」", gamelog);break;
+      case 4:addstr("「下がれ! 」", gamelog);break;
       }
       gamelog.newline();
       break;
@@ -2060,10 +2056,10 @@ void special_security(bool metaldetect)
 
       switch(LCSrandom(4))
       {
-      case 0:addstr("\"Move along.\"", gamelog);break;
-      case 1:addstr("\"Have a nice day.\"", gamelog);break;
-      case 2:addstr("\"Quiet day, today.\"", gamelog);break;
-      case 3:addstr("\"Go on in.\"", gamelog);break;
+      case 0:addstr("「そのまま進んでください。」", gamelog);break;
+      case 1:addstr("「よい一日を。」", gamelog);break;
+      case 2:addstr("「今日はいい天気ですね。」", gamelog);break;
+      case 3:addstr("「入ってください。」", gamelog);break;
       }
       gamelog.newline();
       break;

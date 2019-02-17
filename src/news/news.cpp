@@ -1010,15 +1010,14 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                   {
                      if(!liberalguardian)
                      {
-                        strcat(story,"  According to sources that were at the scene, ");
-                        strcat(story,"the Liberal Crime Squad contaminated the state's water supply");
-                        strcat(story,"yesterday by tampering with equipment on the site.");
+                        strcat(story,"  現場の状況によると、");
+                        strcat(story,"リベラル・クライム・スコードは施設の設備を不正操作して州の水道を汚染させたようだ。");
                         strcat(story,"&r");
                      }
                      else
                      {
-                        strcat(story,"  The Liberal Crime Squad tampered with the state's water supply yesterday, ");
-                        strcat(story,"demonstrating the extreme dangers of Nuclear Waste. ");
+                        strcat(story,"  リベラル・クライム・スコードは、核汚染の危険性を示すため");
+                        strcat(story,"州の水道を汚染させた。");
                         strcat(story,"&r");
                      }
                   }
@@ -1026,15 +1025,14 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                   {
                      if(!liberalguardian)
                      {
-                        strcat(story,"  According to sources that were at the scene, ");
-                        strcat(story,"the Liberal Crime Squad nearly caused a catastrophic meltdown of the nuclear ");
-                        strcat(story,"reactor.");
+                        strcat(story,"  現場の状況によると、");
+                        strcat(story,"リベラル・クライム・スコードの行為で原子炉は破滅的なメルトダウン寸前だったようだ。");
                         strcat(story,"&r");
                      }
                      else
                      {
-                        strcat(story,"  The Liberal Crime Squad brought the reactor to the verge of a nuclear meltdown, ");
-                        strcat(story,"demonstrating the extreme vulnerability and danger of Nuclear Power Plants. ");
+                        strcat(story,"  リベラル・クライム・スコードは、原子力発電所の脆弱性と危険性を示すため、");
+                        strcat(story,"原子炉をメルトダウン寸前にまで追い込んだ。");
                         strcat(story,"&r");
                      }
                   }
@@ -1043,14 +1041,14 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                {
                   if(!liberalguardian)
                   {
-                     strcat(story,"  According to sources that were at the scene, ");
-                     strcat(story,"the Liberal Crime Squad allegedly freed or attempted to free prisoners from the police lockup.");
+                     strcat(story,"  現場の状況によると、");
+                     strcat(story,"リベラル・クライム・スコードは警察署から容疑者を脱走させようとした、または脱走させたようだ。");
                      strcat(story,"&r");
                   }
                   else
                   {
-                     strcat(story,"  The Liberal Crime Squad attempted to rescue innocent people from the police lockup, ");
-                     strcat(story,"saving them from torture and brutality at the hands of Conservative police interrogators.");
+                     strcat(story,"  リベラル・クライム・スコードは、警察に拘束された無実の人々を解放し、");
+                     strcat(story,"保守的な警察の尋問官による拷問と暴行から彼らを救い出した。");
                      strcat(story,"&r");
                   }
                }
@@ -1058,14 +1056,14 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                {
                   if(!liberalguardian)
                   {
-                     strcat(story,"  According to sources that were at the scene, ");
-                     strcat(story,"the Liberal Crime Squad opened the bank vault, which held more than $100,000 at the time.");
+                     strcat(story,"  現場の状況によると、");
+                     strcat(story,"リベラル・クライム・スコードは銀行の金庫を開け、$100,000以上を持ち去ったようだ。");
                      strcat(story,"&r");
                   }
                   else
                   {
-                     strcat(story,"  The Liberal Crime Squad opened the bank vault, ");
-                     strcat(story,"showing the triumph of Liberal ideals over Conservative economics.");
+                     strcat(story,"  リベラル・クライム・スコードは銀行の金庫を開け、");
+                     strcat(story,"保守経済に対するリベラル思想の勝利を証明した。");
                      strcat(story,"&r");
                   }
                }
@@ -1073,14 +1071,14 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                {
                   if(!liberalguardian)
                   {
-                     strcat(story,"  According to sources that were at the scene, ");
-                     strcat(story,"the Liberal Crime Squad threatened innocent bystanders in order to rob the bank vault.");
+                     strcat(story,"  現場の状況によると、");
+                     strcat(story,"リベラル・クライム・スコードは銀行員を脅し、金庫を開けさせたようだ。");
                      strcat(story,"&r");
                   }
                   else
                   {
-                     strcat(story,"  The Liberal Crime Squad demanded access to the bank vault, ");
-                     strcat(story,"hoping to acquire the resources to overcome evil.");
+                     strcat(story,"  リベラル・クライム・スコードは悪と戦う資源を求めるため、");
+                     strcat(story,"銀行の金庫へのアクセスを要求した。");
                      strcat(story,"&r");
                   }
                }
@@ -1088,14 +1086,14 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                {
                   if(!liberalguardian)
                   {
-                     strcat(story,"  According to sources that were at the scene, ");
-                     strcat(story,"the Liberal Crime Squad allegedly freed or attempted to free prisoners from the courthouse lockup.");
+                     strcat(story,"  現場の状況によると、");
+                     strcat(story,"リベラル・クライム・スコードは裁判所から容疑者を脱走させようとした、または脱走させたようだ。");
                      strcat(story,"&r");
                   }
                   else
                   {
-                     strcat(story,"  The Liberal Crime Squad attempted to rescue innocent people from the courthouse lockup, ");
-                     strcat(story,"saving them from the highly corrupt Conservative justice system.");
+                     strcat(story,"  リベラル・クライム・スコードは、裁判所に拘束された無実の人々を解放し、");
+                     strcat(story,"保守によって腐敗した司法から彼らを救い出した。");
                      strcat(story,"&r");
                   }
                }
@@ -1103,14 +1101,13 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                {
                   if(!liberalguardian)
                   {
-                     strcat(story,"  According to sources that were at the scene, ");
-                     strcat(story,"the Liberal Crime Squad allegedly freed prisoners while in the facility.");
+                     strcat(story,"  現場の状況によると、");
+                     strcat(story,"リベラル・クライム・スコードは施設から囚人を脱走させようとしたようだ。");
                      strcat(story,"&r");
                   }
                   else
                   {
-                     strcat(story,"  The Liberal Crime Squad attempted to rescue innocent people from the abusive Conservative conditions ");
-                     strcat(story,"at the prison.");
+                     strcat(story,"  リベラル・クライム・スコードは、保守に虐待されている無実の人々を収容所から解放した。");
                      strcat(story,"&r");
                   }
                }
@@ -1118,15 +1115,14 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                {
                   if(!liberalguardian)
                   {
-                     strcat(story,"  According to police sources that were at the scene, ");
-                     strcat(story,"the Liberal Crime Squad allegedly violated the sacred ");
-                     strcat(story,"trust and attempted to influence a jury.");
+                     strcat(story,"  現場の警察関係者の情報からすると、");
+                     strcat(story,"リベラル・クライム・スコードの行為は陪審員に影響を与え、");
+                     strcat(story,"裁判の信頼を失墜させるものだ。");
                      strcat(story,"&r");
                   }
                   else
                   {
-                     strcat(story,"  The Liberal Crime Squad has apologized over reports that the operation ");
-                     strcat(story,"may have interfered with jury deliberations.");
+                     strcat(story,"  リベラル・クライム・スコードが陪審員の熟慮を妨げたことをここで謝罪する。");
                      strcat(story,"&r");
                   }
                }
@@ -1134,13 +1130,13 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                {
                   if(!liberalguardian)
                   {
-                     strcat(story,"  According to police sources that were at the scene, ");
-                     strcat(story,"intelligence officials seemed very nervous about something.");
+                     strcat(story,"  現場の警察関係者の情報によると、");
+                     strcat(story,"情報局職員はこの件で非常に動揺しているようだ。");
                      strcat(story,"&r");
                   }
                   else
                   {
-                     strcat(story,"  Liberal Crime Squad computer specialists worked to liberate information from CIA computers.");
+                     strcat(story,"  リベラル・クライム・スコードのコンピュータ専門チームはCIAのコンピュータから機密情報を解放した。");
                      strcat(story,"&r");
                   }
                }
@@ -1148,13 +1144,13 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                {
                   if(!liberalguardian)
                   {
-                     strcat(story,"  According to sources, ");
-                     strcat(story,"the Liberal Crime Squad attempted to break into the armory.");
+                     strcat(story,"  関係者の情報によると、");
+                     strcat(story,"リベラル・クライム・スコードは武器庫へ侵入を試みたようだ。");
                      strcat(story,"&r");
                   }
                   else
                   {
-                     strcat(story,"  Liberal Crime Squad infiltration specialists worked to liberate weapons from the oppressors.");
+                     strcat(story,"  リベラル・クライム・スコードの特殊潜入班は抑圧者から武器を解放した。");
                      strcat(story,"&r");
                   }
                }
@@ -1162,13 +1158,13 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                {
                   if(!liberalguardian)
                   {
-                     strcat(story,"  According to police sources that were at the scene, ");
-                     strcat(story,"the owner of the house seemed very frantic about some missing property.");
+                     strcat(story,"  現場の警察関係者の情報によると、");
+                     strcat(story,"物を盗まれた家主はパニック状態だったようだ。");
                      strcat(story,"&r");
                   }
                   else
                   {
-                     strcat(story,"  The Liberal Crime Squad was attempting to uncover the CEO's Conservative corruption.");
+                     strcat(story,"  リベラル・クライム・スコードが保守CEOの腐敗を明らかにした。");
                      strcat(story,"&r");
                   }
                }
@@ -1176,13 +1172,13 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                {
                   if(!liberalguardian)
                   {
-                     strcat(story,"  According to police sources that were at the scene, ");
-                     strcat(story,"executives on the scene seemed very nervous about something.");
+                     strcat(story,"  現場の警察関係者の情報によると、");
+                     strcat(story,"現場の企業幹部たちはこの件で非常に動揺しているようだ。");
                      strcat(story,"&r");
                   }
                   else
                   {
-                     strcat(story,"  The Liberal Crime Squad was attempting to uncover the company's Conservative corruption.");
+                     strcat(story,"  リベラル・クライム・スコードが企業における保守の腐敗を明らかにした。");
                      strcat(story,"&r");
                   }
                }

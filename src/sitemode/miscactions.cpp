@@ -494,9 +494,9 @@ char radio_broadcast()
       clearmessagearea();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("The Conservatives in the room hurry the Squad, so ", gamelog);
+      addstr("保守が放送室に駆けつけてきた。", gamelog);
       move(17,1);
-      addstr("the broadcast never happens.", gamelog);
+      addstr("放送は不可能だ。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -508,40 +508,40 @@ char radio_broadcast()
    clearmessagearea();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(16,1);
-   addstr("The Squad takes control of the microphone and ", gamelog);
+   addstr("部隊はマイクを手に取り、", gamelog);
    move(17,1);
    int viewhit=LCSrandom(VIEWNUM);
    switch(viewhit)
    {
-      case VIEW_GAY:                    addstr("discusses homosexual rights.", gamelog);break;
-      case VIEW_DEATHPENALTY:           addstr("examines the death penalty.", gamelog);break;
-      case VIEW_TAXES:                  addstr("discusses the tax code.", gamelog);break;
-      case VIEW_NUCLEARPOWER:           addstr("runs down nuclear power.", gamelog);break;
-      case VIEW_ANIMALRESEARCH:         addstr("discusses the horrors of animal research.", gamelog);break;
-      case VIEW_POLICEBEHAVIOR:         addstr("goes over cases of police brutality.", gamelog);break;
-      case VIEW_TORTURE:                addstr("discusses prisoner abuse and torture.", gamelog);break;
-      case VIEW_PRISONS:                addstr("discusses the prison system's flaws.", gamelog);break;
-      case VIEW_INTELLIGENCE:           addstr("debates privacy law.", gamelog);break;
-      case VIEW_FREESPEECH:             addstr("talks about free speech.", gamelog);break;
-      case VIEW_GENETICS:               addstr("discusses the implications of genetic research.", gamelog);break;
-      case VIEW_JUSTICES:               addstr("talks about the record of a Conservative judge.", gamelog);break;
-      case VIEW_GUNCONTROL:             addstr("talks about gun control.", gamelog);break;
-      case VIEW_SWEATSHOPS:             addstr("brings details about sweatshops to light.", gamelog);break;
-      case VIEW_POLLUTION:              addstr("does a show on industrial pollution.", gamelog);break;
-      case VIEW_CORPORATECULTURE:       addstr("jokes about corporate culture.", gamelog);break;
-      case VIEW_CEOSALARY:              addstr("gives examples of CEO excesses.", gamelog);break;
-      case VIEW_WOMEN:                  addstr("discusses abortion.", gamelog);break;// "Performs an abortion live on the air."
+      case VIEW_GAY:                    addstr("同性愛者の権利について議論した。", gamelog);break;
+      case VIEW_DEATHPENALTY:           addstr("死刑制度について論じた。", gamelog);break;
+      case VIEW_TAXES:                  addstr("税法について議論した。", gamelog);break;
+      case VIEW_NUCLEARPOWER:           addstr("原子力を批判した。", gamelog);break;
+      case VIEW_ANIMALRESEARCH:         addstr("恐るべき動物実験ついて議論した。", gamelog);break;
+      case VIEW_POLICEBEHAVIOR:         addstr("警官による暴行の事例を説明した。", gamelog);break;
+      case VIEW_TORTURE:                addstr("囚人への虐待と拷問について論じた。", gamelog);break;
+      case VIEW_PRISONS:                addstr("刑務所制度の問題点について論じた。", gamelog);break;
+      case VIEW_INTELLIGENCE:           addstr("プライバシー法について討論した。", gamelog);break;
+      case VIEW_FREESPEECH:             addstr("言論の自由について話をした。", gamelog);break;
+      case VIEW_GENETICS:               addstr("遺伝子研究への懸念について論じた。", gamelog);break;
+      case VIEW_JUSTICES:               addstr("保守的裁判記録について話をした。", gamelog);break;
+      case VIEW_GUNCONTROL:             addstr("銃規制について話をした。", gamelog);break;
+      case VIEW_SWEATSHOPS:             addstr("搾取工場の詳細を明らかにした。", gamelog);break;
+      case VIEW_POLLUTION:              addstr("工場による汚染のトークショーを行った。", gamelog);break;
+      case VIEW_CORPORATECULTURE:       addstr("企業文化に関するジョークを披露した。", gamelog);break;
+      case VIEW_CEOSALARY:              addstr("CEOの高額すぎる報酬の例を示した。", gamelog);break;
+      case VIEW_WOMEN:                  addstr("中絶について議論した。", gamelog);break;// "Performs an abortion live on the air."
                                                                             // Get [LAWFLAG_SPEECH], [LAWFLAG_MURDER], [LAWFLAG_DISTURBANCE] -- LK
-      case VIEW_CIVILRIGHTS:            addstr("debates affirmative action.", gamelog);break;
-      case VIEW_DRUGS:                  addstr("has a frank talk about drugs.", gamelog);break;
-      case VIEW_IMMIGRATION:            addstr("examines the issue of immigration.", gamelog);break;
-      case VIEW_MILITARY:               addstr("talks about militarism in modern culture.", gamelog);break;
-      case VIEW_AMRADIO:                addstr("discusses other AM radio shows.", gamelog);break;
-      case VIEW_CABLENEWS:              addstr("talks about Cable News.", gamelog);break;
-      case VIEW_LIBERALCRIMESQUAD:      addstr("lets people know about the Liberal Crime Squad.", gamelog);break;
+      case VIEW_CIVILRIGHTS:            addstr("アファーマティブ・アクションについて討論した。", gamelog);break;
+      case VIEW_DRUGS:                  addstr("薬物について率直な話をした。", gamelog);break;
+      case VIEW_IMMIGRATION:            addstr("移民問題について論じた。", gamelog);break;
+      case VIEW_MILITARY:               addstr("現代の軍国主義の話をした。", gamelog);break;
+      case VIEW_AMRADIO:                addstr("AMラジオショーについて議論した。", gamelog);break;
+      case VIEW_CABLENEWS:              addstr("ケーブルニュースの話をした。", gamelog);break;
+      case VIEW_LIBERALCRIMESQUAD:      addstr("リベラル・クライム・スコードを人々に知らしめようとした。", gamelog);break;
       default:
-      case VIEW_LIBERALCRIMESQUADPOS:   addstr("extols the virtues of the Liberal Crime Squad.", gamelog);break;
-      case VIEW_CONSERVATIVECRIMESQUAD: addstr("demonizes the Conservative Crime Squad.", gamelog);break;
+      case VIEW_LIBERALCRIMESQUADPOS:   addstr("リベラル・クライム・スコードのすばらしさを称えた。", gamelog);break;
+      case VIEW_CONSERVATIVECRIMESQUAD: addstr("コンサバ・クライム・スコードを悪魔化した。", gamelog);break;
    }
    gamelog.newline();
 
@@ -579,14 +579,14 @@ char radio_broadcast()
 
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(16,1);
-   if(segmentpower<25)addstr("The Squad sounds wholly insane.", gamelog);
-   else if(segmentpower<35)addstr("The show really sucks.", gamelog);
-   else if(segmentpower<45)addstr("It is a very boring hour.", gamelog);
-   else if(segmentpower<55)addstr("It is mediocre radio.", gamelog);
-   else if(segmentpower<70)addstr("The show was all right.", gamelog);
-   else if(segmentpower<85)addstr("The Squad put on a good show.", gamelog);
-   else if(segmentpower<100)addstr("It was thought-provoking, even humorous.", gamelog);
-   else addstr("It was the best hour of AM radio EVER.", gamelog);
+   if(segmentpower<25)addstr("部隊のトークはまるで狂っているように聞こえた。", gamelog);
+   else if(segmentpower<35)addstr("ショーは本当にひどいものだった。", gamelog);
+   else if(segmentpower<45)addstr("とても退屈な時間になった。", gamelog);
+   else if(segmentpower<55)addstr("平凡なラジオ放送だった。", gamelog);
+   else if(segmentpower<70)addstr("ショーはうまくいった。", gamelog);
+   else if(segmentpower<85)addstr("部隊のショーはすばらしいものだった。", gamelog);
+   else if(segmentpower<100)addstr("それは示唆とユーモアに富んだものになった。", gamelog);
+   else addstr("それはAMラジオでかつてない程のすばらしい時間となった。", gamelog);
    gamelog.newline();
 
    getkey();
@@ -611,41 +611,41 @@ char radio_broadcast()
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
-               addstr("The hostage ", gamelog);
+               addstr("人質の", gamelog);
                addstr(activesquad->squad[p]->prisoner->name, gamelog);
-               addstr(" is forced on to ", gamelog);
+               addstr("に", gamelog);
                move(17,1);
                switch(viewhit)
                {
-                  case VIEW_GAY:                    addstr("discuss homosexual rights.", gamelog);break;
-                  case VIEW_DEATHPENALTY:           addstr("examine the death penalty.", gamelog);break;
-                  case VIEW_TAXES:                  addstr("discuss the tax code.", gamelog);break;
-                  case VIEW_NUCLEARPOWER:           addstr("run down nuclear power.", gamelog);break;
-                  case VIEW_ANIMALRESEARCH:         addstr("discuss the horrors of animal research.", gamelog);break;
-                  case VIEW_POLICEBEHAVIOR:         addstr("go over cases of police brutality.", gamelog);break;
-                  case VIEW_TORTURE:                addstr("discuss prisoner abuse and torture.", gamelog);break;
-                  case VIEW_PRISONS:                addstr("discuss the prison system's flaws.", gamelog);break;
-                  case VIEW_INTELLIGENCE:           addstr("debate privacy law.", gamelog);break;
-                  case VIEW_FREESPEECH:             addstr("talk about free speech.", gamelog);break;
-                  case VIEW_GENETICS:               addstr("discuss the implications of genetic research.", gamelog);break;
-                  case VIEW_JUSTICES:               addstr("talk about the record of a Conservative judge.", gamelog);break;
-                  case VIEW_GUNCONTROL:             addstr("talk about gun control.", gamelog);break;
-                  case VIEW_SWEATSHOPS:             addstr("bring details about sweatshops to light.", gamelog);break;
-                  case VIEW_POLLUTION:              addstr("do a show on industrial pollution.", gamelog);break;
-                  case VIEW_CORPORATECULTURE:       addstr("joke about corporate culture.", gamelog);break;
-                  case VIEW_CEOSALARY:              addstr("give examples of CEO excesses.", gamelog);break;
-                  case VIEW_WOMEN:                  addstr("discuss abortion.", gamelog);break;// "Performs an abortion live on the air."
+                  case VIEW_GAY:                    addstr("同性愛者の権利について議論をさせた。", gamelog);break;
+                  case VIEW_DEATHPENALTY:           addstr("死刑制度について論じさせた。", gamelog);break;
+                  case VIEW_TAXES:                  addstr("税法について議論させた。", gamelog);break;
+                  case VIEW_NUCLEARPOWER:           addstr("原子力を批判させた。", gamelog);break;
+                  case VIEW_ANIMALRESEARCH:         addstr("恐るべき動物実験ついて議論させた。", gamelog);break;
+                  case VIEW_POLICEBEHAVIOR:         addstr("警官による暴行の事例を説明させた。", gamelog);break;
+                  case VIEW_TORTURE:                addstr("囚人への虐待と拷問について論じさせた。", gamelog);break;
+                  case VIEW_PRISONS:                addstr("刑務所制度の問題点について論じさせた。", gamelog);break;
+                  case VIEW_INTELLIGENCE:           addstr("プライバシー法について討論させた。", gamelog);break;
+                  case VIEW_FREESPEECH:             addstr("言論の自由について話をさせた。", gamelog);break;
+                  case VIEW_GENETICS:               addstr("遺伝子研究への懸念について論じさせた。", gamelog);break;
+                  case VIEW_JUSTICES:               addstr("保守的裁判記録について話をさせた。", gamelog);break;
+                  case VIEW_GUNCONTROL:             addstr("銃規制について話をさせた。", gamelog);break;
+                  case VIEW_SWEATSHOPS:             addstr("搾取工場の詳細を明らかにさせた。", gamelog);break;
+                  case VIEW_POLLUTION:              addstr("工場による汚染のトークショーを行わせた。", gamelog);break;
+                  case VIEW_CORPORATECULTURE:       addstr("企業文化に関するジョークを披露させた。", gamelog);break;
+                  case VIEW_CEOSALARY:              addstr("CEOの高額すぎる報酬の例を示させた。", gamelog);break;
+                  case VIEW_WOMEN:                  addstr("中絶について議論させた。", gamelog);break;// "Performs an abortion live on the air."
                                                                                       // Get [LAWFLAG_SPEECH], [LAWFLAG_MURDER], [LAWFLAG_DISTURBANCE] -- LK
-                  case VIEW_CIVILRIGHTS:            addstr("debate affirmative action.", gamelog);break;
-                  case VIEW_DRUGS:                  addstr("have a frank talk about drugs.", gamelog);break;
-                  case VIEW_IMMIGRATION:            addstr("examine the issue of immigration.", gamelog);break;
-                  case VIEW_MILITARY:               addstr("talk about militarism in modern culture.", gamelog);break;
-                  case VIEW_AMRADIO:                addstr("discuss other AM radio shows.", gamelog);break;
-                  case VIEW_CABLENEWS:              addstr("talk about Cable News.", gamelog);break;
-                  case VIEW_LIBERALCRIMESQUAD:      addstr("let people know about the Liberal Crime Squad.", gamelog);break;
+                  case VIEW_CIVILRIGHTS:            addstr("アファーマティブ・アクションについて討論させた。", gamelog);break;
+                  case VIEW_DRUGS:                  addstr("薬物について率直な話をさせた。", gamelog);break;
+                  case VIEW_IMMIGRATION:            addstr("移民問題について論じさせた。", gamelog);break;
+                  case VIEW_MILITARY:               addstr("現代の軍国主義の話をさせた。", gamelog);break;
+                  case VIEW_AMRADIO:                addstr("AMラジオショーについて議論させた。", gamelog);break;
+                  case VIEW_CABLENEWS:              addstr("ケーブルニュースの話をさせた。", gamelog);break;
+                  case VIEW_LIBERALCRIMESQUAD:      addstr("リベラル・クライム・スコードを人々に知らせさせた。", gamelog);break;
                   default:
-                  case VIEW_LIBERALCRIMESQUADPOS:   addstr("extol the virtues of the Liberal Crime Squad.", gamelog);break;
-                  case VIEW_CONSERVATIVECRIMESQUAD: addstr("demonize the Conservative Crime Squad.", gamelog);break;
+                  case VIEW_LIBERALCRIMESQUADPOS:   addstr("リベラル・クライム・スコードのすばらしさを称えさせた。", gamelog);break;
+                  case VIEW_CONSERVATIVECRIMESQUAD: addstr("コンサバ・クライム・スコードを悪魔化させた。", gamelog);break;
                }
                gamelog.newline();
 
@@ -668,8 +668,9 @@ char radio_broadcast()
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
+               addstr("人質の", gamelog);
                addstr(activesquad->squad[p]->prisoner->name, gamelog);
-               addstr(", the hostage, is kept off-air.", gamelog);
+               addstr("は何も話さなかった。", gamelog);
                gamelog.newline();
 
                getkey();
@@ -686,10 +687,10 @@ char radio_broadcast()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("Moderates at the station appreciated the show.", gamelog);
+      addstr("局の穏健派はショーを評価した。", gamelog);
       gamelog.newline();
       move(17,1);
-      addstr("They no longer feel alienated.", gamelog);
+      addstr("彼らはもはや敵視していないようだ。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -702,9 +703,7 @@ char radio_broadcast()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("Security is waiting for the Squad ", gamelog);
-      move(17,1);
-      addstr("after the show!", gamelog);
+      addstr("放送が終了すると警備員が現れた!", gamelog);
       gamelog.newline();
 
       getkey();
@@ -726,9 +725,9 @@ char radio_broadcast()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("The show was so good that security listened to it ", gamelog);
+      addstr("警備員も部屋でショーに聞き入っていたようだ。", gamelog);
       move(17,1);
-      addstr("at their desks.  The Squad might yet escape.", gamelog);
+      addstr("部隊は脱出することができた。", gamelog);
       gamelog.newline();
 
       getkey();

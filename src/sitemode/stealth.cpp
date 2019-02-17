@@ -49,11 +49,11 @@ void noticecheck(int exclude,int difficulty)
          set_color(COLOR_RED,COLOR_BLACK,1);
          move(16,1);
          addstr(encounter[e].name, gamelog);
-         addstr(" observes your Liberal activity ", gamelog);
+         addstr("はあなたのリベラル行動を目撃すると、", gamelog);
          move(17,1);
          if(encounter[e].align==ALIGN_CONSERVATIVE)
-            addstr("and lets forth a piercing Conservative alarm cry!", gamelog);
-         else addstr("and shouts for help!", gamelog);
+            addstr("大声で保守派の仲間に知らせた!", gamelog);
+         else addstr("大声で助けを呼んだ!", gamelog);
          gamelog.newline();
 
          sitealarm=1;

@@ -79,17 +79,17 @@ char talkToBankTeller(Creature &a, Creature &tk)
    addstr(" prepares to rob the bank:");*/
 
    move(11,1);
-   addstr("A - Quietly pass the teller a robbery note");
-   if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr(" while naked");
-   addstr(".");
+   addstr("A - ");
+   if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr("全裸で");
+   addstr("黙って窓口係にメモを渡す");
    move(12,1);
-   addstr("B - Threaten bystanders and demand access to the vault");
-   if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr(" while naked");
-   addstr(".");
+   addstr("B - ");
+   if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr("全裸で");
+   addstr("銀行員を脅し金庫を開けさせる");
    move(13,1);
-   addstr("C - On second thought, don't rob the bank");
-   if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr(" while naked");
-   addstr(".");
+   addstr("C - ");
+   if(a.is_naked() && a.animalgloss!=ANIMALGLOSS_ANIMAL)addstr("全裸で");
+   addstr("考え直して銀行を襲わない");
 
    int c;
    do c=getkey(); while(c<'a'&&c>'c');
@@ -101,22 +101,24 @@ char talkToBankTeller(Creature &a, Creature &tk)
       set_color(COLOR_WHITE, COLOR_BLACK, 1);
       move(9, 1);
       addstr(a.name, gamelog);
-      addstr(" slips the teller a note: ", gamelog);
+      addstr("は窓口にメモを滑り込ませた: ", gamelog);
       set_color(COLOR_GREEN, COLOR_BLACK, 1);
       move(10, 1);
+      addstr("『");
       switch(LCSrandom(10))
       {
-      case 0:addstr("KINDLY PUT MONEY IN BAG. OR ELSE.", gamelog);break;
-      case 1:addstr("I AM LIBERATING YOUR MONEY SUPPLY.", gamelog);break;
-      case 2:addstr("THIS IS A ROBBERY. GIVE ME THE MONEY.", gamelog);break;
-      case 3:addstr("I HAVE A GUN. CASH PLEASE.", gamelog);break;
-      case 4:addstr("THE LIBERAL CRIME SQUAD REQUESTS CASH.", gamelog);break;
-      case 5:addstr("I AM MAKING A WITHDRAWAL. ALL YOUR MONEY.", gamelog);break;
-      case 6:addstr("YOU ARE BEING ROBBED. GIVE ME YOUR MONEY.", gamelog);break;
-      case 7:addstr("PLEASE PLACE LOTS OF DOLLARS IN THIS BAG.", gamelog);break;
-      case 8:addstr("SAY NOTHING. YOU ARE BEING ROBBED.", gamelog);break;
-      case 9:addstr("ROBBERY. GIVE ME CASH. NO FUNNY MONEY.", gamelog);break;
+      case 0:addstr("おとなしく金を鞄に詰めろ。さもないと。", gamelog);break;
+      case 1:addstr("お前たちの資金を解放するために来た。", gamelog);break;
+      case 2:addstr("強盗だ。金を出せ。", gamelog);break;
+      case 3:addstr("銃を持っている。金だ。", gamelog);break;
+      case 4:addstr("リベラル・クライム・スコードは金を要求する。", gamelog);break;
+      case 5:addstr("預金を引き出しに来た。全て出せ。", gamelog);break;
+      case 6:addstr("お前たちは強盗されている。金をよこせ。", gamelog);break;
+      case 7:addstr("この鞄にできるだけ金を詰めろ。", gamelog);break;
+      case 8:addstr("何も言うな。金を奪いに来た。", gamelog);break;
+      case 9:addstr("強盗だ。金を出せ。本物だ。", gamelog);break;
       }
+      addstr("』");
       gamelog.newline();
 
       getkey();
@@ -125,17 +127,17 @@ char talkToBankTeller(Creature &a, Creature &tk)
       {
          set_color(COLOR_WHITE, COLOR_BLACK, 1);
          move(11, 1);
-         addstr("The bank teller reads the note, ", gamelog);
+         addstr("窓口係はメモを読んだ。すると、", gamelog);
          switch(LCSrandom(5))
          {
-         case 0:addstr("gestures, ", gamelog);break;
-         case 1:addstr("signals, ", gamelog);break;
-         case 2:addstr("shouts, ", gamelog);break;
-         case 3:addstr("screams, ", gamelog);break;
-         case 4:addstr("gives a warning, ", gamelog);break;
+         case 0:addstr("身振りで", gamelog);break;
+         case 1:addstr("警報を鳴らして", gamelog);break;
+         case 2:addstr("叫んで", gamelog);break;
+         case 3:addstr("悲鳴を上げて", gamelog);break;
+         case 4:addstr("警告を発して", gamelog);break;
          }
          move(12, 1);
-         addstr("and dives for cover as the guards move in on the squad!", gamelog);
+         addstr("警備員に助けを求めた!", gamelog);
          gamelog.newline();
 
          getkey();
@@ -153,17 +155,17 @@ char talkToBankTeller(Creature &a, Creature &tk)
       {
          set_color(COLOR_WHITE, COLOR_BLACK, 1);
          move(11, 1);
-         addstr("The bank teller reads the note, ", gamelog);
+         addstr("窓口係はメモを読んだ。そして、", gamelog);
          switch(LCSrandom(5))
          {
-         case 0:addstr("nods calmly, ", gamelog);break;
-         case 1:addstr("looks startled, ", gamelog);break;
-         case 2:addstr("bites her lip, ", gamelog);break;
-         case 3:addstr("grimaces, ", gamelog);break;
-         case 4:addstr("frowns, ", gamelog);break;
+         case 0:addstr("黙ってうなずき", gamelog);break;
+         case 1:addstr("驚きながら", gamelog);break;
+         case 2:addstr("唇をかみ締めながら", gamelog);break;
+         case 3:addstr("顔をしかめながら", gamelog);break;
+         case 4:addstr("厳しい表情をしながら", gamelog);break;
          }
          move(12, 1);
-         addstr("and slips several bricks of cash into the squad's bag.", gamelog);
+         addstr("鞄に札束を詰めた。", gamelog);
          gamelog.newline();
 
          getkey();
@@ -194,9 +196,9 @@ char talkToBankTeller(Creature &a, Creature &tk)
       {
          move(9,1);
          addstr(armed_liberal->name, gamelog);
-         addstr(" brandishes the ", gamelog);
+         addstr("は", gamelog);
          addstr(armed_liberal->get_weapon().get_shortname(0), gamelog);
-         addstr(".", gamelog);
+         addstr("を見せ付けた。", gamelog);
          gamelog.newline();
 
          getkey();
@@ -205,14 +207,14 @@ char talkToBankTeller(Creature &a, Creature &tk)
       }
       move(10,1);
       addstr(a.name, gamelog);
-      addstr(" says, ", gamelog);
+      addstr("は言った。", gamelog);
       set_color(COLOR_GREEN,COLOR_BLACK,1);
       move(11,1);
-      addstr("\"", gamelog);
+      addstr("「", gamelog);
       addstr(slogan, gamelog);
       gamelog.record(" ");
       move(12,1);
-      addstr("OPEN THE VAULT, NOW!\"", gamelog);
+      addstr("今すぐ金庫を開けろ! 」", gamelog);
       gamelog.newline();
 
       getkey();
@@ -231,9 +233,9 @@ char talkToBankTeller(Creature &a, Creature &tk)
       {
          set_color(COLOR_WHITE, COLOR_BLACK, 1);
          move(9, 1);
-         addstr("The bank teller and dives for cover as ", gamelog);
+         addstr("窓口係と銀行員は", gamelog);
          move(10, 1);
-         addstr("guards move in on the squad!", gamelog);
+         addstr("警備員に助けを求めた!", gamelog);
          gamelog.newline();
 
          getkey();
@@ -256,13 +258,13 @@ char talkToBankTeller(Creature &a, Creature &tk)
       {
          set_color(COLOR_WHITE, COLOR_BLACK, 1);
          move(9, 1);
-         addstr("The bank employees hesitantly cooperate!", gamelog);
+         addstr("銀行員はしぶしぶ従った!", gamelog);
          gamelog.newline();
 
          getkey();
 
          move(10, 1);
-         addstr("The vault is open!", gamelog);
+         addstr("金庫が開いた!", gamelog);
          gamelog.newline();
 
          getkey();
@@ -400,7 +402,7 @@ char heyIWantToCancelMyRoom(Creature &a, Creature &tk)
    addstr("は言った。", gamelog);
    set_color(COLOR_GREEN, COLOR_BLACK, 1);
    move(10, 1);
-   addstr("「部屋を借りるのを止めたい。」", gamelog);
+   addstr("「部屋を借りるのをやめたい。」", gamelog);
    gamelog.newline();
 
    getkey();
@@ -874,13 +876,11 @@ char doYouComeHereOften(Creature &a, Creature &tk)
              addstr("あなたは私が探していた人だ。」", gamelog);
              break;
       case 5:addstr("「大切な所はデカいぜ。」", gamelog);break;
-      case 6:addstr("\"Daaaaaamn girl, I want to wrap your legs around my face and ", gamelog);
-             move(11,1);y++;
-             addstr("wear you like a feed bag!\"", gamelog); // Bill Hicks
+      case 6:addstr("「美しい人。あなたの脚で顔を覆い、マスクのように身につけたい! 」", gamelog); // Bill Hicks
              break;
-      case 7:addstr("\"Let's play squirrel.  I'll bust a nut in your hole.\"", gamelog);break;
-      case 8:addstr("\"You know, if I were you, I'd have sex with me.\"", gamelog);break;
-      case 9:addstr("\"You don't sweat much for a fat chick.\"", gamelog);break;
+      case 7:addstr("「リスごっこをしよう。あなたの中にナッツを隠したい。」", gamelog);break;
+      case 8:addstr("「わかっている。もし私があなたならば、私とsexしたいはずだ。」", gamelog);break;
+      case 9:addstr("「太ったヒヨコちゃんのために苦労したくないな。」", gamelog);break;
       case 10:addstr("\"Fuck me if I'm wrong but you want to kiss me, right?\"", gamelog);break;
       case 11:addstr("\"Your parents must be retarded, because you are special.\"", gamelog);break;
       case 12:addstr("\"Let's play trains...  you can sit on my face and I will chew chew chew.\"", gamelog);break;
@@ -1043,12 +1043,12 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 1 :addstr("「ステキな人! 今晩電話してください…」", gamelog);break;
          case 2 :addstr("「もちろん。」", gamelog);break;
          case 3 :addstr("「へっへっ。見逃してやるよ。ところで、私は田舎者が大好きなんだ…」", gamelog);break;
-         case 4 :addstr("「病気だ。そして今夜、もっと病が重くなる…」", gamelog);break;
+         case 4 :addstr("「あなたは病気だ。そして今夜、もっと病が重くなる…」", gamelog);break;
          case 5 :addstr("「おおお、見せてくれ! 」", gamelog);break;
-         case 6 :addstr("\"Wow, looks like I'm going to have to reward creativity tonight!\"", gamelog);break;
-         case 7 :addstr("\"Winter's coming.  You'd better bust more than one.\"", gamelog);break;
-         case 8 :addstr("\"But you're not, so the pleasure's all mine.\"", gamelog);break;
-         case 9 :addstr("\"Just wait until tonight, baby.\"", gamelog);break;
+         case 6 :addstr("「ええ。今夜、あなたの望みを叶えましょう! 」", gamelog);break;
+         case 7 :addstr("「冬が近い。1つでは足りませんね。」", gamelog);break;
+         case 8 :addstr("「でもあなたは私ではない。その喜びは全て私のもの…。」", gamelog);break;
+         case 9 :addstr("「ベイビー、だた夜まで待ってて。」", gamelog);break;
          case 10:addstr("\"You're wrong.\"", gamelog);break;
          case 11:addstr("\"I can drool on you if you like it that way.\"", gamelog);break;
          case 12:addstr("\"Oooo, all aboard baby!\"", gamelog);break;
@@ -1151,8 +1151,8 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       if(tk.type == CREATURE_CORPORATE_CEO)
       {
          if(a.gender_liberal != GENDER_MALE)
-            addstr("\"I'm a happily married man, sweetie.\"", gamelog);
-         else addstr("\"This ain't Brokeback Mountain, son.\"", gamelog);
+            addstr("「私は男性と結婚できて幸せよ。」", gamelog);
+         else addstr("「これはブロークバック・マウンテンではない。」", gamelog);
       }
       else if(law[LAW_FREESPEECH]==-2)
       {
@@ -1180,24 +1180,24 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 3 : addstr("「本物の便所へ行けよ、この田舎者。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <トイレを指差した>", gamelog);break;
-         case 4 : addstr("「トラウマ的事件だ。」", gamelog);
+         case 4 : addstr("「トラウマでしょうね。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <泣き出した>", gamelog);break;
          case 5 : addstr("「全部大きいぞ、デブ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <笑われた>", gamelog);break;
-         case 6 : addstr("\"You're disgusting.\"", gamelog);
+         case 6 : addstr("「最低だ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <turns away>", gamelog);break;
-         case 7 : addstr("\"You fuck squirrels?\"", gamelog);
+            addstr(" <立ち去った>", gamelog);break;
+         case 7 : addstr("「リスとヤりたいのか? 」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <looks dumbfounded>", gamelog);break;
-         case 8 : addstr("\"So what you're saying is you masturbate a lot.\"", gamelog);
+            addstr(" <あぜんとしている>", gamelog);break;
+         case 8 : addstr("「それはたくさんマス掻いてるってことか? 」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <wags finger>", gamelog);break;
-         case 9 : addstr("\"You're a pig.\"", gamelog);
+            addstr(" <指を前後に揺らした>", gamelog);break;
+         case 9 : addstr("「あんたは豚だ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <turns away>", gamelog);break;
+            addstr(" <立ち去った>", gamelog);break;
          case 10: addstr("\"Nice try, but no.\"", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <sticks out tongue>", gamelog);break;
@@ -1414,32 +1414,32 @@ char talkAboutIssues(Creature &a, Creature &tk)
          addstr("「警察はマイノリティの容疑者にしばしば拷問を行っている。」", gamelog);
          break;
       case LAW_PRIVACY:
-         addstr("「人々を農場の動物のように飼いならすシステムに反対しただけの", gamelog);move(y++,1);
-         addstr("無実の市民の情報が保管され続けている。」", gamelog);
+         addstr("「人々を農場の動物のように飼いならすシステムに反対しただけの無実の市民の情報", gamelog);
+         addstr("　が保管され続けている。」", gamelog);
          break;
       case LAW_DEATHPENALTY:
          addstr("「過去10年間で30人以上の人々が処刑されている。」", gamelog);
          break;
       case LAW_NUCLEARPOWER:
-         addstr("「核廃棄物は何世紀にも渡って存在し、多くの家族の脅威となる。", gamelog);move(y++,1);
-         addstr("もちろんこの付近でも。」", gamelog);
+         addstr("「核廃棄物は何世紀にも渡って存在し、多くの家族の脅威となる。もちろんこの付近", gamelog);move(y++,1);
+         addstr("　でも。」", gamelog);
          break;
       case LAW_POLLUTION:
-         addstr("「利益のみを追求し他のことは何もしない工場は、環境を汚染させ", gamelog);move(y++,1);
-         if (tk.animalgloss==ANIMALGLOSS_ANIMAL) addstr("人間だけでなく動物も傷つけている。」", gamelog);
-         else addstr("動物だけでなく人間も傷つけている。」", gamelog);
+         addstr("「利益のみを追求し他のことは何もしない工場は環境を汚染させ、", gamelog);move(y++,1);
+         if (tk.animalgloss==ANIMALGLOSS_ANIMAL) addstr("　人間だけでなく動物も傷つけている。」", gamelog);
+         else addstr("　動物だけでなく人間も傷つけている。」", gamelog);
          break;
       case LAW_LABOR:
-         addstr("「労働時間はますます長くなっているのに、給料はますます低くなっている", gamelog);move(y++,1);
-         addstr("ことに気づいているか。人々は計画的に奴隷のように働かされている。」", gamelog);
+         addstr("「労働時間はますます長くなっているのに、給料はますます低くなっていることに気", gamelog);move(y++,1);
+         addstr("　づいているだろうか。人々は計画的に奴隷のように働かされている。」", gamelog);
          break;
       case LAW_GAY:
-         addstr("「同性愛者はそうでない者と変わりない。だが、この国では未だ安っぽい", gamelog);move(y++,1);
-         addstr("エンターテイメントに登場する逸脱者のような扱いを受けている。」", gamelog);
+         addstr("「同性愛者はそうでない者と変わりない。だが、この国では未だ安っぽいエンターテ", gamelog);move(y++,1);
+         addstr("　イメントに登場する逸脱者のような扱いを受けている。」", gamelog);
          break;
       case LAW_CORPORATE:
-         addstr("\"Corporate executives use giant corporations as a means to become parasites ", gamelog);move(y++,1);
-         addstr("that suck wealth out of this country and put it into their pockets.\"", gamelog);
+         addstr("「企業の重役たちは、寄生虫のように富をこの国から自分のポケット吸い出すために", gamelog);move(y++,1);
+         addstr("　巨大企業を使っている。」", gamelog);
          break;
       case LAW_FREESPEECH:
          addstr("\"Protests and demonstrations are regularly and often brutally suppressed in ", gamelog);move(y++,1);

@@ -165,7 +165,7 @@ int choosespecialedition(char &clearformess)
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
-      addstr("Do you want to run a special edition?");
+      addstr("リベラルガーディアンに特別記事を掲載するか?");
 
       int x=1,y=10;
       char str[200];
@@ -198,7 +198,7 @@ int choosespecialedition(char &clearformess)
       }
 
       move(24,1);
-      addstr("Enter - Not in this month's Liberal Guardian");
+      addstr("Enter - 今月は掲載しない");
 
       int c=getkey();
 
@@ -585,25 +585,26 @@ void printnews(short li,short newspaper)
    else if(loottype[li]->get_idname()=="LOOT_RESEARCHFILES")
    {
       move(6,1);
-      addstr("The Liberal Guardian runs a story featuring research papers ", gamelog);
+      addstr("リベラルガーディアンに", gamelog);
       move(7,1);
 
       change_public_opinion(VIEW_LIBERALCRIMESQUAD,10);
       change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,10);
       switch(LCSrandom(4))
       {
-         case 0:addstr("documenting horrific animal rights abuses.", gamelog);
+         case 0:addstr("恐るべき動物虐待が行われたことを示す", gamelog);
             change_public_opinion(VIEW_ANIMALRESEARCH,50);break;
-         case 1:addstr("studying the effects of torture on cats.", gamelog);
+         case 1:addstr("拷問が猫に与える効果の", gamelog);
             change_public_opinion(VIEW_ANIMALRESEARCH,50);break;
-         case 2:addstr("covering up the accidental creation of a genetic monster.", gamelog);
+         case 2:addstr("事故で生み出された遺伝子操作モンスターの隠蔽を示す", gamelog);
             change_public_opinion(VIEW_GENETICS,50);break;
-         case 3:addstr("showing human test subjects dying under genetic research.", gamelog);
+         case 3:addstr("遺伝子研究の被験者が死亡した", gamelog);
             change_public_opinion(VIEW_GENETICS,50);break;
       }
+      addstr("論文に関する特別記事を掲載した。", gamelog);
       gamelog.newline();
       move(9,1);
-      addstr("The major networks and publications take it up and run it for weeks.", gamelog);
+      addstr("有力ネットワークと新聞社は、数週間に渡りこのことを取り上げた。", gamelog);
       gamelog.nextMessage();
    }
    else if(loottype[li]->get_idname()=="LOOT_PRISONFILES")
