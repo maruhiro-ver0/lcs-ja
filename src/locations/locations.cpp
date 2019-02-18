@@ -381,7 +381,7 @@ void initlocation(Location &loc)
       break;
    case SITE_INDUSTRY_NUCLEAR:
       if(law[LAW_NUCLEARPOWER]==2) {
-         loc.rename("核汚染発電所", "核汚染");
+         loc.rename("核廃棄所", "廃棄所");
       } else {
          loc.rename("原子力発電所", "原発");
       } break;

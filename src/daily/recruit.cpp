@@ -382,7 +382,6 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
             addstr(pool[p]->name, gamelog);
             addstr("は", gamelog);
             addstr(pool[p]->hisher(), gamelog);
-            addstr("の", gamelog);
             addstr(getview(LCSrandom(VIEWNUM-3),true), gamelog);
             addstr("に対する考え方を述べた。", gamelog);
             gamelog.newline();

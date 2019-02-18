@@ -565,19 +565,20 @@ void printnews(short li,short newspaper)
    else if(loottype[li]->get_idname()=="LOOT_JUDGEFILES")
    {
       move(6,1);
-      addstr("The Liberal Guardian runs a story with evidence of a Conservative judge ", gamelog);
+      addstr("リベラルガーディアンに、保守派裁判官の", gamelog);
       move(7,1);
 
       change_public_opinion(VIEW_LIBERALCRIMESQUAD,10);
       change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,10);
       switch(LCSrandom(2))
       {
-         case 0:addstr("taking bribes to acquit murderers.", gamelog);break;
-         case 1:addstr("promising Conservative rulings in exchange for appointments.", gamelog);break;
+         case 0:addstr("殺人事件を無罪にする賄賂の", gamelog);break;
+         case 1:addstr("地位と引き換えに保守的な判決を約束した", gamelog);break;
       }
       gamelog.newline();
+      addstr("証拠を示す特別記事を掲載した。", gamelog);
       move(8,1);
-      addstr("The major networks and publications take it up and run it for weeks.", gamelog);
+      addstr("有力ネットワークと新聞社は、数週間に渡りこの話題を取り上げた。", gamelog);
       gamelog.nextMessage();
 
       change_public_opinion(VIEW_JUSTICES,50);
@@ -604,7 +605,7 @@ void printnews(short li,short newspaper)
       addstr("論文に関する特別記事を掲載した。", gamelog);
       gamelog.newline();
       move(9,1);
-      addstr("有力ネットワークと新聞社は、数週間に渡りこのことを取り上げた。", gamelog);
+      addstr("有力ネットワークと新聞社は、数週間に渡りこの話題を取り上げた。", gamelog);
       gamelog.nextMessage();
    }
    else if(loottype[li]->get_idname()=="LOOT_PRISONFILES")

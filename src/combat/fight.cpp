@@ -242,15 +242,15 @@ void enemyattack()
 {
    static const char *escape_crawling[] =
    {
-      "はうめきながら這い出た…",
-      "はすすり泣きをしながら這い出た…",
-      "は血の跡をつけながら這い出た…",
-      "は悲鳴を上げて這い出た…",
-      "は泣きながら這い出た…",
-      "は涙を流しながら這い出た…",
-      "はすすり泣きをしながら這い出た…",
-      "は祈りながら這い出た…",
-      "は呪いながら這い出た…"
+      "はうめきながら這い出した…",
+      "はすすり泣きをしながら這い出した…",
+      "は血の跡をつけながら這い出した…",
+      "は悲鳴を上げて這い出した…",
+      "は泣きながら這い出した…",
+      "は涙を流しながら這い出した…",
+      "はすすり泣きをしながら這い出した…",
+      "は祈りながら這い出した…",
+      "は呪いながら這い出した…"
    };
 
    static const char *escape_running[] =
@@ -1649,7 +1649,7 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
       {
 
          strcpy(str,t.name);
-         strcat(str," knocks the blow aside and counters!");
+         strcat(str,"は身をかわして反撃した!");
          move(17,1);
          addstr(str, gamelog);
          gamelog.newline();
@@ -1668,10 +1668,10 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
              strcpy(str, t.name);
              switch(LCSrandom(4))
              {
-                 case 0: strcat(str," notices at the last moment!"); break;
-                 case 1: strcat(str," wasn't born yesterday!"); break;
-                 case 2: strcat(str," spins and blocks the attack!"); break;
-                 default: strcat(str," jumps back and cries out in alarm!"); break;
+                 case 0: strcat(str,"はあと少しのところで気づいた!"); break;
+                 case 1: strcat(str,"は見破った!"); break;
+                 case 2: strcat(str,"は体をひねって攻撃を避けた!"); break;
+                 default: strcat(str,"は飛び退き、大声で助けを呼んだ!"); break;
              }
              sitealarm=1;
          }

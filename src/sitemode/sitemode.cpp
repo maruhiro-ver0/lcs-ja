@@ -343,8 +343,8 @@ void mode_site()
             music.play(MUSIC_HEAVYCOMBAT);
          }
          else if(postalarmtimer>60) { addstr(": 保守増援部隊接近中"); music.play(MUSIC_ALARMED); }
-         else if(sitealienate==1) { addstr(": 群集から疎外"); music.play(MUSIC_ALARMED); }
-         else if(sitealienate==2) { addstr(": 全員から疎外"); music.play(MUSIC_ALARMED); }
+         else if(sitealienate==1) { addstr(": 群集と敵対"); music.play(MUSIC_ALARMED); }
+         else if(sitealienate==2) { addstr(": 全員と敵対"); music.play(MUSIC_ALARMED); }
          else if(sitealarm) { addstr(": 保守巡回中"); music.play(MUSIC_ALARMED); }
          else if(sitealarmtimer==0) { addstr(": 保守警戒中"); music.play(MUSIC_SUSPICIOUS); }
          else music.play(MUSIC_SITEMODE);
