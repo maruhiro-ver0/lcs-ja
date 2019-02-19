@@ -102,7 +102,7 @@ void special_bouncer_assess_squad()
       if(location[cursite]->renting==RENTING_CCS)
          addstr("保守のロクデナシに遮られた。", gamelog);
       else
-         addstr("ガードマンが部隊をチェックした。", gamelog);
+         addstr("部隊はガードマンにチェックされた。", gamelog);
       gamelog.newline();
       levelmap[locx][locy][locz].special=SPECIAL_CLUB_BOUNCER_SECONDVISIT;
    }
@@ -182,7 +182,7 @@ void special_bouncer_assess_squad()
          case 7:addstr("「やあ。遺言は書いたか? 」", gamelog);break;
          case 8:addstr("「ああ、トラブルが来た。トラブルは大好きだ。」", gamelog);break;
          case 9:addstr("「そこのプランターに埋めてやるぞ。」", gamelog);break;
-         case 10:addstr("「血の色を検査してもよろしいですか? 」", gamelog);break;
+         case 10:addstr("「血の色を検査してもよろしいでしょうか? 」", gamelog);break;
          }
          break;
       case REJECTED_NUDE:
@@ -437,18 +437,18 @@ void special_nuclear_onoff()
       if(law[LAW_NUCLEARPOWER]==2)
       {
          move(16,1);
-         addstr("You see the nuclear waste center control room.", gamelog);
+         addstr("ここは核廃棄施設のコントロールルームだ。", gamelog);
          gamelog.newline();
          move(17,1);
-         addstr("Attempt to release nuclear waste? (Yes or No)");
+         addstr("核廃棄物を放出するか? (Yes / No)");
       }
       else
       {
          move(16,1);
-         addstr("You see the nuclear power plant control room.", gamelog);
+         addstr("ここは原子力発電所のコントロールルームだ。", gamelog);
          gamelog.newline();
          move(17,1);
-         addstr("Mess with the reactor settings? (Yes or No)");
+         addstr("原子炉の設定をいじるか? (Yes / No)");
       }
 
       int c=getkey();
@@ -478,7 +478,7 @@ void special_nuclear_onoff()
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(16,1);
             addstr(maxs->name, gamelog);
-            addstr(" presses the big red button!", gamelog);
+            addstr("は赤いボタンを押した!", gamelog);
             gamelog.newline();
 
             getkey();
@@ -499,7 +499,7 @@ void special_nuclear_onoff()
             if(law[LAW_NUCLEARPOWER]==2)
             {
                move(17,1);
-               addstr("The nuclear waste gets released into the state's water supply!", gamelog);
+               addstr("核廃棄物は州の水源に流れ込んだ!", gamelog);
                gamelog.newline();
                change_public_opinion(VIEW_NUCLEARPOWER,15,0,95);
                change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,-50,0,0);
@@ -515,11 +515,11 @@ void special_nuclear_onoff()
             else
             {
                move(16,1);
-               addstr("A deafening alarm sounds!", gamelog);
+               addstr("耳をつんざくようなアラーム音が鳴り響いた!", gamelog);
                gamelog.newline();
                addstr("                "); // Remove remaining part of previous text.
                move(17,1);
-               addstr("The reactor is overheating!", gamelog);
+               addstr("原子炉はオーバーヒートだ!", gamelog);
                gamelog.newline();
                change_public_opinion(VIEW_NUCLEARPOWER,15,0,95);
 
@@ -535,9 +535,9 @@ void special_nuclear_onoff()
          {
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(16,1);
-            addstr("After some failed attempts, and a very loud alarm, ", gamelog);
+            addstr("大きな警報音と様々な試みの失敗の後、", gamelog);
             move(17,1);
-            addstr("the Squad resigns to just leaving a threatening note.", gamelog);
+            addstr("部隊は脅迫メモを残して引き上げることにした。", gamelog);
             gamelog.newline();
 
             getkey();
@@ -648,10 +648,10 @@ void special_policestation_lockup()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("You see prisoners in the detention room.", gamelog);
+      addstr("留置された人々がいる。", gamelog);
       gamelog.newline();
       move(17,1);
-      addstr("Free them? (Yes or No)");
+      addstr("解放するか? (Yes / No)");
 
       int c=getkey();
 
@@ -713,10 +713,10 @@ void special_courthouse_lockup()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("You see prisoners in the Courthouse jail.", gamelog);
+      addstr("拘置された審理中の人々がいる。", gamelog);
       gamelog.newline();
       move(17,1);
-      addstr("Free them? (Yes or No)");
+      addstr("解放するか? (Yes / No)");
 
       int c=getkey();
 
@@ -779,9 +779,9 @@ void special_courthouse_jury()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("It appears as if this room has been ", gamelog);
+      addstr("ここには少し前まで", gamelog);
       move(17,1);
-      addstr("vacated in a hurry.", gamelog);
+      addstr("人がいたようだ。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -795,10 +795,10 @@ void special_courthouse_jury()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("You've found a Jury in deliberations!", gamelog);
+      addstr("議論中の陪審員がいる!", gamelog);
       gamelog.newline();
       move(17,1);
-      addstr("Attempt to influence them? (Yes or No)");
+      addstr("彼らに介入するか? (Yes / No)");
 
       int c=getkey();
 
@@ -849,29 +849,30 @@ void special_courthouse_jury()
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
                addstr(activesquad->squad[p]->name, gamelog);
+               addstr("は12人の怒れる男のように振る舞い、", gamelog);
                addstr(" works the room like in Twelve Angry Men, and the jury ", gamelog);
                move(17,1);
-               addstr("concludes that ", gamelog);//XXX: This is very awkward grammar.
+               addstr("陪審員が", gamelog);//XXX: This is very awkward grammar.
                switch(LCSrandom(16))     // Fixed. -Fox
                {
-                  case 0:addstr("murder", gamelog);break;
-                  case 1:addstr("assault", gamelog);break;
-                  case 2:addstr("theft", gamelog);break;
-                  case 3:addstr("mugging", gamelog);break;
-                  case 4:addstr("burglary", gamelog);break;
-                  case 5:addstr("property destruction", gamelog);break;
-                  case 6:addstr("vandalism", gamelog);break;
-                  case 7:addstr("libel", gamelog);break;
-                  case 8:addstr("slander", gamelog);break;
-                  case 9:addstr("sodomy", gamelog);break;
-                  case 10:addstr("obstruction of justice", gamelog);break;
-                  case 11:addstr("breaking and entering", gamelog);break;
-                  case 12:addstr("public indecency", gamelog);break;
-                  case 13:addstr("arson", gamelog);break;
-                  case 14:addstr("resisting arrest", gamelog);break;
-                  case 15:addstr("tax evasion", gamelog);break;
+                  case 0:addstr("殺人", gamelog);break;
+                  case 1:addstr("傷害", gamelog);break;
+                  case 2:addstr("窃盗", gamelog);break;
+                  case 3:addstr("路上強盗", gamelog);break;
+                  case 4:addstr("侵入窃盗", gamelog);break;
+                  case 5:addstr("器物損壊", gamelog);break;
+                  case 6:addstr("公共物破壊", gamelog);break;
+                  case 7:addstr("文書による名誉毀損", gamelog);break;
+                  case 8:addstr("口頭での名誉毀損", gamelog);break;
+                  case 9:addstr("ソドミー法違反", gamelog);break;
+                  case 10:addstr("司法妨害", gamelog);break;
+                  case 11:addstr("不法侵入", gamelog);break;
+                  case 12:addstr("公然猥褻", gamelog);break;
+                  case 13:addstr("放火", gamelog);break;
+                  case 14:addstr("逮捕抵抗", gamelog);break;
+                  case 15:addstr("脱税", gamelog);break;
                }
-               addstr(" wasn't really wrong here.", gamelog);
+               addstr("の容疑を有罪で一致するのを止めた。", gamelog);
                gamelog.newline();
 
                getkey();
@@ -890,7 +891,7 @@ void special_courthouse_jury()
                move(16,1);
                addstr(activesquad->squad[p]->name, gamelog);
 
-               addstr(" wasn't quite convincing...", gamelog);
+               addstr("は説得できなかった…", gamelog);
                gamelog.newline();
 
                getkey();
@@ -936,17 +937,17 @@ void special_prison_control(short prison_control_type)
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("You've found the ", gamelog);
+      addstr("ここは", gamelog);
       if(prison_control_type==SPECIAL_PRISON_CONTROL_LOW)
-         addstr("low security ", gamelog);
+         addstr("低セキュリティ", gamelog);
       else if(prison_control_type==SPECIAL_PRISON_CONTROL_MEDIUM)
-         addstr("medium security ", gamelog);
+         addstr("中セキュリティ", gamelog);
       else if(prison_control_type==SPECIAL_PRISON_CONTROL_HIGH)
-         addstr("high security ", gamelog);
-      addstr("prison control room.", gamelog);
+         addstr("高セキュリティ", gamelog);
+      addstr("囚人管理室だ。", gamelog);
       gamelog.newline();
       move(17,1);
-      addstr("Free the prisoners? (Yes or No)");
+      addstr("囚人を解放するか? (Yes / No)");
 
       int c=getkey();
 
@@ -1025,9 +1026,9 @@ void special_intel_supercomputer()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("The security alert has caused the ", gamelog);
+      addstr("セキュリティ保護のため", gamelog);
       move(17,1);
-      addstr("computer to shut down.", gamelog);
+      addstr("コンピュータは停止している。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -1041,10 +1042,10 @@ void special_intel_supercomputer()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("You've found the Intelligence Supercomputer.", gamelog);
+      addstr("情報局のスーパーコンピュータがある。", gamelog);
       gamelog.newline();
       move(17,1);
-      addstr("Hack it? (Yes or No)");
+      addstr("ハックするか? (Yes / No)");
 
       int c=getkey();
 
@@ -1059,12 +1060,12 @@ void special_intel_supercomputer()
             //char *loot;
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(16,1);
-            addstr("The Squad obtains sensitive information", gamelog);
+            addstr("部隊は機密情報を入手した", gamelog);
             if(endgamestate>=ENDGAME_CCS_APPEARANCE && endgamestate < ENDGAME_CCS_DEFEATED && ccsexposure<CCSEXPOSURE_LCSGOTDATA)
             {
-               addstr(",", gamelog);
+               addstr("。", gamelog);
                move(17,1);
-               addstr("including a list of government backers of the CCS.", gamelog);
+               addstr("そこにはCCSを支援する政府関係者のリストも含まれていた", gamelog);
 
                Item *it=new Loot(*loottype[getloottype("LOOT_CCS_BACKERLIST")]);
                activesquad->loot.push_back(it);
@@ -1073,7 +1074,7 @@ void special_intel_supercomputer()
             }
             else
             {
-               addstr(".", gamelog);
+               addstr("。", gamelog);
             }
             gamelog.newline();
 
@@ -1211,10 +1212,10 @@ void special_polluter_equipment()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("You see some industrial equipment.", gamelog);
+      addstr("工場の設備がある。", gamelog);
       gamelog.newline();
       move(17,1);
-      addstr("Destroy it? (Yes or No)");
+      addstr("破壊するか? (Yes / No)");
 
       int c=getkey();
 
@@ -1252,10 +1253,10 @@ void special_house_photos()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("You've found a safe.", gamelog);
+      addstr("金庫がある。", gamelog);
       gamelog.newline();
       move(17,1);
-      addstr("Open it? (Yes or No)");
+      addstr("開けるか? (Yes / No)");
 
       int c=getkey();
 
@@ -1274,7 +1275,7 @@ void special_house_photos()
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
-               addstr("The squad has found a Desert Eagle.", gamelog);
+               addstr("部隊はデザート・イーグルを見つけた。", gamelog);
                gamelog.newline();
 
                getkey();
@@ -1297,7 +1298,7 @@ void special_house_photos()
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
-               addstr("This guy sure had a lot of $100 bills.", gamelog);
+               addstr("この男は本当に大量の$100札を持っていた。", gamelog);
                gamelog.newline();
 
                getkey();
@@ -1314,7 +1315,7 @@ void special_house_photos()
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
-               addstr("The squad Liberates some expensive jewelery.", gamelog);
+               addstr("部隊は高価な宝石を解放した。", gamelog);
                gamelog.newline();
 
                getkey();
@@ -1331,7 +1332,7 @@ void special_house_photos()
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
-               addstr("There are some... very compromising photos here.", gamelog);
+               addstr("そこには…とてもヤバい写真があった。", gamelog);
                gamelog.newline();
 
                getkey();
@@ -1348,7 +1349,7 @@ void special_house_photos()
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
-               addstr("There are some drugs here.", gamelog);
+               addstr("そこにはいくつかのドラッグがあった。", gamelog);
                gamelog.newline();
 
                getkey();
@@ -1362,9 +1363,9 @@ void special_house_photos()
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
-               addstr("Wow, get a load of these love letters. ", gamelog);
+               addstr("ワォ、ラブレターの山だ。", gamelog);
                move(17,1);
-               addstr("The squad will take those.");
+               addstr("部隊はこれを持ち去った。");
                gamelog.newline();
 
                getkey();
@@ -1381,7 +1382,7 @@ void special_house_photos()
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
-               addstr("These documents show serious tax evasion.", gamelog);
+               addstr("深刻な脱税を示す文書があった。", gamelog);
                gamelog.newline();
 
                getkey();
@@ -1398,7 +1399,7 @@ void special_house_photos()
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
-               addstr("Wow, it's empty.  That sucks.", gamelog);
+               addstr("ワォ、何もない。チクショウ。", gamelog);
                gamelog.newline();
 
                getkey();
@@ -1438,10 +1439,10 @@ void special_armory()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("You've found the armory.", gamelog);
+      addstr("武器庫がある。", gamelog);
       gamelog.newline();
       move(17,1);
-      addstr("Break in? (Yes or No)");
+      addstr("破壊して入るか? (Yes / No)");
 
       int c=getkey();
 
@@ -1452,7 +1453,7 @@ void special_armory()
          sitealarm=1;
          move(16,1);
          set_color(COLOR_RED,COLOR_BLACK,1);
-         addstr("Alarms go off!", gamelog);
+         addstr("警報が鳴り出した!", gamelog);
          gamelog.newline();
 
          getkey();
@@ -1466,7 +1467,7 @@ void special_armory()
 
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(16,1);
-            addstr("Jackpot! The squad found a M249 Machine Gun!", gamelog);
+            addstr("大当たりだ! 部隊はM249機関銃を見つけた!", gamelog);
             gamelog.newline();
 
             getkey();
@@ -1489,7 +1490,7 @@ void special_armory()
 
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(16,1);
-            addstr("The squad finds some M16 Assault Rifles.", gamelog);
+            addstr("部隊はM16自動小銃を見つけた。", gamelog);
             gamelog.newline();
 
             getkey();
@@ -1517,7 +1518,7 @@ void special_armory()
 
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(16,1);
-            addstr("The squad finds some M4 Carbines.", gamelog);
+            addstr("部隊は何丁かのM4カービンを見つけた。", gamelog);
             gamelog.newline();
 
             getkey();
@@ -1545,7 +1546,7 @@ void special_armory()
 
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(16,1);
-            addstr("The squad finds some body armor.", gamelog);
+            addstr("部隊は何着かの防護服を見つけた。", gamelog);
             gamelog.newline();
 
             getkey();
@@ -1574,7 +1575,7 @@ void special_armory()
 
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(16,1);
-            addstr("It's a trap!  The armory is empty.", gamelog);
+            addstr("罠だ! 武器庫は空だった。", gamelog);
             gamelog.newline();
 
             getkey();
@@ -1609,7 +1610,7 @@ void special_armory()
 
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(16,1);
-            addstr("Guards are everywhere!", gamelog);
+            addstr("いたる所に警備兵がいる!", gamelog);
             gamelog.newline();
 
             getkey();
@@ -1649,10 +1650,10 @@ void special_corporate_files()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("You've found a safe.", gamelog);
+      addstr("金庫がある。", gamelog);
       gamelog.newline();
       move(17,1);
-      addstr("Open it? (Yes or No)");
+      addstr("開けるか? (Yes / No)");
 
       int c=getkey();
 
@@ -1666,7 +1667,7 @@ void special_corporate_files()
 
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(16,1);
-            addstr("The Squad has found some very interesting files.", gamelog);
+            addstr("部隊はとても興味深いファイルを見つけた。", gamelog);
             gamelog.newline();
 
             Item *it=new Loot(*loottype[getloottype("LOOT_CORPFILES")]);
@@ -1720,10 +1721,10 @@ void special_radio_broadcaststudio()
       else
       {
          move(16,1);
-         addstr("あなたはラジオ放送室を見つけた。", gamelog);
+         addstr("ここはラジオ放送室だ。", gamelog);
          gamelog.newline();
          move(17,1);
-         addstr("昼の放送を妨害するか? (Yes / No)");
+         addstr("昼の放送に割り込むか? (Yes / No)");
       }
 
       int c=getkey();
@@ -1754,18 +1755,16 @@ void special_news_broadcaststudio()
       if(sitealarm||sitealienate)
       {
          move(16,1);
-         addstr("The Cable News broadcasters left the equipment on in", gamelog);
-         move(17,1);
-         addstr("their rush to get out.");
+         addstr("ケーブルテレビのキャスターは機材をそのままにして逃げたようだ。", gamelog);
          gamelog.newline();
-         addstr(" Take over the studio? (Yes or No)");
+         addstr("スタジオを乗っ取るか? (Yes / No)");
       }
       else
       {
          move(16,1);
-         addstr("You've found a Cable News broadcasting studio.", gamelog);
+         addstr("ここはケーブルテレビのスタジオだ。", gamelog);
          move(17,1);
-         addstr("Start an impromptu news program? (Yes or No)");
+         addstr("臨時ニュースを始めるか? (Yes / No)");
       }
 
       int c=getkey();
@@ -2103,18 +2102,18 @@ void special_bank_vault()
 {
    clearmessagearea();
    move(16,1);
-   addstr("The vault door has three layers: A combo lock, ", gamelog);
+   addstr("金庫室の扉は3層になっている: ダイヤル錠、電子錠、", gamelog);
    move(17,1);
-   addstr("an electronic lock, and a biometric lock.", gamelog);
+   addstr("生体認証だ。", gamelog);
    gamelog.newline();
 
    getkey();
 
    clearmessagearea();
    move(16,1);
-   addstr("You will need a security expert, a computer ", gamelog);
+   addstr("セキュリティの専門家、コンピュータの専門家、", gamelog);
    move(17,1);
-   addstr("expert, and one of the bank managers.", gamelog);
+   addstr("そして銀行の管理者が必要だろう。", gamelog);
    gamelog.newline();
 
    getkey();
@@ -2127,11 +2126,11 @@ void special_bank_vault()
       {
          clearmessagearea();
          move(16,1);
-         addstr("Sleeper ", gamelog);
+         addstr("潜伏者の", gamelog);
          addstr(pool[p]->name, gamelog);
-         addstr(" can handle the biometrics, ", gamelog);
+         addstr("は生体認証を突破できる。", gamelog);
          move(17,1);
-         addstr("but you'll still have to crack the other locks.", gamelog);
+         addstr("だが、他のロックを解除しなければならない。", gamelog);
          gamelog.newline();
 
          getkey();
@@ -2144,7 +2143,7 @@ void special_bank_vault()
    {
       clearmessagearea();
       move(16,1);
-      addstr("Open the bank vault? (Yes or No)");
+      addstr("金庫室の扉を開けるか? (Yes / No)");
 
       int c=getkey();
 
@@ -2155,9 +2154,9 @@ void special_bank_vault()
          clearmessagearea();
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(16,1);
-         addstr("First is the combo lock that will have ", gamelog);
+         addstr("最初のダイヤル錠は", gamelog);
          move(17,1);
-         addstr("be cracked by a security expert.", gamelog);
+         addstr("セキュリティの専門家が解除することができる。", gamelog);
          gamelog.newline();
 
          getkey();
@@ -2167,9 +2166,9 @@ void special_bank_vault()
             clearmessagearea();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(16,1);
-            addstr("The squad can only dream of the money ", gamelog);
+            addstr("部隊は扉の外で", gamelog);
             move(17,1);
-            addstr("on the other side of this door...", gamelog);
+            addstr("大金を夢見るだけだった…", gamelog);
             gamelog.newline();
 
             getkey();
@@ -2181,9 +2180,9 @@ void special_bank_vault()
             clearmessagearea();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(16,1);
-            addstr("Next is the electronic lock that will have ", gamelog);
+            addstr("次の電子錠は", gamelog);
             move(17,1);
-            addstr("be bypassed by a computer expert.", gamelog);
+            addstr("コンピュータの専門家が解除できる。", gamelog);
             gamelog.newline();
 
             getkey();
@@ -2193,7 +2192,7 @@ void special_bank_vault()
                clearmessagearea();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
-               addstr("The money was so close the squad could taste it!", gamelog);
+               addstr("部隊は金を味見できるくらいまでは近づけた!", gamelog);
                gamelog.newline();
 
                getkey();
@@ -2205,9 +2204,9 @@ void special_bank_vault()
                clearmessagearea();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
-               addstr("Last is the biometric lock that keyed only ", gamelog);
+               addstr("最後の生体認証には", gamelog);
                move(17,1);
-               addstr("to the bank's managers.", gamelog);
+               addstr("銀行の管理者が必要だ。", gamelog);
                gamelog.newline();
 
                getkey();
@@ -2230,7 +2229,7 @@ void special_bank_vault()
                            set_color(COLOR_WHITE,COLOR_BLACK,1);
                            move(16,1);
                            addstr(c->name, gamelog);
-                           addstr(" opens the vault.", gamelog);
+                           addstr("は金庫室の扉を開いた。", gamelog);
                            gamelog.newline();
 
                            getkey();
@@ -2245,7 +2244,7 @@ void special_bank_vault()
                         clearmessagearea();
                         set_color(COLOR_WHITE,COLOR_BLACK,1);
                         move(16,1);
-                        addstr("The hostage is forced to open the vault.", gamelog);
+                        addstr("人質に金庫室の扉を開けさせた。", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -2265,11 +2264,11 @@ void special_bank_vault()
                         clearmessagearea();
                         set_color(COLOR_WHITE,COLOR_BLACK,1);
                         move(16,1);
-                        addstr("Sleeper ", gamelog);
+                        addstr("潜伏者の", gamelog);
                         addstr(pool[p]->name, gamelog);
-                        addstr(" opens the vault, ", gamelog);
+                        addstr("は金庫室の扉を開けた。", gamelog);
                         move(17,1);
-                        addstr("and will join the active LCS to avoid arrest.", gamelog);
+                        addstr("そして、逮捕を避けるためLCSと行動する。", gamelog);
                         gamelog.newline();
 
                         getkey();
@@ -2305,7 +2304,7 @@ void special_bank_vault()
                      set_color(COLOR_WHITE,COLOR_BLACK,1);
                      move(16,1);
                      addstr(manager->name, gamelog);
-                     addstr(" is no longer recognized.", gamelog);
+                     addstr("は認証を突破できなかった。", gamelog);
                      gamelog.newline();
 
                      getkey();
@@ -2315,7 +2314,7 @@ void special_bank_vault()
                      clearmessagearea();
                      set_color(COLOR_WHITE,COLOR_BLACK,1);
                      move(16,1);
-                     addstr("The squad has nobody that can do the job.", gamelog);
+                     addstr("舞台の誰も認証を突破できない。", gamelog);
                      gamelog.newline();
 
                      getkey();
@@ -2393,9 +2392,9 @@ void special_bank_money()
 
       move(17,1);
       if(swat_counter > 0)
-         addstr("Another SWAT team moves in!!", gamelog);
+         addstr("別のSWAT隊が来た!!", gamelog);
       else
-         addstr("A SWAT team storms the vault!!", gamelog);
+         addstr("SWAT隊が金庫室に押し寄せた!!", gamelog);
       gamelog.newline();
       swat_counter++;
 
@@ -2435,12 +2434,12 @@ void special_oval_office()
 
       clearmessagearea(false);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      mvaddstr(16,1,"The President isn't here... ",gamelog);
+      mvaddstr(16,1,"大統領はここにはいない…",gamelog);
       printsitemap(locx,locy,locz);
 
       getkey();
 
-      mvaddstr(17,1,"Secret Service agents ambush the squad!", gamelog);
+      mvaddstr(17,1,"シークレット・サービスが部隊を待ち伏せていた!", gamelog);
       gamelog.newline();
       for(int e=0;e<6;e++)makecreature(encounter[e],CREATURE_SECRET_SERVICE);
       printencounter();
@@ -2456,7 +2455,7 @@ void special_oval_office()
 
       clearmessagearea(false);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      mvaddstr(16,1,"The President is in the Oval Office.",gamelog);
+      mvaddstr(16,1,"執務室に大統領がいる。",gamelog);
       gamelog.newline();
       printsitemap(locx,locy,locz);
       for(int e=0;e<2;e++)makecreature(encounter[e],CREATURE_SECRET_SERVICE);
@@ -2475,7 +2474,7 @@ void special_ccs_boss()
       clearmessagearea(false);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("The CCS leader is ready for you!", gamelog);
+      addstr("CCSのリーダーが待ち構えていた!", gamelog);
       gamelog.newline();
       levelmap[locx][locy][locz].special=-1;
 
@@ -2494,7 +2493,7 @@ void special_ccs_boss()
       clearmessagearea(false);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("The CCS leader is here.", gamelog);
+      addstr("CCSのリーダーがいる。", gamelog);
       gamelog.newline();
       levelmap[locx][locy][locz].special=-1;
 

@@ -1011,13 +1011,13 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                      if(!liberalguardian)
                      {
                         strcat(story,"  現場の状況によると、");
-                        strcat(story,"リベラル・クライム・スコードは施設の設備を不正操作して州の水道を汚染させたようだ。");
+                        strcat(story,"リベラル・クライム・スコードは施設の設備を不正操作して州の水源を汚染させたようだ。");
                         strcat(story,"&r");
                      }
                      else
                      {
                         strcat(story,"  リベラル・クライム・スコードは、核汚染の危険性を示すため");
-                        strcat(story,"州の水道を汚染させた。");
+                        strcat(story,"州の水源を汚染させた。");
                         strcat(story,"&r");
                      }
                   }

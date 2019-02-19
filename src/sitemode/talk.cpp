@@ -101,7 +101,7 @@ char talkToBankTeller(Creature &a, Creature &tk)
       set_color(COLOR_WHITE, COLOR_BLACK, 1);
       move(9, 1);
       addstr(a.name, gamelog);
-      addstr("は窓口にメモを滑り込ませた: ", gamelog);
+      addstr("は窓口にメモを差し出した: ", gamelog);
       set_color(COLOR_GREEN, COLOR_BLACK, 1);
       move(10, 1);
       addstr("『");

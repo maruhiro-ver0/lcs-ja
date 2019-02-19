@@ -132,14 +132,14 @@
 		</item>
 		<item>
             <class>WEAPON</class>
-            <description>M16 アサルトライフルを買う</description>
+            <description>M16自動小銃を買う</description>
             <type>WEAPON_AUTORIFLE_M16</type>
 			<letter>M</letter>
             <price>1500</price>
         </item>
 		<item>
 			<class>WEAPON</class>
-			<description>M249 マシンガンを買う</description>
+			<description>M249機関銃を買う</description>
 			<type>WEAPON_M249_MACHINEGUN</type>
 			<letter>G</letter>
 			<price>15000</price>

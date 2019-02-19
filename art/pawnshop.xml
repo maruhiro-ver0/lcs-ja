@@ -67,21 +67,21 @@
         </item>
         <item>
             <class>WEAPON</class>
-            <description>M4カービン銃を買う</description>
+            <description>M4カービンを買う</description>
             <type>WEAPON_CARBINE_M4</type>
             <letter>c</letter>
             <price>1400</price>
         </item>
         <item>
             <class>WEAPON</class>
-            <description>M16を買う</description>
+            <description>M16自動小銃を買う</description>
             <type>WEAPON_AUTORIFLE_M16</type>
             <letter>a</letter>
             <price>1500</price>
         </item>
         <item>
             <class>WEAPON</class>
-            <description>AK47を買う</description>
+            <description>AK-47自動小銃を買う</description>
             <type>WEAPON_AUTORIFLE_AK47</type>
             <letter>k</letter>
             <price>1500</price>

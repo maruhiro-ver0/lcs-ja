@@ -329,7 +329,7 @@
     </weapontype>
 
     <weapontype idname="WEAPON_AUTORIFLE_AK47">
-        <name>AK-47</name>
+        <name>AK-47自動小銃</name>
         <name_future>P74ウォーレーザー</name_future>
         <shortname>AK-47</shortname>
         <shortname_future>P74ｳｫｰ</shortname_future>
@@ -493,7 +493,7 @@
     </weapontype>
 
     <weapontype idname="WEAPON_CARBINE_M4">
-        <name>M4カービン銃</name>
+        <name>M4カービン</name>
         <name_future>J4レーザーカービン</name_future>
         <shortname>M4</shortname>
         <shortname_future>J4ﾚｰｻﾞｰ</shortname_future>
@@ -539,7 +539,7 @@
     </weapontype>
 
     <weapontype idname="WEAPON_AUTORIFLE_M16">
-        <name>M16</name>
+        <name>M16自動小銃</name>
         <name_future>X15ミリタリーレーザー</name_future>
         <shortname>M16</shortname>
         <shortname_future>X15ﾌﾙ</shortname_future>
@@ -584,7 +584,7 @@
     </weapontype>
 
     <weapontype idname="WEAPON_M249_MACHINEGUN">
-        <name>M249マシンガン</name>
+        <name>M249機関銃</name>
         <name_future>C249チェーンガン</name_future>
         <shortname>M249</shortname>
         <shortname_future>ﾁｪｰﾝｶﾞﾝ</shortname_future>

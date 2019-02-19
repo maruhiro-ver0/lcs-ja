@@ -68,10 +68,10 @@ std::string getactivity(activityst &act)
    {
    case ACTIVITY_HOSTAGETENDING:
       {
-         std::string str="Tending to ";
+         std::string str="の尋問";
          int pl=getpoolcreature(act.arg);
-         if(pl!=-1) return str+pool[pl]->name;
-         else return str+"a bug";
+         if(pl!=-1) return pool[pl]->name+str;
+         else return "バグ"+str;
       }
    case ACTIVITY_RECRUITING:
       return "スカウト活動";
@@ -180,21 +180,21 @@ std::string gettitle(Creature &cr)
       }
       else if(cr.juice<=-10) return "保守の落伍者";
       else if(cr.juice<0) return "保守の厄介者";
-      else if(cr.juice<10) return "Mindless Conservative";
-      else if(cr.juice<50) return "Wrong-Thinker";
+      else if(cr.juice<10) return "愚かな保守";
+      else if(cr.juice<50) return "誤った考えを持つ者";
       else if(cr.juice<100)
       {
-         if(law[LAW_FREESPEECH]==-2) return "Stubborn as [Heck]";
-         else return "Stubborn as Hell";
+         if(law[LAW_FREESPEECH]==-2) return "強固な保守";
+         else return "強固な保守";
       }
       else if(cr.juice<200)
       {
-         if(law[LAW_FREESPEECH]==-2) return "Heartless [Jerk]";
-         else return "Heartless Bastard";
+         if(law[LAW_FREESPEECH]==-2) return "心を持たない[不快な者]";
+         else return "心を持たないロクデナシ";
       }
-      else if(cr.juice<500) return "Insane Vigilante";
-      else if(cr.juice<1000) return "Arch-Conservative";
-      else return "Evil Incarnate";
+      else if(cr.juice<500) return "狂った自警団員";
+      else if(cr.juice<1000) return "保守強硬派";
+      else return "悪の権化";
    }
    else if(cr.align==0)
    {
@@ -206,12 +206,12 @@ std::string gettitle(Creature &cr)
       else if(cr.juice<=-10) return "落伍者";
       else if(cr.juice<0) return "非リベラルの厄介者";
       else if(cr.juice<10) return "非リベラル";
-      else if(cr.juice<50) return "Hard Working";
-      else if(cr.juice<100) return "Respected";
-      else if(cr.juice<200) return "Upstanding Citizen";
-      else if(cr.juice<500) return "Great Person";
-      else if(cr.juice<1000) return "Peacemaker";
-      else return "Peace Prize Winner";
+      else if(cr.juice<50) return "努力家";
+      else if(cr.juice<100) return "尊敬すべき者";
+      else if(cr.juice<200) return "実直な市民";
+      else if(cr.juice<500) return "偉大な人";
+      else if(cr.juice<1000) return "平和をもたらす者";
+      else return "平和賞受賞者";
    }
    else
    {
@@ -226,9 +226,9 @@ std::string gettitle(Creature &cr)
       else if(cr.juice<50) return "活動家";
       else if(cr.juice<100) return "社会の危険因子";
       else if(cr.juice<200) return "革命家";
-      else if(cr.juice<500) return "Urban Commando";
-      else if(cr.juice<1000) return "Liberal Guardian";
-      else return "Elite Liberal";
+      else if(cr.juice<500) return "都市型ゲリラ";
+      else if(cr.juice<1000) return "自由の守護者";
+      else return "エリート・リベラル";
    }
 }
 
@@ -275,7 +275,7 @@ std::string getview(short view,bool shortname)
    case VIEW_GAY: return "LGBTQの権利";
    case VIEW_DEATHPENALTY: return "残酷な刑罰";
    case VIEW_TAXES: return "税制度";
-   case VIEW_NUCLEARPOWER: return "核メルトダウン";
+   case VIEW_NUCLEARPOWER: return "メルトダウン";
    case VIEW_ANIMALRESEARCH: return "動物虐待";
    case VIEW_POLICEBEHAVIOR: return "警察官の職権乱用";
    case VIEW_TORTURE: return "拷問";

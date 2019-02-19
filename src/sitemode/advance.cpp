@@ -49,9 +49,9 @@ void creatureadvance()
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
                addstr(activesquad->squad[p]->name, gamelog);
-               addstr(" drops ", gamelog);
+               addstr("は", gamelog);
                addstr(activesquad->squad[p]->prisoner->name, gamelog);
-               addstr("'s body.", gamelog);
+               addstr("の遺体を置いた。", gamelog);
                gamelog.newline();
 
                makeloot(*activesquad->squad[p]->prisoner,groundloot);
@@ -293,10 +293,10 @@ void advancecreature(Creature &cr)
             set_color(COLOR_GREEN,COLOR_BLACK,1);
             move(16,1);
             addstr(topmedical->name, gamelog);
-            addstr(" was able to slow the bleeding of", gamelog);
+            addstr("は", gamelog);
             move(17,1);
             addstr(cr.name, gamelog);
-            addstr("'s wounds.", gamelog);
+            addstr("の止血に成功した。", gamelog);
             gamelog.newline();
             topmedical->train(SKILL_FIRSTAID,max(int(50-topmedicalskill*2),0));
             cr.wound[w]^=WOUND_BLEEDING;
@@ -367,7 +367,7 @@ void advancecreature(Creature &cr)
          set_color(COLOR_RED,COLOR_BLACK,0);
          move(16,1);
          addstr(cr.name,gamelog);
-         addstr(" is burned!",gamelog);
+         addstr("は火傷した!",gamelog);
          gamelog.newline(); //Next message?
 
          getkey();
