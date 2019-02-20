@@ -405,9 +405,9 @@ void Shop::sell_loot(squadst& customers) const
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          switch(c)
          {
-         case 'w': addstr("Really sell all weapons? (Y)es to confirm.           "); break;
-         case 'a': addstr("Really sell all ammo? (Y)es to confirm.              "); break;
-         case 'c': addstr("Really sell all clothes? (Y)es to confirm.           "); break;
+         case 'w': addstr("本当に武器を全て売るのか? (Y)で了解する。            "); break;
+         case 'a': addstr("本当に弾薬を全て売るのか? (Y)で了解する。            "); break;
+         case 'c': addstr("本当に服を全て売るのか? (Y)で了解する。              "); break;
          }
 
          if(getkey()!='y') c=0; //no sale
@@ -488,12 +488,12 @@ int Shop::fenceselect(squadst& customers) const
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
-      addstr("何を売るか?");
+      addstr("何を売るのか?");
 
       if(ret)
       {
          move(0,30);
-         addstr("Estimated Liberal Amount: $");
+         addstr("見積もりリベラル金額: $");
          addstr(ret);
       }
 
@@ -542,9 +542,9 @@ int Shop::fenceselect(squadst& customers) const
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(23,1);
-      addstr("Press a letter to select an item to sell.");
+      addstr("アルファベットキーで売る物を選ぶ。");
       move(24,1);
-      addstr("Enter - Done");
+      addstr("Enter - 完了");
 
       int c=getkey();
 
@@ -567,7 +567,7 @@ int Shop::fenceselect(squadst& customers) const
 
                   move(8,15);
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
-                  addstr(" You can't sell damaged goods.");
+                  addstr(" ダメージを受けた物は売れない。");
 
                   getkey();
                }
@@ -621,7 +621,7 @@ void Shop::choose_buyer(squadst& customers, int& buyer) const
 
       move(8,20);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      addstr("Choose a Liberal squad member to SPEND.");
+      addstr("支払う部隊のメンバーを選択する。");
 
       int c=getkey();
 

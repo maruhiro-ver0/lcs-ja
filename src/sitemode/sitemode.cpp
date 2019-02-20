@@ -292,7 +292,7 @@ void mode_site()
          addstr(location[cursite]->getname(-1,true));
          addstr("、");
          addstr(locz+1);
-         addstr("階: Escape or Engage");
+         addstr("階: 逃げるか戦うか");
       }
       else
       {
@@ -1171,7 +1171,7 @@ void mode_site()
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(16,1);
-               addstr("保守派から", gamelog);
+               addstr("保守から", gamelog);
                if(followers>1)addstr("リベラル達", gamelog);
                else addstr("リベラル", gamelog);
                addstr("を解放した。", gamelog);
@@ -1189,7 +1189,7 @@ void mode_site()
                   else if(followers-actgot>1)addstr("数人が", gamelog);
                   else if(actgot==0)addstr("リベラルは", gamelog);
                   else addstr("リベラルは", gamelog);
-                  addstr("一人で行動しても安全だと思い、去っていった。", gamelog);
+                  addstr("一人で行動しても安全だと考え、去っていった。", gamelog);
                   gamelog.newline();
                }
 

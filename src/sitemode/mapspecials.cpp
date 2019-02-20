@@ -2314,7 +2314,7 @@ void special_bank_vault()
                      clearmessagearea();
                      set_color(COLOR_WHITE,COLOR_BLACK,1);
                      move(16,1);
-                     addstr("舞台の誰も認証を突破できない。", gamelog);
+                     addstr("部隊の誰も認証を突破できない。", gamelog);
                      gamelog.newline();
 
                      getkey();
@@ -2372,7 +2372,7 @@ void special_bank_money()
    clearmessagearea(false);
    set_color(COLOR_GREEN,COLOR_BLACK,1);
    move(16,1);
-   addstr("The squad loads bricks of cash into a duffel bag.", gamelog);
+   addstr("部隊は札束を鞄に詰め込んだ。", gamelog);
    gamelog.newline();
 
    levelmap[locx][locy][locz].special=-1;
