@@ -77,7 +77,7 @@ bool chasesequence()
    erase();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
-   addstr("この場所から引き上げるとき、保守派に付けられているのを感じた!", gamelog);
+   addstr("この場所から引き上げるとき、保守に付けられているのを感じた!", gamelog);
    gamelog.newline(); //New line.
 
    getkey();
@@ -401,7 +401,7 @@ bool footchase()
    erase();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
-   addstr("建物を出ると、保守派に付けられているのを感じた!", gamelog);
+   addstr("建物を出ると、保守に付けられているのを感じた!", gamelog);
    gamelog.newline(); //New line.
 
    getkey();
@@ -634,22 +634,22 @@ void evasivedrive()
    switch(LCSrandom(4))
    {
    case 0:
-      addstr("You keep the gas floored!", gamelog);
+      addstr("アクセルを目いっぱい踏み込んだ!", gamelog);
       gamelog.newline(); //Newline.
       break;
    case 1:
-      addstr("You swerve around the next corner!", gamelog);
+      addstr("コーナーで急カーブした!", gamelog);
       gamelog.newline(); //New line.
       break;
    case 2:
-      addstr("You screech through an empty lot to the next street!", gamelog);
+      addstr("空き地を渡り向こうの通りへと駆け抜けた!", gamelog);
       gamelog.newline(); //New line.
       break;
    case 3:
       if(yourworst>15)
-         addstr("You boldly weave through oncoming traffic!", gamelog);
+         addstr("向かってくる車を大胆に蛇行してかわした!", gamelog);
       else
-         addstr("You make obscene gestures at the pursuers!", gamelog);
+         addstr("追跡する車に挑発的なジェルチャーをした!", gamelog);
       gamelog.newline(); //new line.
       break;
    }
@@ -676,19 +676,19 @@ void evasivedrive()
          switch(LCSrandom(cnt/5))
          {
          default:
-            addstr(" falls behind!", gamelog);
+            addstr("は追いつけなかった!", gamelog);
             gamelog.newline(); //New line.
             break;
          case 1:
-            addstr(" skids out!", gamelog);
+            addstr("はスリップした!", gamelog);
             gamelog.newline(); //New line.
             break;
          case 2:
-            addstr(" backs off for safety.", gamelog);
+            addstr("は危険を感じ追うのをやめた。", gamelog);
             gamelog.newline(); //New line.
             break;
          case 3:
-            addstr(" brakes hard and nearly crashes!", gamelog);
+            addstr("は衝突寸前で急ブレーキをかけた!", gamelog);
             gamelog.newline(); //New line.
             break;
          }
@@ -729,7 +729,7 @@ void evasivedrive()
                break;
             }
          }
-         addstr("はまだ付けている!", gamelog);
+         addstr("はまだ追っている!", gamelog);
          gamelog.newline(); //Blarg. Newline.
 
          getkey();
@@ -846,7 +846,7 @@ void evasiverun()
          addstr(encounter[e].name, gamelog);
          if(encounter[e].type == CREATURE_TANK)
          {
-            addstr("は深みにはまった。戦車は動けない!", gamelog);
+            addstr("は深みにはまって動けない!", gamelog);
             gamelog.newline(); //New line.
          }
          else
@@ -867,7 +867,7 @@ void evasiverun()
          set_color(COLOR_YELLOW,COLOR_BLACK,1);
          move(16,1);
          addstr(encounter[e].name, gamelog);
-         addstr("はまだ付けている!", gamelog);
+         addstr("はまだ追っている!", gamelog);
          gamelog.newline(); //New line.
 
          getkey();
@@ -1115,7 +1115,7 @@ bool drivingupdate(short &obstacle)
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
             move(16,1);
             addstr(activesquad->squad[p]->name, gamelog);
-            addstr(" takes over the wheel.", gamelog);
+            addstr("が運転を引き継いだ。", gamelog);
             gamelog.newline(); //New line.
             printparty();
 
@@ -1311,7 +1311,7 @@ bool obstacledrive(short obstacle,char choice)
             clearmessagearea();
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
             move(16,1);
-            addstr("You slow down, and turn the corner.", gamelog);
+            addstr("減速してハンドルを切った。", gamelog);
             gamelog.newline(); //New line.
 
             getkey();
@@ -1320,7 +1320,7 @@ bool obstacledrive(short obstacle,char choice)
             {
                set_color(COLOR_YELLOW,COLOR_BLACK,1);
                move(17,1);
-               addstr("Here they come!", gamelog);
+               addstr("追っ手が近づいてきた!", gamelog);
                gamelog.newline(); //New line.
 
                getkey();
@@ -1340,7 +1340,7 @@ bool obstacledrive(short obstacle,char choice)
             clearmessagearea();
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
             move(16,1);
-            addstr("You slow down, and carefully evade the truck.", gamelog);
+            addstr("減速して慎重にトラックをかわした。", gamelog);
             gamelog.newline(); //New line.
 
             getkey();
@@ -1349,7 +1349,7 @@ bool obstacledrive(short obstacle,char choice)
             {
                set_color(COLOR_YELLOW,COLOR_BLACK,1);
                move(17,1);
-               addstr("Here they come!", gamelog);
+               addstr("追っ手が近づいてきた!", gamelog);
                gamelog.newline(); //New line.
 
                getkey();
@@ -1369,7 +1369,7 @@ bool obstacledrive(short obstacle,char choice)
             clearmessagearea();
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
             move(16,1);
-            addstr("Fruit smashes all over the windshield!", gamelog);
+            addstr("フロントガラスに果物をぶちまけた!", gamelog);
             gamelog.newline(); //New line.
 
             getkey();
@@ -1378,7 +1378,7 @@ bool obstacledrive(short obstacle,char choice)
             {
                set_color(COLOR_RED,COLOR_BLACK,1);
                move(17,1);
-               addstr("The fruit seller is squashed!", gamelog);
+               addstr("店員をはね飛ばした!", gamelog);
                gamelog.newline(); //All this logging and lining...
 
                getkey();
@@ -1397,7 +1397,7 @@ bool obstacledrive(short obstacle,char choice)
             clearmessagearea();
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
             move(16,1);
-            addstr("You slow down and carefully avoid the kid.", gamelog);
+            addstr("減速して慎重に子供をかわした。", gamelog);
             gamelog.newline(); //New line.
 
             getkey();
@@ -1406,7 +1406,7 @@ bool obstacledrive(short obstacle,char choice)
             {
                set_color(COLOR_RED,COLOR_BLACK,1);
                move(17,1);
-               addstr("The Conservative bastards unleash a hail of gunfire!", gamelog);
+               addstr("保守は雨あられのように撃ち始めた!", gamelog);
                gamelog.newline(); //New line.
 
                getkey();
@@ -1418,7 +1418,7 @@ bool obstacledrive(short obstacle,char choice)
             {
                set_color(COLOR_GREEN,COLOR_BLACK,1);
                move(17,1);
-               addstr("Both sides refrain from endangering the child...", gamelog);
+               addstr("どちらの側も子供に危害を加えないようにしている…", gamelog);
                gamelog.newline(); //New line.
 
                getkey();
@@ -1435,7 +1435,7 @@ bool dodgedrive()
    clearmessagearea();
    set_color(COLOR_YELLOW,COLOR_BLACK,1);
    move(16,1);
-   addstr("You swerve to avoid the obstacle!", gamelog);
+   addstr("避けるために蛇行した!", gamelog);
    gamelog.newline(); //New line.
 
    getkey();

@@ -53,8 +53,8 @@ void kidnapattempt()
    if(!available)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      mvaddstr(16,1,"実行できる者がいない。            ");
-      mvaddstr(17,1,"                                  ");
+      mvaddstr(16,1,"実行できる者がいない。");
+      mvaddstr(17,1,"                      ");
 
       getkey();
 
@@ -193,9 +193,9 @@ void releasehostage()
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("No hostages are being held.       ");
+      addstr("人質を捕らえていない。");
       move(17,1);
-      addstr("                                  ");
+      addstr("                      ");
 
       getkey();
 
@@ -208,7 +208,7 @@ void releasehostage()
 
       move(8,20);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      addstr("Choose a Liberal squad member to release their hostage.");
+      addstr("人質を解放するメンバーを選択する。");
 
       int c=getkey();
 
@@ -226,10 +226,10 @@ void releasehostage()
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("The hostage shouts for help!      ", gamelog);
+      addstr("人質は助けを求め叫んだ!", gamelog);
       gamelog.nextMessage(); //Next message.
       move(17,1);
-      addstr("                                  ");
+      addstr("                       ");
 
       getkey();
 
@@ -261,9 +261,9 @@ bool kidnap(Creature &a,Creature &t,bool &amateur)
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(16,1);
          addstr(a.name, gamelog);
-         addstr(" snatches ", gamelog);
+         addstr("は", gamelog);
          addstr(t.name, gamelog);
-         addstr("!", gamelog);
+         addstr("を掴んだ!", gamelog);
          gamelog.newline(); //New line.
 
          a.prisoner=new Creature;
@@ -274,7 +274,7 @@ bool kidnap(Creature &a,Creature &t,bool &amateur)
          set_color(COLOR_RED,COLOR_BLACK,1);
          move(17,1);
          addstr(t.name, gamelog);
-         addstr(" is struggling and screaming!", gamelog);
+         addstr("は抵抗し叫んだ!", gamelog);
          gamelog.newline(); //New line.
 
          getkey();
@@ -287,13 +287,14 @@ bool kidnap(Creature &a,Creature &t,bool &amateur)
          set_color(COLOR_MAGENTA,COLOR_BLACK,1);
          move(16,1);
          addstr(a.name, gamelog);
-         addstr(" grabs at ", gamelog);
+         addstr("は", gamelog);
          addstr(t.name, gamelog);
+         addstr("を掴んだ。", gamelog);
          gamelog.newline(); //New line.
          move(17,1);
-         addstr("but ", gamelog);
+         addstr("だが、", gamelog);
          addstr(t.name, gamelog);
-         addstr(" writhes away!", gamelog);
+         addstr("はもがいて逃れた!", gamelog);
          gamelog.newline(); //New line.
 
          getkey();
@@ -309,16 +310,15 @@ bool kidnap(Creature &a,Creature &t,bool &amateur)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
       addstr(a.name, gamelog);
-      addstr(" shows ", gamelog);
+      addstr("は", gamelog);
       addstr(t.name, gamelog);
-      addstr(" the ", gamelog);
+      addstr("に", gamelog);
       addstr(a.get_weapon().get_name(2), gamelog);
-      addstr(" " , gamelog);
+      addstr("を見せ言った。" , gamelog);
       move(17,1);
-      addstr("and says, ", gamelog);
       set_color(COLOR_GREEN,COLOR_BLACK,1);
-      if(law[LAW_FREESPEECH]==-2)addstr("\"[Please], be cool.\"", gamelog);
-      else addstr("\"Bitch, be cool.\"", gamelog);
+      if(law[LAW_FREESPEECH]==-2)addstr("「 静かにしろ、[お願いします]。」", gamelog);
+      else addstr("「静かにしろ、豚め。」", gamelog);
 
       a.prisoner=new Creature;
       *a.prisoner=t;
@@ -341,13 +341,12 @@ void freehostage(Creature &cr,char situation)
    {
       if(situation==0)
       {
-         if(cr.prisoner->squadid==-1)addstr(" and a hostage is freed", gamelog);
+         if(cr.prisoner->squadid==-1)addstr("人質は自由になった。", gamelog);
          else
          {
-            addstr(" and ", gamelog);
             addstr(cr.prisoner->name, gamelog);
-            if(cr.prisoner->flag & CREATUREFLAG_JUSTESCAPED)addstr(" is recaptured", gamelog);
-            else addstr(" is captured", gamelog);
+            if(cr.prisoner->flag & CREATUREFLAG_JUSTESCAPED)addstr("は再び捕らえられた。", gamelog);
+            else addstr("は捕らえられた。", gamelog);
          }
          gamelog.newline(); //New line.
       }
@@ -356,12 +355,12 @@ void freehostage(Creature &cr,char situation)
          clearmessagearea();
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(16,1);
-         if(cr.prisoner->squadid==-1)addstr("A hostage escapes!", gamelog);
+         if(cr.prisoner->squadid==-1)addstr("人質は逃げ出した!", gamelog);
          else
          {
             addstr(cr.prisoner->name, gamelog);
-            if(cr.prisoner->flag & CREATUREFLAG_JUSTESCAPED)addstr(" is recaptured.", gamelog);
-            else addstr(" is captured.", gamelog);
+            if(cr.prisoner->flag & CREATUREFLAG_JUSTESCAPED)addstr("は再び捕らえられた。", gamelog);
+            else addstr("は捕らえられた。", gamelog);
          }
          gamelog.newline(); //New line.
       }
@@ -478,7 +477,7 @@ void squadgrab_immobile(char dead)
                   set_color(COLOR_YELLOW,COLOR_BLACK,1);
                   move(16,1);
                   addstr(activesquad->squad[p]->name, gamelog);
-                  addstr("は床に置き去りにされた。", gamelog);
+                  addstr("は置き去りにされた。", gamelog);
                   gamelog.newline(); //New line.
 
                   capturecreature(*activesquad->squad[p]);
@@ -555,17 +554,16 @@ void kidnaptransfer(Creature &cr)
 
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
-   addstr("The Education of ");
    addstr(newcr->propername);
+   addstr("への教育");
 
    move(2,0);
    set_color(COLOR_WHITE,COLOR_BLACK,0);
-   addstr("What name will you use for this ");
    addstr(newcr->get_type_name());
-   addstr(" in its presence?");
+   addstr("を何と名づけるか?");
 
    move(3,0);
-   addstr("If you do not enter anything, their real name will be used.");
+   addstr("もし何も入力しなければ、本名が使われる。");
 
    enter_name(4,0,newcr->name,CREATURE_NAMELEN,newcr->propername);
 
