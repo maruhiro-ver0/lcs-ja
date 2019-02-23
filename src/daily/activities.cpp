@@ -697,7 +697,7 @@ void survey(Creature *cr)
    else
    {
       move(4,0);
-      addstr("ほとんどの人が政治に関心を寄せていない。");
+      addstr("ほとんどの人が政治に無関心だ。");
    }
 
    //Header for issue box

@@ -649,19 +649,20 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
 
    if(cr->prisoner!=NULL)
    {
-      addstr(", holding ");
+      addstr("、");
       switch(cr->prisoner->type)
       {
-      case CREATURE_POLITICIAN:addstr("a cursing Politician");break;
-      case CREATURE_CORPORATE_CEO:addstr("a squirming CEO");break;
-      case CREATURE_RADIOPERSONALITY:addstr("a crying Radio Personality");break;
-      case CREATURE_NEWSANCHOR:addstr("a smarmy News Anchor");break;
-      case CREATURE_SCIENTIST_EMINENT:addstr("a frightened Eminent Scientist");break;
-      case CREATURE_JUDGE_CONSERVATIVE:addstr("an angry Hangin' Judge");break;
+      case CREATURE_POLITICIAN:addstr("罵る政治家");break;
+      case CREATURE_CORPORATE_CEO:addstr("身悶えするCEO");break;
+      case CREATURE_RADIOPERSONALITY:addstr("泣き叫ぶラジオ・パーソナリティ");break;
+      case CREATURE_NEWSANCHOR:addstr("ごますりニュースキャスター");break;
+      case CREATURE_SCIENTIST_EMINENT:addstr("怯える高名な科学者");break;
+      case CREATURE_JUDGE_CONSERVATIVE:addstr("怒れる首吊り裁判官");break;
       default:
          addstr(cr->prisoner->name);
          break;
       }
+      addstr("を捕らえている");
    }
 
    mvaddstr(2,0,"心:     ");
@@ -839,7 +840,7 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
          move(2+w,49);
          switch(w)
          {
-         case BODYPART_HEAD:addstr("頭:");break;
+         case BODYPART_HEAD:addstr("頭部:");break;
          case BODYPART_BODY:addstr("胴:");break;
          case BODYPART_ARM_RIGHT:addstr("右腕:");break;
          case BODYPART_ARM_LEFT:addstr("左腕:");break;
@@ -1211,8 +1212,8 @@ void printliberalstats(Creature &cr)
    else
    {
       move(18,0);
-      addstr("Enlightened ");
-      addstr("Can't Recruit");
+      addstr("啓蒙された者は");
+      addstr("スカウトできない");
    }
    // Any meetings with potential recruits scheduled?
    if(scheduledmeetings(cr))
@@ -1251,8 +1252,8 @@ void printliberalstats(Creature &cr)
       move(5+w,55);
       switch(w)
       {
-      case BODYPART_HEAD:addstr("頭:");break;
-      case BODYPART_BODY:addstr("胴:");break;
+      case BODYPART_HEAD:addstr("頭部:");break;
+      case BODYPART_BODY:addstr("胴体:");break;
       case BODYPART_ARM_RIGHT:addstr("右腕:");break;
       case BODYPART_ARM_LEFT:addstr("左腕:");break;
       case BODYPART_LEG_RIGHT:addstr("右足:");break;

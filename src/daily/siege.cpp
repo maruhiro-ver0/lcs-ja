@@ -243,7 +243,7 @@ void siegecheck(char canseethings)
                if(location[l]->siege.escalationstate>=2)
                {
                   move(12,1);
-                  addstr("アジトの出入り口には戦車が待ち構えているだろう。", gamelog);
+                  addstr("アジトの出入口には戦車が待ち構えているだろう。", gamelog);
                }
                if(location[l]->siege.escalationstate>=3)
                {
@@ -565,7 +565,7 @@ void siegecheck(char canseethings)
                   set_color(COLOR_RED,COLOR_BLACK,1);
 
                   move(8,1);
-                  addstr("CCSメンバーはトラックから飛び降り、出入り口で発砲した!", gamelog);
+                  addstr("CCSメンバーはトラックから飛び降り、出入口で発砲した!", gamelog);
                   gamelog.nextMessage();
 
                   getkey();
@@ -1246,7 +1246,7 @@ void siegeturn(char clearformess)
                      makedelimiter();
                      move(8,1);
                   }
-                  addstr("戦車がアジトの出入り口まで移動してきた。", gamelog);
+                  addstr("戦車がアジトの出入口まで移動してきた。", gamelog);
                   gamelog.newline();
 
                   getkey();

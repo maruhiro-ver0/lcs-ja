@@ -45,7 +45,7 @@ void hospital(int loc)
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(10,1);
-      addstr("F - 入院して保守的負傷を治療する");
+      addstr("F - 入院して保守傷を治療する");
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(12,1);
@@ -319,7 +319,7 @@ void choose_buyer(short &buyer)
 
       move(8,20);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      addstr("誰が支払うか?");
+      addstr("誰が支払うのか?");
 
       int c=getkey();
 

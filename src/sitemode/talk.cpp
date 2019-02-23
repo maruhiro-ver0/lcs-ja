@@ -1104,7 +1104,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          addstr("。そして", gamelog);
          move(y++,1);
          addstr(tk.name, gamelog);
-         addstr("は出入り口を壊した", gamelog);
+         addstr("は出入口を壊した", gamelog);
          criminalize(tk,LAWFLAG_ESCAPED);
       }
       addstr("。", gamelog);

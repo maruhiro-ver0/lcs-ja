@@ -288,7 +288,7 @@ void Shop::browse_fullscreen(squadst& customers, int& buyer) const
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
       addstr(customers.squad[buyer]->name);
-      addstr("は何を買うか?");
+      addstr("は何を買うのか?");
       move(1,0);
       addstr("----商品-------------------------------値段-------------------------------------");
 
@@ -655,7 +655,7 @@ void Shop::maskselect(Creature &buyer) const
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
       addstr(buyer.name);
-      addstr("はどの仮面を買うか?");
+      addstr("はどの仮面を買うのか?");
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(1,0);
       addstr("----商品名-----------------------------説明-------------------------------------");

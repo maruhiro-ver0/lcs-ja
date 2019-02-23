@@ -1031,7 +1031,7 @@ void advanceday(char &clearformess,char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
                addstr(pool[p]->name, gamelog);
-               addstr("はLCSとの接触を再開した。", gamelog);
+               addstr("はLCSに戻った。", gamelog);
                gamelog.nextMessage();
 
                getkey();

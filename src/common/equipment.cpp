@@ -98,7 +98,7 @@ void equip(vector<Item *> &loot,int loc)
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
-      addstr("部隊に装備する");
+      addstr("部隊の装備");
 
       printparty();
 
@@ -400,7 +400,7 @@ void moveloot(vector<Item *> &dest,vector<Item *> &source)
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
-      addstr("Select Objects");
+      addstr("物の選択");
 
       printparty();
 
@@ -523,7 +523,7 @@ void equipmentbaseassign()
       printfunds();
 
       move(0,0);
-      addstr("装備を移す");
+      addstr("装備の移動");
       move(1,0);
       addstr("----装備-----------------現在の場所---------------------------------------------");
       move(1,51);

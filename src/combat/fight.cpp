@@ -250,7 +250,7 @@ void enemyattack()
       "は涙を流しながら這い出した…",
       "はすすり泣きをしながら這い出した…",
       "は祈りながら這い出した…",
-      "は呪いながら這い出した…"
+      "は罵りながら這い出した…"
    };
 
    static const char *escape_running[] =
@@ -630,8 +630,7 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
    move(16,1);
    addstr(str, gamelog);
 
-   strcpy(str,"");
-   strcat(str,"!");
+   strcpy(str,"!");
    addstr(str, gamelog);
    gamelog.newline();
 
@@ -856,7 +855,7 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
       else if(t.animalgloss==ANIMALGLOSS_ANIMAL) // FIXME: What about Six-legged Pigs?
          switch(w)
          {
-         case BODYPART_HEAD:strcat(str,"頭"); break;
+         case BODYPART_HEAD:strcat(str,"頭部"); break;
          case BODYPART_BODY:strcat(str,"胴体"); break;
          case BODYPART_ARM_RIGHT:strcat(str,"右前足"); break;
          case BODYPART_ARM_LEFT:strcat(str,"左前足"); break;
@@ -866,7 +865,7 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
       else
          switch(w)
          {
-         case BODYPART_HEAD:strcat(str,"頭"); break;
+         case BODYPART_HEAD:strcat(str,"頭部"); break;
          case BODYPART_BODY:strcat(str,"胴体"); break;
          case BODYPART_ARM_RIGHT:strcat(str,"右腕"); break;
          case BODYPART_ARM_LEFT:strcat(str,"左腕"); break;
@@ -1685,23 +1684,23 @@ void attack(Creature &a,Creature &t,char mistake,char &actual,bool force_melee)
                {
                   case 1: strcpy(str, a.name); strcat(str,"は外した!"); break;
                   case 2: strcpy(str, a.name); strcat(str,"はあと少しのところで外した!"); break;
-                  case 3: strcat(str," can't seem to keep the vehicle in either the lane or the line of fire!"); break;
-                  case 4: strcat(str," swerves randomly!"); break;
-                  case 5: strcat(str," cuts off another driver and the shot is blocked!"); break;
-                  case 6: strcat(str," drops behind a hill in the road!"); break;
-                  case 7: strcat(str," changes lanes at the last second!"); break;
-                  case 8: strcat(str," accelerates suddenly and the shot goes short!"); break;
-                  case 9: strcat(str," fakes a left, and goes right instead!"); break;
-                  case 10: strcat(str," fakes a right, and goes left instead!"); break;
-                  case 11: strcat(str," fakes with the brakes while powering ahead!"); break;
-                  case 12: strcat(str," swerves to the other side of a truck!"); break;
-                  case 13: strcat(str," weaves through a row of taxis!"); break;
-                  case 14: strcat(str," dodges behind a hot dog cart!"); break;
-                  case 15: strcat(str," squeezes between some bridge supports for cover!"); break;
-                  case 16: strcat(str," squeals around a corner and behind a building!"); break;
-                  case 17: strcat(str," power slides through a narrow gap in the traffic!"); break;
-                  case 18: strcat(str," rolls the car onto two wheels to dodge the shot!"); break;
-                  default: strcpy(str, a.name); strcat(str," misses completely!"); break; // You failed to hit someone who probably rolled a zero.  You should feel bad.
+                  case 3: strcat(str,"は車線にも弾道にも車を合わせていられないようだ!"); break;
+                  case 4: strcat(str,"はデタラメに蛇行した!"); break;
+                  case 5: strcat(str,"は他の車に割り込み、攻撃は遮られた!"); break;
+                  case 6: strcat(str,"は丘の道の向こう側に隠れた!"); break;
+                  case 7: strcat(str,"はあと数秒のところで車線を変えた!"); break;
+                  case 8: strcat(str,"が急加速して当たらなかった!"); break;
+                  case 9: strcat(str,"は左に曲がるふりをして急に右に曲がった!"); break;
+                  case 10: strcat(str,"は右に曲がるふりをして急に左に曲がった!"); break;
+                  case 11: strcat(str,"は減速するふりをして急加速した!"); break;
+                  case 12: strcat(str,"はトラックの反対側に回り込んだ!"); break;
+                  case 13: strcat(str,"はタクシーの列を蛇行して通り抜けた!"); break;
+                  case 14: strcat(str,"はホットドッグカートの後ろに回りこんだ!"); break;
+                  case 15: strcat(str,"は弾を避けるため橋脚の間に潜り込んだ!"); break;
+                  case 16: strcat(str,"は急カーブしてビルの陰に回りこんだ!"); break;
+                  case 17: strcat(str,"は急発進して車の隙間に滑り込んだ!"); break;
+                  case 18: strcat(str,"は弾を避けるため急カーブした!"); break;
+                  default: strcpy(str, a.name); strcat(str,"は完全に外した!"); break; // You failed to hit someone who probably rolled a zero.  You should feel bad.
                }
             }else{
                strcpy(str, t.name);
@@ -1834,94 +1833,94 @@ void specialattack(Creature &a, Creature &t, char &actual)
    std::string s = "";
    static const char *judge_debate[]   =
    {
-      "死刑制度に関する討論を仕掛けてきた",
-      "同性愛者の権利に関する討論を仕掛けてきた",
-      "言論の自由に関する討論を仕掛けてきた",
-      "修正第2条に関する討論を仕掛けてきた"
+      "に死刑制度に関する討論を仕掛けてきた",
+      "に同性愛者の権利に関する討論を仕掛けてきた",
+      "に言論の自由に関する討論を仕掛けてきた",
+      "に修正第2条に関する討論を仕掛けてきた"
    };
 
    static const char *conservative_ceo_debate[] =
    {
-      "explains the derivatives market to",
-      "justifies voodoo economics to",
-      "extols the Reagan presidency to",
-      "argues about tax cuts with",
-      "explains Conservative philosophy to",
-      "extends a dinner invitation to",
-      "offers a VP position to",
-      "shows a $1000 bill to",
-      "debates fiscal policy with",
-      "offers stock options to"
+      "にデリバティブについて説明した",
+      "にブードゥー経済学を正当化した",
+      "にレーガン大統領を賛美した",
+      "に減税に関する討論を仕掛けてきた",
+      "に保守思想について説明した",
+      "をディナーに誘った",
+      "に副社長の座を提案した",
+      "に$1000の紙幣を見せた",
+      "に財政政策に関する討論を仕掛けてきた",
+      "にストック・オプションを提供した"
    };
 
    static const char *other_ceo_debate[] =
    {
-      "debates fiscal policy with",
-      "derides voodoo economics to",
-      "dismisses the Reagan presidency to",
-      "argues about tax cuts with",
-      "explains Liberal philosophy to"
+      "に財政政策に関する討論を仕掛けてきた",
+      "にブードゥー経済学をあざ笑った",
+      "にレーガン大統領を批判した",
+      "に減税に関する討論を仕掛けてきた",
+      "にリベラル思想について説明した"
    };
 
    static const char *conservative_politician_debate[] =
    {
-      "debates the death penalty with",
-      "debates gay rights with",
-      "debates free speech with",
-      "debates the Second Amendment with",
-      "justifies voodoo economics to",
-      "extols the Reagan presidency to",
-      "argues about tax cuts with",
-      "explains Conservative philosophy to",
-      "extends a dinner invitation to",
-      "debates fiscal policy with",
-      "chats warmly with",
-      "smiles at"
+      "に死刑制度に関する討論を仕掛けてきた",
+      "に同性愛者の権利に関する討論を仕掛けてきた",
+      "に言論の自由に関する討論を仕掛けてきた",
+      "に修正第2条に関する討論を仕掛けてきた",
+      "にブードゥー経済学を正当化した",
+      "にレーガン大統領を賛美した",
+      "に減税に関する討論を仕掛けてきた",
+      "に保守思想について説明した",
+      "をディナーに誘った",
+      "に財政政策に関する討論を仕掛けてきた",
+      "に暖かく話しかけた",
+      "に微笑んだ"
    };
 
    static const char *other_politician_debate[] =
    {
-      "debates the death penalty with",
-      "debates gay rights with",
-      "debates free speech with",
-      "debates the Second Amendment with",
-      "derides voodoo economics to",
-      "dismisses the Reagan presidency to",
-      "argues about tax cuts with",
-      "explains Liberal philosophy to",
-      "extends a dinner invitation to",
-      "debates fiscal policy with",
-      "chats warmly with",
-      "smiles at"
+      "に死刑制度に関する討論を仕掛けてきた",
+      "に同性愛者の権利に関する討論を仕掛けてきた",
+      "に言論の自由に関する討論を仕掛けてきた",
+      "に修正第2条に関する討論を仕掛けてきた",
+      "にブードゥー経済学をあざ笑った",
+      "にレーガン大統領を批判した",
+      "に減税に関する討論を仕掛けてきた",
+      "にリベラル思想について説明した",
+      "をディナーに誘った",
+      "に財政政策に関する討論を仕掛けてきた",
+      "に暖かく話しかけた",
+      "に微笑んだ"
    };
 
    static const char *media_debate[] =
    {
-      "winks at",
-      "smiles at",
-      "smirks at",
-      "chats warmly with",
-      "yells slogans at"
+      "にウィンクした",
+      "に微笑んだ",
+      "に作り笑いをした",
+      "に暖かく話しかけた",
+      "にスローガンを叫んだ"
    };
 
    static const char *military_debate[] =
    {
-      "recites the Pledge of Allegiance to",
-      "debates national security with",
-      "debates terrorism with",
-      "preaches about veterans to",
-      "explains military spending to"
+      "に忠誠の誓いをそらんじた",
+      "に安全保障に関する討論を仕掛けてきた",
+      "にテロに関する討論を仕掛けてきた",
+      "に退役軍人について話した",
+      "に防衛費について説明した"
    };
 
    static const char *police_debate[] =
    {
-      "reasons with ",
-      "promises a fair trial to ",
-      "offers a kind ear to ",
-      "urges cooperation from ",
-      "offers a hug to ",
-      "suggests counseling to ",
-      "gives a teddy bear to "
+      "を説得しようとした",
+      "に公正な裁判を約束した",
+      "の話を聞こうとした",
+      "の協力を得ようとした",
+      "にハグを提案した",
+      "にカウンセリングを勧めた",
+      "にテディ・ベアを渡した"
    };
 
    int resist=0;
@@ -1944,7 +1943,6 @@ void specialattack(Creature &a, Creature &t, char &actual)
       case CREATURE_JUDGE_CONSERVATIVE:
       case CREATURE_JUDGE_LIBERAL:
          strcat(str,t.name);
-         strcat(str,"に");
          strcat(str,pickrandom(judge_debate));
          strcat(str,"!");
          if(t.align==1)
@@ -1957,13 +1955,12 @@ void specialattack(Creature &a, Creature &t, char &actual)
          break;
       case CREATURE_SCIENTIST_EMINENT:
          strcat(str,t.name);
-         strcat(str,"に");
          switch(LCSrandom(3))
          {
-            case 0:strcat(str,"科学的方法論について討論を仕掛けてきた");break;
-            case 1:if(a.align==-1)strcat(str,"研究の有用性を説明した");
-                   else strcat(str,"研究倫理について説明した");break;
-            case 2:strcat(str,"科学的方法論について議論を仕掛けてきた");break;
+            case 0:strcat(str,"に科学的方法論について討論を仕掛けてきた");break;
+            case 1:if(a.align==-1)strcat(str,"に研究の有用性を説明した");
+                   else strcat(str,"に研究倫理について説明した");break;
+            case 2:strcat(str,"に科学的方法論について議論を仕掛けてきた");break;
          }
          strcat(str,"!");
          if(t.align==1)
@@ -1976,7 +1973,6 @@ void specialattack(Creature &a, Creature &t, char &actual)
          break;
       case CREATURE_POLITICIAN:
          strcat(str,t.name);
-         strcat(str,"に");
          if(a.align==-1)
             strcat(str,pickrandom(conservative_politician_debate));
          else
@@ -1992,7 +1988,6 @@ void specialattack(Creature &a, Creature &t, char &actual)
          break;
       case CREATURE_CORPORATE_CEO:
          strcat(str,t.name);
-         strcat(str,"に");
          if(a.align==-1)
             strcat(str,pickrandom(conservative_ceo_debate));
          else
@@ -2009,7 +2004,6 @@ void specialattack(Creature &a, Creature &t, char &actual)
       case CREATURE_RADIOPERSONALITY:
       case CREATURE_NEWSANCHOR:
          strcat(str,t.name);
-         strcat(str,"に");
          strcat(str,pickrandom(media_debate));
          strcat(str,"!");
          if(t.align==1)
@@ -2020,7 +2014,6 @@ void specialattack(Creature &a, Creature &t, char &actual)
          break;
       case CREATURE_MILITARYOFFICER:
          strcat(str,t.name);
-         strcat(str,"に");
          strcat(str,pickrandom(military_debate));
          strcat(str,"!");
          if(t.align==1)
@@ -2033,7 +2026,6 @@ void specialattack(Creature &a, Creature &t, char &actual)
          if(a.enemy())
          {
             strcat(str,t.name);
-            strcat(str,"に");
             strcat(str,pickrandom(police_debate));
             strcat(str,"!");
 
@@ -2047,23 +2039,23 @@ void specialattack(Creature &a, Creature &t, char &actual)
          if(a.get_weapon().has_musical_attack() || a.type==CREATURE_COP)
          {
             strcat(str,t.name);
-            strcat(str,"に");
             switch(LCSrandom(5))
             {
-               case 0:strcat(str,"plays a song for");break;
-               case 1:strcat(str,"sings to");break;
-               case 2:if(a.get_weapon().has_musical_attack())
+               case 0:strcat(str,"に歌を歌った");break;
+               case 1:strcat(str,"に歌った");break;
+               case 2:strcat(str,"に");
+                      if(a.get_weapon().has_musical_attack())
                       {
-                         strcat(str,"strums the ");
                          strcat(str,a.get_weapon().get_name());
+                         strcat(str,"を弾いた");
                       }
                       else // let's use a small enough instrument for anyone to carry in their pocket
-                         strcat(str,"blows a harmonica");
-                      strcat(str," at");break;
-               case 3:if(a.align==1)strcat(str,"plays protest songs at");
-                      else strcat(str,"plays country songs at");
+                         strcat(str,"ハーモニカを吹いた");
                       break;
-               case 4:strcat(str,"rocks out at");break;
+               case 3:if(a.align==1)strcat(str,"にプロテスト・ソングを歌った");
+                      else strcat(str,"にカントリー・ソングを歌った");
+                      break;
+               case 4:strcat(str,"にロック・ソングを歌った");break;
             }
             strcat(str,"!");
 
@@ -2228,12 +2220,11 @@ void severloot(Creature &cr,vector<Item *> &loot)
       clearmessagearea();
       set_color(COLOR_YELLOW,COLOR_BLACK,1);
       move(16,1);
-      addstr("The ", gamelog);
       addstr(cr.get_weapon().get_name(1), gamelog);
-      addstr(" slips from", gamelog);
+      addstr("が", gamelog);
       move(17,1);
       addstr(cr.name, gamelog);
-      addstr("'s grasp.", gamelog);
+      addstr("の手から滑り落ちた。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -2252,9 +2243,9 @@ void severloot(Creature &cr,vector<Item *> &loot)
       set_color(COLOR_YELLOW,COLOR_BLACK,1);
       move(16,1);
       addstr(cr.name, gamelog);
-      addstr("'s ", gamelog);
+      addstr("の", gamelog);
       addstr(cr.get_armor().get_name(), gamelog);
-      addstr(" has been destroyed.", gamelog);
+      addstr("が破壊された。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -2471,76 +2462,76 @@ char incapacitated(Creature &a,char noncombat,char &printed)
          case 0: addstr("はイエスの名を叫んだ。"); break;
          case 1: if(law[LAW_FREESPEECH]==-2) addstr("は床を[ピー]した。");
                  else addstr("は床を台無しにした。"); break;
-         case 2: addstr("はうめき声を上げている。"); break;
+         case 2: addstr("はうめき声を上げた。"); break;
          case 3: addstr("は泣き出した。"); break;
          case 4: addstr("は嘔吐した。"); break;
          case 5: addstr("は笑い出した…"); break;
          case 6: addstr("は痛みで叫び声を上げた。"); break;
          case 7: addstr("は母の名を叫んだ。"); break;
          case 8: addstr("は静かに祈った…"); break;
-         case 9: addstr("は傷口を押さえている。"); break;
+         case 9: addstr("は傷口を押さえた。"); break;
          case 10: addstr("は手を伸ばしうめき声を上げた。"); break;
-         case 11: addstr("は痛みででうずくまっている。"); break;
+         case 11: addstr("は痛みでうずくまった。"); break;
          case 12: addstr("は苦しそうにうめき声を上げた。"); break;
          case 13: addstr("は激しく息をした。"); break;
          case 14: addstr("は叫び祈った。"); break;
          case 15: addstr("は血を吐いた。"); break;
-         case 16: if(mode!=GAMEMODE_CHASECAR) addstr(" stumbles against a wall.");
-                  else addstr(" leans against the door."); break;
-         case 17: addstr(" begs for forgiveness."); break;
-         case 18: addstr(" shouts \"Why have you forsaken me?\""); break;
-         case 19: addstr(" murmurs \"Why Lord?   Why?\""); break;
-         case 20: addstr(" whispers \"Am I dead?\""); break;
-         case 21: if(law[LAW_FREESPEECH]==-2) addstr(" [makes a mess], moaning.");
-                  else addstr(" pisses on the floor, moaning."); break;
-         case 22: addstr(" whispers incoherently."); break;
+         case 16: if(mode!=GAMEMODE_CHASECAR) addstr("は壁にぶつかってよろめいた。");
+                  else addstr("はドアにもたれかかった。"); break;
+         case 17: addstr("は許しを乞った。"); break;
+         case 18: addstr("は叫んだ。「なぜ見捨てるのだ? 」"); break;
+         case 19: addstr("はつぶやいた。「なぜだ、主よ。なぜ? 」"); break;
+         case 20: addstr("はささやいた。「私は死ぬのか? 」"); break;
+         case 21: if(law[LAW_FREESPEECH]==-2) addstr("は苦しみ[床を濡らした]。");
+                  else addstr("は苦しみ床に漏らした。"); break;
+         case 22: addstr("は意味のないことをささやいた。"); break;
          case 23: if(a.special[SPECIALWOUND_RIGHTEYE]&&a.special[SPECIALWOUND_LEFTEYE])
-                     addstr(" stares off into space.");
+                     addstr("は暗闇を見つめた。");
                   else if(a.special[SPECIALWOUND_RIGHTEYE]||a.special[SPECIALWOUND_LEFTEYE])
-                     addstr(" stares into space with one empty eye.");
-                  else addstr(" stares out with hollow sockets."); break;
-         case 24: addstr(" cries softly."); break;
-         case 25: addstr(" yells until the scream cracks dry."); break;
-         case 26: if(a.special[SPECIALWOUND_TEETH]>1) addstr("'s teeth start chattering.");
-                  else if(a.special[SPECIALWOUND_TEETH]==1) addstr("'s tooth starts chattering.");
-                  else addstr("'s gums start chattering."); break;
-         case 27: addstr(" starts shaking uncontrollably."); break;
-         case 28: addstr(" looks strangely calm."); break;
-         case 29: addstr(" nods off for a moment."); break;
-         case 30: addstr(" starts drooling."); break;
-         case 31: addstr(" seems lost in memories."); break;
-         case 32: addstr(" shakes with fear."); break;
-         case 33: addstr(" murmurs \"I'm so afraid...\""); break;
-         case 34: addstr(" cries \"It can't be like this...\""); break;
-         case 35: if(a.age<20 && !a.animalgloss) addstr(" cries \"Mommy!\"");
+                     addstr("は片目で何かを見つめた。");
+                  else addstr("は虚ろな目で見上げた。"); break;
+         case 24: addstr("は静かに泣いた。"); break;
+         case 25: addstr("は声が枯れるまで叫んだ。"); break;
+         case 26: if(a.special[SPECIALWOUND_TEETH]>1) addstr("の歯が震えだした。");
+                  else if(a.special[SPECIALWOUND_TEETH]==1) addstr("の歯が震えだした。");
+                  else addstr("の歯肉が震えだした。"); break;
+         case 27: addstr("は震えが止まらなくなった。"); break;
+         case 28: addstr("は奇妙に落ち着いている。"); break;
+         case 29: addstr("は少し眠りそうになった。"); break;
+         case 30: addstr("はよだれを垂らした。"); break;
+         case 31: addstr("は思い出の中に迷い込んだ。"); break;
+         case 32: addstr("は恐怖で震えた。"); break;
+         case 33: addstr("はうめいた。「怖い…」"); break;
+         case 34: addstr("は泣き叫んだ。「こんなはずではなかった…」"); break;
+         case 35: if(a.age<20 && !a.animalgloss) addstr("は泣き叫んだ。「母さん! 」");
                   else switch(a.type) {
                   case CREATURE_GENETIC:
-                     addstr(" murmurs \"What about my offspring?\""); break;
+                     addstr("はうめいた。「私の子孫はどうなる? 」"); break;
                   case CREATURE_GUARDDOG:
-                     addstr(" murmurs \"What about my puppies?\""); break;
+                     addstr("はうめいた。「私の子犬はどうなる? 」"); break;
                   default:
-                     addstr(" murmurs \"What about my children?\""); break;
+                     addstr("はうめいた。「私の子供はどうなる? 」"); break;
                   } break;
-         case 36: addstr(" shudders quietly."); break;
-         case 37: addstr(" yowls pitifully."); break;
-         case 38: addstr(" begins losing faith in God."); break;
-         case 39: addstr(" muses quietly about death."); break;
-         case 40: addstr(" asks for a blanket."); break;
-         case 41: addstr(" shivers softly."); break;
-         case 42: if(law[LAW_FREESPEECH]==-2)addstr(" [makes a mess].");
-                  else addstr(" vomits up a clot of blood."); break;
-         case 43: if(law[LAW_FREESPEECH]==-2)addstr(" [makes a mess].");
-                  else addstr(" spits up a cluster of bloody bubbles."); break;
-         case 44: addstr(" pleads for mercy."); break;
-         case 45: addstr(" quietly asks for coffee."); break;
-         case 46: addstr(" looks resigned."); break;
-         case 47: addstr(" scratches at the air."); break;
-         case 48: addstr(" starts to giggle uncontrollably."); break;
-         case 49: addstr(" wears a look of pain."); break;
-         case 50: addstr(" questions God."); break;
-         case 51: addstr(" whispers \"Mama baby.  Baby loves mama.\""); break;
-         case 52: addstr(" asks for childhood toys frantically."); break;
-         case 53: addstr(" murmurs \"But I go to church...\""); break;
+         case 36: addstr("は静かに震えた。"); break;
+         case 37: addstr("は痛みで声を上げた。"); break;
+         case 38: addstr("は神を疑いだした。"); break;
+         case 39: addstr("は静かに死について考えた。"); break;
+         case 40: addstr("は毛布を求めた。"); break;
+         case 41: addstr("は静かに震えた。"); break;
+         case 42: if(law[LAW_FREESPEECH]==-2)addstr("は[床を濡らした]。");
+                  else addstr("は血の塊を吐いた。"); break;
+         case 43: if(law[LAW_FREESPEECH]==-2)addstr("は[床を濡らした]。");
+                  else addstr("は血の泡を吐き出した。"); break;
+         case 44: addstr("は慈悲を求めた。"); break;
+         case 45: addstr("はコーヒーを求めた。"); break;
+         case 46: addstr("は諦めたように見えた。"); break;
+         case 47: addstr("は手を伸ばしもがいた。"); break;
+         case 48: addstr("は忍び笑いをした。"); break;
+         case 49: addstr("は苦しげな表情をした。"); break;
+         case 50: addstr("は神に問うた。"); break;
+         case 51: addstr("はささやいた。「ママ、赤ちゃん。赤ちゃんはママが好き。」"); break;
+         case 52: addstr("は子供時代のおもちゃを求めた。"); break;
+         case 53: addstr("はうめいた。「でも教会に行かなければ…」"); break;
          }
 
          printed=1;
@@ -2560,17 +2551,17 @@ char incapacitated(Creature &a,char noncombat,char &printed)
          addstr(a.name, gamelog);
          switch(LCSrandom(11))
          {
-         case 0: addstr(" seems hesitant.", gamelog); break;
-         case 1: addstr(" is caught in self-doubt.", gamelog); break;
-         case 2: addstr(" looks around uneasily.", gamelog); break;
-         case 3: addstr(" begins to weep.", gamelog); break;
-         case 4: addstr(" asks \"Is this right?\"", gamelog); break;
-         case 5: addstr("は助言を求めた。", gamelog); break;
-         case 6: addstr(" is caught in indecision.", gamelog); break;
-         case 7: addstr(" feels numb.", gamelog); break;
-         case 8: addstr(" prays softly.", gamelog); break;
-         case 9: addstr(" searches for the truth.", gamelog); break;
-         case 10: addstr(" tears up.", gamelog); break;
+         case 0: addstr("は怖気づいた。", gamelog); break;
+         case 1: addstr("は自信を失った。", gamelog); break;
+         case 2: addstr("は不安げにあたりを見渡した。", gamelog); break;
+         case 3: addstr("は泣き出した。", gamelog); break;
+         case 4: addstr("は尋ねた。「これは正しいのか? 」", gamelog); break;
+         case 5: addstr("は助けを求めた。", gamelog); break;
+         case 6: addstr("は判断できなくなった。", gamelog); break;
+         case 7: addstr("は呆然としている。", gamelog); break;
+         case 8: addstr("は静かに祈っている。", gamelog); break;
+         case 9: addstr("は真実を求めた。", gamelog); break;
+         case 10: addstr("は泣き出した。", gamelog); break;
          }
 
          gamelog.newline();
@@ -2590,13 +2581,14 @@ char incapacitated(Creature &a,char noncombat,char &printed)
 
          move(16,1);
          addstr(a.name, gamelog);
+         addstr("は", gamelog);
          switch(LCSrandom(5))
          {
-         case 0: addstr(" looks on with authority.", gamelog); break;
-         case 1: addstr(" waits patiently.", gamelog); break;
-         case 2: addstr(" sits in thought.", gamelog); break;
-         case 3: addstr(" breathes slowly.", gamelog); break;
-         case 4: addstr(" considers the situation.", gamelog); break;
+         case 0: addstr("堂々と見ている。", gamelog); break;
+         case 1: addstr("辛抱強く待っている。", gamelog); break;
+         case 2: addstr("考え事をしながら座っている。", gamelog); break;
+         case 3: addstr("静かに息をしている。", gamelog); break;
+         case 4: addstr("状況について考えている。", gamelog); break;
          }
 
          gamelog.newline();

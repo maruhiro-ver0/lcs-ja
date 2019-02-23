@@ -647,7 +647,7 @@ void evasivedrive()
       break;
    case 3:
       if(yourworst>15)
-         addstr("向かってくる車を大胆に蛇行してかわした!", gamelog);
+         addstr("向かってくる車を蛇行して大胆にかわした!", gamelog);
       else
          addstr("追跡する車に挑発的なジェルチャーをした!", gamelog);
       gamelog.newline(); //new line.
@@ -1435,7 +1435,7 @@ bool dodgedrive()
    clearmessagearea();
    set_color(COLOR_YELLOW,COLOR_BLACK,1);
    move(16,1);
-   addstr("避けるために蛇行した!", gamelog);
+   addstr("蛇行して避けた!", gamelog);
    gamelog.newline(); //New line.
 
    getkey();
@@ -1498,22 +1498,22 @@ void crashfriendlycar(int v)
 {
 	static const char *car_crash_modes[] =
 	{
-		" slams into a building!",
-		" skids out and crashes!",
-		" hits a parked car and flips over!"
+		"はビルに衝突した!",
+		"は横滑りしてクラッシュした!",
+		"は停められていた車と衝突して横転した!"
 	};
 	static const char *car_crash_fatalities[] =
 	{
-   	" is crushed inside the car.",
-		"'s lifeless body smashes through the windshield.",
-		" is thrown from the car and killed instantly.",
+   	"車の中で激しく打ち付けられた。",
+		"の遺体がフロントガラスに叩きつけられた。",
+		"は車から投げ出され即死した。",
 	};
 
    //CRASH CAR
    clearmessagearea();
    set_color(COLOR_MAGENTA,COLOR_BLACK,1);
    move(16,1);
-   addstr("Your ", gamelog);
+   addstr("あなたの", gamelog);
    addstr(chaseseq.friendcar[v]->fullname(), gamelog);
    addstr(pickrandom(car_crash_modes), gamelog);
    gamelog.newline(); //New line it.
@@ -1594,11 +1594,9 @@ void crashfriendlycar(int v)
             addstr(activesquad->squad[p]->name, gamelog);
             switch(LCSrandom(3))
             {
-               case 0:addstr(" slumps in ", gamelog);
-                  addstr(activesquad->squad[p]->hisher(), gamelog);
-                  addstr(" seat, out cold, and dies.", gamelog);break;
-               case 1:addstr(" is crushed by the impact.", gamelog);break;
-               case 2:addstr(" struggles free of the car, then collapses lifelessly.", gamelog);break;
+               case 0:addstr("は運転席で気を失い、そして死んだ。", gamelog);break;
+               case 1:addstr("は衝突で押しつぶされ死んだ。", gamelog);break;
+               case 2:addstr("は車から抜け出そうともがいたが押しつぶされ死んだ。", gamelog);break;
             }
             gamelog.newline(); //New line.
             printparty();
@@ -1625,20 +1623,20 @@ void crashfriendlycar(int v)
             switch(LCSrandom(3))
             {
                case 0:
-                  addstr(" grips the ", gamelog);
+                  addstr("は", gamelog);
                   if(activesquad->squad[p]->is_armed())
                      addstr(activesquad->squad[p]->get_weapon().get_shortname(), gamelog);
-                  else addstr("car frame", gamelog);
-                  addstr(" and struggles to ", gamelog);
-                  addstr(activesquad->squad[p]->hisher(), gamelog);
+                  else addstr("車のフレーム", gamelog);
+                  addstr("を掴み、どうにか", gamelog);
                   if(activesquad->squad[p]->flag & CREATUREFLAG_WHEELCHAIR)
-                     addstr(" wheelchair.", gamelog);
-                  else addstr(" feet.", gamelog);
+                     addstr("車椅子", gamelog);
+                  else addstr("足", gamelog);
+                  addstr("を抜き出した。", gamelog);
                   break;
                case 1:
-                  addstr(" gasps in pain, but lives, for now.", gamelog);
+                  addstr("は痛みで苦しんでいるが生きている。今はまだ。", gamelog);
                   break;
-               case 2:addstr(" crawls free of the car, shivering with pain.", gamelog);
+               case 2:addstr("は痛みで震えながら車から這い出した。", gamelog);
                   activesquad->squad[p]->drop_weapon(NULL);
                   break;
             }
@@ -1699,7 +1697,7 @@ void crashenemycar(int v)
          if(victimsum>1)addstr("乗車していた全員が車道に投げ出された。", gamelog);
          else if(victimsum==1)addstr("運転手は車だった塊の中に閉じ込められた。", gamelog);
          break;
-      case 2:addstr("停められた車と衝突して横転した。", gamelog);break;
+      case 2:addstr("停められていた車と衝突して横転した。", gamelog);break;
    }
    gamelog.newline(); //New line.
 
