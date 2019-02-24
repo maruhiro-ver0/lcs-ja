@@ -357,8 +357,8 @@ void reaganify(char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                erase();
-               move(12,17);
-               addstr("あなたは安全に姿を消した。だが、まだ不十分だ。");
+               move(12,20);
+               addstr("あなたは安全に姿を消した。だが不十分だ。");
 
                getkey();
 
@@ -566,8 +566,8 @@ void stalinize(char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                erase();
-               move(12,17);
-               addstr("あなたは安全に姿を消した。だが、まだ不十分だ。");
+               move(12,20);
+               addstr("あなたは安全に姿を消した。だが不十分だ。");
 
                getkey();
 

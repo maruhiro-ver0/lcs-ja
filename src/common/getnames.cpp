@@ -773,8 +773,8 @@ std::string getlawflag(int type)
    case LAWFLAG_JURY:return "陪審員買収";
    case LAWFLAG_RACKETEERING:return "詐欺";
    case LAWFLAG_EXTORTION:return "恐喝";
-   case LAWFLAG_ARMEDASSAULT:return "傷害";
-   case LAWFLAG_ASSAULT:return "暴行";
+   case LAWFLAG_ARMEDASSAULT:return "銃器使用";
+   case LAWFLAG_ASSAULT:return "武器使用";
    case LAWFLAG_CARTHEFT:return "自動車窃盗";
    case LAWFLAG_CCFRAUD:return "カード番号不正取得";
    case LAWFLAG_THEFT:return "窃盗";
@@ -783,7 +783,7 @@ std::string getlawflag(int type)
    //case LAWFLAG_GUNUSE:return "違法な武器の使用";
    //case LAWFLAG_GUNCARRY:return "違法な武器の運搬";
    case LAWFLAG_COMMERCE:return "業務妨害";
-   case LAWFLAG_INFORMATION:return "不法アクセス";
+   case LAWFLAG_INFORMATION:return "違法アクセス";
    case LAWFLAG_BURIAL:return "死体遺棄";
    case LAWFLAG_BREAKING:return "不法侵入";
    case LAWFLAG_VANDALISM:return "器物損壊";

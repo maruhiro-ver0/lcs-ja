@@ -2463,10 +2463,10 @@ void statebrokenlaws(int loc)
       addstr("恐喝", gamelog);
    //ASSAULT
    else if(breakercount[LAWFLAG_ARMEDASSAULT])
-      addstr("傷害", gamelog);
+      addstr("銃器使用", gamelog);
    //ASSAULT
    else if(breakercount[LAWFLAG_ASSAULT])
-      addstr("暴行", gamelog);
+      addstr("武器使用", gamelog);
    //CAR THEFT
    else if(breakercount[LAWFLAG_CARTHEFT])
       addstr("自動車窃盗", gamelog);
@@ -2588,10 +2588,10 @@ void statebrokenlaws(Creature & cr)
       addstr("恐喝");
    //ASSAULT
    else if(breakercount[LAWFLAG_ARMEDASSAULT])
-      addstr("傷害");
+      addstr("銃器使用");
    //ASSAULT
    else if(breakercount[LAWFLAG_ASSAULT])
-      addstr("暴行");
+      addstr("武器使用");
    //CAR THEFT
    else if(breakercount[LAWFLAG_CARTHEFT])
       addstr("自動車窃盗");
@@ -2618,7 +2618,7 @@ void statebrokenlaws(Creature & cr)
       addstr("業務妨害");
    //INFORMATION
    else if(breakercount[LAWFLAG_INFORMATION])
-      addstr("不法アクセス");
+      addstr("違法アクセス");
    //UNLAWFUL BURIAL
    else if(breakercount[LAWFLAG_BURIAL])
       addstr("死体遺棄");

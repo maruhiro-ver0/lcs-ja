@@ -201,14 +201,13 @@ bool liberalagenda(signed char won)
             set_alignment_color(align,true);
          }
 
-         mvaddstr(4,57, "最");
-         mvaddstr(5,57, "高");
-         mvaddstr(6,57, "裁");
-         mvaddstr(7,57, "判");
-         mvaddstr(8,57, "所");
-         mvaddstr(10,57, "裁");
-         mvaddstr(11,57, "判");
-         mvaddstr(12,57, "官");
+         mvaddstr(5,57, "最");
+         mvaddstr(6,57, "高");
+         mvaddstr(7,57, "裁");
+         mvaddstr(8,57, "判");
+         mvaddstr(9,57, "所");
+         mvaddstr(10,57, "判");
+         mvaddstr(11,57, "事");
 
          if(won==-1)
          {
@@ -284,7 +283,7 @@ bool liberalagenda(signed char won)
             {
                case LAW_WOMEN:
                   if(won==-2)addstr("女性は通常男性の代わりに軍隊に召集される。");
-                  else if(won==-1)addstr("女性は所有物とみなされ、合意のない性交も合法である。");
+                  else if(won==-1)addstr("女性は所有物とみなされ、強姦も合法である。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
                      addstr("女性は2等市民である。");
                   else if(law[l]==-1)addstr("差別禁止法は性差には適用されない。");
@@ -294,37 +293,37 @@ bool liberalagenda(signed char won)
                   else addstr("二分された性別はもはや存在しない。性別による分断は終わった。");
                   break;
                case LAW_CIVILRIGHTS:
-                  if(won==-2)addstr("Entire ethnic groups are branded \"enemies of the state\".");
-                  else if(won==-1)addstr("Slavery has been reintroduced, along with an apartheid system.");
+                  if(won==-2)addstr("あらゆる民族集団が「州の敵」である。");
+                  else if(won==-1)addstr("奴隷制が人種隔離政策と共に復活した。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Civil rights laws have been repealed, ostensibly to promote \"states' rights\".");
-                  else if(law[l]==-1)addstr("Racial discrimination is prohibited in name only.");
-                  else if(law[l]==0)addstr("Pervasive racial inequality exists, although overt discrimination is illegal.");
-                  else if(law[l]==1)addstr("Affirmative action is in place to counteract racial discrimination.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("Racial equality is guaranteed and vigorously enforced.");
-                  else addstr("The very idea of \"race\" has been universally discarded as pseudoscience.");
+                     addstr("「州権」強化という名目で公民権は無効化された。");
+                  else if(law[l]==-1)addstr("人種差別禁止は有名無実となっている。");
+                  else if(law[l]==0)addstr("人種差別は広範囲に存在するが、明らかな差別は法で禁止されている。");
+                  else if(law[l]==1)addstr("アファーマティブ・アクションが人種差別に対抗する手段として行われている。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("人種的平等は保障され、積極的に推進されている。");
+                  else addstr("「人種」という概念そのものが疑似科学として破棄された。");
                   break;
                case LAW_DRUGS:
-                  if(won==-2)addstr("Vodka is the only legal recreational drug in the People's Republic of America.");
-                  else if(won==-1)addstr("Talking about recreational drugs is punishable by death.");
+                  if(won==-2)addstr("アメリカ人民共和国ではウォッカが唯一の合法的な娯楽目的のドラッグである。");
+                  else if(won==-1)addstr("娯楽目的の薬物使用について言及した者は死刑とする。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Violent criminals are released to make room for drug offenders.");
-                  else if(law[l]==-1)addstr("Prisons are filled with the targets of a war on drugs.");
-                  else if(law[l]==0)addstr("Recreational drugs are prohibited unless medically prescribed.");
-                  else if(law[l]==1)addstr("Marijuana is regulated and taxed, but harder drugs are illegal.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("Recreational drugs all are regulated and taxed like alcohol and tobacco.");
-                  else addstr("The government distributes free recreational drugs to anyone who wants them.");
+                     addstr("暴力犯が薬物提供者の収容所を作るために解放された。");
+                  else if(law[l]==-1)addstr("刑務所は薬物戦争の標的となった者で溢れている。");
+                  else if(law[l]==0)addstr("医療目的でない薬物の使用は禁止されている。");
+                  else if(law[l]==1)addstr("マリファナは規定され税金が掛けられている。しかしハードドラッグは違法である。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("娯楽のための薬物はアルコールやタバコのように規定され税金が掛けられている。");
+                  else addstr("誰でも娯楽目的で自由に使用できる薬物を政府が広めている。");
                   break;
                case LAW_IMMIGRATION:
-                  if(won==-2)addstr("All Americans must carry around an internal passport, or be shot on sight.");
-                  else if(won==-1)addstr("Private border militiamen shoot suspected foreigners on sight.");
+                  if(won==-2)addstr("全国民は国内パスポートの携帯が義務付けられている。携帯していない者は射殺される");
+                  else if(won==-1)addstr("国境では民兵が疑わしい外国人を発見し次第射殺している。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Immigration is illegal, and noncitizens are shipped to Mexico at gunpoint.");
-                  else if(law[l]==-1)addstr("The National Guard has been deployed to the borders to slow immigration.");
-                  else if(law[l]==0)addstr("Great expense is taken to slow immigration, without success.");
-                  else if(law[l]==1)addstr("The government works to accommodate potential immigrants but deports criminals.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("Immigration is unregulated, and new immigrants are welcomed warmly.");
-                  else addstr("There are open borders, and no distinctions between citizens and non-citizens.");
+                     addstr("移民は違法である。そして市民でない者は銃を突きつけられメキシコに送られている。");
+                  else if(law[l]==-1)addstr("移民の流入を抑えるために州兵が国境に展開されている。");
+                  else if(law[l]==0)addstr("移民規制のために多額の資金が投入されている。だが効果はない。");
+                  else if(law[l]==1)addstr("政府は潜在的な移民の受け入れを行っている。だが犯罪者は国外退去させている。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("移民に関する規定は存在しない。そして新しい移民は歓迎される。");
+                  else addstr("国境が開放され、市民と市民でないものの差は存在しない。");
                   break;
                case LAW_ELECTIONS:
                   if(won==-2)addstr("Only Stalinist Party members may run in elections, and they all run unopposed.");
@@ -661,21 +660,21 @@ bool confirmdisband()                      // concerned should be (slightly) mor
       erase();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      mvaddstr(0,0,"Are you sure you want to disband?");
+      mvaddstr(0,0,"本当に解散するか?");
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      mvaddstr(2,0,"Disbanding scatters the Liberal Crime Squad, sending all of its members");
-      mvaddstr(3,0,"into hiding, free to pursue their own lives.  You will be able to observe");
-      mvaddstr(4,0,"the political situation in brief, and wait until a resolution is reached.");
+      mvaddstr(2,0,"リベラル・クライム・スコードを解散すると、全てのメンバーは隠れ、自由に自分自身");
+      mvaddstr(3,0,"の人生を追い求める。あなたは政治情勢の概要を見ることができ、そして結論がでるま");
+      mvaddstr(4,0,"で待つことになる。");
 
-      mvaddstr(6,0,"If at any time you determine that the Liberal Crime Squad will be needed");
-      mvaddstr(7,0,"again, you may return to the homeless shelter to restart the campaign.");
+      mvaddstr(6,0,"もし、リベラル・クライム・スコードが再び必要になったならば、いつでもホームレス");
+      mvaddstr(7,0,"・シェルターからやり直すことができる。");
 
-      mvaddstr(9,0,"Do not make this decision lightly.  If you do need to return to action,");
-      mvaddstr(10,0,"only the most devoted of your former members will return.");
+      mvaddstr(9,0,"これは気軽に選択してはならない。もし活動が必要になっても、主要なメンバーしか戻");
+      mvaddstr(10,0,"ってこないだろう。");
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
-      mvaddstr(13,0,"Type this Liberal phrase to confirm (press a wrong letter to rethink it):");
+      mvaddstr(13,0,"了解したならば次のリベラルフレーズを入力すること。(別のキーを押すと再考する):");
 
       for(int x=0;x<len(word);x++)
       {

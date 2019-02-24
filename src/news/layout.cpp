@@ -45,11 +45,11 @@ void preparepage(newsstoryst& ns, bool liberalguardian)
             if(pmonth>12) pmonth=1,pyear++;
          }
          move(3,66+(pday<10));
-         addstr(getmonth(pmonth,true));
-         addstr(" ");
-         addstr(pday);
-         addstr(", ");
          addstr(pyear);
+         addstr("年");
+         addstr(getmonth(pmonth,true));
+         addstr(pday);
+         addstr("日");
       }
    }
    else

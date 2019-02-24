@@ -133,7 +133,7 @@ bool show_disbanding_screen(int& oldforcemonth)
    else if(courtmake[3]+courtmake[4]>=COURTMAJORITY) align=ALIGN_LIBERAL; // Liberals plus Elite Liberals have a majority
    else align=ALIGN_MODERATE; // nobody has a majority
    set_alignment_color(align,true);
-   mvaddstr(4,0,"最高裁判所裁判官: ");
+   mvaddstr(4,0,"最高裁判所判事: ");
    if(stalinmode) addstr("ｽﾀｰﾘﾝ"+tostring(courtmake[5])+", ");
    addstr("ﾘﾍﾞﾗﾙ+"+tostring(courtmake[4])+", ");
    addstr("ﾘﾍﾞﾗﾙ"+tostring(courtmake[3])+", ");
@@ -493,7 +493,7 @@ void mode_base()
          mvaddstr(23,40,"X - 明日戦うために生きる");
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
-         if(cannotwait) mvaddstr(23,1,"Cannot Wait until Siege Resolved");
+         if(cannotwait) mvaddstr(23,1,"包囲が解除されるまで待てない");
          else
          {
             if(sieged) mvaddstr(23,1,"W - 包囲に耐える");

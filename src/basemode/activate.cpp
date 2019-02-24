@@ -1414,7 +1414,7 @@ recruitData recruitable_creatures[] = {
    recruitData(CREATURE_GANGMEMBER, (char*)"ギャング", 2),
    recruitData(CREATURE_HIPPIE, (char*)"ヒッピー", 1),
    recruitData(CREATURE_JOURNALIST, (char*)"ジャーナリスト", 4),
-   recruitData(CREATURE_JUDGE_LIBERAL, (char*)"裁判官", 6),
+   recruitData(CREATURE_JUDGE_LIBERAL, (char*)"判事", 6),
    recruitData(CREATURE_LAWYER, (char*)"弁護士", 4),
    recruitData(CREATURE_LOCKSMITH, (char*)"錠前師", 6),
    recruitData(CREATURE_MARTIALARTIST, (char*)"格闘家", 4),

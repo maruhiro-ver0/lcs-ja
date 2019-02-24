@@ -163,10 +163,10 @@ void squadstory_text_location(newsstoryst& ns,bool liberalguardian,bool ccs,char
       default:
          break;
       }
-      strcat(story,"で行われた。");
+      strcat(story,"で発生した。");
    }
    else if(!ccs)
-      strcat(story,"で行われた。");
+      strcat(story,"で発生した。");
 }
 
 void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char* story)

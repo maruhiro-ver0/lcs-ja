@@ -210,7 +210,7 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
       addstr(r.recruit->name, gamelog);
       addstr("との", gamelog);
       move(1,0);
-      addstr("会談ができなかった。", gamelog);
+      addstr("面会できなかった。", gamelog);
       gamelog.newline();
 
       move(3,0);

@@ -356,24 +356,24 @@ void passmonth(char &clearformess,char canseethings)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
       erase();
-      move(12,10);
-      addstr("The Liberal Crime Squad is now just a memory.", gamelog);
+      move(10,10);
+      addstr("もはやリベラル・クライム・スコードは記憶の中にしか存在しない。", gamelog);
       gamelog.newline();
 
       getkey();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       erase();
-      move(12,12);
-      addstr("The last LCS members have all been hunted down.", gamelog);
+      move(16,12);
+      addstr("LCSメンバーだった者たちも全員捕らえられた。", gamelog);
       gamelog.newline();
 
       getkey();
 
       set_color(COLOR_BLACK,COLOR_BLACK,1);
       erase();
-      move(12,14);
-      addstr("They will never see the utopia they dreamed of...", gamelog);
+      move(20,14);
+      addstr("夢の実現を見ることは決してないだろう…", gamelog);
       gamelog.newline();
       gamelog.nextMessage();
 
@@ -406,9 +406,9 @@ void passmonth(char &clearformess,char canseethings)
          {
             set_color(COLOR_MAGENTA,COLOR_BLACK,1);
             move(8,1);
-            addstr("Cops re-polluted ", gamelog);
+            addstr("警察は", gamelog);
             addstr(pool[p]->name, gamelog);
-            addstr("'s mind with Conservatism!", gamelog);
+            addstr("の精神を保守主義で消し去った!", gamelog);
             gamelog.nextMessage();
 
             getkey();
@@ -422,10 +422,11 @@ void passmonth(char &clearformess,char canseethings)
             set_color(COLOR_MAGENTA,COLOR_BLACK,1);
             move(8,1);
             addstr(pool[p]->name, gamelog);
-            addstr(" has been shipped out to the INS to face ", gamelog);
+            addstr("は", gamelog);
             if(law[LAW_IMMIGRATION]==-2 && law[LAW_DEATHPENALTY]==-2)
-               addstr("execution.", gamelog);
-            else addstr("deportation.", gamelog);
+               addstr("処刑", gamelog);
+            else addstr("国外追放", gamelog);
+            addstr("のため移民帰化局に送った。", gamelog);
             gamelog.newline();
 
             getkey();

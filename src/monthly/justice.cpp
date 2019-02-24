@@ -92,7 +92,7 @@ void trial(Creature &g)
       addstr("は笑みを隠しながら罪状を読み上げた:", gamelog);
       g.confessions=0; //Made sleeper judge prevent these lunatics from testifying
    }
-   else addstr("裁判官は罪状を読み上げた:", gamelog);
+   else addstr("判事は罪状を読み上げた:", gamelog);
    gamelog.newline();
    set_color(COLOR_RED,COLOR_BLACK,1);
    move(5,1);
@@ -268,7 +268,7 @@ void trial(Creature &g)
             addstr(g.crimes_suspected[LAWFLAG_ARMEDASSAULT], gamelog);
             addstr("件の", gamelog);
          }
-         addstr("傷害", gamelog);
+         addstr("銃器使用", gamelog);
          breaker[LAWFLAG_ARMEDASSAULT]=0;
       }
       else if(breaker[LAWFLAG_ASSAULT])
@@ -278,7 +278,7 @@ void trial(Creature &g)
             addstr(g.crimes_suspected[LAWFLAG_ASSAULT], gamelog);
             addstr("件の", gamelog);
          }
-         addstr("暴行", gamelog);
+         addstr("武器使用", gamelog);
          breaker[LAWFLAG_ASSAULT]=0;
       }
       else if(breaker[LAWFLAG_CARTHEFT])
@@ -477,7 +477,7 @@ void trial(Creature &g)
 
    y+=4;
    move(y++,1);
-   addstr("A - 裁判所が任命した弁護士を使う");
+   addstr("A - 官選弁護士を使う");
    move(y++,1);
    addstr("B - 自己弁護する!");
    move(y++,1);
@@ -749,7 +749,7 @@ void trial(Creature &g)
          else if(defensepower<=150) addstr("の弁護は極めて強力だった。", gamelog);
          else
          {
-            addstr("の弁護は陪審員、裁判官、そして検察さえも自由への渇望で涙するものだった。", gamelog);
+            addstr("の弁護は陪審員、判事、そして検察さえも自由への渇望で涙するものだった。", gamelog);
             addjuice(g,50,1000); // That shit is legend
          }
          gamelog.newline();
@@ -1430,14 +1430,14 @@ void reeducation(Creature &g)
 {
    static const char *reeducation_experiences[] =
    {
-      " is subjected to rehabilitative therapy in prison.",
-      " works on a prison mural about political diversity.",
-      " routinely sees a Liberal therapist in prison.",
-      " participates in a group therapy session in prison.",
-      " sings songs with prisoners of all political persuasions.",
-      " is encouraged to befriend Conservatives in prison.",
-      " puts on an anti-crime performance in prison.",
-      " sees a video in prison by victims of political crime."
+      "は刑務所で社会復帰プログラムを受けた。",
+      "は刑務所で政治的多様性の壁絵を描いている。",
+      "は刑務所でリベラルのセラピストから定期的に治療を受けている。",
+      "は刑務所でグループ・セラピーを受けた。",
+      "は刑務所内で様々な政治的立場の人々と歌を歌っている。",
+      "は刑務所で保守と友人になることを勧められた。",
+      "は刑務所内で再犯防止プログラムを受けた。",
+      "は刑務所内で政治犯罪被害者に関するビデオを見た。"
    };
 
    erase();
@@ -1455,27 +1455,27 @@ void reeducation(Creature &g)
       if(g.juice>0 && LCSrandom(2))
       {
          addstr(g.name, gamelog);
-         addstr(" feels bad about LCS actions, and loses juice!", gamelog);
+         addstr("はLCSの活動を悪く思い、ジュースを失った!", gamelog);
          addjuice(g,-50,0);
       }
       else if(LCSrandom(15)>g.get_attribute(ATTRIBUTE_WISDOM,true)
            || g.get_attribute(ATTRIBUTE_WISDOM,true) < g.get_attribute(ATTRIBUTE_HEART,true))
       {
          addstr(g.name, gamelog);
-         addstr(" silently grows Wiser...", gamelog);
+         addstr("は少し知恵が増した…", gamelog);
          g.adjust_attribute(ATTRIBUTE_WISDOM,+1);
       }
       else if(g.align==ALIGN_LIBERAL && g.flag & CREATUREFLAG_LOVESLAVE && LCSrandom(4))
       {
          addstr(g.name, gamelog);
-         addstr(" only stays loyal to the LCS for ", gamelog);
+         addstr("はただ", gamelog);
          addstr(pool[g.hireid]->name, gamelog);
-         addstr(".", gamelog);
+         addstr("といるためにLCSに忠誠を誓っている。", gamelog);
       }
       else
       {
          addstr(g.name, gamelog);
-         addstr(" abandons the Liberal Crime Squad!", gamelog);
+         addstr("はリベラル・クライム・スコードを辞めた!", gamelog);
 
          //Rat out contact
          int contact = getpoolcreature(g.hireid);
@@ -1492,7 +1492,7 @@ void reeducation(Creature &g)
    else
    {
       addstr(g.name, gamelog);
-      addstr(" remains strong.", gamelog);
+      addstr("は気を保っている。", gamelog);
    }
    gamelog.nextMessage();
 
@@ -1511,34 +1511,34 @@ void laborcamp(Creature &g)
    if(g.hireid == -1 && !LCSrandom(3))
    {
       escaped = 2;
-      experience = " leads the oppressed prisoners and overwhelms the prison guards!";
+      experience = "は収容所で他の囚人と看守を打ちのめした!";
    }
    else if(g.skill_check(SKILL_DISGUISE, DIFFICULTY_HEROIC) && !LCSrandom(10))
    {
       escaped = 1;
-      experience = " wears an electrician's outfit and rides away with some contractors.";
+      experience = "は電気工事の作業着を着て、工事作業者に紛れて車で収容所から脱出した。";
       g.give_armor(*armortype[getarmortype("ARMOR_WORKCLOTHES")],NULL);
    }
    else if(g.skill_check(SKILL_SECURITY, DIFFICULTY_CHALLENGING) && g.skill_check(SKILL_STEALTH, DIFFICULTY_HARD) && !LCSrandom(10))
    {
       escaped = 1;
-      experience = " picks the lock on their leg chains and then sneaks away!";
+      experience = "は足輪の鍵をこじ開けて密かに抜け出した!";
    }
    else if(g.skill_check(SKILL_SCIENCE, DIFFICULTY_HARD) && !LCSrandom(10))
    {
       escaped = 1;
-      experience = " consumes drugs that simulate death, and is thrown out with the trash!";
+      experience = "は薬物で仮死状態になり、ゴミと一緒に収容所の外に出た!";
    }
 
    static const char *labor_camp_experiences[] =
    {
-      " is forced to operate dangerous machinery in prison.",
-      " is beaten by sadistic prison guards.",
-      " carries heavy burdens back and forth in prison labor camp.",
-      " does back-breaking work all month in prison.",
-      " gets in a brutal fight with another prisoner.",
-      " participates in a quickly-suppressed prison riot.",
-      " participates in a quickly-suppressed prison riot."
+      "は収容所で危険な機械の操作をさせられている。",
+      "は収容所でサディスティックな看守に殴られている。",
+      "は収容キャンプで重い荷物を運ばされている。",
+      "は収容所で重労働をさせられている。",
+      "は収容所で他の囚人とひどいケンカばかりしている。",
+      "は収容所で暴動を起こしたがすぐに鎮圧された。",
+      "は収容所で暴動を起こしたがすぐに鎮圧された。"
    };
 
    if(!escaped)experience=pickrandom(labor_camp_experiences);
@@ -1557,7 +1557,7 @@ void laborcamp(Creature &g)
    {
       int prison = g.location;
       addstr(g.name, gamelog);
-      addstr(" escaped from prison!", gamelog);
+      addstr("は収容所から脱走した!", gamelog);
       addjuice(g,50,1000);
       criminalize(g, LAWFLAG_ESCAPED);
       g.location = find_homeless_shelter(g);
@@ -1577,12 +1577,12 @@ void laborcamp(Creature &g)
          if(num_escaped == 1)
          {
             gamelog.nextMessage();
-            mvaddstr(11,1, "Another imprisoned LCS member also gets out!", gamelog);
+            mvaddstr(11,1, "他のLCSメンバーも脱走した!", gamelog);
          }
          else if(num_escaped > 1)
          {
             gamelog.nextMessage();
-            mvaddstr(11,1, "The LCS will rise again! Multiple LCS members escape!", gamelog);
+            mvaddstr(11,1, "LCSが再び立ち上がる! 他の複数のLCSメンバーも脱走した!", gamelog);
          }
       }
    }
@@ -1591,14 +1591,14 @@ void laborcamp(Creature &g)
       if(g.get_attribute(ATTRIBUTE_HEALTH, true) > 1)
       {
          addstr(g.name, gamelog);
-         addstr(" is badly hurt in the process.", gamelog);
+         addstr("はそのとき重傷を負った。", gamelog);
          addjuice(g,-40,0);
          addjuice(g,-10,-50);
       }
       else
       {
          addstr(g.name, gamelog);
-         addstr(" is found dead.", gamelog);
+         addstr("は死体となって見つかった。", gamelog);
 
          g.die();
          g.location=-1;
@@ -1607,7 +1607,7 @@ void laborcamp(Creature &g)
    else
    {
       addstr(g.name, gamelog);
-      addstr(" managed to avoid lasting injury.", gamelog);
+      addstr("はどうにか負傷せずにすんだ。", gamelog);
    }
    gamelog.nextMessage();
 

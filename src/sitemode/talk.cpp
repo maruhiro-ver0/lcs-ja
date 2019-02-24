@@ -1415,31 +1415,31 @@ char talkAboutIssues(Creature &a, Creature &tk)
          break;
       case LAW_PRIVACY:
          addstr("「人々を農場の動物のように飼いならすシステムに反対しただけの無実の市民の情報", gamelog);
-         addstr("　が保管され続けている。」", gamelog);
+         addstr("  が保管され続けている。」", gamelog);
          break;
       case LAW_DEATHPENALTY:
          addstr("「過去10年間で30人以上の人々が処刑されている。」", gamelog);
          break;
       case LAW_NUCLEARPOWER:
          addstr("「核廃棄物は何世紀にも渡って存在し、多くの家族の脅威となる。もちろんこの付近", gamelog);move(y++,1);
-         addstr("　でも。」", gamelog);
+         addstr("  でも。」", gamelog);
          break;
       case LAW_POLLUTION:
          addstr("「利益のみを追求し他のことは何もしない工場は環境を汚染させ、", gamelog);move(y++,1);
          if (tk.animalgloss==ANIMALGLOSS_ANIMAL) addstr("　人間だけでなく動物も傷つけている。」", gamelog);
-         else addstr("　動物だけでなく人間も傷つけている。」", gamelog);
+         else addstr("  動物だけでなく人間も傷つけている。」", gamelog);
          break;
       case LAW_LABOR:
          addstr("「労働時間はますます長くなっているのに、給料はますます低くなっていることに気", gamelog);move(y++,1);
-         addstr("　づいているだろうか。人々は計画的に奴隷のように働かされている。」", gamelog);
+         addstr("  づいているだろうか。人々は計画的に奴隷のように働かされている。」", gamelog);
          break;
       case LAW_GAY:
          addstr("「同性愛者はそうでない者と変わりない。だが、この国では未だ安っぽいエンターテ", gamelog);move(y++,1);
-         addstr("　イメントに登場する逸脱者のような扱いを受けている。」", gamelog);
+         addstr("  イメントに登場する逸脱者のような扱いを受けている。」", gamelog);
          break;
       case LAW_CORPORATE:
          addstr("「企業の重役たちは、寄生虫のように富をこの国から自分のポケット吸い出すために", gamelog);move(y++,1);
-         addstr("　巨大企業を使っている。」", gamelog);
+         addstr("  巨大企業を使っている。」", gamelog);
          break;
       case LAW_FREESPEECH:
          addstr("\"Protests and demonstrations are regularly and often brutally suppressed in ", gamelog);move(y++,1);

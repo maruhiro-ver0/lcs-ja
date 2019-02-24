@@ -657,7 +657,7 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
       case CREATURE_RADIOPERSONALITY:addstr("泣き叫ぶラジオ・パーソナリティ");break;
       case CREATURE_NEWSANCHOR:addstr("ごますりニュースキャスター");break;
       case CREATURE_SCIENTIST_EMINENT:addstr("怯える高名な科学者");break;
-      case CREATURE_JUDGE_CONSERVATIVE:addstr("怒れる首吊り裁判官");break;
+      case CREATURE_JUDGE_CONSERVATIVE:addstr("怒れる首吊り判事");break;
       default:
          addstr(cr->prisoner->name);
          break;
@@ -1219,7 +1219,7 @@ void printliberalstats(Creature &cr)
    if(scheduledmeetings(cr))
    {
       move(18,55);
-      addstr("会談の約束: ");
+      addstr("面会の約束: ");
       addstr(scheduledmeetings(cr));
       addstr("人");
    }

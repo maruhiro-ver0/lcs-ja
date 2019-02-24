@@ -390,7 +390,7 @@ void printnews(short li,short newspaper)
    else if(loottype[li]->get_idname()=="LOOT_CORPFILES")
    {
       move(6,1);
-      addstr("The Liberal Guardian runs a story featuring Corporate files ", gamelog);
+      addstr("リベラルガーディアンに", gamelog);
       move(7,1);
 
       change_public_opinion(VIEW_LIBERALCRIMESQUAD,newspaper*10);
@@ -398,32 +398,33 @@ void printnews(short li,short newspaper)
       switch(LCSrandom(5))
       {
          case 0:
-            addstr("describing a genetic monster created in a lab.", gamelog);
+            addstr("研究所で生み出された遺伝子操作モンスターの文書", gamelog);
             change_public_opinion(VIEW_GENETICS,50);
             break;
          case 1:
-            addstr("with a list of gay employees entitled \"Homo-workers\".", gamelog);
+            addstr("「ホモ作業員」というタイトルのゲイの従業員のリスト", gamelog);
             change_public_opinion(VIEW_GAY,50);
             break;
          case 2:
-            addstr("containing a memo: \"Terminate the pregnancy, I terminate you.\"", gamelog);
+            addstr("「妊婦を始末しろ。私が始末する。」と書かれたメモ", gamelog);
             change_public_opinion(VIEW_WOMEN,50);
             break;
          case 3:
-            addstr("cheerfully describing foreign corporate sweatshops.", gamelog);
+            addstr("海外の搾取工場について楽しげに書かれた文書", gamelog);
             change_public_opinion(VIEW_SWEATSHOPS,50);
             break;
          case 4:
-            addstr("describing an intricate tax scheme.", gamelog);
+            addstr("複雑な税金逃れの手法が書かれた文書", gamelog);
             change_public_opinion(VIEW_TAXES,50);
             break;
       }
+      addstr("に関する特別記事を掲載した。", gamelog);
       gamelog.newline();
       move(9,1);
-      addstr("The major networks and publications take it up and run it for weeks.", gamelog);
+      addstr("主要なネットワークと新聞社は、数週間に渡りこの話題を取り上げた。", gamelog);
       gamelog.newline();
       move(10,1);
-      addstr("This is bound to get the Corporations a little riled up.", gamelog);
+      addstr("このことには企業も神経を尖らせている。", gamelog);
       gamelog.nextMessage();
 
       change_public_opinion(VIEW_CEOSALARY,50);
@@ -565,7 +566,7 @@ void printnews(short li,short newspaper)
    else if(loottype[li]->get_idname()=="LOOT_JUDGEFILES")
    {
       move(6,1);
-      addstr("リベラルガーディアンに、保守派裁判官の", gamelog);
+      addstr("リベラルガーディアンに、保守派判事の", gamelog);
       move(7,1);
 
       change_public_opinion(VIEW_LIBERALCRIMESQUAD,10);
@@ -578,7 +579,7 @@ void printnews(short li,short newspaper)
       gamelog.newline();
       addstr("証拠を示す特別記事を掲載した。", gamelog);
       move(8,1);
-      addstr("有力ネットワークと新聞社は、数週間に渡りこの話題を取り上げた。", gamelog);
+      addstr("主要なネットワークと新聞社は、数週間に渡りこの話題を取り上げた。", gamelog);
       gamelog.nextMessage();
 
       change_public_opinion(VIEW_JUSTICES,50);
@@ -597,7 +598,7 @@ void printnews(short li,short newspaper)
             change_public_opinion(VIEW_ANIMALRESEARCH,50);break;
          case 1:addstr("拷問が猫に与える効果の", gamelog);
             change_public_opinion(VIEW_ANIMALRESEARCH,50);break;
-         case 2:addstr("事故で生み出された遺伝子操作モンスターの隠蔽を示す", gamelog);
+         case 2:addstr("事故で生み出した遺伝子操作モンスターの隠蔽を示す", gamelog);
             change_public_opinion(VIEW_GENETICS,50);break;
          case 3:addstr("遺伝子研究の被験者が死亡した", gamelog);
             change_public_opinion(VIEW_GENETICS,50);break;
@@ -605,7 +606,7 @@ void printnews(short li,short newspaper)
       addstr("論文に関する特別記事を掲載した。", gamelog);
       gamelog.newline();
       move(9,1);
-      addstr("有力ネットワークと新聞社は、数週間に渡りこの話題を取り上げた。", gamelog);
+      addstr("主要なネットワークと新聞社は、数週間に渡りこの話題を取り上げた。", gamelog);
       gamelog.nextMessage();
    }
    else if(loottype[li]->get_idname()=="LOOT_PRISONFILES")
@@ -796,7 +797,7 @@ void fundreport(char &clearformess)
                case EXPENSE_DATING: mvaddstr(y,0,"デート"); break;
                case EXPENSE_SKETCHES: mvaddstr(y,0,"絵の販売"); break;
                case EXPENSE_FOOD: mvaddstr(y,0,"食料品"); break;
-               case EXPENSE_HOSTAGE: mvaddstr(y,0,"捕虜の世話"); break;
+               case EXPENSE_HOSTAGE: mvaddstr(y,0,"捕虜の尋問"); break;
                case EXPENSE_LEGAL: mvaddstr(y,0,"訴訟費用"); break;
                case EXPENSE_MANUFACTURE: mvaddstr(y,0,"内製"); break;
                case EXPENSE_CARS: mvaddstr(y,0,"自動車の購入"); break;

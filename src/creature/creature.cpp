@@ -116,7 +116,7 @@ std::string Skill::get_name(int skill_type)
    case SKILL_CLUB:           return "棍棒";
    case SKILL_AXE:            return "斧";
    case SKILL_PISTOL:         return "拳銃";
-   case SKILL_RIFLE:          return "ライフル";
+   case SKILL_RIFLE:          return "小銃";
    case SKILL_HEAVYWEAPONS:   return "重火器";
    case SKILL_SHOTGUN:        return "ショットガン";
    case SKILL_SMG:            return "ｻﾌﾞﾏｼﾝｶﾞﾝ";

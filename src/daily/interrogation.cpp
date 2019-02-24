@@ -704,8 +704,8 @@ void tendhostage(Creature *cr,char &clearformess)
             case 1:addstr("大声", gamelog);break;
             case 2:addstr("叫び", gamelog);break;
             case 3:addstr("怒鳴り声", gamelog);break;
-            addstr("「", gamelog);
             }
+            addstr("「", gamelog);
             for(int i=0;i<3;i++)
             {
                switch(LCSrandom(20))
@@ -1538,7 +1538,7 @@ void tendhostage(Creature *cr,char &clearformess)
          gamelog.newline();
          addstr("失踪した", gamelog);
          addstr(cr->name, gamelog);
-         addstr("の行方はまだわからない。", gamelog);
+         addstr("の行方は知られていない。", gamelog);
          sleeperize_prompt(*cr,*a,y+=2);
          cr->flag&=~CREATUREFLAG_MISSING;
          gamelog.nextMessage();

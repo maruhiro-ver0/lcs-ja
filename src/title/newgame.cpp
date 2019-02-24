@@ -1259,7 +1259,7 @@ void makecharacter()
    addstr("あなたは人々からどのように呼ばれるか?");
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(1,0);
-   addstr("本当の名前の代わりの名前を入力してください。");
+   addstr("本当の名前の代わりの名前を入力する。");
 
    enter_name(2,0,newcr->name,CREATURE_NAMELEN,newcr->propername);
 

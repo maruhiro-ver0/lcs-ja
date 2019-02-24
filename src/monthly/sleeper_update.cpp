@@ -335,13 +335,13 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
       {
          erase();
          move(6,1);
-         addstr("Sleeper ", gamelog);
+         addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
-         addstr(" has been caught snooping around.", gamelog);
+         addstr("は嗅ぎまわっているところを見られた。", gamelog);
          gamelog.newline();
 
          move(8,1);
-         addstr("The Liberal is now homeless and jobless...", gamelog);
+         addstr("リベラルは職も住む場所も失った…", gamelog);
          gamelog.nextMessage();
 
          getkey();
@@ -380,12 +380,12 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
 
          erase();
          move(6,1);
-         addstr("Sleeper ", gamelog);
+         addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
-         addstr(" has leaked secret intelligence files.", gamelog);
+         addstr("は機密情報ファイルをリークした。", gamelog);
          gamelog.newline();
          move(7,1);
-         addstr("They are stashed at the homeless shelter.", gamelog);
+         addstr("ファイルはホームレス・シェルターに隠した。", gamelog);
          gamelog.nextMessage();
          pause=true;
       }
@@ -403,12 +403,12 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
 
          erase();
          move(6,1);
-         addstr("Sleeper ", gamelog);
+         addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
-         addstr(" has leaked secret police records.", gamelog);
+         addstr("は警察の秘密記録をリークした。", gamelog);
          gamelog.newline();
          move(7,1);
-         addstr("They are stashed at the homeless shelter.", gamelog);
+         addstr("機密記録はホームレス・シェルターに隠した。", gamelog);
          gamelog.nextMessage();
          pause=true;
       }
@@ -424,12 +424,12 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
 
          erase();
          move(6,1);
-         addstr("Sleeper ", gamelog);
+         addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
-         addstr(" has leaked secret corporate documents.", gamelog);
+         addstr("は企業の機密文書をリークした。", gamelog);
          gamelog.newline();
          move(7,1);
-         addstr("They are stashed at the homeless shelter.", gamelog);
+         addstr("機密文書はホームレス・シェルターに隠した。", gamelog);
          gamelog.nextMessage();
          pause=true;
       }
@@ -444,12 +444,12 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
 
          erase();
          move(6,1);
-         addstr("Sleeper ", gamelog);
+         addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
-         addstr(" has leaked internal prison records.", gamelog);
+         addstr("は刑務所の内部記録をリークした。", gamelog);
          gamelog.newline();
          move(7,1);
-         addstr("They are stashed at the homeless shelter.", gamelog);
+         addstr("内部記録はホームレス・シェルターに隠した。", gamelog);
          gamelog.nextMessage();
          pause=true;
       }
@@ -466,12 +466,12 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
 
          erase();
          move(6,1);
-         addstr("Sleeper ", gamelog);
+         addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
-         addstr(" has leaked proof of systemic Cable News bias.", gamelog);
+         addstr("はケーブルニュースの組織的な保守偏向の証拠をリークした。", gamelog);
          gamelog.newline();
          move(7,1);
-         addstr("The papers are stashed at the homeless shelter.", gamelog);
+         addstr("証拠はホームレス・シェルターに隠した。", gamelog);
          gamelog.nextMessage();
          pause=true;
       }
@@ -488,12 +488,12 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
 
          erase();
          move(6,1);
-         addstr("Sleeper ", gamelog);
+         addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
-         addstr(" has leaked proof of systemic AM Radio bias.", gamelog);
+         addstr("はAMラジオ局の組織的な保守偏向の証拠をリークした。", gamelog);
          gamelog.newline();
          move(7,1);
-         addstr("The papers are stashed at the homeless shelter.", gamelog);
+         addstr("証拠はホームレス・シェルターに隠した。", gamelog);
          gamelog.nextMessage();
          pause=true;
       }
@@ -508,12 +508,12 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
 
          erase();
          move(6,1);
-         addstr("Sleeper ", gamelog);
+         addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
-         addstr(" has leaked internal animal research reports.", gamelog);
+         addstr("は研究所内部の動物実験の論文をリークした。", gamelog);
          gamelog.newline();
          move(7,1);
-         addstr("They are stashed at the homeless shelter.", gamelog);
+         addstr("論文はホームレス・シェルターに隠した。", gamelog);
          gamelog.nextMessage();
          pause=true;
       }
@@ -527,12 +527,12 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
 
          erase();
          move(6,1);
-         addstr("Sleeper ", gamelog);
+         addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
-         addstr(" has leaked proof of corruption in the judiciary.", gamelog);
+         addstr("は司法汚職の証拠をリークした。", gamelog);
          gamelog.newline();
          move(7,1);
-         addstr("The papers are stashed at the homeless shelter.", gamelog);
+         addstr("証拠はホームレス・シェルターに隠した。", gamelog);
          gamelog.nextMessage();
          pause=true;
       }
@@ -546,12 +546,12 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
 
          erase();
          move(6,1);
-         addstr("Sleeper ", gamelog);
+         addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
-         addstr(" has leaked a list of the CCS's government backers.", gamelog);
+         addstr("は政府のCCS支援者リストをリークした。", gamelog);
          gamelog.newline();
          move(7,1);
-         addstr("The disk is stashed at the homeless shelter.", gamelog);
+         addstr("記録したディスクはホームレス・シェルターに隠した。", gamelog);
          gamelog.nextMessage();
          pause=true;
          ccsexposure=CCSEXPOSURE_LCSGOTDATA;
@@ -883,9 +883,9 @@ void sleeper_steal(Creature &cr,char &clearformess,char canseethings,int (&libpo
    }
    erase();
    set_color(COLOR_WHITE,COLOR_BLACK,0);   move(6,1);
-   addstr("Sleeper ", gamelog);
+   addstr("潜伏者の", gamelog);
    addstr(cr.name, gamelog);
-   addstr(" has dropped a package off at the homeless shelter.", gamelog);
+   addstr("はホームレス・シェルターに荷物を送った。", gamelog);
    gamelog.nextMessage();
    if(numberofxmlfails > 0) {
       move(8,1);
@@ -949,15 +949,15 @@ void sleeper_recruit(Creature &cr,char &clearformess,char canseethings,int (&lib
 
             erase();
             move(6,1);
-            addstr("Sleeper ", gamelog);
+            addstr("潜伏者の", gamelog);
             addstr(cr.name, gamelog);
-            addstr(" has recruited a new ", gamelog);
+            addstr("は新しく", gamelog);
             addstr(recruit->get_type_name(), gamelog);
-            addstr(".", gamelog);
+            addstr("をスカウトした。", gamelog);
             gamelog.newline();
             move(8,1);
             addstr(recruit->name, gamelog);
-            addstr(" looks forward serving the Liberal cause!", gamelog);
+            addstr("はリベラル蜂起を心待ちにしている!", gamelog);
             gamelog.nextMessage();
 
             getkey();

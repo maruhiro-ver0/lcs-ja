@@ -1576,7 +1576,7 @@ void mode_site()
 
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(10,1);
-            addstr("[ ] E - Encounter warnings");
+            addstr("[ ] E - 遭遇時に警告");
             move(11,1);
             addstr("[ ] M - 音楽");
 
@@ -1680,7 +1680,7 @@ void mode_site()
                   clearmessagearea();
                   set_color(COLOR_CYAN,COLOR_BLACK,1);
                   move(16,1);
-                  addstr("The squad sneaks past the conservatives!", gamelog);
+                  addstr("部隊は保守が通り過ぎるまで隠れた!", gamelog);
                   gamelog.newline();
 
                   getkey();
@@ -2232,9 +2232,9 @@ void mode_site()
 
                   set_color(COLOR_GREEN,COLOR_BLACK,1);
                   move(16,1);
-                  addstr("The Conservatives have shrunk back under ", gamelog);
+                  addstr("保守はあなたのリベラルへの", gamelog);
                   move(17,1);
-                  addstr("the power of your Liberal Convictions!", gamelog);
+                  addstr("執念に押され撤退した!", gamelog);
                   gamelog.newline();
 
                   getkey();
@@ -2357,10 +2357,10 @@ void mode_site()
                         set_color(COLOR_WHITE,COLOR_BLACK,1);
                         move(16,1);
                         if(law[LAW_FREESPEECH]!=ALIGN_ARCHCONSERVATIVE)
-                           addstr("Damn! ", gamelog);
+                           addstr("畜生! ", gamelog);
                         else
-                           addstr("[Rats!] ", gamelog);
-                        addstr("The CEO must have fled to a panic room.", gamelog);
+                           addstr("[何ということだ!] ", gamelog);
+                        addstr("CEOは緊急避難室にいるに違いない。", gamelog);
                         gamelog.newline();
                         levelmap[locx][locy][locz].special=-1;
 
@@ -2374,7 +2374,7 @@ void mode_site()
                            clearmessagearea(false);
                            set_color(COLOR_WHITE,COLOR_BLACK,1);
                            move(16,1);
-                           addstr("The CEO is in his study.", gamelog);
+                           addstr("CEOが書斎にいる。", gamelog);
                            gamelog.newline();
                            levelmap[locx][locy][locz].special=-1;
 
@@ -2389,7 +2389,7 @@ void mode_site()
                            clearmessagearea(false);
                            set_color(COLOR_WHITE,COLOR_BLACK,1);
                            move(16,1);
-                           addstr("The CEO's study lies empty.", gamelog);
+                           addstr("CEOの書斎には誰もいない。", gamelog);
                            gamelog.newline();
                            levelmap[locx][locy][locz].special=-1;
 
@@ -2467,23 +2467,23 @@ void mode_site()
                         move(16,1);
                         if(numenc==1)
                         {
-                           if(squadmoved) addstr("There is someone up ahead.", gamelog);
-                           else addstr("There is someone passing by.", gamelog);
+                           if(squadmoved) addstr("前方に誰かがいる。", gamelog);
+                           else addstr("誰かが通り過ぎた。", gamelog);
                         }
                         else if(numenc<=3)
                         {
-                           if(squadmoved) addstr("There are a few people up ahead.", gamelog);
-                           else addstr("There are a few people passing by.", gamelog);
+                           if(squadmoved) addstr("前方に数人がいる。", gamelog);
+                           else addstr("数人が通り過ぎた。", gamelog);
                         }
                         else if(numenc<=6)
                         {
-                           if(squadmoved) addstr("There is a group of people up ahead.", gamelog);
-                           else addstr("There is a group of people passing by.", gamelog);
+                           if(squadmoved) addstr("前方に集団がいる。", gamelog);
+                           else addstr("集団が通り過ぎた。", gamelog);
                         }
                         else
                         {
-                           if(squadmoved) addstr("There is a crowd of people up ahead.", gamelog);
-                           else addstr("There is a crowd of people passing by.", gamelog);
+                           if(squadmoved) addstr("前方に大勢の人がいる。", gamelog);
+                           else addstr("大勢の人が通り過ぎた。", gamelog);
                         }
                         gamelog.newline();
 
@@ -2558,13 +2558,13 @@ void resolvesite()
                pool[p]->flag&=~CREATUREFLAG_SLEEPER;
                erase();
                move(8,1);
-               addstr("Sleeper ", gamelog);
+               addstr("潜伏者の", gamelog);
                addstr(pool[p]->name, gamelog);
-               addstr(" has been outed by your bold attack!", gamelog);
+               addstr("があなたの大胆な攻撃で出てきた!", gamelog);
                gamelog.newline();
 
                move(10,1);
-               addstr("The Liberal is now at your command as a normal squad member.", gamelog);
+               addstr("このリベラルは通常の部隊のメンバーとして行動する。", gamelog);
                gamelog.newline();
 
                pool[p]->base=activesquad->squad[0]->base;
@@ -2606,7 +2606,7 @@ void open_door(bool restricted)
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
-      addstr("The vault door is impenetrable.", gamelog);
+      addstr("金庫室の扉は閉鎖されている。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -2633,12 +2633,12 @@ void open_door(bool restricted)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(16,1);
       if(locked)
-         addstr("This door appears to be wired up to an alarm.", gamelog);
+         addstr("扉には警報が仕掛けられているようだ。", gamelog);
       else
-         addstr("EMERGENCY EXIT ONLY. ALARM WILL SOUND.", gamelog);
+         addstr("『緊急出口 使用すると警報がなります。』", gamelog);
       gamelog.newline();
       move(17,1);
-      addstr("Try the door anyway? (Yes or No)");
+      addstr("それでも扉を通るか? (Yes / No)");
 
       while(true)
       {
@@ -2689,7 +2689,7 @@ void open_door(bool restricted)
                {
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(17,1);
-                  addstr("Your tampering sets off the alarm!", gamelog);
+                  addstr("開けようとすると警報が鳴り始めた!", gamelog);
                   gamelog.newline();
                   sitealarm=1;
 
@@ -2743,7 +2743,7 @@ void open_door(bool restricted)
                   clearmessagearea(false);
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(16,1);
-                  addstr("The alarm goes off!", gamelog);
+                  addstr("警報が鳴り始めた!", gamelog);
                   gamelog.newline();
                   sitealarm=1;
 
@@ -2774,7 +2774,7 @@ void open_door(bool restricted)
          clearmessagearea(false);
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(16,1);
-         addstr("It opens easily. The alarm goes off!", gamelog);
+         addstr("扉は簡単に開いた。警報が鳴り始めた!", gamelog);
          gamelog.newline();
          sitealarm=1;
 

@@ -176,7 +176,7 @@
         </armor>
         <size>4</size> <!-- but easy to hit car -->
         <longname>ハンビー</longname>
-        <shortname>ハンビー</shortname>
+        <shortname>ﾊﾝﾋﾞｰ</shortname>
         <stealing>
             <difficulty_to_find>10</difficulty_to_find>
             <juice>0</juice>
@@ -324,7 +324,7 @@
         </armor>
         <size>2</size>
         <longname>パトカー</longname>
-        <shortname>パトカー</shortname>
+        <shortname>ﾊﾟﾄｶｰ</shortname>
         <stealing>
             <difficulty_to_find>7</difficulty_to_find>
             <juice>2</juice>
@@ -370,7 +370,7 @@
         </armor>
         <size>2</size>
         <longname>スポーツカー</longname>
-        <shortname>スポーツ</shortname>
+        <shortname>ｽﾎﾟｰﾂ</shortname>
         <stealing> <!-- Stealing isn't possible for agentcars -->
             <difficulty_to_find>10</difficulty_to_find>
             <juice>0</juice>
@@ -420,7 +420,7 @@
         </armor>
         <size>2</size>
         <longname>スポーツカー</longname>
-        <shortname>スポーツ</shortname>
+        <shortname>ｽﾎﾟｰﾂ</shortname>
         <stealing>
             <difficulty_to_find>3</difficulty_to_find>
             <juice>0</juice>
@@ -571,7 +571,7 @@
         </armor>
         <size>2</size>
         <longname>タクシー</longname>
-        <shortname>タクシー</shortname>
+        <shortname>ﾀｸｼｰ</shortname>
         <stealing>
             <difficulty_to_find>8</difficulty_to_find>
             <juice>0</juice>

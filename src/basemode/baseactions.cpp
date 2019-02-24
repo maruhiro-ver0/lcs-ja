@@ -704,27 +704,27 @@ void investlocation()
                      strcpy(location[loc]->front_shortname,"派遣");
                      break;
                   case 1:
-                     strcat(location[loc]->front_name,"マンパワーLLC");
-                     strcpy(location[loc]->front_shortname,"マンパワー");
+                     strcat(location[loc]->front_name,"ﾏﾝﾊﾟﾜｰLLC");
+                     strcpy(location[loc]->front_shortname,"ﾏﾝﾊﾟﾜｰ");
                      break;
                   case 2:
-                     strcat(location[loc]->front_name,"スタッフィングInc");
-                     strcpy(location[loc]->front_shortname,"スタッフ");
+                     strcat(location[loc]->front_name,"ｽﾀｯﾌｨﾝｸﾞInc");
+                     strcpy(location[loc]->front_shortname,"ｽﾀｯﾌｨﾝｸﾞ");
                      break;
                   case 3:
-                     strcat(location[loc]->front_name,"レイバー・レディー");
-                     strcpy(location[loc]->front_shortname,"レイバー");
+                     strcat(location[loc]->front_name,"ﾚｲﾊﾞｰ･ﾚﾃﾞｨｰ");
+                     strcpy(location[loc]->front_shortname,"ﾚｲﾊﾞｰ");
                      break;
                   case 4:
-                     strcat(location[loc]->front_name,"エンプロイメント");
-                     strcpy(location[loc]->front_shortname,"エンプロイ");
+                     strcat(location[loc]->front_name,"ｴﾝﾌﾟﾛｲﾒﾝﾄ");
+                     strcpy(location[loc]->front_shortname,"ｴﾝﾌﾟﾛｲ");
                      break;
                   case 5:
-                     strcat(location[loc]->front_name,"サービシーズ");
-                     strcpy(location[loc]->front_shortname,"サービス");
+                     strcat(location[loc]->front_name,"ｻｰﾋﾞｼｰｽﾞ");
+                     strcpy(location[loc]->front_shortname,"ｻｰﾋﾞｽ");
                      break;
                   case 6:
-                     strcat(location[loc]->front_name,"ソリューションズ");
+                     strcat(location[loc]->front_name,"ｿﾘｭｰｼｮﾝｽﾞ");
                      strcpy(location[loc]->front_shortname,"ｿﾘｭｰｼｮﾝｽﾞ");
                      break;
                   }
@@ -733,16 +733,16 @@ void investlocation()
                   switch(LCSrandom(7))
                   {
                   case 0:
-                     strcat(location[loc]->front_name,"フライドチキン");
-                     strcpy(location[loc]->front_shortname,"チキン");
+                     strcat(location[loc]->front_name,"ﾌﾗｲﾄﾞﾁｷﾝ");
+                     strcpy(location[loc]->front_shortname,"ﾁｷﾝ");
                      break;
                   case 1:
-                     strcat(location[loc]->front_name,"ハンバーガー");
-                     strcpy(location[loc]->front_shortname,"バーガー");
+                     strcat(location[loc]->front_name,"ﾊﾝﾊﾞｰｶﾞｰ");
+                     strcpy(location[loc]->front_shortname,"ﾊﾞｰｶﾞｰ");
                      break;
                   case 2:
-                     strcat(location[loc]->front_name,"ステーキハウス");
-                     strcpy(location[loc]->front_shortname,"ステーキ");
+                     strcat(location[loc]->front_name,"ｽﾃｰｷﾊｳｽ");
+                     strcpy(location[loc]->front_shortname,"ｽﾃｰｷ");
                      break;
                   case 3:
                      strcat(location[loc]->front_name,"中華料理");
@@ -757,8 +757,8 @@ void investlocation()
                      strcpy(location[loc]->front_shortname,"ピザ");
                      break;
                   case 6:
-                     strcat(location[loc]->front_name,"レストラン");
-                     strcpy(location[loc]->front_shortname,"レストラン");
+                     strcat(location[loc]->front_name,"ﾚｽﾄﾗﾝ");
+                     strcpy(location[loc]->front_shortname,"ﾚｽﾄﾗﾝ");
                      break;
                   }
                   break;
@@ -782,16 +782,16 @@ void investlocation()
                      strcpy(location[loc]->front_shortname,"酒店");
                      break;
                   case 4:
-                     strcat(location[loc]->front_name,"アンティーク");
-                     strcpy(location[loc]->front_shortname,"アンティーク");
+                     strcat(location[loc]->front_name,"ｱﾝﾃｨｰｸ");
+                     strcpy(location[loc]->front_shortname,"ｱﾝﾃｨｰｸ");
                      break;
                   case 5:
                      strcat(location[loc]->front_name,"修理屋");
                      strcpy(location[loc]->front_shortname,"修理");
                      break;
                   case 6:
-                     strcat(location[loc]->front_name,"ペットショップ");
-                     strcpy(location[loc]->front_shortname,"ペット");
+                     strcat(location[loc]->front_name,"ﾍﾟｯﾄｼｮｯﾌﾟ");
+                     strcpy(location[loc]->front_shortname,"ﾍﾟｯﾄ");
                      break;
                   }
                   break;

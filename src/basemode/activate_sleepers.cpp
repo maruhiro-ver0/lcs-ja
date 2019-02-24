@@ -52,7 +52,7 @@ void activate_sleepers()
       printfunds();
 
       move(0,0);
-      addstr("潜伏中のスパイの活動");
+      addstr("潜伏者のスパイ活動");
       makedelimiter(1);
       move(1,4);
       addstr("コードネーム");

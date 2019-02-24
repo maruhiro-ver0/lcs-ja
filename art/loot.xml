@@ -142,7 +142,7 @@
     </loottype>
 
     <loottype idname="LOOT_JUDGEFILES">
-        <name>裁判官買収の証拠資料</name>
+        <name>判事買収の証拠資料</name>
         <stackable>true</stackable>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>1000</fencevalue>

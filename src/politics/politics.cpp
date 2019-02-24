@@ -157,13 +157,13 @@ void elections(char clearformess,char canseethings)
          set_color(COLOR_WHITE,COLOR_BLACK,1);
 
          move(0,0);
-         addstr("Presidential General Election ");
          addstr(year);
+         addstr("年 大統領選挙");
 
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(2,0);
-         if(stalinmode) addstr("After a long primary campaign, the people have rallied around three leaders...");
-         else addstr("After a long primary campaign, the people have rallied around two leaders...");
+         if(stalinmode) addstr("長い予備選の末、人々は3人のリーダーの元に集結した…");
+         else addstr("長い予備選の末、人々は2人のリーダーの元に集結した…");
       }
 
       char candidate[3][POLITICIAN_NAMELEN+1];
@@ -244,26 +244,26 @@ void elections(char clearformess,char canseethings)
             set_alignment_color(candidate[c][0],true);
 
             move(8-((c+1)%3)*2,0);
+            addstr(candidate[c]+1);
             // Choose title -- president or vice president special titles, otherwise
             // pick based on historically likely titles (eg, governor most likely...)
-            if(c==presparty&&execterm==1) addstr("President ");
-            else if(c==presparty&&!strcmp(candidate[c]+1,execname[EXEC_VP])) addstr("Vice President ");
-            else if(LCSrandom(2)) addstr("Governor ");
-            else if(LCSrandom(2)) addstr("Senator ");
-            else if(LCSrandom(2)) addstr("Ret. General ");
-            else if(LCSrandom(2)) addstr("Representative ");
-            else if(LCSrandom(2)) addstr("Mr. ");
-            else addstr("Mrs. ");
+            if(c==presparty&&execterm==1) addstr("大統領");
+            else if(c==presparty&&!strcmp(candidate[c]+1,execname[EXEC_VP])) addstr("副大統領 ");
+            else if(LCSrandom(2)) addstr("州知事");
+            else if(LCSrandom(2)) addstr("上院議員");
+            else if(LCSrandom(2)) addstr("退役軍人");
+            else if(LCSrandom(2)) addstr("下院議員");
+            else if(LCSrandom(2)) addstr("氏");
+            else addstr("氏");
 
-            addstr(candidate[c]+1);
-            addstr(", "+getalign(candidate[c][0],false));
+            addstr("、"+getalign(candidate[c][0],false));
          }
 
          if(!disbanding)
          {
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(8+stalinmode*2,0);
-            addstr("キーを押すと投票結果を表示する。");
+            addstr("キーを押すと開票状況を表示する。");
 
             getkey();
          }
@@ -372,8 +372,8 @@ void elections(char clearformess,char canseethings)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
       move(0,0);
-      addstr("住民投票 ");
       addstr(year);
+      addstr("年 住民投票");
    }
 
    vector<int> prop, propdir, canlaw;
@@ -554,7 +554,7 @@ void elections(char clearformess,char canseethings)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(23,0);
-      addstr("キーを押すと投票結果を表示する。");
+      addstr("キーを押すと開票状況を表示する。");
 
       getkey();
    }
@@ -634,8 +634,8 @@ void elections_senate(int senmod,char canseethings)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
       move(0,0);
-      addstr("Senate Elections ");
       addstr(year);
+      addstr("年 上院選挙");
    }
 
    int x=0,y=2,s=0;
@@ -658,7 +658,7 @@ void elections_senate(int senmod,char canseethings)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(23,0);
-      addstr("Press any key to watch the elections unfold.");
+      addstr("キーを押すと開票状況を表示する。");
 
       getkey();
    }
@@ -715,26 +715,26 @@ void elections_senate(int senmod,char canseethings)
          set_color(COLOR_WHITE,COLOR_BLACK,0);
 
          move(20,0);
-         addstr("Net change:");
+         addstr("増減:");
          if(stalinmode)
          {
-            addstr("   S: ");
+            addstr("  ｽﾀ: ");
             if(change[5]>0) addstr("+");
             addstr(change[5]);
          }
-         addstr("   L+: ");
+         addstr(" ﾘﾍﾞ+: ");
          if(change[4]>0) addstr("+");
          addstr(change[4]);
-         addstr("   L: ");
+         addstr(" ﾘﾍﾞ: ");
          if(change[3]>0) addstr("+");
          addstr(change[3]);
-         addstr("   m: ");
+         addstr("  穏: ");
          if(change[2]>0) addstr("+");
          addstr(change[2]);
-         addstr("   C: ");
+         addstr("  保: ");
          if(change[1]>0) addstr("+");
          addstr(change[1]);
-         addstr("   C+: ");
+         addstr("  保+: ");
          if(change[0]>0) addstr("+");
          addstr(change[0]);
          addstr("        ");
@@ -774,17 +774,16 @@ void elections_senate(int senmod,char canseethings)
       else winner=ALIGN_MODERATE; // nobody won
       switch(winner)
       {
-      case ALIGN_ARCHCONSERVATIVE: addstr("The $$ U.S.A. Flag Eagle $$ Conservative Tea Party claims victory!"); break;
-      case ALIGN_CONSERVATIVE: addstr("The Conservative Party claims victory!"); break;
-      case ALIGN_MODERATE: addstr("The next two years promise to be more of the same."); break;
-      case ALIGN_LIBERAL: addstr("The Liberal Party claims victory!"); break;
-      case ALIGN_ELITELIBERAL: addstr("The Progressive Elite Social Liberal Green Party claims victory!"); break;
-      case ALIGN_STALINIST: addstr("The Stalinist Party claims victory!"); break;
+      case ALIGN_ARCHCONSERVATIVE: addstr("$$ フラッグ・イーグル $$ 保守ティーパーティー党が勝利を宣言した!"); break;
+      case ALIGN_CONSERVATIVE: addstr("保守政党が勝利を宣言した!"); break;
+      case ALIGN_MODERATE: addstr("次の2年間はもっと同数になることを約束しよう。"); break;
+      case ALIGN_LIBERAL: addstr("リベラル政党が勝利を宣言した!"); break;
+      case ALIGN_ELITELIBERAL: addstr("進歩先鋭社会リベラルグリーン党が勝利を宣言した!"); break;
+      case ALIGN_STALINIST: addstr("スターリン党が勝利を宣言した!"); break;
       }
 
       move(22,0);
-      addstr("Press any key to continue the elections.    ");
-
+      addstr("キーを押すと投票が続く。                    ");
       getkey();
    }
 }
@@ -801,8 +800,8 @@ void elections_house(char canseethings)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
       move(0,0);
-      addstr("House Elections ");
       addstr(year);
+      addstr("年 下院選挙");
    }
 
    int x=0,y=2,h=0;
@@ -816,32 +815,32 @@ void elections_house(char canseethings)
          if(house[h]==-2)
          {
             set_color(COLOR_RED,COLOR_BLACK,1);
-            addstr("C+");
+            addstr("保+");
          }
          else if(house[h]==-1)
          {
             set_color(COLOR_MAGENTA,COLOR_BLACK,1);
-            addstr("C ");
+            addstr("保");
          }
          else if(house[h]==0)
          {
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
-            addstr("m ");
+            addstr("穏");
          }
          else if(house[h]==1)
          {
             set_color(COLOR_CYAN,COLOR_BLACK,1);
-            addstr("L ");
+            addstr("リ");
          }
          else if(house[h]==2)
          {
             set_color(COLOR_GREEN,COLOR_BLACK,1);
-            addstr("L+");
+            addstr("リ+");
          }
          else
          {
             set_color(COLOR_RED,COLOR_BLACK,1);
-            addstr("S ");
+            addstr("ス");
          }
       }
 
@@ -853,7 +852,7 @@ void elections_house(char canseethings)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(23,0);
-      addstr("Press any key to watch the elections unfold.");
+      addstr("キーを押すと開票状況を表示する。");
 
       getkey();
    }
@@ -900,32 +899,32 @@ void elections_house(char canseethings)
          if(house[h]==-2)
          {
             set_color(COLOR_RED,COLOR_BLACK,1);
-            addstr("C+");
+            addstr("保+");
          }
          else if(house[h]==-1)
          {
             set_color(COLOR_MAGENTA,COLOR_BLACK,1);
-            addstr("C ");
+            addstr("保");
          }
          else if(house[h]==0)
          {
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
-            addstr("m ");
+            addstr("穏");
          }
          else if(house[h]==1)
          {
             set_color(COLOR_CYAN,COLOR_BLACK,1);
-            addstr("L ");
+            addstr("リ");
          }
          else if(house[h]==2)
          {
             set_color(COLOR_GREEN,COLOR_BLACK,1);
-            addstr("L+");
+            addstr("リ+");
          }
          else
          {
             set_color(COLOR_RED,COLOR_BLACK,1);
-            addstr("S ");
+            addstr("ス");
          }
       }
 
@@ -937,26 +936,26 @@ void elections_house(char canseethings)
          set_color(COLOR_WHITE,COLOR_BLACK,0);
 
          move(20,0);
-         addstr("Net change:");
+         addstr("増減:");
          if(stalinmode)
          {
-            addstr("   S: ");
+            addstr("  ｽﾀ: ");
             if(change[5]>0) addstr("+");
             addstr(change[5]);
          }
-         addstr("   L+: ");
+         addstr(" ﾘﾍﾞ+: ");
          if(change[4]>0) addstr("+");
          addstr(change[4]);
-         addstr("   L: ");
+         addstr(" ﾘﾍﾞ: ");
          if(change[3]>0) addstr("+");
          addstr(change[3]);
-         addstr("   m: ");
+         addstr("  穏: ");
          if(change[2]>0) addstr("+");
          addstr(change[2]);
-         addstr("   C: ");
+         addstr("  保: ");
          if(change[1]>0) addstr("+");
          addstr(change[1]);
-         addstr("   C+: ");
+         addstr("  保+: ");
          if(change[0]>0) addstr("+");
          addstr(change[0]);
          addstr("        ");
@@ -996,17 +995,17 @@ void elections_house(char canseethings)
       else winner=ALIGN_MODERATE; // nobody won
       switch(winner)
       {
-      case ALIGN_ARCHCONSERVATIVE: addstr("The $$ U.S.A. Flag Eagle $$ Conservative Tea Party claims victory!"); break;
-      case ALIGN_CONSERVATIVE: addstr("The Conservative Party claims victory!"); break;
-      case ALIGN_MODERATE: addstr("The next two years promise to be more of the same."); break;
-      case ALIGN_LIBERAL: addstr("The Liberal Party claims victory!"); break;
-      case ALIGN_ELITELIBERAL: addstr("The Progressive Elite Social Liberal Green Party claims victory!"); break;
-      case ALIGN_STALINIST: addstr("The Stalinist Party claims victory!"); break;
+      case ALIGN_ARCHCONSERVATIVE: addstr("$$ フラッグ・イーグル $$ 保守ティーパーティー党が勝利を宣言した!"); break;
+      case ALIGN_CONSERVATIVE: addstr("保守政党が勝利を宣言した!"); break;
+      case ALIGN_MODERATE: addstr("次の2年間はもっと同数になることを約束しよう。"); break;
+      case ALIGN_LIBERAL: addstr("リベラル政党が勝利を宣言した!"); break;
+      case ALIGN_ELITELIBERAL: addstr("進歩先鋭社会リベラルグリーン党が勝利を宣言した!"); break;
+      case ALIGN_STALINIST: addstr("スターリン党が勝利を宣言した!"); break;
       }
       if(!disbanding)
       {
          move(22,0);
-         addstr("Press any key to continue the elections.    ");
+         addstr("キーを押すと投票が続く。                    ");
 
          getkey();
       }
@@ -1038,8 +1037,8 @@ void supremecourt(char clearformess,char canseethings)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
       move(0,0);
-      addstr("最高裁判所による審査 ");
       addstr(year);
+      addstr("年 最高裁判所審査");
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
    }
@@ -1284,7 +1283,7 @@ void supremecourt(char clearformess,char canseethings)
 
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(0,0);
-         addstr("最高裁裁判官の変更!");
+         addstr("最高裁判事の変更!");
       }
 
       int j=LCSrandom(COURTNUM);
@@ -1293,7 +1292,7 @@ void supremecourt(char clearformess,char canseethings)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(2,0);
-         addstr("最高裁裁判官");
+         addstr("最高裁判事");
          addstr(courtname[j]);
          addstr("(");
          addstr(getalign(court[j],false));
@@ -1330,7 +1329,7 @@ void supremecourt(char clearformess,char canseethings)
       if(canseethings)
       {
          move(4,0);
-         addstr("多くの議論とテレビ中継された宣誓の後、新しい最高裁裁判官には");
+         addstr("多くの議論とテレビ中継された宣誓の後、新しい最高裁判事には");
          move(5,0);
          if(court[j]==ALIGN_STALINIST) addstr("同志");
          addstr(courtname[j]);
@@ -1415,8 +1414,8 @@ void congress(char clearformess,char canseethings)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
       move(0,0);
-      addstr("立法議案 ");
       addstr(year);
+      addstr("年 立法議案");
    }
 
    vector<int> bill,billdir,killbill;
@@ -1619,7 +1618,7 @@ void congress(char clearformess,char canseethings)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(23,0);
-      addstr("キーを押すと投票結果を表示する。");
+      addstr("キーを押すと開票状況を表示する。");
 
       getkey();
 

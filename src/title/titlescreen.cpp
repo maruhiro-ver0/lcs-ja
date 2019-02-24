@@ -90,11 +90,11 @@ void mode_title()
       addstr(stat_recruits);
 
       move(8,10);
-      addstr("倒れたリベラル: ");
+      addstr("殉死したリベラル: ");
       addstr(stat_dead);
 
       move(9,10);
-      addstr("殺害した保守派: ");
+      addstr("殺害した保守: ");
       addstr(stat_kills);
 
       move(7,47);
@@ -106,7 +106,7 @@ void mode_title()
       addstr(ledger.total_expense);
 
       move(9,47);
-      addstr("捕らえた保守派: ");
+      addstr("捕らえた保守: ");
       addstr(stat_kidnappings);
    }
    else switch(LCSrandom(32))

@@ -541,8 +541,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_JUDGE_LIBERAL">
-        <type_name>リベラル派裁判官</type_name>
-        <encounter_name>リベラル派裁判官</encounter_name>
+        <type_name>リベラル派判事</type_name>
+        <encounter_name>リベラル派判事</encounter_name>
         <weapon>WEAPON_GAVEL</weapon>
         <weapon>WEAPON_NONE</weapon>
         <armor>ARMOR_BLACKROBE</armor>
@@ -560,8 +560,8 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_JUDGE_CONSERVATIVE">
-        <type_name>強硬派裁判官</type_name>
-        <encounter_name>強硬派裁判官</encounter_name>
+        <type_name>強硬派判事</type_name>
+        <encounter_name>強硬派判事</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_BLACKROBE</armor>
         <age>MIDDLEAGED</age>
