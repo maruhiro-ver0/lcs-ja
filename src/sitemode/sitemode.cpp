@@ -2468,22 +2468,22 @@ void mode_site()
                         if(numenc==1)
                         {
                            if(squadmoved) addstr("前方に誰かがいる。", gamelog);
-                           else addstr("誰かが通り過ぎた。", gamelog);
+                           else addstr("誰かが近づいてきた。", gamelog);
                         }
                         else if(numenc<=3)
                         {
                            if(squadmoved) addstr("前方に数人がいる。", gamelog);
-                           else addstr("数人が通り過ぎた。", gamelog);
+                           else addstr("数人が近づいてきた。", gamelog);
                         }
                         else if(numenc<=6)
                         {
                            if(squadmoved) addstr("前方に集団がいる。", gamelog);
-                           else addstr("集団が通り過ぎた。", gamelog);
+                           else addstr("集団が近づいてきた。", gamelog);
                         }
                         else
                         {
                            if(squadmoved) addstr("前方に大勢の人がいる。", gamelog);
-                           else addstr("大勢の人が通り過ぎた。", gamelog);
+                           else addstr("大勢の人が近づいてきた。", gamelog);
                         }
                         gamelog.newline();
 

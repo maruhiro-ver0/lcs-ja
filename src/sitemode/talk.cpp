@@ -1426,7 +1426,7 @@ char talkAboutIssues(Creature &a, Creature &tk)
          break;
       case LAW_POLLUTION:
          addstr("「利益のみを追求し他のことは何もしない工場は環境を汚染させ、", gamelog);move(y++,1);
-         if (tk.animalgloss==ANIMALGLOSS_ANIMAL) addstr("　人間だけでなく動物も傷つけている。」", gamelog);
+         if (tk.animalgloss==ANIMALGLOSS_ANIMAL) addstr("  人間だけでなく動物も傷つけている。」", gamelog);
          else addstr("  動物だけでなく人間も傷つけている。」", gamelog);
          break;
       case LAW_LABOR:
@@ -2378,49 +2378,49 @@ char heyMisterDog(Creature &a, Creature &tk)
       switch(LCSrandom(11))
       {
       case 0:
-         pitch = "\"I love dogs more than people.\"";
-         response = "\"A human after my own heart, in more ways than one.\"";
+         pitch = "「人間よりも犬が大好きだ。」";
+         response = "『好みのヒトだ。あらゆる意味で。』";
          break;
       case 1:
-         pitch = "\"Dogs are the future of humanity.\"";
-         response = "\"I don't see it, but I'll hear you out.\"";
+         pitch = "「犬こそが未来の人類だ。」";
+         response = "『それはわからぬ。だが、それが聞きたかった。』";
          break;
       case 2:
-         pitch = "\"Power to the canines!\"";
-         response = "\"Down with the feline establishment!\"";
+         pitch = "「犬に力を!」";
+         response = "『猫を打倒せよ! 』";
          break;
       case 3:
-         pitch = "\"We need to recruit more dogs.\"";
-         response = "\"Oh yeah? I'm a dog. What do you represent?\"";
+         pitch = "「犬をスカウトしています。」";
+         response = "『何? 私は犬だ。どの組織の代理人だ? 』";
          break;
       case 4:
-         pitch = "\"Wanna join the LCS?\"";
-         response = "\"Do you have a good veteranary plan?\"";
+         pitch = "「LCSに入りたいか? 」";
+         response = "『いい獣医療制度はあるのか? 』";
          break;
       case 5:
-         pitch = "\"Want me to untie you?\"";
-         response = "\"Yes, please! This collar is painful!\"";
+         pitch = "「ほどいて欲しい? 」";
+         response = "『ああ、頼む。この首輪は苦痛だ! 』";
          break;
       case 6:
-         pitch = "\"You deserve better than this.\"";
-         response = "\"Finally, a human that understands.\"";
+         pitch = "「あなたはこれよりも価値がある。」";
+         response = "『もちろんだ。よくわかっているニンゲンだ。』";
          break;
       case 7:
-         pitch = "\"Dogs are the best anything ever.\"";
-         response = "\"Heheheh, you're funny. Okay, I won't rat you out.\"";
+         pitch = "「犬は最高の存在だ。」";
+         response = "『ヘヘヘ、面白いヤツだ。OK、お前を信じよう。』";
          break;
       case 8:
-         pitch = "\"Conservatives kick dogs!\"";
-         response = "\"That IS disturbing. What can I do?\"";
+         pitch = "「保守は犬を蹴る! 」";
+         response = "『それは困るな。何をすればいい? 』";
          break;
       case 9:
-         pitch = "\"All we are saying is give fleas a chance.\"";
-         response = "\"We'll fight the fleas until our dying itch.\"";
+         pitch = "「ノミを我等に。」";
+         response = "『痒みが治まるまでノミと戦うだろう。』";
          break;
       case 10:
       default:
-         pitch = "\"Dogs are better than humans.\"";
-         response = "\"You're pandering, but I love it.\"";
+         pitch = "「犬は人間より良い。」";
+         response = "『自分を蔑むな。だがすばらしい。』";
          break;
       }
    }
@@ -2536,49 +2536,49 @@ char heyMisterMonster(Creature &a, Creature &tk)
       switch(LCSrandom(11))
       {
       case 0:
-         pitch = "\"I love diversity in all its forms.\"";
-         response = "\"Your tolerance is impressive, human!\"";
+         pitch = "「私はいかなる場合でも多様性を重んじる。」";
+         response = "『ニンゲンよ! その寛大さは見事だ。』";
          break;
       case 1:
-         pitch = "\"Your kind are the future of humanity.\"";
-         response = "\"Your recognition of our superiority is wise.\"";
+         pitch = "「あなたの種こそが未来の人類だ。」";
+         response = "『その理解は賢明だ。』";
          break;
       case 2:
-         pitch = "\"Power to the genetic monsters!\"";
-         response = "\"Down with the human establishment!\"";
+         pitch = "「人造モンスターに力を! 」";
+         response = "『ニンゲンに制裁を! 』";
          break;
       case 3:
-         pitch = "\"We need to recruit more genetic monsters.\"";
-         response = "\"For what purpose do you seek our aid?\"";
+         pitch = "「人造モンスターをスカウトしています。」";
+         response = "『なぜ我らの力が必要なのだ? 』";
          break;
       case 4:
-         pitch = "\"Wanna join the LCS?\"";
-         response = "\"Maybe. Can we scare small children?\"";
+         pitch = "「LCSに入りたいか? 」";
+         response = "『小さな子供は脅かせるのか? 』";
          break;
       case 5:
-         pitch = "\"You're free! Join us to liberate more!\"";
-         response = "\"Is this what compassion is?\"";
+         pitch = "「あなたは自由だ! 私たちの仲間になってもっと自由になろう! 」";
+         response = "『それは「同情とは何か」か? 』";
          break;
       case 6:
-         pitch = "\"You deserve better than this.\"";
-         response = "\"No beast deserves to be an experiment!\"";
+         pitch = "「あなたはこれよりも価値がある。」";
+         response = "『実験する価値のある動物などいない! 』";
          break;
       case 7:
-         pitch = "\"You are the best anything ever.\"";
-         response = "\"It's okay blokes, this one is friendly.\"";
+         pitch = "「あなたは最高の存在だ。」";
+         response = "『いいヤツだ。仲良くしよう。』";
          break;
       case 8:
-         pitch = "\"We should flay geneticists together!\"";
-         response = "\"My favorite future hobby!\"";
+         pitch = "「共に遺伝学者を打ち倒そう! 」";
+         response = "『楽しそうだ! 』";
          break;
       case 9:
-         pitch = "\"All we are saying is give peace a chance.\"";
-         response = "\"Will humans ever let us have peace?\"";
+         pitch = "「平和を我等に。」";
+         response = "『ニンゲンが我々を平和にしたことがあるのか? 』";
          break;
       case 10:
       default:
-         pitch = "\"Monsters are better than humans.\"";
-         response = "\"You're a clever one.\"";
+         pitch = "「モンスターは人間より良い。」";
+         response = "『賢いヤツだ。』";
          break;
       }
    }

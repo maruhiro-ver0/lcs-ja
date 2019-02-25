@@ -1049,12 +1049,19 @@ void printliberalstats(Creature &cr)
    // Add age
    addstr(" (");
    addstr(cr.age);
+   addstr("歳、");
    // Assess their gender in an Elite Liberal way
    if(cr.gender_liberal == GENDER_MALE)
-      addstr("歳、男性");
+   {
+      if(cr.animalgloss==ANIMALGLOSS_NONE) addstr("男性");
+      else addstr("オス");
+   }
    else if(cr.gender_liberal == GENDER_FEMALE)
-      addstr("歳、女性");
-   else addstr("歳、クィア");
+   {
+      if(cr.animalgloss==ANIMALGLOSS_NONE) addstr("女性");
+      else addstr("メス");
+   }
+   else addstr("クィア");
    // DON'T Note if there's some conflict with Conservative society's perceptions
    //if(cr.gender_liberal != cr.gender_conservative && cr.gender_liberal != GENDER_NEUTRAL)
    //   addstr("*");

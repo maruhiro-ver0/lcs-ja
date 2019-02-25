@@ -272,43 +272,44 @@ void printnews(short li,short newspaper)
    if(loottype[li]->get_idname()=="LOOT_CEOPHOTOS") // Tmp -XML
    {
       move(6,1);
-      addstr("The Liberal Guardian runs a story featuring photos of a major CEO ", gamelog);
+      addstr("リベラルガーディアンに有名なCEOが", gamelog);
       move(7,1);
       change_public_opinion(VIEW_LIBERALCRIMESQUAD,10);
       change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,10);
       switch(LCSrandom(10))
       {
          case 0:
-            addstr("engaging in lewd behavior with animals.", gamelog);
+            addstr("動物と猥褻な行為を行っている", gamelog);
             change_public_opinion(VIEW_ANIMALRESEARCH,15);
             break;
-         case 1:addstr("digging up graves and sleeping with the dead.", gamelog);break;
+         case 1:addstr("墓から掘り起こした死体と寝ている", gamelog);break;
          case 2:
-            addstr("participating in a murder.", gamelog);
+            addstr("人殺しに加わっている", gamelog);
             change_public_opinion(VIEW_POLICEBEHAVIOR,15);
             change_public_opinion(VIEW_JUSTICES,10);
             break;
-         case 3:addstr("engaging in heavy bondage.  A cucumber was involved in some way.", gamelog);break;
-         case 4:addstr("tongue-kissing an infamous dictator.", gamelog);break;
+         case 3:addstr("ボンデージを着てキュウリを何本も挿している", gamelog);break;
+         case 4:addstr("評判の悪い政治家とディープキスをしている", gamelog);break;
          case 5:
-            addstr("making out with an FDA official overseeing the CEO's products.", gamelog);
+            addstr("CEOの製品を検査するFDAの職員とよろしくしている", gamelog);
             change_public_opinion(VIEW_GENETICS,10);
             change_public_opinion(VIEW_POLLUTION,10);
             break;
-         case 6:addstr("castrating himself.", gamelog);break;
-         case 7:addstr("waving a Nazi flag at a supremacist rally.", gamelog);break;
+         case 6:addstr("自分自身を去勢している", gamelog);break;
+         case 7:addstr("白人至上主義者の集会でナチの旗を振っている", gamelog);break;
          case 8:
-            addstr("torturing an employee with a hot iron.", gamelog);
+            addstr("従業員をアイロンで拷問している", gamelog);
             change_public_opinion(VIEW_SWEATSHOPS,10);
             break;
-         case 9:addstr("playing with feces and urine.", gamelog);break;
+         case 9:addstr("排泄物プレイをしている", gamelog);break;
       }
+      addstr("写真の特別記事を掲載した。", gamelog);
       gamelog.newline();
       move(9,1);
-      addstr("The major networks and publications take it up and run it for weeks.", gamelog);
+      addstr("主要なネットワークと新聞社は、数週間に渡りこの話題を取り上げた。", gamelog);
       gamelog.newline();
       move(10,1);
-      addstr("This is bound to get the Corporations a little riled up.", gamelog);
+      addstr("このことには企業も神経を尖らせている。", gamelog);
       gamelog.nextMessage();
 
       change_public_opinion(VIEW_CEOSALARY,50);
@@ -318,43 +319,44 @@ void printnews(short li,short newspaper)
    else if(loottype[li]->get_idname()=="LOOT_CEOLOVELETTERS")
    {
       move(6,1);
-      addstr("The Liberal Guardian runs a story featuring love letters from a major CEO ", gamelog);
+      addstr("リベラルガーディアンに有名なCEOの", gamelog);
       move(7,1);
       change_public_opinion(VIEW_LIBERALCRIMESQUAD,10);
       change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,10);
       switch(LCSrandom(8))
       {
          case 0:
-            addstr("addressed to his pet dog.  Yikes.", gamelog);
+            addstr("自分の犬宛ての", gamelog);
             change_public_opinion(VIEW_ANIMALRESEARCH,15);
             break;
          case 1:
-            addstr("to the judge that acquit him in a corruption trial.", gamelog);
+            addstr("汚職で無罪を言い渡した判事への", gamelog);
             change_public_opinion(VIEW_JUSTICES,15);
             break;
          case 2:
-            addstr("to an illicit gay lover.", gamelog);
+            addstr("不倫相手のゲイの愛人への", gamelog);
             change_public_opinion(VIEW_GAY,15);
             break;
-         case 3:addstr("to himself.  They're very steamy.", gamelog);break;
+         case 3:addstr("自分自身への情熱的な", gamelog);break;
          case 4:
-            addstr("implying that he has enslaved his houseservants.", gamelog);
+            addstr("恐らく奴隷状態にある自分の使用人への", gamelog);
             change_public_opinion(VIEW_SWEATSHOPS,10);
             break;
          case 5:
-            addstr("to the FDA official overseeing the CEO's products.", gamelog);
+            addstr("CEOの製品を検査するFDAの職員への", gamelog);
             change_public_opinion(VIEW_GENETICS,10);
             change_public_opinion(VIEW_POLLUTION,10);
             break;
-         case 6:addstr("that seem to touch on every fetish known to man.", gamelog);break;
-         case 7:addstr("promising someone company profits in exchange for sexual favors.", gamelog);break;
+         case 6:addstr("よく知られたフェチ男への", gamelog);break;
+         case 7:addstr("性的な行為と引き換えに便宜を図ることを約束する", gamelog);break;
       }
+      addstr("ラブレターの特別記事を掲載した。", gamelog);
       gamelog.newline();
       move(9,1);
-      addstr("The major networks and publications take it up and run it for weeks.", gamelog);
+      addstr("主要なネットワークと新聞社は、数週間に渡りこの話題を取り上げた。", gamelog);
       gamelog.newline();
       move(10,1);
-      addstr("This is bound to get the Corporations a little riled up.", gamelog);
+      addstr("このことには企業も神経を尖らせている。", gamelog);
       gamelog.nextMessage();
 
       change_public_opinion(VIEW_CEOSALARY,50);
