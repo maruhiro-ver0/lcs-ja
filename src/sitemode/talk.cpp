@@ -954,41 +954,41 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       switch(tk.type)
       {
       case CREATURE_TANK:
-         addstr(" shakes its turret a firm 'no'.", gamelog);
+         addstr("は機関砲を振ってはっきりと「いいえ」を表した。", gamelog);
          break;
       case CREATURE_GUARDDOG:
-         addstr(" says, ", gamelog);
+         addstr("は言った。", gamelog);
          move(y,1);
          set_color(COLOR_RED,COLOR_BLACK,1);
          switch(LCSrandom(3))
          {
-         case 0:addstr("\"No! Wrong! I'm a dog!! Jesus.\"", gamelog);break;
-         case 1:addstr("\"What?! Ugh, I'm going to toss my kibble.\"", gamelog);break;
-         case 2:addstr("\"Okay, you need to stop petting me now.\"", gamelog);break;
+         case 0:addstr("『ダメだ! 間違っている! 私は犬だ!! ジーザス。』", gamelog);break;
+         case 1:addstr("『何だと?! ううむ、このドッグフードをやろう。』", gamelog);break;
+         case 2:addstr("『そうか。まず撫でるのをやめろ。』", gamelog);break;
          }
          tk.align=ALIGN_CONSERVATIVE;
          tk.cantbluff=1;
          break;
       case CREATURE_GENETIC:
-         addstr(" says, ", gamelog);
+         addstr("は言った。", gamelog);
          move(y,1);
          set_color(COLOR_RED,COLOR_BLACK,1);
          switch(LCSrandom(8))
          {
-         case 0:addstr("\"Foolish human!\"", gamelog);break;
-         case 1:addstr("\"Never thought I'd hear that...\"", gamelog);break;
-         case 2:addstr("\"STRANGER DANGER.\"", gamelog);break;
-         case 3:addstr("\"I am not laughing, mortal!\"", gamelog);break;
-         case 4:addstr("\"Gag!\"", gamelog);break;
-         case 5:addstr("\"You would make jokes with the likes of me?!\"", gamelog);break;
-         case 6:addstr("\"I am above such mortal sins!\"", gamelog);break;
-         case 7:addstr("\"You foul, disgusting human...!\"", gamelog);break;
+         case 0:addstr("『愚かなニンゲンめ! 』", gamelog);break;
+         case 1:addstr("『そのようなことを聞くとは思わなかったぞ…』", gamelog);break;
+         case 2:addstr("『おかしなヤツだ。』", gamelog);break;
+         case 3:addstr("『笑えんな。死すべき者よ! 』", gamelog);break;
+         case 4:addstr("『黙れ! 』", gamelog);break;
+         case 5:addstr("『我にそのような冗談を言うのか?!』", gamelog);break;
+         case 6:addstr("『我はそのような死すべき罪を超越しているのだ! 』", gamelog);break;
+         case 7:addstr("『愚かな、滅び行くニンゲンよ…! 』", gamelog);break;
          }
          tk.align=ALIGN_CONSERVATIVE;
          tk.cantbluff=1;
          break;
       default:
-         addstr(" doesn't quite pick up on the subtext.", gamelog);
+         addstr("は全くわからなかったようだ。", gamelog);
       }
       gamelog.newline();
 
@@ -1011,7 +1011,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       set_color(COLOR_RED,COLOR_BLACK,1);
       move(y++,1);
 
-      addstr("\"Dirty. You know that's illegal, officer.\"", gamelog);
+      addstr("「卑猥な。違法行為だとわかっていますよね? 」", gamelog);
       gamelog.newline();
 
       getkey();

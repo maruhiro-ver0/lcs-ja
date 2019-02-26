@@ -366,23 +366,24 @@ void printnews(short li,short newspaper)
    else if(loottype[li]->get_idname()=="LOOT_CEOTAXPAPERS")
    {
       move(6,1);
-      addstr("The Liberal Guardian runs a story featuring a major CEO's tax papers ", gamelog);
+      addstr("リベラルガーディアンに", gamelog);
       move(7,1);
       change_public_opinion(VIEW_LIBERALCRIMESQUAD,10);
       change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,10);
       switch(LCSrandom(1))
       {
          default:
-            addstr("showing that he has engaged in consistent tax evasion.", gamelog);
+            addstr("脱税を繰り返していることを示す", gamelog);
             change_public_opinion(VIEW_TAXES,25);
             break;
       }
+      addstr("CEOの納税告知書に関する特別記事を掲載した。", gamelog);
       gamelog.newline();
       move(9,1);
-      addstr("The major networks and publications take it up and run it for weeks.", gamelog);
+      addstr("主要なネットワークと新聞社は、数週間に渡りこの話題を取り上げた。", gamelog);
       gamelog.newline();
       move(10,1);
-      addstr("This is bound to get the Corporations a little riled up.", gamelog);
+      addstr("このことには企業も神経を尖らせている。", gamelog);
       gamelog.nextMessage();
 
       change_public_opinion(VIEW_CEOSALARY,50);
@@ -436,47 +437,39 @@ void printnews(short li,short newspaper)
    else if(loottype[li]->get_idname()=="LOOT_CCS_BACKERLIST")
    {
       move(5,1);
-      addstr("The Liberal Guardian runs more than one thousand pages of documents about ", gamelog);
+      addstr("リベラルガーディアンに千ページを超えるCCSに関する文書を掲載した。そこには政府", gamelog);
       gamelog.newline();
       move(6,1);
-      addstr("the CCS organization, also revealing in extreme detail the names and ", gamelog);
+      addstr("内のコンサバ・クライム・スコードの支持者や支援者の氏名や役職の極めて詳細な情", gamelog);
       gamelog.newline();
       move(7,1);
-      addstr("responsibilities of Conservative Crime Squad sympathizers and supporters", gamelog);
+      addstr("報も含まれている。", gamelog);
       gamelog.newline();
       move(8,1);
-      addstr("in the state and federal governments. Sections precisely document the", gamelog);
+      addstr("複数のセクションで、司法管轄外の死の部隊の創設に関する広範囲な計画を明らかに", gamelog);
       gamelog.newline();
       move(9,1);
-      addstr("extensive planning to create an extra-judicial death squad that would be", gamelog);
+      addstr("した。死の部隊は警察の上位に位置し、法を破っていないリベラルさえも捕らえ、そ", gamelog);
       gamelog.newline();
       move(10,1);
-      addstr("above prosecution, and could hunt down law-abiding Liberals and act", gamelog);
+      addstr("して敵が存在しないときは市民のエネルギーを押さえ込むために働くだろう。", gamelog);
       gamelog.newline();
-      move(11,1);
-      addstr("as a foil when no other enemies were present to direct public energy", gamelog);
-      gamelog.newline();
-      move(12,1);
-      addstr("against.", gamelog);
 
+      move(12,1);
+      addstr("スキャンダルはこの国の保守の中心にまで達した。この発見の影響は数ヶ月間では感", gamelog);
+      gamelog.newline();
+      move(13,1);
+      addstr("じられないかもしれない。", gamelog);
+      gamelog.newline();
       move(14,1);
-      addstr("The scandal reaches into the heart of the Conservative leadership in the", gamelog);
+      addstr("だが、1つだけ明らかなのは、この発見に大衆はすぐに反応し、AMラジオやケーブルニ", gamelog);
       gamelog.newline();
       move(15,1);
-      addstr("country, and the full ramifications of this revelation may not be felt", gamelog);
-      gamelog.newline();
-      move(16,1);
-      addstr("for months. One thing is clear, however, from the immediate public reaction", gamelog);
-      gamelog.newline();
-      move(17,1);
-      addstr("toward the revelations, and the speed with which even AM Radio and Cable", gamelog);
-      gamelog.newline();
-      move(18,1);
-      addstr("News denounce the CCS.", gamelog);
+      addstr("ュースさえもすぐさまCCSを非難し始めたということだ。", gamelog);
       gamelog.newline();
 
-      move(20,1);
-      addstr("This is the beginning of the end for the Conservative Crime Squad.", gamelog);
+      move(17,1);
+      addstr("これはコンサバ・クライム・スコードの終わりの始まりとなるであろう。", gamelog);
       gamelog.nextMessage();
 
       change_public_opinion(VIEW_INTELLIGENCE,50);
