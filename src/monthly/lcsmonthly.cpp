@@ -469,7 +469,7 @@ void printnews(short li,short newspaper)
       gamelog.newline();
 
       move(17,1);
-      addstr("これはコンサバ・クライム・スコードの終わりの始まりとなるであろう。", gamelog);
+      addstr("これはコンサバ・クライム・スコードの終わりの始まりとなるだろう。", gamelog);
       gamelog.nextMessage();
 
       change_public_opinion(VIEW_INTELLIGENCE,50);
@@ -480,38 +480,39 @@ void printnews(short li,short newspaper)
            || loottype[li]->get_idname()=="LOOT_SECRETDOCUMENTS")
    {
       move(6,1);
-      addstr("The Liberal Guardian runs a story featuring CIA and other intelligence files ", gamelog);
+      addstr("リベラルガーディアンにCIAや他の情報機関による", gamelog);
       move(7,1);
 
       change_public_opinion(VIEW_LIBERALCRIMESQUAD,10);
       change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,10);
       switch(LCSrandom(6))
       {
-         case 0:addstr("documenting the overthrow of a government.", gamelog);break;
+         case 0:addstr("政府転覆計画", gamelog);break;
          case 1:
-            addstr("documenting the planned assassination of a Liberal federal judge.", gamelog);
+            addstr("リベラル連邦主義者判事の暗殺計画", gamelog);
             change_public_opinion(VIEW_JUSTICES,50);
             break;
-         case 2:addstr("containing private information on innocent citizens.", gamelog);break;
+         case 2:addstr("無実の市民の個人情報", gamelog);break;
          case 3:
-            addstr("documenting \"harmful speech\" made by innocent citizens.", gamelog);
+            addstr("無実の市民による「有害な言論」の記録", gamelog);
             change_public_opinion(VIEW_FREESPEECH,50);
             break;
          case 4:
-            addstr("used to keep tabs on gay citizens.", gamelog);
+            addstr("同性愛者の市民の監視記録", gamelog);
             change_public_opinion(VIEW_GAY,50);
             break;
          case 5:
-            addstr("documenting the infiltration of a pro-choice group.", gamelog);
+            addstr("中絶賛成派グループの行動記録", gamelog);
             change_public_opinion(VIEW_WOMEN,50);
             break;
               }
+      addstr("が記述されたファイルに関する特別記事を掲載した。", gamelog);
       gamelog.newline();
       move(9,1);
-      addstr("The major networks and publications take it up and run it for weeks.", gamelog);
+      addstr("主要なネットワークと新聞社は、数週間に渡りこの話題を取り上げた。", gamelog);
       gamelog.newline();
       move(10,1);
-      addstr("This is bound to get the Government a little riled up.", gamelog);
+      addstr("このことには政府関係者も神経を尖らせている。", gamelog);
       gamelog.nextMessage();
 
       change_public_opinion(VIEW_INTELLIGENCE,50);
@@ -520,7 +521,7 @@ void printnews(short li,short newspaper)
    else if(loottype[li]->get_idname()=="LOOT_POLICERECORDS")
    {
       move(6,1);
-      addstr("The Liberal Guardian runs a story featuring police records ", gamelog);
+      addstr("リベラルガーディアンに警察による", gamelog);
       move(7,1);
 
       change_public_opinion(VIEW_LIBERALCRIMESQUAD,10);
@@ -528,32 +529,33 @@ void printnews(short li,short newspaper)
       switch(LCSrandom(6))
       {
          case 0:
-            addstr("documenting human rights abuses by the force.", gamelog);
+            addstr("人権侵害", gamelog);
             change_public_opinion(VIEW_TORTURE,15);
             break;
          case 1:
-            addstr("documenting a police torture case.", gamelog);
+            addstr("取り調べにおける拷問", gamelog);
             change_public_opinion(VIEW_TORTURE,50);
             break;
          case 2:
-            addstr("documenting a systematic invasion of privacy by the force.", gamelog);
+            addstr("組織的なプライバシーの侵害", gamelog);
             change_public_opinion(VIEW_INTELLIGENCE,15);
             break;
          case 3:
-            addstr("documenting a forced confession.", gamelog);
+            addstr("自白の強要", gamelog);
             break;
          case 4:
-            addstr("documenting widespread corruption in the force.", gamelog);
+            addstr("広範囲に及ぶ汚職", gamelog);
             break;
          case 5:
-            addstr("documenting gladiatorial matches held between prisoners by guards.", gamelog);
+            addstr("看守が主催した囚人同士の剣闘士のような戦い", gamelog);
             change_public_opinion(VIEW_DEATHPENALTY,50);
             change_public_opinion(VIEW_PRISONS,20);
             break;
       }
+      addstr("を示す文書に関する特別記事を掲載した。", gamelog);
       move(9,1);
       gamelog.newline();
-      addstr("The major networks and publications take it up and run it for weeks.", gamelog);
+      addstr("主要なネットワークと新聞社は、数週間に渡りこの話題を取り上げた。", gamelog);
       gamelog.nextMessage();
 
       change_public_opinion(VIEW_POLICEBEHAVIOR,50);
@@ -607,7 +609,7 @@ void printnews(short li,short newspaper)
    else if(loottype[li]->get_idname()=="LOOT_PRISONFILES")
    {
       move(6,1);
-      addstr("The Liberal Guardian runs a story featuring prison documents ", gamelog);
+      addstr("リベラルガーディアンに刑務所内での", gamelog);
       move(7,1);
 
       change_public_opinion(VIEW_LIBERALCRIMESQUAD,10);
@@ -615,18 +617,19 @@ void printnews(short li,short newspaper)
       change_public_opinion(VIEW_PRISONS,50);
       switch(LCSrandom(4))
       {
-         case 0:addstr("documenting human rights abuses by prison guards.", gamelog);break;
+         case 0:addstr("看守による人権侵害", gamelog);break;
          case 1:
-            addstr("documenting a prison torture case.", gamelog);
+            addstr("囚人への拷問", gamelog);
             change_public_opinion(VIEW_TORTURE,50);
             break;
-         case 2:addstr("documenting widespread corruption among prison employees.", gamelog);break;
+         case 2:addstr("職員の間の広範囲に及ぶ汚職", gamelog);break;
          case 3:
-            addstr("documenting gladiatorial matches held between prisoners by guards.", gamelog);
+            addstr("看守が主催した囚人同士の剣闘士のような戦い", gamelog);
       }
+      addstr("を示す文書に関する特別記事を掲載した。", gamelog);
       gamelog.newline();
       move(9,1);
-      addstr("The major networks and publications take it up and run it for weeks.", gamelog);
+      addstr("主要なネットワークと新聞社は、数週間に渡りこの話題を取り上げた。", gamelog);
       gamelog.nextMessage();
 
       change_public_opinion(VIEW_DEATHPENALTY,50);
@@ -634,25 +637,26 @@ void printnews(short li,short newspaper)
    else if(loottype[li]->get_idname()=="LOOT_CABLENEWSFILES")
    {
       move(6,1);
-      addstr("The Liberal Guardian runs a story featuring cable news memos ", gamelog);
+      addstr("リベラルガーディアンにケーブルニュース局の", gamelog);
       move(7,1);
 
       change_public_opinion(VIEW_LIBERALCRIMESQUAD,10);
       change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,10);
       switch(LCSrandom(4))
       {
-         case 0:addstr("calling their news 'the vanguard of Conservative thought'.", gamelog);break;
-         case 1:addstr("mandating negative coverage of Liberal politicians.", gamelog);break;
-         case 2:addstr("planning to drum up a false scandal about a Liberal figure.", gamelog);break;
-         case 3:addstr("instructing a female anchor to 'get sexier or get a new job'.", gamelog);
+         case 0:addstr("自身のニュースを「保守思想の先陣」と呼ぶ", gamelog);break;
+         case 1:addstr("リベラル政治家の否定的な放送を命令する", gamelog);break;
+         case 2:addstr("リベラル派の人物の嘘のスキャンダルをでっち上げる", gamelog);break;
+         case 3:addstr("女優に「よりセクシーになるか、それとも辞めるか」を迫る", gamelog);
             break;
       }
+      addstr("メモの特別記事を掲載した。", gamelog);
       gamelog.newline();
       move(9,1);
-      addstr("The major networks and publications take it up and run it for weeks.", gamelog);
+      addstr("主要なネットワークと新聞社は、数週間に渡りこの話題を取り上げた。", gamelog);
       gamelog.newline();
       move(10,1);
-      addstr("This is bound to get the Conservative masses a little riled up.", gamelog);
+      addstr("このことには保守派も神経を尖らせている。", gamelog);
       gamelog.nextMessage();
 
       change_public_opinion(VIEW_CABLENEWS,50);
@@ -661,23 +665,24 @@ void printnews(short li,short newspaper)
    else if(loottype[li]->get_idname()=="LOOT_AMRADIOFILES")
    {
       move(6,1);
-      addstr("The Liberal Guardian runs a story featuring AM radio plans ", gamelog);
+      addstr("リベラルガーディアンにAMラジオ局の   The Liberal Guardian runs a story featuring AM radio plans ", gamelog);
       move(7,1);
 
       change_public_opinion(VIEW_LIBERALCRIMESQUAD,10);
       change_public_opinion(VIEW_LIBERALCRIMESQUADPOS,10);
       switch(LCSrandom(3))
       {
-         case 0:addstr("calling listeners 'sheep to be told what to think'.", gamelog);break;
-         case 1:addstr("saying 'it's okay to lie, they don't need the truth'.", gamelog);break;
-         case 2:addstr("planning to drum up a false scandal about a Liberal figure.", gamelog);break;
+         case 0:addstr("視聴者を「何を考えるか命令される羊」と呼ぶ", gamelog);break;
+         case 1:addstr("「嘘でもよい。本当のことなど必要ない」と書かれた", gamelog);break;
+         case 2:addstr("リベラル派の人物の嘘のスキャンダルをでっち上げる", gamelog);break;
       }
+      addstr("原稿の特別記事を掲載した。", gamelog);
       gamelog.newline();
       move(9,1);
-      addstr("The major networks and publications take it up and run it for weeks.", gamelog);
+      addstr("主要なネットワークと新聞社は、数週間に渡りこの話題を取り上げた。", gamelog);
       gamelog.newline();
       move(10,1);
-      addstr("This is bound to get the Conservative masses a little riled up.", gamelog);
+      addstr("このことには保守派も神経を尖らせている。", gamelog);
       gamelog.nextMessage();
 
       change_public_opinion(VIEW_AMRADIO,50);

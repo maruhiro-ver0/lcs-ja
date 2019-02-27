@@ -842,10 +842,10 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
          {
          case BODYPART_HEAD:addstr("頭部:");break;
          case BODYPART_BODY:addstr("胴:");break;
-         case BODYPART_ARM_RIGHT:addstr("右腕:");break;
-         case BODYPART_ARM_LEFT:addstr("左腕:");break;
-         case BODYPART_LEG_RIGHT:addstr("右足:");break;
-         case BODYPART_LEG_LEFT:addstr("左足:");break;
+         case BODYPART_ARM_RIGHT:addstr(cr->animalgloss==ANIMALGLOSS_NONE?"右腕:":"右前足:");break;
+         case BODYPART_ARM_LEFT:addstr(cr->animalgloss==ANIMALGLOSS_NONE?"左腕:":"左前足:");break;
+         case BODYPART_LEG_RIGHT:addstr(cr->animalgloss==ANIMALGLOSS_NONE?"右足:":"右後足:");break;
+         case BODYPART_LEG_LEFT:addstr(cr->animalgloss==ANIMALGLOSS_NONE?"左足:":"左後足:");break;
          }
 
          move(2+w,61);
@@ -1052,15 +1052,9 @@ void printliberalstats(Creature &cr)
    addstr("歳、");
    // Assess their gender in an Elite Liberal way
    if(cr.gender_liberal == GENDER_MALE)
-   {
-      if(cr.animalgloss==ANIMALGLOSS_NONE) addstr("男性");
-      else addstr("オス");
-   }
+      addstr(cr.animalgloss==ANIMALGLOSS_NONE?"男性":"オス");
    else if(cr.gender_liberal == GENDER_FEMALE)
-   {
-      if(cr.animalgloss==ANIMALGLOSS_NONE) addstr("女性");
-      else addstr("メス");
-   }
+      addstr(cr.animalgloss==ANIMALGLOSS_NONE?"女性":"メス");
    else addstr("クィア");
    // DON'T Note if there's some conflict with Conservative society's perceptions
    //if(cr.gender_liberal != cr.gender_conservative && cr.gender_liberal != GENDER_NEUTRAL)
@@ -1261,10 +1255,10 @@ void printliberalstats(Creature &cr)
       {
       case BODYPART_HEAD:addstr("頭部:");break;
       case BODYPART_BODY:addstr("胴体:");break;
-      case BODYPART_ARM_RIGHT:addstr("右腕:");break;
-      case BODYPART_ARM_LEFT:addstr("左腕:");break;
-      case BODYPART_LEG_RIGHT:addstr("右足:");break;
-      case BODYPART_LEG_LEFT:addstr("左足:");break;
+      case BODYPART_ARM_RIGHT:addstr(cr.animalgloss==ANIMALGLOSS_NONE?"右腕:":"右前足:");break;
+      case BODYPART_ARM_LEFT:addstr(cr.animalgloss==ANIMALGLOSS_NONE?"左腕:":"左前足:");break;
+      case BODYPART_LEG_RIGHT:addstr(cr.animalgloss==ANIMALGLOSS_NONE?"右足:":"右後足:");break;
+      case BODYPART_LEG_LEFT:addstr(cr.animalgloss==ANIMALGLOSS_NONE?"左足:":"左後足:");break;
       }
 
       move(5+w,66);

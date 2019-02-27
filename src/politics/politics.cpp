@@ -778,7 +778,7 @@ void elections_senate(int senmod,char canseethings)
       case ALIGN_CONSERVATIVE: addstr("保守政党が勝利を宣言した!"); break;
       case ALIGN_MODERATE: addstr("次の2年間はもっと同数になることを約束しよう。"); break;
       case ALIGN_LIBERAL: addstr("リベラル政党が勝利を宣言した!"); break;
-      case ALIGN_ELITELIBERAL: addstr("進歩先鋭社会リベラルグリーン党が勝利を宣言した!"); break;
+      case ALIGN_ELITELIBERAL: addstr("進歩先鋭社会リベラル緑の党が勝利を宣言した!"); break;
       case ALIGN_STALINIST: addstr("スターリン党が勝利を宣言した!"); break;
       }
 
@@ -999,7 +999,7 @@ void elections_house(char canseethings)
       case ALIGN_CONSERVATIVE: addstr("保守政党が勝利を宣言した!"); break;
       case ALIGN_MODERATE: addstr("次の2年間はもっと同数になることを約束しよう。"); break;
       case ALIGN_LIBERAL: addstr("リベラル政党が勝利を宣言した!"); break;
-      case ALIGN_ELITELIBERAL: addstr("進歩先鋭社会リベラルグリーン党が勝利を宣言した!"); break;
+      case ALIGN_ELITELIBERAL: addstr("進歩先鋭社会リベラル緑の党が勝利を宣言した!"); break;
       case ALIGN_STALINIST: addstr("スターリン党が勝利を宣言した!"); break;
       }
       if(!disbanding)

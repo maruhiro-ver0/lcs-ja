@@ -135,7 +135,7 @@
     </loottype>
 
     <loottype idname="LOOT_INTHQDISK">
-        <name>Intel本社のデータディスク</name>
+        <name>情報局のデータディスク</name>
         <stackable>true</stackable>
         <no_quick_fencing>true</no_quick_fencing>
         <fencevalue>1500</fencevalue>
