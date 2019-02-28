@@ -873,7 +873,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       case 3:addstr("「すげえ。レンガ造りの便所みたいに丈夫でたくましい肉体だ。」", gamelog);break;
       case 4:addstr("「あなたのことは牛乳パックの尋ね人で見たことがある。", gamelog);
              move(11,1);y++;
-             addstr("あなたは私が探していた人だ。」", gamelog);
+             addstr("  あなたは私が探していた人だ。」", gamelog);
              break;
       case 5:addstr("「大切な所はデカいぜ。」", gamelog);break;
       case 6:addstr("「美しい人。あなたの脚で顔を覆い、マスクのように身につけたい! 」", gamelog); // Bill Hicks
@@ -881,12 +881,16 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       case 7:addstr("「リスごっこをしよう。あなたの中にナッツを隠したい。」", gamelog);break;
       case 8:addstr("「わかっている。もし私があなたならば、私とsexしたいはずだ。」", gamelog);break;
       case 9:addstr("「太ったヒヨコちゃんのために苦労したくないな。」", gamelog);break;
-      case 10:addstr("\"Fuck me if I'm wrong but you want to kiss me, right?\"", gamelog);break;
-      case 11:addstr("\"Your parents must be retarded, because you are special.\"", gamelog);break;
-      case 12:addstr("\"Let's play trains...  you can sit on my face and I will chew chew chew.\"", gamelog);break;
-      case 13:addstr("\"Is it hot in here or is it just you?\"", gamelog);break;
-      case 14:addstr("\"I may not be Fred Flintstone, but I can make your bed rock!\"", gamelog);break;
-      case 15:addstr("\"What do you say we go behind a rock and get a little boulder?\"", gamelog);break;
+      case 10:addstr("「私が間違っているならファックしてくれ。でも、あなたは私とキスしたい。", gamelog);
+              move(11,1);y++;
+              addstr("  そうだろう? 」", gamelog);break;
+      case 11:addstr("「あなたの両親は知恵遅れに違いない。なぜならあなたは特別だからだ。」", gamelog);break; // Robin Williams ?
+      case 12:addstr("「電車ごっこをしよう…あなたが顔に座って、私がチューチューチュー…」", gamelog);break;
+      case 13:addstr("「暑くないか? それとも君のせい? 」", gamelog);break;
+      case 14:addstr("「私はフレッド・フリントストーンにはなれないが、あなたのベッドを揺らすことは", gamelog);
+              move(11,1);y++;
+              addstr("  できる! 」", gamelog);break;
+      case 15:addstr("「あの岩の陰で一緒に小さな石を拾わないか? 」", gamelog);break;
       case 16:addstr("\"Do you have stars on your panties?  Your ass is outta this world!\"", gamelog);break;
       case 17:addstr("\"Those pants would look great on the floor of my bedroom.\"", gamelog);break;
       case 18:addstr("\"If I said you had a nice body, would you hold it against me?\"", gamelog);break;
@@ -1048,12 +1052,12 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 6 :addstr("「ええ。今夜、あなたの望みを叶えましょう! 」", gamelog);break;
          case 7 :addstr("「冬が近い。1つでは足りませんね。」", gamelog);break;
          case 8 :addstr("「でもあなたは私ではない。その喜びは全て私のもの…。」", gamelog);break;
-         case 9 :addstr("「ベイビー、だた夜まで待ってて。」", gamelog);break;
-         case 10:addstr("\"You're wrong.\"", gamelog);break;
-         case 11:addstr("\"I can drool on you if you like it that way.\"", gamelog);break;
-         case 12:addstr("\"Oooo, all aboard baby!\"", gamelog);break;
-         case 13:addstr("\"Not as hot as we'll be tonight you slut.\"", gamelog);break;
-         case 14:addstr("\"Goober.  You wanna hook up tonight?\"", gamelog);break;
+         case 9 :addstr("「ベイビー、ただ夜まで待ってて。」", gamelog);break;
+         case 10:addstr("「あなたは間違っている。」", gamelog);break;
+         case 11:addstr("「お望みならばよだれを垂らしてあげましょうか? 」", gamelog);break;
+         case 12:addstr("「おおおお、赤ちゃんが乗ってます! 」", gamelog);break;
+         case 13:addstr("「今夜のあなたよりは暑くないな。」", gamelog);break;
+         case 14:addstr("「今夜にしましょう。」", gamelog);break;
          case 15:addstr("\"Oooo, we should get stoned too!  He he.\"", gamelog);break;
          case 16:addstr("\"You'll have to whip out your rocket to get some.  Let's do it.\"", gamelog);break;
          case 17:addstr("\"So would my underwear.\"", gamelog);break;
@@ -1198,21 +1202,21 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 9 : addstr("「あんたは豚だ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <立ち去った>", gamelog);break;
-         case 10: addstr("\"Nice try, but no.\"", gamelog);
+         case 10: addstr("「うまいやり方だ。でもノーだ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <sticks out tongue>", gamelog);break;
-         case 11: addstr("\"Are you serious?\"", gamelog);
+            addstr(" <舌打ちした>", gamelog);break;
+         case 11: addstr("「本気か? 」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <turns away>", gamelog);break;
-         case 12: addstr("\"You look like a biter.\"", gamelog);
+            addstr(" <立ち去った>", gamelog);break;
+         case 12: addstr("「咬みつかれそうだ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <flinches>", gamelog);break;
-         case 13: addstr("\"I'm way outta your league, scumbag.\"", gamelog);
+            addstr(" <たじろいた>", gamelog);break;
+         case 13: addstr("「お前の友達じゃないぞ、クズ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <grabs pepper spray>", gamelog);break;
-         case 14: addstr("\"You still watch cartoons?\"", gamelog);
+            addstr(" <催涙スプレーを握った>", gamelog);break;
+         case 14: addstr("「アニメでも見てたら? 」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <laughs>", gamelog);break;
+            addstr(" <笑われた>", gamelog);break;
          case 15: addstr("\"I hate puns!  You suck at comedy.\"", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <frowns>", gamelog);break;
@@ -1425,9 +1429,17 @@ char talkAboutIssues(Creature &a, Creature &tk)
          addstr("  でも。」", gamelog);
          break;
       case LAW_POLLUTION:
-         addstr("「利益のみを追求し他のことは何もしない工場は環境を汚染させ、", gamelog);move(y++,1);
-         if (tk.animalgloss==ANIMALGLOSS_ANIMAL) addstr("  人間だけでなく動物も傷つけている。」", gamelog);
-         else addstr("  動物だけでなく人間も傷つけている。」", gamelog);
+         addstr("「利益のみを追求し、他のことは何もしない工場は環境を汚染させ、", gamelog);
+         if (tk.animalgloss==ANIMALGLOSS_ANIMAL)
+         {
+            addstr("人間だけでなく", gamelog);move(y++,1);
+            addstr("動物も傷つけている。」", gamelog);
+         }
+         else
+         {
+            addstr("動物だけでなく", gamelog);move(y++,1);
+            addstr("人間も傷つけている。」", gamelog);
+         }
          break;
       case LAW_LABOR:
          addstr("「労働時間はますます長くなっているのに、給料はますます低くなっていることに気", gamelog);move(y++,1);
@@ -1538,7 +1550,7 @@ char talkAboutIssues(Creature &a, Creature &tk)
          case 5: addstr("「オー・マイ・サイエンス! 我々は何かしなければ! 」", gamelog); break;
          case 6: addstr("「ううむ… それは… 大変だ。」", gamelog); break;
          case 7: addstr("「ヒェーッ! 何とかしなければ! 」", gamelog);break;
-         case 8: addstr("「タバコを持ってないか? 」", gamelog);
+         case 8: addstr("「それよりもタバコを持ってないか? 」", gamelog);
                  set_color(COLOR_WHITE,COLOR_BLACK,1);
                  addstr("*ゴホン*", gamelog);
                  break;
@@ -1901,7 +1913,7 @@ char talkInCombat(Creature &a, Creature &tk)
                         {
                         case 0:
                            if(hostages>1)
-                              addstr("「人質を解放しろ。誰も傷つけたくない。」", gamelog);
+                              addstr("「人質たちを解放しろ。誰も傷つけたくない。」", gamelog);
                            else addstr("「人質を解放しろ。誰も傷つけたくない。」", gamelog);
                            break;
                         case 1:addstr("「5秒以内に離れるんだ。」", gamelog);break;
@@ -2314,7 +2326,7 @@ char talkInCombat(Creature &a, Creature &tk)
 
          set_color(COLOR_GREEN,COLOR_BLACK,1);
          move(16,1);
-         addstr("敵は騙され解散した。", gamelog);
+         addstr("敵は騙され去って行った。", gamelog);
 
          getkey();
 

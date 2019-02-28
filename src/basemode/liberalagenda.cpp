@@ -326,26 +326,26 @@ bool liberalagenda(signed char won)
                   else addstr("国境が開放され、市民と市民でないものの差は存在しない。");
                   break;
                case LAW_ELECTIONS:
-                  if(won==-2)addstr("Only Stalinist Party members may run in elections, and they all run unopposed.");
-                  else if(won==-1)addstr("Instead of elections, political offices are auctioned off to the highest bidder.");
+                  if(won==-2)addstr("スターリン党の党員のみで選挙を行う。野党は存在しない。");
+                  else if(won==-1)addstr("選挙ではなく最も高値で競り落としたものが政治家となる。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                  addstr("Virtually no ethics restrictions exist on political officeholders.");
-                  else if(law[l]==-1)addstr("Elections are mostly unregulated, but basic ethics restrictions are in place.");
-                  else if(law[l]==0)addstr("Moderate campaign finance reform is implemented.");
-                  else if(law[l]==1)addstr("Election financing is transparent and well-regulated.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("Election expenses are publicly funded, and voting is by ranked list.");
-                  else addstr("There is proportional representation, and over a dozen major political parties.");
+                  addstr("選挙には倫理的な制約が事実上存在しない。");
+                  else if(law[l]==-1)addstr("選挙にはほぼ規制がないが、倫理的な制約が存在する。");
+                  else if(law[l]==0)addstr("穏やかな選挙資金制度改革が行われている。");
+                  else if(law[l]==1)addstr("選挙資金は透明で適切に制限されている。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("選挙資金は公的に賄われ、投票は一覧表から行われている。");
+                  else addstr("選挙は比例代表制で行われ、10以上の主要な政党が存在する。");
                   break;
                case LAW_MILITARY:
-                  if(won==-2)addstr("The military promotes Stalinism throughout the world by using force.");
-                  else if(won==-1)addstr("The massive military kills dissenters at home and conquers poor nations abroad.");
+                  if(won==-2)addstr("軍が軍事力によってスターリン主義を世界中に広めている。");
+                  else if(won==-1)addstr("平和主義者を殺害するためや貧しい国々を征服するために巨額の軍事費が投じられている。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                  addstr("Out-of-control military spending funds several ongoing wars around the world.");
-                  else if(law[l]==-1)addstr("Massive investment is put into the military, which always seems to be at war.");
-                  else if(law[l]==0)addstr("Military spending is growing each year to fund overseas military adventures.");
-                  else if(law[l]==1)addstr("The military is not a major priority, and mostly does peacekeeping missions.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("The military has been weakened significantly, as there is little need for it.");
-                  else addstr("The military has been abolished, and the entire world is at peace.");
+                  addstr("制御不能の軍事費が世界中の紛争に供給されている。");
+                  else if(law[l]==-1)addstr("軍備に多額の費用が投じられ、常に戦争状態のようである。");
+                  else if(law[l]==0)addstr("軍事支出は海外での軍事的冒険のため年々増加している。");
+                  else if(law[l]==1)addstr("軍事は優先事項ではなく、費用の大半が平和維持活動に費やされている。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("軍備は明らかに縮小され、必要最小限のもののみとなっている。");
+                  else addstr("軍は廃止され、全世界に平和が訪れつつある。");
                   break;
                case LAW_TORTURE:
                   if(won==-2)addstr("The Internal Affairs Commissariat constantly invents new methods of torture.");
@@ -452,7 +452,7 @@ bool liberalagenda(signed char won)
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
                      addstr("工場は必要ならば汚染させてもよい。");
                   else if(law[l]==-1)addstr("工場は自主的な公害対策に従っている。");
-                  else if(law[l]==0)addstr("工場は適度な公害対策に従っている。");
+                  else if(law[l]==0)addstr("工場は穏やかな公害対策に従っている。");
                   else if(law[l]==1)addstr("工場は厳格な公害対策に従っている。");
                   else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("工場はゼロ容認の公害対策に従っている。");
                   else addstr("公害は存在せず自然が回復した。");
