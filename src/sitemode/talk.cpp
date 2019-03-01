@@ -891,7 +891,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
               move(11,1);y++;
               addstr("  できる! 」", gamelog);break;
       case 15:addstr("「あの岩の陰で一緒に小さな石を拾わないか? 」", gamelog);break;
-      case 16:addstr("\"Do you have stars on your panties?  Your ass is outta this world!\"", gamelog);break;
+      case 16:addstr("「あなたのパンツは宇宙か? この世界のものとは思えないお尻だ! 」", gamelog);break;
       case 17:addstr("\"Those pants would look great on the floor of my bedroom.\"", gamelog);break;
       case 18:addstr("\"If I said you had a nice body, would you hold it against me?\"", gamelog);break;
       case 19:addstr("\"Are you tired?  You've been running around in my thoughts all day.\"", gamelog);break;
@@ -1059,7 +1059,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 13:addstr("「今夜のあなたよりは暑くないな。」", gamelog);break;
          case 14:addstr("「今夜にしましょう。」", gamelog);break;
          case 15:addstr("\"Oooo, we should get stoned too!  He he.\"", gamelog);break;
-         case 16:addstr("\"You'll have to whip out your rocket to get some.  Let's do it.\"", gamelog);break;
+         case 16:addstr("「あなたのロケットを用意して。さあどうぞ。」", gamelog);break;
          case 17:addstr("\"So would my underwear.\"", gamelog);break;
          case 18:addstr("\"Yeah, and you're going to repay me tonight.\"", gamelog);break;
          case 19:addstr("\"Then stop *thinking* about it and come over tonight.\"", gamelog);break;
@@ -1220,9 +1220,9 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 15: addstr("\"I hate puns!  You suck at comedy.\"", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <frowns>", gamelog);break;
-         case 16: addstr("\"Yes, I'm an alien, you inferior Earth scum.\"", gamelog);
+         case 16: addstr("「ええ。私はエイリアン。下等な地球のゴミめ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <reaches for ray gun>", gamelog);break;
+            addstr(" <光線銃を抜いた>", gamelog);break;
          case 17: addstr("\"Not after I do this.\"", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <shits pants>", gamelog);break;

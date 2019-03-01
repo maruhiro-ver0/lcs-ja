@@ -199,48 +199,37 @@ void reaganify(char canseethings)
 
       erase();
       move(12,3);
-      addstr("The Arch-Conservative Congress is proposing an ARCH-CONSERVATIVE AMENDMENT!");
+      addstr("保守強硬派議会は保守強硬発議を行った!");
 
       getkey();
 
       //STATE THE AMENDMENT
       amendmentheading();
-
-      move(2,5);
-      addstr("In recognition of the fact that society is degenerating under");
+      move(2,4);
+      addstr("エリート・リベラルの脅威による社会の後退という現実を鑑み、我々は合衆国憲法");
       move(3,0);
-      addstr("the pressure of the elite liberal threat, WE THE PEOPLE HEREBY");
+      addstr("の廃止を発議する。");
       move(4,0);
-      addstr("REPEAL THE CONSTITUTION.  The former United States are to be");
+      addstr("かつての合衆国は、アメリカ連合国(CONFEDERATED STATES OF AMERICA)として再建国さ");
       move(5,0);
-      addstr("reorganized into the CONFEDERATED STATES OF AMERICA, with new");
-      move(6,0);
-      addstr("boundaries to be determined by leading theologians.");
-      move(8,5);
-      addstr("Ronald Reagan is to be King, forever, even after death.");
-      move(10,5);
-      addstr("The following Executive Officers are also chosen in perpetuity:");
-      move(11,0);
-      addstr("Minister of Love Strom Thurmond, Minister of Peace Jesse Helms,");
+      addstr("れ、新たな境界線は指導的神学者によって決定される。");
+      move(7,0);
+      addstr("ロナルド・レーガンは国王となる。死してなお永遠に。");
+      move(9,0);
+      addstr("配下の愛情大臣ストロム・サーモンド、平和大臣ジェシー・ヘルムズ、そして真理大臣");
+      move(10,0);
+      addstr("ジェリー・ファルエルは終身位階とする。");
       move(12,0);
-      addstr("and Minister of Truth Jerry Falwell.");
-      move(14,5);
-      addstr("In the event of the deaths of any of the aforementioned");
+      addstr("上記の者が死去した後は名目上の地位を保ち、実際の意思決定は敬愛すべき財界首脳た");
+      move(13,0);
+      addstr("ちによって選出された財界代表者によってなされる。");
       move(15,0);
-      addstr("persons, though they shall still nominally hold these posts,");
-      move(16,0);
-      addstr("actual decisions shall be made by business representatives,");
+      addstr("人々はイエスに救いを求めてもよい。彼はただ耳を傾けるだけだからだ。");
       move(17,0);
-      addstr("chosen by respected business leaders.");
-      move(19,5);
-      addstr("People may petition Jesus for a redress of grievances, as");
-      move(20,0);
-      addstr("He will be the only one listening.");
-      move(22,5);
-      addstr("Have a nice day.");
+      addstr("皆様よい一日を。");
 
-      move(24,0);
-      addstr("Press 'C' to watch the ratification process unfold.");
+      move(19,0);
+      addstr("Cキーを押して開票状況を見る。");
 
       while(getkey()!='c');
    }
@@ -251,7 +240,7 @@ void reaganify(char canseethings)
       if(canseethings)
       {
          move(24,0);
-         addstr("Press any key to reflect on what has happened ONE LAST TIME.");
+         addstr("何かキーを押して最後の瞬間に起こったことを見る。");
 
          getkey();
       }
@@ -279,22 +268,22 @@ void reaganify(char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                erase();
-               move(12,10);
-               addstr("You went on vacation when the country was on the verge of collapse.");
+               move(12,15);
+               addstr("この国の崩壊が迫る中、あなたは休暇を過ごしていた。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                erase();
-               move(12,12);
-               addstr("The Conservatives have made the world in their image.");
+               move(12,13);
+               addstr("保守派はこの世界を自分たちの思い通りに変えてしまった。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
                erase();
-               move(12,14);
-               addstr("They'll round up the last of you eventually.  All is lost.");
+               move(12,8);
+               addstr("あなたはいずれ捕らえられるだろう。もはやどうすることもできない。");
 
                getkey();
 
@@ -305,22 +294,22 @@ void reaganify(char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                erase();
-               move(12,10);
-               addstr("You went into hiding when the country was on the verge of collapse.");
+               move(12,15);
+               addstr("この国の崩壊が迫る中、あなたは行方を眩ませていた。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                erase();
-               move(12,12);
-               addstr("The Conservatives have made the world in their image.");
+               move(12,13);
+               addstr("保守派はこの世界を自分たちの思い通りに変えてしまった。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
                erase();
-               move(12,14);
-               addstr("They'll round the last of you up eventually.  All is lost.");
+               move(12,8);
+               addstr("あなたはいずれ捕らえられるだろう。もはやどうすることもできない。");
 
                getkey();
 
@@ -331,22 +320,22 @@ void reaganify(char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                erase();
-               move(12,10);
-               addstr("While you were on the inside, the country degenerated...");
+               move(12,22);
+               addstr("投獄されている間にこの国は後退した。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                erase();
-               move(12,12);
-               addstr("Your kind are never released these days.");
+               move(12,19);
+               addstr("あなたの良心が解放されることはないだろう。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
                erase();
-               move(12,14);
-               addstr("Ain't no sunshine...");
+               move(12,32);
+               addstr("光は消え去った…");
 
                getkey();
 
@@ -357,22 +346,22 @@ void reaganify(char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                erase();
-               move(12,20);
-               addstr("あなたは安全に姿を消した。だが不十分だ。");
+               move(12,16);
+               addstr("姿を消し平穏な日々を送っていた。だがもう限界だ。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                erase();
                move(12,13);
-               addstr("保守派はこの世界を自分たちの考えるとおりのものにした。");
+               addstr("保守派はこの世界を自分たちの思い通りに変えてしまった。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
                erase();
                move(12,8);
-               addstr("あなたはいずれ捕らえられるであろう。もうどうすることもできない。");
+               addstr("あなたはいずれ捕らえられるだろう。もはやどうすることもできない。");
 
                getkey();
 
@@ -488,22 +477,22 @@ void stalinize(char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                erase();
-               move(12,10);
-               addstr("You went on vacation when the country was on the verge of collapse.");
+               move(12,15);
+               addstr("この国の崩壊が迫る中、あなたは休暇を過ごしていた。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                erase();
-               move(12,12);
-               addstr("The Stalinists have made the world in their image.");
+               move(12,8);
+               addstr("スターリン主義者はこの世界を自分たちの思い通りに変えてしまった。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
                erase();
-               move(12,14);
-               addstr("They'll round up the last of you eventually.  All is lost.");
+               move(12,8);
+               addstr("あなたはいずれ捕らえられるだろう。もはやどうすることもできない。");
 
                getkey();
 
@@ -514,22 +503,22 @@ void stalinize(char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                erase();
-               move(12,10);
-               addstr("You went into hiding when the country was on the verge of collapse.");
+               move(12,15);
+               addstr("この国の崩壊が迫る中、あなたは行方を眩ませていた。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                erase();
-               move(12,12);
-               addstr("The Stalinists have made the world in their image.");
+               move(12,8);
+               addstr("スターリン主義者はこの世界を自分たちの思い通りに変えてしまった。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
                erase();
-               move(12,14);
-               addstr("They'll round the last of you up eventually.  All is lost.");
+               move(12,8);
+               addstr("あなたはいずれ捕らえられるだろう。もはやどうすることもできない。");
 
                getkey();
 
@@ -540,22 +529,22 @@ void stalinize(char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                erase();
-               move(12,10);
-               addstr("While you were on the inside, the country degenerated...");
+               move(12,22);
+               addstr("投獄されている間にこの国は後退した。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                erase();
-               move(12,12);
-               addstr("You've been shipped off to a gulag in newly annexed Canada...");
+               move(12,13);
+               addstr("あなたは新たに併合されたカナダの強制収容所に送られる。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
                erase();
-               move(12,14);
-               addstr("Ain't no sunshine in this frozen tundra...");
+               move(12,28);
+               addstr("ツンドラの地に光はない…");
 
                getkey();
 
@@ -566,22 +555,22 @@ void stalinize(char canseethings)
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                erase();
-               move(12,20);
-               addstr("あなたは安全に姿を消した。だが不十分だ。");
+               move(12,16);
+               addstr("姿を消し平穏な日々を送っていた。だがもう限界だ。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
                erase();
                move(12,8);
-               addstr("スターリン主義者はこの世界を自分たちの考えるとおりのものにした。");
+               addstr("スターリン主義者はこの世界を自分たちの思い通りに変えてしまった。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
                erase();
                move(12,8);
-               addstr("あなたはいずれ捕らえられるであろう。もうどうすることもできない。");
+               addstr("あなたはいずれ捕らえられるだろう。もはやどうすることもできない。");
 
                getkey();
 
