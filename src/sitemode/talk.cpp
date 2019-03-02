@@ -891,8 +891,8 @@ char doYouComeHereOften(Creature &a, Creature &tk)
               move(11,1);y++;
               addstr("  できる! 」", gamelog);break;
       case 15:addstr("「あの岩の陰で一緒に小さな石を拾わないか? 」", gamelog);break;
-      case 16:addstr("「あなたのパンツは宇宙か? この世界のものとは思えないお尻だ! 」", gamelog);break;
-      case 17:addstr("\"Those pants would look great on the floor of my bedroom.\"", gamelog);break;
+      case 16:addstr("「あなたのパンツは宇宙か? 地球上のものとは思えないお尻だ! 」", gamelog);break;
+      case 17:addstr("「このパンツはベッドルームの床にあってこそ美しい。」", gamelog);break;
       case 18:addstr("\"If I said you had a nice body, would you hold it against me?\"", gamelog);break;
       case 19:addstr("\"Are you tired?  You've been running around in my thoughts all day.\"", gamelog);break;
       case 20:addstr("\"If I could change the alphabet baby, I would put the U and I together!\"", gamelog);break;
@@ -1060,7 +1060,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 14:addstr("「今夜にしましょう。」", gamelog);break;
          case 15:addstr("\"Oooo, we should get stoned too!  He he.\"", gamelog);break;
          case 16:addstr("「あなたのロケットを用意して。さあどうぞ。」", gamelog);break;
-         case 17:addstr("\"So would my underwear.\"", gamelog);break;
+         case 17:addstr("「私の下着もね。」", gamelog);break;
          case 18:addstr("\"Yeah, and you're going to repay me tonight.\"", gamelog);break;
          case 19:addstr("\"Then stop *thinking* about it and come over tonight.\"", gamelog);break;
          case 20:addstr("\"As long as you put a condom between them, I'm all for it.\"", gamelog);break;
@@ -1202,7 +1202,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 9 : addstr("「あんたは豚だ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <立ち去った>", gamelog);break;
-         case 10: addstr("「うまいやり方だ。でもノーだ。」", gamelog);
+         case 10: addstr("「どっちもノーだ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <舌打ちした>", gamelog);break;
          case 11: addstr("「本気か? 」", gamelog);
@@ -1220,7 +1220,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 15: addstr("\"I hate puns!  You suck at comedy.\"", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <frowns>", gamelog);break;
-         case 16: addstr("「ええ。私はエイリアン。下等な地球のゴミめ。」", gamelog);
+         case 16: addstr("「そう、私はエイリアン。下等な地球のゴミめ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <光線銃を抜いた>", gamelog);break;
          case 17: addstr("\"Not after I do this.\"", gamelog);

@@ -44,7 +44,7 @@ void tossjustices(char canseethings)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
       move(12,6);
-      addstr("The Elite Liberal Congress is proposing an ELITE LIBERAL AMENDMENT!");
+      addstr("エリート・リベラル議会によるエリート・リベラル発議!");
 
       getkey();
    }
@@ -58,10 +58,9 @@ void tossjustices(char canseethings)
       amendmentheading();
 
       move(2,5);
-      addstr("The following former citizen");
-      if(tossnum!=1)addstr("s are");
-      else addstr(" is");
-      addstr(" branded Arch-Conservative:");
+      addstr("以下の市民だった者");
+      if(tossnum!=1)addstr("たち");
+      addstr("を保守強硬派とする: ");
 
       int y=4;
 
@@ -71,32 +70,21 @@ void tossjustices(char canseethings)
          addstr(courtname[j]);
       }
 
-      move(y+1,5);
-      addstr("In particular, the aforementioned former citizen");
-      if(tossnum!=1)addstr("s");
-      addstr(" may");
+      move(y+1,4);
+      addstr("前記の市民だった者");
+      if(tossnum!=1)addstr("たち");
+      addstr("は最高裁判所の職に尽くしていなかった。");
       move(y+2,0);
-      addstr("not serve on the Supreme Court.  Said former citizen");
-      if(tossnum!=1)addstr("s");
-      addstr(" will");
+      addstr("よって、前記の市民だった者");
+      if(tossnum!=1)addstr("たち");
+      addstr("は、大統領が裁判所に代わり");
       move(y+3,0);
-      addstr("be deported to ");
-      if(tossnum!=1)addstr("Conservative countries");
-      else addstr("a Conservative country");
-      addstr(" of the President's");
-      move(y+4,0);
-      addstr("choosing to be replaced by ");
-      if(tossnum!=1)addstr("Proper Justices");
-      else addstr("a Proper Justice");
-      addstr(", also of");
-      move(y+5,0);
-      addstr("the President's choosing with the advice and consent of");
-      move(y+6,0);
-      addstr("the Senate.");
-
+      addstr("上院の助言と承認を得て選出した保守の国");
+      if(tossnum!=1)addstr("々");
+      addstr("に追放する。");
 
       move(24,0);
-      addstr("Press 'C' to watch the ratification process unfold.");
+      addstr("Cキーを押して開票状況を見る。");
 
       while(getkey()!='c');
    }
@@ -116,7 +104,7 @@ void tossjustices(char canseethings)
    if(canseethings)
    {
       move(24,0);
-      addstr("Press any key to reflect on what has happened.");
+      addstr("何かキーを押して起こったことを省みる。");
 
       getkey();
    }
@@ -134,7 +122,7 @@ void amendment_termlimits(char canseethings)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
       move(12,6);
-      addstr("A National Convention has proposed an ELITE LIBERAL AMENDMENT!");
+      addstr("全国委員会による合衆国憲法改正発議!");
 
       getkey();
    }
@@ -144,21 +132,15 @@ void amendment_termlimits(char canseethings)
    {
       amendmentheading();
 
-      move(2,5);
-      addstr("In light of the Conservative nature of entrenched politicians,");
+      move(2,4);
+      addstr("保守政治家の保身的性質、および民主主義における腐敗の蔓延を鑑み、全ての上");
       move(3,0);
-      addstr("and the corrupting influence of incumbency on the democratic process,");
+      addstr("下両院議員の任期は一期に制限する。");
       move(4,0);
-      addstr("all members of the House of Representatives and Senate shall henceforth");
-      move(5,0);
-      addstr("be limited to one term in office.  This shall be immediately enforced");
-      move(6,0);
-      addstr("by holding elections to replace all members of Congress upon the");
-      move(7,0);
-      addstr("ratification of this amendment.");
+      addstr("これは憲法改正後に上下両院が解散した後、ただちに適用される。");
 
       move(24,0);
-      addstr("Press 'C' to watch the ratification process unfold.");
+      addstr("Cキーを押して開票状況を見る。");
 
       while(getkey()!='c');
    }
@@ -169,7 +151,7 @@ void amendment_termlimits(char canseethings)
       if(canseethings)
       {
          move(24,0);
-         addstr("Press any key to hold new elections!                           ");
+         addstr("何かキーを押して新たな選挙を見る!                                            ");
 
          getkey();
       }
@@ -183,7 +165,7 @@ void amendment_termlimits(char canseethings)
    else if(canseethings)
    {
       move(24,0);
-      addstr("Press any key to reflect on what has happened.");
+      addstr("何かキーを押して起こったことを省みる。");
 
       getkey();
    }
@@ -199,7 +181,7 @@ void reaganify(char canseethings)
 
       erase();
       move(12,3);
-      addstr("保守強硬派議会は保守強硬発議を行った!");
+      addstr("保守強硬派議会による保守強硬発議!");
 
       getkey();
 
@@ -378,7 +360,7 @@ void reaganify(char canseethings)
       if(canseethings)
       {
          move(24,0);
-         addstr("Press any key to breathe a sigh of relief.                   ");
+         addstr("何かキーを押して安堵のため息をつく。                                         ");
 
          getkey();
       }
@@ -397,48 +379,40 @@ void stalinize(char canseethings)
 
       erase();
       move(12,11);
-      addstr("The Stalinist Congress is proposing a STALINIST AMENDMENT!");
+      addstr("スターリン主義議会によるスターリン主義発議!");
 
       getkey();
 
       //STATE THE AMENDMENT
       amendmentheading();
 
-      move(2,5);
-      addstr("In recognition of the fact that the proletariat is being exploited");
+      move(2,4);
+      addstr("プロレタリアートがブルジョワジー似非左翼エリート・リベラルに搾取されている");
       move(3,0);
-      addstr("by bourgeoisie faux-leftist liberal elites, WE THE PEOPLE HEREBY");
-      move(4,0);
-      addstr("REPEAL THE CONSTITUTION.  The former United States are to be");
+      addstr("状況を鑑み、我々は合衆国憲法の廃止を発議する。");
       move(5,0);
-      addstr("reorganized into the PEOPLE'S REPUBLIC OF AMERICA, with new");
+      addstr("かつての合衆国は、アメリカ人民共和国(PEOPLE'S REPUBLIC OF AMERICA)として再建国");
       move(6,0);
-      addstr("boundaries to be determined by leading Stalinist philosophers.");
-      move(8,5);
-      addstr("Josef Stalin is General Secretary and Premier, forever, even after death.");
-      move(10,5);
-      addstr("The following Politburo Commissars are also chosen in perpetuity:");
+      addstr("され、新たな境界線はスターリン主義者賢人によって決定される。");
+      move(8,0);
+      addstr("ヨシフ・スターリンは書記長兼首相となる。死してなお永遠に。");
+      move(10,0);
+      addstr("配下の共和国外務人民委員長ヴャチェスラフ・モロトフ、共和国内務人民委員長ラヴレ");
       move(11,0);
-      addstr("People's Commissar for Foreign Affairs Vyacheslav Molotov");
-      move(12,0);
-      addstr("and People's Commissar for Internal Affairs Lavrentiy Beria.");
-      move(14,5);
-      addstr("In the event of the deaths of any of the aforementioned");
-      move(15,0);
-      addstr("persons, though they shall still nominally hold these posts,");
+      addstr("ンチー・ベリヤは終身位階とする。");
+      move(13,0);
+      addstr("上記の者が死去した後は名目上の地位を保ち、実際の意思決定はスターリン党支持者に");
+      move(14,0);
+      addstr("よって選出されたスターリン党指導者によってなされる。");
       move(16,0);
-      addstr("actual decisions shall be made by Stalinist Party leaders,");
+      addstr("異議申し立てを行う者は、全て新たに併合したカナダの強制収容所に送られるか、運が");
       move(17,0);
-      addstr("chosen by Stalinist Party loyalists.");
-      move(19,5);
-      addstr("Anyone attempting to petition for redress of grievances will be sent");
-      move(20,0);
-      addstr("to a gulag in newly annexed Canada or, if you're lucky, executed.");
-      move(22,5);
-      addstr("Have a nice day.");
+      addstr("良ければ処刑される。");
+      move(19,0);
+      addstr("よい一日を。");
 
       move(24,0);
-      addstr("Press 'C' to watch the ratification process unfold.");
+      addstr("Cキーを押して開票状況を見る。");
 
       while(getkey()!='c');
    }
@@ -449,7 +423,7 @@ void stalinize(char canseethings)
       if(canseethings)
       {
          move(24,0);
-         addstr("Press any key to reflect on what has happened ONE LAST TIME.");
+         addstr("何かキーを押して最後の瞬間に起こったことを見る。");
 
          getkey();
       }
@@ -543,8 +517,8 @@ void stalinize(char canseethings)
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
                erase();
-               move(12,28);
-               addstr("ツンドラの地に光はない…");
+               move(12,26);
+               addstr("光の届かないツンドラの地に…");
 
                getkey();
 
@@ -587,7 +561,7 @@ void stalinize(char canseethings)
       if(canseethings)
       {
          move(24,0);
-         addstr("Press any key to breathe a sigh of relief.                   ");
+         addstr("何かキーを押して安堵のため息をつく。                                         ");
 
          getkey();
       }
@@ -626,13 +600,13 @@ char ratify(int level,int lawview,int view,char congress,char canseethings)
       if(canseethings)
       {
          move(0,62);
-         addstr("House");
+         addstr("下院");
 
          move(0,70);
-         addstr("Senate");
+         addstr("上院");
 
          move(24,0);
-         addstr("Press any key to watch the Congressional votes unfold.     ");
+         addstr("何かキーを押して開票状況を見る。                                             ");
 
          getkey();
       }
@@ -655,15 +629,15 @@ char ratify(int level,int lawview,int view,char congress,char canseethings)
             else if(l==HOUSENUM-1) set_color(COLOR_BLACK,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(2,62);
+            addstr("賛成");
             addstr(yesvotes_h);
-            addstr(" Yea");
 
             if(l==HOUSENUM-1&&!yeswin_h) set_color(COLOR_WHITE,COLOR_BLACK,1);
             else if(l==HOUSENUM-1) set_color(COLOR_BLACK,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(3,62);
+            addstr("反対");
             addstr(l+1-yesvotes_h);
-            addstr(" Nay");
          }
 
          if(l%4==0&&s<SENATENUM)
@@ -682,15 +656,15 @@ char ratify(int level,int lawview,int view,char congress,char canseethings)
             else if(l==HOUSENUM-1) set_color(COLOR_BLACK,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(2,70);
+            addstr("賛成");
             addstr(yesvotes_s);
-            addstr(" Yea");
 
             if(l==HOUSENUM-1&&!yeswin_s) set_color(COLOR_WHITE,COLOR_BLACK,1);
             else if(l==HOUSENUM-1) set_color(COLOR_BLACK,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(3,70);
+            addstr("反対");
             addstr(s-yesvotes_s);
-            addstr(" Nay");
 
             if(l%5==0) pause_ms(10);
          }
@@ -724,7 +698,7 @@ char ratify(int level,int lawview,int view,char congress,char canseethings)
          }
 
          move(24,0);
-         addstr("Press any key to watch the State votes unfold.              ");
+         addstr("何かキーを押して開票状況を見る。                                             ");
 
          getkey();
       }
@@ -808,9 +782,9 @@ char ratify(int level,int lawview,int view,char congress,char canseethings)
          if(vote==level)
          {
             yesstate++;
-            if(canseethings) addstr("Yea");
+            if(canseethings) addstr("賛成");
          }
-         else if(canseethings) addstr("Nay");
+         else if(canseethings) addstr("反対");
 
          if(canseethings)
          {
@@ -818,15 +792,15 @@ char ratify(int level,int lawview,int view,char congress,char canseethings)
             else if(s==STATENUM-1) set_color(COLOR_BLACK,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(23,50);
+            addstr("賛成");
             addstr(yesstate);
-            addstr(" Yea");
 
             if(s==STATENUM-1&&yesstate<STATESUPERMAJORITY) set_color(COLOR_WHITE,COLOR_BLACK,1);
             else if(s==STATENUM-1) set_color(COLOR_BLACK,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(23,60);
+            addstr("反対");
             addstr(s+1-yesstate);
-            addstr(" Nay");
 
             pause_ms(50);
          }
@@ -839,8 +813,8 @@ char ratify(int level,int lawview,int view,char congress,char canseethings)
    {
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(23,0);
-      if(ratified) addstr("AMENDMENT ADOPTED.");
-      else addstr("AMENDMENT REJECTED.");
+      if(ratified) addstr("合衆国憲法改正 可決");
+      else addstr("合衆国憲法改正 否決");
    }
 
    return ratified;
@@ -855,7 +829,7 @@ void amendmentheading()
 
    set_color(COLOR_WHITE,COLOR_BLACK,1);
 
-   mvaddstr(0,0,"Proposed Amendment ");
+   mvaddstr(0,0,"合衆国憲法改正発議 ");
    romannumeral(amendnum);
-   addstr(" to the United States Constitution:");
+   addstr(":");
 }

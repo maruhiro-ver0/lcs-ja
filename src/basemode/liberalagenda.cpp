@@ -345,40 +345,40 @@ bool liberalagenda(signed char won)
                   else if(law[l]==0)addstr("軍事支出は海外での軍事的冒険のため年々増加している。");
                   else if(law[l]==1)addstr("軍事は優先事項ではなく、費用の大半が平和維持活動に費やされている。");
                   else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("軍備は明らかに縮小され、必要最小限のもののみとなっている。");
-                  else addstr("軍は廃止され、全世界に平和が訪れつつある。");
+                  else addstr("軍は廃止され、全世界に平和が訪れた。");
                   break;
                case LAW_TORTURE:
-                  if(won==-2)addstr("The Internal Affairs Commissariat constantly invents new methods of torture.");
-                  else if(won==-1)addstr("The new Inquisition tortures heretics, blasphemers, and non-Christians to death.");
+                  if(won==-2)addstr("内務人民委員が新しい拷問を発明し続けている。");
+                  else if(won==-1)addstr("新たな異端審問官が異端者、冒涜者、非キリスト教徒を拷問で殺害している。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Military and intelligence interrogators regularly engage in torture.");
-                  else if(law[l]==-1)addstr("The line between standard interrogation and torture is severely blurred.");
-                  else if(law[l]==0)addstr("Torture allegations still occasionally crop up, despite an official ban.");
-                  else if(law[l]==1)addstr("The government strongly enforces a ban on torture.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("The nation is a respected international leader on Moral Interrogation Practices.");
-                  else addstr("Terrorism ended after the government formally apologized to terrorist leaders.");
+                     addstr("軍と情報機関では拷問が正式に行われている。");
+                  else if(law[l]==-1)addstr("正当な取り調べと拷問の境界線は非常に曖昧である。");
+                  else if(law[l]==0)addstr("公式には禁止されているにも関わらす、拷問の疑惑が突如発生することがある。");
+                  else if(law[l]==1)addstr("政府は拷問を強く禁止している。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("国は取り調べにおける倫理の実践で国際的なリーダーとして評価されている。");
+                  else addstr("政府が拷問についてテロリストの指導者に謝罪した後にテロリズムは終結した。");
                   break;
                case LAW_PRISONS:
-                  if(won==-2)addstr("The former nation of Canada has been annexed and filled with Stalinist gulags.");
-                  else if(won==-1)addstr("Prisoners must fight to the death in corporate-sponsored gladiatorial bouts.");
+                  if(won==-2)addstr("併合されたカナダには強制労働収容所がいたる所にある。");
+                  else if(won==-1)addstr("囚人は企業がスポンサーのコロシアムで剣闘士として死ぬまで戦う。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Prisoners are often subject to torture and slave labor.");
-                  else if(law[l]==-1)addstr("Prisoners suffer from horrible conditions and lack of basic rights.");
-                  else if(law[l]==0)addstr("Prisoners receive basic rights and services, but reports of abuse are common.");
-                  else if(law[l]==1)addstr("The prisons are regulated to protect prisoners' rights and safety.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("The prisons are targeted at rehabilitation, rather than punishment.");
-                  else addstr("Instead of prison, criminals voluntarily attend free support groups.");
+                     addstr("囚人に対してしばしば拷問や奴隷的使役が行われている。");
+                  else if(law[l]==-1)addstr("囚人はひどい条件に置かれ、基本的権利が侵害されている。");
+                  else if(law[l]==0)addstr("囚人には基本的権利があるが、しばしば虐待の報告がある。");
+                  else if(law[l]==1)addstr("刑務所には囚人の権利と安全を守る規定がある。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("刑務所は罰よりもリハビリに重点が置かれている。");
+                  else addstr("犯罪を犯した者は、刑務所の代わりに支援団体に自発的に参加する。");
                   break;
 	           case LAW_TAX:
-                  if(won==-2)addstr("Having any money whatsoever is punishable by 20 years in a gulag.");
-                  else if(won==-1)addstr("There are no taxes, yet most people have no money.");
+                  if(won==-2)addstr("いかなる理由でも通貨を所有する者は20年間の強制労働の罰が与えられる。");
+                  else if(won==-1)addstr("税金は存在しないが、ほとんどの者には金がない。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("The tax code is a nightmare designed to maintain class structure.");
-                  else if(law[l]==-1)addstr("A flat tax is in effect, and there is no capital gains or inheritance tax.");
-                  else if(law[l]==0)addstr("Taxes are moderate, but the code is full of loopholes.");
-                  else if(law[l]==1)addstr("The wealthy are heavily taxed under a progressive taxation system.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("Rich people are virtually unheard of, due to taxation.");
-                  else addstr("Money no longer exists, everything is free, and everyone enjoys lives of luxury.");
+                     addstr("税法は階級構造を固定化するために設計された悪夢のようである。");
+                  else if(law[l]==-1)addstr("事実上の一律課税で、キャピタルゲイン税や相続税は存在しない。");
+                  else if(law[l]==0)addstr("税金は適切だが、法律のいたる所に抜け穴がある。");
+                  else if(law[l]==1)addstr("累進課税により裕福な人々にはより重い税金が課せられる。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("裕福な人々にはかつてないほど課税されている。");
+                  else addstr("通貨はもはや存在しない。全ては無料で、あらゆる人々は贅沢を楽しんでいる。");
                   break;
                case LAW_ABORTION:
                   if(won==-2)addstr("強制的な中絶を人口抑制のため実施する。");
