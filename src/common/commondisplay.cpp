@@ -662,7 +662,7 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
          addstr(cr->prisoner->name);
          break;
       }
-      addstr("を捕らえている");
+      addstr("を連れている");
    }
 
    mvaddstr(2,0,"心:     ");

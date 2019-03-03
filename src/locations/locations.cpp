@@ -389,7 +389,7 @@ void initlocation(Location &loc)
       if(law[LAW_PRIVACY]==-2 && law[LAW_POLICEBEHAVIOR]==-2) {
          loc.rename("愛情省", "愛情省");
       } else {
-         loc.rename("中央情報局", "中央情報局");
+         loc.rename("中央情報局", "情報局");
       } break;
    case SITE_GOVERNMENT_ARMYBASE:
       if(law[LAW_MILITARY]==-2) {
@@ -403,7 +403,7 @@ void initlocation(Location &loc)
       loc.rename("ホワイトハウス", "ﾎﾜｲﾄﾊｳｽ");
       break;
    case SITE_CORPORATE_HEADQUARTERS:
-      loc.rename("企業本社","本社");
+      loc.rename("企業本社","企業");
       break;
    case SITE_BUSINESS_BANK:
       loc.rename("アメリカ・バンク", "銀行");

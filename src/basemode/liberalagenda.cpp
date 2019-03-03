@@ -352,7 +352,7 @@ bool liberalagenda(signed char won)
                   else if(won==-1)addstr("新たな異端審問官が異端者、冒涜者、非キリスト教徒を拷問で殺害している。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
                      addstr("軍と情報機関では拷問が正式に行われている。");
-                  else if(law[l]==-1)addstr("正当な取り調べと拷問の境界線は非常に曖昧である。");
+                  else if(law[l]==-1)addstr("正当な取り調べと拷問の境界線は非常に曖昧になっている。");
                   else if(law[l]==0)addstr("公式には禁止されているにも関わらす、拷問の疑惑が突如発生することがある。");
                   else if(law[l]==1)addstr("政府は拷問を強く禁止している。");
                   else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("国は取り調べにおける倫理の実践で国際的なリーダーとして評価されている。");
@@ -403,26 +403,26 @@ bool liberalagenda(signed char won)
                   else addstr("全ての種は人と同様の権利がある。バクテリアでさえも。");
                   break;
                case LAW_POLICEBEHAVIOR:
-                  if(won==-2)addstr("Everyone lives in constant fear of the Stalinist Party's Secret Police.");
-                  else if(won==-1)addstr("Privatized police get bonuses on their paychecks for every person they kill.");
+                  if(won==-2)addstr("あらゆる人々がスターリン党秘密警察の恐怖の中で生きている。");
+                  else if(won==-1)addstr("民営化された警察が人々を殺害するたびにボーナスを受け取っている。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Law enforcement is given free reign.");
-                  else if(law[l]==-1)addstr("Even the worst police misconduct only earns slap-on-the-wrist punishments.");
-                  else if(law[l]==0)addstr("Law enforcement is regulated to prevent extreme misconduct.");
-                  else if(law[l]==1)addstr("Law enforcement has heavy oversight and freedom-of-information requirements.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("All law enforcement positions are subject to election and recall.");
-                  else addstr("With no police, criminals follow the honor system and turn themselves in.");
+                     addstr("法執行機関には無制限の権利が与えられている。");
+                  else if(law[l]==-1)addstr("重大な問題行為を行った警官でさえも軽い罰を受けるのみである。");
+                  else if(law[l]==0)addstr("法執行機関の極端な行為は禁止されている。");
+                  else if(law[l]==1)addstr("法執行機関は強力に監視され、情報公開が求められる。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("法執行機関の全ての地位は選挙とリコールの対象となる。");
+                  else addstr("警察は存在せず、犯罪者は無監督制度に従い自らを更正する。");
                   break;
                case LAW_PRIVACY:
-                  if(won==-2)addstr("Citizens have to spy on each other and report to the Stalinist Party.");
-                  else if(won==-1)addstr("Very detailed reports on each citizen are easily accessible to corporations.");
+                  if(won==-2)addstr("市民は互いに監視し合いスターリン党に報告している。");
+                  else if(won==-1)addstr("企業は市民の詳細な情報に簡単にアクセスできる。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Any corporation requesting private information is granted unrestricted access.");
-                  else if(law[l]==-1)addstr("Privacy laws are full of loopholes and security backdoors are in everything.");
-                  else if(law[l]==0)addstr("Basic safeguards for medical and financial privacy are in place but ineffective.");
-                  else if(law[l]==1)addstr("All areas of privacy are protected with strong, effective safeguards.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("Individual privacy is sacred, and state-of-the-art safeguards are mandatory.");
-                  else addstr("All large organizations are prohibited from keeping any data about anyone.");
+                     addstr("あらゆる企業は個人情報への無制限のアクセスが認められている。");
+                  else if(law[l]==-1)addstr("プライバシー法には欠陥が多数あり、いたる所にセキュリティ上の裏口がある。");
+                  else if(law[l]==0)addstr("医療および経済的プライバシーは基本的に保護されているが実際には効果がない。");
+                  else if(law[l]==1)addstr("あらゆる分野のプライバシーは強力かつ実効的に保護されている。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("プライバシーは不可侵であり、最高水準の保護が義務付けられている。");
+                  else addstr("全ての組織は、あらゆる人々のいかなるデータの保持も禁止されている。");
                   break;
                case LAW_DEATHPENALTY:
                   if(won==-2)addstr("敵認定された者は必ず死刑判決とする。");
@@ -458,37 +458,37 @@ bool liberalagenda(signed char won)
                   else addstr("公害は存在せず自然が回復した。");
                   break;
                case LAW_LABOR:
-                  if(won==-2)addstr("The state has nationalized all industries and assigns everyone jobs.");
-                  else if(won==-1)addstr("People are bred in pens to be farmed out to corporations like beasts.");
+                  if(won==-2)addstr("全ての企業が国有化され、あらゆる人々に労働が割り当てられている。");
+                  else if(won==-1)addstr("人々が企業の家畜として売買されている。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("There is no weekend, children are forced to work, and workers can't afford food.");
-                  else if(law[l]==-1)addstr("Working conditions are deplorable and there is no minimum wage.");
-                  else if(law[l]==0)addstr("Workers are underpaid, have lousy benefits, and get fired if they complain.");
-                  else if(law[l]==1)addstr("Workers are fairly compensated, have good benefits, and are difficult to fire.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("There are universal workers' rights and a high guaranteed minimum income.");
-                  else addstr("Wage slavery has been abolished, and robots have been built to do all the work.");
+                     addstr("週末の休暇がなく、子供も労働を強制され、そして食料を買う余裕もない。");
+                  else if(law[l]==-1)addstr("労働環境は悲惨で最低賃金は存在しない。");
+                  else if(law[l]==0)addstr("労働者は低い賃金で働いていて、不満を言えば解雇される。");
+                  else if(law[l]==1)addstr("労働者には適切な給料が支払われ、解雇は困難である。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("普遍的な労働者の権利と十分な最低賃金が保障されている。");
+                  else addstr("賃金奴隷は廃止され、ロボットがあらゆる労働を行っている。");
                   break;
                case LAW_GAY:
-                  if(won==-2)addstr("Homosexuals are executed regularly for their \"bourgeoisie decadence\".");
-                  else if(won==-1)addstr("Homosexuals are executed regularly for \"promoting the Gay Agenda\".");
+                  if(won==-2)addstr("同性愛者は「ブルジョワ的退廃」として定期的に処刑されている。");
+                  else if(won==-1)addstr("「ゲイ・アジェンダ推進」の名の下に同性愛者は定期的に処刑されている。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Homosexuals are routinely persecuted with no recourse.");
-                  else if(law[l]==-1)addstr("Homosexuals are not tolerated.");
-                  else if(law[l]==0)addstr("Homosexuals are grudgingly tolerated but have few equal rights.");
-                  else if(law[l]==1)addstr("Homosexuals have many rights shared by heterosexuals.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("Homosexuals have equal rights that are vigorously protected.");
-                  else addstr("All sexual orientations are accepted, and most people are polyamorous.");
+                     addstr("同性愛者は日常的に迫害されている。");
+                  else if(law[l]==-1)addstr("同性愛は容認されていない。");
+                  else if(law[l]==0)addstr("同性愛はしぶしぶ容認されているが、権利は対等ではない。");
+                  else if(law[l]==1)addstr("同性愛者には異性愛者と多数の権利を共有している。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("同性愛者は同等の権利を有し、それらは強力に保護されている。");
+                  else addstr("全ての性的指向が受け入れられ、ほとんどの人々が多重的な性的関係を持っている。");
                   break;
                case LAW_CORPORATE:
-                  if(won==-2)addstr("All forms of private enterprise are punishable by death.");
-                  else if(won==-1)addstr("Corporations under the King run the country in a feudal system.");
+                  if(won==-2)addstr("あらゆる形態の私企業は死刑で罰する。");
+                  else if(won==-1)addstr("企業は国王の下で国を封建制で支配している。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("Corporations essentially run the country in a feudal system.");
-                  else if(law[l]==-1)addstr("Corporate culture is corrupt and there is a great disparity in wages.");
-                  else if(law[l]==0)addstr("Corporations are moderately regulated, although wages are still unfair.");
-                  else if(law[l]==1)addstr("Corporations are stiffly regulated, and executive compensation is reasonable.");
-                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("Corporations are subject to intense regulation, and there is a maximum wage law.");
-                  else addstr("Corporations have been abolished, along with the rest of capitalism.");
+                     addstr("企業は国を封建制で実質的に支配している。");
+                  else if(law[l]==-1)addstr("企業文化は腐敗し、賃金には大きな不均衡がある。");
+                  else if(law[l]==0)addstr("企業には緩やかな規制があるが、賃金はいまだ不公正である。");
+                  else if(law[l]==1)addstr("企業には強い規制があり、役員報酬は適度に抑えられている。");
+                  else if(won!=1||wincondition!=WINCONDITION_ELITE)addstr("企業には強力な規制が課せられ、役員報酬は法律で制限されている。");
+                  else addstr("資本主義の終焉と共に企業は廃止された。");
                   break;
                case LAW_FREESPEECH:
                   if(won==-2)addstr("反革命的言論は死刑に相当する重罪である。");
@@ -533,9 +533,9 @@ bool liberalagenda(signed char won)
       {
          set_color(COLOR_GREEN,COLOR_BLACK,1);
          if(wincondition==WINCONDITION_EASY)
-            mvaddstr(23,0,"The country has achieved Liberal status!");
-         else mvaddstr(23,0,"The country has achieved Elite Liberal status!");
-         mvaddstr(24,0,"Press 'L' to view the high score list.");
+            mvaddstr(23,0,"この国はリベラルに到達した!");
+         else mvaddstr(23,0,"この国はエリート・リベラルに到達した");
+         mvaddstr(24,0,"Lキーでハイスコアを表示する。");
 
          int c=getkey();
 
@@ -546,8 +546,8 @@ bool liberalagenda(signed char won)
       else if(won==-1)
       {
          set_color(COLOR_RED,COLOR_BLACK,1);
-         mvaddstr(23,0,"The country has been Reaganified.");
-         mvaddstr(24,0,"Press 'L' to view the high score list.");
+         mvaddstr(23,0,"この国はレーガン化した。");
+         mvaddstr(24,0,"Lキーでハイスコアを表示する。");
 
          int c=getkey();
 
@@ -558,8 +558,8 @@ bool liberalagenda(signed char won)
       else if(won==-2)
       {
          set_color(COLOR_RED,COLOR_BLACK,1);
-         mvaddstr(23,0,"The country has been Stalinized.");
-         mvaddstr(24,0,"Press 'L' to view the high score list.");
+         mvaddstr(23,0,"この国はスターリン化した。");
+         mvaddstr(24,0,"Lキーでハイスコアを表示する。");
 
          int c=getkey();
 

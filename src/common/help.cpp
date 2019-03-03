@@ -64,7 +64,7 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===社会奉仕===");
       move(4,0);
-      addstr(" Has a minor effect on public opinion and increases Juice.");
+      addstr("  世論への小さな影響がある。ジュースが増す。");
       break;
 // }}}
 // {{{ ACTIVITY_TROUBLE
@@ -72,21 +72,15 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===リベラル反抗===");
       move(4,0);
-      addstr(" Liberal Disobedience is an illegal activity and a form of Liberal Activism");
+      addstr("  リベラル的反抗は違法なリベラル活動の形態で、世論にプラスの影響を与える。");
       move(5,0);
-      addstr(" which has a positive effect on Public Opinion. It has very short prison");
-      move(6,0);
-      addstr(" sentences if you get convicted. It also increases juice.");
-      move(8,0);
-      addstr(" Persuasion, Charisma, Agility, Heart, Strength, Intelligence will increase ");
+      addstr("有罪となった場合には短い刑期がある。この場合もジュースが増す。");
+      move(7,0);
+      addstr("  誘惑、魅力、敏捷性、心、腕力、知識が高いと世論に与える影響も大きい。");
       move(9,0);
-      addstr(" the effect you have on Public Opinion.");
-      move(11,0);
-      addstr(" There is a chance that someone will phone the police. Agility, intelligence,");
-      move(12,0);
-      addstr(" disguise and street sense will shake them off the scent. There is also a");
-      move(13,0);
-      addstr(" chance that an angry mob will beat the crap out of you.");
+      addstr("  敏捷性、知識、説得、ストリートセンスが高いと警察の追跡を振る切ることができ");
+      move(10,0);
+      addstr("る。怒った群衆から暴力を受ける可能性もある。");
       break;
 // }}}
 // {{{ ACTIVITY_GRAFFITI
@@ -94,15 +88,13 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===落書き===");
       move(4,0);
-      addstr(" Spraying political graffiti is a misdemeanor, carrying with it relatively ");
+      addstr("  政治的落書きをスプレーで描くことは軽犯罪で、有罪となった場合には短い刑期が");
       move(5,0);
-      addstr(" short jail sentences. This has a positive effect on public opinion. If you ");
+      addstr("ある。世論にプラスの影響を与える。もしスプレー缶がなければ、手に入れるのに1日");
       move(6,0);
-      addstr(" do not have a can of spray paint, your character will spend a day purchasing  ");
-      move(7,0);
-      addstr(" one.");
-      move(9,0);
-      addstr(" A high art skill and heart will enhance the effect this has on public opinion.");
+      addstr("掛かる。");
+      move(8,0);
+      addstr("  心と芸術が高いと世論への影響も大きい。");
       break;
 // }}}
 // {{{ ACTIVITY_POLLS
