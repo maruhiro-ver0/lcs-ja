@@ -69,7 +69,7 @@ void review()
    while(true)
    {
       music.play(MUSIC_REVIEWMODE);
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       mvaddstr(0,0,"リベラルの確認と部隊の編成を行う");
@@ -219,7 +219,7 @@ void review()
       {
           char clearformess=false;
           fundreport(clearformess);
-          if(clearformess) erase();
+          if(clearformess) clear();
       }
       if(c=='y') music.enableIf(!music.isEnabled());
    }
@@ -276,7 +276,7 @@ void review_mode(short mode)
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
@@ -338,7 +338,7 @@ void review_mode(short mode)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          mvaddchar(y,0,y+'A'-2);addstr(" - ");
-         addstr(temppool[p]->name);
+         addstr(to_half(temppool[p]->name));
 
          char bright=0;
          int skill=0;
@@ -502,7 +502,7 @@ void review_mode(short mode)
             //const int pagenum=2;
             while(true)
             {
-               erase();
+               clear();
 
                move(0,0);
                if(temppool[p]->align!=1)
@@ -859,7 +859,7 @@ void assemblesquad(squadst *cursquad)
    {
       partysize=squadsize(cursquad);
 
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
@@ -886,7 +886,7 @@ void assemblesquad(squadst *cursquad)
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          mvaddchar(y,0,y+'A'-2);addstr(" - ");
-         addstr(temppool[p]->name);
+         addstr(to_half(temppool[p]->name));
 
          char bright=0;
          int skill=0;
@@ -1163,7 +1163,7 @@ void squadlessbaseassign()
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       printfunds();
@@ -1186,11 +1186,11 @@ void squadlessbaseassign()
             set_color(COLOR_BLACK,COLOR_BLACK,1);
          else set_color(COLOR_WHITE,COLOR_BLACK,0);
          mvaddchar(y,0,y+'A'-2);addstr(" - ");
-         addstr(temppool[p]->name);
+         addstr(to_half(temppool[p]->name));
 
          mvaddstr(y,25,location[temppool[p]->base]->getname(true, true));
          if(location[temppool[p]->base]->siege.siege)
-            addstr(" <Under Siege>");
+            addstr(" <包囲中>");
       }
 
       y=2;
@@ -1314,7 +1314,7 @@ static void printname(Creature &cr)
 
    // add name
    set_color(namecolor,COLOR_BLACK,brightness);
-   addstr(cr.name);
+   addstr(to_half(cr.name));
 
    // add close bracket (if used)
    if(cr.flag & CREATUREFLAG_SLEEPER)
@@ -1351,7 +1351,7 @@ void promoteliberals()
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       printfunds();

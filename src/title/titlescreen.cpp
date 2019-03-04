@@ -65,7 +65,7 @@ This file is part of Liberal Crime Squad.                                       
 void mode_title()
 {
    //title screen
-   erase();
+   clear();
 
    char str[100];
 

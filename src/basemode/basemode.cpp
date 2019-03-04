@@ -74,7 +74,7 @@ bool show_disbanding_screen(int& oldforcemonth)
          pool[p]->alive=0; // Kill for the purposes of disbanding all contacts below
    }
    oldforcemonth=month;
-   erase();
+   clear();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    mvaddstr(0,0,year);
    addstr("年");
@@ -262,7 +262,7 @@ void mode_base()
          if(nonsighttime>=365*4)
          {
             music.play(MUSIC_BASEMODE);
-            erase();
+            clear();
             char str[100];
             if(nonsighttime>=365*16)
                strcpy(str,"どれだけの時が流れただろうか…時代は変わった。");
@@ -335,7 +335,7 @@ void mode_base()
 
       if(!forcewait)
       {
-         erase();
+         clear();
 
          if(activesquad!=NULL) selectedsiege=-1;
 
@@ -566,7 +566,7 @@ void mode_base()
          advancelocations();
          if(forcewait)
          {
-            erase();
+            clear();
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             mvaddstr(7,5,"時は流れる…",gamelog);
             mvaddstr(9,12,year,gamelog);

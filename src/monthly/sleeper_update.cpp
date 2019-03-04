@@ -333,7 +333,7 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
       cr.juice-=1;
       if(cr.juice<-2)
       {
-         erase();
+         clear();
          move(6,1);
          addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
@@ -378,7 +378,7 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
          Item *it=new Loot(*loottype[getloottype("LOOT_SECRETDOCUMENTS")]);
          location[homes]->loot.push_back(it);
 
-         erase();
+         clear();
          move(6,1);
          addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
@@ -401,7 +401,7 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
          Item *it=new Loot(*loottype[getloottype("LOOT_POLICERECORDS")]);
          location[homes]->loot.push_back(it);
 
-         erase();
+         clear();
          move(6,1);
          addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
@@ -422,7 +422,7 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
          Item *it=new Loot(*loottype[getloottype("LOOT_CORPFILES")]);
          location[homes]->loot.push_back(it);
 
-         erase();
+         clear();
          move(6,1);
          addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
@@ -442,7 +442,7 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
          Item *it=new Loot(*loottype[getloottype("LOOT_PRISONFILES")]);
          location[homes]->loot.push_back(it);
 
-         erase();
+         clear();
          move(6,1);
          addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
@@ -464,7 +464,7 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
          Item *it=new Loot(*loottype[getloottype("LOOT_CABLENEWSFILES")]);
          location[homes]->loot.push_back(it);
 
-         erase();
+         clear();
          move(6,1);
          addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
@@ -486,7 +486,7 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
          Item *it=new Loot(*loottype[getloottype("LOOT_AMRADIOFILES")]);
          location[homes]->loot.push_back(it);
 
-         erase();
+         clear();
          move(6,1);
          addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
@@ -506,7 +506,7 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
          Item *it=new Loot(*loottype[getloottype("LOOT_RESEARCHFILES")]);
          location[homes]->loot.push_back(it);
 
-         erase();
+         clear();
          move(6,1);
          addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
@@ -525,7 +525,7 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
          Item *it=new Loot(*loottype[getloottype("LOOT_JUDGEFILES")]);
          location[homes]->loot.push_back(it);
 
-         erase();
+         clear();
          move(6,1);
          addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
@@ -544,7 +544,7 @@ void sleeper_spy(Creature &cr,char &clearformess,char canseethings,int (&libpowe
          Item *it=new Loot(*loottype[getloottype("LOOT_CCS_BACKERLIST")]);
          location[homes]->loot.push_back(it);
 
-         erase();
+         clear();
          move(6,1);
          addstr("潜伏者の", gamelog);
          addstr(cr.name, gamelog);
@@ -573,7 +573,7 @@ void sleeper_embezzle(Creature &cr,char &clearformess,char canseethings,int (&li
       cr.juice-=1;
       if(cr.juice<-2)
       {
-         erase();
+         clear();
          move(6,1);
          addstr("潜伏中の", gamelog);
          addstr(cr.name, gamelog);
@@ -630,7 +630,7 @@ void sleeper_steal(Creature &cr,char &clearformess,char canseethings,int (&libpo
       cr.juice-=1;
       if(cr.juice<-2)
       {
-         erase();
+         clear();
          move(6,1);
          addstr("潜伏中の", gamelog);
          addstr(cr.name, gamelog);
@@ -881,7 +881,7 @@ void sleeper_steal(Creature &cr,char &clearformess,char canseethings,int (&libpo
          break;
       }
    }
-   erase();
+   clear();
    set_color(COLOR_WHITE,COLOR_BLACK,0);   move(6,1);
    addstr("潜伏者の", gamelog);
    addstr(cr.name, gamelog);
@@ -947,7 +947,7 @@ void sleeper_recruit(Creature &cr,char &clearformess,char canseethings,int (&lib
             location[recruit->worklocation]->hidden=0;
             pool.push_back(recruit);
 
-            erase();
+            clear();
             move(6,1);
             addstr("潜伏者の", gamelog);
             addstr(cr.name, gamelog);

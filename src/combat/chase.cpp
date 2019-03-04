@@ -74,7 +74,7 @@ bool chasesequence()
    mode=GAMEMODE_CHASECAR;
    music.play(MUSIC_CARCHASE);
 
-   erase();
+   clear();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
    addstr("この場所から引き上げるとき、保守に付けられているのを感じた!", gamelog);
@@ -92,7 +92,7 @@ bool chasesequence()
       int partysize=squadsize(activesquad),partyalive=squadalive(activesquad),encsize=0;
       for(int e=0;e<ENCMAX;e++) if(encounter[e].exists) encsize++;
 
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       mvaddstr(0,0,location[chaseseq.location]->getname());
@@ -398,7 +398,7 @@ bool footchase()
    mode=GAMEMODE_CHASEFOOT;
    music.play(MUSIC_FOOTCHASE);
 
-   erase();
+   clear();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
    addstr("建物を出ると、保守に付けられているのを感じた!", gamelog);
@@ -411,7 +411,7 @@ bool footchase()
       int partysize=squadsize(activesquad),partyalive=squadalive(activesquad),encsize=0;
       for(int e=0;e<ENCMAX;e++) if(encounter[e].exists) encsize++;
 
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       mvaddstr(0,0,location[chaseseq.location]->getname());

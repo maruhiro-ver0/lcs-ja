@@ -550,7 +550,7 @@ void kidnaptransfer(Creature &cr)
    //Create interrogation data
    newcr->activity.intr()=new interrogation;
 
-   erase();
+   clear();
 
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);

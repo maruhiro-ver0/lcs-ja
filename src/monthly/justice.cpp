@@ -38,7 +38,7 @@ void trial(Creature &g)
    g.location=g.base;
    bool breaker[LAWFLAGNUM]={0};
 
-   erase();
+   clear();
 
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(1,1);
@@ -542,7 +542,7 @@ void trial(Creature &g)
    if(defense!=2)
    {
       int prosecution=0;
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(1,1);
@@ -777,7 +777,7 @@ void trial(Creature &g)
       getkey();
 
       //JURY RETURN MESSAGE
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(1,1);
       addstr("陪審員は協議から戻ってきた。", gamelog);
@@ -923,7 +923,7 @@ void trial(Creature &g)
    // I would imagine this would disregard the strength of the defense. -- LK
    else
    {
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(1,1);
       addstr("裁判所はそれを受け入れた。", gamelog);
@@ -1283,7 +1283,7 @@ char prison(Creature &g)
       //COMMUTE DEATH IN RIGHT CLIMATE
       if(g.deathpenalty&&law[LAW_DEATHPENALTY]==2)
       {
-         erase();
+         clear();
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(8,1);
          addstr(g.name, gamelog);
@@ -1306,7 +1306,7 @@ char prison(Creature &g)
          //EXECUTE
          if(g.deathpenalty)
          {
-            erase();
+            clear();
             set_color(COLOR_RED,COLOR_BLACK,1);
             move(8,1);
             addstr("恥辱:", gamelog);
@@ -1352,7 +1352,7 @@ char prison(Creature &g)
          //SET FREE
          else
          {
-            erase();
+            clear();
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(8,1);
             addstr(g.name, gamelog);
@@ -1378,7 +1378,7 @@ char prison(Creature &g)
       {
          if(g.deathpenalty)
          {
-            erase();
+            clear();
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
             move(8,1);
             addstr(g.name, gamelog);
@@ -1391,7 +1391,7 @@ char prison(Creature &g)
          }
          else
          {
-            erase();
+            clear();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(8,1);
             addstr(g.name, gamelog);
@@ -1407,7 +1407,7 @@ char prison(Creature &g)
       {
          if(g.deathpenalty)
          {
-            erase();
+            clear();
             set_color(COLOR_YELLOW,COLOR_BLACK,1);
             move(8,1);
             addstr(g.name, gamelog);
@@ -1440,7 +1440,7 @@ void reeducation(Creature &g)
       "は刑務所内で政治犯罪被害者に関するビデオを見た。"
    };
 
-   erase();
+   clear();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(8,1);
    addstr(g.name, gamelog);
@@ -1498,7 +1498,7 @@ void reeducation(Creature &g)
 
    getkey();
 
-   erase();
+   clear();
 
    return;
 }
@@ -1543,7 +1543,7 @@ void laborcamp(Creature &g)
 
    if(!escaped)experience=pickrandom(labor_camp_experiences);
 
-   erase();
+   clear();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(8,1);
    addstr(g.name, gamelog);
@@ -1613,7 +1613,7 @@ void laborcamp(Creature &g)
 
    getkey();
 
-   erase();
+   clear();
 
    return;
 }
@@ -1695,7 +1695,7 @@ void prisonscene(Creature &g)
       }
    }
 
-   erase();
+   clear();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(8,1);
    addstr(g.name, gamelog);
@@ -1759,7 +1759,7 @@ void prisonscene(Creature &g)
 
    getkey();
 
-   erase();
+   clear();
 
    return;
 }

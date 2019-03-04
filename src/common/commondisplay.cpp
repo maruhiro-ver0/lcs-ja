@@ -355,7 +355,7 @@ void printparty()
             if(party[p]->prisoner!=NULL)set_color(COLOR_MAGENTA,COLOR_BLACK,1);
             else set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(p+2,2);
-            addstr(party[p]->name);
+            addstr(to_half(party[p]->name));
             if(party[p]->prisoner!=NULL)addstr("+H");
 
             int skill=0;

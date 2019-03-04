@@ -144,7 +144,7 @@ void Shop::browse_halfscreen(squadst& customers, int& buyer) const
 
    while(true)
    {
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,0);
 
       locheader();
@@ -284,7 +284,7 @@ void Shop::browse_fullscreen(squadst& customers, int& buyer) const
 
    while(true)
    {
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
       addstr(customers.squad[buyer]->name);
@@ -337,7 +337,7 @@ void Shop::sell_loot(squadst& customers) const
 
    while(true)
    {
-      erase();
+      clear();
 
       locheader();
       printparty();
@@ -484,7 +484,7 @@ int Shop::fenceselect(squadst& customers) const
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
@@ -650,7 +650,7 @@ void Shop::maskselect(Creature &buyer) const
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);

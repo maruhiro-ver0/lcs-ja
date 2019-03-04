@@ -100,7 +100,7 @@ char recruitment_activity(Creature &cr,char &clearformess)
       music.play(MUSIC_RECRUITING);
       cr.train(SKILL_STREETSENSE,5);
 
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       mvaddstr(0,0,"リベラルスカウトの冒険");
       printcreatureinfo(&cr);
@@ -142,7 +142,7 @@ char recruitment_activity(Creature &cr,char &clearformess)
 
          getkey();
 
-         erase();
+         clear();
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          mvaddstr(0,0,"リベラルスカウトの冒険");
          printcreatureinfo(&encounter[0]);
@@ -151,7 +151,7 @@ char recruitment_activity(Creature &cr,char &clearformess)
       } else {
          while(true)
          {
-            erase();
+            clear();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             mvaddstr(0,0,"リベラルスカウトの冒険");
             printcreatureinfo(&cr);
@@ -176,7 +176,7 @@ char recruitment_activity(Creature &cr,char &clearformess)
             if(c >= 0 && c < ENCMAX-1 && encounter[c].exists)
             {
                int id=encounter[c].id;
-               erase();
+               clear();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                mvaddstr(0,0,"リベラルスカウトの冒険");
                printcreatureinfo(&encounter[c]);
@@ -200,7 +200,7 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
    music.play(MUSIC_RECRUITING);
    clearformess=1;
 
-   erase();
+   clear();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
    if(pool[p]->meetings++>5 && LCSrandom(pool[p]->meetings-5))
@@ -312,7 +312,7 @@ char completerecruitmeeting(recruitst &r,int p,char &clearformess)
 
          getkey();
 
-         erase();
+         clear();
          sleeperize_prompt(*r.recruit,*pool[p],6);
 
          r.recruit->hireid=pool[p]->id;

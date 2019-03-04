@@ -604,7 +604,6 @@ void initlocation(Location &loc)
          case 3:strcat(loc.name,"ヘルシー");break;
          case 4:strcat(loc.name,"ニュー ユー");break;
       }
-      strcat(loc.name,"・");
       switch(LCSrandom(5))
       {
          case 0:strcat(loc.name,"ダイエット");break;
@@ -648,7 +647,6 @@ void initlocation(Location &loc)
          case 3:strcat(loc.name,"マイクロ");break;
          case 4:strcat(loc.name,"テクノ");break;
       }
-      strcat(loc.name,"・");
       switch(LCSrandom(5))
       {
          case 0:strcat(loc.name,"パンダ");break;
@@ -677,7 +675,6 @@ void initlocation(Location &loc)
          case 3:strcat(loc.name,"モーニング");break;
          case 4:strcat(loc.name,"イブニング");break;
       }
-      strcat(loc.name,"・");
       switch(LCSrandom(5))
       {
          case 0:strcat(loc.name,"マグ");break;

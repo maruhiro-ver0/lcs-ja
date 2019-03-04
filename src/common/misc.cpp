@@ -416,7 +416,7 @@ bool Interval::set_interval(const string& interval)
 /* helper function for initsongs() */
 void MusicClass::loadsong(int i,const char* filename)
 {  // the reason it prints progress on the screen is because it might be a little slow sometimes so this reassures the user progress is being made
-   erase();
+   clear();
    if(oggsupport)
    {
       mvaddstr(12,0,"Loading Ogg Vorbis music ("+tostring(i+1)+"/"+tostring(MUSIC_OFF)+"): "+artdir+"ogg/"+filename+".ogg");
@@ -540,7 +540,7 @@ void MusicClass::init()
    loadsong(MUSIC_REAGANIFIED,"reaganified"); // load Reaganified music
    // stalinized.ogg or .mid - The Soviet (and now Russian) National Anthem by Alexander Vasilyevich Alexandrov
    loadsong(MUSIC_STALINIZED,"stalinized"); // load Stalinized music
-   erase();
+   clear();
    refresh();
    songsinitialized=true;
 #endif // DONT_INCLUDE_SDL

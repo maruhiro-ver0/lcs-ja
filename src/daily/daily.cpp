@@ -75,7 +75,7 @@ void advanceday(char &clearformess,char canseethings)
                if(squad[sq]->squad[p]->activity.type!=ACTIVITY_NONE&&
                   squad[sq]->squad[p]->activity.type!=ACTIVITY_VISIT)
                {
-                  if(clearformess) erase();
+                  if(clearformess) clear();
                   else makedelimiter();
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
@@ -101,7 +101,7 @@ void advanceday(char &clearformess,char canseethings)
          if(location[squad[sq]->activity.arg]->closed||
             location[squad[sq]->activity.arg]->siege.siege)
          {
-            if(clearformess) erase();
+            if(clearformess) clear();
             else makedelimiter();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(8,1);
@@ -139,7 +139,7 @@ void advanceday(char &clearformess,char canseethings)
                      long v=id_getcar(caridused[c2]);
                      if(v!=-1)
                      {
-                        if(clearformess) erase();
+                        if(clearformess) clear();
                         else makedelimiter();
                         set_color(COLOR_WHITE,COLOR_BLACK,1);
                         move(8,1);
@@ -258,7 +258,7 @@ void advanceday(char &clearformess,char canseethings)
          if(location[squad[sq]->activity.arg]->needcar&&squad[sq]->squad[0])
             if(squad[sq]->squad[0]->carid==-1)
             {
-               if(clearformess) erase();
+               if(clearformess) clear();
                else makedelimiter();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
@@ -306,7 +306,7 @@ void advanceday(char &clearformess,char canseethings)
          bool canDepart=true;
          if(location[squad[sq]->activity.arg]->parent==travelLocation)
          {
-            if(clearformess) erase();
+            if(clearformess) clear();
             else makedelimiter();
             move(8,1);
             int price;
@@ -336,7 +336,7 @@ void advanceday(char &clearformess,char canseethings)
          case SITE_CITY_ATLANTA:
          case SITE_CITY_MIAMI:
          case SITE_CITY_WASHINGTON_DC:
-            if(clearformess) erase();
+            if(clearformess) clear();
             else makedelimiter();
             move(8,1);
             addstr(squad[sq]->name, gamelog);
@@ -360,7 +360,7 @@ void advanceday(char &clearformess,char canseethings)
          case SITE_BUSINESS_PAWNSHOP:
          case SITE_BUSINESS_CARDEALERSHIP:
          case SITE_BUSINESS_ARMSDEALER:
-            if(clearformess) erase();
+            if(clearformess) clear();
             else makedelimiter();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(8,1);
@@ -399,7 +399,7 @@ void advanceday(char &clearformess,char canseethings)
             break;
          case SITE_HOSPITAL_UNIVERSITY:
          case SITE_HOSPITAL_CLINIC:
-            if(clearformess) erase();
+            if(clearformess) clear();
             else makedelimiter();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(8,1);
@@ -418,7 +418,7 @@ void advanceday(char &clearformess,char canseethings)
             clearformess=1;
             break;
          default:
-            if(clearformess) erase();
+            if(clearformess) clear();
             else makedelimiter();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(8,1);
@@ -441,7 +441,7 @@ void advanceday(char &clearformess,char canseethings)
 
             getkey();
 
-            if(clearformess) erase();
+            if(clearformess) clear();
             else makedelimiter();
 
             int c='t';
@@ -546,7 +546,7 @@ void advanceday(char &clearformess,char canseethings)
             criminalize(*pool[p],LAWFLAG_CARTHEFT);
          break;
       case ACTIVITY_POLLS:
-         if(clearformess) erase();
+         if(clearformess) clear();
          else makedelimiter();
 
          set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -642,7 +642,7 @@ void advanceday(char &clearformess,char canseethings)
 
             if(pool[p]->alive&&pool[p]->blood<0)
             {
-               if(clearformess) erase();
+               if(clearformess) clear();
                else makedelimiter();
                move(8,1);
                pool[p]->die();
@@ -808,7 +808,7 @@ void advanceday(char &clearformess,char canseethings)
             //EVICTED!!!!!!!!!
             else
             {
-               if(clearformess) erase();
+               if(clearformess) clear();
                else makedelimiter();
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -974,7 +974,7 @@ void advanceday(char &clearformess,char canseethings)
                      pool[p]->get_attribute(ATTRIBUTE_HEALTH,true)<=1)
                   {
                      pool[p]->die();
-                     if(clearformess) erase();
+                     if(clearformess) clear();
                      else makedelimiter();
                      set_color(COLOR_WHITE,COLOR_BLACK,1);
                      move(8,1);
@@ -1025,7 +1025,7 @@ void advanceday(char &clearformess,char canseethings)
             {
                pool[p]->location=pool[p]->base;
 
-               if(clearformess) erase();
+               if(clearformess) clear();
                else makedelimiter();
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -1252,7 +1252,7 @@ void dispersalcheck(char &clearformess)
       {
          if(dispersal_status[p]==DISPERSAL_NOCONTACT||dispersal_status[p]==DISPERSAL_HIDING||dispersal_status[p]==DISPERSAL_ABANDONLCS)
          {
-            if(clearformess) erase();
+            if(clearformess) clear();
             else makedelimiter();
 
             if(!disbanding)
@@ -1370,7 +1370,7 @@ bool promotesubordinates(Creature &cr, char &clearformess)
 
       if(subordinates>0) // Disintegration of the LCS
       {
-         if(clearformess) erase();
+         if(clearformess) clear();
          else makedelimiter();
 
          set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -1410,7 +1410,7 @@ bool promotesubordinates(Creature &cr, char &clearformess)
       }
    }
 
-   if(clearformess) erase();
+   if(clearformess) clear();
    else makedelimiter();
 
    if(bigboss!=-1) // Normal promotion

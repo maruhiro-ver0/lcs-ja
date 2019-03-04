@@ -252,7 +252,7 @@ void stopevil()
    while(true)
    {
       music.play(MUSIC_STOPEVIL);
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       mvaddstr(0,0,"部隊はどこへ向かうか?");
@@ -479,7 +479,7 @@ void investlocation()
 
    while(true)
    {
-      erase();
+      clear();
 
       locheader();
       printlocation(loc);
@@ -814,7 +814,7 @@ void setvehicles()
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       mvaddstr(0,0,"リベラル自動車の選択");

@@ -51,7 +51,7 @@ bool liberalagenda(signed char won)
 
    while(true)
    {
-      erase();
+      clear();
       if(won==1)
       {
          set_color(COLOR_GREEN,COLOR_BLACK,1);
@@ -227,7 +227,7 @@ bool liberalagenda(signed char won)
             for(int c=0;c<COURTNUM;c++,y++)
             {
                set_alignment_color(court[c],true);
-               mvaddstr(y,60,courtname[c]);
+               mvaddstr(y,60,to_half(courtname[c]));
             }
          }
          for(int l=0;l<LAWNUM;l++)
@@ -657,7 +657,7 @@ bool confirmdisband()                      // concerned should be (slightly) mor
 
    for(int pos=0;pos<len(word);)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       mvaddstr(0,0,"本当に解散するか?");

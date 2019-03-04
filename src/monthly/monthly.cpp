@@ -278,7 +278,7 @@ void passmonth(char &clearformess,char canseethings)
    if(canseethings)
    {
       music.play(MUSIC_ELECTIONS);
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       mvaddstr(0,23,"LCS MONTHLY INTELLIGENCE REPORT");
       mvaddstr(2,27,"CURRENT POLITICAL TRENDS");
@@ -355,7 +355,7 @@ void passmonth(char &clearformess,char canseethings)
       music.play(MUSIC_DEFEAT);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
-      erase();
+      clear();
       move(10,10);
       addstr("もはやリベラル・クライム・スコードは記憶の中にしか存在しない。", gamelog);
       gamelog.newline();
@@ -363,7 +363,7 @@ void passmonth(char &clearformess,char canseethings)
       getkey();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
-      erase();
+      clear();
       move(16,12);
       addstr("LCSメンバーだった者たちも全員捕らえられた。", gamelog);
       gamelog.newline();
@@ -371,7 +371,7 @@ void passmonth(char &clearformess,char canseethings)
       getkey();
 
       set_color(COLOR_BLACK,COLOR_BLACK,1);
-      erase();
+      clear();
       move(20,14);
       addstr("夢の実現を見ることは決してないだろう…", gamelog);
       gamelog.newline();
@@ -399,7 +399,7 @@ void passmonth(char &clearformess,char canseethings)
 
       if(location[pool[p]->location]->type==SITE_GOVERNMENT_POLICESTATION)
       {
-         if(clearformess) erase();
+         if(clearformess) clear();
          else makedelimiter();
 
          if(pool[p]->flag & CREATUREFLAG_MISSING)
@@ -529,7 +529,7 @@ void passmonth(char &clearformess,char canseethings)
    //FUND REPORTS
    if(canseethings)fundreport(clearformess);
    ledger.resetMonthlyAmounts();
-   if(clearformess) erase();
+   if(clearformess) clear();
 
    //HEAL CLINIC PEOPLE
    for(p=0;p<len(pool);p++)
@@ -612,7 +612,7 @@ void passmonth(char &clearformess,char canseethings)
          if(pool[p]->clinic==0)
          {
             pool[p]->blood=100;
-            if(clearformess) erase();
+            if(clearformess) clear();
             else makedelimiter();
 
             set_color(COLOR_WHITE,COLOR_BLACK,1);

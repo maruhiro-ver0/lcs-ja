@@ -183,7 +183,7 @@ void tendhostage(Creature *cr,char &clearformess)
          {
             if(pool[p]==cr)
             {
-               if(clearformess) erase();
+               if(clearformess) clear();
                else makedelimiter();
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -217,7 +217,7 @@ void tendhostage(Creature *cr,char &clearformess)
 
    clearformess=1;
 
-   erase();
+   clear();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
    addstr(cr->name);
@@ -345,7 +345,7 @@ void tendhostage(Creature *cr,char &clearformess)
 
       if(techniques[TECHNIQUE_KILL]) // Kill the Hostage
       {
-         erase();
+         clear();
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(0,0);
          addstr(cr->name, gamelog);
@@ -453,7 +453,7 @@ void tendhostage(Creature *cr,char &clearformess)
          }
       }
 
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
       addstr(cr->name, gamelog);
@@ -1532,7 +1532,7 @@ void tendhostage(Creature *cr,char &clearformess)
       {
          getkey();
 
-         erase();
+         clear();
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(y=1,0);
          gamelog.newline();

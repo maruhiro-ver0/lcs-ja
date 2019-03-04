@@ -43,7 +43,7 @@ void viewhighscores(int musicoverride)
 
    if(!validsum)return;
 
-   erase();
+   clear();
 
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);

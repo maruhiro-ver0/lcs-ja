@@ -248,7 +248,7 @@ void repairarmor(Creature &cr,char &clearformess)
                }
             }
 
-   if(clearformess) erase();
+   if(clearformess) clear();
    else makedelimiter();
 
    if(armor==NULL)
@@ -391,7 +391,7 @@ void makearmor(Creature &cr,char &clearformess)
 
    if(ledger.get_funds()<hcost)
    {
-      if(clearformess) erase();
+      if(clearformess) clear();
       else makedelimiter();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -434,7 +434,7 @@ void makearmor(Creature &cr,char &clearformess)
 
       if(!foundcloth&&ledger.get_funds()<cost)
       {
-         if(clearformess) erase();
+         if(clearformess) clear();
          else makedelimiter();
 
          set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -456,7 +456,7 @@ void makearmor(Creature &cr,char &clearformess)
          while (LCSrandom(10)<dif && quality <= armortype[at]->get_quality_levels())
             quality++;
 
-         if(clearformess) erase();
+         if(clearformess) clear();
          else makedelimiter();
 
          Item *it=new Armor(*armortype[at],quality);
@@ -545,7 +545,7 @@ void survey(Creature *cr)
       if(v==VIEW_LIBERALCRIMESQUADPOS&&survey[VIEW_LIBERALCRIMESQUAD]<=0) survey[v]=-1;
    }
 
-   erase();
+   clear();
 
    //TODO: Sort out the gamelog for this.
    set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -825,7 +825,7 @@ void attemptarrest(Creature & liberal,const char* string,int clearformess)
 {
    if(string)
    {
-      if(clearformess) erase();
+      if(clearformess) clear();
       else makedelimiter();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -1385,7 +1385,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
 
       if(msg[0])
       {
-         if(clearformess) erase();
+         if(clearformess) clear();
          else makedelimiter();
 
          set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -1428,7 +1428,7 @@ void doActivityHacking(vector<Creature *> &hack, char &clearformess)
 
          if(msg[0])
          {
-            if(clearformess) erase();
+            if(clearformess) clear();
             else makedelimiter();
 
             set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -1456,7 +1456,7 @@ void doActivityGraffiti(vector<Creature *> &graffiti, char &clearformess)
          if(!graffiti[s]->get_weapon().can_graffiti())
          {
 
-            if(clearformess) erase();
+            if(clearformess) clear();
             else makedelimiter();
 
             set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -1512,13 +1512,13 @@ void doActivityGraffiti(vector<Creature *> &graffiti, char &clearformess)
 
          int issue=VIEW_LIBERALCRIMESQUAD,power=1;
 
-         if(clearformess) erase();
+         if(clearformess) clear();
          else makedelimiter();
 
          if(!LCSrandom(10) &&
             !(graffiti[s]->skill_check(SKILL_STREETSENSE,DIFFICULTY_AVERAGE)))
          {
-            if(clearformess) erase();
+            if(clearformess) clear();
             else makedelimiter();
 
             set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -1656,7 +1656,7 @@ void doActivityProstitution(vector<Creature *> &prostitutes, char &clearformess)
       {
          if(!(prostitutes[p]->skill_check(SKILL_STREETSENSE,DIFFICULTY_AVERAGE))) // Street sense to avoid
          {
-            if(clearformess) erase();
+            if(clearformess) clear();
             else makedelimiter();
 
             set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -1680,7 +1680,7 @@ void doActivityProstitution(vector<Creature *> &prostitutes, char &clearformess)
          }
          else
          {
-            if(clearformess) erase();
+            if(clearformess) clear();
             else makedelimiter();
 
             set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -1798,7 +1798,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
       char done=0;
       short crime=0;
 
-      if(clearformess) erase();
+      if(clearformess) clear();
       else makedelimiter();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -1974,7 +1974,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
             if(!LCSrandom(30) &&
                !(trouble[t]->skill_check(SKILL_STREETSENSE,DIFFICULTY_AVERAGE)))
             {
-               if(clearformess) erase();
+               if(clearformess) clear();
                else makedelimiter();
 
                if(!LCSrandom(4))
@@ -2001,7 +2001,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
 
                   if(trouble[t]->get_weapon().is_threatening())
                   {
-                     if(clearformess) erase();
+                     if(clearformess) clear();
                      else makedelimiter();
 
                      set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -2014,7 +2014,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
 
                      getkey();
 
-                     if(clearformess) erase();
+                     if(clearformess) clear();
                      else makedelimiter();
 
                      set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -2032,7 +2032,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
                   {
                      for(int count=0;count<=LCSrandom(5)+2;count++)
                      {
-                        if(clearformess) erase();
+                        if(clearformess) clear();
                         else makedelimiter();
                         if(trouble[t]->skill_roll(SKILL_HANDTOHAND)>LCSrandom(6)+count)
                         {
@@ -2086,7 +2086,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
 
                      if(wonfight)
                      {
-                        if(clearformess) erase();
+                        if(clearformess) clear();
                         else makedelimiter();
                         set_color(COLOR_GREEN,COLOR_BLACK,1);
                         move(8,1);
@@ -2108,7 +2108,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
 
                   if(!wonfight)
                   {
-                     if(clearformess) erase();
+                     if(clearformess) clear();
                      else makedelimiter();
                      set_color(COLOR_RED,COLOR_BLACK,1);
                      move(8,1);
@@ -2125,7 +2125,7 @@ void doActivityTrouble(vector<Creature *> &trouble, char &clearformess)
 
                      if(!LCSrandom(5))
                      {
-                        if(clearformess) erase();
+                        if(clearformess) clear();
                         else makedelimiter();
                         switch(LCSrandom(10))
                         {
@@ -2433,7 +2433,7 @@ bool stealcar(Creature &cr,char &clearformess)
       cr.train(SKILL_STREETSENSE,5);
 
       //THEFT SEQUENCE
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
       addstr("車泥棒の冒険", gamelog);
@@ -2471,7 +2471,7 @@ bool stealcar(Creature &cr,char &clearformess)
       getkey();
 
       //APPROACH?
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
       addstr("車泥棒の冒険");
@@ -2506,7 +2506,7 @@ bool stealcar(Creature &cr,char &clearformess)
 
       for(bool entered=false;!entered;)
       {
-         erase();
+         clear();
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(0,0);
          addstr("車泥棒の冒険");
@@ -2710,7 +2710,7 @@ bool stealcar(Creature &cr,char &clearformess)
       for(bool started=false;!started;)
       {
          nervous_counter++;
-         erase();
+         clear();
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(0,0);
          addstr("リベラル車泥棒の冒険");
@@ -2999,7 +2999,7 @@ bool carselect(Creature &cr,short &cartype)
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
@@ -3104,7 +3104,7 @@ bool carselect(Creature &cr,short &cartype)
 /* get a wheelchair */
 void getwheelchair(Creature &cr,char &clearformess)
 {
-   if(clearformess) erase();
+   if(clearformess) clear();
    else makedelimiter();
 
    if(LCSrandom(2))

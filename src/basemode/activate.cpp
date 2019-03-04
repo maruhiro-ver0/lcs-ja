@@ -90,7 +90,7 @@ void activate()
    while(true)
    {
       music.play(MUSIC_ACTIVATE);
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       printfunds();
@@ -108,7 +108,7 @@ void activate()
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(y,0);
          addchar(y+'A'-2);addstr(" - ");
-         addstr(temppool[p]->name);
+         addstr(to_half(temppool[p]->name));
 
          char bright=0;
          int skill=0;
@@ -315,7 +315,7 @@ void activate(Creature *cr)
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       printfunds();
@@ -1094,7 +1094,7 @@ void activatebulk()
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       printfunds();
@@ -1137,7 +1137,7 @@ void activatebulk()
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(y,0);
          addchar(y+'A'-2);addstr(" - ");
-         addstr(temppool[p]->name);
+         addstr(to_half(temppool[p]->name));
 
          move(y,25);
          set_activity_color(temppool[p]->activity.type);
@@ -1257,7 +1257,7 @@ void select_tendhostage(Creature *cr)
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
@@ -1274,7 +1274,7 @@ void select_tendhostage(Creature *cr)
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          move(y,0);
          addchar(y+'A'-2);addstr(" - ");
-         addstr(temppool[p]->name);
+         addstr(to_half(temppool[p]->name));
 
          char bright=0;
          int skill=0;
@@ -1465,7 +1465,7 @@ void recruitSelect(Creature &cr)
    int page=0;
    while(true)
    {
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
       addstr(cr.name);
@@ -1585,7 +1585,7 @@ void select_makeclothing(Creature *cr)
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);

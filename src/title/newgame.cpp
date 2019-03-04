@@ -332,7 +332,7 @@ void makecharacter()
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(4,6);
@@ -341,7 +341,7 @@ void makecharacter()
       move(7,2);
       addstr("ファーストネーム: ");
       addstr(first[(int)gender]);
-      move(7,30);
+      move(7,52);
       set_color(COLOR_BLACK,COLOR_BLACK,1);
       addstr(" (Aを押すと両親が考え直す)");
 
@@ -349,9 +349,9 @@ void makecharacter()
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       addstr("ラストネーム: ");
       addstr(last);
-      move(9,30);
+      move(9,49);
       set_color(COLOR_BLACK,COLOR_BLACK,1);
-      addstr(" (Bを押すと別の家族に生まれる)");
+      addstr("(Bを押すと別の家族に生まれる)");
 
       move(11,2);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -371,9 +371,9 @@ void makecharacter()
          set_color(COLOR_YELLOW,COLOR_BLACK,1);
          addstr("不明");
       }
-      move(11,30);
+      move(11,41);
       set_color(COLOR_BLACK,COLOR_BLACK,1);
-      addstr(" (Cを押すと生まれたときの性別が変わる)");
+      addstr("(Cを押すと生まれたときの性別が変わる)");
 
       move(13,2);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
@@ -388,19 +388,18 @@ void makecharacter()
          set_color(COLOR_RED,COLOR_BLACK,1);
          addstr("運命は変えられない");
       }
-      move(13,30);
+      move(13,47);
       set_color(COLOR_BLACK,COLOR_BLACK,1);
-      addstr(" (Dを押すと子供時代を切り替える)");
-
+      addstr("(Dを押すと子供時代を切り替える)");
       if(!multipleCityMode)
       {
          move(15,2);
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          addstr("都市: ");
          addstr(lcityname);
-         move(15,30);
+         move(15,55);
          set_color(COLOR_BLACK,COLOR_BLACK,1);
-         addstr(" (Eを押すと場所が代わる)");
+         addstr("(Eを押すと場所が代わる)");
       }
 
       move(19-multipleCityMode*2,4);
@@ -451,7 +450,7 @@ void makecharacter()
    }
 
    strcpy(newcr->propername,first[(int)gender]);
-   strcat(newcr->propername," ");
+   strcat(newcr->propername,"・");
    strcat(newcr->propername,last);
 
    int c;
@@ -464,7 +463,7 @@ void makecharacter()
 
    for(int q=0;q<10;q++)
    {
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
       addstr("革命の内側: 悲しみの子供時代");
@@ -1202,7 +1201,7 @@ void makecharacter()
       }
    }
 
-   erase();
+   clear();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(4,2);
    addstr("新たな保守の時代", gamelog);
@@ -1253,7 +1252,7 @@ void makecharacter()
 
    getkey();
 
-   erase();
+   clear();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
    addstr("あなたは人々からどのように呼ばれるか?");

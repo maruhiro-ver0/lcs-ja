@@ -138,7 +138,7 @@ void elections(char clearformess,char canseethings)
    if(canseethings)
    {
       music.play(MUSIC_ELECTIONS);
-      if(clearformess) erase();
+      if(clearformess) clear();
       else makedelimiter();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
@@ -152,7 +152,7 @@ void elections(char clearformess,char canseethings)
    {
       if(canseethings)
       {
-         erase();
+         clear();
 
          set_color(COLOR_WHITE,COLOR_BLACK,1);
 
@@ -367,7 +367,7 @@ void elections(char clearformess,char canseethings)
    //PROPOSITIONS
    if(canseethings)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
@@ -629,7 +629,7 @@ void elections_senate(int senmod,char canseethings)
    if(canseethings)
    {
       music.play(MUSIC_ELECTIONS);
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
@@ -795,7 +795,7 @@ void elections_house(char canseethings)
    if(canseethings)
    {
       music.play(MUSIC_ELECTIONS);
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
@@ -1020,7 +1020,7 @@ void supremecourt(char clearformess,char canseethings)
    if(canseethings)
    {
       music.play(MUSIC_ELECTIONS);
-      if(clearformess) erase();
+      if(clearformess) clear();
       else makedelimiter();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
@@ -1032,7 +1032,7 @@ void supremecourt(char clearformess,char canseethings)
    //CHANGE THINGS AND REPORT
    if(canseethings)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
@@ -1279,7 +1279,7 @@ void supremecourt(char clearformess,char canseethings)
    {
       if(canseethings)
       {
-         erase();
+         clear();
 
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(0,0);
@@ -1397,7 +1397,7 @@ void congress(char clearformess,char canseethings)
    if(canseethings)
    {
       music.play(MUSIC_ELECTIONS);
-      if(clearformess) erase();
+      if(clearformess) clear();
       else makedelimiter();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(8,1);
@@ -1409,7 +1409,7 @@ void congress(char clearformess,char canseethings)
    //CHANGE THINGS AND REPORT
    if(canseethings)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 

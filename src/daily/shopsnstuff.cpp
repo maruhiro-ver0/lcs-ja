@@ -38,7 +38,7 @@ void hospital(int loc)
 
    while(true)
    {
-      erase();
+      clear();
 
       locheader();
       printparty();
@@ -122,7 +122,7 @@ void dealership(int loc)
 
    while(true)
    {
-      erase();
+      clear();
 
       locheader();
       printparty();

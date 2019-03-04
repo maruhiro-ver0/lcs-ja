@@ -680,7 +680,7 @@ bool sort_squadorname(const Creature* first, const Creature* second)
 /* common - Prompt to decide how to sort liberals.*/
 void sorting_prompt(short listforsorting)
 {
-   erase();
+   clear();
    move(1,1);
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    switch(listforsorting)
@@ -751,7 +751,7 @@ int choiceprompt(const string &firstline, const string &secondline,
 
    while(true)
    {
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
       addstr(firstline);
@@ -809,7 +809,7 @@ int buyprompt(const string &firstline, const string &secondline,
 
    while(true)
    {
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
       addstr(firstline);

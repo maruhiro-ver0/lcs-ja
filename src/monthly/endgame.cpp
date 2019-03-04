@@ -39,7 +39,7 @@ void tossjustices(char canseethings)
    if(canseethings)
    {
       music.play(MUSIC_ELECTIONS);
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
@@ -117,7 +117,7 @@ void amendment_termlimits(char canseethings)
    if(canseethings)
    {
       music.play(MUSIC_ELECTIONS);
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
@@ -179,7 +179,7 @@ void reaganify(char canseethings)
       music.play(MUSIC_ELECTIONS);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
-      erase();
+      clear();
       move(12,3);
       addstr("保守強硬派議会による保守強硬発議!");
 
@@ -249,21 +249,21 @@ void reaganify(char canseethings)
                //DATING AND REAGANIFIED
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
-               erase();
+               clear();
                move(12,15);
                addstr("この国の崩壊が迫る中、あなたは休暇を過ごしていた。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
-               erase();
+               clear();
                move(12,13);
                addstr("保守派はこの世界を自分たちの思い通りに変えてしまった。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
-               erase();
+               clear();
                move(12,8);
                addstr("あなたはいずれ捕らえられるだろう。もはやどうすることもできない。");
 
@@ -275,21 +275,21 @@ void reaganify(char canseethings)
                //HIDING AND REAGANIFIED
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
-               erase();
+               clear();
                move(12,15);
                addstr("この国の崩壊が迫る中、あなたは行方を眩ませていた。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
-               erase();
+               clear();
                move(12,13);
                addstr("保守派はこの世界を自分たちの思い通りに変えてしまった。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
-               erase();
+               clear();
                move(12,8);
                addstr("あなたはいずれ捕らえられるだろう。もはやどうすることもできない。");
 
@@ -301,21 +301,21 @@ void reaganify(char canseethings)
                //IF YOU ARE ALL IN PRISON, JUST PASS AWAY QUIETLY
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
-               erase();
+               clear();
                move(12,22);
                addstr("投獄されている間にこの国は後退した。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
-               erase();
+               clear();
                move(12,19);
                addstr("あなたの良心が解放されることはないだろう。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
-               erase();
+               clear();
                move(12,32);
                addstr("光は消え去った…");
 
@@ -327,21 +327,21 @@ void reaganify(char canseethings)
                //DISBANDED AND REAGANIFIED
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
-               erase();
+               clear();
                move(12,16);
                addstr("姿を消し平穏な日々を送っていた。だがもう限界だ。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
-               erase();
+               clear();
                move(12,13);
                addstr("保守派はこの世界を自分たちの思い通りに変えてしまった。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
-               erase();
+               clear();
                move(12,8);
                addstr("あなたはいずれ捕らえられるだろう。もはやどうすることもできない。");
 
@@ -377,7 +377,7 @@ void stalinize(char canseethings)
       music.play(MUSIC_ELECTIONS);
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
-      erase();
+      clear();
       move(12,11);
       addstr("スターリン主義議会によるスターリン主義発議!");
 
@@ -450,21 +450,21 @@ void stalinize(char canseethings)
                //DATING AND STALINIZED
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
-               erase();
+               clear();
                move(12,15);
                addstr("この国の崩壊が迫る中、あなたは休暇を過ごしていた。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
-               erase();
+               clear();
                move(12,8);
                addstr("スターリン主義者はこの世界を自分たちの思い通りに変えてしまった。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
-               erase();
+               clear();
                move(12,8);
                addstr("あなたはいずれ捕らえられるだろう。もはやどうすることもできない。");
 
@@ -476,21 +476,21 @@ void stalinize(char canseethings)
                //HIDING AND STALINIZED
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
-               erase();
+               clear();
                move(12,15);
                addstr("この国の崩壊が迫る中、あなたは行方を眩ませていた。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
-               erase();
+               clear();
                move(12,8);
                addstr("スターリン主義者はこの世界を自分たちの思い通りに変えてしまった。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
-               erase();
+               clear();
                move(12,8);
                addstr("あなたはいずれ捕らえられるだろう。もはやどうすることもできない。");
 
@@ -502,21 +502,21 @@ void stalinize(char canseethings)
                //IF YOU ARE ALL IN PRISON, YOU END UP IN A GULAG, COMRADE
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
-               erase();
+               clear();
                move(12,22);
                addstr("投獄されている間にこの国は後退した。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
-               erase();
+               clear();
                move(12,13);
                addstr("あなたは新たに併合されたカナダの強制収容所に送られる。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
-               erase();
+               clear();
                move(12,26);
                addstr("光の届かないツンドラの地に…");
 
@@ -528,21 +528,21 @@ void stalinize(char canseethings)
                //DISBANDED AND STALINIZED
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
-               erase();
+               clear();
                move(12,16);
                addstr("姿を消し平穏な日々を送っていた。だがもう限界だ。");
 
                getkey();
 
                set_color(COLOR_WHITE,COLOR_BLACK,0);
-               erase();
+               clear();
                move(12,8);
                addstr("スターリン主義者はこの世界を自分たちの思い通りに変えてしまった。");
 
                getkey();
 
                set_color(COLOR_BLACK,COLOR_BLACK,1);
-               erase();
+               clear();
                move(12,8);
                addstr("あなたはいずれ捕らえられるだろう。もはやどうすることもできない。");
 
@@ -575,7 +575,7 @@ char ratify(int level,int lawview,int view,char congress,char canseethings)
    if(canseethings)
    {
       music.play(MUSIC_ELECTIONS);
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
@@ -825,7 +825,7 @@ char ratify(int level,int lawview,int view,char congress,char canseethings)
 /* endgame - header for announcing constitutional amendments */
 void amendmentheading()
 {
-   erase();
+   clear();
 
    set_color(COLOR_WHITE,COLOR_BLACK,1);
 

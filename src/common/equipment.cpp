@@ -94,7 +94,7 @@ void equip(vector<Item *> &loot,int loc)
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
@@ -396,7 +396,7 @@ void moveloot(vector<Item *> &dest,vector<Item *> &source)
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
@@ -517,7 +517,7 @@ void equipmentbaseassign()
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       printfunds();

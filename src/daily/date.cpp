@@ -107,7 +107,7 @@ static int dateresult(int aroll,int troll,datest &d,int e,int p,int y)
          d.date[e]->flag|=CREATUREFLAG_LOVESLAVE;
          d.date[e]->hireid=pool[p]->id;
 
-         erase();
+         clear();
 
          set_color(COLOR_WHITE,COLOR_BLACK,1);
          move(0,0);
@@ -379,7 +379,7 @@ char completevacation(datest &d,int p,char &clearformess)
 
    clearformess=1;
 
-   erase();
+   clear();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
    addstr(pool[p]->name, gamelog);
@@ -449,7 +449,7 @@ char completedate(datest &d,int p,char &clearformess)
    int e;
    clearformess=1;
 
-   erase();
+   clear();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(0,0);
    addstr(pool[p]->name, gamelog);
@@ -561,7 +561,7 @@ char completedate(datest &d,int p,char &clearformess)
 
    for(e=len(d.date)-1;e>=0;e--)
    {
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);
       addstr(d.date[e]->name, gamelog);
@@ -791,7 +791,7 @@ char completedate(datest &d,int p,char &clearformess)
                //Create interrogation data
                d.date[e]->activity.intr()=new interrogation;
 
-               erase();
+               clear();
 
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(0,0);

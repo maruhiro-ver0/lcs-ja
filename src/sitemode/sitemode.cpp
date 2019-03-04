@@ -282,7 +282,7 @@ void mode_site()
       // Let the squad stop stressing out over the encounter if there are no enemies this round
       if(!enemy) encounter_timer=0;
 
-      erase();
+      clear();
 
       if(location[cursite]->siege.siege)
       {
@@ -1566,7 +1566,7 @@ void mode_site()
          if(c=='n')
          {
             mapshowing=false;
-            erase();
+            clear();
 
             set_color(COLOR_WHITE,COLOR_BLACK,0);
             move(0,0);
@@ -2556,7 +2556,7 @@ void resolvesite()
                pool[p]->location==cursite)
             {
                pool[p]->flag&=~CREATUREFLAG_SLEEPER;
-               erase();
+               clear();
                move(8,1);
                addstr("潜伏者の", gamelog);
                addstr(pool[p]->name, gamelog);

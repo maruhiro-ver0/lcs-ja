@@ -34,7 +34,7 @@ This file is part of Liberal Crime Squad.                                       
 void guardianupdate(char size, int power)
 {
    music.play(MUSIC_NEWSPAPER);
-   erase();
+   clear();
 
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(5,2);
@@ -161,7 +161,7 @@ int choosespecialedition(char &clearformess)
    while(true)
    {
       music.play(MUSIC_NEWSPAPER);
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
@@ -266,7 +266,7 @@ void printnews(short li,short newspaper)
 {
    music.play(MUSIC_NEWSPAPER);
    if(law[LAW_FREESPEECH]==-2)offended_firemen=1;
-   erase();
+   clear();
    set_color(COLOR_WHITE,COLOR_BLACK,1);
 
    if(loottype[li]->get_idname()=="LOOT_CEOPHOTOS") // Tmp -XML
@@ -713,7 +713,7 @@ void fundreport(char &clearformess)
 
    while(true)
    {
-      erase();
+      clear();
 
       int y=2,totalmoney=0,dailymoney=0,numpages=1;
 

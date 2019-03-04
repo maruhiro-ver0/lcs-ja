@@ -225,7 +225,7 @@ void siegecheck(char canseethings)
             }
             if(policesleeperwarning)
             {
-               erase();
+               clear();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
                addstr("あなたは警察署の潜伏者から", gamelog);
@@ -271,7 +271,7 @@ void siegecheck(char canseethings)
             if(numpres>0)
             {
                music.play(MUSIC_SIEGE);
-               erase();
+               clear();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                move(8,1);
@@ -321,7 +321,7 @@ void siegecheck(char canseethings)
             }
             else
             {
-               erase();
+               clear();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                move(8,1);
@@ -390,7 +390,7 @@ void siegecheck(char canseethings)
             }
             if(ceosleepercount||!LCSrandom(5))
             {
-               erase();
+               clear();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
                addstr("", gamelog);
@@ -413,7 +413,7 @@ void siegecheck(char canseethings)
             music.play(MUSIC_SIEGE);
             location[l]->siege.timeuntilcorps=-1;
             // Corps raid!
-            erase();
+            clear();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(8,1);
@@ -455,7 +455,7 @@ void siegecheck(char canseethings)
                }
                if(ccssleepercount>0)
                {
-                  erase();
+                  clear();
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
                   addstr("あなたは潜伏者からCCSによる", gamelog);
@@ -473,7 +473,7 @@ void siegecheck(char canseethings)
                music.play(MUSIC_SIEGE);
                location[l]->siege.timeuntilccs=-1;
                // CCS raid!
-               erase();
+               clear();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                move(8,1);
@@ -488,7 +488,7 @@ void siegecheck(char canseethings)
                   !LCSrandom(5))
                {
                   // CCS Carbombs safehouse!!
-                  erase();
+                  clear();
                   set_color(COLOR_RED,COLOR_BLACK,1);
 
                   move(8,1);
@@ -497,7 +497,7 @@ void siegecheck(char canseethings)
 
                   getkey();
 
-                  erase();
+                  clear();
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
 
                   move(0,1);
@@ -561,7 +561,7 @@ void siegecheck(char canseethings)
                else
                {
                   // CCS Raids safehouse
-                  erase();
+                  clear();
                   set_color(COLOR_RED,COLOR_BLACK,1);
 
                   move(8,1);
@@ -601,7 +601,7 @@ void siegecheck(char canseethings)
             }
             if(agentsleepercount)
             {
-               erase();
+               clear();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
                addstr("潜伏者の諜報員によると、CIAは", gamelog);
@@ -619,7 +619,7 @@ void siegecheck(char canseethings)
             music.play(MUSIC_SIEGE);
             location[l]->siege.timeuntilcia=-1;
             // CIA raids!
-            erase();
+            clear();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(8,1);
@@ -665,7 +665,7 @@ void siegecheck(char canseethings)
          if(!location[l]->siege.siege&&offended_amradio&&attitude[VIEW_AMRADIO]<=35&&!LCSrandom(600)&&numpres>0)
          {
             music.play(MUSIC_SIEGE);
-            erase();
+            clear();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(8,1);
@@ -687,7 +687,7 @@ void siegecheck(char canseethings)
          if(!location[l]->siege.siege&&offended_cablenews&&attitude[VIEW_CABLENEWS]<=35&&!LCSrandom(600)&&numpres>0)
          {
             music.play(MUSIC_SIEGE);
-            erase();
+            clear();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(8,1);
@@ -722,7 +722,7 @@ void siegecheck(char canseethings)
                   firemensleepercount++;
             if(LCSrandom(firemensleepercount+1)>0||!LCSrandom(10))
             {
-               erase();
+               clear();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
                if(firemensleepercount) addstr("潜伏者の焚書官によると、", gamelog);
@@ -742,7 +742,7 @@ void siegecheck(char canseethings)
             music.play(MUSIC_SIEGE);
             location[l]->siege.timeuntilfiremen=-1;
             // Firemen raid!
-            erase();
+            clear();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(8,1);
@@ -757,7 +757,7 @@ void siegecheck(char canseethings)
 
             getkey();
 
-            erase();
+            clear();
 
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             move(1,1);
@@ -788,7 +788,7 @@ void siegecheck(char canseethings)
          else if(law[LAW_FREESPEECH]==-2 && location[l]->siege.timeuntilfiremen==0)
          {
             location[l]->siege.timeuntilfiremen=-1;
-            erase();
+            clear();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(8,1);
@@ -885,7 +885,7 @@ void siegeturn(char clearformess)
          //resolve sieges with no people
          if(liberalcount[l]==0)
          {
-            erase();
+            clear();
             set_color(COLOR_WHITE,COLOR_BLACK,1);
 
             move(8,1);
@@ -950,7 +950,7 @@ void siegeturn(char clearformess)
             if(location[l]->compound_stores==0&&eaters>0)
             {
                starving=true;
-               if(clearformess) erase();
+               if(clearformess) clear();
                else makedelimiter();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
@@ -976,7 +976,7 @@ void siegeturn(char clearformess)
                {
                   pool[p]->die();
 
-                  if(clearformess) erase();
+                  if(clearformess) clear();
                   else makedelimiter();
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
@@ -992,7 +992,7 @@ void siegeturn(char clearformess)
 
             if(attack)
             {
-               if(clearformess) erase();
+               if(clearformess) clear();
                else makedelimiter();
                set_color(COLOR_WHITE,COLOR_BLACK,1);
                move(8,1);
@@ -1013,7 +1013,7 @@ void siegeturn(char clearformess)
                {
                   no_bad=0;
 
-                  if(clearformess) erase();
+                  if(clearformess) clear();
                   else makedelimiter();
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
@@ -1035,7 +1035,7 @@ void siegeturn(char clearformess)
 
                   if(len(pol))
                   {
-                     if(clearformess) erase();
+                     if(clearformess) clear();
                      else makedelimiter();
                      set_color(COLOR_WHITE,COLOR_BLACK,1);
                      move(8,1);
@@ -1072,7 +1072,7 @@ void siegeturn(char clearformess)
                   //AIR STRIKE!
                   bool hit=true;
 
-                  if(clearformess) erase();
+                  if(clearformess) clear();
                   else makedelimiter();
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
@@ -1086,7 +1086,7 @@ void siegeturn(char clearformess)
 
                   if(hasAAGun)
                   {
-                     if(clearformess) erase();
+                     if(clearformess) clear();
                      else makedelimiter();
                      move(8,1);
                      addstr("雷のような対空砲の音がアジトに響き渡った!", gamelog);
@@ -1094,7 +1094,7 @@ void siegeturn(char clearformess)
 
                      getkey();
 
-                     if(clearformess) erase();
+                     if(clearformess) clear();
                      else makedelimiter();
                      move(8,1);
                      if(LCSrandom(5))
@@ -1108,7 +1108,7 @@ void siegeturn(char clearformess)
 
                            getkey();
 
-                           if(clearformess) erase();
+                           if(clearformess) clear();
                            else makedelimiter();
                            move(8,1);
                            addstr("一部始終がテレビ中継されている。リベラル・クライム・スコードのメンバー全員が20ジュースを得た!", gamelog);
@@ -1129,7 +1129,7 @@ void siegeturn(char clearformess)
 
                   if(hit)
                   {
-                     if(clearformess) erase();
+                     if(clearformess) clear();
                      else makedelimiter();
                      move(8,1);
                      addstr("爆発がアジトを揺さぶる!", gamelog);
@@ -1139,7 +1139,7 @@ void siegeturn(char clearformess)
 
                      if(hasAAGun && !LCSrandom(3))
                      {
-                        if(clearformess) erase();
+                        if(clearformess) clear();
                         else makedelimiter();
                         move(8,1);
                         addstr("対空砲に直撃した!", gamelog);
@@ -1147,7 +1147,7 @@ void siegeturn(char clearformess)
 
                         getkey();
 
-                        if(clearformess) erase();
+                        if(clearformess) clear();
                         else makedelimiter();
                         move(8,1);
                         addstr("残されたものは破片だけだった…", gamelog);
@@ -1159,7 +1159,7 @@ void siegeturn(char clearformess)
                      }
                      else if(hasGenerator && !LCSrandom(3))
                      {
-                        if(clearformess) erase();
+                        if(clearformess) clear();
                         else makedelimiter();
                         move(8,1);
                         addstr("発電機が破壊された!", gamelog);
@@ -1167,7 +1167,7 @@ void siegeturn(char clearformess)
 
                         getkey();
 
-                        if(clearformess) erase();
+                        if(clearformess) clear();
                         else makedelimiter();
                         move(8,1);
                         addstr("明かりが消え真っ暗になった。", gamelog);
@@ -1185,7 +1185,7 @@ void siegeturn(char clearformess)
 
                         if(len(pol))
                         {
-                           if(clearformess) erase();
+                           if(clearformess) clear();
                            else makedelimiter();
                            set_color(COLOR_WHITE,COLOR_BLACK,1);
                            move(8,1);
@@ -1214,7 +1214,7 @@ void siegeturn(char clearformess)
                      }
                      else
                      {
-                        if(clearformess) erase();
+                        if(clearformess) clear();
                         else makedelimiter();
                         move(8,1);
                         addstr("幸いなことに死傷者はいなかった。", gamelog);
@@ -1231,7 +1231,7 @@ void siegeturn(char clearformess)
                   no_bad=0;
 
                   //ENGINEERS
-                  if(clearformess) erase();
+                  if(clearformess) clear();
                   else makedelimiter();
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(8,1);
@@ -1264,7 +1264,7 @@ void siegeturn(char clearformess)
 
                   set_color(COLOR_WHITE,COLOR_BLACK,0);
 
-                  erase();
+                  clear();
                   move(1,1);
                   switch(LCSrandom(5))
                   {
@@ -1466,7 +1466,7 @@ void giveup()
       int polsta=find_police_station(loc);
 
       //END SIEGE
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(1,1);
       if(location[loc]->siege.siegetype==SIEGE_POLICE && location[loc]->siege.escalationstate == 0)
@@ -1658,7 +1658,7 @@ void giveup()
       if(location[loc]->siege.siegetype==SIEGE_CCS&&location[loc]->type==SITE_INDUSTRY_WAREHOUSE)
          location[loc]->renting=RENTING_CCS; // CCS Captures warehouse
 
-      erase();
+      clear();
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(1,1);
       addstr(location[loc]->getname(), gamelog);
@@ -1770,7 +1770,7 @@ char sally_forth_aux(int loc)
 
       // Let's roll
       autopromote(loc);
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       move(0,0);
@@ -1927,7 +1927,7 @@ char sally_forth_aux(int loc)
 void sally_forth()
 {  //GIVE INFO SCREEN
    music.play(MUSIC_DEFENSE);
-   erase();
+   clear();
    set_color(COLOR_RED,COLOR_BLACK,1);
    move(1,30);
    addstr("包囲網: 脱出か死か");
@@ -2031,7 +2031,7 @@ void escape_engage()
 {
    music.play(MUSIC_DEFENSE);
    //GIVE INFO SCREEN
-   erase();
+   clear();
    set_color(COLOR_RED,COLOR_BLACK,1);
    move(1,30);
    addstr("防衛戦: 脱出か死か");
@@ -2155,7 +2155,7 @@ void escapesiege(char won)
    {
       music.play(MUSIC_CONQUER);
       //GIVE INFO SCREEN
-      erase();
+      clear();
       set_color(COLOR_YELLOW,COLOR_BLACK,1);
       move(1,37);
       addstr("脱出!", gamelog);
@@ -2251,7 +2251,7 @@ void conquertext()
 {
    //GIVE INFO SCREEN
    music.play(MUSIC_CONQUER);
-   erase();
+   clear();
    set_color(COLOR_GREEN,COLOR_BLACK,1);
    move(1,26);
    addstr("* * * * *   勝利   * * * * *", gamelog);
@@ -2292,7 +2292,7 @@ void conquertextccs()
 {
    music.play(MUSIC_CONQUER);
    //GIVE INFO SCREEN
-   erase();
+   clear();
    set_color(COLOR_GREEN,COLOR_BLACK,1);
    move(1,26);
    addstr("* * * * *   勝利   * * * * *", gamelog);
@@ -2392,7 +2392,7 @@ void statebrokenlaws(int loc)
    }
    for(int i=0;i<LAWFLAGNUM;i++) if(breakercount[i]) typenum++;
 
-   erase();
+   clear();
 
    set_color(COLOR_WHITE,COLOR_BLACK,1);
    move(1,1);

@@ -68,7 +68,7 @@ void activate_sleepers()
       {
          set_color(COLOR_WHITE,COLOR_BLACK,0);
          mvaddchar(y,0,(y-2)/2+'A');addstr(" - ");
-         addstr(temppool[p]->name);
+         addstr(to_half(temppool[p]->name));
 
          move(y,25);
          addstr(temppool[p]->get_type_name());

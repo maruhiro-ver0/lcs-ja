@@ -32,7 +32,7 @@ ACTIVITY_SLEEPER_JOINLCS, TODO
 // changes that will change gameplay.
 void help(const char* string)
 {
-   erase();
+   clear();
 }
 
 // Generates help page on activities.
@@ -50,7 +50,7 @@ void HelpActivities(int activityType)
       return;
    }
 
-   erase();
+   clear();
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(0,0);
    addstr("リベラル・ヘルプ");
