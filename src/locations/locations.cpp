@@ -655,7 +655,7 @@ void initlocation(Location &loc)
          case 3:strcat(loc.name,"ユニコーン");break;
          case 4:strcat(loc.name,"ピクシー");break;
       }
-      strcat(loc.name," インターネットカフェ");
+      strcat(loc.name," ネットカフェ");
       strcpy(loc.shortname,"ﾈｯﾄｶﾌｪ");
       break;
    case SITE_BUSINESS_CIGARBAR:
