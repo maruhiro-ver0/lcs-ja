@@ -46,7 +46,7 @@ void activate_sleepers()
    while(true)
    {
       music.play(MUSIC_SLEEPERS);
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       printfunds();
@@ -139,7 +139,7 @@ void activate_sleeper(Creature *cr)
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,0);
       printfunds();

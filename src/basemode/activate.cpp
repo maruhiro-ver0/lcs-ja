@@ -1337,7 +1337,7 @@ long select_hostagefundinglevel(Creature *cr,Creature *hs)
 {
    long flevel=-1;
 
-   erase();
+   clear();
 
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    printfunds();
@@ -1706,7 +1706,7 @@ long select_troublefundinglevel(Creature *cr)
 {
    long flevel=-1;
 
-   erase();
+   clear();
 
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    printfunds();
@@ -1763,7 +1763,7 @@ char select_view(Creature *cr,int &v)
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(0,0);

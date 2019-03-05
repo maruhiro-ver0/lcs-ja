@@ -891,7 +891,7 @@ void fullstatus(int p)
 
    while(true)
    {
-      erase();
+      clear();
 
       set_color(COLOR_GREEN,COLOR_BLACK,1);
       move(0,0);

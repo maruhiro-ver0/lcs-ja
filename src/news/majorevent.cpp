@@ -1765,7 +1765,7 @@ void run_television_news_stories()
                   case 4:strcat(str,"・ギャング");break;
                   }
 
-                  erase();
+                  clear();
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(0,39-((len(str)-1)>>1));
                   addstr(str);
@@ -1862,7 +1862,7 @@ void run_television_news_stories()
                   break;
                case VIEW_WOMEN:
                   music.play(MUSIC_ABORT);
-                  erase();
+                  clear();
 
                   movie.loadmovie("abort.cmv");
                   movie.playmovie(0,0);
