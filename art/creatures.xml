@@ -1558,7 +1558,7 @@ Elements marked as hardcoded may have their values overridden by the game.
 
     <creaturetype idname="CREATURE_MUTANT">
         <type_name>ミュータント</type_name>
-        <encounter_name>Mutant</encounter_name>
+        <encounter_name>ミュータント</encounter_name>
         <!-- <weapon> Hardcoded -->
         <armor>ARMOR_CLOTHES</armor>
         <age>MATURE</age>
