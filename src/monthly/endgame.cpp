@@ -232,10 +232,10 @@ void reaganify(char canseethings)
       //REAGANIFY
       if(canseethings)
       {
-         strcpy(execname[EXEC_PRESIDENT],"Ronald Reagan");
-         strcpy(execname[EXEC_VP],"Strom Thurmond");
-         strcpy(execname[EXEC_STATE],"Jesse Helms");
-         strcpy(execname[EXEC_ATTORNEY],"Jerry Falwell");
+         strcpy(execname[EXEC_PRESIDENT],"ロナルド・レーガン");
+         strcpy(execname[EXEC_VP],"ストロム・サーモンド");
+         strcpy(execname[EXEC_STATE],"ジェシー・ヘルムズ");
+         strcpy(execname[EXEC_ATTORNEY],"ジェリー・ファルエル");
          for(int e=0;e<EXECNUM;e++) exec[e]=ALIGN_ARCHCONSERVATIVE;
          for(int l=0;l<LAWNUM;l++) law[l]=ALIGN_ARCHCONSERVATIVE;
          liberalagenda(-1);
@@ -433,10 +433,10 @@ void stalinize(char canseethings)
       //STALINIZE
       if(canseethings)
       {
-         strcpy(execname[EXEC_PRESIDENT],"Josef Stalin");
-         strcpy(execname[EXEC_VP],"Josef Stalin");
-         strcpy(execname[EXEC_STATE],"Vyacheslav Molotov");
-         strcpy(execname[EXEC_ATTORNEY],"Lavrentiy Beria");
+         strcpy(execname[EXEC_PRESIDENT],"ヨシフ・スターリン");
+         strcpy(execname[EXEC_VP],"ヨシフ・スターリン");
+         strcpy(execname[EXEC_STATE],"ヴャチェスラフ・モロトフ");
+         strcpy(execname[EXEC_ATTORNEY],"ラヴレンチー・ベリヤ");
          for(int e=0;e<EXECNUM;e++) exec[e]=ALIGN_STALINIST;
          for(int l=0;l<LAWNUM;l++) law[l]=stalinview(l,true)?ALIGN_ELITELIBERAL:ALIGN_ARCHCONSERVATIVE;
          liberalagenda(-2);
@@ -580,7 +580,7 @@ char ratify(int level,int lawview,int view,char congress,char canseethings)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
 
       move(0,0);
-      addstr("The Ratification Process:");
+      addstr("批准手続:");
    }
 
    //THE STATE VOTE WILL BE BASED ON VIEW OF LAW

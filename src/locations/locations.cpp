@@ -375,7 +375,7 @@ void initlocation(Location &loc)
       else
       {
          lastname(loc.name,true);
-         strcat(loc.name," 刑務所");
+         strcat(loc.name,"刑務所");
          strcpy(loc.shortname,"刑務所");
       }
       break;
@@ -396,7 +396,7 @@ void initlocation(Location &loc)
          loc.rename("平和省", "平和省");
       } else {
          lastname(loc.name,true);
-         strcat(loc.name," 陸軍基地");
+         strcat(loc.name,"陸軍基地");
          strcpy(loc.shortname,"基地");
       } break;
    case SITE_GOVERNMENT_WHITE_HOUSE:
@@ -411,9 +411,9 @@ void initlocation(Location &loc)
    case SITE_BUSINESS_PAWNSHOP:
       lastname(loc.name,true);
       if(law[LAW_GUNCONTROL]==ALIGN_ELITELIBERAL)
-         strcat(loc.name," 質店");
+         strcat(loc.name,"質店");
       else
-         strcat(loc.name," 質と銃");
+         strcat(loc.name,"質と銃");
       strcpy(loc.shortname,"質店");
       break;
    case SITE_CORPORATE_HOUSE:
@@ -428,8 +428,6 @@ void initlocation(Location &loc)
    case SITE_INDUSTRY_WAREHOUSE:
       do {
          strcpy(loc.name,"閉鎖された");
-         /*lastname(loc.name,true);
-         strcat(loc.name," ");*/
 
          switch(LCSrandom(10))
          {
@@ -506,7 +504,7 @@ void initlocation(Location &loc)
       do {
          lastname(loc.name,true);
          strcpy(loc.shortname,loc.name);
-         strcat(loc.name," マンション");
+         strcat(loc.name,"マンション");
          strcat(loc.shortname,"ﾏﾝｼｮﾝ");
       } while(loc.duplicatelocation());
       break;
@@ -514,7 +512,7 @@ void initlocation(Location &loc)
       do {
          lastname(loc.name,true);
          strcpy(loc.shortname,loc.name);
-         strcat(loc.name," アパート");
+         strcat(loc.name,"アパート");
          strcat(loc.shortname,"ｱﾊﾟｰﾄ");
       } while(loc.duplicatelocation());
       break;
@@ -535,22 +533,22 @@ void initlocation(Location &loc)
       break;
    case SITE_LABORATORY_GENETIC:
       lastname(loc.name,true);
-      strcat(loc.name," 遺伝子研究所");
+      strcat(loc.name,"遺伝子研究所");
       strcpy(loc.shortname,"遺伝子研究所");
       break;
    case SITE_LABORATORY_COSMETICS:
       lastname(loc.name,true);
-      strcat(loc.name," 化粧品研究所");
+      strcat(loc.name,"化粧品研究所");
       strcpy(loc.shortname,"化粧品研究所");
       break;
    case SITE_BUSINESS_CARDEALERSHIP:
       generate_name(loc.name,GENDER_WHITEMALEPATRIARCH);
-      strcat(loc.name," 中古車販売店");
+      strcat(loc.name,"中古車販売店");
       strcpy(loc.shortname,"中古車店");
       break;
    case SITE_BUSINESS_DEPTSTORE:
       lastname(loc.name,true);
-      strcat(loc.name," 百貨店");
+      strcat(loc.name,"百貨店");
       strcpy(loc.shortname,"百貨店");
       break;
    case SITE_BUSINESS_HALLOWEEN:
@@ -558,7 +556,7 @@ void initlocation(Location &loc)
       break;
    case SITE_INDUSTRY_SWEATSHOP:
       lastname(loc.name,true);
-      strcat(loc.name," 縫製工場");
+      strcat(loc.name,"縫製工場");
       strcpy(loc.shortname,"縫製工場");
       break;
    case SITE_BUSINESS_CRACKHOUSE:
@@ -660,7 +658,7 @@ void initlocation(Location &loc)
       break;
    case SITE_BUSINESS_CIGARBAR:
       lastname(str,true);
-      strcpy(loc.name,"The ");
+      strcpy(loc.name,"ザ・");
       strcat(loc.name,str);
       strcat(loc.name," ジェントルメンズ・クラブ");
       strcpy(loc.shortname,"ｼｶﾞｰ･ﾊﾞｰ");
@@ -688,7 +686,7 @@ void initlocation(Location &loc)
       break;
    case SITE_OUTDOOR_PUBLICPARK:
       lastname(loc.name,true);
-      strcat(loc.name," 公園");
+      strcat(loc.name,"公園");
       strcpy(loc.shortname,"公園");
       break;
    case SITE_RESIDENTIAL_BOMBSHELTER:
