@@ -763,14 +763,14 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
       Location * ns_site = find_site_in_city(location[ns.loc]->city, -1);
       switch(ns_site->type)
       {
-      case SITE_CITY_SEATTLE: city = "Seattle, WA"; break;
-      case SITE_CITY_NEW_YORK: city = "New York, NY"; break;
-      case SITE_CITY_LOS_ANGELES: city = "Los Angeles, CA"; break;
-      case SITE_CITY_CHICAGO: city = "Chicago, IL"; break;
-      case SITE_CITY_DETROIT: city = "Detroit, MI"; break;
-      case SITE_CITY_ATLANTA: city = "Atlanta, GA"; break;
-      case SITE_CITY_MIAMI: city = "Miami, FL"; break;
-      case SITE_CITY_WASHINGTON_DC: city = "Washington, DC"; break;
+      case SITE_CITY_SEATTLE: city = "シアトル WA"; break;
+      case SITE_CITY_NEW_YORK: city = "ニューヨーク NY"; break;
+      case SITE_CITY_LOS_ANGELES: city = "ロサンゼルス CA"; break;
+      case SITE_CITY_CHICAGO: city = "シカゴ IL"; break;
+      case SITE_CITY_DETROIT: city = "デトロイト MI"; break;
+      case SITE_CITY_ATLANTA: city = "アトランタ GA"; break;
+      case SITE_CITY_MIAMI: city = "マイアミ FL"; break;
+      case SITE_CITY_WASHINGTON_DC: city = "ワシントン DC"; break;
       default: city = lcityname;
       }
    }

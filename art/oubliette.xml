@@ -42,7 +42,7 @@
         <letter>c</letter>
         <fullscreen>false</fullscreen>
         <sell_masks>true</sell_masks>
-        <exit>Done</exit>
+        <exit>買い物を終える</exit>
         <item>
             <class>ARMOR</class>
             <type>ARMOR_TRENCHCOAT</type>
@@ -113,7 +113,7 @@
         <entry>中世の武具を買う</entry>
         <letter>m</letter>
         <fullscreen>false</fullscreen>
-        <exit>Done</exit>
+        <exit>買い物を終える</exit>
         <item>
             <class>WEAPON</class>
             <type>WEAPON_DAGGER</type>

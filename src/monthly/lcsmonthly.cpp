@@ -637,7 +637,7 @@ void printnews(short li,short newspaper)
    else if(loottype[li]->get_idname()=="LOOT_CABLENEWSFILES")
    {
       move(6,1);
-      addstr("リベラルガーディアンにケーブルニュース局の", gamelog);
+      addstr("リベラルガーディアンにケーブルテレビ局の", gamelog);
       move(7,1);
 
       change_public_opinion(VIEW_LIBERALCRIMESQUAD,10);

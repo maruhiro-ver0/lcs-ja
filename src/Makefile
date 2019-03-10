@@ -89,7 +89,7 @@ LDFLAGS = -lpdcurses
 $(EXE): $(OBJS)
 	$(CC) -o $(EXE) $(OBJS) $(LDFLAGS)
 .cpp.o:
-	$(CC) $(CFLAGS) -E -c $< | iconv -f UTF-8 -t cp932 | sed 's/[\x80-\xff]\\/&\\/' | $(CC) $(CFLAGS) -c -xc++ -o $@ -
+	$(CC) $(CFLAGS) -E -c $< | iconv -f UTF-8 -t cp932 | sed 's/[\x80-\xff]\\/&\\/g' | $(CC) $(CFLAGS) -c -xc++ -o $@ -
 
 clean:
 	rm -f $(OBJS) $(EXE) $(EXE).exe

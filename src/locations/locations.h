@@ -213,8 +213,8 @@ enum RentingTypes
 };
 
 #define CITY_NAMELEN 80
-#define LOCATION_NAMELEN 40
-#define LOCATION_SHORTNAMELEN 20
+#define LOCATION_NAMELEN 80
+#define LOCATION_SHORTNAMELEN 40
 
 class Location
 {

@@ -200,8 +200,8 @@ WeaponType::WeaponType(MCD_STR xmlstring)
 
 attackst::attackst(MCD_STR xmlstring)
  : priority(1), ranged(false), thrown(false), ammotype("UNDEF"), uses_ammo(false),
-   attack_description("assaults"), hit_description("striking"),
-   always_describe_hit(false), can_backstab(false), hit_punctuation("."),
+   attack_description("で攻撃"), hit_description("銃弾が"),
+   always_describe_hit(false), can_backstab(false), hit_punctuation("。"),
    skill(SKILL_CLUB), accuracy_bonus(0), number_attacks(1),
    successive_attacks_difficulty(0), strength_min(5), strength_max(10),
 	random_damage(1), fixed_damage(1), bruises(false), tears(false), cuts(false),

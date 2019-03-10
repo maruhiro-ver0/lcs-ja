@@ -113,7 +113,7 @@ string Location::getname(signed char shortname_, bool include_city)
          return str+(shortname_<0?", Virginia":", VA");
       if(str=="Hollywood"||str=="Greater Hollywood")
          return str+(shortname_<0?", California":", CA");
-      if(str== "Manhattan"||str=="Manhattan Island"||str=="Brooklyn & Queens"||str=="Long Island"||str=="The Bronx")
+      if(str=="Manhattan"||str=="Manhattan Island"||str=="Brooklyn & Queens"||str=="Long Island"||str=="The Bronx")
          return str+(shortname_<0?", New York":", NY");
       str+=", "+cityname;
    }
@@ -495,7 +495,7 @@ void initlocation(Location &loc)
       }
       break;
    case SITE_MEDIA_CABLENEWS:
-      loc.rename("ケーブルニュース局", "ﾆｭｰｽ局");
+      loc.rename("ケーブルテレビ局", "ﾃﾚﾋﾞ局");
       break;
    case SITE_MEDIA_AMRADIO:
       loc.rename("AMラジオ局", "ﾗｼﾞｵ局");

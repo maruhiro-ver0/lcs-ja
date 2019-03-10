@@ -846,7 +846,7 @@ void makecharacter()
             move(17,0);
             addstr("私は");
             if(!multipleCityMode) addstr(lcityname);
-            else addstr("Seattle, WA");
+            else addstr("シアトル WA");
             addstr("にいる。そして変革の時は来た。");
             break;
       }

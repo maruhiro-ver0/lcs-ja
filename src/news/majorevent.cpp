@@ -1775,9 +1775,9 @@ void run_television_news_stories()
                   move(17,20);
                   switch(LCSrandom(3))
                   {
-                  case 0:addstr("Washington, DC");break;
-                  case 1:addstr("New York, NY");break;
-                  case 2:addstr("Atlanta, GA");break;
+                  case 0:addstr("ワシントン DC");break;
+                  case 1:addstr("ニューヨーク NY");break;
+                  case 2:addstr("アトランタ GA");break;
                   }
 
                   move(16,41);
@@ -1786,10 +1786,10 @@ void run_television_news_stories()
                   move(17,41);
                   switch(LCSrandom(4))
                   {
-                  case 0:addstr("Eugene, OR");break;
-                  case 1:addstr("San Francisco, CA");break;
-                  case 2:addstr("Cambridge, MA");break;
-                  case 3:addstr("Ithaca, NY");break;
+                  case 0:addstr("ユージーン OR");break;
+                  case 1:addstr("サンフランシスコ CA");break;
+                  case 2:addstr("ケンブリッジ MA");break;
+                  case 3:addstr("イサカ NY");break;
                   }
 
                   movie.loadmovie("newscast.cmv");

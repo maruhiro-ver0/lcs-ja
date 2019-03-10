@@ -1227,11 +1227,11 @@ void liberalize(Creature &cr,bool rename)
 void nameCCSMember(Creature &cr)
 {
    if(cr.get_armor().get_itemtypename()=="ARMOR_CIVILLIANARMOR")
-      strcpy(cr.name,"Elite Security");
+      strcpy(cr.name,"エリート警備員");
    else if(cr.get_armor().get_itemtypename()=="ARMOR_ARMYARMOR")
-      strcpy(cr.name,"Soldier");
+      strcpy(cr.name,"兵士");
    else if(cr.get_armor().get_itemtypename()=="ARMOR_HEAVYARMOR")
-      strcpy(cr.name,"CCS Heavy");
+      strcpy(cr.name,"CCS重装歩兵");
    else if(cr.get_weapon().get_itemtypename()=="WEAPON_SHOTGUN_PUMP"||LCSrandom(2))
       switch(LCSrandom(7))
       {
