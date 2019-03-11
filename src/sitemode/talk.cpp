@@ -884,17 +884,17 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       case 10:addstr("「私が間違っているならファックしてくれ。でも、あなたは私とキスしたい。", gamelog);
               move(11,1);y++;
               addstr("  そうだろう? 」", gamelog);break;
-      case 11:addstr("「あなたの両親は知恵遅れに違いない。なぜならあなたは特別だからだ。」", gamelog);break; // Robin Williams ?
+      case 11:addstr("「あなたの両親は知恵遅れに違いない。なぜならあなたは特別だからだ。」", gamelog);break;
       case 12:addstr("「電車ごっこをしよう…あなたが顔に座って、私がチューチューチュー…」", gamelog);break;
       case 13:addstr("「暑くないか? それとも君のせい? 」", gamelog);break;
       case 14:addstr("「私はフレッド・フリントストーンにはなれないが、あなたのベッドを揺らすことは", gamelog);
               move(11,1);y++;
               addstr("  できる! 」", gamelog);break;
-      case 15:addstr("「あの岩の陰で一緒に小さな石を拾わないか? 」", gamelog);break;
+      case 15:addstr("\"What do you say we go behind a rock and get a little boulder?\"", gamelog);break;
       case 16:addstr("「あなたのパンツは宇宙か? 地球上のものとは思えないお尻だ! 」", gamelog);break;
       case 17:addstr("「このパンツはベッドルームの床にあってこそ美しい。」", gamelog);break;
-      case 18:addstr("\"If I said you had a nice body, would you hold it against me?\"", gamelog);break;
-      case 19:addstr("\"Are you tired?  You've been running around in my thoughts all day.\"", gamelog);break;
+      case 18:addstr("「いい体だねって言ったらハグしてくれる? 」", gamelog);break;
+      case 19:addstr("「疲れてない? 私の頭の中を一日中グルグルと回っていたから。」", gamelog);break;
       case 20:addstr("\"If I could change the alphabet baby, I would put the U and I together!\"", gamelog);break;
       case 21:addstr("\"Your lips look sweet.  Can I taste them?\"", gamelog);break;
       case 22:addstr("\"Nice shoes.  Wanna fuck?\"", gamelog);break;
@@ -1044,7 +1044,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          {
          //LIMIT          :-----------------------------------------------------------------------------:
          case 0 :addstr("「あなたもね。少し休んでいきませんか? 」", gamelog);break;
-         case 1 :addstr("「ステキな人! 今晩電話してください…」", gamelog);break;
+         case 1 :addstr("「ステキな人! 今夜電話してください…」", gamelog);break;
          case 2 :addstr("「もちろん。」", gamelog);break;
          case 3 :addstr("「へっへっ。見逃してやるよ。ところで、私は田舎者が大好きなんだ…」", gamelog);break;
          case 4 :addstr("「あなたは病気だ。そして今夜、もっと病が重くなる…」", gamelog);break;
@@ -1059,10 +1059,10 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 13:addstr("「今夜のあなたよりは暑くないな。」", gamelog);break;
          case 14:addstr("「今夜にしましょう。」", gamelog);break;
          case 15:addstr("\"Oooo, we should get stoned too!  He he.\"", gamelog);break;
-         case 16:addstr("「あなたのロケットを用意して。さあどうぞ。」", gamelog);break;
+         case 16:addstr("「あなたのロケットを用意して。さあ行きましょう。」", gamelog);break;
          case 17:addstr("「私の下着もね。」", gamelog);break;
-         case 18:addstr("\"Yeah, and you're going to repay me tonight.\"", gamelog);break;
-         case 19:addstr("\"Then stop *thinking* about it and come over tonight.\"", gamelog);break;
+         case 18:addstr("「もちろん。そしてそのお返しは今夜して。」", gamelog);break;
+         case 19:addstr("「だったら*考える*のを止めて今夜会いましょう。」", gamelog);break;
          case 20:addstr("\"As long as you put a condom between them, I'm all for it.\"", gamelog);break;
          case 21:addstr("\"Sure, but you can't use your mouth.\"", gamelog);break;
          case 22:addstr("\"I hope you don't have a foot fetish, but I'm game.\"", gamelog);break;
@@ -1223,15 +1223,15 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 16: addstr("「そう、私はエイリアン。下等な地球のゴミめ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <光線銃を抜いた>", gamelog);break;
-         case 17: addstr("\"Not after I do this.\"", gamelog);
+         case 17: addstr("「これをした後でなければ。」\"Not after I do this.\"", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <shits pants>", gamelog);break;
-         case 18: addstr("\"Yes, I can't stand liars.\"", gamelog);
+            addstr(" <パンツにクソした>", gamelog);break;
+         case 18: addstr("「そんな嘘はウンザリだ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <crosses flabby arms>", gamelog);break;
-         case 19: addstr("\"I don't remember doing that.\"", gamelog);
+            addstr(" <たるんだ腕でバツを作った>", gamelog);break;
+         case 19: addstr("「そんなことをした覚えはない。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <looks confused>", gamelog);break;
+            addstr(" <困惑している>", gamelog);break;
          case 20: addstr("\"We got a kindergarten dropout over here!\"", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <points and laughs>", gamelog);break;
@@ -1361,19 +1361,19 @@ char talkAboutIssues(Creature &a, Creature &tk)
       case LAW_POLLUTION:     addstr("「『悪魔の毒々モンスター』を見たいのか? 公害に反対しよう! 」", gamelog);break;
       case LAW_LABOR:         addstr("「悪い奴らは赤ちゃんまで働かせようとしている。」", gamelog);break;
       case LAW_GAY:           addstr("「多くの人が同性愛者が好きではない。」", gamelog);break;
-      case LAW_CORPORATE:     addstr("\"The corporations are putting you down, dude.\"", gamelog);break;
-      case LAW_FREESPEECH:    addstr("\"Better watch what you say.  They've got ears everywhere.\"", gamelog);break;
-      case LAW_FLAGBURNING:   addstr("\"The flag is stupid.\"", gamelog);break;
-      case LAW_TAX:           addstr("\"Rich people, like, have money, man.\"", gamelog);break;
+      case LAW_CORPORATE:     addstr("「企業は俺たちを押さえつけてるんだ。」", gamelog);break;
+      case LAW_FREESPEECH:    addstr("「何を言うか注意したほうがいい。ヤツらの耳はどこにでもある。」", gamelog);break;
+      case LAW_FLAGBURNING:   addstr("「旗はバカげてる。」", gamelog);break;
+      case LAW_TAX:           addstr("「金持ちは、金が、大好きだ。」", gamelog);break;
       case LAW_GUNCONTROL:    addstr("\"People like, think they need lots of guns.\"", gamelog);break;
-      case LAW_WOMEN:         addstr("\"We need more women!\"", gamelog);break;
-      case LAW_CIVILRIGHTS:   addstr("\"Conservatives are all racists!\"", gamelog);break;
-      case LAW_DRUGS:         addstr("\"Dude, the government won't let you do drugs.\"", gamelog);break;
+      case LAW_WOMEN:         addstr("「俺たちにはもっと女が必要だ! 」", gamelog);break;
+      case LAW_CIVILRIGHTS:   addstr("「保守はみんなレイシストだ! 」", gamelog);break;
+      case LAW_DRUGS:         addstr("「政府は俺たちにドラッグを使わせようとしない。」", gamelog);break;
       case LAW_IMMIGRATION:   addstr("\"They're all trying to keep people out of the country.\"", gamelog);break;
       case LAW_ELECTIONS:     addstr("\"The politicians are just tools of the corporations!\"", gamelog);break;
-      case LAW_MILITARY:      addstr("\"Patriots are idiots! Give peace a chance!\"", gamelog);break;
-      case LAW_TORTURE:       addstr("\"Torture is bad!\"", gamelog);break;
-      case LAW_PRISONS:       addstr("\"Prisoners don't have freedom!\"", gamelog);break;
+      case LAW_MILITARY:      addstr("「愛国者はバカだ! 平和を! 」", gamelog);break;
+      case LAW_TORTURE:       addstr("「拷問はダメだ! 」", gamelog);break;
+      case LAW_PRISONS:       addstr("「囚人には自由がない! 」", gamelog);break;
       }
    }
    else if(issue_too_liberal)
@@ -1389,19 +1389,19 @@ char talkAboutIssues(Creature &a, Creature &tk)
       case LAW_POLLUTION:     addstr("「我々はいまだに環境を汚染させている。」", gamelog);break;
       case LAW_LABOR:         addstr("「企業のトップは労働組合の要求に応じない。」", gamelog);break;
       case LAW_GAY:           addstr("「同性愛者が好きでない者もいる。」", gamelog);break;
-      case LAW_CORPORATE:     addstr("\"There are corporations.\"", gamelog);break;
+      case LAW_CORPORATE:     addstr("「企業は存在している。」", gamelog);break;
       case LAW_FREESPEECH:    addstr("\"People get mad if you swear a lot in public.\"", gamelog);break;
-      case LAW_FLAGBURNING:   addstr("\"The flag code says you shouldn't make it into clothing.\"", gamelog);break;
-      case LAW_TAX:           addstr("\"There's still inequality in this country.\"", gamelog);break;
-      case LAW_GUNCONTROL:    addstr("\"We need to repeal the second amendment.\"", gamelog);break;
-      case LAW_WOMEN:         addstr("\"Some people are sexist.\"", gamelog);break;
-      case LAW_CIVILRIGHTS:   addstr("\"I knew some people that were pretty racist.\"", gamelog);break;
-      case LAW_DRUGS:         addstr("\"Drugs are expensive.\"", gamelog);break;
+      case LAW_FLAGBURNING:   addstr("「国旗法は服を作るなと言っている。」", gamelog);break;
+      case LAW_TAX:           addstr("「この国にはいまだに不平等が存在する。」", gamelog);break;
+      case LAW_GUNCONTROL:    addstr("「修正第2条は破棄されるべきだ。」", gamelog);break;
+      case LAW_WOMEN:         addstr("「一部の人々は性差別主義者だ。」", gamelog);break;
+      case LAW_CIVILRIGHTS:   addstr("「私は一部の人々が人種差別主義者だということを知っている。」", gamelog);break;
+      case LAW_DRUGS:         addstr("「ドラッグは高すぎる。」", gamelog);break;
       case LAW_IMMIGRATION:   addstr("\"All the immigrants, not everybody likes them.\"", gamelog);break;
       case LAW_ELECTIONS:     addstr("\"Some of these politicians rub me the wrong way.\"", gamelog);break;
-      case LAW_MILITARY:      addstr("\"We still have a military.\"", gamelog);break;
-      case LAW_TORTURE:       addstr("\"Some conservatives support torture.\"", gamelog);break;
-      case LAW_PRISONS:       addstr("\"Prisons still exist.\"", gamelog);break;
+      case LAW_MILITARY:      addstr("「いまだに軍隊は存在する。」", gamelog);break;
+      case LAW_TORTURE:       addstr("「拷問を支持する保守派がいる。」", gamelog);break;
+      case LAW_PRISONS:       addstr("「いまだに囚人は存在する。」", gamelog);break;
       }
    }
    else
@@ -1454,16 +1454,17 @@ char talkAboutIssues(Creature &a, Creature &tk)
          addstr("  巨大企業を使っている。」", gamelog);
          break;
       case LAW_FREESPEECH:
-         addstr("\"Protests and demonstrations are regularly and often brutally suppressed in ", gamelog);move(y++,1);
-         addstr("this country.  People have to watch what they write -- even what they read.\"", gamelog);
+         addstr("「この国では、抵抗と意思表明は定期的に、そして暴力的に押さえつけられている。", gamelog);move(y++,1);
+         addstr("  人々は彼らが何を書いているのか－何を読んでいるのかさえ注視しなければならな", gamelog);move(y++,1);
+         addstr("  い。」", gamelog);
          break;
       case LAW_FLAGBURNING:
-         addstr("\"Burning a piece of cloth is actually stigmatized in this country. ", gamelog);move(y++,1);
-         addstr("You can love freedom and still hate what our government stands for.\"", gamelog);
+         addstr("「この国ではただ布切れを燃やしただけで汚名を着せられる。あなたには自由を愛し", gamelog);move(y++,1);
+         addstr("  ながらも政府の行いを非難する権利がある。」", gamelog);
          break;
       case LAW_TAX:
-         addstr("\"The tax code has been designed to perpetuate an unjust class ", gamelog);move(y++,1);
-         addstr("structure that is keeping you oppressed.\"", gamelog);
+         addstr("「税制度は、あなたを抑圧し続けている不公正な階級構造を永続させるように設計さ", gamelog);move(y++,1);
+         addstr("  れている。」", gamelog);
          break;
       case LAW_GUNCONTROL:
          addstr("\"We live in such a backwards country right now that people think it's ", gamelog);move(y++,1);
@@ -1565,7 +1566,7 @@ char talkAboutIssues(Creature &a, Creature &tk)
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       addstr("更なる議論の後、", gamelog);
       addstr(tk.name, gamelog);
-      addstr("と今晩会う約束をした。", gamelog);
+      addstr("と今夜会う約束をした。", gamelog);
       gamelog.newline();
 
       getkey();
@@ -1634,9 +1635,9 @@ char talkAboutIssues(Creature &a, Creature &tk)
             case LAW_POLLUTION:     addstr("「問題にするほどではない。」", gamelog);break;
             case LAW_LABOR:         addstr("「市場原理に任せろ。それでうまくいく。」", gamelog);break;
             case LAW_GAY:           addstr("「同性愛は反道徳的だ。」", gamelog);break;
-            case LAW_CORPORATE:     addstr("\"Corporations are part of capitalism.\"", gamelog);break;
+            case LAW_CORPORATE:     addstr("「企業は資本主義の一部だ。」", gamelog);break;
             case LAW_FREESPEECH:    addstr("\"Don't be offensive and you'll be fine.\"", gamelog);break;
-            case LAW_FLAGBURNING:   addstr("\"That flag is the sacred symbol of our country.\"", gamelog);break;
+            case LAW_FLAGBURNING:   addstr("「その旗は私たちの国の侵すべからざるシンボルだ。」", gamelog);break;
             case LAW_TAX:           addstr("\"I want to pay lower taxes.\"", gamelog);break;
             case LAW_GUNCONTROL:    addstr("\"Without guns, we're slaves to the Government.\"", gamelog);break;
             case LAW_WOMEN:         addstr("\"Why don't you go burn a bra or something?\"", gamelog);break;
