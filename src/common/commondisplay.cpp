@@ -1428,7 +1428,7 @@ void printliberalcrimes(Creature &cr)
       addstr("ヶ月");
       if(location[cr.location]->type==SITE_GOVERNMENT_PRISON)
          addstr("服役");
-      else addstr("の懲役刑を求刑");
+      else addstr("の禁固刑を求刑");
    }
 
    // Add all crimes

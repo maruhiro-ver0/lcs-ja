@@ -40,12 +40,12 @@ void add_age(Creature& person)
    // Who knows how old the purple gorilla/tank/flaming bunny/dog is?
    if(person.animalgloss!=ANIMALGLOSS_NONE)
    {
-      addstr(" (?)");
+      addstr("(?)");
       return;
    }
 
    // For humans, estimate their age and gender
-   addstr(" (");
+   addstr("(");
 
    // Almost precise estimates of child and teen ages
    if(person.age<20)
@@ -74,7 +74,7 @@ void add_age(Creature& person)
       else if(person.age<90)
          addstr("80代");
       else
-         addstr("かなりの高齢");
+         addstr("相当な高齢");
    }
 
    // Assess their gender Liberally but allow ambiguity since you don't know them well enough yet

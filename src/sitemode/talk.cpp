@@ -1362,15 +1362,15 @@ char talkAboutIssues(Creature &a, Creature &tk)
       case LAW_LABOR:         addstr("「悪い奴らは赤ちゃんまで働かせようとしている。」", gamelog);break;
       case LAW_GAY:           addstr("「多くの人が同性愛者が好きではない。」", gamelog);break;
       case LAW_CORPORATE:     addstr("「企業は俺たちを押さえつけてるんだ。」", gamelog);break;
-      case LAW_FREESPEECH:    addstr("「何を言うか注意したほうがいい。ヤツらの耳はどこにでもある。」", gamelog);break;
+      case LAW_FREESPEECH:    addstr("「言葉には注意したほうがいい。ヤツらの耳はどこにでもある。」", gamelog);break;
       case LAW_FLAGBURNING:   addstr("「旗はバカげてる。」", gamelog);break;
       case LAW_TAX:           addstr("「金持ちは、金が、大好きだ。」", gamelog);break;
-      case LAW_GUNCONTROL:    addstr("\"People like, think they need lots of guns.\"", gamelog);break;
+      case LAW_GUNCONTROL:    addstr("「銃が好きな人は、もっと銃が必要だと考えているんだ。」", gamelog);break;
       case LAW_WOMEN:         addstr("「俺たちにはもっと女が必要だ! 」", gamelog);break;
       case LAW_CIVILRIGHTS:   addstr("「保守はみんなレイシストだ! 」", gamelog);break;
       case LAW_DRUGS:         addstr("「政府は俺たちにドラッグを使わせようとしない。」", gamelog);break;
-      case LAW_IMMIGRATION:   addstr("\"They're all trying to keep people out of the country.\"", gamelog);break;
-      case LAW_ELECTIONS:     addstr("\"The politicians are just tools of the corporations!\"", gamelog);break;
+      case LAW_IMMIGRATION:   addstr("「ヤツらはみんな人々を国の外にいさせようとしている。」", gamelog);break;
+      case LAW_ELECTIONS:     addstr("「政治家はただの企業の道具だ! 」", gamelog);break;
       case LAW_MILITARY:      addstr("「愛国者はバカだ! 平和を! 」", gamelog);break;
       case LAW_TORTURE:       addstr("「拷問はダメだ! 」", gamelog);break;
       case LAW_PRISONS:       addstr("「囚人には自由がない! 」", gamelog);break;
@@ -1390,15 +1390,15 @@ char talkAboutIssues(Creature &a, Creature &tk)
       case LAW_LABOR:         addstr("「企業のトップは労働組合の要求に応じない。」", gamelog);break;
       case LAW_GAY:           addstr("「同性愛者が好きでない者もいる。」", gamelog);break;
       case LAW_CORPORATE:     addstr("「企業は存在している。」", gamelog);break;
-      case LAW_FREESPEECH:    addstr("\"People get mad if you swear a lot in public.\"", gamelog);break;
+      case LAW_FREESPEECH:    addstr("「人々はあなたが公共の場で多くを語ると怒り狂う。」", gamelog);break;
       case LAW_FLAGBURNING:   addstr("「国旗法は服を作るなと言っている。」", gamelog);break;
       case LAW_TAX:           addstr("「この国にはいまだに不平等が存在する。」", gamelog);break;
       case LAW_GUNCONTROL:    addstr("「修正第2条は破棄されるべきだ。」", gamelog);break;
       case LAW_WOMEN:         addstr("「一部の人々は性差別主義者だ。」", gamelog);break;
       case LAW_CIVILRIGHTS:   addstr("「私は一部の人々が人種差別主義者だということを知っている。」", gamelog);break;
       case LAW_DRUGS:         addstr("「ドラッグは高すぎる。」", gamelog);break;
-      case LAW_IMMIGRATION:   addstr("\"All the immigrants, not everybody likes them.\"", gamelog);break;
-      case LAW_ELECTIONS:     addstr("\"Some of these politicians rub me the wrong way.\"", gamelog);break;
+      case LAW_IMMIGRATION:   addstr("「全ての移民は移民法が嫌いだ。」", gamelog);break;
+      case LAW_ELECTIONS:     addstr("「一部の政治家は間違った方法で擦り寄ってくる。」", gamelog);break;
       case LAW_MILITARY:      addstr("「いまだに軍隊は存在する。」", gamelog);break;
       case LAW_TORTURE:       addstr("「拷問を支持する保守派がいる。」", gamelog);break;
       case LAW_PRISONS:       addstr("「いまだに囚人は存在する。」", gamelog);break;
@@ -1455,8 +1455,8 @@ char talkAboutIssues(Creature &a, Creature &tk)
          break;
       case LAW_FREESPEECH:
          addstr("「この国では、抵抗と意思表明は定期的に、そして暴力的に押さえつけられている。", gamelog);move(y++,1);
-         addstr("  人々は彼らが何を書いているのか－何を読んでいるのかさえ注視しなければならな", gamelog);move(y++,1);
-         addstr("  い。」", gamelog);
+         addstr("  私たちは彼らが何を書いているのか──何を読んでいるのかさえ注視しなければな", gamelog);move(y++,1);
+         addstr("  らない。」", gamelog);
          break;
       case LAW_FLAGBURNING:
          addstr("「この国ではただ布切れを燃やしただけで汚名を着せられる。あなたには自由を愛し", gamelog);move(y++,1);
@@ -1467,40 +1467,40 @@ char talkAboutIssues(Creature &a, Creature &tk)
          addstr("  れている。」", gamelog);
          break;
       case LAW_GUNCONTROL:
-         addstr("\"We live in such a backwards country right now that people think it's ", gamelog);move(y++,1);
-         addstr("a right to walk around with the power to murder at any moment.\"", gamelog);
+         addstr("「私たちは、いつでも人を殺せるような力を持ち歩く権利があると人々が考えている", gamelog);move(y++,1);
+         addstr("  ような、遅れた世界に生きている。」", gamelog);
          break;
       case LAW_WOMEN:
-         addstr("\"Sexism is still pervasive, in subtle ways, and women make much less ", gamelog);move(y++,1);
-         addstr("than they deserve for their labor.\"", gamelog);
+         addstr("「隠れた性差別は依然として存在する。そして女性たちはその労働に対して遥かに少", gamelog);move(y++,1);
+         addstr("  ない報酬しか受け取っていない。」", gamelog);
          break;
       case LAW_CIVILRIGHTS:
-         addstr("\"Despite our progress, this society is still strangled by its continuing ", gamelog);move(y++,1);
-         addstr("legacy of racial discrimination and inequality.\"", gamelog);
+         addstr("「私たちの歩みにも関わらず、この社会は依然として続く人種差別と人種間の不平等", gamelog);move(y++,1);
+         addstr("  に苦しめられている。」", gamelog);
          break;
       case LAW_DRUGS:
-         addstr("\"The government's drug policy is a mess.  We need to stop filling ", gamelog);move(y++,1);
-         addstr("prisons with drug users, and only intervene when people really need help.\"", gamelog);
+         addstr("「政府の薬物政策は乱雑だ。私たちは刑務所を薬物使用者でいっぱいにするのを止", gamelog);move(y++,1);
+         addstr("  め、本当に助けが必要な人にのみ介入すべきだ。」", gamelog);
          break;
       case LAW_IMMIGRATION:
-         addstr("\"Millions of people are doing jobs most folks don't even want, and ", gamelog);move(y++,1);
-         addstr("saving their families from poverty, but we just try to kick them out.\"", gamelog);
+         addstr("「多くの移民は人々が望まない仕事を家族を養うためにしている。だが、私たちは彼", gamelog);move(y++,1);
+         addstr("  らをただ追い返そうとしている。」", gamelog);
          break;
       case LAW_ELECTIONS:
-         addstr("\"Political favors are bought and sold for campaign contributions, ", gamelog);move(y++,1);
-         addstr("and the voting system enforces two party dominance.\"", gamelog);
+         addstr("「政治的便宜が選挙献金で売り買いされている。そして選挙制度は2つの政党による", gamelog);move(y++,1);
+         addstr("  支配を強制している。」", gamelog);
          break;
       case LAW_MILITARY:
-         addstr("\"Take a breath and think about the world we live in, that we're spending ", gamelog);move(y++,1);
-         addstr("hundreds of billions on new ways to kill people.  This has to stop!\"", gamelog);
+         addstr("「深呼吸して私たちが生きているこの世界について考えてみよう。私たちは新しい方", gamelog);move(y++,1);
+         addstr("  法で人を殺すために数千億ドルを費やしている。これを止めなければならない! 」", gamelog);
          break;
       case LAW_TORTURE:
-         addstr("\"In the name of the war on terror, we've sacrificed our soul by letting ", gamelog);move(y++,1);
-         addstr("the government torture and abuse human beings on our behalf.\"", gamelog);
+         addstr("「テロとの戦いの名の下、拷問と虐待を政府に許し私たちは自分の心を捨て去ってし", gamelog);move(y++,1);
+         addstr("  まった。」", gamelog);
          break;
       case LAW_PRISONS:
-         addstr("\"The prison system doesn't help criminals by providing rehabilitation, so ", gamelog);move(y++,1);
-         addstr("when they get released, they mostly become criminals again.\"", gamelog);
+         addstr("「刑務所制度は犯罪者の更生の助けになっていない。そのため、彼らは刑務所を出て", gamelog);move(y++,1);
+         addstr("  も多くの場合再び犯罪を犯すのだ。」", gamelog);
          break;
       }
    }
@@ -1636,18 +1636,18 @@ char talkAboutIssues(Creature &a, Creature &tk)
             case LAW_LABOR:         addstr("「市場原理に任せろ。それでうまくいく。」", gamelog);break;
             case LAW_GAY:           addstr("「同性愛は反道徳的だ。」", gamelog);break;
             case LAW_CORPORATE:     addstr("「企業は資本主義の一部だ。」", gamelog);break;
-            case LAW_FREESPEECH:    addstr("\"Don't be offensive and you'll be fine.\"", gamelog);break;
+            case LAW_FREESPEECH:    addstr("「攻撃的にならなければ問題ない。」", gamelog);break;
             case LAW_FLAGBURNING:   addstr("「その旗は私たちの国の侵すべからざるシンボルだ。」", gamelog);break;
-            case LAW_TAX:           addstr("\"I want to pay lower taxes.\"", gamelog);break;
-            case LAW_GUNCONTROL:    addstr("\"Without guns, we're slaves to the Government.\"", gamelog);break;
-            case LAW_WOMEN:         addstr("\"Why don't you go burn a bra or something?\"", gamelog);break;
-            case LAW_CIVILRIGHTS:   addstr("\"Reverse discrimination is still discrimination.\"", gamelog);break;
-            case LAW_DRUGS:         addstr("\"Drugs are a terrible influence on society.\"", gamelog);break;
-            case LAW_IMMIGRATION:   addstr("\"Immigration undermines our economy and culture.\"", gamelog);break;
-            case LAW_ELECTIONS:     addstr("\"Unregulated campaigning is a matter of free speech.\"", gamelog);break;
-            case LAW_MILITARY:      addstr("\"The military protects us and enables our way of life.\"", gamelog);break;
-            case LAW_TORTURE:       addstr("\"The terrorists would do worse to us.\"", gamelog);break;
-            case LAW_PRISONS:       addstr("\"Criminals deserve what they get in prison.\"", gamelog);break;
+            case LAW_TAX:           addstr("「税金は軽いほうがよい。」", gamelog);break;
+            case LAW_GUNCONTROL:    addstr("「銃がなければ我々は政府の奴隷だ。」", gamelog);break;
+            case LAW_WOMEN:         addstr("「なぜブラシャーなどを燃やしてしまわないのだ? 」", gamelog);break;
+            case LAW_CIVILRIGHTS:   addstr("「逆差別もまた差別だ。」", gamelog);break;
+            case LAW_DRUGS:         addstr("「薬物は社会に恐ろしい影響を与えている。」", gamelog);break;
+            case LAW_IMMIGRATION:   addstr("「移民は私たちの経済と文化を弱体化させる。」", gamelog);break;
+            case LAW_ELECTIONS:     addstr("「選挙運動の制限の撤廃は言論の自由の問題だ。」", gamelog);break;
+            case LAW_MILITARY:      addstr("「軍は私たちを守り、私たちの生活様式を可能にしている。」", gamelog);break;
+            case LAW_TORTURE:       addstr("「テロリストはより恐ろしいことを私たちにしている。」", gamelog);break;
+            case LAW_PRISONS:       addstr("「犯罪者はその報いとして刑務所にいる。」", gamelog);break;
             }
          }
          else

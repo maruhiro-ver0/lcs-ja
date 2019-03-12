@@ -1158,13 +1158,13 @@ void penalize(Creature &g,char lenient)
       }
       else if(g.sentence>=36)
       {
-         addstr("懲役", gamelog);
+         addstr("禁固", gamelog);
          addstr(g.sentence/12, gamelog);
          addstr("年を言い渡す", gamelog);
       }
       else
       {
-         addstr("懲役", gamelog);
+         addstr("禁固", gamelog);
          addstr(g.sentence, gamelog);
          addstr("ヶ月を言い渡す", gamelog);
          if(g.sentence>1)addstr("", gamelog);
