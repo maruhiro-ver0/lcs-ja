@@ -336,8 +336,8 @@
         <make_difficulty>9</make_difficulty>
         <make_price>40</make_price>
         <deathsquad_legality>true</deathsquad_legality>
-        <name>死の部隊の制服</name>
-        <shortname>死の部隊の制服</shortname>
+        <name>暗殺部隊の制服</name>
+        <shortname>暗殺部隊の制服</shortname>
         <fencevalue>80</fencevalue>
         <body_covering>
             <head>true</head>

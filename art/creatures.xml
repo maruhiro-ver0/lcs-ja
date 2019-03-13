@@ -443,7 +443,7 @@ Elements marked as hardcoded may have their values overridden by the game.
     </creaturetype>
 
     <creaturetype idname="CREATURE_DEATHSQUAD">
-        <type_name>死の部隊隊員</type_name>
+        <type_name>暗殺部隊隊員</type_name>
         <weapon>
             <type>WEAPON_AUTORIFLE_M16</type>
             <number_clips>7</number_clips>

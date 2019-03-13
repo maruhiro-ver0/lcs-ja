@@ -446,10 +446,10 @@ void printnews(short li,short newspaper)
       addstr("報も含まれている。", gamelog);
       gamelog.newline();
       move(8,1);
-      addstr("複数のセクションで、司法管轄外の死の部隊の創設に関する広範囲な計画を明らかに", gamelog);
+      addstr("複数のセクションで、司法管轄外の暗殺部隊の創設に関する広範囲な計画を明らかに", gamelog);
       gamelog.newline();
       move(9,1);
-      addstr("した。死の部隊は警察の上位に位置し、法を破っていないリベラルさえも捕らえ、そ", gamelog);
+      addstr("した。暗殺部隊は警察の上位に位置し、法を破っていないリベラルさえも捕らえ、そ", gamelog);
       gamelog.newline();
       move(10,1);
       addstr("して敵が存在しないときは市民のエネルギーを押さえ込むために働くだろう。", gamelog);

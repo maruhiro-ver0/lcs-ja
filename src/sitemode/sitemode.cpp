@@ -336,7 +336,7 @@ void mode_site()
                   addstr(": CCS自警団応戦中");
                }
                else if(law[LAW_DEATHPENALTY]==-2&&
-                  law[LAW_POLICEBEHAVIOR]==-2)addstr(": 死の部隊応戦中");
+                  law[LAW_POLICEBEHAVIOR]==-2)addstr(": 暗殺部隊応戦中");
                else addstr(": 警官隊応戦中");
                break;
             }

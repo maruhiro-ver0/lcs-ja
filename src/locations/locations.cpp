@@ -332,7 +332,7 @@ void initlocation(Location &loc)
    case SITE_TRAVEL: loc.rename("旅行", "旅行"); break;
    case SITE_GOVERNMENT_POLICESTATION:
       if(law[LAW_POLICEBEHAVIOR]==-2&&law[LAW_DEATHPENALTY]==-2) {
-         loc.rename("死の部隊の司令部", "部隊司令");
+         loc.rename("暗殺部隊司令部", "部隊指令");
       } else {
          loc.rename("警察署", "警察署");
       } break;

@@ -859,7 +859,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       {
          case 0:addstr("「 [どの教会へ行っていますか? ] 」", gamelog);break;
          case 1:addstr("「 [結婚してくれますか? ] 」", gamelog);break;
-         case 2:addstr("\"[Do you believe in abstinence education?]\"", gamelog);break;
+         case 2:addstr("「 [純潔教育を信頼しますか? ] 」", gamelog);break;
       }
    }
    else
@@ -895,14 +895,14 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       case 17:addstr("「このパンツはベッドルームの床にあってこそ美しい。」", gamelog);break;
       case 18:addstr("「いい体だねって言ったらハグしてくれる? 」", gamelog);break;
       case 19:addstr("「疲れてない? 私の頭の中を一日中グルグルと回っていたから。」", gamelog);break;
-      case 20:addstr("\"If I could change the alphabet baby, I would put the U and I together!\"", gamelog);break;
-      case 21:addstr("\"Your lips look sweet.  Can I taste them?\"", gamelog);break;
-      case 22:addstr("\"Nice shoes.  Wanna fuck?\"", gamelog);break;
-      case 23:addstr("\"Your sexuality makes me nervous and this frustrates me.\"", gamelog);break;
-      case 24:addstr("\"Are you Jamaican?  Cuz Jamaican me horny.\"", gamelog);break;
-      case 25:addstr("\"Hey pop tart, fancy coming in my toaster of love?\"", gamelog);break;
-      case 26:addstr("\"Wanna play army?  You lie down and I'll blow you away.\"", gamelog);break;
-      case 27:addstr("\"Can I lick your forehead?\"", gamelog);break;
+      case 20:addstr("「もしアルファベットの順番を変えられるなら、UとIを一緒にしたい! 」", gamelog);break;
+      case 21:addstr("「あなたの唇は甘そうだ。味見してもいい? 」", gamelog);break;
+      case 22:addstr("「いい靴だね。ファックしない? 」", gamelog);break;
+      case 23:addstr("「あなたのセクシーさが私を不安で欲求不満にしている。」", gamelog);break;
+      case 24:addstr("「興奮してきた。もしかしてジャマイカ人? 」", gamelog);break;
+      case 25:addstr("「やあポップタルト、私の愛のトースターの中を想像してごらん? 」", gamelog);break;
+      case 26:addstr("「戦争ごっこをしないか? 君が倒れて私がぶっ放すんだ。」", gamelog);break;
+      case 27:addstr("「おでこを舐めていい? 」", gamelog);break;
       case 28:addstr("\"I have a genital rash.  Will you rub this ointment on me?\"", gamelog);break;
       case 29:addstr("\"What's your sign?\"", gamelog);break;
       case 30:addstr("\"Do you work for the post office? ", gamelog);
@@ -1035,7 +1035,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          {
             case 0:addstr("「 [あなたの教会です。] 」", gamelog);break;
             case 1:addstr("「 [はい。] 」", gamelog);break;
-            case 2:addstr("\"[Yes.  Yes, I do.]\"", gamelog);break;
+            case 2:addstr("「 [はい。もちろん。] 」", gamelog);break;
          }
       }
       else
@@ -1063,14 +1063,14 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 17:addstr("「私の下着もね。」", gamelog);break;
          case 18:addstr("「もちろん。そしてそのお返しは今夜して。」", gamelog);break;
          case 19:addstr("「だったら*考える*のを止めて今夜会いましょう。」", gamelog);break;
-         case 20:addstr("\"As long as you put a condom between them, I'm all for it.\"", gamelog);break;
-         case 21:addstr("\"Sure, but you can't use your mouth.\"", gamelog);break;
-         case 22:addstr("\"I hope you don't have a foot fetish, but I'm game.\"", gamelog);break;
-         case 23:addstr("\"My sex could do even more.\"", gamelog);break;
-         case 24:addstr("\"Let me invite you to visit my island paradise.  Tonight.\"", gamelog);break;
-         case 25:addstr("\"Oh, man...  just don't tell anybody I'm seeing you.\"", gamelog);break;
-         case 26:addstr("\"I hope we're shooting blanks, soldier.  I'm out of condoms.\"", gamelog);break;
-         case 27:addstr("\"You can lick all my decals off, baby.\"", gamelog);break;
+         case 20:addstr("「その間にコンドームがあるなら大賛成よ。」", gamelog);break;
+         case 21:addstr("「もちろん。でも口を使ってはダメよ。」", gamelog);break;
+         case 22:addstr("「足フェチなの? でもいいわ。」", gamelog);break;
+         case 23:addstr("「私とsexしたらもっとそうなるわ。」", gamelog);break;
+         case 24:addstr("「楽園の島に招待してあげる。今夜。」", gamelog);break;
+         case 25:addstr("「ああ…何も言わないで。すぐに行きます。」", gamelog);break;
+         case 26:addstr("「空砲がいいわ、兵隊さん。コンドームを切らせてるから。」", gamelog);break;
+         case 27:addstr("「私のデカールを全部舐め取って、ベイビー。」", gamelog);break;
          case 28:addstr("\"Only if I'm not allowed to use my hands.\"", gamelog);break;
          case 29:addstr("\"The one that says 'Open All Night'.\"", gamelog);break;
          case 30:addstr("\"It looks like a letter bomb to me.  Let me blow it up.\"", gamelog);break;
@@ -1232,30 +1232,30 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 19: addstr("「そんなことをした覚えはない。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <困惑している>", gamelog);break;
-         case 20: addstr("\"We got a kindergarten dropout over here!\"", gamelog);
+         case 20: addstr("「幼稚園を落第したヤツがいるぞ! 」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <points and laughs>", gamelog);break;
-         case 21: addstr("\"No, I don't want to infect anyone else with herpes.\"", gamelog);
+            addstr(" <指をさして笑われた>", gamelog);break;
+         case 21: addstr("「ダメよ。ヘルペスを移したくないから。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <sighs>", gamelog);break;
-         case 22: addstr("\"Stop staring at my feet, you freak!\"", gamelog);
+         case 22: addstr("「足を見るのをやめて。気持ち悪い! 」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <kicks you>", gamelog);break;
-         case 23: addstr("\"You're such a loser.\"", gamelog);
+            addstr(" <蹴られた>", gamelog);break;
+         case 23: addstr("「負け犬め。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <makes L sign on forehead>", gamelog);break;
-         case 24: addstr("\"I'm about to put a voodoo curse on yo ass...\"", gamelog);
+            addstr(" <額にLのジェスチャーをした>", gamelog);break;
+         case 24: addstr("「お前のケツの穴にヴードゥーの呪いを掛けてやる…」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <starts chanting>", gamelog);break;
-         case 25: addstr("\"I don't approve of your hi-carb diet.\"", gamelog);
+            addstr(" <呪文を唱え始めた>", gamelog);break;
+         case 25: addstr("「あなたの高炭水化物の食生活は問題だ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <starts ranting about nutrition>", gamelog);break;
-         case 26: addstr("\"Go back home to play with your G.I. Joe dolls.\"", gamelog);
+            addstr(" <健康について語り始めた>", gamelog);break;
+         case 26: addstr("「家に帰ってG.I.ジョーで遊んでろ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <scoffs>", gamelog);break;
-         case 27: addstr("\"No, and stop acting like a lost puppy.\"", gamelog);
+            addstr(" <あざ笑った>", gamelog);break;
+         case 27: addstr("「ダメです。迷子の子犬のように振る舞うのはやめて。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <hisses like a cat>", gamelog);break;
+            addstr(" <猫のようにシャーッと音を立てた>", gamelog);break;
          case 28: addstr("\"Jesus...\"", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <turns away>", gamelog);break;
@@ -1446,8 +1446,8 @@ char talkAboutIssues(Creature &a, Creature &tk)
          addstr("  づいているだろうか。人々は計画的に奴隷のように働かされている。」", gamelog);
          break;
       case LAW_GAY:
-         addstr("「同性愛者はそうでない者と変わりない。だが、この国では未だ安っぽいエンターテ", gamelog);move(y++,1);
-         addstr("  イメントに登場する逸脱者のような扱いを受けている。」", gamelog);
+         addstr("「同性愛者はそうでない者と変わりない。だが、この国ではいまだに安っぽいエンタ", gamelog);move(y++,1);
+         addstr("  ーテイメントに登場する逸脱者のような扱いを受けている。」", gamelog);
          break;
       case LAW_CORPORATE:
          addstr("「企業の重役たちは、寄生虫のように富をこの国から自分のポケット吸い出すために", gamelog);move(y++,1);
@@ -1468,7 +1468,7 @@ char talkAboutIssues(Creature &a, Creature &tk)
          break;
       case LAW_GUNCONTROL:
          addstr("「私たちは、いつでも人を殺せるような力を持ち歩く権利があると人々が考えている", gamelog);move(y++,1);
-         addstr("  ような、遅れた世界に生きている。」", gamelog);
+         addstr("  ような遅れた世界に生きている。」", gamelog);
          break;
       case LAW_WOMEN:
          addstr("「隠れた性差別は依然として存在する。そして女性たちはその労働に対して遥かに少", gamelog);move(y++,1);
