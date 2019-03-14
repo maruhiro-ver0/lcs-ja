@@ -373,7 +373,7 @@ bool liberalagenda(signed char won)
                   if(won==-2)addstr("いかなる理由でも通貨を所有する者は20年間の強制労働の罰が与えられる。");
                   else if(won==-1)addstr("税金は存在しないが、ほとんどの者には金がない。");
                   else if(law[l]==ALIGN_ARCHCONSERVATIVE)
-                     addstr("税法は階級構造を固定化するために設計された悪夢のようである。");
+                     addstr("税法は階級構造を固定化するために設計された悪夢のようになっている。");
                   else if(law[l]==-1)addstr("事実上の一律課税で、キャピタルゲイン税や相続税は存在しない。");
                   else if(law[l]==0)addstr("税金は適切だが、法律のいたる所に抜け穴がある。");
                   else if(law[l]==1)addstr("累進課税により裕福な人々にはより重い税金が課せられる。");

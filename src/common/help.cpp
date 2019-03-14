@@ -72,15 +72,15 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===リベラル反抗===");
       move(4,0);
-      addstr("  リベラル的反抗は違法なリベラル活動の形態で、世論にプラスの影響を与える。");
+      addstr("リベラル的反抗は違法なリベラル活動の形態で、世論にプラスの影響を与える。");
       move(5,0);
       addstr("有罪となった場合には短い刑期がある。この場合もジュースが増す。");
       move(7,0);
-      addstr("  誘惑、魅力、敏捷性、心、腕力、知識が高いと世論に与える影響も大きい。");
+      addstr("誘惑、魅力、敏捷性、心、腕力、知識が高いと世論に与える影響も大きい。");
       move(9,0);
-      addstr("  敏捷性、知識、説得、ストリートセンスが高いと警察の追跡を振る切ることができ");
+      addstr("敏捷性、知識、説得、ストリートセンスが高いと警察の追跡を振る切ることができる。");
       move(10,0);
-      addstr("る。怒った群衆から暴力を受ける可能性もある。");
+      addstr("怒った群衆から暴力を受ける可能性もある。");
       break;
 // }}}
 // {{{ ACTIVITY_GRAFFITI
@@ -88,13 +88,13 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===落書き===");
       move(4,0);
-      addstr("  政治的落書きをスプレーで描くことは軽犯罪で、有罪となった場合には短い刑期が");
+      addstr("政治的落書きをスプレーで描くことは軽犯罪で、有罪となった場合には短い刑期が課せ");
       move(5,0);
-      addstr("ある。世論にプラスの影響を与える。もしスプレー缶がなければ、手に入れるのに1日");
+      addstr("られる。世論にプラスの影響を与える。もしスプレー缶がなければ、手に入れるのに1");
       move(6,0);
-      addstr("掛かる。");
+      addstr("日掛かる。");
       move(8,0);
-      addstr("  心と芸術が高いと世論への影響も大きい。");
+      addstr("心と芸術が高いと世論への影響も大きい。");
       break;
 // }}}
 // {{{ ACTIVITY_POLLS
@@ -102,21 +102,17 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===世論調査===");
       move(4,0);
-      addstr(" Search Opinion Polls is a legal activity that lets you see what people think");
+      addstr("世論調査は人々が様々な問題に対してどのように考えているかを知る合法的な活動であ");
       move(5,0);
-      addstr(" about various Issues. Unlike other activities listed as Liberal Activism,  ");
+      addstr("る。他のリベラル活動とは異なり、世論調査は世論に影響を与えない。単に世論を知る");
       move(6,0);
-      addstr(" Search Opinion Polls does not have any effect on Public Opinion; it just ");
-      move(7,0);
-      addstr(" shows you what Public Opinion is without changing it.");
-      move(9,0);
-      addstr(" Skill in computers and intelligence will give better results.");
+      addstr("だけである。コンピュータのスキルがと知識があればより正確な結果が得られる。");
       break;
 // }}}
 // {{{ ACTIVITY_DOS_ATTACKS
    case ACTIVITY_DOS_ATTACKS:
       move(2,0);
-      addstr("===ウェブサイトへの攻撃===");
+      addstr("===Harassing Websites===");
       move(4,0);
       addstr(" Harassing Websites is an illegal activity and a form of Liberal Activism. It ");
       move(5,0);
@@ -134,29 +130,23 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===ハッキング===");
       move(4,0);
-      addstr(" Hacking is a highly illegal form of Liberal Activism, which has a good effect");
+      addstr("ハッキングは高度で違法なリベラル活動で、世論にプラスの影響を与える。これはとて");
       move(5,0);
-      addstr(" on public opinion. With it, comes very long prison sentences.");
+      addstr("も長い刑期が課せられる。");
       move(7,0);
-      addstr(" Generally you need a lot of the Computer skill and Intelligence before you");
+      addstr("ハッキングを成功させるには高いコンピュータのスキルと知識が必要だ。成果を出すた");
       move(8,0);
-      addstr(" can make a successful hacking attempt. You will need a minimum computer skill ");
-      move(9,0);
-      addstr(" of 6 to have an effect. The effect of having more hackers will compound the ");
+      addstr("めには最低でも6は必要である。グループで行えばさらに効果が高まる。");
       move(10,0);
-      addstr(" chance of successfully penetrating a network.");
+      addstr("ハッキングに成功しても、コンピュータのスキルと知識があれば犯罪になることを回避");
+      move(11,0);
+      addstr("できる可能性がある。もし犯罪になれば、アジトを発見される危険性が高まる。また、");
       move(12,0);
-      addstr(" If you are successful there is a chance depending on Computer skill and ");
-      move(13,0);
-      addstr(" Intelligence of evading being criminalized. If you are criminalized, heat on ");
+      addstr("ハッキングに成功するとジュースが上がる。");
       move(14,0);
-      addstr(" the activist increases. Additionally if you have made a successful hack it ");
+      addstr("あなたのハッカーがファイルを見つけることがあるが、それをリベラルガーディアンの");
       move(15,0);
-      addstr(" will increase juice.");
-      move(17,0);
-      addstr(" Occasionally instead of effecting public opinion your hacker may find files");
-      move(18,0);
-      addstr(" that can be published in a special edition of the Liberal Guardian.");
+      addstr("特別記事にして世論に影響を与えることができる。");
       break;
 // }}}
 // {{{ ACTIVITY_WRITE_LETTERS
@@ -164,37 +154,25 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===新聞への投書===");
       move(4,0);
-      addstr(" Write to Newspapers is a legal activity and form of Liberal Activism that");
+      addstr("新聞への投書は合法的なリベラル活動で、文筆のスキルを高め、そして文筆のスキルが");
       move(5,0);
-      addstr(" boosts the Writing skill and is more effective at influencing Public Opinion");
+      addstr("高いほど世論に大きな影響を与えられる。投書の主な目的はリベラルガーディアンの記");
       move(6,0);
-      addstr(" the higher the Writing skill is. A main reason for writing to newspapers is");
+      addstr("事を書くスキルを上げるためである。リベラルガーディアンは投書よりも大きな影響を");
       move(7,0);
-      addstr(" developing enough writing skill to effectively Write for the Liberal Guardian,");
-      move(8,0);
-      addstr(" which has a much bigger influence than Write to Newspapers and is still");
+      addstr("与えられ、そして完全に合法である。");
       move(9,0);
-      addstr(" completely legal.");
+      addstr("リベラルガーディアンの記事を書くのとは異なり、投書は自分自身で新聞を発行するた");
+      move(10,0);
+      addstr("めに大金を投じて印刷機を購入する必要はない。そして、リベラルガーディアンの記事");
       move(11,0);
-      addstr(" Unlike writing for the Liberal Guardian, writing to other newspapers does not");
-      move(12,0);
-      addstr(" require you to own your own newspaper that you set up by deciding to Invest in");
+      addstr("を書くよりも文筆のスキルが速く高まる。");
       move(13,0);
-      addstr(" a location and spending lots of money on the one-time fee for starting up your");
+      addstr("リベラルガーディアンの記事を書くためには、メイン画面でZキーを押して新聞を印刷し");
       move(14,0);
-      addstr(" own newspaper, plus you can do it from anywhere, and it boosts your Writing");
+      addstr("たい場所を決定し、$3,000を投じて印刷機を購入する必要がある。さらに、その印刷機");
       move(15,0);
-      addstr(" skill much faster than writing for the Liberal Guardian.");
-      move(17,0);
-      addstr(" To have the option to write for the Liberal Guardian, you need to own your own ");
-      move(18,0);
-      addstr(" newspaper that you set up by deciding to Invest in a location, by pressing 'Z' ");
-      move(19,0);
-      addstr(" on the main screen untill you have an option to invest and spending $3,000 on ");
-      move(20,0);
-      addstr(" a Printing Press. Additionally a character must be physically located at that ");
-      move(21,0);
-      addstr(" safehouse.");
+      addstr("のあるアジトにいる必要がある。");
       break;
 // }}}
 // {{{ ACTIVITY_WRITE_GUARDIAN
@@ -396,7 +374,7 @@ void HelpActivities(int activityType)
 
    set_color(COLOR_WHITE,COLOR_BLACK,0);
    move(23,0);
-   addstr("   Press any key - Return to previous screen");
+   addstr("   何かキーを押す - 1つ前の画面に戻る");
 
    getkey();
 }
