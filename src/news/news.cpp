@@ -1347,7 +1347,7 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                         else if(typesum==2)strcat(story,"と");
                         typesum--;
                      }
-                     if(!ccs&&!liberalguardian)
+                     if(!liberalguardian||ccs)
                         {
                         strcat(story,"の犯行に及んだと見て調査している");
                         }
@@ -1364,7 +1364,7 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                {
                   if(!liberalguardian||ccs)
                   {
-                     strcat(story,"  事件の後、車は猛スピードで追跡された。");
+                     strcat(story,"  事件の後、車は猛スピードで逃走した。");
                   }
                   else
                   {

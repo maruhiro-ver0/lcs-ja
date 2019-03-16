@@ -869,11 +869,11 @@ void printcreatureinfo(Creature *cr, unsigned char knowledge)
                else addstr("リベラル");
             }
 
-            if(cr->wound[w] & WOUND_SHOT){addstr("撃 ");sum--;if(sum>0)addstr(",");}
-            if(cr->wound[w] & WOUND_BRUISED){addstr("打 ");sum--;if(sum>0)addstr(",");}
-            if(cr->wound[w] & WOUND_CUT){addstr("切 ");sum--;if(sum>0)addstr(",");}
-            if(cr->wound[w] & WOUND_TORN){addstr("裂 ");sum--;if(sum>0)addstr(",");}
-            if(cr->wound[w] & WOUND_BURNED){addstr("火 ");sum--;if(sum>0)addstr(",");}
+            if(cr->wound[w] & WOUND_SHOT){addstr("撃");sum--;if(sum>0)addstr("､");}
+            if(cr->wound[w] & WOUND_BRUISED){addstr("打");sum--;if(sum>0)addstr("､");}
+            if(cr->wound[w] & WOUND_CUT){addstr("切");sum--;if(sum>0)addstr("､");}
+            if(cr->wound[w] & WOUND_TORN){addstr("裂");sum--;if(sum>0)addstr("､");}
+            if(cr->wound[w] & WOUND_BURNED){addstr("火");sum--;if(sum>0)addstr("､");}
          }
       }
       set_color(COLOR_WHITE,COLOR_BLACK,0);

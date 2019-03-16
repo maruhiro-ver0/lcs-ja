@@ -924,10 +924,10 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       case 40:addstr("\"Do you want to see something swell?\"", gamelog);break;
       case 41:addstr("\"Excuse me.  Do you want to fuck or should I apologize?\"", gamelog);break;
       case 42:addstr("\"Say, did we go to different schools together?\"", gamelog);break;
-      case 43:addstr("\"You smell...  Let's go take a shower.\"", gamelog);break;
-      case 44:addstr("\"Roses are red, violets are blue,", gamelog);
+      case 43:addstr("「臭うな…一緒にシャワーを浴びよう。」", gamelog);break;
+      case 44:addstr("「バラは赤く、スミレは青い。", gamelog);
             move(11,1);y++;
-            addstr("All my base, are belong to you.\"", gamelog);
+            addstr("  オール・マイ・ベース・アー・ビロング・トゥ・ユー。」", gamelog);
             break;
       case 45:addstr("\"Did it hurt when you fell from heaven?\"", gamelog);break;
       case 46:addstr("\"Holy shit you're hot!  I want to have sex with you RIGHT NOW.\"", gamelog);break;
@@ -1087,7 +1087,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 41:addstr("\"You can apologize later if it isn't any good.\"", gamelog);break;
          case 42:addstr("\"Yeah, and we tonight can try different positions together.\"", gamelog);break;
          case 43:addstr("\"Don't you like it dirty?\"", gamelog);break;
-         case 44:addstr("\"It's you!!  Somebody set up us the bomb.  Move 'Zig'.  For great justice.\"", gamelog);break;
+         case 44:addstr("「あ、あなたは!! 何者かが爆弾を仕掛けたようね。たのんだわ'ZIG'、私たちの未来に希望を。」", gamelog);break;
          case 45:addstr("\"Actually I'm a succubus from hell, and you're my next victim.\"", gamelog);break;
          case 46:addstr("\"Can you wait a couple hours?  I got 6 other people to fuck first.\"", gamelog);break;
          }
@@ -1301,12 +1301,12 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 42: addstr("\"What an idiot!\"", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <laughs>", gamelog);break;
-         case 43: addstr("\"Nothing works, I can't help it.\"", gamelog);
+         case 43: addstr("「ほっといて頂戴。どうしようもないの。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <starts crying>", gamelog);break;
-         case 44: addstr("\"Hahahahaha!\"", gamelog);
+            addstr(" <泣き出した>", gamelog);break;
+         case 44: addstr("「ハハハハハ! 」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
-            addstr(" <shakes head>", gamelog);break;
+            addstr(" <首を振った>", gamelog);break;
          case 45: addstr("\"Yes, now go away.\"", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <points to exit>", gamelog);break;

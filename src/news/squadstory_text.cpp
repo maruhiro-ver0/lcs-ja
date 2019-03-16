@@ -2,7 +2,7 @@
 
 void squadstory_text_location(newsstoryst& ns,bool liberalguardian,bool ccs,char* story)
 {
-   strcat(story,"  それは");
+   strcat(story,"  発生現場は");
    std::string placename=location[ns.loc]->getname();
    if(placename.substr(0,4)=="The ")
       placename=placename.substr(4);
@@ -120,7 +120,7 @@ void squadstory_text_location(newsstoryst& ns,bool liberalguardian,bool ccs,char
       default:
          strcat(story,placename);break;
       }
-      strcat(story,"で行われた。");
+      strcat(story," ");
    }
    else strcat(story,placename);
    if(liberalguardian&&!ccs)
@@ -163,10 +163,10 @@ void squadstory_text_location(newsstoryst& ns,bool liberalguardian,bool ccs,char
       default:
          break;
       }
-      strcat(story,"で発生した。");
+      strcat(story," ");
    }
    else if(!ccs)
-      strcat(story,"で発生した。");
+      strcat(story," ");
 }
 
 void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char* story)
@@ -177,25 +177,25 @@ void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char*
       {
          if(ns.positive)
          {
-            strcat(story,"警察の発表によると、昨日リベラル・クライム・スコードを自称するグループによる政治的アピールらしき突然の行動があった。");
+            strcat(story,"リベラル・クライム・スコードの襲撃  警察の発表によると、昨日リベラル・クライム・スコードを自称するグループによる政治的アピールと思われる突然の行動があった。");
             strcat(story,"&r");
          }
          else
          {
-            strcat(story,"警察の発表によると、昨日リベラル・クライム・スコードを自称する犯罪グループによる事件が発生した。");
+            strcat(story,"リベラル・クライム・スコードの襲撃  警察の発表によると、昨日リベラル・クライム・スコードを自称する犯罪グループによる事件が発生した。");
          }
       }
       else
       {
          if(ns.positive)
          {
-            strcat(story,"リベラル・クライム・スコードが再び現れた。");
+            strcat(story,"リベラル・クライム・スコード再び襲撃 ");
             strcat(story,"&r");
          }
          else
          {
             if(!liberalguardian)
-               strcat(story,"リベラル・クライム・スコードが凶行に及んだ。");
+               strcat(story,"リベラル・クライム・スコードの凶行 ");
             else
                strcat(story,"リベラル・クライム・スコードによる作戦は悲しい結果を引き起こした。");
             strcat(story,"&r");
@@ -224,12 +224,12 @@ void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char*
       {
          if(ns.positive&&!liberalguardian)
          {
-            strcat(story,"The Conservative Crime Squad has struck again.  ");
+            strcat(story,"コンサバティブ・クライム・スコード再び襲撃 ");
             strcat(story,"&r");
          }
          else
          {
-            strcat(story,"The Conservative Crime Squad has gone on another rampage.  ");
+            strcat(story,"コンサバティブ・クライム・スコードの凶行 ");
             strcat(story,"&r");
          }
       }

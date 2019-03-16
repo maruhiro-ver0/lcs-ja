@@ -187,7 +187,7 @@ void review()
       addpagestr();
       addstr("  Uキーでリベラルを昇進させる。");
       move(24,0);
-      addstr("Zキーで部隊を再編成する。  Tキーで所属のない者にアジトを割り当てる。");
+      addstr("Zキーで部隊を新設する。  Tキーで所属のない者にアジトを割り当てる。");
 
       int c=getkey();
 
@@ -948,7 +948,7 @@ void assemblesquad(squadst *cursquad)
       if(partysize>0) set_color(COLOR_WHITE,COLOR_BLACK,0);
       else set_color(COLOR_BLACK,COLOR_BLACK,1);
       move(24,40);
-      addstr("9 - 部隊を再編成する");
+      addstr("9 - 部隊を解散する");
 
       int c=getkey();
 

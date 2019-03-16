@@ -175,7 +175,7 @@ void viewhighscores(int musicoverride)
 
    //UNIVERSAL STATS
    move(22,0);
-   addstr("全世界リベラル統計:");
+   addstr("万国リベラル統計:");
 
    move(23,0);
    addstr("教化: ");
