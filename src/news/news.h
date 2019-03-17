@@ -5,7 +5,7 @@ void squadstory_text_location(newsstoryst& ns,bool liberalguardian,bool ccs,char
 void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char* story);
 void preparepage(newsstoryst& ns, bool liberalguardian);
 void displayads(newsstoryst& ns, bool liberalguardian, short* storyx_s, short* storyx_e,int& it2);
-void displaystoryheader(newsstoryst& ns, bool liberalguardian, int& y, int header);
+void displaystoryheader(newsstoryst& ns, bool liberalguardian, int& y, int header, char* story);
 void generate_random_event_news_stories();
 void advance_ccs_defeat_storyline();
 void clean_up_empty_news_stories();

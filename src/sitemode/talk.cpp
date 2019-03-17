@@ -915,8 +915,8 @@ char doYouComeHereOften(Creature &a, Creature &tk)
             break;
       case 32:addstr("「やあ。記憶喪失なんだ。君と会ったことある? 」", gamelog);break;
       case 33:addstr("「このあたりは初めてなんだ。君の家はどこか教えてくれる? 」", gamelog);break;
-      case 34:addstr("\"Stand still so I can pick you up!\"", gamelog);break;
-      case 35:addstr("\"Your daddy must have been a baker, cuz you've got a nice set of buns.\"", gamelog);break;
+      case 34:addstr("「私が迎えに行くまで待ってて! 」", gamelog);break;
+      case 35:addstr("「お父さんはバイカー? いいケツしてるから。」", gamelog);break;
       case 36:addstr("\"If you were a laser, you'd be set on 'stunning'.\"", gamelog);break;
       case 37:addstr("\"Is that a keg in your pants?  Cuz I'd love to tap that ass.\"", gamelog);break;
       case 38:addstr("\"If I could be anything, I'd love to be your bathwater.\"", gamelog);break;
@@ -1274,7 +1274,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 33: addstr("「ええ、ここです…」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <嘘の場所を書いた>", gamelog);break;
-         case 34: addstr("\"Gotta go!  Bye!\"", gamelog);
+         case 34: addstr("「急いでるので! さようなら! 」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <squirms away>", gamelog);break;
          case 35: addstr("\"I don't do anal.\"", gamelog);

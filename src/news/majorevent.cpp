@@ -1582,7 +1582,7 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
       {
          case VIEW_GAY:
             displaycenterednewsfont("KINKY WINKY",5);
-            displaycenteredsmallnews("ティンキー・ウィンキーはキンキー(変態)・ウィンキー。ファンダメンタリストのジェリー・ファルエルが真実を明らかにした。まただ。",12);
+            displaycenteredsmallnews("ティンキー・ウィンキーはキンキー(変態)・ウィンキー。ジェリー・ファルエルが真実を明らかにした。まただ。",12);
             displaynewspicture(PICTURE_TINKYWINKY,13);
             break;
          case VIEW_DEATHPENALTY:

@@ -356,7 +356,7 @@ void makecreature(Creature &cr,short type)
       case CREATURE_GENETIC:
          if(location[cursite]->type==SITE_CORPORATE_HOUSE)
          {
-            strcpy(cr.name,"ﾍﾟｯﾄ･");
+            strcpy(cr.name,"ﾍﾟｯﾄの");
             attcap[ATTRIBUTE_CHARISMA]=10;
          }
          else

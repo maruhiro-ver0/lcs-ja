@@ -800,44 +800,39 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
       case NEWSSTORY_GRAFFITIARREST:
       case NEWSSTORY_BURIALARREST:
       {
+         strcpy(story,city);
+         strcat(story," - ");
+
          int y=2;
          if((!liberalguardian&&ns.page==1)||(liberalguardian&&ns.guardianpage==1))
          {
             y=21;
 
-            displaystoryheader(ns,liberalguardian,y,header);
+            displaystoryheader(ns,liberalguardian,y,header,story);
+            strcat(story,"  ");
          }
-
-         strcpy(story,city);
-         strcat(story," - ");
 
          switch(ns.type)
          {
             case NEWSSTORY_CCS_NOBACKERS:
-               strcat(story,"The FBI investigation into the Conservative Crime Squad's government connections has led to the arrest of more than ");
-               strcat(story,"a dozen elected officials and revealed extensive corruption in law enforcement.");
+               strcat(story,"コンサバ・クライム・スコード所属の政府関係者に対するFBIの調査の結果、10名以上の役人の逮捕され、また警察の腐敗も明らかになった。");
                strcat(story,"&r");
-               strcat(story,"  \"The uphevals in the police force, and arrest of corrupt officials, are only the beginning,\" FBI Chief ");
-               strcat(story,"Roberta T. Malton said during a news conference.  \"A major focus ");
-               strcat(story,"of our efforts will be on the complete destruction of the Conservative Crime Squad. Within six months, we'll have their ");
-               strcat(story,"entire leadership, dead or alive. I personally guarantee it.\"");
+               strcat(story,"「警察の混乱と腐敗した役人の逮捕は始まりに過ぎない。」");
+               strcat(story,"記者会見でFBI長官ロバータ・T.・マルトンはこう述べた。");
+               strcat(story,"「コンサバ・クライム・スコードの壊滅に注力する。リーダーシップを発揮し、生死を掛けて6ヶ月以内にこれを行う。私が保証する。」");
                strcat(story,"&r");
                break;
             case NEWSSTORY_CCS_DEFEATED:
-               strcat(story,"An elite FBI force conducted simultaneous ");
-               strcat(story,"raids on several suspected Conservative Crime Squad safehouses in the early hours. Despite resistance from ");
-               strcat(story,"CCS terrorists armed with automatic weapons and body armor, no FBI agents were killed in the raids, and all ");
-               strcat(story,"three raids were successful. Seventeen suspects were killed in the fighting, and twenty-three are ");
-               strcat(story,"now in custody.");
+               strcat(story,"未明時間、FBIの先鋭部隊はコンサバ・クライム・スコードの複数の隠れ家を同時に攻撃した。");
+               strcat(story,"CCSテロリストは重武装していたにも関わらず、FBI側に死者はなく、3箇所の同時攻撃はいずれも成功した。");
+               strcat(story,"戦闘で17人のCCSメンバーが死亡し、23人が拘束された。");
                strcat(story,"&r");
-               strcat(story,"  The Conservative Crime Squad fell on hard times when the alternative newspaper Liberal Guardian published ");
-               strcat(story,"1147 pages of documents showing extensive government support for the group. The ensuing scandal ");
-               strcat(story,"led to the arrest of twenty-five members of Congress, as well as several leadership figures in the ");
-               strcat(story,"Conservative Party's National Committee.");
+               strcat(story,"コンサバ・クライム・スコードは反体制的新聞リベラルガーディアンに掲載された1147ページに及ぶ文書で政府内支援者を明らかにされ苦境に立たされていた。");
+               strcat(story,"このスキャンダルで25人の議員と保守政党の指導者数人が逮捕された。");
                strcat(story,"&r");
-               strcat(story,"  \"I want parents to rest easy tonight,\" FBI Chief ");
-               strcat(story,"Roberta T. Malton said during a news conference to announce the raids.  \"You don't need the Liberal Crime Squad ");
-               strcat(story,"to protect you. The Government can handle it.\"");
+               strcat(story,"「両親も今夜からは安心して眠って欲しい。」");
+               strcat(story,"FBI長官ロバータ・T.・マルトンはこう述べた。");
+               strcat(story,"「リベラル・クライム・スコードはもう必要ない。これは政府の仕事だ。」");
                strcat(story,"&r");
                break;
             case NEWSSTORY_WANTEDARREST:
@@ -847,28 +842,21 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                std::memset(crime,0,sizeof(int)*CRIMENUM);
                for(int c=0;c<len(ns.crime);c++)
                   crime[ns.crime[c]]++;
+               strcat(story,"警察の発表によると、昨日");
                if(crime[CRIME_KILLEDSOMEBODY]>1)
                {
                   if(crime[CRIME_KILLEDSOMEBODY]==2)
-                     strcat(story,"Two");
+                     strcat(story,"2名");
                   else
-                     strcat(story,"Several");
-                  strcat(story," police officers were");
+                     strcat(story,"複数");
+                  strcat(story," の警察官");
                }
-               else strcat(story,"A police officer was");
-               strcat(story," killed in the line of duty yesterday, ");
-               strcat(story,"according to a spokesperson from the police department.");
+               else strcat(story,"警察官");
+
+               strcat(story,"が職務中に殺害された。");
                strcat(story,"&r");
-               strcat(story,"  A suspect, identified only as a member of the ");
-               strcat(story,"radical political group known as the Liberal Crime Squad, is believed to have killed ");
-               if(crime[CRIME_KILLEDSOMEBODY]>1)
-               {
-                  strcat(story,crime[CRIME_KILLEDSOMEBODY]);
-                  strcat(story," officers ");
-               }
-               else strcat(story,"the police officer ");
-               strcat(story," while they were attempting to perform an arrest.  ");
-               strcat(story,"The names of the officers have not been released pending notification of their families.");
+               strcat(story,"容疑者は過激派政治組織リベラル・クライム・スコードのメンバーで、警察官の逮捕に抵抗した上で殺害したようだ。");
+               strcat(story,"死亡した警察官の氏名は遺族に通知するまで控える。");
                strcat(story,"&r");
                break;
             }
@@ -881,89 +869,69 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                std::memset(crime,0,sizeof(int)*CRIMENUM);
                for(int c=0;c<len(ns.crime);c++)
                   crime[ns.crime[c]]++;
-               strcat(story,"A routine arrest went horribly wrong yesterday, ");
-               strcat(story,"according to a spokesperson from the police department.");
+               strcat(story,"警察の発表によると、昨日巡回中の警察官が殺害された。");
                strcat(story,"&r");
-               strcat(story,"  A suspect, whose identity is unclear, ");
-               strcat(story,"killed ");
-               if(crime[CRIME_KILLEDSOMEBODY]>1)
-               {
-                  strcat(story,crime[CRIME_KILLEDSOMEBODY]);
-                  strcat(story," police officers that were");
-               }
-               else strcat(story,"a police officer that was");
-               strcat(story," attempting to perform an arrest.  ");
                if(ns.type==NEWSSTORY_NUDITYARREST)
-                  strcat(story,"The incident apparently occurred as a response to a public nudity complaint.  ");
+                  strcat(story,"公共の場で裸でいると通報があり");
                else if(ns.type==NEWSSTORY_DRUGARREST)
-                  strcat(story,"The suspect was allegedly selling \"pot brownies\".  ");
+                  strcat(story,"「大麻入りケーキ」を販売していると通報があり");
                else if(ns.type==NEWSSTORY_BURIALARREST)
-               {
-                  strcat(story,"A passerby allegedly called the authorities after seeing the suspect dragging what ");
-                  strcat(story,"appeared to be a corpse through an empty lot.  ");
-               }
+                  strcat(story,"遺体のようなものを空き地に引きずって運んでいる者を通行人が発見し");
                else
-                  strcat(story,"A passerby had allegedly spotted the suspect committing a car theft.  ");
+                  strcat(story,"自動車を盗もうとしている者を通行人が発見し");
+               strcat(story,"、駆けつけた警察官が殺害された。");
 
-               if(crime[CRIME_KILLEDSOMEBODY]>1)
-                  strcat(story,"The names of the officers have not been released pending notification of their families.");
-               else strcat(story,"The name of the officer has not been released pending notification of the officer's family.");
+               strcat(story,"死亡した警察官の氏名は遺族に通知するまで控える。");
                strcat(story,"&r");
                break;
             }
             case NEWSSTORY_SQUAD_ESCAPED:
-               strcat(story,"Members of the Liberal Crime Squad ");
-               strcat(story,"escaped from a police siege yesterday, according ");
-               if(!liberalguardian)strcat(story,"to a spokesperson from the police department.");
-               else strcat(story,"to a Liberal Crime Squad spokesperson.");
+               if(!liberalguardian)strcat(story,"警察の発表によると、");
+               else strcat(story,"リベラル・クライム・スコードの発表によると、");
+               strcat(story,"昨日、拘束中のリベラル・クライム・スコードのメンバーが脱走した。");
                strcat(story,"&r");
                break;
             case NEWSSTORY_SQUAD_FLEDATTACK:
-               strcat(story,"Members of the Liberal Crime Squad ");
-               strcat(story,"escaped from police officers during a raid yesterday, according ");
-               if(!liberalguardian)strcat(story,"to a spokesperson from the police department.");
-               else strcat(story,"to a Liberal Crime Squad spokesperson.");
+               if(!liberalguardian)strcat(story,"警察の発表によると、");
+               else strcat(story,"リベラル・クライム・スコードの発表によると、");
+               strcat(story,"昨日リベラル・クライム・スコードのメンバーたちは警察の包囲網から脱出した。");
                strcat(story,"&r");
                break;
             case NEWSSTORY_SQUAD_DEFENDED:
-               strcat(story,"Members of the Liberal Crime Squad ");
-               strcat(story,"fought off a police raid yesterday, according ");
-               if(!liberalguardian)strcat(story,"to a spokesperson from the police department.");
-               else strcat(story,"to a Liberal Crime Squad spokesperson.");
+               if(!liberalguardian)strcat(story,"警察の発表によると、");
+               else strcat(story,"リベラル・クライム・スコードの発表によると、");
+               strcat(story,"昨日リベラル・クライム・スコードと警察の戦闘があった。");
                strcat(story,"&r");
                break;
             case NEWSSTORY_SQUAD_BROKESIEGE:
-               strcat(story,"Members of the Liberal Crime Squad ");
-               strcat(story,"violently broke a police siege yesterday, according ");
-               if(!liberalguardian)strcat(story,"to a spokesperson from the police department.");
-               else strcat(story,"to a Liberal Crime Squad spokesperson.");
+               if(!liberalguardian)strcat(story,"警察の発表によると、");
+               else strcat(story,"リベラル・クライム・スコードの発表によると、");
+               strcat(story,"昨日、リベラル・クライム・スコードは警察の包囲網を強行突破した。");
                strcat(story,"&r");
                break;
             case NEWSSTORY_SQUAD_KILLED_SIEGEATTACK:
-               strcat(story,"Members of the Liberal Crime Squad were ");
                if(!liberalguardian)
                {
-                  strcat(story,"slain during a police raid yesterday, according ");
-                  strcat(story,"to a spokesperson from the police department.");
+                  strcat(story,"警察の発表によると、");
+                  strcat(story,"昨日リベラル・クライム・スコードのメンバーが警察の包囲の末に死亡した。");
                }
                else
                {
-                  strcat(story,"murdered during a police raid yesterday, according ");
-                  strcat(story,"to a Liberal Crime Squad spokesperson.");
+                  strcat(story,"リベラル・クライム・スコードの発表によると、");
+                  strcat(story,"昨日リベラル・クライム・スコードのメンバーが警察の包囲の末に殺害された。");
                }
                strcat(story,"&r");
                break;
             case NEWSSTORY_SQUAD_KILLED_SIEGEESCAPE:
-               strcat(story,"Members of the Liberal Crime Squad were ");
                if(!liberalguardian)
                {
-                  strcat(story,"slain trying to escape from a police siege yesterday, according ");
-                  strcat(story,"to a spokesperson from the police department.");
+                  strcat(story,"警察の発表によると、");
+                  strcat(story,"昨日リベラル・クライム・スコードのメンバーが警察の包囲網を突破しようとした末に死亡した。");
                }
                else
                {
-                  strcat(story,"murdered trying to escape from a police siege yesterday, according ");
-                  strcat(story,"to a Liberal Crime Squad spokesperson.");
+                  strcat(story,"リベラル・クライム・スコードの発表によると、");
+                  strcat(story,"昨日リベラル・クライム・スコードのメンバーが警察の包囲網を突破しようとした末に殺害された。");
                }
                strcat(story,"&r");
                break;
@@ -1450,6 +1418,9 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
       }
       case NEWSSTORY_MASSACRE:
       {
+         strcpy(story,city);
+         strcat(story," - ");
+
          int y=3;
          if(ns.page==1)
          {
@@ -1457,22 +1428,23 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
             if(ns.crime[0]==SIEGE_CCS)
             {
                displaycenterednewsfont("CCS MASSACRE",5);
+               strcat(story,"CCSの虐殺  ");
             }
             else if(!liberalguardian)
             {
                displaycenterednewsfont("MYSTERIOUS",5);
                displaycenterednewsfont("MASSACRE",13);
+               strcat(story,"謎の大量殺人  ");
             }
             else
             {
                displaycenterednewsfont("CONSERVATIVE",5);
                displaycenterednewsfont("MASSACRE",13);
+               strcat(story,"保守の大虐殺  ");
             }
          }
 
-         strcpy(story,city);
-         strcat(story," - ");
-         strcat(story,"昨日、");
+         strcat(story,"  昨日、");
          strcat(story,location[ns.loc]->name);
          strcat(story,"で");
          if(ns.crime[1]>2)
@@ -1580,6 +1552,9 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
       }
       case NEWSSTORY_KIDNAPREPORT:
       {
+         strcpy(story,city);
+         strcat(story," - ");
+
          int y=2;
          if(ns.page==1)
          {
@@ -1588,6 +1563,7 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
             {
                displaycenterednewsfont("LCS DENIES",5);
                displaycenterednewsfont("KIDNAPPING",13);break;
+               strcat(story,"LCS 誘拐を否認  ");
             }
             else
             {
@@ -1596,62 +1572,65 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                   case CREATURE_CORPORATE_CEO:
                      displaycenterednewsfont("CEO",5);
                      displaycenterednewsfont("KIDNAPPED",13);break;
+                     strcat(story,"CEO 誘拐される  ");
                   case CREATURE_RADIOPERSONALITY:
                      displaycenterednewsfont("RADIO HOST",5);
                      displaycenterednewsfont("KIDNAPPED",13);break;
+                     strcat(story,"ラジオ司会者 誘拐される  ");
                   case CREATURE_NEWSANCHOR:
                      displaycenterednewsfont("NEWS ANCHOR",5);
                      displaycenterednewsfont("KIDNAPPED",13);break;
+                     strcat(story,"ニュースキャスター 誘拐される  ");
                   case CREATURE_SCIENTIST_EMINENT:
                      displaycenterednewsfont("SCIENTIST",5);
                      displaycenterednewsfont("KIDNAPPED",13);break;
+                     strcat(story,"科学者 誘拐される  ");
                   case CREATURE_JUDGE_CONSERVATIVE:
                      displaycenterednewsfont("JUDGE",5);
                      displaycenterednewsfont("KIDNAPPED",13);break;
+                     strcat(story,"判事 誘拐される  ");
                   case CREATURE_COP:
                   case CREATURE_GANGUNIT:
                   case CREATURE_DEATHSQUAD:
                      displaycenterednewsfont("COP",5);
                      displaycenterednewsfont("KIDNAPPED",13);break;
+                     strcat(story,"警察官 誘拐される  ");
                   default:
                      displaycenterednewsfont("SOMEONE",5);
                      displaycenterednewsfont("KIDNAPPED",13);break;
+                     strcat(story,"誘拐事件  ");
                }
             }
          }
 
-         strcpy(story,city);
-         strcat(story," - The disappearance of ");
+         strcat(story,"  警察は、");
          strcat(story,ns.cr->propername);
-         strcat(story," is now considered a kidnapping, ");
-         strcat(story,"according to a police spokesperson.");
+         strcat(story,"氏は何者かによって誘拐された可能性があると表明した。");
          strcat(story,"&r");
 
          char dstr[200],dstr2[200];
          strcat(story,"  ");
          generate_name(dstr,dstr2);
          strcat(story,dstr);
-         strcat(story," ");
+         strcat(story,"・");
          strcat(story,dstr2);
-         strcat(story,", speaking on behalf of the police department, stated ");
-         strcat(story,"\"We now believe that ");
+         strcat(story,"は警察の代表として次のように述べた。「");
+         strcat(story,"我々は");
          strcat(story,ns.cr->propername);
-         strcat(story," was taken ");
+         strcat(story,"氏が");
          strcat(story,ns.cr->joindays-1);
-         strcat(story," days ago, by a person or persons as yet undetermined.  ");
-         strcat(story,"We have several leads and are confident that we will ");
-         strcat(story,"bring ");
+         strcat(story,"日前に何者かによって誘拐されたと考えている。");
+		 strcat(story,"我々はいくつかの証拠を掴んでいる。必ず");
          strcat(story,ns.cr->propername);
-         strcat(story," back home and bring the kidnappers to justice.  ");
-         strcat(story,"As the investigation is ongoing, I cannot be more specific at this time.  ");
-         strcat(story,"To the citizens, please contact the department if you have any additional information.");
-         strcat(story,"\"");
+         strcat(story,"氏を取り戻し、犯人を裁きに掛ける。");
+         strcat(story,"現在はまだ調査中で、具体的なことは述べられない。");
+         strcat(story,"市民の皆様は、何か情報があれば警察署に知らせて欲しい。」");
          strcat(story,"&r");
-         strcat(story,"  According to sources, ");
+		 strcat(story,"  情報筋によると、");
          strcat(story,ns.cr->propername);
-         strcat(story,"'s last known location was the ");
+         strcat(story,"氏が最後に目撃されたのは");
          strcat(story,location[ns.cr->worklocation]->name);
-         strcat(story,".  Police were seen searching the surrounding area yesterday.");
+         strcat(story,"で、警察は昨日からこの周囲を調査している。");
          strcat(story,"&r");
 
          generatefiller(story,200);

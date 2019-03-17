@@ -120,7 +120,7 @@ void squadstory_text_location(newsstoryst& ns,bool liberalguardian,bool ccs,char
       default:
          strcat(story,placename);break;
       }
-      strcat(story," ");
+      strcat(story,"。");
    }
    else strcat(story,placename);
    if(liberalguardian&&!ccs)
@@ -163,10 +163,10 @@ void squadstory_text_location(newsstoryst& ns,bool liberalguardian,bool ccs,char
       default:
          break;
       }
-      strcat(story," ");
+      strcat(story,"。");
    }
    else if(!ccs)
-      strcat(story," ");
+      strcat(story,"。");
 }
 
 void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char* story)
@@ -177,27 +177,27 @@ void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char*
       {
          if(ns.positive)
          {
-            strcat(story,"リベラル・クライム・スコードの襲撃  警察の発表によると、昨日リベラル・クライム・スコードを自称するグループによる政治的アピールと思われる突然の行動があった。");
+            strcat(story,"警察の発表によると、昨日リベラル・クライム・スコードを自称するグループによる政治的アピールと思われる突然の行動があった。");
             strcat(story,"&r");
          }
          else
          {
-            strcat(story,"リベラル・クライム・スコードの襲撃  警察の発表によると、昨日リベラル・クライム・スコードを自称する犯罪グループによる事件が発生した。");
+            strcat(story,"警察の発表によると、昨日リベラル・クライム・スコードを自称する犯罪グループによる事件が発生した。");
          }
       }
       else
       {
          if(ns.positive)
          {
-            strcat(story,"リベラル・クライム・スコード再び襲撃 ");
+            strcat(story,"再びリベラル・クライム・スコードの襲撃があった。");
             strcat(story,"&r");
          }
          else
          {
             if(!liberalguardian)
-               strcat(story,"リベラル・クライム・スコードの凶行 ");
+               strcat(story,"リベラル・クライム・スコードが凶行に及んだ。");
             else
-               strcat(story,"リベラル・クライム・スコードによる作戦は悲しい結果を引き起こした。");
+               strcat(story,"リベラル・クライム・スコードの行動は悲劇な結果となった。");
             strcat(story,"&r");
          }
       }
@@ -208,28 +208,24 @@ void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char*
       {
          if(ns.positive&&!liberalguardian)
          {
-            strcat(story,"A group of M16-wielding vigilantes calling itself the Conservative Crime Squad ");
-            strcat(story,"burst onto the scene of political activism yesterday, according ");
-            strcat(story,"to a spokesperson from the police department.");
+            strcat(story,"警察の発表によると、昨日M16自動小銃を携帯した自警団、自称コンサバディブ・クライム・スコードによる政治的アピールと思われる突然の行動があった。");
             strcat(story,"&r");
          }
          else
          {
-            strcat(story,"A group of worthless M16-toting hicks calling itself the Conservative Crime Squad ");
-            strcat(story,"went on a rampage yesterday, according ");
-            strcat(story,"to a spokesperson from the police department.");
+            strcat(story,"警察の発表によると、昨日M16自動小銃を携帯した田舎者、自称コンサバディブ・クライム・スコードによる暴力事件があった。");
          }
       }
       else
       {
          if(ns.positive&&!liberalguardian)
          {
-            strcat(story,"コンサバティブ・クライム・スコード再び襲撃 ");
+            strcat(story,"再びコンサバティブ・クライム・スコードの襲撃があった。");
             strcat(story,"&r");
          }
          else
          {
-            strcat(story,"コンサバティブ・クライム・スコードの凶行 ");
+            strcat(story,"コンサバティブ・クライム・スコードが凶行に及んだ。");
             strcat(story,"&r");
          }
       }
@@ -240,43 +236,41 @@ void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char*
       {
          if(ns.positive&&!liberalguardian)
          {
-            strcat(story,"A group of M16-wielding vigilantes calling themselves the Conservative Crime Squad ");
-            strcat(story,"burst briefly onto the scene of political activism yesterday, according ");
-            strcat(story,"to a spokesperson from the police department.  ");
+            strcat(story,"警察の発表によると、昨日M16自動小銃を携帯した自警団、自称コンサバディブ・クライム・スコードをによる政治的アピールと思われる突然の行動があった。");
             strcat(story,"&r");
          }
          else
          {
-            strcat(story,"A group of ");
+            strcat(story,"警察の発表によると、M16自動小銃を携帯した");
             switch(LCSrandom(4))
             {
-            case 0:strcat(story,"pathetic, ");break;
-            case 1:strcat(story,"worthless, ");break;
-            case 2:strcat(story,"disheveled, ");break;
-            case 3:strcat(story,"inbred, ");break;
-            }
-            switch(LCSrandom(4))
-            {
-            case 0:strcat(story,"violent, ");break;
-            case 1:strcat(story,"bloodthirsty, ");break;
-            case 2:strcat(story,"savage, ");break;
+            case 0:strcat(story,"哀れで");break;
+            case 1:strcat(story,"無価値で");break;
+            case 2:strcat(story,"無秩序で");break;
             case 3:strcat(story,"");break;
             }
-            strcat(story,"M16-toting ");
+            switch(LCSrandom(4))
+            {
+            case 0:strcat(story,"暴力的な");break;
+            case 1:strcat(story,"血に飢えた");break;
+            case 2:strcat(story,"残忍な");break;
+            case 3:strcat(story,"救いようのない");break;
+            }
+            strcat(story,"M16自動小銃を携帯した");
             switch(LCSrandom(3))
             {
-            case 0:strcat(story,"hicks ");break;
-            case 1:strcat(story,"rednecks ");break;
-            case 2:strcat(story,"losers ");break;
+            case 0:strcat(story,"田舎者");break;
+            case 1:strcat(story,"赤っ首");break;
+            case 2:strcat(story,"負け犬");break;
             }
-            strcat(story,"calling themselves the Conservative Crime Squad went on a ");
+            strcat(story,"、自称コンサバティブ・クライム・スコードによる");
             switch(LCSrandom(3))
             {
-            case 0:strcat(story,"suicidal ");break;
-            case 1:strcat(story,"homicidal ");break;
-            case 2:strcat(story,"bloodthirsty ");break;
+            case 0:strcat(story,"自殺的襲撃");break;
+            case 1:strcat(story,"恐るべき殺人");break;
+            case 2:strcat(story,"血に飢えた");break;
             }
-            strcat(story,"rampage yesterday, according to a spokesperson from the police department.  ");
+            strcat(story,"事件があった。");
             strcat(story,"&r");
          }
       }
@@ -284,12 +278,12 @@ void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char*
       {
          if(ns.positive&&!liberalguardian)
          {
-            strcat(story,"The Conservative Crime Squad has struck again, albeit with a tragic end.  ");
+            strcat(story,"コンサバ・クライム・スコードの襲撃が再びあり、悲惨な結末となった。");
             strcat(story,"&r");
          }
          else
          {
-            strcat(story,"The Conservative Crime Squad has gone on another rampage, and they got what they deserved.  ");
+            strcat(story,"コンサバ・クライム・スコードの襲撃が再びあり、当然の結末となった。");
             strcat(story,"&r");
          }
       }
@@ -300,16 +294,12 @@ void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char*
       {
          if(ns.positive)
          {
-            strcat(story,"A group calling itself the Liberal Crime Squad ");
-            strcat(story,"burst briefly onto the scene of political activism yesterday, according ");
-            strcat(story,"to a spokesperson from the police department.  ");
+            strcat(story,"警察の発表によると、昨日リベラル・クライム・スコードを自称するグループによる政治的アピールと思われる突然の行動があった。");
             strcat(story,"&r");
          }
          else
          {
-            strcat(story,"A group of thugs calling itself the Liberal Crime Squad ");
-            strcat(story,"went on a suicidal rampage yesterday, according ");
-            strcat(story,"to a spokesperson from the police department.  ");
+            strcat(story,"警察の発表によると、昨日リベラル・クライム・スコードを自称する犯罪グループによる自殺的襲撃事件が発生した。");
             strcat(story,"&r");
          }
       }
@@ -317,15 +307,15 @@ void squadstory_text_opening(newsstoryst& ns,bool liberalguardian,bool ccs,char*
       {
          if(ns.positive)
          {
-            strcat(story,"The Liberal Crime Squad has struck again, albeit with a tragic end.  ");
+            strcat(story,"リベラル・クライム・スコードの襲撃が再びあり、悲惨な結末となった。");
             strcat(story,"&r");
          }
          else
          {
             if(!liberalguardian)
-               strcat(story,"The Liberal Crime Squad has gone on a rampage, and they got what they deserved.  ");
+               strcat(story,"リベラル・クライム・スコードの襲撃が再びあった。");
             else
-               strcat(story,"A Liberal Crime Squad operation went horribly wrong, and came to a tragic end.  ");//XXX: Rewrite me -- LK
+               strcat(story,"リベラル・クライム・スコードの行動は悲劇な結果となった。");//XXX: Rewrite me -- LK
             strcat(story,"&r");
          }
       }

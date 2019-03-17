@@ -852,7 +852,7 @@ char completedate(datest &d,int p,char &clearformess)
                   getkey();
 
                   move((++y)++,0);
-                  addstr("リベラルは拘置所で目が覚めた…", gamelog);
+                  addstr("リベラルは留置所で目が覚めた…", gamelog);
                   gamelog.nextMessage();
 
                   // Find the police station
