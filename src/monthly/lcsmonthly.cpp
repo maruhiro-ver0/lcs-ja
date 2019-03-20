@@ -665,7 +665,7 @@ void printnews(short li,short newspaper)
    else if(loottype[li]->get_idname()=="LOOT_AMRADIOFILES")
    {
       move(6,1);
-      addstr("リベラルガーディアンにAMラジオ局の   The Liberal Guardian runs a story featuring AM radio plans ", gamelog);
+      addstr("リベラルガーディアンにAMラジオ局の", gamelog);
       move(7,1);
 
       change_public_opinion(VIEW_LIBERALCRIMESQUAD,10);

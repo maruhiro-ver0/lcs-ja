@@ -47,180 +47,176 @@ void constructeventstory(char *story,short view,char positive)
          {
             char str[200],str2[200],gen[50];
             strcpy(story,cityname());
-            strcat(story," - ");
-            if(law[LAW_ABORTION]==-2) strcat(story,"A doctor that routinely performed illegal abortion-murders was ruthlessly ");
-            else if(law[LAW_ABORTION]==-1) strcat(story,"A doctor that routinely performed illegal abortions was ruthlessly ");
-            else if(law[LAW_ABORTION]==0) strcat(story,"A doctor that routinely performed semi-legal abortions was ruthlessly ");
-            else strcat(story,"A doctor that routinely performed abortions was ruthlessly ");
-            strcat(story,"gunned down outside of the ");
+            strcat(story," - 病院で殺人  昨日、");
+            if(law[LAW_ABORTION]==-2) strcat(story,"違法な中絶殺人を日常的に行っている医師が");
+            else if(law[LAW_ABORTION]==-1) strcat(story,"違法な中絶を日常的に行っている医師が");
+            else if(law[LAW_ABORTION]==0) strcat(story,"脱法的な中絶を日常的に行っている医師が");
+            else strcat(story,"中絶を日常的に行っている医師が");
             lastname(str,true); strcat(story,str);
-            strcat(story," Clinic yesterday.  ");
-            strcat(story,"Dr. ");
+            strcat(story,"病院の外で射殺された。");
+            strcat(story,"警察によると、");
             char dstr[200],dstr2[200];
             char gn=(LCSrandom(2)?GENDER_MALE:GENDER_FEMALE);
             generate_name(dstr,dstr2,gn);
             strcat(story,dstr);
-            strcat(story," ");
+            strcat(story,"医師は");
             strcat(story,dstr2);
-            strcpy(gen,(gn==GENDER_FEMALE?"her":"his"));
-            strcat(story," was walking to "); strcat(story,gen);//TODO: Add more variety, not just in the parking lot.
-            strcat(story," car when, according to police reports, ");
-            strcat(story,"shots were fired from a nearby vehicle.  ");
+            strcpy(gen,(gn==GENDER_FEMALE?"自分の":"自分の"));
+            strcat(story,gen);
+            strcat(story,"車に向かって歩いているところを、");//TODO: Add more variety, not just in the parking lot.
+            strcat(story,"近くにいた車から狙われたようだ。");
             strcat(story,dstr2);
-            strcat(story," was hit ");
+            strcat(story,"は");
             strcat(story,LCSrandom(15)+3);
-            strcat(story," times and died immediately in the parking lot.  ");
-            strcat(story,"The suspected shooter, ");
+            strcat(story,"発撃たれ、駐車場で即死した。");
+            strcat(story,"容疑者の");
             generate_name(str,str2);
             strcat(story,str);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,str2);
-            strcat(story,", is in custody.&r");
-            strcat(story,"  Witnesses report that ");
+            strcat(story,"が拘束された。&r");
+            strcat(story,"  目撃者によると、");
             strcat(story,str2);
-            strcat(story," remained at the scene after the shooting, screaming ");
-            strcat(story,"verses of the Bible at the stunned onlookers.  Someone ");
-            strcat(story,"called the police on a cellphone and they arrived shortly thereafter.  ");
+            strcat(story,"は発砲後も現場にとどまり、");
+            strcat(story,"立ちすくむ人々の前で聖書の一節を叫んだ。その後、");
+            strcat(story,"携帯電話の通報で駆けつけた警察官に逮捕された。");
             strcat(story,str2);
+            strcat(story,"は");
             if(law[LAW_WOMEN]==-2)
             {
-               strcat(story," later admitted to being a rogue FBI vigilante, hunting down ");
-               strcat(story," abortion doctors as opposed to arresting them.&r");
+               strcat(story,"自分がFBIの自警主義者であり、");
+               strcat(story,"中絶医師を逮捕することに反対し追跡していたことを認めた。&r");
             }
             else
             {
-               strcat(story," surrendered without a struggle, reportedly saying that God's work ");
-               strcat(story,"had been completed.&r");
+               strcat(story,"抵抗せず投降し、");
+               strcat(story,"神の御業はなしとげられたと言ったと伝えられている。&r");
             }
             strcat(story,"  ");
             strcat(story,dstr2);
-            strcat(story," is survived by ");
-            strcat(story,gen);
-            strcat(story," ");
+            strcat(story,"には");
             char spouse=(LCSrandom(2)?GENDER_MALE:GENDER_FEMALE);
             if(law[LAW_GAY]<=1)
                spouse=(gn==GENDER_FEMALE?GENDER_MALE:GENDER_FEMALE);
-            strcat(story,(spouse==GENDER_FEMALE?"wife":"husband"));
-            strcat(story," and ");
+            strcat(story,(spouse==GENDER_FEMALE?"妻":"夫"));
+            strcat(story,"と");
             switch(LCSrandom(4))
             {
-            case 0: strcat(story,"two");break;
-            case 1: strcat(story,"three");break;
-            case 2: strcat(story,"four");break;
-            case 3: strcat(story,"five");break;
+            case 0: strcat(story,"2");break;
+            case 1: strcat(story,"3");break;
+            case 2: strcat(story,"4");break;
+            case 3: strcat(story,"5");break;
             }
-            strcat(story," children.&r");
+            strcat(story,"人の子供がいた。&r");
             break;
          }
          case VIEW_GAY:
          {
             strcpy(story,cityname());
-            strcat(story," - ");
+            strcat(story," - ヘイトクライム  昨日、");
+            if(law[LAW_GAY]==-2) strcat(story,"性的逸脱者として知られる");
+            else if(law[LAW_GAY]==-1) strcat(story,"同性愛者として知られる");
+            else strcat(story,"同性愛者の");
             char dstr[200],dstr2[200];
             generate_name(dstr,dstr2);
             strcat(story,dstr);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,dstr2);
-            if(law[LAW_GAY]==-2) strcat(story,", a known sexual deviant, was ");
-            else if(law[LAW_GAY]==-1) strcat(story,", a known homosexual, was ");
-            else strcat(story,", a homosexual, was ");
+            strcat(story,"が");
             switch(LCSrandom(3))
             {
-            case 0: strcat(story,"dragged to death behind a pickup truck");break;
-            case 1: strcat(story,"burned alive");break;
-            case 2: strcat(story,"beaten to death");break;
+            case 0: strcat(story,"トラックに引きずられ");break;
+            case 1: strcat(story,"生きたまま焼かれ");break;
+            case 2: strcat(story,"何度も殴打され");break;
             }
-            strcat(story," here yesterday.  ");
-            strcat(story,"A police spokesperson reported that four suspects ");
-            strcat(story,"were apprehended after a high speed chase.  Their names ");
-            strcat(story,"have not yet been released.");
+            strcat(story,"殺害された。");
+            strcat(story,"警察によると、4人の容疑者が車による逃走の末に逮捕された。");
+            strcat(story,"氏名はまだ発表されていない。");
             strcat(story,"&r");
-            strcat(story,"  Witnesses of the freeway chase described the pickup of the alleged ");
-            strcat(story,"murderers swerving wildly, ");
+            strcat(story,"  高速道路での目撃者によると、");
+            strcat(story,"容疑者は追跡するするパトカーに対して乱暴に蛇行しながら");
             switch(LCSrandom(3))
             {
             case 0:
-               if(law[LAW_FREESPEECH]==-2) strcat(story,"throwing [juice boxes]");
-               else strcat(story,"throwing beer bottles");
+               if(law[LAW_FREESPEECH]==-2) strcat(story,"[ジュース箱]を投げつけていた");
+               else strcat(story,"ビールのカンを投げつけていた");
                break;
             case 1:
-               if(law[LAW_FREESPEECH]==-2) strcat(story,"[relieving themselves] out the window");
-               else if(law[LAW_FREESPEECH]==2) strcat(story,"pissing out the window");
-               else strcat(story,"urinating out the window");
+               if(law[LAW_FREESPEECH]==-2) strcat(story,"窓から[自分で放出していた]");
+               else if(law[LAW_FREESPEECH]==2) strcat(story,"窓からションベンしていた");
+               else strcat(story,"窓から放尿していた");
                break;
-            case 2: strcat(story,"taking swipes"); break;
+            case 2: strcat(story,"体当たりしていた"); break;
             }
-            strcat(story," at the pursuing police cruisers.  ");
-            strcat(story,"The chase ended when ");
+            strcat(story,"。");
+            strcat(story,"追跡は");
             switch(LCSrandom(5))
             {
-            case 0: strcat(story,"the suspects ran out of gas, "); break;
-            case 1: strcat(story,"the suspects collided with a manure truck, "); break;
-            case 2: strcat(story,"the suspects veered into a ditch, "); break;
-            case 3: strcat(story,"the suspects were surrounded by alert citizens, "); break;
-            case 4: strcat(story,"the suspects were caught in traffic, "); break;
+            case 0: strcat(story,"容疑者の車のガソリンが切れる"); break;
+            case 1: strcat(story,"容疑者の車がバキュームカートに衝突する"); break;
+            case 2: strcat(story,"容疑者の車が溝に転落する"); break;
+            case 3: strcat(story,"容疑者の車が市民に取り囲まれる"); break;
+            case 4: strcat(story,"容疑者の車が渋滞に巻き込まれる"); break;
             }
-            strcat(story,"at which point they were taken into custody.  Nobody was seriously injured during the incident.");
+            strcat(story,"まで続き、その後に拘束された。この追跡によるけが人はいなかった。");
             strcat(story,"&r");
-            strcat(story,"  Authorities have stated that they will vigorously ");
-            strcat(story,"prosecute this case as a hate crime, due to the ");
-            strcat(story,"aggravated nature of the offense");
+            strcat(story,"  当局者はこの事件を");
             if(law[LAW_GAY]==-2&&law[LAW_FREESPEECH]!=-2)
             {
-               strcat(story,", despite the fact that ");
+               strcat(story,"、");
                strcat(story,dstr);
-               strcat(story," ");
+               strcat(story,"・");
                strcat(story,dstr2);
-               strcat(story," is a known faggot");
+               strcat(story,"はホモであるが");
             }
-            else if(law[LAW_GAY]==-2)strcat(story,", even though being gay is deviant, as we all know.");
-            else strcat(story,".");
+            else if(law[LAW_GAY]==-2)strcat(story,"、ゲイは逸脱者であることは当然として、");
+            strcat(story,"ヘイトクライム(憎悪犯罪)として重く受け止めている。");
             strcat(story,"&r");
             break;
          }
          case VIEW_DEATHPENALTY:
          {
             strcat(story,statename());
-            strcat(story," - An innocent citizen has been put to death in the electric chair.  ");
-            char dstr[200],dstr2[200],dstr3[200];
-            generate_long_name(dstr,dstr2,dstr3);
-            strcat(story,dstr);
-            strcat(story," ");
-            strcat(story,dstr2);
-            strcat(story," ");
-            strcat(story,dstr3);
-            strcat(story," was pronounced dead at ");
-            strcat(story,LCSrandom(12)+1);
-            strcat(story,":");
-            strcat(story,LCSrandom(60));
+            strcat(story," - 司法の死  無実の市民が電気椅子で処刑された。");
+            strcat(story,"昨日の");
             switch(LCSrandom(2))
             {
-            case 0: strcat(story,"AM"); break;
-            case 1: strcat(story,"PM"); break;
+            case 0: strcat(story,"午前"); break;
+            case 1: strcat(story,"午後"); break;
             }
-            strcat(story," yesterday at the ");
+            strcat(story,LCSrandom(12)+1);
+            strcat(story,"時");
+            strcat(story,LCSrandom(60));
+            strcat(story,"分、");
             char jstr[200];
             lastname(jstr,true);
             strcat(story,jstr);
-            strcat(story," Correctional Facility.&r");
-
+            strcat(story,"刑務所で");
+            char dstr[200],dstr2[200],dstr3[200];
+            generate_long_name(dstr,dstr2,dstr3);
+            strcat(story,dstr);
+            strcat(story,"・");
+            strcat(story,dstr2);
+            strcat(story,"・");
+            strcat(story,dstr3);
+            strcat(story,"の死刑が執行された。");
+            strcat(story,"&r");
             strcat(story,"  ");
             strcat(story,dstr3);
-            strcat(story," was convicted in ");
+            strcat(story,"は");
             strcat(story,year-LCSrandom(11)-10);
-            strcat(story," of 13 serial murders.  ");
-            strcat(story,"Since then, numerous pieces of exculpatory evidence ");
-            strcat(story,"have been produced, including ");
+            strcat(story,"年に13件の連続殺人で有罪判決を受けていた。");
+            strcat(story,"しかしその後、");
             switch(LCSrandom(3))
             {
-            case 0: strcat(story,"a confession from another convict.  "); break;
-            case 1: strcat(story,"a battery of negative DNA tests.  "); break;
+            case 0: strcat(story,"別の受刑者の自白"); break;
+            case 1: strcat(story,"DNAの不一致"); break;
             case 2:
-               strcat(story,"an admission from a former prosecutor that ");
                strcat(story,dstr3);
-               strcat(story," was framed.  ");
+               strcat(story,"に自白を強要したという検察官の告白");
                break;
             }
+            strcat(story,"を含むいくつもの無罪を示す証拠が発見された。");
             strcat(story,"The state still went through with the execution, with a ");
             strcat(story,"spokesperson for the governor saying, ");
             strcat(story,"\"");
@@ -1582,7 +1578,7 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
       {
          case VIEW_GAY:
             displaycenterednewsfont("KINKY WINKY",5);
-            displaycenteredsmallnews("ティンキー・ウィンキーはキンキー(変態)・ウィンキー。ジェリー・ファルエルが真実を明らかにした。まただ。",12);
+            displaycenteredsmallnews("キンキー・ウィンキー  ジェリー・ファルエルが真実を明らかにした。まただ。",12);
             displaynewspicture(PICTURE_TINKYWINKY,13);
             break;
          case VIEW_DEATHPENALTY:
