@@ -213,238 +213,222 @@ void constructeventstory(char *story,short view,char positive)
             case 1: strcat(story,"DNAの不一致"); break;
             case 2:
                strcat(story,dstr3);
-               strcat(story,"に自白を強要したという検察官の告白");
+               strcat(story,"に自白を強要したという警察官の告白");
                break;
             }
             strcat(story,"を含むいくつもの無罪を示す証拠が発見された。");
-            strcat(story,"The state still went through with the execution, with a ");
-            strcat(story,"spokesperson for the governor saying, ");
-            strcat(story,"\"");
+            strcat(story,"それにも関わらず刑は執行された。");
+            strcat(story,"関係者は次のように話していたという。");
+            strcat(story,"「");
             switch(LCSrandom(3))
             {
-            case 0: strcat(story,"Let's not forget the convict is colored.  You know how their kind are"); break;
+            case 0: strcat(story,"死刑囚が有色人種であることを忘れてはならない。彼らの性質は皆知っているはずだ。"); break;
             case 1:
-               strcat(story,"The convict is always referred to by three names.  ");
-               strcat(story,"Assassin, serial killer, either way ﾄﾄ guilty.  ");
-               strcat(story,"End of story");
+               strcat(story,"死刑囚には常に3つの呼び名がある。");
+               strcat(story,"暗殺者、連続殺人犯、いずれにせよ──有罪。");
+               strcat(story,"もう終わったことだ。");
                break;
-            case 2: strcat(story,"The family wants closure.  We don't have time for another trial"); break;
+            case 2: strcat(story,"家族が終結を望んでいた。私たちには再審を待つ時間がない。"); break;
             }
-            strcat(story,".\"");
+            strcat(story,"」");
             strcat(story,"&r");
-            strcat(story,"  Candlelight vigils were held throughout the country last night during the execution, ");
-            strcat(story,"and more events are expected this evening.  If there is a bright side to be found from this ");
-            strcat(story,"tragedy, it will be that our nation is now evaluating the ease with which people ");
-            strcat(story,"can be put to death in this country.");
+            strcat(story,"  死刑執行の日の夜、全米でろうそくを持った集会が行われ、本日の昼にも集会が予定されている。");
+            strcat(story,"この悲劇に救いを見つけるとすれば、それは我々の国ではこのような人々は簡単に死刑になるということを知らしめたことだろう。");
             strcat(story,"&r");
             break;
          }
          case VIEW_INTELLIGENCE:
          {
-            strcat(story,"Washington, DC - The FBI might be keeping tabs on you.  ");
-            strcat(story,"This newspaper yesterday received a collection of files from a source in the Federal Bureau of Investigations.  ");
-            strcat(story,"The files contain information on which people have been attending demonstrations, organizing ");
-            strcat(story,"unions, working for liberal organizations ﾄﾄ even ");
+            strcat(story,"ワシントン DC - FBIファイル  FBIはあなたを監視し続けている。");
+            strcat(story,"我々の新聞社はFBI、連邦捜査局の情報源からいくつものファイルを受け取った。");
+            strcat(story,"そのファイルには、デモ参加者、労働組合員、リベラル派団体のメンバー──");
             switch(LCSrandom(2))
             {
-            case 0:strcat(story,"buying music with 'Explicit Lyrics' labels."); break;
-            case 1:strcat(story,"helping homeless people"); break;
+            case 0:strcat(story,"「不適切な歌詞」の歌の購入者"); break;
+            case 1:strcat(story,"ホームレス支援者"); break;
             }
-            strcat(story,".");
+            strcat(story,"の情報さえ記載されていた。");
             strcat(story,"&r");
-            strcat(story,"  More disturbingly, the files make reference to a plan to ");
-            strcat(story,"\"deal with the undesirables\", although this phrase is not clarified.  ");
+            strcat(story,"  さらに、はっきりとは書かれていないものの、「望ましくない者への対応」の計画も含まれていた。");
             strcat(story,"&r");
-            strcat(story,"  The FBI refused to comment initially, but when confronted with the information, ");
-            strcat(story,"a spokesperson stated, \"");
-            strcat(story,"Well, you know, there's privacy, and there's privacy.  ");
-            strcat(story,"It might be a bit presumptive to assume that ");
-            strcat(story,"these files deal with the one and not the other.  ");
-            strcat(story,"You think about that before you continue slanging accusations");
-            strcat(story,".\"");
+            strcat(story,"  当初FBIはコメントを避けたが、この情報を見ると");
+            strcat(story,"「ええ。知っての通り、これは機密であり、そしてこれは機密だ。");
+            strcat(story,"このファイルがある者を扱い、ある者を扱わないというのは憶測に過ぎない。");
+            strcat(story,"告発者についてあれこれ言う前にこのことを考えた方がよい。」と述べた。");
             strcat(story,"&r");
             break;
          }
          case VIEW_FREESPEECH:
          {
             strcpy(story,cityname());
-            strcat(story," - A children's story has been removed from libraries here after ");
-            strcat(story,"the city bowed to pressure from religious groups.");
+            strcat(story," - 禁書指定  宗教団体の圧力を受け、市は図書館からある子供向けの本を撤去した。");
             strcat(story,"&r");
-            strcat(story,"   The book, ");
-            strcat(story,"_");
-            char dstr[200],nstr[200];
-            generate_name(nstr,dstr);
-            strcat(story,nstr);
-            strcat(story,"_");
-            strcat(story,dstr);
-            strcat(story,"_and_the_");
-            switch(LCSrandom(7))
-            {
-            case 0: strcat(story,"Mysterious"); break;
-            case 1: strcat(story,"Magical"); break;
-            case 2: strcat(story,"Golden"); break;
-            case 3: strcat(story,"Invisible"); break;
-            case 4: strcat(story,"Wondrous"); break;
-            case 5: strcat(story,"Amazing"); break;
-            case 6: strcat(story,"Secret"); break;
-            }
-            strcat(story,"_");
-            switch(LCSrandom(5))
-            {
-            case 0: strcat(story,"Thing"); break;
-            case 1: strcat(story,"Stuff"); break;
-            case 2: strcat(story,"Object"); break;
-            case 3: strcat(story,"Whatever"); break;
-            case 4: strcat(story,"Something"); break;
-            }
-            strcat(story,"_, is the third in an immensely popular series by ");
+            strcat(story,"  その本は、有名な");
             switch(LCSrandom(11))
             {
-            case 0: strcat(story,"British"); break;
-            case 1: strcat(story,"Indian"); break;
-            case 2: strcat(story,"Chinese"); break;
-            case 3: strcat(story,"Rwandan"); break;
-            case 4: strcat(story,"Palestinian"); break;
-            case 5: strcat(story,"Egyptian"); break;
-            case 6: strcat(story,"French"); break;
-            case 7: strcat(story,"German"); break;
-            case 8: strcat(story,"Iraqi"); break;
-            case 9: strcat(story,"Bolivian"); break;
-            case 10: strcat(story,"Columbian"); break;
-            default: strcat(story,"Elbonian"); break; // Dilbert
+            case 0: strcat(story,"イギリス"); break;
+            case 1: strcat(story,"インド"); break;
+            case 2: strcat(story,"中国"); break;
+            case 3: strcat(story,"ルワンダ"); break;
+            case 4: strcat(story,"パレスチナ"); break;
+            case 5: strcat(story,"エジプト"); break;
+            case 6: strcat(story,"フランス"); break;
+            case 7: strcat(story,"ドイツ"); break;
+            case 8: strcat(story,"イラク"); break;
+            case 9: strcat(story,"ボリビア"); break;
+            case 10: strcat(story,"コロンビア"); break;
+            default: strcat(story,"エルボニア"); break; // Dilbert
             }
-            strcat(story," author ");
+            strcat(story,"の作家、");
+            char dstr[200],nstr[200];
+            generate_name(nstr,dstr);
             char c[2]={0,0};
             c[0]='A'+LCSrandom(26);
             strcat(story,c);
             strcat(story,".");
             c[0]='A'+LCSrandom(26);
             strcat(story,c);
-            strcat(story,". ");
             lastname(dstr);
             strcat(story,dstr);
-            strcat(story,".  ");
-            strcat(story,"Although the series is adored by children worldwide, ");
-            strcat(story,"some conservatives feel that the books ");
+            strcat(story,"によるシリーズ3作目");
+            strcat(story,"『");
+            strcat(story,nstr);
+            strcat(story,"・");
+            strcat(story,dstr);
+            strcat(story,"と");
+            switch(LCSrandom(7))
+            {
+            case 0: strcat(story,"不思議な"); break;
+            case 1: strcat(story,"魔法の"); break;
+            case 2: strcat(story,"黄金の"); break;
+            case 3: strcat(story,"見えない"); break;
+            case 4: strcat(story,"すばらしい"); break;
+            case 5: strcat(story,"愉快な"); break;
+            case 6: strcat(story,"秘密の"); break;
+            }
             switch(LCSrandom(5))
             {
-            case 0: strcat(story,"glorify Satan worship and are spawned by demons from the pit.  "); break;
-            case 1: strcat(story,"teach children to kill their parents and hate life.  "); break;
-            case 2: strcat(story,"cause violence in schools and are a gateway to cocaine use.  "); break;
-            case 3: strcat(story,"breed demonic thoughts that manifest themselves as dreams of murder.  "); break;
-            case 4: strcat(story,"contain step-by-step instructions to summon the Prince of Darkness.  "); break;
+            case 0: strcat(story,"こと"); break;
+            case 1: strcat(story,"もの"); break;
+            case 2: strcat(story,"事"); break;
+            case 3: strcat(story,"物"); break;
+            case 4: strcat(story,"何か"); break;
             }
-            strcat(story,"In their complaint, the groups cited an incident involving ");
+            strcat(story,"』だ。");
+            strcat(story,"このシリーズは世界中の子供たちに愛読されているが、");
+            strcat(story,"一部の保守派は");
+            switch(LCSrandom(5))
+            {
+            case 0: strcat(story,"地獄の悪魔が書いた悪魔崇拝を称える"); break;
+            case 1: strcat(story,"子供が両親を殺し人生を憎む"); break;
+            case 2: strcat(story,"学校での暴力を助長し、コカイン使用への道を開く"); break;
+            case 3: strcat(story,"殺人妄想を呼び起こす悪魔思想を植えつける"); break;
+            case 4: strcat(story,"悪魔を呼び出す方法を教える"); break;
+            }
+            strcat(story,"本だと考えており、");
             switch(LCSrandom(3))
             {
-            case 0: strcat(story,"a child that swore in class"); break;
-            case 1: strcat(story,"a child that said a magic spell at her parents"); break;
-            case 2: strcat(story,"a child that ");
+            case 0: strcat(story,"クラスで罵った子供"); break;
+            case 1: strcat(story,"両親の前で呪文を唱えた子供"); break;
+            case 2:
+               switch(LCSrandom(2))
+               {
+               case 0: strcat(story,"双子の"); break;
+               }
+               switch(LCSrandom(4))
+               {
+               case 0: strcat(story,"兄"); break;
+               case 1: strcat(story,"姉"); break;
+               case 2: strcat(story,"弟"); break;
+               case 3: strcat(story,"妹"); break;
+               }
+               strcat(story,"を");
                switch(LCSrandom(5))
                {
-               case 0: strcat(story,"pushed "); break;
-               case 1: strcat(story,"hit "); break;
-               case 2: strcat(story,"slapped "); break;
-               case 3: strcat(story,"insulted "); break;
-               case 4: strcat(story,"tripped "); break;
+               case 0: strcat(story,"押した"); break;
+               case 1: strcat(story,"叩いた"); break;
+               case 2: strcat(story,"打った"); break;
+               case 3: strcat(story,"ばかにした"); break;
+               case 4: strcat(story,"転ばせた"); break;
                }
-               switch(LCSrandom(2))
-               {
-               case 0: strcat(story,"his "); break;
-               case 1: strcat(story,"her "); break;
-               }
-               switch(LCSrandom(3))
-               {
-               case 0: strcat(story,"older "); break;
-               case 1: strcat(story,"younger "); break;
-               case 2: strcat(story,"twin "); break;
-               }
-               switch(LCSrandom(2))
-               {
-               case 0: strcat(story,"brother"); break;
-               case 1: strcat(story,"sister"); break;
-               }
+               strcat(story,"子供");
                break;
             }
-            strcat(story," as key evidence of the dark nature of the book.");
+            strcat(story,"を含む事件がこの本の問題を示す証拠だと考えている。");
             strcat(story,"&r");
-            strcat(story,"   When the decision to ban the book was announced yesterday, ");
-            strcat(story,"many area children spontaneously broke into tears.  One child was ");
-            strcat(story,"heard saying, \"");
+            strcat(story,"  昨日この本の撤去が通知されたとき、多くの子供が涙した。");
+            strcat(story,"ある子供は「");
             switch(LCSrandom(2))
             {
             case 0:
-               strcat(story,"Mamma, is ");
+               strcat(story,"ママ、");
                strcat(story,nstr);
-               strcat(story," dead?");
+               strcat(story,"は死んじゃったの? ");
                break;
             case 1:
-               strcat(story,"Mamma, why did they kill ");
+               strcat(story,"ママ、どうして");
                strcat(story,nstr);
-               strcat(story,"?");
+               strcat(story,"は殺されたの? ");
                break;
             }
-            strcat(story,"\"");
+            strcat(story,"」と尋ねていた。");
             strcat(story,"&r");
             break;
          }
          case VIEW_JUSTICES:
          {
             strcpy(story,cityname());
-            strcat(story," - Conservative federal judge ");
+            strcat(story," - 保守派の連邦裁判所判事");
             char dstr[200],dstr2[200];
             generate_name(dstr,dstr2,GENDER_WHITEMALEPATRIARCH);
             strcat(story,dstr);
-            strcat(story," ");
+            strcat(story,"・");
+            strcat(story,"は");
             strcat(story,dstr2);
-            if(law[LAW_FREESPEECH]==-2) strcat(story," has resigned in disgrace after being caught with a [civil servant].");
-            else strcat(story," has resigned in disgrace after being caught with a prostitute.");
+            if(law[LAW_FREESPEECH]==-2) strcat(story,"[市民の奉仕者]を買った件の責任を取り辞任した。");
+            else strcat(story,"買春を行った件の責任を取り辞任した。");
             strcat(story,"&r");
-            strcat(story,"  ");
-            strcat(story,dstr2);
-            strcat(story,", who once ");
+
+            strcat(story,"  かつて");
             switch(LCSrandom(2))
             {
-            case 0: strcat(story,"defied the federal government by putting a Ten Commandments monument in the local federal building"); break;
-            case 1: strcat(story,"stated that, \"Segregation wasn't the bad idea everybody makes it out to be these days\""); break;
+            case 0: strcat(story,"地方の連邦ビルに十戒のモニュメントを置いて連邦政府に反抗した"); break;
+            case 1: strcat(story,"「人種的隔離は近年誰もが認めるように悪い考えではない」と述べた"); break;
             }
-            strcat(story,", was found with ");
+            strcat(story,dstr2);
             char pstr[200],pstr2[200];
             generate_name(pstr,pstr2);
             strcat(story,pstr);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,pstr2);
-            strcat(story," last week in a hotel during a police sting operation.  ");
-            strcat(story,"According to sources familiar with the particulars, ");
-            strcat(story,"when police broke into the hotel room they saw ");
+            strcat(story,"は、先週ホテルにいるところをおとり捜査の警察官に発見された。");
+            strcat(story,"関係者によると、ホテルの部屋に突入した警察官は");
             switch(LCSrandom(3))
             {
-            case 0:strcat(story,"\"the most perverse and spine-tingling debauchery imaginable, at least with only two people.\""); break;
+            case 0:strcat(story,"「2人でできることの中で、想像しうる限りで最も変質的な、背筋に悪寒が走るような放蕩」"); break;
             case 1:
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"the judge [going to the bathroom in the vicinity of] the [civil servant].");
-               else if(law[LAW_FREESPEECH]==2)strcat(story,"the judge pissing on the prostitute.");
-               else strcat(story,"the judge relieving himself on the prostitute."); break; // Himself? Maybe themselves would work better? -- LK
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"判事の[市民への奉仕者]への[トイレで行うような行為]");
+               else if(law[LAW_FREESPEECH]==2)strcat(story,"判事の売春婦への放尿");
+               else strcat(story,"判事の売春婦への排出"); break; // Himself? Maybe themselves would work better? -- LK
             case 2:                                                                        // No, the judge is a white male Arch-Conservative patriarch. -- yetisyny
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"the [civil servant] hollering like a cowboy [at a respectable distance from] the judge.");
-               else strcat(story,"the prostitute hollering like a cowboy astride the judge."); break;
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"[市民への奉仕者]が判事の[近く]でカウボーイのように叫んでいるところ");
+               else strcat(story,"売春婦が判事の上でカウボーイのように叫んでいるところ"); break;
             }
-            strcat(story,"  ");
+            strcat(story,"を目撃した。");
+            strcat(story,"  伝えるところによると、");
             strcat(story,pstr2);
-            strcat(story," reportedly offered ");
+            strcat(story,"は警察官に対して黙秘の代わりに");
             switch(LCSrandom(3))
             {
-            case 0: strcat(story,"the arresting officers money"); break;
-            case 1: strcat(story,"to let the officers join in"); break;
-            case 2: strcat(story,"the arresting officers \"favors\""); break;
+            case 0: strcat(story,"金銭を渡そうとしていた"); break;
+            case 1: strcat(story,"一緒に加わる提案をしていた"); break;
+            case 2: strcat(story,"「好意」を渡そうとしていた"); break;
             }
-            strcat(story," in exchange for their silence.");
+            strcat(story,"。");
             strcat(story,"&r");
             strcat(story,"  ");
             strcat(story,dstr2);
-            strcat(story," could not be reached for comment, although an aid stated that ");
-            strcat(story,"the judge would be going on a Bible retreat for a few weeks to ");
-            strcat(story,"\"Make things right with the Almighty Father.\"  ");
+            strcat(story,"からのコメントはまだないが、補佐官は数週間後のバイブル・リトリートには「全能の神が全てを解決して」参加できるだろうと述べた。");
             strcat(story,"&r");
             break;
          }
