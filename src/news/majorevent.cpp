@@ -302,7 +302,7 @@ void constructeventstory(char *story,short view,char positive)
             case 1: strcat(story,"魔法の"); break;
             case 2: strcat(story,"黄金の"); break;
             case 3: strcat(story,"見えない"); break;
-            case 4: strcat(story,"すばらしい"); break;
+            case 4: strcat(story,"素敵な"); break;
             case 5: strcat(story,"愉快な"); break;
             case 6: strcat(story,"秘密の"); break;
             }
@@ -393,7 +393,7 @@ void constructeventstory(char *story,short view,char positive)
             switch(LCSrandom(2))
             {
             case 0: strcat(story,"地方の連邦ビルに十戒のモニュメントを置いて連邦政府に反抗した"); break;
-            case 1: strcat(story,"「人種的隔離は近年誰もが認めるように悪い考えではない」と述べた"); break;
+            case 1: strcat(story,"「人種的分離は近年誰もが認めるように悪い方法ではない」と述べた"); break;
             }
             strcat(story,dstr2);
             char pstr[200],pstr2[200];
@@ -435,83 +435,81 @@ void constructeventstory(char *story,short view,char positive)
          case VIEW_AMRADIO:
          {
             strcpy(story,cityname());
-            strcat(story," - Well-known AM radio personality ");
+            strcat(story," - 2日前の夜、よく知られたラジオ・パーソナリティ");
             char dstr[200],dstr2[200];
             generate_name(dstr,dstr2,GENDER_WHITEMALEPATRIARCH);
             strcat(story,dstr);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,dstr2);
-            strcat(story," went off for fifteen minutes in an inexplicable rant ");
-            strcat(story,"two nights ago during the syndicated radio program \"");
+            strcat(story,"の意味不明な暴言により、全国放送のラジオ番組『");
             switch(LCSrandom(3))
             {
-            case 0: strcat(story,"Straight"); break;
-            case 1: strcat(story,"Real"); break;
-            case 2: strcat(story,"True"); break;
+            case 0: strcat(story,"ストレート"); break;
+            case 1: strcat(story,"リアル"); break;
+            case 2: strcat(story,"トゥルー"); break;
             }
-            strcat(story," ");
             switch(LCSrandom(3))
             {
-            case 0: strcat(story,"Talk"); break;
-            case 1: strcat(story,"Chat"); break;
-            case 2: strcat(story,"Discussion"); break;
+            case 0: strcat(story,"トーク"); break;
+            case 1: strcat(story,"チャット"); break;
+            case 2: strcat(story,"ディスカッション"); break;
             }
-            strcat(story,"\".");
+            strcat(story,"』が15分間中断した。");
             strcat(story,"&r");
             strcat(story,"  ");
             strcat(story,dstr2);
-            strcat(story,"'s monologue for the evening began the way that fans ");
-            strcat(story,"had come to expect, with attacks on the \"liberal media establishment\" and ");
-            strcat(story,"the \"elite liberal agenda\".  But when the radio icon said, \"");
+            strcat(story,"のトークは視聴者の期待通りに");
+            strcat(story,"「リベラルメディア」と「エリートリベラルアジェンダ」への攻撃から始まった。");
+            strcat(story,"だが、「");
             switch(LCSrandom(4))
             {
-            case 0: strcat(story,"and the Grays are going to take over the planet in the End Times"); break;
-            case 1: strcat(story,"a liberal chupacabra will suck the blood from us like a goat, a goat!, a goat!"); break;
-            case 2: strcat(story,"I feel translucent rods passing through my body...  it's like making love to the future"); break;
+            case 0: strcat(story,"そしてグレイがこの惑星を征服して全てが終わる。"); break;
+            case 1: strcat(story,"リベラル・チュパカブラが私たちの血を山羊のように吸うのだ! 山羊のように! 山羊のように! "); break;
+            case 2: strcat(story,"透明な棒が体を突き抜けるようだ…未来と愛し合うように。"); break;
             case 3:
-               strcat(story,"and the greatest living example of a reverse racist is the ");
-               if(presparty!=CONSERVATIVE_PARTY) strcat(story,"current president!"); // Limbaugh
-               else strcat(story,"liberal media establishment!");
+               strcat(story,"そして人種的逆差別の最もよい例が");
+               if(presparty!=CONSERVATIVE_PARTY) strcat(story,"今の大統領だ! "); // Limbaugh
+               else strcat(story,"リベラルメディアだ! ");
                break;
             }
-            strcat(story,"\", a former fan of the show, ");
+            strcat(story,"」と発言したとき、かつての番組のファン");
             char nstr[200],nstr2[200];
             generate_name(nstr,nstr2);
             strcat(story,nstr);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,nstr2);
-            strcat(story,", knew that \"");
+            strcat(story,"には「");
             switch(LCSrandom(3))
             {
-            case 0:strcat(story,"my old hero");break;
-            case 1:strcat(story,"my old idol");break;
-            case 2:strcat(story,"the legend");break;
+            case 0:strcat(story,"古きヒーロー");break;
+            case 1:strcat(story,"古きアイドル");break;
+            case 2:strcat(story,"レジェンド");break;
             }
-            strcat(story," had ");
+            strcat(story,"は");
             switch(LCSrandom(3))
             {
             case 0:
-               strcat(story,"lost ");
-               strcat(story,"his"); // the AM personality's a white male patriarch
+               strcat(story,"");
+               strcat(story,""); // the AM personality's a white male patriarch
 
-               if(law[LAW_FREESPEECH]==2)strcat(story," goddamn mind");
-               else if(law[LAW_FREESPEECH]==-2)strcat(story," [gosh darn] mind");
-               else strcat(story," g*dd*mn mind");
+               if(law[LAW_FREESPEECH]==2)strcat(story,"気が狂っていた");
+               else if(law[LAW_FREESPEECH]==-2)strcat(story,"気[に変調をきたしていた]");
+               else strcat(story,"おかしくなっていた");
                break;
-            case 1: strcat(story,"maybe gone a little off the deep end"); break;
-            case 2: strcat(story,"probably been listening to Art Bell in the next studio a little too long"); break;
+            case 1: strcat(story,"我を忘れていた"); break;
+            case 2: strcat(story,"隣のアート・ベルの番組に少し長く聞き入ってたのだろう"); break;
             }
-            strcat(story,".  After that, it just got worse and worse.\"");
+            strcat(story,"。そこからどんどん悪くなる。」ことがわかっていた。");
             strcat(story,"&r");
             strcat(story,"  ");
             strcat(story,dstr2);
-            strcat(story," issued an apology later in the program, but ");
-            strcat(story,"the damage might already be done.  ");
-            strcat(story,"According to a poll completed yesterday, ");
-            strcat(story,"fully half of the host's most loyal supporters ");                    // XXX How many of them switch should
-            strcat(story,"have decided to leave the program for saner ");                        //     depend on [LAW_FREESPEECH]
-            strcat(story,"pastures.  Of these, many said that they would be switching over ");
-            strcat(story,"to the FM band.");
+            strcat(story,"は番組の後で謝罪したが、");
+            strcat(story,"ダメージは避けられない。");
+            strcat(story,"昨日の調査結果によると、");
+            strcat(story,"熱心な視聴者の半数が");                    // XXX How many of them switch should
+            strcat(story,"よりまともな番組を求めて去っていった。");                        //     depend on [LAW_FREESPEECH]
+            strcat(story,"その内の大半は");
+            strcat(story,"FM放送に切り替えると述べていた。");
             strcat(story,"&r");
             break;
          }
