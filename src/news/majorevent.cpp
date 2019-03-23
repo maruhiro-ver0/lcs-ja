@@ -518,128 +518,157 @@ void constructeventstory(char *story,short view,char positive)
             int schtype = LCSrandom(4);
             strcpy(story,cityname());
             strcat(story," - ");
-            strcat(story,"A student has gone on a ");
-            if(law[LAW_FREESPEECH]==-2) strcat(story,"[hurting spree]");
-            else strcat(story,"shooting rampage");
-            strcat(story, " at a local ");
+            strcat(story, "地元の");
             switch(schtype)
             {
-            case 0: strcat(story,"elementary school"); break;
-            case 1: strcat(story,"middle school"); break;
-            case 2: strcat(story,"high school"); break;
-            case 3: strcat(story,"university"); break;
+            case 0: strcat(story,"小学校の児童"); break;
+            case 1: strcat(story,"中学校の生徒"); break;
+            case 2: strcat(story,"高校の生徒"); break;
+            case 3: strcat(story,"大学の学生"); break;
             }
-            strcat(story,".  ");
-            char dstr[200],dstr2[200],dg;
-            dg = (LCSrandom(2)==1?GENDER_MALE:GENDER_FEMALE);
-            generate_name(dstr,dstr2,dg);
-            strcat(story,dstr);
-            strcat(story," ");
-            strcat(story,dstr2);
-            strcat(story,", ");
-            //6->11,10->15,14->19,18->23
-            strcat(story,6+(schtype*4)+LCSrandom(6)); //generate an age that would roughly correspond to the schtype
-            strcat(story, ", used a variety of guns to ");
-            if(law[LAW_FREESPEECH]==-2)strcat(story,"[scare]");
-            else strcat(story,"mow down");
-            strcat(story," more than a dozen classmates and two teachers at ");
+            strcat(story,"が");
+            if(law[LAW_FREESPEECH]==-2) strcat(story,"[恐ろしい騒ぎ]の犠牲となった");
+            else strcat(story,"銃乱射事件の犠牲となった");
+            strcat(story,"。");
             char jstr[200];
             lastname(jstr,true);
             strcat(story,jstr);
             switch(schtype)
             {
-            case 0: strcat(story," Elementary School"); break;
-            case 1: strcat(story," Middle School"); break;
-            case 2: strcat(story," High School"); break;
-            case 3: strcat(story," University"); break;
+            case 0: strcat(story,"小学校の"); break;
+            case 1: strcat(story,"中学校の"); break;
+            case 2: strcat(story,"高校の"); break;
+            case 3: strcat(story,"大学の"); break;
             }
-            strcat(story, ".  ");
+            char dstr[200],dstr2[200],dg;
+            dg = (LCSrandom(2)==1?GENDER_MALE:GENDER_FEMALE);
+            generate_name(dstr,dstr2,dg);
+            strcat(story,dstr);
+            strcat(story,"・");
             strcat(story,dstr2);
-            strcat(story, " entered the ");
-            if(schtype!=3) strcat(story,"school ");
-            else strcat(story,"university ");
-            strcat(story, " while classes were in session, then systematically started breaking into ");
-            strcat(story, "classrooms, ");
-            if(law[LAW_FREESPEECH]==-2) strcat(story,"[scaring]");
-            else strcat(story,"spraying bullets at");
-            strcat(story," students and teachers inside.  ");
-            strcat(story,"When other students tried to wrestle the weapons away from ");
-            strcat(story,(dg==GENDER_FEMALE?"her":"him"));
-            strcat(story,", they were ");
-            if(law[LAW_FREESPEECH]==-2) strcat(story,"[unfortunately harmed]");
-            else strcat(story,"shot");
-            strcat(story," as well.&r");
-            strcat(story, "  When the police arrived, the student had already ");
-            if(law[LAW_FREESPEECH]==-2) strcat(story, "[hurt some people].  ");
+            strcat(story,"(");
+            //6->11,10->15,14->19,18->23
+            strcat(story,6+(schtype*4)+LCSrandom(6)); //generate an age that would roughly correspond to the schtype
+            strcat(story, "歳)は、何丁もの銃を使い同じ");
+            switch(schtype)
+            {
+            case 0: strcat(story,"クラスの児童"); break;
+            case 1:
+            case 2: strcat(story,"クラスの生徒"); break;
+            case 3: strcat(story,"学部の学生"); break;
+            }
+            strcat(story,"10人以上と");
+            switch(schtype)
+            {
+            case 0:
+            case 1:
+            case 2: strcat(story,"教師"); break;
+            case 3: strcat(story,"講師"); break;
+            }
+            strcat(story,"2人を");
+            if(law[LAW_FREESPEECH]==-2)strcat(story,"[脅かした]");
+            else strcat(story,"射殺した");
+            strcat(story, "。");
+            strcat(story,dstr2);
+            strcat(story, "が");
+            if(schtype!=3) strcat(story,"学校");
+            else strcat(story,"大学");
+            strcat(story, "に到着したのは授業の最中だった。その後、平然と教室に向かい、そこにいた");
+            switch(schtype)
+            {
+            case 0: strcat(story,"児童と教師"); break;
+            case 1:
+            case 2: strcat(story,"生徒と教師"); break;
+            case 3: strcat(story,"学生と講師"); break;
+            }
+            if(law[LAW_FREESPEECH]==-2) strcat(story,"を[脅かした]");
+            else strcat(story,"に銃を乱射した");
+            strcat(story,"。");
+            strcat(story,"銃を取り上げようとした");
+            switch(schtype)
+            {
+            case 0: strcat(story,"児童"); break;
+            case 1:
+            case 2: strcat(story,"生徒"); break;
+            case 3: strcat(story,"学生"); break;
+            }
+            strcat(story,"もいたが、同じように");
+            if(law[LAW_FREESPEECH]==-2) strcat(story,"[傷つけられた]");
+            else strcat(story,"撃たれた。");
+            strcat(story,"。&r");
+            strcat(story, "  警察官が駆けつけたとき、既に");
+            if(law[LAW_FREESPEECH]==-2) strcat(story, "[多数が傷つけられていた]。");
             else
             {
-               strcat(story, "killed ");
                strcat(story, 2+LCSrandom(30));
-               strcat(story, " and wounded dozens more.  ");
+               strcat(story, "人が死亡し、");
+               strcat(story, "10以上が負傷していた。");
             }
             strcat(story,dstr);
-            if(law[LAW_FREESPEECH]==-2)strcat(story, " [feel deeply asleep]");
-            else strcat(story, " committed suicide");
-            strcat(story," shortly afterwards.&r");
-            strcat(story,"  Investigators are currently searching the student's belongings, and initial ");
-            strcat(story,"reports indicate that the student kept a journal that showed ");
-            strcat(story,(dg==GENDER_FEMALE?"she":"he"));
-            strcat(story," was disturbingly obsessed with guns and death.&r");
+            strcat(story, "はその後まもなく");
+            if(law[LAW_FREESPEECH]==-2)strcat(story, "[深い眠りについた]");
+            else strcat(story, "自殺した");
+            strcat(story,"。&r");
+            strcat(story,"  捜査当局は現在");
+            switch(schtype)
+            {
+            case 0: strcat(story,"児童"); break;
+            case 1:
+            case 2: strcat(story,"生徒"); break;
+            case 3: strcat(story,"学生"); break;
+            }
+            strcat(story,"の遺留品を調査中だが、日記に銃と死への強い関心をうかがわせる記述があるとの発表があった。&r");
             break;
          }
          case VIEW_PRISONS:
          {
             strcpy(story,cityname());
-            strcat(story," - A former prisoner has written a book describing in horrifying ");
-            strcat(story,"detail what goes on behind bars.  ");
-            strcat(story,"Although popular culture has used, or perhaps overused, the ");
-            strcat(story,"prison theme lately in its offerings for mass consumption, rarely ");
-            strcat(story,"have these works been as poignant as ");
+            strcat(story," - 元受刑者が鉄格子の向こう側の恐るべき実態を詳細に描いた本を書いた。");
+            strcat(story,"刑務所の話は大量に提供され大量に消費されてきたが、");
             char dstr[200],dstr2[200];
             generate_name(dstr,dstr2); // allow either gender (look up "Orange is the New Black" online to see why)
             strcat(story,dstr);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,dstr2);
-            strcat(story,"'s new tour-de-force, _");
+            strcat(story,"の力作『");
             switch(LCSrandom(6))
             {
-            case 0: strcat(story,"Nightmare"); break;
-            case 1: strcat(story,"Primal"); break;
-            case 2: strcat(story,"Animal"); break;
-            case 3: strcat(story,"American"); break;
-            case 4: strcat(story,"Solitary"); break;
-            case 5: strcat(story,"Painful"); break;//Painful Soap, anyone?
+            case 0: strcat(story,"悪夢"); break;
+            case 1: strcat(story,"本能"); break;
+            case 2: strcat(story,"野獣"); break;
+            case 3: strcat(story,"アメリカ"); break;
+            case 4: strcat(story,"孤独"); break;
+            case 5: strcat(story,"苦痛"); break;//Painful Soap, anyone?
             }
-            strcat(story,"_");
+            strcat(story,"の");
             switch(LCSrandom(8))
             {
-            case 0: strcat(story,"Packer"); break;
-            case 1: strcat(story,"Soap"); break;//Nightmare Soap, anyone?
-            case 2: strcat(story,"Punk"); break;
-            case 3: strcat(story,"Kid"); break;
-            case 4: strcat(story,"Cell"); break;
-            case 5: strcat(story,"Shank"); break;
-            case 6: strcat(story,"Lockdown"); break;
+            case 0: strcat(story,"箱"); break;
+            case 1: strcat(story,"石鹸"); break;//Nightmare Soap, anyone?
+            case 2: strcat(story,"パンク"); break;
+            case 3: strcat(story,"子供"); break;
+            case 4: strcat(story,"牢"); break;
+            case 5: strcat(story,"シャンク"); break;
+            case 6: strcat(story,"封鎖"); break;
             case 7:
-               if(law[LAW_FREESPEECH]==-2) strcat(story,"[Bum]lord");
-               else strcat(story,"Buttlord"); break;
-            case 8:strcat(story,"Shower"); break;
+               if(law[LAW_FREESPEECH]==-2) strcat(story,"傲慢");
+               else strcat(story,"傲慢"); break;
+            case 8:strcat(story,"シャワー"); break;
             }
-            strcat(story,"_.&r");
-            strcat(story,"   Take this excerpt, \"");//TODO: Add more excerpts, more variety.
-            strcat(story,"The steel bars grated forward in their rails, ");
-            strcat(story,"coming to a halt with a deafening clang that said it all ﾄﾄ ");
-            strcat(story,"I was trapped with them now.  There were three, looking me over ");
-            strcat(story,"with dark glares of bare lust, as football players might stare at a stupefied, drunken, helpless teenager.  ");
-            strcat(story,"My shank's under the mattress.  Better to be brave and fight or chicken out and let them take it?  ");
-            strcat(story,"Maybe lose an eye the one way, maybe catch ");
-            if(law[LAW_GAY]==-2)strcat(story,"GRIDS");// Gay Related Immunodeficiency Syndrome, an obsoleted/politically incorrect name for "AIDS".
+            strcat(story,"』ほど強烈なものはない。&r");
+            strcat(story,"  一部を紹介する。「");//TODO: Add more excerpts, more variety.
+            strcat(story,"鉄格子が目の前にあり、ガチャンという大きな音がした");
+            strcat(story,"──私は今、そこに捕らわれたのだ。フットボール選手のような3人が");
+            strcat(story,"暗い欲望をむき出しにした眼差しで、呆然とした、酔っ払いの、なすすべのない10代を見つめていた。");
+            strcat(story,"私はマットレスに押さえつけられた。勇敢に戦うか、それとも怖気づいてなされるままにするか? ");
+            strcat(story,"一方は片目を失い、もう一方は");
+            if(law[LAW_GAY]==-2)strcat(story,"GRIDS(ゲイ関連免疫不全症候群)");// Gay Related Immunodeficiency Syndrome, an obsoleted/politically incorrect name for "AIDS".
             else strcat(story,"AIDS");
-            strcat(story," the other.  A ");
-            if(law[LAW_FREESPEECH]==-2)strcat(story,"[difficult]");
-            else strcat(story,"helluva");
-            strcat(story," choice, and I would only have a few seconds before they made it for me");
-            strcat(story,".\"");
+            strcat(story,"に感染するだろう。");
+            if(law[LAW_FREESPEECH]==-2)strcat(story,"[難しい]");
+            else strcat(story,"ろくでもない");
+            strcat(story,"選択肢だ。だがあと数秒で決断しなければならない。");
+            strcat(story,"」");
             strcat(story,"&r");
             break;
          }
