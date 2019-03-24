@@ -47,7 +47,7 @@ void constructeventstory(char *story,short view,char positive)
          {
             char str[200],str2[200],gen[50];
             strcpy(story,cityname());
-            strcat(story," - 病院で殺人  昨日、");
+            strcat(story," - 『病院で殺人』昨日、");
             if(law[LAW_ABORTION]==-2) strcat(story,"違法な中絶殺人を日常的に行っている医師が");
             else if(law[LAW_ABORTION]==-1) strcat(story,"違法な中絶を日常的に行っている医師が");
             else if(law[LAW_ABORTION]==0) strcat(story,"脱法的な中絶を日常的に行っている医師が");
@@ -113,7 +113,7 @@ void constructeventstory(char *story,short view,char positive)
          case VIEW_GAY:
          {
             strcpy(story,cityname());
-            strcat(story," - ヘイトクライム  昨日、");
+            strcat(story," - 『ヘイトクライム』昨日、");
             if(law[LAW_GAY]==-2) strcat(story,"性的逸脱者として知られる");
             else if(law[LAW_GAY]==-1) strcat(story,"同性愛者として知られる");
             else strcat(story,"同性愛者の");
@@ -177,7 +177,7 @@ void constructeventstory(char *story,short view,char positive)
          case VIEW_DEATHPENALTY:
          {
             strcat(story,statename());
-            strcat(story," - 司法の死  無実の市民が電気椅子で処刑された。");
+            strcat(story," - 『司法の死』無実の市民が電気椅子で処刑された。");
             strcat(story,"昨日の");
             switch(LCSrandom(2))
             {
@@ -239,7 +239,7 @@ void constructeventstory(char *story,short view,char positive)
          }
          case VIEW_INTELLIGENCE:
          {
-            strcat(story,"ワシントン DC - FBIファイル  FBIはあなたを監視し続けている。");
+            strcat(story,"ワシントン DC - 『FBIファイル』FBIはあなたを監視し続けている。");
             strcat(story,"我々の新聞社はFBI、連邦捜査局の情報源からいくつものファイルを受け取った。");
             strcat(story,"そのファイルには、デモ参加者、労働組合員、リベラル派団体のメンバー──");
             switch(LCSrandom(2))
@@ -261,7 +261,7 @@ void constructeventstory(char *story,short view,char positive)
          case VIEW_FREESPEECH:
          {
             strcpy(story,cityname());
-            strcat(story," - 禁書指定  宗教団体の圧力を受け、市は図書館からある子供向けの本を撤去した。");
+            strcat(story," - 『禁書指定』宗教団体の圧力を受け、市は図書館からある子供向けの本を撤去した。");
             strcat(story,"&r");
             strcat(story,"  その本は、有名な");
             switch(LCSrandom(11))
@@ -378,7 +378,7 @@ void constructeventstory(char *story,short view,char positive)
          case VIEW_JUSTICES:
          {
             strcpy(story,cityname());
-            strcat(story," - 保守派の連邦裁判所判事");
+            strcat(story," - 『法廷侮辱』保守派の連邦裁判所判事");
             char dstr[200],dstr2[200];
             generate_name(dstr,dstr2,GENDER_WHITEMALEPATRIARCH);
             strcat(story,dstr);
@@ -435,7 +435,7 @@ void constructeventstory(char *story,short view,char positive)
          case VIEW_AMRADIO:
          {
             strcpy(story,cityname());
-            strcat(story," - 2日前の夜、よく知られたラジオ・パーソナリティ");
+            strcat(story," - 『AMラジオの内部崩壊』2日前の夜、よく知られたラジオ・パーソナリティ");
             char dstr[200],dstr2[200];
             generate_name(dstr,dstr2,GENDER_WHITEMALEPATRIARCH);
             strcat(story,dstr);
@@ -517,8 +517,7 @@ void constructeventstory(char *story,short view,char positive)
          {
             int schtype = LCSrandom(4);
             strcpy(story,cityname());
-            strcat(story," - ");
-            strcat(story, "地元の");
+            strcat(story," - 『乱射事件』地元の");
             switch(schtype)
             {
             case 0: strcat(story,"小学校の児童"); break;
@@ -623,7 +622,7 @@ void constructeventstory(char *story,short view,char positive)
          case VIEW_PRISONS:
          {
             strcpy(story,cityname());
-            strcat(story," - 元受刑者が鉄格子の向こう側の恐るべき実態を詳細に描いた本を書いた。");
+            strcat(story," - 『内側の実情』元受刑者が鉄格子の向こう側の恐るべき実態を詳細に描いた本を書いた。");
             strcat(story,"刑務所の話は大量に提供され大量に消費されてきたが、");
             char dstr[200],dstr2[200];
             generate_name(dstr,dstr2); // allow either gender (look up "Orange is the New Black" online to see why)
@@ -681,278 +680,259 @@ void constructeventstory(char *story,short view,char positive)
          case VIEW_DEATHPENALTY:
          {
             strcpy(story,cityname());
-            strcat(story," - Perhaps parents can rest easier tonight.  ");
-            strcat(story,"The authorities have apprehended their primary suspect in the ");
-            strcat(story,"string of brutal child killings that has kept everyone in the area on edge, ");
-            strcat(story,"according to a spokesperson for the police department here.  ");
+            strcat(story," - 『奴らを吊るせ』昨夜は両親もよく眠れただろう。");
+            strcat(story,"発表によると、警察は地域を不安に陥れていた子供を狙った連続殺人の有力な容疑者を逮捕した。");
             char dstr[200],dstr2[200],dstr3[200];
             generate_long_name(dstr,dstr2,dstr3);
             strcat(story,dstr);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,dstr2);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,dstr3);
-            strcat(story," was detained yesterday afternoon, reportedly in possession of ");
+            strcat(story,"が昨日の午後に拘束されたとき、");
             switch(LCSrandom(5))
             {
-            case 0: strcat(story,"pieces of another victim"); break;
-            case 1: strcat(story,"bloody toys"); break;
-            case 2: strcat(story,"a child's clothing stained with DNA evidence"); break;
-            case 3: strcat(story,"seven junior high school yearbooks"); break;
-            case 4: strcat(story,"two small backpacks"); break;
+            case 0: strcat(story,"他の被害者の一部"); break;
+            case 1: strcat(story,"血まみれのオモチャ"); break;
+            case 2: strcat(story,"子供のDNAが付着した服"); break;
+            case 3: strcat(story,"中学校の卒業アルバム7冊"); break;
+            case 4: strcat(story,"小さな荷物2つ"); break;
             }
-            strcat(story,".  Over twenty children in the past two years have gone missing, ");
-            strcat(story,"only to turn up later");
+            strcat(story,"を持っていた。");
+            strcat(story,"この2年間で20人以上の子供が行方不明になり、その後");
             if(law[LAW_FREESPEECH]==-2)
-               strcat(story," [in a better place]");
+               strcat(story,"[よい状態で]発見されていた");
             else
             {
-               strcat(story," dead and ");
                switch(LCSrandom(5))
                {
-               case 0: strcat(story,"carved with satanic symbols"); break;
-               case 1: strcat(story,"sexually mutilated"); break;
-               case 2: strcat(story,"missing all of their teeth"); break;
-               case 3: strcat(story,"missing all of their fingers"); break;
-               case 4: strcat(story,"without eyes"); break;
+               case 0: strcat(story,"悪魔の印が彫られた"); break;
+               case 1: strcat(story,"性的暴行を受けた"); break;
+               case 2: strcat(story,"歯を抜き取られた"); break;
+               case 3: strcat(story,"指を全て切り落とされた"); break;
+               case 4: strcat(story,"目を失った"); break;
                }
+               strcat(story,"遺体となって発見されていた");
             }
-            strcat(story,".  Sources say that the police got a break in the case when ");
+            strcat(story,"。情報筋によると、");
             switch(LCSrandom(5))
             {
-            case 0: strcat(story,"a victim called 911 just prior to being slain while still on the phone"); break;
-            case 1: strcat(story,"the suspect allegedly carved an address into one of the bodies"); break;
-            case 2: strcat(story,"an eye witness allegedly spotted the suspect luring a victim into a car"); break;
-            case 3: strcat(story,"a blood trail was found on a road that led them to the suspect's car trunk"); break;
-            case 4: strcat(story,"they found a victim in a ditch, still clinging to life"); break;
+            case 0: strcat(story,"殺害される直前の被害者が警察に通報した"); break;
+            case 1: strcat(story,"容疑者が遺体に住所のようなものを刻んでいた"); break;
+            case 2: strcat(story,"容疑者が被害者を車に誘っているところを通行人が目撃した"); break;
+            case 3: strcat(story,"血の跡が容疑者の車のトランクに続いていた"); break;
+            case 4: strcat(story,"水路で発見された被害者が生存していた"); break;
             }
-            strcat(story,".");
+            strcat(story,"ことが逮捕のきっかけとなった。");
             strcat(story,"&r");
-            strcat(story,"   The district attorney's office has already repeatedly said it will be ");
-            strcat(story,"seeking ");
+            strcat(story,"  検察は既にこの事件について");
             if(law[LAW_DEATHPENALTY]==2)
-               strcat(story,"life imprisonment in this case.");
+               strcat(story,"終身刑");
             else
-               strcat(story,"the death penalty in this case.");
+               strcat(story,"死刑");
+            strcat(story,"を求めることを表明している。");
             strcat(story,"&r");
             break;
          }
          case VIEW_ANIMALRESEARCH:
          {
             strcpy(story,cityname());
-            strcat(story," - Researchers ");
+            strcat(story," - 『猿で動物実験』");
             if(law[LAW_ANIMALRESEARCH]==2)
             {
-               strcat(story,"from ");
                switch(LCSrandom(5))
                {
-               case 0:strcat(story,"Russia");break;
-               case 1:strcat(story,"North Korea");break;
-               case 2:strcat(story,"Cuba");break;
-               case 3:strcat(story,"Iran");break;
-               case 4:strcat(story,"China");break;
+               case 0:strcat(story,"ロシア");break;
+               case 1:strcat(story,"北朝鮮");break;
+               case 2:strcat(story,"キューバ");break;
+               case 3:strcat(story,"イラン");break;
+               case 4:strcat(story,"中国");break;
                }
-               strcat(story," report that they have discovered an amazing new wonder drug. ");
+               strcat(story,"の");
             }
-            else
-               strcat(story,"here report that they have discovered an amazing new wonder drug.  ");
-            strcat(story,"Called ");
+            strcat(story,"研究者たちが素晴らしい新薬を開発した。");
             switch(LCSrandom(5))
             {
             case 0:
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"Bum-Bum");
-               else strcat(story,"Anal");break;
-            case 1:strcat(story,"Colo");break;
-            case 2:strcat(story,"Lacta");break;
-            case 3:strcat(story,"Pur");break;
-            case 4:strcat(story,"Loba");break;
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"シリ");
+               else strcat(story,"アナル");break;
+            case 1:strcat(story,"コロ");break;
+            case 2:strcat(story,"ラクタ");break;
+            case 3:strcat(story,"パー");break;
+            case 4:strcat(story,"ローバ");break;
             }
             switch(LCSrandom(5))
             {
-            case 0:strcat(story,"nephrin");break;
-            case 1:strcat(story,"tax");break;
-            case 2:strcat(story,"zac");break;
-            case 3:strcat(story,"thium");break;
-            case 4:strcat(story,"drene");break;
+            case 0:strcat(story,"ネフリン");break;
+            case 1:strcat(story,"タックス");break;
+            case 2:strcat(story,"ザック");break;
+            case 3:strcat(story,"チウム");break;
+            case 4:strcat(story,"ドレネ");break;
             }
-            strcat(story,", the drug apparently ");
+            strcat(story,"と呼ばれるこの薬は、");
             switch(LCSrandom(5))
             {
-            case 0:strcat(story,"boosts intelligence in chimpanzees");break;
+            case 0:strcat(story,"チンパンジーの知能を増幅させた");break;
             case 1:
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"[helps chimpanzees reproduce]");
-               else strcat(story,"corrects erectile dysfunction in chimpanzees");break;
-            case 2:strcat(story,"allows chimpanzees to move blocks with their minds");break;
-            case 3:strcat(story,"allows chimpanzees to fly short distances");break;
-            case 4:strcat(story,"increases the attention span of young chimpanzees");break;
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"[チンパンジーの生殖を助けた]");
+               else strcat(story,"チンパンジーの勃起不全を治した");break;
+            case 2:strcat(story,"チンパンジーが念力でブロックを動かせるようにした");break;
+            case 3:strcat(story,"チンパンジーが短距離を飛べるようにした");break;
+            case 4:strcat(story,"若いチンパンジーの集中力を増幅させた");break;
             }
-            strcat(story,".  ");
+            strcat(story,"ということだ。");
             strcat(story,"&r");
-            strcat(story,"   Along with bonobos, chimpanzees are our closest cousins");
-            strcat(story,".  ");
-            strcat(story,"Fielding questions about the ethics of their experiments from reporters during a press conference yesterday, ");
-            strcat(story,"a spokesperson for the research team stated that, \"It really isn't so bad as all that.  Chimpanzees are very resilient creatures.  ");
+            strcat(story,"  ボノボと同様にチンパンジーは我々と最も近いいとこのような種だ。");
+            strcat(story,"昨日の会見では実験の倫理的問題を問う記者がいたが、");
+            strcat(story,"研究チームの広報官はこう答えた。「大きな問題はありません。チンパンジーは回復力の高い生き物です。");
             switch(LCSrandom(3))
             {
-            case 0:strcat(story,"The ones that survived are all doing very well");break;
-            case 1:strcat(story,"They hardly notice when you drill their brains out, if you're fast");break;
-            case 2:strcat(story,"When we started muffling the screams of our subjects, the other chimps all calmed down quite a bit");break;
+            case 0:strcat(story,"生き残ったものは皆元気です");break;
+            case 1:strcat(story,"素早く行えば、脳を取り出されたことにも気づきません");break;
+            case 2:strcat(story,"研究対象の悲鳴を消すと、他のチンパンジーはとても落ち着いていました");break;
             }
-            strcat(story,".  We have a very experienced research team.  ");
-            strcat(story,"While we understand your concerns, any worries are entirely unfounded.  ");
-            strcat(story,"I think the media should be focusing on the enormous benefits of this drug.");
-            strcat(story,"\"");
+            strcat(story,"。我々はとても経験のある研究チームです。");
+            strcat(story,"あなたの懸念は理解できますが、根拠のないものです。");
+            strcat(story,"メディアはこの新薬がもたらす莫大な恩恵に注目すべきと考えます。");
+            strcat(story,"」");
             strcat(story,"&r");
-            strcat(story,"   The first phase of human trials is slated to begin in a few months.");
+            strcat(story,"  人間を対象とした最初の段階の試験は数ヵ月後に始まる予定だ。");
             strcat(story,"&r");
             break;
          }
          case VIEW_INTELLIGENCE:
          {
-            strcat(story,"Washington, DC - The CIA announced yesterday that it has averted a terror attack that ");
-            strcat(story,"would have occurred on American soil.");
+            strcat(story,"ワシントン DC - 『惨事を回避』昨日、CIAはアメリカ本土で発生する可能性のあったテロを回避したと発表した。");
             strcat(story,"&r");
-            strcat(story,"   According to a spokesperson for the agency, ");
+            strcat(story,"  広報官によると、");
             switch(LCSrandom(3))
             {
-            case 0:strcat(story,"white supremacists");break;
-            case 1:strcat(story,"Islamic fundamentalists");break;
-            case 2:strcat(story,"outcast goths from a suburban high school");break;
+            case 0:strcat(story,"白人至上主義者が");break;
+            case 1:strcat(story,"イスラム教原理主義者が");break;
+            case 2:strcat(story,"地方の高校でのけ者にされたゴスが");break;
             }
-            strcat(story," planned to ");
             switch(LCSrandom(9))
             {
             case 0:
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"[land] planes [on apartment buildings]");
-               else strcat(story,"fly planes into skyscrapers");break;
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"[アパートに向かって]飛行機を[離陸させる]");
+               else strcat(story,"高層ビルに向かって飛行機を飛ばす");break;
             case 1:
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"[put] fertilizer [on plants] at a federal building");
-               else strcat(story,"detonate a fertilizer bomb at a federal building");break;
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"連邦政府ビルで肥料[を植物に][与える]");
+               else strcat(story,"連邦政府ビルで肥料爆弾を爆発させる");break;
             case 2:
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"[show up uninvited on] a warship");
-               else strcat(story,"ram a motorboat loaded with explosives into a warship");break;
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"[招かざる客]を軍艦に[見せつける]");
+               else strcat(story,"爆発物を積んだモーターボートを軍艦に突入させる");break;
             case 3:
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"[give children owies and boo-boos]");
-               else strcat(story,"detonate explosives on a school bus");break;
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"[子供にブーブーを与える]");
+               else strcat(story,"スクールバスに爆発物をしかける");break;
             case 4:
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"[cause a traffic jam on] a major bridge");
-               else strcat(story,"blow out a section of a major bridge");break;
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"主要な橋[で交通渋滞を引き起こす]");
+               else strcat(story,"主要な橋の一部を吹き飛ばす");break;
             case 5:
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"[take] the president [on vacation]");
-               else strcat(story,"kidnap the president");break;
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"大統領を[バケーションに連れ出す]");
+               else strcat(story,"大統領を誘拐する");break;
             case 6:
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"[hurt] the president");
-               else strcat(story,"assassinate the president");break;
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"大統領を[傷つける]");
+               else strcat(story,"大統領を暗殺する");break;
             case 7:
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"[vandalize] the Capitol Building");
-               else strcat(story,"destroy the Capitol Building");break;
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"議会議事堂を[荒らす]");
+               else strcat(story,"議会議事堂を爆破する");break;
             case 8:
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"detonate [fireworks] in New York");
-               else strcat(story,"detonate a nuclear bomb in New York");break;
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"ニューヨークに[花火]をしかける");
+               else strcat(story,"ニューヨークに核爆弾をしかける");break;
             }
-            strcat(story,".  However, intelligence garnered from deep within the mysterious ");
-            strcat(story,"terrorist organization allowed the plot to be foiled just days before it ");
-            strcat(story,"was to occur.");
+            strcat(story,"計画があったが、収集した膨大な情報を元に実行の数日前に阻止することができた。");
             strcat(story,"&r");
-            strcat(story,"   The spokesperson further stated, \"");
-            strcat(story,"I won't compromise our sources and methods, but let me just say ");
-            strcat(story,"that we are grateful to the Congress and this Administration for ");
-            strcat(story,"providing us with the tools we need to neutralize these enemies of ");
-            strcat(story,"civilization before they can destroy American families.  ");
-            strcat(story,"However, let me also say that there's more that needs to be done.  ");
-            strcat(story,"The Head of the Agency will be sending a request to Congress ");
-            strcat(story,"for what we feel are the essential tools for combating terrorism in ");
-            strcat(story,"this new age.");
-            strcat(story,"\"");
+            strcat(story,"  広報官はさらに述べた。「");
+            strcat(story,"情報源と方法は言えないが、市民の敵がアメリカの家族に危害を加えるまえに無力化する協力をしてくれた連邦議会とその議長に感謝したい。");
+            strcat(story,"しかし、まだやらなければならないことは他にもある。");
+            strcat(story,"CIAは新たな時代のテロリズムと戦うため、さらなる協力について議会に要求を送るつもりだ。");
+            strcat(story,"」");
             strcat(story,"&r");
             break;
          }
          case VIEW_GENETICS:
          {
             strcpy(story,cityname());
-            strcat(story," - The genetic foods industry staged a major event here yesterday ");
-            strcat(story,"to showcase its upcoming products.  Over thirty companies set up ");
-            strcat(story,"booths and gave talks to wide-eyed onlookers.");
+            strcat(story," - 『組み替え食品への不干渉』昨日、遺伝子組み換え食品産業界が近日発売される商品のための大きなイベントを開催した。");
+            strcat(story,"30以上の企業がブースを構え、興味を持つ参加者と対話した。");
             strcat(story,"&r");
-            strcat(story,"   One such corporation, ");
+            strcat(story,"  参加企業の1つ、");
             switch(LCSrandom(5))
             {
-            case 0:strcat(story,"Altered");break;
-            case 1:strcat(story,"Gene-tech");break;
-            case 2:strcat(story,"DNA");break;
-            case 3:strcat(story,"Proteomic");break;
-            case 4:strcat(story,"Genomic");break;
+            case 0:strcat(story,"アルタード・");break;
+            case 1:strcat(story,"ジェネテック・");break;
+            case 2:strcat(story,"DNA ");break;
+            case 3:strcat(story,"プロテオミック・");break;
+            case 4:strcat(story,"ゲノミック・");break;
             }
-            strcat(story," ");
             switch(LCSrandom(5))
             {
-            case 0:strcat(story,"Foods");break;
-            case 1:strcat(story,"Agriculture");break;
-            case 2:strcat(story,"Meals");break;
-            case 3:strcat(story,"Farming");break;
-            case 4:strcat(story,"Living");break;
+            case 0:strcat(story,"フーズ");break;
+            case 1:strcat(story,"アグリカルチャー");break;
+            case 2:strcat(story,"ミール");break;
+            case 3:strcat(story,"ファーム");break;
+            case 4:strcat(story,"リビング");break;
             }
-            strcat(story,", presented their product, \"");
+            strcat(story,"は、午後に自社の製品『");
             switch(LCSrandom(5))
             {
-            case 0:strcat(story,"Mega");break;
-            case 1:strcat(story,"Epic");break;
-            case 2:strcat(story,"Overlord");break;
-            case 3:strcat(story,"Franken");break;
-            case 4:strcat(story,"Transcendent");break;
+            case 0:strcat(story,"メガ");break;
+            case 1:strcat(story,"壮大");break;
+            case 2:strcat(story,"大王");break;
+            case 3:strcat(story,"フランケン");break;
+            case 4:strcat(story,"超");break;
             }
-            strcat(story," ");
             switch(LCSrandom(5))
             {
-            case 0:strcat(story,"Rice");break;
-            case 1:strcat(story,"Beans");break;
-            case 2:strcat(story,"Corn");break;
-            case 3:strcat(story,"Wheat");break;
-            case 4:strcat(story,"Potatoes");break;
+            case 0:strcat(story,"米");break;
+            case 1:strcat(story,"豆");break;
+            case 2:strcat(story,"トウモロコシ");break;
+            case 3:strcat(story,"小麦");break;
+            case 4:strcat(story,"ジャガイモ");break;
             }
-            strcat(story,"\", during an afternoon PowerPoint presentation.  ");
-            strcat(story,"According to the public relations representative speaking, ");
-            strcat(story,"this amazing new product actually ");
+            strcat(story,"』をPowerPointでプレゼンテーションした。");
+            strcat(story,"広報担当者によると、");
+            strcat(story,"この素晴らしい製品は");
             switch(LCSrandom(5))
             {
-            case 0:strcat(story,"extends human life by a few minutes every bite");break;
-            case 1:strcat(story,"mends split-ends upon digestion.  Hair is also made glossier and thicker");break;
-            case 2:strcat(story,"allows people to see in complete darkness");break;
-            case 3:strcat(story,"causes a person to slowly attain their optimum weight with repeated use");break;
-            case 4:strcat(story,"cures the common cold");break;
+            case 0:strcat(story,"一口ごとに寿命を数分延ばす");break;
+            case 1:strcat(story,"消化すると枝毛が直り、髪もつややかで量が増す");break;
+            case 2:strcat(story,"暗闇の中でも物が見えるようになる");break;
+            case 3:strcat(story,"常食すると緩やかに最適体重に近づく");break;
+            case 4:strcat(story,"カゼを治す");break;
             }
-            strcat(story,".");
+            strcat(story,"ということだ。");
             strcat(story,"&r");
-            strcat(story,"   Spokespeople for the GM corporations were universal ");
-            strcat(story,"in their dismissal of the criticism which often follows the industry.  ");
-            strcat(story,"One in particular said, \"");
-            strcat(story,"Look, these products are safe.  That thing about the ");
+            strcat(story,"  広報担当者たちは業界に寄せられる安全性への疑念をいつもどおり一蹴した。");
+            strcat(story,"ある人物はこう言った。「");
+            strcat(story,"見てください。これらの製品は安全です。これで");
             switch(LCSrandom(4))
             {
-            case 0:strcat(story,"guy going on a killing spree");break;
-            case 1:strcat(story,"gal turning blue and exploding");break;
-            case 2:strcat(story,"guy speaking in tongues and worshiping Satan");break;
-            case 3:strcat(story,"gal having a ruptured intestine");break;
+            case 0:strcat(story,"暴れて人を殺す");break;
+            case 1:strcat(story,"青くなって爆発する");break;
+            case 2:strcat(story,"謎の言葉で話し出しサタンを崇拝する");break;
+            case 3:strcat(story,"腸が爆発する");break;
             }
-            strcat(story," is just a load of ");
+            strcat(story,"というのは全く");
             if(law[LAW_FREESPEECH]==-2) switch(LCSrandom(5))
             {
-            case 0:strcat(story,"hooey");break;
-            case 1:strcat(story,"poppycock");break;
-            case 2:strcat(story,"horse radish");break;
-            case 3:strcat(story,"skunk weed");break;
-            case 4:strcat(story,"garbage");break;
+            case 0:strcat(story,"バカげた話");break;
+            case 1:strcat(story,"のたわ言");break;
+            case 2:strcat(story,"ホースラディッシュみたいな話");break;
+            case 3:strcat(story,"スカンクウィードみたいな話");break;
+            case 4:strcat(story,"ゴミみたいな話");break;
             }
             else switch(LCSrandom(3))
             {
-            case 0:strcat(story,"horseshit");break; // McCain
-            case 1:strcat(story,"bullshit");break;
-            case 2:strcat(story,"shit");break;
+            case 0:strcat(story,"馬のクソみたいな話");break; // McCain
+            case 1:strcat(story,"牛のクソみたいな話");break;
+            case 2:strcat(story,"クソみたいな話");break;
             }
-            strcat(story,".  Would we stake the reputation of our company on unsafe products?  ");
-            strcat(story,"No.  That's just ridiculous.  I mean, sure companies have put unsafe products out, ");
-            strcat(story,"but the GM industry operates at a higher ethical standard.  That goes without saying.");
-            strcat(story,"\"");
+            strcat(story,"です。私たちの企業は危険な製品を売っていると非難されなければならないのでしょうか? ");
+            strcat(story,"いいえ。それはバカげています。確かに危険性はありますが、");
+            strcat(story,"業界団体は高い倫理基準で活動しています。それは言うまでもありません。");
+            strcat(story,"」");
             strcat(story,"&r");
             break;
          }

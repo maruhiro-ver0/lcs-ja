@@ -809,7 +809,6 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
             y=21;
 
             displaystoryheader(ns,liberalguardian,y,header,story);
-            strcat(story,"  ");
          }
 
          switch(ns.type)
@@ -1428,19 +1427,19 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
             if(ns.crime[0]==SIEGE_CCS)
             {
                displaycenterednewsfont("CCS MASSACRE",5);
-               strcat(story,"CCSの虐殺  ");
+               strcat(story,"『CCSの虐殺』");
             }
             else if(!liberalguardian)
             {
                displaycenterednewsfont("MYSTERIOUS",5);
                displaycenterednewsfont("MASSACRE",13);
-               strcat(story,"謎の大量殺人  ");
+               strcat(story,"『謎の大量殺人』");
             }
             else
             {
                displaycenterednewsfont("CONSERVATIVE",5);
                displaycenterednewsfont("MASSACRE",13);
-               strcat(story,"保守の大虐殺  ");
+               strcat(story,"『保守の大虐殺』");
             }
          }
 
@@ -1563,7 +1562,7 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
             {
                displaycenterednewsfont("LCS DENIES",5);
                displaycenterednewsfont("KIDNAPPING",13);break;
-               strcat(story,"LCS 誘拐を否認  ");
+               strcat(story,"『LCS 誘拐を否認』");
             }
             else
             {
@@ -1572,33 +1571,33 @@ void displaystory(newsstoryst &ns,bool liberalguardian,int header)
                   case CREATURE_CORPORATE_CEO:
                      displaycenterednewsfont("CEO",5);
                      displaycenterednewsfont("KIDNAPPED",13);break;
-                     strcat(story,"CEO 誘拐される  ");
+                     strcat(story,"『CEO 誘拐される』");
                   case CREATURE_RADIOPERSONALITY:
                      displaycenterednewsfont("RADIO HOST",5);
                      displaycenterednewsfont("KIDNAPPED",13);break;
-                     strcat(story,"ラジオ司会者 誘拐される  ");
+                     strcat(story,"『ラジオ司会者 誘拐される』");
                   case CREATURE_NEWSANCHOR:
                      displaycenterednewsfont("NEWS ANCHOR",5);
                      displaycenterednewsfont("KIDNAPPED",13);break;
-                     strcat(story,"ニュースキャスター 誘拐される  ");
+                     strcat(story,"『ニュースキャスター 誘拐される』");
                   case CREATURE_SCIENTIST_EMINENT:
                      displaycenterednewsfont("SCIENTIST",5);
                      displaycenterednewsfont("KIDNAPPED",13);break;
-                     strcat(story,"科学者 誘拐される  ");
+                     strcat(story,"『科学者 誘拐される』");
                   case CREATURE_JUDGE_CONSERVATIVE:
                      displaycenterednewsfont("JUDGE",5);
                      displaycenterednewsfont("KIDNAPPED",13);break;
-                     strcat(story,"判事 誘拐される  ");
+                     strcat(story,"『判事 誘拐される』");
                   case CREATURE_COP:
                   case CREATURE_GANGUNIT:
                   case CREATURE_DEATHSQUAD:
                      displaycenterednewsfont("COP",5);
                      displaycenterednewsfont("KIDNAPPED",13);break;
-                     strcat(story,"警察官 誘拐される  ");
+                     strcat(story,"『警察官 誘拐される』");
                   default:
                      displaycenterednewsfont("SOMEONE",5);
                      displaycenterednewsfont("KIDNAPPED",13);break;
-                     strcat(story,"誘拐事件  ");
+                     strcat(story,"『誘拐事件』");
                }
             }
          }
