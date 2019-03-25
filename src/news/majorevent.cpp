@@ -912,7 +912,7 @@ void constructeventstory(char *story,short view,char positive)
             case 0:strcat(story,"暴れて人を殺す");break;
             case 1:strcat(story,"青くなって爆発する");break;
             case 2:strcat(story,"謎の言葉で話し出しサタンを崇拝する");break;
-            case 3:strcat(story,"腸が爆発する");break;
+            case 3:strcat(story,"腸が破裂する");break;
             }
             strcat(story,"というのは全く");
             if(law[LAW_FREESPEECH]==-2) switch(LCSrandom(5))
@@ -939,73 +939,66 @@ void constructeventstory(char *story,short view,char positive)
          case VIEW_JUSTICES:
          {
             strcpy(story,cityname());
-            strcat(story," - The conviction of confessed serial killer ");
+            strcat(story," - 『司法の混乱』昨日、自白した連続殺人犯");
             char dstr[200],dstr2[200],dstr3[200];
             generate_long_name(dstr,dstr2,dstr3);
             strcat(story,dstr);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,dstr2);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,dstr3);
-            strcat(story," was overturned by a federal judge yesterday.  ");
-            strcat(story,"Justice ");
+            strcat(story,"の有罪判決が連邦裁判所で覆された。");
+            strcat(story,"悪名高い控訴裁判所のリベラル派");
             char jstr[200],jstr2[200];
             char gn=(LCSrandom(2)==1?GENDER_MALE:GENDER_FEMALE);
             generate_name(jstr,jstr2,gn);
             strcat(story,jstr);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,jstr2);
-            strcat(story," of the notoriously liberal circuit of appeals here ");
-            strcat(story,"made the decision based on ");
+            strcat(story,"判事は、");
+            strcat(story,dstr3);
+            strcat(story,"の自白が強要されたものでないと認められたにも関わらず、");
             char gen[20];
-            strcpy(gen,(gn==GENDER_FEMALE?"her":"his"));
+            strcpy(gen,(gn==GENDER_FEMALE?"彼女":"彼"));
             switch(LCSrandom(7))
             {
-            case 0:strcat(story,"ten-year-old eyewitness testimony");break;
-            case 1:strcat(story,gen);strcat(story," general feeling about police corruption");break;
-            case 2:strcat(story,gen);strcat(story," belief that the crimes were a vast right-wing conspiracy");break; // Clinton
+            case 0:strcat(story,"10歳の目撃証言");break;
+            case 1:strcat(story,gen);strcat(story,"の警察の腐敗に対する感情");break;
+            case 2:strcat(story,gen);strcat(story,"犯罪は巨大な右翼集団によるものだという信念");break; // Clinton
             case 3:
                strcat(story,gen);
-               strcat(story," belief that ");
+               strcat(story,"の");
                strcat(story,dstr3);
-               strcat(story," deserved another chance");
+               strcat(story,"に再起の機会を与えるべきという信念");
                break;
             case 4:
                strcat(story,gen);
-               strcat(story," personal philosophy of liberty");break;
+               strcat(story,"の個人的なリベラル的信念");break;
             case 5:
                strcat(story,gen);
-               strcat(story," close personal friendship with the ");
-               strcat(story,dstr3);      // I know Charles Manson.
-               strcat(story," family");  // Charles Manson was a friend of mine.
-               break;                    // And you, sir, are no Charles Manson!
-            case 6:strcat(story,gen);strcat(story," consultations with a Magic 8-Ball");break;
+               strcat(story,"が");
+               strcat(story,dstr3);                       // I know Charles Manson.
+               strcat(story,"の家族と親しいということ");  // Charles Manson was a friend of mine.
+               break;                                     // And you, sir, are no Charles Manson!
+            case 6:strcat(story,gen);strcat(story,"マジック・エイトの占いの結果");break;
             }
-            strcat(story,", despite the confession of ");
-            strcat(story,dstr3);
-            strcat(story,", which even Justice ");
-            strcat(story,jstr2);
-            strcat(story," grants was not coerced in any way.&r");
+            strcat(story,"を元に判決を下した。&r");
 
-            strcat(story,"   Ten years ago, ");
+            strcat(story,"  10年前、");
             strcat(story,dstr3);
-            strcat(story," was convicted of the now-infamous ");
+            strcat(story,"は");
             char sstr[200];
             lastname(sstr);
             strcat(story,sstr);
-            strcat(story," slayings.  ");
-            strcat(story,"After an intensive manhunt, ");
+            strcat(story,"殺害で有罪となった。");
+            strcat(story,"徹底した探索の結果、犠牲者の血の付いた凶器を持った");
             strcat(story,dstr3);
-            strcat(story," was found with the murder weapon, ");
-            strcat(story,"covered in the victims' blood.  ");
+            strcat(story,"が発見された。");
             strcat(story,dstr3);
-            strcat(story," confessed and was sentenced to life, saying \"");
-            strcat(story,"Thank you for saving me from myself.  ");
-            strcat(story,"If I were to be released, I would surely kill again.\"&r");
-            strcat(story,"   A spokesperson for the district attorney ");
-            strcat(story,"has stated that the case will not be retried, due ");
-            strcat(story,"to the current economic doldrums that have left the state ");
-            strcat(story,"completely strapped for cash.&r");
+            strcat(story,"は罪を認め終身刑となったが、こう述べた。");
+            strcat(story,"「これで助かった。");
+            strcat(story,"もし刑務所を出たら、また人を殺してしまうだろう。」&r");
+            strcat(story,"弁護側は、現在の経済不振による資金不足で、州は再審を要求しないだろうと述べた。&r");
             break;
          }
          case VIEW_POLLUTION:
