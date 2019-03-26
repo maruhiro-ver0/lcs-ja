@@ -1597,8 +1597,8 @@ void printhealthstat(Creature &g,int y,int x,char smll)
       g.special[SPECIALWOUND_LEFTEYE]==0)
    {
       if(!bleeding)set_color(COLOR_GREEN,COLOR_BLACK,0);
-      if(smll)addstr("片目");
-      else addstr("片目");
+      if(smll)addstr("隻眼");
+      else addstr("隻眼");
    }
    else if(g.special[SPECIALWOUND_TONGUE]==0)
    {

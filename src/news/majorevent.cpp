@@ -1003,129 +1003,117 @@ void constructeventstory(char *story,short view,char positive)
          }
          case VIEW_POLLUTION:
             strcpy(story,cityname());
-            strcat(story," - Pollution might not be so bad after all.  The ");
+            strcat(story," - 『研究結果』公害はそれほど悪いものではないかもしれない。最近、");
             switch(LCSrandom(6))
             {
-            case 0:strcat(story,"American");break;
-            case 1:strcat(story,"United");break;
-            case 2:strcat(story,"Patriot");break;
-            case 3:strcat(story,"Family");break;
-            case 4:strcat(story,"Children's");break;
-            case 5:strcat(story,"National");break;
+            case 0:strcat(story,"アメリカン");break;
+            case 1:strcat(story,"ユナイテッド");break;
+            case 2:strcat(story,"パトリオット");break;
+            case 3:strcat(story,"ファミリー");break;
+            case 4:strcat(story,"チルドレンズ");break;
+            case 5:strcat(story,"ナショナル");break;
             }
-            strcat(story," ");
+            strcat(story,"・");
             switch(LCSrandom(6))
             {
-            case 0:strcat(story,"Heritage");break;
-            case 1:strcat(story,"Enterprise");break;
-            case 2:strcat(story,"Freedom");break;
-            case 3:strcat(story,"Liberty");break;
-            case 4:strcat(story,"Charity");break;
-            case 5:strcat(story,"Equality");break;
+            case 0:strcat(story,"ヘリテージ");break;
+            case 1:strcat(story,"エンタープライズ");break;
+            case 2:strcat(story,"フリーダム");break;
+            case 3:strcat(story,"リバティ");break;
+            case 4:strcat(story,"チャリティ");break;
+            case 5:strcat(story,"イクォリティ");break;
             }
-            strcat(story," ");
+            strcat(story,"・");
             switch(LCSrandom(6))
             {
-            case 0:strcat(story,"Partnership");break;
-            case 1:strcat(story,"Institute");break;
-            case 2:strcat(story,"Consortium");break;
-            case 3:strcat(story,"Forum");break;
-            case 4:strcat(story,"Center");break;
-            case 5:strcat(story,"Association");break;
+            case 0:strcat(story,"パートナーシップ");break;
+            case 1:strcat(story,"インスティテュート");break;
+            case 2:strcat(story,"コンソーシアム");break;
+            case 3:strcat(story,"フォーラム");break;
+            case 4:strcat(story,"センター");break;
+            case 5:strcat(story,"アソシエーション");break;
             }
-            strcat(story," recently released a wide-ranging report detailing recent trends ");
-            strcat(story,"and the latest science on the issue.  ");
-            strcat(story,"Among the most startling of the think tank's findings is that ");
+            strcat(story,"はこの問題の詳細と最新の科学に関する幅広いレポートを発表した。");
+            strcat(story,"このシンクタンクの発見で最も驚いたのは、");
             switch(LCSrandom(6))
             {
-            case 0:strcat(story,"a modest intake of radioactive waste");break;
-            case 1:strcat(story,"a healthy dose of radiation");break;
-            case 2:strcat(story,"a bath in raw sewage");break;
-            case 3:strcat(story,"watching animals die in oil slicks");break;
-            case 4:strcat(story,"inhaling carbon monoxide");break;
-            case 5:strcat(story,"drinking a cup of fracking fluid a day");break;
+            case 0:strcat(story,"放射性廃棄物の適度な摂取は");break;
+            case 1:strcat(story,"適量の放射線は");break;
+            case 2:strcat(story,"未処理の下水の風呂は");break;
+            case 3:strcat(story,"石油漏れで死んだ動物を見ると");break;
+            case 4:strcat(story,"一酸化炭素の吸引は");break;
+            case 5:strcat(story,"コップ一杯の水圧破砕水を毎日飲むと");break;
             }
-            strcat(story," might actually ");
             switch(LCSrandom(6))
             {
-            case 0:strcat(story,"purify the soul");break;
-            case 1:strcat(story,"increase test scores");break;
-            case 2:strcat(story,"increase a child's attention span");break;
-            case 3:strcat(story,"make children behave better");break;
-            case 4:strcat(story,"make shy children fit in");break;
-            case 5:strcat(story,"cure everything from abdominal ailments to zygomycosis");break;
+            case 0:strcat(story,"魂がきれいになる");break;
+            case 1:strcat(story,"テストの点が上がる");break;
+            case 2:strcat(story,"子供の集中力が向上する");break;
+            case 3:strcat(story,"子供の行いが良くなる");break;
+            case 4:strcat(story,"内気な子供が周囲に溶け込める");break;
+            case 5:strcat(story,"腹の不調から接合真菌症まであらゆる病気が治る");break;
             }
-            strcat(story,".");
+            strcat(story,"ということだ。");
             strcat(story,"&r");
-            strcat(story,"   When questioned about the science behind these results, ");
-            strcat(story,"a spokesperson stated that, \"");
+            strcat(story,"  この結果の科学的背景を尋ねると、");
+            strcat(story,"広報担当者はこう答えた。「");
             switch(LCSrandom(4))
             {
-            case 0:strcat(story,"Research is complicated, and there are always two ways to think about things");break;
-            case 1:strcat(story,"The jury is still out on pollution.  You really have to keep an open mind");break;
-            case 2:strcat(story,"They've got their scientists, and we have ours.  The issue of pollution is wide open as it stands today");break;
-            case 3:strcat(story,"I just tried it myself and I feel like a million bucks!  *Coughs up blood*  I'm OK, that's just ketchup");break;
+            case 0:strcat(story,"この研究は複雑です。そして物事には常に2つの側面があります");break;
+            case 1:strcat(story,"公害の是非はまだ結論がでていません。心を常にオープンにする必要があります");break;
+            case 2:strcat(story,"彼らには彼らの、そして我々には我々の科学があります。公害問題は今日では開かれた議論が行われています");break;
+            case 3:strcat(story,"今ちょうど自分で確かめているところです。まるで百万ドルの札束のような気分だ! *ゴホッ* 大丈夫、ただのケチャップです");break;
             }
-            strcat(story,".  You have to realize that ");
+            strcat(story,"。あなたは");
             switch(LCSrandom(4))
             {
-            case 0:strcat(story,"the elitist liberal media often distorts");break;
-            case 1:strcat(story,"the vast left-wing education machine often distorts");break;
-            case 2:strcat(story,"the fruits, nuts, and flakes of the environmentalist left often distort");break;
-            case 3:strcat(story,"leftists suffering from the mental disorder chemophobia often distort");break;
+            case 0:strcat(story,"エリートリベラル・メディアはしばしば事実を歪めること");break;
+            case 1:strcat(story,"左翼教育はしばしば事実を歪めることを");break;
+            case 2:strcat(story,"左翼環境活動家のフルーツ(同性愛者)、ナッツ(狂人)、そしてフレーク(変人)はしばしば事実を歪めることを");break;
+            case 3:strcat(story,"科学恐怖症の左翼はしばしば事実を歪めることを");break;
             }
-            strcat(story," these issues to their own advantage.  ");
-            strcat(story,"All we've done is introduced a little clarity into the ongoing debate.  ");
-            strcat(story,"Why is there contention on the pollution question?  It's because ");
-            strcat(story,"there's work left to be done.  We should study much more ");
-            strcat(story,"before we urge any action.  Society really just ");
-            strcat(story,"needs to take a breather on this one.  We don't see why there's such a rush to judgment here.  ");
-            strcat(story,"&r");
+            strcat(story,"を認識しなければなりません。");
+            strcat(story,"我々が行ったことは、長く続いた議論を少し整理したことです。");
+            strcat(story,"公害が常に問題になるのはなぜでしょうか? ");
+            strcat(story,"それはわからないことが残っているからです。");
+            strcat(story,"行動を起こす前にもっと知るべきなのです。");
+            strcat(story,"社会は一度深呼吸をして落ち着く必要があります。なぜ判断を急ぐのか我々は理解できません。");
+            strcat(story,"」&r");
             break;
          case VIEW_CORPORATECULTURE:
             strcpy(story,cityname());
-            strcat(story," - Several major companies have announced ");
-            strcat(story,"at a joint news conference here that they ");
-            strcat(story,"will be expanding their work forces considerably ");
-            strcat(story,"during the next quarter.  Over thirty thousand jobs ");
-            strcat(story,"are expected in the first month, with ");
-            strcat(story,"tech giant ");
+            strcat(story," - 『新たな雇用』主要企業は次の四半期で人員を大幅に増強すると共同記者会見で発表した。");
+            strcat(story,"最初の月には3万人の雇用が見込まれており、ハイテク企業の");
             switch(LCSrandom(10))
             {
-            case 0:strcat(story,"Ameri");break;
-            case 1:strcat(story,"Gen");break;
-            case 2:strcat(story,"Oro");break;
-            case 3:strcat(story,"Amelia");break;
-            case 4:strcat(story,"Vivo");break;
-            case 5:strcat(story,"Benji");break;
-            case 6:strcat(story,"Amal");break;
-            case 7:strcat(story,"Ply");break;
-            case 8:strcat(story,"Seli");break;
-            case 9:strcat(story,"Rio");break;
+            case 0:strcat(story,"アメリ");break;
+            case 1:strcat(story,"ジェン");break;
+            case 2:strcat(story,"オロ");break;
+            case 3:strcat(story,"アメリア");break;
+            case 4:strcat(story,"ヴィヴォ");break;
+            case 5:strcat(story,"ベンジ");break;
+            case 6:strcat(story,"アマル");break;
+            case 7:strcat(story,"プライ");break;
+            case 8:strcat(story,"セリ");break;
+            case 9:strcat(story,"リオ");break;
             }
             switch(LCSrandom(10))
             {
-            case 0:strcat(story,"tech");break;
-            case 1:strcat(story,"com");break;
-            case 2:strcat(story,"zap");break;
-            case 3:strcat(story,"cor");break;
-            case 4:strcat(story,"dyne");break;
-            case 5:strcat(story,"bless");break;
-            case 6:strcat(story,"chip");break;
-            case 7:strcat(story,"co");break;
-            case 8:strcat(story,"wire");break;
-            case 9:strcat(story,"rex");break;
+            case 0:strcat(story,"テック");break;
+            case 1:strcat(story,"コム");break;
+            case 2:strcat(story,"ザップ");break;
+            case 3:strcat(story,"コー");break;
+            case 4:strcat(story,"ダイン");break;
+            case 5:strcat(story,"ブレス");break;
+            case 6:strcat(story,"チップ");break;
+            case 7:strcat(story,"コ");break;
+            case 8:strcat(story,"ワイヤ");break;
+            case 9:strcat(story,"レック");break;
             }
-            strcat(story," increasing its payrolls by over ten thousand workers alone.  ");
-            strcat(story,"Given the state of the economy recently and in ");
-            strcat(story,"light of the tendency ");
-            strcat(story,"of large corporations to export jobs overseas these days, ");
-            strcat(story,"this welcome news is bound to be a pleasant surprise to those in the unemployment lines.  ");
-            strcat(story,"The markets reportedly responded to the announcement with mild interest, ");
-            strcat(story,"although the dampened movement might be expected due to the uncertain ");
-            strcat(story,"futures of some of the companies in the tech sector.  On the whole, however, ");
-            strcat(story,"analysts suggest that not only does the expansion speak to the health ");
-            strcat(story,"of the tech industry but is also indicative of a full economic recover.&r");
+            strcat(story,"では従業員だけでも1万人以上増加する。");
+            strcat(story,"近年の経済状況と生産拠点の海外移転の傾向からすると、これは失業者にとって喜ばしいニュースのはずだ。");
+            strcat(story,"この報告に対して、ハイテク分野での一部企業の将来予想の不確実さから鈍化が予想されるため、市場の反応は弱いものだった。");
+            strcat(story,"しかし、アナリストたちはこの拡大はハイテク企業だけでなく経済全体の回復を示していることを示唆した。&r");
             break;
          case VIEW_AMRADIO:
          {  //THIS ONE IS SHORTER BECAUSE OF DOUBLE HEADLINE
