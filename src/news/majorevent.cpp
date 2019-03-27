@@ -1118,77 +1118,77 @@ void constructeventstory(char *story,short view,char positive)
          case VIEW_AMRADIO:
          {  //THIS ONE IS SHORTER BECAUSE OF DOUBLE HEADLINE
             strcpy(story,cityname());
-            strcat(story," - Infamous FM radio shock jock ");
+            strcat(story," - 『文化の死』過激さで悪名高いFMラジオ・ジョッキー ");
             char dstr[200],dstr2[200];
             generate_name(dstr,dstr2,GENDER_WHITEMALEPATRIARCH);
             strcat(story,dstr);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,dstr2);
-            strcat(story," has brought radio entertainment to a new low.  During yesterday's ");
-            strcat(story,"broadcast of the program \"");
+            strcat(story,"の番組が安値で売りに出された。");
+            strcat(story,"ラジオ番組『");
             strcat(story,dstr);
-            strcat(story,"'s ");
+            strcat(story,"の");
             switch(LCSrandom(5))
             {
-            case 0:strcat(story,"Morning");break;
-            case 1:strcat(story,"Commuter");break;
-            case 2:strcat(story,"Jam");break;
-            case 3:strcat(story,"Talk");break;
-            case 4:strcat(story,"Radio");break;
+            case 0:strcat(story,"モーニング");break;
+            case 1:strcat(story,"コミューター");break;
+            case 2:strcat(story,"ジャム");break;
+            case 3:strcat(story,"トーク");break;
+            case 4:strcat(story,"ラジオ");break;
             }
-            strcat(story," ");
+            strcat(story,"・");
             switch(LCSrandom(5))
             {
-            case 0:strcat(story,"Swamp");break;
-            case 1:strcat(story,"Jolt");break;
-            case 2:strcat(story,"Club");break;
-            case 3:strcat(story,"Show");break;
-            case 4:strcat(story,"Fandango");break;
+            case 0:strcat(story,"スワンプ");break;
+            case 1:strcat(story,"ジョルト");break;
+            case 2:strcat(story,"クラブ");break;
+            case 3:strcat(story,"ショー");break;
+            case 4:strcat(story,"ファンダンゴ");break;
             }
-            strcat(story,"\", ");
+            strcat(story,"』で、昨日");
             strcat(story,dstr2);
-            strcat(story," reportedly ");
+            strcat(story,"は番組中に");
             switch(LCSrandom(5))
             {
             case 0:
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"[had consensual intercourse in the missionary position]");
-               else if(law[LAW_FREESPEECH]==2)strcat(story,"fucked");
-               else strcat(story,"had intercourse");break;
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"[正常位で性交渉]");
+               else if(law[LAW_FREESPEECH]==2)strcat(story,"ファック");
+               else strcat(story,"セックスした");break;
             case 1:
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"encouraged listeners to call in and [urinate]");
-               else if(law[LAW_FREESPEECH]==2)strcat(story,"encouraged listeners to call in and take a piss");
-               else strcat(story,"encouraged listeners to call in and relieve themselves");break;
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"視聴者に電話を掛けて[トイレに行く]するように勧めた");
+               else if(law[LAW_FREESPEECH]==2)strcat(story,"視聴者に電話を掛けてションベンするように勧めた");
+               else strcat(story,"視聴者に電話を掛けて放尿するように勧めた");break;
             case 2:
-               if(law[LAW_FREESPEECH]==2)strcat(story,"screamed \"fuck the police those goddamn motherfuckers.  I got a fucking ticket this morning and I'm fucking pissed as shit.\"");
-               else if(law[LAW_FREESPEECH]==-2)strcat(story,"screamed \"[darn] the police those [big dumb jerks]. I got a [stupid] ticket this morning and I'm [so angry].\"");
-               else strcat(story,"screamed \"f*ck the police those g*dd*mn m*th*f*ck*rs.  I got a f*cking ticket this morning and I'm f*cking p*ss*d as sh*t.\"");break;
+               if(law[LAW_FREESPEECH]==2)strcat(story,"「クソポリの野郎め。朝、アオフダ切りやがったからションベン掛けてやったぜ。」と叫んだ");
+               else if(law[LAW_FREESPEECH]==-2)strcat(story,"「[まったく][嫌な]警察官め。今朝、[馬鹿げた]切符を切ったので[怒っている]」。」と叫んだ");
+               else strcat(story,"「＊ソ＊リの野郎め。朝、アオフダ切りやがったからショ＊ベ＊掛けてやったぜ。」と叫んだ");break;
             case 3:
-               if(law[LAW_FREESPEECH]==-2 && law[LAW_WOMEN]==-2)strcat(story,"[fed] from [an indecent] woman");
-               else if(law[LAW_FREESPEECH]!=-2 && law[LAW_WOMEN]==-2)strcat(story,"breastfed from an exposed woman");
-               else if(law[LAW_FREESPEECH]==-2 && law[LAW_WOMEN]!=-2)strcat(story,"[fed] from a [woman]");
-               else strcat(story,"breastfed from a lactating woman");break;
+               if(law[LAW_FREESPEECH]==-2 && law[LAW_WOMEN]==-2)strcat(story,"[淫らな]女性[から飲んだ]");
+               else if(law[LAW_FREESPEECH]!=-2 && law[LAW_WOMEN]==-2)strcat(story,"露出した女性の母乳を飲んだ");
+               else if(law[LAW_FREESPEECH]==-2 && law[LAW_WOMEN]!=-2)strcat(story,"[女性]から[飲んだ]");
+               else strcat(story,"授乳中の女性の母乳を飲んだ");break;
             case 4:
-               if(law[LAW_FREESPEECH]==-2)strcat(story,"[had fun]");
-               else strcat(story,"masturbated");break;
+               if(law[LAW_FREESPEECH]==-2)strcat(story,"[楽しんだ]");
+               else strcat(story,"マスターベーションした");break;
             }
-            strcat(story," on the air.  Although ");
+            strcat(story,"らしい。後で");
             strcat(story,dstr2);
-            strcat(story," later apologized, ");
-            strcat(story,"the FCC received ");
-            if(law[LAW_FREESPEECH]==-2) strcat(story,"thousands of");
-            else if(law[LAW_FREESPEECH]==-1) strcat(story,"several hundred");
-            else if(law[LAW_FREESPEECH]==0) strcat(story,"hundreds of");
-            else if(law[LAW_FREESPEECH]==1) strcat(story,"dozens of");
-            else strcat(story,"some");
-            strcat(story," complaints ");
-            strcat(story,"from irate listeners ");
-            if(law[LAW_FREESPEECH]==-2) strcat(story,"across the nation. ");
-            else if(law[LAW_FREESPEECH]==-1) strcat(story,"from all over the state. ");
-            else if(law[LAW_FREESPEECH]==0) strcat(story,"within the county. ");
-            else if(law[LAW_FREESPEECH]==1) strcat(story,"in neighboring towns. ");
-            else strcat(story,"within the town. ");
-            strcat(story," A spokesperson for the FCC ");
-            strcat(story,"stated that the incident is under investigation.");
+            strcat(story,"は謝罪したが、");
+            strcat(story,"連邦通信委員会には");
+            if(law[LAW_FREESPEECH]==-2) strcat(story,"全米");
+            else if(law[LAW_FREESPEECH]==-1) strcat(story,"州全域");
+            else if(law[LAW_FREESPEECH]==0) strcat(story,"郡全域");
+            else if(law[LAW_FREESPEECH]==1) strcat(story,"周辺の町");
+            else strcat(story,"地元");
+            strcat(story,"の視聴者から");
+            if(law[LAW_FREESPEECH]==-2) strcat(story,"数千");
+            else if(law[LAW_FREESPEECH]==-1) strcat(story,"数百");
+            else if(law[LAW_FREESPEECH]==0) strcat(story,"百以上");
+            else if(law[LAW_FREESPEECH]==1) strcat(story,"数十");
+            else strcat(story,"数");
+            strcat(story,"件の怒りの声が寄せられた。");
+            strcat(story,"連邦通信委員会の報道官は、");
+            strcat(story,"この件については現在調査中であると述べた。");
             strcat(story,"&r");
             break;
          }
@@ -1200,57 +1200,54 @@ void constructeventstory(char *story,short view,char positive)
             jg2=(LCSrandom(2)?GENDER_MALE:GENDER_FEMALE);
             generate_long_name(jstr,jstr2,jstr3,jg1);
             generate_name(jstr4,jstr5,jg2);
-            strcat(story," - In a surprising turn, a ");
-            if (law[LAW_FREESPEECH]==-2) strcat(story, "[hurting spree]"); else strcat(story,"mass shooting");
-            strcat(story," was prevented by a bystander with a gun.");
-            strcat(story," After ");
+            strcat(story," - 『武装した市民が命を救った』驚くべき反撃だった。");
+            if (law[LAW_FREESPEECH]==-2) strcat(story, "[大騒ぎ]"); else strcat(story,"銃乱射事件");
+            strcat(story,"を通行人が銃で未然に防いだ。");
             strcat(story,jstr);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,jstr2);
-            strcat(story," opened fire at the ");
+            strcat(story,"・");
             strcat(story,jstr3);
+            strcat(story,"が");
             switch(LCSrandom(4))
             {
-            case 0:strcat(story," Mall");break;
-            case 1:strcat(story," Theater");break;
-            case 2:strcat(story," High School");break;
-            case 3:strcat(story," University");break;
+            case 0:strcat(story,"郵便局");break;
+            case 1:strcat(story,"映画館");break;
+            case 2:strcat(story,"高校");break;
+            case 3:strcat(story,"大学");break;
             }
-            strcat(story,", ");
+            strcat(story,"で発砲したとき、");
             strcat(story,jstr4);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,jstr5);
-            strcat(story," sprung into action. ");
-            strcat(story,"The citizen pulled a concealed handgun and fired once at the shooter, ");
-            strcat(story,"forcing ");
+            strcat(story,"が素早く対応した。");
+            strcat(story,"市民が隠していた拳銃を発砲者に向かって撃つと、");
             strcat(story,jstr2);
-            strcat(story," to take cover while others called the police.&r");
-            strcat(story,"  Initially, ");
+            strcat(story,"は警察が駆けつけるまで隠れるしかなかった。&r");
+            strcat(story,"  当初、");
             if(jg2==GENDER_FEMALE)
             {
                if(LCSrandom(4)<law[LAW_WOMEN]+2) // 0% chance at law[LAW_WOMEN]==-2, 100% chance at law[LAW_WOMEN]==2
-                  strcpy(tg2,"Ms. ");
+                  strcpy(tg2,"氏");
                else
-                  strcpy(tg2,(LCSrandom(2)?"Mrs. ":"Miss "));
+                  strcpy(tg2,(LCSrandom(2)?"":""));
             }
-            else strcpy(tg2,"Mr. ");
-            strcat(story,tg2);
+            else strcpy(tg2,"氏");
             strcat(story,jstr5);
-            strcat(story," attempted to talk down the shooter, but as ");
+            strcat(story,tg2);
+            strcat(story,"は発砲者を説得しようとしたが、");
             strcat(story,jstr2);
-            strcat(story," became more agitated, the heroic citizen was forced to engage the shooter in a ");
-            if(law[LAW_FREESPEECH]==-2) strcat(story, "firefight, [putting the attacker to sleep] ");
-            else strcat(story,"firefight, killing the attacker ");
-            strcat(story,"before ");
-            strcat(story,(jg1==GENDER_FEMALE?"she ":"he "));
-            strcat(story,"could hurt anyone else.&r");
-            strcat(story,"  The spokesperson for the police department said, \"We'd have a yet another ");
-            if(law[LAW_FREESPEECH]==-2) strcat(story,"[hurting spree]");
-            else strcat(story,"mass shooting");
-            strcat(story," if not for ");
+            strcat(story,"はより攻撃的になった。そして勇敢な市民と銃撃戦になったが、これ以上の犠牲者を出さないようにするため、発砲者は");
+            if(law[LAW_FREESPEECH]==-2) strcat(story, "[眠りに付いた]");
+            else strcat(story,"射殺された");
+            strcat(story,"。&r");
+            strcat(story,"  警察の広報官は「");
             strcat(story,tg2);
             strcat(story,jstr5);
-            strcat(story,"'s heroic actions.\"");
+            strcat(story,"の勇気ある行動がなければ、またも");
+            if(law[LAW_FREESPEECH]==-2) strcat(story,"[大騒ぎ]");
+            else strcat(story,"乱射事件");
+            strcat(story,"が発生するところだった。」と述べた。");
             break;
          }
          case VIEW_PRISONS:
@@ -1542,8 +1539,8 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
             constructeventstory(story,ns.view,ns.positive);
             displaynewsstory(story,storyx_s,storyx_e,13);
             break;
-                }
-        }
+      }
+   }
    else
    {
       switch(ns.view)
