@@ -1253,102 +1253,91 @@ void constructeventstory(char *story,short view,char positive)
          case VIEW_PRISONS:
          {
             strcpy(story,cityname());
-            strcat(story," - The hostage crisis at the ");
+            strcat(story," - 『人質 殺害される』昨日、");
             char jstr[200];
             lastname(jstr,true);
             strcat(story,jstr);
-            strcat(story," Correctional Facility ended tragically yesterday with the ");
-            strcat(story,"death of both the prison guard being held hostage and ");
+            strcat(story,"更正施設での人質事件が看守、人質、犯人の全員死亡という悲劇的結末を迎えた。");
             char ggn=(LCSrandom(2)==1?GENDER_MALE:GENDER_FEMALE);
-            strcat(story,(ggn==GENDER_FEMALE?"her":"his"));
-            strcat(story," captor.");
             strcat(story,"&r");
-            if(law[LAW_FREESPEECH]==-2)strcat(story,"   Two weeks ago, convicted [reproduction fiend] ");
-            else strcat(story,"   Two weeks ago, convicted rapist ");
+            strcat(story,"  2週間前、");
             char dstr[200],dstr2[200];
             char dgn=(LCSrandom(2)==1?GENDER_MALE:GENDER_FEMALE);
+            strcat(story,jstr);
+            strcat(story,"に収容された");
+            if(law[LAW_FREESPEECH]==-2)strcat(story,"[暴力的生殖行為]犯の");
+            else strcat(story,"レイプ犯の");
             generate_name(dstr,dstr2,dgn);
             strcat(story,dstr);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,dstr2);
-            strcat(story,", an inmate at ");
-            strcat(story,jstr);
-            strcat(story,", overpowered ");
+            strcat(story,"が");
             char gstr[200],gstr2[200];
             generate_name(gstr,gstr2,ggn);
             strcat(story,gstr);
-            strcat(story," ");
+            strcat(story,"・");
             strcat(story,gstr2);
-            strcat(story," and barricaded ");
-            strcat(story,(dgn==GENDER_FEMALE?"herself":"himself"));
-            strcat(story," with the guard in a prison tower.  ");
-            strcat(story,"Authorities locked down the prison and ");
-            strcat(story,"attempted to negotiate by phone for ");
+            strcat(story,"を人質に取り、看守と共に施設の建物に立てこもった。");
+            strcat(story,"当局は施設を封鎖し、電話で");
             strcat(story,LCSrandom(18)+5);
-            strcat(story," days, but talks were cut short when ");
+            strcat(story,"日間交渉を試みたが、");
             strcat(story,dstr2);
-            strcat(story," reportedly screamed into the receiver \"");
+            strcat(story,"が「");
             switch(LCSrandom(4))
             {
             case 0:
-               if(law[LAW_FREESPEECH]==2)strcat(story,"Ah, fuck this shit.  This punk bitch is fuckin' dead!");
-               else if(law[LAW_FREESPEECH]==-2)strcat(story,"Ah, [no way.]  This [police officer will be harmed!]");
-               else strcat(story,"Ah, f*ck this sh*t.  This punk b*tch is f*ckin' dead!");
+               if(law[LAW_FREESPEECH]==2)strcat(story,"クソッタレ! 話にならねえ。この豚からブッ殺してやる! ");
+               else if(law[LAW_FREESPEECH]==-2)strcat(story,"[ああ、無駄だ]。この[警官は怪我をするだろう]! ");
+               else strcat(story,"ク＊ッタレ! 話にならねえ。この＊からブッ＊してやる! ");
                break;
             case 1:
-               if(law[LAW_FREESPEECH]==2)strcat(story,"Fuck a muthafuckin' bull.  I'm killin' this pig shit.");
-               else if(law[LAW_FREESPEECH]==-2)strcat(story,"[Too late.]  [I am going to harm this police officer.]");
-               else strcat(story,"F*ck a m*th*f*ck*n' bull.  I'm killin' this pig sh*t.");
+               if(law[LAW_FREESPEECH]==2)strcat(story,"ダラダラ話しやがって。この豚をブッ殺してやる。");
+               else if(law[LAW_FREESPEECH]==-2)strcat(story,"[もう遅い]。[この警官を傷つけるつもりだ]。");
+               else strcat(story,"ダラダラ話しやがって。この＊をブッ＊してやる。");
                break;
             case 2:
-               if(law[LAW_FREESPEECH]==2)strcat(story,"Why the fuck am I talkin' to you?  I'd rather kill this pig.");
-               else if(law[LAW_FREESPEECH]==-2)strcat(story,"Why [am I] talkin' to you?  I'd rather [harm this police officer.]");
-               else strcat(story,"Why the f*ck am I talkin' to you?  I'd rather kill this pig.");
+               if(law[LAW_FREESPEECH]==2)strcat(story,"話すことはない。この豚を殺したいだけだ。");
+               else if(law[LAW_FREESPEECH]==-2)strcat(story,"[なぜ私はあなたと話をしているのか]? [私はこの警官を傷つけたい]。");
+               else strcat(story,"話すことはない。この＊を＊したいだけだ。");
                break;
              case 3:
-               if(law[LAW_FREESPEECH]==2)strcat(story,"Imma kill all you bitches, startin' with this mothafucker here.");
-               else if(law[LAW_FREESPEECH]==-2)strcat(story,"[I will harm all police officers], startin' with this [one] here.");
-               else strcat(story,"Imma kill all you b*tches, startin' with this m*th*f*ck*r here.");
+               if(law[LAW_FREESPEECH]==2)strcat(story,"全員ブッ殺してやる。まずはこの豚からだ。");
+               else if(law[LAW_FREESPEECH]==-2)strcat(story,"[全ての警官を傷つけるつもりだ]。まず[この人からだ]。");
+               else strcat(story,"全員ブッ＊してやる。まずはこの＊からだ。");
                break;
            }
-            strcat(story,"\"");
-            strcat(story,"  The tower was breached in an attempt to reach ");
-            strcat(story,"the hostage, but ");
+            strcat(story,"」と叫んだため交渉を打ち切った。");
+            strcat(story,"人質を救うため施設に突入したが、");
             strcat(story,dstr2);
-            strcat(story," had already ");
-            if(law[LAW_FREESPEECH]==-2)strcat(story,"[harmed] the guard");
-            else if(law[LAW_FREESPEECH]==-1)strcat(story,"killed the guard");
+            strcat(story,"は既に");
+            if(law[LAW_FREESPEECH]==-2)strcat(story,"看守を[傷つけていた]");
+            else if(law[LAW_FREESPEECH]==-1)strcat(story,"看守を殺害していた");
             else switch(LCSrandom(15))
             {
-            case 0:strcat(story,"slit the guard's throat with a shank");break;
-            case 1:strcat(story,"strangled the guard to death with a knotted bed sheet");break;
-            case 2:strcat(story,"chewed out the guard's throat");break;
-            case 3:strcat(story,"smashed the guard's skull with the toilet seat from ");
-                   strcat(story,(dgn==GENDER_FEMALE?"her":"his"));
-                   strcat(story," cell");break;
-            case 4:strcat(story,"shot the guard with ");
-                   strcat(story,(ggn==GENDER_FEMALE?"her":"his"));
-                   strcat(story," own gun");break;
-            case 5:strcat(story,"poisoned the guard with drugs smuggled into the prison by the ");
-                   strcat(story,(LCSrandom(2)?"Crips":"Bloods"));break;
-            case 6:strcat(story,"hit all 36 pressure points of death on the guard");break;
-            case 7:strcat(story,"electrocuted the guard with high-voltage wires");break;
-            case 8:strcat(story,"thrown the guard out the top-storey window");break;
-            case 9:strcat(story,"taken the guard to the execution chamber and finished ");
-                   strcat(story,(ggn==GENDER_FEMALE?"her":"him"));
-                   strcat(story," off");break;
-            case 10:strcat(story,"tricked another guard into shooting the guard dead");break;
-            case 11:strcat(story,"burnt the guard to a crisp using a lighter and some gasoline");break;
-            case 12:strcat(story,"eaten the guard's liver with some fava beans and a nice chianti");break;
-            case 13:strcat(story,"performed deadly experiments on the guard unheard of since Dr. Mengele");break;
-            case 14:strcat(story,"sacrificed the guard on a makeshift ");
-                    strcat(story,(LCSrandom(2)?"Satanic":"neo-pagan"));
-                    strcat(story," altar");break;
+            case 0:strcat(story,"看守の喉を手製のナイフで切り裂いていた");break;
+            case 1:strcat(story,"ベッドのシーツで看守の首を絞めて殺害していた");break;
+            case 2:strcat(story,"看守の喉に噛み付いて殺害していた");break;
+            case 3:strcat(story,"独房の便器に看守の頭を打ちつけて殺害していた");break;
+            case 4:strcat(story,"看守の銃を奪い射殺していた");break;
+            case 5:strcat(story,"ギャンググループ ");
+                   strcat(story,(LCSrandom(2)?"クリップス":"ブラッズ"));
+                   strcat(story,"が持ち込んだドラッグで中毒死させていた");break;
+            case 6:strcat(story,"看守の36の急所を殴打して殺害していた");break;
+            case 7:strcat(story,"高圧線で感電死させていた");break;
+            case 8:strcat(story,"最上階の窓から看守を突き落としていた");break;
+            case 9:strcat(story,"看守を処刑室に連れて行き殺害していた");break;
+            case 10:strcat(story,"他の看守を騙して看守を射殺させていた");break;
+            case 11:strcat(story,"看守をライターとガソリンで焼死させていた");break;
+            case 12:strcat(story,"看守の肝臓をソラ豆とキャンディーと一緒に食べていた");break;
+            case 13:strcat(story,"メンゲレ博士以来見たことのないような人体実験で殺害していた");break;
+            case 14:strcat(story,"手製の");
+                    strcat(story,(LCSrandom(2)?"サタン":"新宗教"));
+                    strcat(story,"の祭壇に看守を捧げていた");break;
             }
-            strcat(story,".  The prisoner was ");
-            if(law[LAW_FREESPEECH]==-2)strcat(story,"[also harmed]");
-            else strcat(story,"beaten to death");
-            strcat(story," while \"resisting capture\", according to a prison spokesperson.");
+            strcat(story,"。施設の広報官によると、犯人も「逮捕に抵抗」した際に");
+            if(law[LAW_FREESPEECH]==-2)strcat(story,"[傷つけられた]");
+            else strcat(story,"殴られて死亡した");
+            strcat(story,"。");
             strcat(story,"&r");
             break;
          }
@@ -1442,12 +1431,12 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
          }
          case VIEW_NUCLEARPOWER:
             displaycenterednewsfont("MELTDOWN",5);
-            displaycenteredsmallnews("原子力発電所が破滅的メルトダウンに見舞われた。",12);
+            displaycenteredsmallnews("『メルトダウン』原子力発電所が破滅的事故に見舞われた。",12);
             displaynewspicture(PICTURE_MELTDOWN,13);
             break;
          case VIEW_ANIMALRESEARCH:
             displaycenterednewsfont("HELL ON EARTH",5);
-            displaycenteredsmallnews("研究所から逃げ出したミュータント・アニマルが30人を殺傷した。",12);
+            displaycenteredsmallnews("『この世の地獄』研究所から逃げ出したミュータント・アニマルが30人を殺傷した",12);
             displaynewspicture(PICTURE_MUTANT_BEAST,13);
             break;
          case VIEW_PRISONS:
@@ -1467,7 +1456,7 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
             break;
          case VIEW_GENETICS:
             displaycenterednewsfont("KILLER FOOD",5);
-            displaycenteredsmallnews("遺伝子組み換え食品で百人を超える人々が健康被害を被った。",12);
+            displaycenteredsmallnews("『殺人食品』遺伝子組み換え食品で百人を超える人々が健康被害を被った。",12);
             displaynewspicture(PICTURE_GENETICS,13);
             break;
          case VIEW_JUSTICES:
@@ -1477,17 +1466,17 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
             break;
          case VIEW_SWEATSHOPS:
             displaycenterednewsfont("CHILD'S PLEA",5);
-            displaycenteredsmallnews("ある店のTシャツから搾取工場で働く子供のメモが見つかった。",12);
+            displaycenteredsmallnews("『子供の嘆願』ある店のTシャツから搾取工場で働く子供のメモが見つかった。",12);
             displaynewspicture(PICTURE_TSHIRT,13);
             break;
          case VIEW_POLLUTION:
             displaycenterednewsfont("RING OF FIRE",5);
-            displaycenteredsmallnews("オハイオ川が再び炎で包まれた。",12);
+            displaycenteredsmallnews("『炎の輪』オハイオ川が再び炎で包まれた。",12);
             displaynewspicture(PICTURE_RIVERFIRE,13);
             break;
          case VIEW_CORPORATECULTURE:
             displaycenterednewsfont("BELLY UP",5);
-            displaycenteredsmallnews("企業の倒産件数が記録を更新した。",12);// random company name
+            displaycenteredsmallnews("『倒産』企業の倒産件数が記録を更新した。",12);// random company name
             displaynewspicture(PICTURE_DOLLARS,13);
             break;
          case VIEW_CEOSALARY:
@@ -1547,7 +1536,7 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
       {
          case VIEW_GAY:
             displaycenterednewsfont("KINKY WINKY",5);
-            displaycenteredsmallnews("キンキー・ウィンキー  ジェリー・ファルエルが真実を明らかにした。まただ。",12);
+            displaycenteredsmallnews("『キンキー・ウィンキー』ジェリー・ファルエルが真実を明らかにした。まただ",12);
             displaynewspicture(PICTURE_TINKYWINKY,13);
             break;
          case VIEW_DEATHPENALTY:
@@ -1606,7 +1595,7 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
          }
          case VIEW_NUCLEARPOWER:
             displaycenterednewsfont("OIL CRUNCH",5);
-            displaycenteredsmallnews("米国の対外政策への対抗措置として、OPECは原油の大幅な減産を決定した。",12);
+            displaycenteredsmallnews("『石油減産』米国の対外政策への対抗としてOPECは原油の大幅な減産を決定した",12);
             displaynewspicture(PICTURE_OIL,13);
             break;
          case VIEW_ANIMALRESEARCH:
@@ -1631,7 +1620,7 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
             break;
          case VIEW_FREESPEECH:
             displaycenterednewsfont("HATE RALLY",5);
-            displaycenteredsmallnews("言論の自由の支持者は白人至上主義者の集会を開催するために戦っている。",12);
+            displaycenteredsmallnews("『ヘイト集会』言論の自由の支持者は白人至上主義者の集会のために戦っている。",12);
             displaynewspicture(PICTURE_KKK,13);
             break;
          case VIEW_GENETICS:
@@ -1646,8 +1635,8 @@ void displaymajoreventstory(newsstoryst& ns,char* story,short* storyx_s,short* s
             break;
          case VIEW_SWEATSHOPS:
             displaycenterednewsfont("THEY ARE HERE",5);
-            if(month>=8&&month<=11)displaycenteredsmallnews("秋ファッションが全国のストアで展開中。",12);
-            else displaycenteredsmallnews("秋を先取りしたファッションが全国のストアで展開中。",12);
+            if(month>=8&&month<=11)displaycenteredsmallnews("『やってきた』秋ファッションが全国のストアで展開中",12);
+            else displaycenteredsmallnews("『やってきた』秋を先取りしたファッションが全国のストアで展開中",12);
             displaynewspicture(PICTURE_TSHIRT,13);
             break;
          case VIEW_POLLUTION:
