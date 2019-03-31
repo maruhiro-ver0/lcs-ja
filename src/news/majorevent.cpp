@@ -647,7 +647,7 @@ void constructeventstory(char *story,short view,char positive)
             case 2: strcat(story,"パンク"); break;
             case 3: strcat(story,"子供"); break;
             case 4: strcat(story,"牢"); break;
-            case 5: strcat(story,"シャンク"); break;
+            case 5: strcat(story,"ナイフ"); break;
             case 6: strcat(story,"封鎖"); break;
             case 7:
                if(law[LAW_FREESPEECH]==-2) strcat(story,"傲慢");
@@ -1257,7 +1257,7 @@ void constructeventstory(char *story,short view,char positive)
             char jstr[200];
             lastname(jstr,true);
             strcat(story,jstr);
-            strcat(story,"更正施設での人質事件が看守、人質、犯人の全員死亡という悲劇的結末を迎えた。");
+            strcat(story,"更正施設での事件は、人質となった看守と犯人の双方が死亡という悲劇的結末を迎えた。");
             char ggn=(LCSrandom(2)==1?GENDER_MALE:GENDER_FEMALE);
             strcat(story,"&r");
             strcat(story,"  2週間前、");
@@ -1271,13 +1271,13 @@ void constructeventstory(char *story,short view,char positive)
             strcat(story,dstr);
             strcat(story,"・");
             strcat(story,dstr2);
-            strcat(story,"が");
+            strcat(story,"が看守の");
             char gstr[200],gstr2[200];
             generate_name(gstr,gstr2,ggn);
             strcat(story,gstr);
             strcat(story,"・");
             strcat(story,gstr2);
-            strcat(story,"を人質に取り、看守と共に施設の建物に立てこもった。");
+            strcat(story,"を人質に取り、施設の建物に立てこもった。");
             strcat(story,"当局は施設を封鎖し、電話で");
             strcat(story,LCSrandom(18)+5);
             strcat(story,"日間交渉を試みたが、");
@@ -1307,7 +1307,7 @@ void constructeventstory(char *story,short view,char positive)
                break;
            }
             strcat(story,"」と叫んだため交渉を打ち切った。");
-            strcat(story,"人質を救うため施設に突入したが、");
+            strcat(story,"看守を救うため施設に突入したが、");
             strcat(story,dstr2);
             strcat(story,"は既に");
             if(law[LAW_FREESPEECH]==-2)strcat(story,"看守を[傷つけていた]");
@@ -1331,7 +1331,7 @@ void constructeventstory(char *story,short view,char positive)
             case 12:strcat(story,"看守の肝臓をソラ豆とキャンディーと一緒に食べていた");break;
             case 13:strcat(story,"メンゲレ博士以来見たことのないような人体実験で殺害していた");break;
             case 14:strcat(story,"手製の");
-                    strcat(story,(LCSrandom(2)?"サタン":"新宗教"));
+                    strcat(story,(LCSrandom(2)?"サタン":"新興宗教"));
                     strcat(story,"の祭壇に看守を捧げていた");break;
             }
             strcat(story,"。施設の広報官によると、犯人も「逮捕に抵抗」した際に");
