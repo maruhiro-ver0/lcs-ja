@@ -180,39 +180,13 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===リベラルガーディアンの記事を書く===");
       move(4,0);
-      addstr(" Writing for the Liberal Guardian is a legal (or illegal depending on the ");
+      addstr("リベラルガーディアンの記事の執筆は合法的(言論の自由に関する法によって異なる)な");
       move(5,0);
-      addstr(" free speech laws) activity and a form of Liberal Activism that boosts the");
+      addstr("活動である。文筆のスキルをゆっくりと高め、そして文筆のスキルが高いほど世論への");
       move(6,0);
-      addstr(" Writing skill very slowly and is more effective at influencing Public ");
+      addstr("影響が大きくなる。リベラルガーディアンの記事の執筆は新聞への投書と比べて3倍の効");
       move(7,0);
-      addstr(" Opinion the higher the Writing skill is. Writing for the Liberal Guardian ");
-      move(8,0);
-      addstr(" has three times the impact on Public Opinion that Write to Newspapers has.");
-      move(10,0);
-      addstr("Items that prompt a special edition");
-      move(11,0);
-      addstr(">     Police Records - Found in the Police Station.");
-      move(12,0);
-      addstr(">     Secret Corporate Files - Found in the Corporate Headquarters, or");
-      move(13,0);
-      addstr("      obtained through Hacking.");
-      move(14,0);
-      addstr(">     CEO Photos - Found in the CEO Residence.");
-      move(15,0);
-      addstr(">     Intel. HQ Data Disk - Found in the Intelligence HQ.");
-      move(16,0);
-      addstr(">     Cable News Memos - obtained through Hacking.");
-      move(17,0);
-      addstr(">     Research Papers - obtained through Hacking.");
-      move(18,0);
-      addstr(">     Judge Corruption Evidence - obtained through Hacking.");
-      move(19,0);
-      addstr(">     AM Radio Memos - obtained through Hacking.");
-      move(20,0);
-      addstr(" All of the above items can be delivered to the LCS from sleepers in the ");
-      move(21,0);
-      addstr(" appropriate location or from hackers.");
+      addstr("果がある。");
       break;
 // }}}
 // }}}
@@ -221,14 +195,14 @@ void HelpActivities(int activityType)
    case ACTIVITY_DONATIONS:
       move(2,0);
       addstr("===寄付金集め===");
+      move(3,0);
+      addstr("収入は説得のスキルによる。");
       move(4,0);
-      addstr(" Income depends on persuasion. ");
+      addstr("この国が非常にリベラルならば、人々はLCSに頼る必要がないので収入はとても少なくな");
       move(5,0);
-      addstr(" This activity generates very little income when the country is very ");
-      move(6,0);
-      addstr(" Liberal, as people will have little reason to turn to the LCS. ");
-      move(8,0);
-      addstr(" This activity trains persuasion.");
+      addstr("る。");
+      move(7,0);
+      addstr("この活動は説得のスキルを高める。");
       break;
 // }}}
 // {{{ ACTIVITY_SELL_TSHIRTS
@@ -236,13 +210,13 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===Tシャツの販売===");
       move(4,0);
-      addstr(" Income depends on tailoring and business skills.");
+      addstr("収入は裁縫とビジネスのスキルによる。");
       move(5,0);
-      addstr("  The income is lower if the public mood is Liberal.");
+      addstr("世論がリベラル寄りならば収入は少なくなる。");
       move(7,0);
-      addstr(" This activity trains tailoring and business and may.");
+      addstr("この活動は裁縫とビジネスのスキルを高める。もし良いものを作れるならば世論に良い");
       move(8,0);
-      addstr(" have a positive political effect if done well enough.");
+      addstr("影響を与える。");
       break;
 // }}}
 // {{{ ACTIVITY_SELL_ART
@@ -250,13 +224,11 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===アートの販売===");
       move(4,0);
-      addstr(" Income depends on art skill and is lower if the country");
-      move(5,0);
-      addstr(" is very Liberal.");
+      addstr("収入は芸術のスキルによる。この国が非常にリベラルならば収入は少なくなる。");
+      move(6,0);
+      addstr("この活動は芸術のスキルを高める。もし良いものを作れるならば世論に良い影響を与え");
       move(7,0);
-      addstr(" This activity trains art, and may have a positive political");
-      move(8,0);
-      addstr(" effect if done well enough.");
+      addstr("る。");
       break;
 // }}}
 // {{{ ACTIVITY_SELL_MUSIC
@@ -264,15 +236,15 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===ストリートミュージックの演奏===");
       move(4,0);
-      addstr(" Income depends on music skill. ");
+      addstr("収入は音楽のスキルによる。");
       move(6,0);
-      addstr(" An equipped guitar will increase income substantially and speed skill gains.");
+      addstr("ギターを持っていれば収入とスキルの向上速度が大いに上がる。世論がリベラル寄りな");
       move(7,0);
-      addstr(" Income is lower if the public mood is Liberal.");
+      addstr("らば収入は少なくなる。");
       move(9,0);
-      addstr(" This activity trains music, and may have a positive political");
+      addstr("この活動が音楽のスキルを高める。もし良い演奏ができるならば世論に良い影響を与え");
       move(10,0);
-      addstr(" effect if done well enough.");
+      addstr("る。");
       break;
 // }}}
 // }}}

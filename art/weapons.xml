@@ -631,8 +631,8 @@
     </weapontype>
 
     <weapontype idname="WEAPON_MOLOTOV">
-        <name>モロトフカクテル</name>
-        <name_future>モロトフカクテル</name_future>
+        <name>火炎瓶</name>
+        <name_future>火炎瓶</name_future>
         <shortname>火炎瓶</shortname>
         <shortname_future>火炎瓶</shortname_future>
         <threatening>true</threatening>
