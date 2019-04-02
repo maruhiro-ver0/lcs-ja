@@ -254,19 +254,19 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===ケーキの販売===");
       move(4,0);
-      addstr(" Selling brownies on the street is an illegal way to make money. Money earned is ");
+      addstr("路上でのケーキの販売は違法な資金稼ぎの手段の1つである。金を稼ぐには説得、スト");
       move(5,0);
-      addstr(" based upon the activists persuasion, street sense and business skill.");
+      addstr("リートセンス、ビジネススキルが必要となる。");
       move(7,0);
-      addstr(" It raises persuasion, street sense, and business. Street sense is used ");
+      addstr("説得、ストリートセンス、ビジネスのスキルが向上する。ストリートセンスは逮捕を逃");
       move(8,0);
-      addstr(" to avoid being caught. If caught and tried, the severity of the crime can vary ");
+      addstr("れるために必要である。逮捕され裁判に掛けられた場合、罪の重さは状況に応じて大き");
       move(9,0);
-      addstr(" greatly based upon circumstances. ");
+      addstr("く変化する。");
       move(11,0);
-      addstr(" The more Conservative that the drug laws are, the more money you will make. However, ");
+      addstr("薬物に関する法が保守的になるほど稼ぎも大きくなる。しかし、有罪判決を受けた場合");
       move(12,0);
-      addstr(" the consequences of being convicted will increase as well. ");
+      addstr("の刑もより重くなる。");
       break;
 // }}}
 // {{{ ACTIVITY_PROSTITUTION
@@ -274,15 +274,15 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===売春===");
       move(4,0);
-      addstr(" Prostitution is an activity which raises money illegally. The amount of money");
+      addstr("売春は違法な資金稼ぎの手段の1つである。金を稼ぐには誘惑のスキルが必要となる。");
       move(5,0);
-      addstr(" made is based on seduction. The Seduction skill is trained and it also");
+      addstr("誘惑のスキルが向上するが、売春を行うたびにジュースが下がる。誘惑のスキルが10");
       move(6,0);
-      addstr(" decreases your Juice every time you do it. Prostitution is quite lucrative ");
-      move(7,0);
-      addstr(" with seduction that is over 10.");
+      addstr("以上あると大きな資金が得られる。");
+      move(8,0);
+      addstr("ストリートセンスのスキルがあると、犯罪者となり逮捕されるのを避けることができ");
       move(9,0);
-      addstr(" Street sense will help you evade being criminalized and caught.");
+      addstr("る。");
       break;
 // }}}
 // {{{ ACTIVITY_CCFRAUD
@@ -290,11 +290,11 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===カード番号の不正取得===");
       move(4,0);
-      addstr(" To steal credit card numbers you need to have someone who has a computer ");
+      addstr("カード番号を盗み取るにはコンピュータのスキルが最低でも2必要である。コンピュー");
       move(5,0);
-      addstr(" skill of at least 2. The more computer skill your hacker has the more money ");
+      addstr("タのスキルが高いほど得られる資金も多くなる。この活動はコンピュータのスキルを高");
       move(6,0);
-      addstr(" you will make. This activity trains computer skill.");
+      addstr("める。");
       break;
 // }}}
 // {{{ ACTIVITY_REPAIR_ARMOR
@@ -302,13 +302,9 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===服の修繕===");
       move(4,0);
-      addstr(" Repairing clothing will repair damaged armor and remove blood stains if there ");
-      move(5,0);
-      addstr(" are any. ");
-      move(7,0);
-      addstr(" The chance of repairing the clothing is dependant on the quality of ");
-      move(8,0);
-      addstr(" the clothing and the tailoring skill of the activist.");
+      addstr("服の修繕を行うと、鎧のダメージを修復し、血の汚れを取り除くことができる。");
+      move(6,0);
+      addstr("修繕できるかは、服の質と行う者の裁縫のスキルによる。");
       break;
 // }}}
 // }}}
@@ -317,19 +313,15 @@ void HelpActivities(int activityType)
       move(2,0);
       addstr("===自動車泥棒===");
       move(4,0);
-      addstr(" Stealing a car will have the Liberal attempt to steal a car from the street. ");
+      addstr("自動車泥棒はリベラルに路上の自動車を盗ませようとする。成功すると車はあなたのガ");
       move(5,0);
-      addstr(" if successful, the car will be added to your garage. ");
+      addstr("レージに加わる。");
       move(7,0);
-      addstr(" Street sense determines the chances of finding a specific type of car, ");
+      addstr("狙った車種が見つかるかはストリートセンスのスキルによる。車の中に入ってエンジン");
       move(8,0);
-      addstr(" security determines the successfulness of any attempt to break into or hotwire ");
-      move(9,0);
-      addstr(" the car. ");
-      move(11,0);
-      addstr(" Strength determines the chances of effectively breaking a car window, intelligence ");
-      move(12,0);
-      addstr(" determines the ease of which the car keys are found. ");
+      addstr("を掛けられるかはセキュリティのスキルによる。");
+      move(10,0);
+      addstr("車の窓を壊せるかは腕力による。車の鍵が見つかるかは知能による。");
       break;
 // }}}
 // {{{ default
