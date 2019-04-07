@@ -1084,7 +1084,7 @@
     <weapontype idname="WEAPON_SHANK">
         <name>手製のナイフ</name>
         <name_future>サイバーシャンク</name_future>
-        <shortname_name>手製のナイフ</name>
+        <shortname_name>手製のナイフ</shortname_name>
         <shortname_future>シャンク</shortname_future>
         <can_take_hostages>true</can_take_hostages>
         <fencevalue>5</fencevalue>

@@ -514,7 +514,7 @@ void mode_title()
       strcpy(str,"その政党の名を再び聞くことはないだろう。それを行えるのは");
       move(7,39-((len(str)-1)>>1));
       addstr(str);
-      strcpy(str,"小さなまとまりのないグループのみだ。その数はごく少数で、彼らは愚かだ。』");
+      strcpy(str,"小さなまとまりのないグループのみだ。その数はごく少数、そして愚かだ。』");
       move(8,39-((len(str)-1)>>1));
       addstr(str);
       strcpy(str,"──ドワイト・D・アイゼンハワー");
