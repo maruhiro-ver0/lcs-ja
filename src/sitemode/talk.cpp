@@ -1964,12 +1964,12 @@ char talkInCombat(Creature &a, Creature &tk)
             addstr("はどう反応する?");
             move(11,1);
             if(hostages>1)
-               addstr("A - 人質を殺害する");
+               addstr("A - 人質たちを殺害する");
             else
                addstr("A - 人質を殺害する");
             move(12,1);
             if(hostages>1)
-               addstr("B - 条件を受け入れ人質を解放する");
+               addstr("B - 条件を受け入れ人質たちを解放する");
             else
                addstr("B - 条件を受け入れ人質を解放する");
             move(13,1);
@@ -2080,13 +2080,13 @@ char talkInCombat(Creature &a, Creature &tk)
                switch(LCSrandom(5))
                {
                case 0:
-                  if(hostages>1) addstr("\"Back off and we'll let the hostages go.\"", gamelog);
-                  else addstr("\"Back off and the hostage goes free.\"", gamelog);
+                  if(hostages>1) addstr("「引き下がれ。そうすれば人質たちを解放する。」", gamelog);
+                  else addstr("「引き下がれ。そうすれば人質を解放する。」", gamelog);
                   break;
-               case 1:addstr("\"Freedom for freedom, understand?\"", gamelog);break;
-               case 2:addstr("\"Let me go in peace, okay?\"", gamelog);break;
-               case 3:addstr("\"Let's make a trade, then.\"", gamelog);break;
-               case 4:addstr("\"I just want out of here, yeah?\"", gamelog);break;
+               case 1:addstr("「自由のための自由、わかるな? 」", gamelog);break;
+               case 2:addstr("「平和にいこう。なあ? 」", gamelog);break;
+               case 3:addstr("「取り引きをしよう。」", gamelog);break;
+               case 4:addstr("「ここから出たいだけだ。わかったな? 」", gamelog);break;
                }
                gamelog.newline();
 
@@ -2108,11 +2108,11 @@ char talkInCombat(Creature &a, Creature &tk)
                   move(17,1);
                   switch(LCSrandom(5))
                   {
-                  case 0:addstr("\"Do I look like a loving person?\"", gamelog);break;
-                  case 1:addstr("\"You don't take a hint, do you?\"", gamelog);break;
-                  case 2:addstr("\"I'm doing the world a favor.\"", gamelog);break;
-                  case 3:addstr("\"That's so pathetic...\"", gamelog);break;
-                  case 4:addstr("\"It's a deal.\"", gamelog);break;
+                  case 0:addstr("「私が慈悲深い人間に見えるか? 」", gamelog);break;
+                  case 1:addstr("「信用すると思っているのか? 」", gamelog);break;
+                  case 2:addstr("「これが世界のためだ。」", gamelog);break;
+                  case 3:addstr("「惨めな…」", gamelog);break;
+                  case 4:addstr("「これが取り引きだ。」", gamelog);break;
                   }
                   gamelog.newline();
 
@@ -2129,10 +2129,10 @@ char talkInCombat(Creature &a, Creature &tk)
                   move(17,1);
                   switch(LCSrandom(4))
                   {
-                  case 0:addstr("\"Right. Let's do it.\"", gamelog);break;
-                  case 1:addstr("\"No further conditions.\"", gamelog);break;
-                  case 2:addstr("\"Let them go, and we're done.\"", gamelog);break;
-                  case 3:addstr("\"No tricks, okay?\"", gamelog);break;
+                  case 0:addstr("「わかった。そうしよう。」", gamelog);break;
+                  case 1:addstr("「これ以上の条件は無しだ。」", gamelog);break;
+                  case 2:addstr("「人質を行かせろ。それで終わりだ。」", gamelog);break;
+                  case 3:addstr("「だまし討ちはないな? 」", gamelog);break;
                   }
                   gamelog.newline();
 
@@ -2145,8 +2145,8 @@ char talkInCombat(Creature &a, Creature &tk)
                   set_color(COLOR_WHITE,COLOR_BLACK,1);
                   move(16,1);
                   juiceparty(15,200); // Instant juice for successful hostage negotiation
-                  if(hostages>1)addstr("The squad releases all hostages in the trade.", gamelog);
-                  else addstr("The squad releases the hostage in the trade.", gamelog);
+                  if(hostages>1)addstr("部隊は取り引きで人質全員を解放した。", gamelog);
+                  else addstr("部隊は取り引きで人質を解放した。", gamelog);
                   gamelog.newline();
                   for(int i=0;i<6;i++)
                   {
@@ -2169,7 +2169,7 @@ char talkInCombat(Creature &a, Creature &tk)
          clearmessagearea();
          move(16,1);
          addstr(tk.name, gamelog);
-         addstr(" isn't interested in your pathetic threats.", gamelog);
+         addstr("にはハッタリは効かなかった。", gamelog);
          gamelog.newline();
 
          getkey();

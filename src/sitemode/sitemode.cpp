@@ -1932,7 +1932,7 @@ void mode_site()
 
                set_color(COLOR_GREEN,COLOR_BLACK,1);
                move(16,1);
-               addstr("The CCS has been broken!", gamelog);
+               addstr("CCSを撃破した!", gamelog);
                gamelog.newline();
 
                getkey();
