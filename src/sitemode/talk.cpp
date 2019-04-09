@@ -1085,10 +1085,10 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 39:addstr("\"I'll stop, drop and roll if you do it with me.\"", gamelog);break;
          case 40:addstr("\"I'd rather feel something swell.\"", gamelog);break;
          case 41:addstr("\"You can apologize later if it isn't any good.\"", gamelog);break;
-         case 42:addstr("\"Yeah, and we tonight can try different positions together.\"", gamelog);break;
-         case 43:addstr("\"Don't you like it dirty?\"", gamelog);break;
+         case 42:addstr("「ええ。そして今夜、私たちは別の体位を一緒に試すわ。」", gamelog);break;
+         case 43:addstr("「汚いのはお嫌い? 」", gamelog);break;
          case 44:addstr("「あ、あなたは!! 何者かが爆弾を仕掛けたようね。たのんだわ'ZIG'、私たちの未来に希望を。」", gamelog);break;
-         case 45:addstr("\"Actually I'm a succubus from hell, and you're my next victim.\"", gamelog);break;
+         case 45:addstr("「本当は地獄から来たサキュバス、そしてあなたが次の犠牲者よ。」", gamelog);break;
          case 46:addstr("\"Can you wait a couple hours?  I got 6 other people to fuck first.\"", gamelog);break;
          }
       }

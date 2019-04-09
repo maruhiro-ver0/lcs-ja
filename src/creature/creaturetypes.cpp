@@ -321,7 +321,7 @@ void makecreature(Creature &cr,short type)
             nameCCSMember(cr);
          break;
       case CREATURE_CCS_ARCHCONSERVATIVE:
-         strcpy(cr.name,(location[cursite]->siege.siege?"CCS部隊長":(ccs_kills<2?"CCS副官":"CCS設立者")));
+         strcpy(cr.name,(location[cursite]->siege.siege?"CCS部隊長":(ccs_kills<2?"CCS大佐":"CCS創設者")));
          break;
       case CREATURE_PRISONGUARD:
          if(law[LAW_GUNCONTROL]==-2&&!LCSrandom(3))

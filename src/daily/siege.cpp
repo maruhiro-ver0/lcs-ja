@@ -2314,7 +2314,7 @@ void conquertextccs()
          move(4,11);
          addstr("始めた。");
       }
-      addstr("CCSの設立者はここにはいなかった。だが、", gamelog);
+      addstr("CCSの創設者はここにはいなかった。だが、", gamelog);
       move(5,11);
       addstr("彼らの力は大きく損なわれたであろう。落ち着きを取り戻", gamelog);
       move(6,11);
@@ -2336,12 +2336,12 @@ void conquertextccs()
       }
       else
       {
-         addstr("CCS設立者の亡骸が横たわっている。部隊は撤収を始", gamelog);
+         addstr("CCS創設者の亡骸が横たわっている。部隊は撤収を始", gamelog);
          move(4,11);
          addstr("めた。", gamelog);
 
          move(6,15);
-         addstr("設立者が自身の基地の中央で死んだ今、敵の士気と自", gamelog);
+         addstr("創設者が自身の基地の中央で死んだ今、敵の士気と自", gamelog);
          move(7,11);
          addstr("信は粉々に砕け散った。", gamelog);
       }

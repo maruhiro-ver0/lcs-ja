@@ -336,7 +336,7 @@ void makecharacter()
 
       set_color(COLOR_WHITE,COLOR_BLACK,1);
       move(4,6);
-      addstr("リベラル・クライム・スコードの設立者");
+      addstr("リベラル・クライム・スコードの創設者");
 
       move(7,2);
       addstr("ファーストネーム: ");
