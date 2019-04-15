@@ -907,7 +907,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       case 29:addstr("「あなたは何座? 」", gamelog);break;
       case 30:addstr("「宅配便で働いてる? ", gamelog);
             move(11,1);y++;
-            addstr("  私のパッケージ(=巨根)をチェックしているから。」", gamelog);
+            addstr("  私のパッケージ(巨根)をチェックしているから。」", gamelog);
             break;
       case 31:addstr("「私はここで一番魅力的な人物ではないが、", gamelog);
             move(11,1);y++;
@@ -916,7 +916,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       case 32:addstr("「やあ。記憶喪失なんだ。君と会ったことある? 」", gamelog);break;
       case 33:addstr("「このあたりは初めてなんだ。君の家はどこか教えてくれる? 」", gamelog);break;
       case 34:addstr("「私が迎えに行くまで待ってて! 」", gamelog);break;
-      case 35:addstr("「お父さんはバイカー? いいケツしてるから。」", gamelog);break;
+      case 35:addstr("「お父さんはパン屋? いいバン(丸いパン、ケツ)してるから。」", gamelog);break;
       case 36:addstr("「もしあなたがレーザーなら、「スタン」にセットしているはずだ。」", gamelog);break;
       case 37:addstr("「パンツに樽を入れてるの? タップしたくなるお尻だ。」", gamelog);break;
       case 38:addstr("「もしなれるなら、あなたのお風呂の湯になりたい。」", gamelog);break;
@@ -1066,7 +1066,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 20:addstr("「その間にコンドームがあるなら大賛成よ。」", gamelog);break;
          case 21:addstr("「もちろん。でも口を使ってはダメよ。」", gamelog);break;
          case 22:addstr("「足フェチなの? でもいいわ。」", gamelog);break;
-         case 23:addstr("「私とsexしたらもっとそうなるわ。」", gamelog);break;
+         case 23:addstr("「私とセックスしたらもっとそうなるわ。」", gamelog);break;
          case 24:addstr("「楽園の島に招待してあげる。今夜。」", gamelog);break;
          case 25:addstr("「ああ…何も言わないで。すぐに行きます。」", gamelog);break;
          case 26:addstr("「空砲がいいわ、兵隊さん。コンドームを切らせてるから。」", gamelog);break;
@@ -1079,17 +1079,17 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 33:addstr("\"But if we use a hotel, you won't get shot by an angry spouse tonight.\"", gamelog);break;
          case 34:addstr("\"I think you'll appreciate the way I move after tonight.\"", gamelog);break;
          case 35:addstr("\"They make a yummy bedtime snack.\"", gamelog);break;
-         case 36:addstr("\"Oh..  oh, God.  I can't believe I'm going to date a Trekkie.\"", gamelog);break;
+         case 36:addstr("「ああ…トレッキーとデートできるなんで信じられない。」", gamelog);break;
          case 37:addstr("\"Oh, it isn't safe for you to drive like that.  You'd better stay the night.\"", gamelog);break;
-         case 38:addstr("\"Come over tonight and I can show you what it's like.\"", gamelog);break;
-         case 39:addstr("\"I'll stop, drop and roll if you do it with me.\"", gamelog);break;
-         case 40:addstr("\"I'd rather feel something swell.\"", gamelog);break;
-         case 41:addstr("\"You can apologize later if it isn't any good.\"", gamelog);break;
+         case 38:addstr("「今夜来てくれればどんなものか見せてあげるわ。」", gamelog);break;
+         case 39:addstr("「あなたとなら立ち止まって、倒れて、転がりたい。」", gamelog);break;
+         case 40:addstr("「その膨らんだものを感じたいわ。」", gamelog);break;
+         case 41:addstr("「後でベッドでうまく行かなかったら謝って。」", gamelog);break;
          case 42:addstr("「ええ。そして今夜、私たちは別の体位を一緒に試すわ。」", gamelog);break;
          case 43:addstr("「汚いのはお嫌い? 」", gamelog);break;
          case 44:addstr("「あ、あなたは!! 何者かが爆弾を仕掛けたようね。たのんだわ'ZIG'、私たちの未来に希望を。」", gamelog);break;
          case 45:addstr("「本当は地獄から来たサキュバス、そしてあなたが次の犠牲者よ。」", gamelog);break;
-         case 46:addstr("\"Can you wait a couple hours?  I got 6 other people to fuck first.\"", gamelog);break;
+         case 46:addstr("「2時間待てる? まず他の6人とファックしないといけないの。」", gamelog);break;
          }
       }
       gamelog.newline();
