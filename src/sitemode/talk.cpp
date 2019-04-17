@@ -918,7 +918,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       case 34:addstr("「私が迎えに行くまで待ってて! 」", gamelog);break;
       case 35:addstr("「お父さんはパン屋? いいバン(丸いパン、ケツ)してるから。」", gamelog);break;
       case 36:addstr("「もしあなたがレーザーなら、「スタン」にセットしているはずだ。」", gamelog);break;
-      case 37:addstr("「パンツに樽を入れてるの? タップしたくなるお尻だ。」", gamelog);break;
+      case 37:addstr("「パンツにビヤ樽を入れてるの? タップしたくなるお尻だ。」", gamelog);break;
       case 38:addstr("「もしなれるなら、あなたのお風呂の湯になりたい。」", gamelog);break;
       case 39:addstr("「ストップ、ドロップ アンド ロール、燃えているぜ。」", gamelog);break;
       case 40:addstr("「膨らんだ何かを見たくないか? 」", gamelog);break;
@@ -1076,11 +1076,11 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 30:addstr("「小包爆弾みたい。私に吹き飛ばさせて。」", gamelog);break;
          case 31:addstr("\"Hey, I could do better.  But I'm feeling cheap tonight.\"", gamelog);break;
          case 32:addstr("「ええ。あのときのローションを憶えていたらいいんだけど。」", gamelog);break;
-         case 33:addstr("\"But if we use a hotel, you won't get shot by an angry spouse tonight.\"", gamelog);break;
-         case 34:addstr("\"I think you'll appreciate the way I move after tonight.\"", gamelog);break;
+         case 33:addstr("「でもホテルを使いましょう。怒ったツレに撃たれないように。」", gamelog);break;
+         case 34:addstr("「今夜は私の動きに感謝すると思うわ。", gamelog);break;
          case 35:addstr("\"They make a yummy bedtime snack.\"", gamelog);break;
          case 36:addstr("「ああ…トレッキーとデートできるなんで信じられない。」", gamelog);break;
-         case 37:addstr("\"Oh, it isn't safe for you to drive like that.  You'd better stay the night.\"", gamelog);break;
+         case 37:addstr("「危なくて運転できないわ。今夜は泊まりましょう。」", gamelog);break;
          case 38:addstr("「今夜来てくれればどんなものか見せてあげるわ。」", gamelog);break;
          case 39:addstr("「あなたとなら立ち止まって、倒れて、転がりたい。」", gamelog);break;
          case 40:addstr("「その膨らんだものを感じたいわ。」", gamelog);break;
