@@ -1650,7 +1650,7 @@ struct unicodechar unicode_hacks[] = {
 
 #endif /* CH_USE_UNICODE */
 
-#ifdef CH_USE_MULTIBYTE
+#ifdef CH_USE_MB
 
 // Range (0 .. 31), CP437 display characters:
     #define CH_HACK_FIGURE_SPACE 0x00

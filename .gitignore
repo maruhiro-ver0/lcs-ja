@@ -11,3 +11,4 @@ dev
 workspaces
 *.o
 crimesquad.exe
+bs.exe

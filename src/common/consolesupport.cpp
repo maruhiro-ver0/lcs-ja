@@ -232,7 +232,7 @@ int lookup_unicode_hack(int c) {
 }
 #endif
 
-#if !defined(CH_USE_CP437) && !defined(CH_USE_MULTIBYTE)
+#ifndef CH_USE_CP437
 // This function's for both UTF-8 and the ASCII hack (only disabled in pure CP437 mode)
 int addch_unicode(int c) {
 #ifdef CH_USE_UNICODE
@@ -294,31 +294,21 @@ void set_title(char *s)
 void init_console()
 {
    #ifdef WIN32
-   #ifdef CH_USE_MULTIBYTE
+   // This has to be set to Code Page 437 in Windows regardless of Unicode, that's just how PDCurses works on Windows, even the UTF-8 version of PDCurses
    SetConsoleOutputCP(932);
    SetConsoleCP(932);
-   setlocale(LC_ALL,"ja_JP.932");
+   setlocale(LC_ALL,"");
    _setmbcp(_MB_CP_LOCALE);
-   #else
-   // This has to be set to Code Page 437 in Windows regardless of Unicode, that's just how PDCurses works on Windows, even the UTF-8 version of PDCurses
-   SetConsoleOutputCP(437); // use Code Page 437 (US English code page for DOS) for output, regardless of anything else
-   SetConsoleCP(437); // use Code Page 437 (US English code page for DOS) for input, regardless of anything else
-   setlocale(LC_ALL,"English_United States.437");
-   _setmbcp(_MB_CP_LOCALE); // use same code page as multibyte code page
-   #endif
    #else // WIN32
+   setlocale(LC_ALL,"");
    #ifdef CH_USE_UNICODE
-   //setlocale(LC_ALL,"en_US.UTF-8"); // POSIX-compliant OSes DO support UTF-8/Unicode for setlocale, unlike Windows
-   setlocale(LC_ALL,"ja_JP.UTF-8");
+   setlocale(LC_ALL,"en_US.UTF-8");
    #endif
    #ifdef CH_USE_CP437
    setlocale(LC_ALL,"en_US.CP437");
    #endif
    #ifdef CH_USE_ASCII_HACK
    setlocale(LC_ALL,"en_US.CP437");
-   #endif
-   #ifdef CH_USE_MULTIBYTE
-   setlocale(LC_ALL,"ja_JP.932");
    #endif
    #endif // WIN32
    #ifdef CH_USE_UNICODE
@@ -380,6 +370,94 @@ void end_cleartype_fix() // execute this function after the user is done playing
       SystemParametersInfo(SPI_SETFONTSMOOTHING, FontSmoothingEnabled, 0, SPIF_UPDATEINIFILE | SPIF_SENDCHANGE);
       // now that the settings are safely restored, it's time to delete the temporary backup of the font smoothing settings
       LCSDeleteFile("cleartype.dat",LCSIO_PRE_HOME);
+   }
+}
+#endif
+
+#if defined(WIN32)
+const char *mb_to_utf8(const char* text)
+{
+   return text;
+}
+int wctomb_sjis(char *s, wchar_t wc)
+{
+   wchar_t wstr[2];
+
+   wstr[0]=wc;
+   wstr[1]=0;
+   return WideCharToMultiByte(932,0,wstr,1,s,2+1,NULL,NULL);
+}
+#else
+#include <iconv.h>
+const char *mb_to_utf8(const char* text)
+{
+   static iconv_t cd=NULL;
+   static char buf[1024];
+   char *ip=(char*)text,*op=buf;
+   size_t ilen=strlen(text),olen=sizeof(buf)-1;
+
+   if(cd==NULL)
+   {
+      const char *lang=getenv("LANG");
+      if(strstr(lang,"SJIS")!=NULL||strstr(lang,"sjis")!=NULL)
+         cd=iconv_open("SJIS","SJIS");
+      else if(strstr(lang,"EUC")!=NULL||strstr(lang,"euc")!=NULL)
+         cd=iconv_open("EUC","SJIS");
+      else
+         cd=iconv_open("UTF-8","SJIS");
+   }
+
+   iconv(cd,&ip,&ilen,&op,&olen);
+   *op=0;
+   return buf;
+}
+#include <iconv.h>
+int wctomb_sjis(char *s, wchar_t wc)
+{
+   static iconv_t cd=NULL;
+   char utf8[8],*ip=utf8,*op=s;
+   size_t ilen,olen=8;
+
+   if(cd==NULL)
+   {
+      cd=iconv_open("SJIS","UTF-8");
+   }
+
+   if(wc<=0x7f)
+   {
+      *op++=(char)wc;
+      *op=0;
+      return 1;
+   }
+   else if(wc<=0x7ff)
+   {
+      utf8[0]=(0xc0|(wc>>6));
+      utf8[1]=(0x80|(wc&0x3f));
+      utf8[2]=0;
+      ilen=strlen(utf8)+1;
+      if(iconv(cd,&ip,&ilen,&op,&olen)<=0)
+      {
+         op=s;
+         *op++='?';
+      }
+      *op=0;
+      return strlen(s);
+   }
+   else
+   {
+      utf8[0]=(0xe0|(wc>>12));
+      utf8[1]=(0x80|(wc>>6)&0x3f);
+      utf8[2]=(0x80|(wc&0x3f));
+      utf8[3]=0;
+      ilen=strlen(utf8)+1;
+      if(iconv(cd,&ip,&ilen,&op,&olen)<=0)
+      {
+         op=s;
+         *op++='?';
+         *op++='?';
+      }
+      *op=0;
+      return strlen(s);
    }
 }
 #endif

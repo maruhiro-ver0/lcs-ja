@@ -81,15 +81,21 @@ OBJS = \
 	game.o \
 	lcsio.o
 CC = g++
-#CFLAGS = -w -I$(shell pwd) -I./pdcurses/ -DNOMINMAX -DMARKUP_STL $(shell sdl2-config --cflags) 
-#LDFLAGS = -L./pdcurses/ -lpdcurses -lSDL2_mixer $(shell sdl2-config --libs)
-CFLAGS = -w -I$(shell pwd) -DNOMINMAX -DMARKUP_STL -DDONT_INCLUDE_SDL
-LDFLAGS = -lpdcurses
 
-$(EXE): $(OBJS)
+# for Linux
+CFLAGS = -w -I$(shell pwd) -DNOMINMAX -DMARKUP_STL -DMARKUP_MBCS -DMARKUP_STDCONV -Dwctomb=wctomb_sjis -DDONT_INCLUDE_SDL -DLinux -DHAVE_LIBNCURSES
+LDFLAGS = -lncursesw -liconv
+
+# for Windows
+#CFLAGS = -w -I$(shell pwd) -DNOMINMAX -DMARKUP_STL -DMARKUP_MBCS -DMARKUP_STDCONV -Dwctomb=wctomb_sjis -DDONT_INCLUDE_SDL
+#LDFLAGS = -lpdcurses
+
+$(EXE): bs $(OBJS)
 	$(CC) -o $(EXE) $(OBJS) $(LDFLAGS)
 .cpp.o:
-	$(CC) $(CFLAGS) -E -c $< | iconv -f UTF-8 -t cp932 | sed 's/[\x80-\xff]\\/&\\/g' | $(CC) $(CFLAGS) -c -xc++ -o $@ -
+	$(CC) $(CFLAGS) -E -c $< | iconv -f UTF-8 -t cp932 | ./bs | $(CC) $(CFLAGS) -c -xc++ -o $@ -
+bs: bs.c
+	$(CC) -o bs bs.c
 
 clean:
-	rm -f $(OBJS) $(EXE) $(EXE).exe
+	rm -f $(OBJS) bs bs.exe $(EXE) $(EXE).exe

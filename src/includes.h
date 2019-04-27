@@ -991,25 +991,17 @@ void addprevpagestr();
 /* prints a long blurb showing how to page forward and back */
 void addpagestr();
 /* Variants of addch and mvaddch that work on chars and use translateGraphicsChar(), fixing display of extended characters */
-#if defined(CH_USE_MULTIBYTE)
 inline int addchar(char ch) { return addch(ch); }
 inline int mvaddchar(int y,int x,char ch) { return mvaddch(y,x,ch); }
 inline int addgrah(char ch) { return addch(translateGraphicsChar(ch)); }
 inline int mvaddgrah(int y,int x,char ch) { return mvaddch(y,x,translateGraphicsChar(ch)); }
-#else
-inline int addchar(char ch) { return addch(translateGraphicsChar(ch)); }
-inline int mvaddchar(int y,int x,char ch) { return mvaddch(y,x,translateGraphicsChar(ch)); }
-inline int addgrah(char ch) { return addch(translateGraphicsChar(ch)); }
-inline int mvaddgrah(int y,int x,char ch) { return mvaddch(y,x,translateGraphicsChar(ch)); }
-#endif
 inline int addchar(char ch,Log &log) { log.record(ch); return addchar(ch); }
 inline int mvaddchar(int y,int x,char ch,Log &log) { log.record(ch); return mvaddchar(y,x,ch); }
 /* Redefining addstr() and mvaddstr() so they use addchar() and mvaddchar(), fixing display of extended characters */
-#if defined(CH_USE_MULTIBYTE)
-#else
+const char *mb_to_utf8(const char *);
+inline int addstr_mb(const char* text) { addstr(mb_to_utf8(text)); }
 #undef addstr
-inline int addstr(const char* text) { int ret=ERR; for(int i=0;i<len(text);i++) ret=addchar(text[i]); return ret; }
-#endif
+#define addstr addstr_mb
 #undef mvaddstr
 inline int mvaddstr(int y,int x,const char* text) { int ret=move(y,x); if(ret!=ERR) ret=addstr(text); return ret; }
 /* Various wrappers to addstr() and mvaddstr() which handle permutations of:
@@ -1017,11 +1009,7 @@ inline int mvaddstr(int y,int x,const char* text) { int ret=move(y,x); if(ret!=E
    - std::string or c-style char arrays */
 inline int addstr(const char *text,Log &log) { log.record(text); return addstr(text); }
 inline int mvaddstr(int y,int x,const char *text,Log &log) { log.record(text); return mvaddstr(y,x,text); }
-#if defined(CH_USE_MULTIBYTE)
 inline int addstr(const std::string& text) { return addstr(&text[0]); }
-#else
-inline int addstr(const std::string& text) { int ret=ERR; for(int i=0;i<len(text);i++) ret=addchar(text[i]); return ret; }
-#endif
 inline int addstr(const std::string& text, Log &log) { log.record(text); return addstr(text); }
 inline int mvaddstr(int y,int x,const std::string& text) { int ret=move(y,x); if(ret!=ERR) ret=addstr(text); return ret; }
 inline int mvaddstr(int y,int x,const std::string& text,Log &log) { log.record(text); return mvaddstr(y,x,text); }

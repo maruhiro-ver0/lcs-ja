@@ -73,7 +73,7 @@
    //#define CH_USE_CP437 // this works best with the "W" version of PDCurses on Windows (from pdc34dllw.zip instead of pdc34dllu.zip)... it's the standard way we do it
    //#define CH_USE_ASCII_HACK // this works with either the "W" or "U" version of PDCurses just fine either way, as it only uses standard ASCII characters (ugly though)
    //#define CH_USE_UNICODE // this only works on Windows with the UTF-8 version of PDCurses (the "U" version), and if you have the PDC_WIDE define above uncommented
-   #define CH_USE_MULTIBYTE
+   #define CH_USE_MB
 #else
    #include <vector>
    #include <map>
@@ -128,7 +128,7 @@
    #endif
 #endif
 
-#if !defined(CH_USE_CP437) && !defined(CH_USE_MULTIBYTE)
+#ifndef CH_USE_CP437
    // addch_unicode() is implemented in common\consolesupport.cpp
    // we need it for ALL non-CP437 code pages though, including UTF-8 and the ASCII hack
    int addch_unicode(int c);

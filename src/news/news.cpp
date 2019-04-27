@@ -1777,30 +1777,10 @@ void displaynewspicture(int p,int y)
 
 int chrsize(char *str)
 {
-   if(strlen("漢")==3) // UTF-8
-   {
-      if((*str & 0x80) == 0)
-         return 1;
-      else if((*str & 0xe0) == 0xc0)
-         return 2;
-      else if((*str & 0xf0) == 0xe0)
-        return 3;
-      else if((*str & 0xf8) == 0xf0)
-        return 4;
-      else if((*str & 0xfc) == 0xf8)
-        return 5;
-      else if((*str & 0xfe) == 0xfc)
-        return 6;
-      else
-        return 1;
-   }
-   else // ShiftJIS or EUC
-   {
-      if(*str & 0x80)
-         return 2;
-      else
-         return 1;
-   }
+   if(*str & 0x80)
+      return 2;
+   else
+      return 1;
 }
 
 /* news - draws the specified block of text to the screen */
