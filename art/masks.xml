@@ -12,58 +12,58 @@
     
     <masktype idname="MASK_ASHCROFT">
         <mask>true</mask>
-        <name>John Ashcroft Mask</name>
-        <shortname>Ashcroft Mask</shortname>
-        <description>U.S. Senator, Attorney General</description>
+        <name>ジョン・アシュクロフトのマスク</name>
+        <shortname>ｼｭｸﾛﾌﾄのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の上院議員、司法長官</description>
     </masktype>
 
     <masktype idname="MASK_BARR">
         <mask>true</mask>
-        <name>Bob Barr Mask</name>
-        <shortname>Bob Barr Mask</shortname>
-        <description>U.S. Representative</description>
+        <name>ボブ・バーのマスク</name>
+        <shortname>ﾎﾞﾌﾞ･ﾊﾞｰのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の下院議員</description>
     </masktype>
 
     <masktype idname="MASK_BLAIR">
         <mask>true</mask>
-        <name>Tony Blair Mask</name>
-        <shortname>Blair Mask</shortname>
-        <description>British Prime Minister</description>
+        <name>トニー・ブレアのマスク</name>
+        <shortname>ﾌﾞﾚｱのﾏｽｸ</shortname>
+        <description>イギリスの首相</description>
     </masktype>
 
     <masktype idname="MASK_BUSH_BARBARA">
         <mask>true</mask>
-        <name>Barbara Bush Mask</name>
-        <shortname>Brb. Bush Mask</shortname>
-        <description>U.S. First Lady</description>
+        <name>バーバラ・ブッシュのマスク</name>
+        <shortname>ﾊﾞｰﾊﾞﾗ･ﾌﾞｯｼｭのﾏｽｸ</shortname>
+        <description>アメリカ合衆国のファーストレディー</description>
     </masktype>
 
     <masktype idname="MASK_BUSH_GEORGE">
         <mask>true</mask>
-        <name>George HW Bush Mask</name>
-        <shortname>G HW Bush Mask</shortname>
-        <description>U.S. President</description>
+        <name>ジョージ・H・W・ブッシュのマスク</name>
+        <shortname>G HW ﾌﾞｯｼｭのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の大統領</description>
     </masktype>
 
     <masktype idname="MASK_BUSH_GEORGE2">
         <mask>true</mask>
-        <name>George W. Bush Mask</name>
-        <shortname>G W. Bush Mask</shortname>
-        <description>U.S. President</description>
+        <name>ジョージ・W・ブッシュのマスク</name>
+        <shortname>G W. ﾌﾞｯｼｭのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の大統領</description>
     </masktype>
 
     <masktype idname="MASK_CARTER">
         <mask>true</mask>
-        <name>Jimmy Carter Mask</name>
-        <shortname>Carter Mask</shortname>
-        <description>U.S. President</description>
+        <name>ジミー・カーターのマスク</name>
+        <shortname>ｶｰﾀｰのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の大統領</description>
     </masktype>
 
     <masktype idname="MASK_CHENEY">
         <mask>true</mask>
-        <name>Dick Cheney Mask</name>
-        <shortname>Cheney Mask</shortname>
-        <description>U.S. Vice President, CEO</description>
+        <name>ディック・チェイニーのマスク</name>
+        <shortname>ﾁｪｲﾆｰのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の副大統領、CEO</description>
         <interrogation>
             <basepower>6</basepower>
         </interrogation>
@@ -71,30 +71,30 @@
 
     <masktype idname="MASK_CLINTON_BILL">
         <mask>true</mask>
-        <name>Bill Clinton Mask</name>
-        <shortname>B Clinton Mask</shortname>
-        <description>U.S. President</description>
+        <name>ビル・クリントンのマスク</name>
+        <shortname>B ｸﾘﾝﾄﾝのマスク</shortname>
+        <description>アメリカ合衆国の大統領</description>
     </masktype>
 
     <masktype idname="MASK_CLINTON_HILLARY">
         <mask>true</mask>
-        <name>Hillary Clinton Msk</name>
-        <shortname>H Clinton Mask</shortname>
-        <description>U.S. Senator, First Lady</description>
+        <name>ヒラリー・クリントンのマスク</name>
+        <shortname>H ｸﾘﾝﾄﾝのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の上院議員、ファーストレディー</description>
     </masktype>
 
     <masktype idname="MASK_FALWELL">
         <mask>true</mask>
-        <name>Jerry Falwell Mask</name>
-        <shortname>Falwell Mask</shortname>
-        <description>Reverend</description>
+        <name>ジェリー・ファルエルのマスク</name>
+        <shortname>ﾌｧｳｴﾙのﾏｽｸ</shortname>
+        <description>牧師</description>
     </masktype>
 
     <masktype idname="MASK_GUY_FAWKES">
         <mask>true</mask>
-        <name>Guy Fawkes Mask</name>
-        <shortname>G. Fawkes Mask</shortname>
-        <description>Remember the 5th of November</description>
+        <name>ガイ・フォークスのマスク</name>
+        <shortname>G. ﾌｫｰｸｽのﾏｽｸ</shortname>
+        <description>11月5日を忘れるな</description>
         <interrogation>
             <basepower>6</basepower>
         </interrogation>
@@ -102,37 +102,37 @@
 
     <masktype idname="MASK_FORD">
         <mask>true</mask>
-        <name>Gerald Ford Mask</name>
-        <shortname>Gld. Ford Mask</shortname>
-        <description>U.S. President</description>
+        <name>ジェラルド・フォードのマスク</name>
+        <shortname>G ﾌｫｰﾄﾞのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の大統領</description>
     </masktype>
 
     <masktype idname="MASK_GORE_AL">
         <mask>true</mask>
-        <name>Al Gore Mask</name>
-        <shortname>Al Gore Mask</shortname>
-        <description>U.S. Vice President</description>
+        <name>アル・ゴアのマスク</name>
+        <shortname>ｱﾙ･ｺﾞｱのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の副大統領</description>
     </masktype>
 
     <masktype idname="MASK_GORE_TIPPER">
         <mask>true</mask>
-        <name>Tipper Gore Mask</name>
-        <shortname>Tpr. Gore Mask</shortname>
-        <description>U.S. Second Lady</description>
+        <name>ティッパー・ゴアのマスク</name>
+        <shortname>T ｺﾞｱのﾏｽｸ</shortname>
+        <description>アメリカ合衆国のセカンドレディ</description>
     </masktype>
 
     <masktype idname="MASK_HELMS">
         <mask>true</mask>
-        <name>Jesse Helms Mask</name>
-        <shortname>Helms Mask</shortname>
-        <description>U.S. Senator</description>
+        <name>ジェシー・ヘルムズのマスク</name>
+        <shortname>ﾍﾙﾑｽﾞのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の上院議員</description>
     </masktype>
 
     <masktype idname="MASK_JASON">
         <mask>true</mask>
-        <name>Jason Mask</name>
-        <shortname>Jason Mask</shortname>
-        <description>A Hockey Mask a la Friday the 13th</description>
+        <name>ジェイソンのマスク</name>
+        <shortname>ｼﾞｪｲｿﾝのﾏｽｸ</shortname>
+        <description>『13日の金曜日』のホッケーマスク</description>
         <interrogation>
             <basepower>6</basepower>
         </interrogation>
@@ -140,58 +140,58 @@
 
     <masktype idname="MASK_KENNEDY_JOHN">
         <mask>true</mask>
-        <name>John F Kennedy Mask</name>
-        <shortname>JFK Mask</shortname>
-        <description>U.S. President, Assassinated</description>
+        <name>ジョン・F・ケネディのマスク</name>
+        <shortname>JFKのﾏｽｸ</shortname>
+        <description>暗殺されたアメリカ合衆国の大統領</description>
     </masktype>
 
     <masktype idname="MASK_KENNEDY_ROBERT">
         <mask>true</mask>
-        <name>Robert Kennedy Mask</name>
-        <shortname>RFK Mask</shortname>
-        <description>U.S. Senator, Assassinated</description>
+        <name>ロバート・ケネディのマスク</name>
+        <shortname>RFKのﾏｽｸ</shortname>
+        <description>暗殺されたアメリカ合衆国の上院議員</description>
     </masktype>
 
     <masktype idname="MASK_KISSINGER">
         <mask>true</mask>
-        <name>Henry Kissinger Msk</name>
-        <shortname>Kissinger Mask</shortname>
-        <description>U.S. Secretary of State</description>
+        <name>ヘンリー・キッシンジャーのマスク</name>
+        <shortname>ｷｯｼﾝｼﾞｬｰのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の大統領補佐官</description>
     </masktype>
 
     <masktype idname="MASK_LINCOLN">
         <mask>true</mask>
-        <name>Abraham Lincoln Msk</name>
-        <shortname>Lincoln Mask</shortname>
-        <description>U.S. President, Assassinated</description>
+        <name>エイブラハム・リンカーンのマスク</name>
+        <shortname>ﾘﾝｶｰﾝのﾏｽｸ</shortname>
+        <description>暗殺されたアメリカ合衆国の大統領</description>
     </masktype>
 
     <masktype idname="MASK_NIXON">
         <mask>true</mask>
-        <name>Richard Nixon Mask</name>
-        <shortname>Nixon Mask</shortname>
-        <description>U.S. President, Not a Crook</description>
+        <name>リチャード・ニクソンのマスク</name>
+        <shortname>ﾆｸｿﾝのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の大統領、ペテン師ではない</description>
     </masktype>
     
     <masktype idname="MASK_OBAMA">
         <mask>true</mask>
-        <name>Barack Obama Mask</name>
-        <shortname>Obama  Mask</shortname>
-        <description>U.S. President</description>
+        <name>バラク・オバマのマスク</name>
+        <shortname>ｵﾊﾞﾏのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の大統領</description>
     </masktype>
 
     <masktype idname="MASK_POWELL">
         <mask>true</mask>
-        <name>Colin Powell Mask</name>
-        <shortname>Powell Mask</shortname>
-        <description>U.S. Secretary of State, General</description>
+        <name>コリン・パウエルのマスク</name>
+        <shortname>ﾊﾟｳｴﾙのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の大統領補佐官、軍人</description>
     </masktype>
 
     <masktype idname="MASK_REAGAN_NANCY">
         <mask>true</mask>
-        <name>Nancy Reagan Mask</name>
-        <shortname>N. Reagan Mask</shortname>
-        <description>U.S. First Lady</description>
+        <name>ナンシー・レーガンのマスク</name>
+        <shortname>N. ﾚｰｶﾞﾝのﾏｽｸ</shortname>
+        <description>アメリカ合衆国のファーストレディー</description>
         <interrogation>
             <basepower>5</basepower>
         </interrogation>
@@ -199,9 +199,9 @@
 
     <masktype idname="MASK_REAGAN_RONALD">
         <mask>true</mask>
-        <name>Ronald Reagan Mask</name>
-        <shortname>R. Reagan Mask</shortname>
-        <description>U.S. President</description>
+        <name>ロナルド・レーガンのマスク</name>
+        <shortname>R. ﾚｰｶﾞﾝのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の大統領</description>
         <interrogation>
             <basepower>6</basepower>
         </interrogation>
@@ -209,30 +209,30 @@
 
     <masktype idname="MASK_RICE">
         <mask>true</mask>
-        <name>Condoleezza Rice Mk</name>
-        <shortname>Cn. Rice Mask</shortname>
-        <description>U.S. National Security Advisor</description>
+        <name>コンドリーザ・ライスのマスク</name>
+        <shortname>C ﾗｲｽのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の国家安全保障担当補佐官</description>
     </masktype>
 
     <masktype idname="MASK_ROBERTSON">
         <mask>true</mask>
-        <name>Pat Robertson Mask</name>
-        <shortname>Robertson Mask</shortname>
-        <description>Televangelist</description>
+        <name>パット・ロバートソンのマスク</name>
+        <shortname>ﾛﾊﾞｰﾄｿﾝのﾏｽｸ</shortname>
+        <description>テレビ伝道師</description>
     </masktype>
 
     <masktype idname="MASK_RUMSFELD">
         <mask>true</mask>
-        <name>Donald Rumsfeld Msk</name>
-        <shortname>Rumsfeld Mask</shortname>
-        <description>U.S. Secretary of Defense</description>
+        <name>ドナルド・ラムズフェルドのマスク</name>
+        <shortname>ﾗﾑｽﾞﾌｪﾙﾄﾞのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の国防長官</description>
     </masktype>
 
     <masktype idname="MASK_SATAN">
         <mask>true</mask>
-        <name>Satan Mask</name>
-        <shortname>Satan Mask</shortname>
-        <description>Prince of Darkness, Red with Horns</description>
+        <name>サタンのマスク</name>
+        <shortname>ｻﾀﾝのﾏｽｸ</shortname>
+        <description>赤くて角のある闇の大君</description>
         <interrogation>
             <basepower>6</basepower>
         </interrogation>
@@ -240,54 +240,54 @@
 
     <masktype idname="MASK_STARR">
         <mask>true</mask>
-        <name>Ken Starr Mask</name>
-        <shortname>Ken Starr Mask</shortname>
-        <description>Independent Counsel</description>
+        <name>ケネス・スターのマスク</name>
+        <shortname>ｹﾈｽ･ｽﾀｰのﾏｽｸ</shortname>
+        <description>独立検察官</description>
     </masktype>
 
     <masktype idname="MASK_TED_STEVENS">
         <mask>true</mask>
-        <name>Ted Stevens Mask</name>
-        <shortname>T Stevens Mask</shortname>
-        <description>U.S. Senator</description>
+        <name>テッド・スティーヴンスのマスク</name>
+        <shortname>T ｽﾃｨｰﾌﾞﾝｽのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の上院議員</description>
     </masktype>
 
     <masktype idname="MASK_THURMOND">
         <mask>true</mask>
-        <name>Strom Thurmond Mask</name>
-        <shortname>Thurmond Mask</shortname>
-        <description>U.S. Senator</description>
+        <name>ストロム・サーモンドのマスク</name>
+        <shortname>ｻｰﾓﾝﾄﾞのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の上院議員</description>
     </masktype>
 
     <masktype idname="MASK_WASHINGTON">
         <mask>true</mask>
-        <name>George Washngtn Msk</name>
-        <shortname>Washngton Mask</shortname>
-        <description>U.S. President</description>
+        <name>ジョージ・ワシントンのマスク</name>
+        <shortname>ﾜｼﾝﾄﾝのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の大統領</description>
     </masktype>
 
     <masktype idname="MASK_WAXMAN">
         <mask>true</mask>
-        <name>Henry Waxman Mask</name>
-        <shortname>Waxman Mask</shortname>
-        <description>U.S. Representative</description>
+        <name>ヘンリー・ワックスマンのマスク</name>
+        <shortname>ﾜｯｸｽﾏﾝのﾏｽｸ</shortname>
+        <description>アメリカ合衆国の下院議員</description>
     </masktype>
 
        <!--SURPRISE MASKS-->
 
     <masktype idname="MASK_AGUILERA">
         <mask>true</mask>
-        <name>Chrstna Aguilera Mk</name>
-        <shortname>C Aguilra Mask</shortname>
-        <description>Singer</description>
+        <name>クリスティーナ・アギレラのマスク</name>
+        <shortname>C ｱｷﾞﾚﾗのﾏｽｸ</shortname>
+        <description>シンガー</description>
         <surprise>true</surprise>
     </masktype>
 
     <masktype idname="MASK_BINLADEN">
         <mask>true</mask>
-        <name>Osama bin Laden Msk</name>
-        <shortname>bin Laden Mask</shortname>
-        <description>Terrorist</description>
+        <name>オサマ・ビン・ラディンのマスク</name>
+        <shortname>ﾋﾞﾝ･ﾗﾃﾞｨﾝのﾏｽｸ</shortname>
+        <description>テロリスト</description>
         <surprise>true</surprise>
         <interrogation>
             <basepower>6</basepower>
@@ -296,17 +296,17 @@
 
     <masktype idname="MASK_CASH">
         <mask>true</mask>
-        <name>Johnny Cash Mask</name>
-        <shortname>Jny. Cash Mask</shortname>
-        <description>Singer</description>
+        <name>ジョニー・キャッシュのマスク</name>
+        <shortname>ｼﾞｮﾆｰ･ｷｬｯｼｭのﾏｽｸ</shortname>
+        <description>シンガー</description>
         <surprise>true</surprise>
     </masktype>
 
     <masktype idname="MASK_COLEMAN_GARY">
         <mask>true</mask>
-        <name>Gary Coleman Mask</name>
-        <shortname>G Coleman Mask</shortname>
-        <description>Actor, Candidate for Governor</description>
+        <name>ゲーリー・コールマンのマスク</name>
+        <shortname>G ｺｰﾙﾏﾝのﾏｽｸ</shortname>
+        <description>俳優、知事候補</description>
         <surprise>true</surprise>
         <interrogation>
             <basepower>1</basepower>
@@ -315,33 +315,33 @@
 
     <masktype idname="MASK_CRUTHERS">
         <mask>true</mask>
-        <name>Scatman Cruthers Mk</name>
-        <shortname>Cruthers Mask</shortname>
-        <description>Singer, Actor</description>
+        <name>スキャットマン・クローザースのマスク</name>
+        <shortname>ｸﾛｰｻﾞｰｽのﾏｽｸ</shortname>
+        <description>シンガー、俳優</description>
         <surprise>true</surprise>
     </masktype>
 
     <masktype idname="MASK_EMINEM">
         <mask>true</mask>
-        <name>Eminem Mask</name>
-        <shortname>Eminem Mask</shortname>
-        <description>Rapper, Actor</description>
+        <name>エミネムのマスク</name>
+        <shortname>ｴｲﾈﾑのﾏｽｸ</shortname>
+        <description>ラッパー、俳優</description>
         <surprise>true</surprise>
     </masktype>
 
     <masktype idname="MASK_JACKSON_MICHAEL">
         <mask>true</mask>
-        <name>Michael Jackson Msk</name>
-        <shortname>M Jackson Mask</shortname>
-        <description>Singer</description>
+        <name>マイケル・ジャクソンのマスク</name>
+        <shortname>M ｼﾞｬｸｿﾝのﾏｽｸ</shortname>
+        <description>シンガー</description>
         <surprise>true</surprise>
     </masktype>
 
     <masktype idname="MASK_JESUS">
         <mask>true</mask>
-        <name>Jesus Christ Mask</name>
-        <shortname>Jesus Mask</shortname>
-        <description>The Son of God, The Lamb, He died 4 U</description>
+        <name>イエス・キリストのマスク</name>
+        <shortname>ｲｴｽのﾏｽｸ</shortname>
+        <description>神の御子、子羊、あなたのために死んだ</description>
         <surprise>true</surprise>
         <interrogation>
             <basepower>6</basepower>
@@ -350,57 +350,57 @@
 
     <masktype idname="MASK_KING_DON">
         <mask>true</mask>
-        <name>Don King Mask</name>
-        <shortname>Don King Mask</shortname>
-        <description>Boxing Promoter</description>
+        <name>ドン・キングのマスク</name>
+        <shortname>ﾄﾞﾝ･ｷﾝｸﾞのマスグ</shortname>
+        <description>ボクシングプロモーター</description>
         <surprise>true</surprise>
     </masktype>
 
     <masktype idname="MASK_LORDS">
         <mask>true</mask>
-        <name>Traci Lords Mask</name>
-        <shortname>Tr. Lords Mask</shortname>
-        <description>Actor</description>
+        <name>トレイシー・ローズのマスク</name>
+        <shortname>T ﾛｰｽﾞのﾏｽｸ</shortname>
+        <description>女優</description>
         <surprise>true</surprise>
     </masktype>
 
     <masktype idname="MASK_MADONNA">
         <mask>true</mask>
-        <name>Madonna Mask</name>
-        <shortname>Madonna Mask</shortname>
-        <description>Singer, Actor</description>
+        <name>マドンナのマスク</name>
+        <shortname>ﾏﾄﾞﾝﾅのﾏｽｸ</shortname>
+        <description>シンガー、女優</description>
         <surprise>true</surprise>
     </masktype>
 
     <masktype idname="MASK_IGGYPOP">
         <mask>true</mask>
-        <name>Iggy Pop Mask</name>
-        <shortname>Iggy Pop Mask</shortname>
-        <description>Singer, Actor</description>
+        <name>イギー・ポップのマスク</name>
+        <shortname>ｲｷﾞｰ･ﾎﾟｯﾌﾟのマスク</shortname>
+        <description>シンガー、俳優</description>
         <surprise>true</surprise>
     </masktype>
 
     <masktype idname="MASK_SHIELDS">
         <mask>true</mask>
-        <name>Brooke Shields Mask</name>
-        <shortname>Br. Shlds Mask</shortname>
-        <description>Actor</description>
+        <name>ブルック・シールズのマスク</name>
+        <shortname>B ｼｰﾙｽﾞのﾏｽｸ</shortname>
+        <description>女優</description>
         <surprise>true</surprise>
     </masktype>
 
     <masktype idname="MASK_SPEARS">
         <mask>true</mask>
-        <name>Britney Spears Mask</name>
-        <shortname>B Spears Mask</shortname>
-        <description>Singer, Actor</description>
+        <name>ブリトニー・スピアーズのマスク</name>
+        <shortname>B ｽﾋﾟｱｰｽﾞのﾏｽｸ</shortname>
+        <description>シンガー、女優</description>
         <surprise>true</surprise>
     </masktype>
 
     <masktype idname="MASK_WAHLBERG">
         <mask>true</mask>
-        <name>Mark Wahlbrg Mask</name>
-        <shortname>M Wahlbrg Mask</shortname>
-        <description>Actor, Rapper</description>
+        <name>マーク・ウォールバーグのマスク</name>
+        <shortname>M ｳｫｰﾙﾊﾞｰｸﾞのﾏｽｸ</shortname>
+        <description>俳優、ラッパー</description>
         <surprise>true</surprise>
     </masktype>
 

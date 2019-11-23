@@ -377,8 +377,8 @@
     <armortype idname="ARMOR_ELEPHANTSUIT">
         <make_difficulty>10</make_difficulty>
         <make_price>300</make_price>
-        <name>象のきぐるみ</name>
-        <shortname>象のきぐるみ</shortname>
+        <name>象の着ぐるみ</name>
+        <shortname>象の着ぐるみ</shortname>
         <fencevalue>50</fencevalue>
         <body_covering>
             <head>true</head>
