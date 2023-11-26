@@ -52,7 +52,7 @@ void noticecheck(int exclude,int difficulty)
          addstr("はあなたのリベラル行動を目撃すると、", gamelog);
          move(17,1);
          if(encounter[e].align==ALIGN_CONSERVATIVE)
-            addstr("大声で保守の仲間に知らせた!", gamelog);
+            addstr("甲高い保守的悲鳴を上げた!", gamelog);
          else addstr("大声で助けを呼んだ!", gamelog);
          gamelog.newline();
 
@@ -431,7 +431,7 @@ void disguisecheck(int timer)
             addstr("は部隊のリベラルな武器を見ると", gamelog);
             move(17,1);
             if(encounter[n].align==ALIGN_CONSERVATIVE)
-               addstr("大声で保守の仲間に知らせた!", gamelog);
+               addstr("甲高い保守的悲鳴を上げた!", gamelog);
             else
                addstr("大声で助けを呼んだ!", gamelog);
 
@@ -452,9 +452,9 @@ void disguisecheck(int timer)
             if(encounter[n].align==ALIGN_CONSERVATIVE)
             {
                if(encounter[n].type==CREATURE_GUARDDOG)
-                  addstr("大声で吠えて保守に知らせた!", gamelog);
+                  addstr("怒りの保守的吠え声を上げた!", gamelog);
                else
-                  addstr("大声で保守の仲間に知らせた!", gamelog);
+                  addstr("甲高い保守的悲鳴を上げた!", gamelog);
 
             }
             else

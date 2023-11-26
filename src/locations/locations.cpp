@@ -359,7 +359,7 @@ void initlocation(Location &loc)
             case 1:strcpy(loc.name,"陽気な");break;
             case 2:strcpy(loc.name,"静寂の");break;
             case 3:strcpy(loc.name,"緑の");break;
-            case 4:strcpy(loc.name,"花蜜の");break;
+            case 4:strcpy(loc.name,"花の");break;
          }
          switch(LCSrandom(5))
          {
@@ -600,7 +600,7 @@ void initlocation(Location &loc)
          case 1:strcat(loc.name,"ハーモニー");break;
          case 2:strcat(loc.name,"レスト");break;
          case 3:strcat(loc.name,"ヘルシー");break;
-         case 4:strcat(loc.name,"ニュー ユー");break;
+         case 4:strcat(loc.name,"ニュー ユー ");break;
       }
       switch(LCSrandom(5))
       {

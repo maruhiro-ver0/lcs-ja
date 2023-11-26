@@ -194,7 +194,7 @@ void reaganify(char canseethings)
       move(4,0);
       addstr("かつての合衆国は、アメリカ連合国(CONFEDERATED STATES OF AMERICA)として再建国さ");
       move(5,0);
-      addstr("れ、新たな境界線は指導的神学者によって決定される。");
+      addstr("れ、新たな国境線は指導的神学者によって決定される。");
       move(7,0);
       addstr("ロナルド・レーガンは国王となる。死してなお永遠に。");
       move(9,0);
@@ -393,7 +393,7 @@ void stalinize(char canseethings)
       move(5,0);
       addstr("かつての合衆国は、アメリカ人民共和国(PEOPLE'S REPUBLIC OF AMERICA)として再建国");
       move(6,0);
-      addstr("され、新たな境界線はスターリン主義者賢人によって決定される。");
+      addstr("され、新たな国境線はスターリン主義者賢人によって決定される。");
       move(8,0);
       addstr("ヨシフ・スターリンは書記長兼首相となる。死してなお永遠に。");
       move(10,0);

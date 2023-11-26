@@ -879,7 +879,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
       case 6:addstr("「美しい人。あなたの脚で顔を覆い、マスクのように身につけたい! 」", gamelog); // Bill Hicks
              break;
       case 7:addstr("「リスごっこをしよう。あなたの中にナッツを隠したい。」", gamelog);break;
-      case 8:addstr("「わかっている。もし私があなたならば、私とsexしたいはずだ。」", gamelog);break;
+      case 8:addstr("「わかっている。もし私があなたならば、私とセックスしたいはずだ。」", gamelog);break;
       case 9:addstr("「太ったヒヨコちゃんのために苦労したくないな。」", gamelog);break;
       case 10:addstr("「私が間違っているならファックしてくれ。でも、あなたは私とキスしたい。", gamelog);
               move(11,1);y++;
@@ -1223,7 +1223,7 @@ char doYouComeHereOften(Creature &a, Creature &tk)
          case 16: addstr("「そう、私はエイリアン。下等な地球のゴミめ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <光線銃を抜いた>", gamelog);break;
-         case 17: addstr("「これをした後でなければ。」\"Not after I do this.\"", gamelog);
+         case 17: addstr("「これをした後でなければ。」", gamelog);
             set_color(COLOR_WHITE,COLOR_BLACK,1);
             addstr(" <パンツにクソした>", gamelog);break;
          case 18: addstr("「そんな嘘はウンザリだ。」", gamelog);
